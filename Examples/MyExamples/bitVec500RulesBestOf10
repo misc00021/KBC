@@ -1,0 +1,1041 @@
+Here is the input problem:
+  Axiom 1 (bvshr_zero): shr(X, zero) = X.
+  Axiom 2 (bvshr_zero_shift): shr(X, zero) = X.
+  Axiom 3 (bvshr_allzeros): shr(zero, X) = zero.
+  Axiom 4 (bvsub_self): sub(X, X) = zero.
+  Axiom 5 (bvsub_zero): sub(X, zero) = X.
+  Axiom 6 (bvsub_id): sub(zero, X) = neg(X).
+  Axiom 7 (bvshl_zero): shl(X, zero) = X.
+  Axiom 8 (bvshl_zero_shift): shl(X, zero) = X.
+  Axiom 9 (bvshl_allzeros): shl(zero, X) = zero.
+  Axiom 10 (bvmul_comm): mul(X, Y) = mul(Y, X).
+  Axiom 11 (bvmul_id): mul(X, one) = X.
+  Axiom 12 (bvmul_zero): mul(X, zero) = zero.
+  Axiom 13 (bvxor_self): xor(X, X) = zero.
+  Axiom 14 (bvxor_comm): xor(X, Y) = xor(Y, X).
+  Axiom 15 (bvxor_id): xor(X, zero) = X.
+  Axiom 16 (bvxor_zero): xor(X, zero) = X.
+  Axiom 17 (bvxor_allzeros): xor(X, zero) = X.
+  Axiom 18 (bvadd_comm): add(X, Y) = add(Y, X).
+  Axiom 19 (bvadd_id): add(X, zero) = X.
+  Axiom 20 (bvor_self): or(X, X) = X.
+  Axiom 21 (bvor_comm): or(X, Y) = or(Y, X).
+  Axiom 22 (bvor_id): or(X, zero) = X.
+  Axiom 23 (bvor_allzeros): or(X, zero) = X.
+  Axiom 24 (bvand_self): and(X, X) = X.
+  Axiom 25 (bvand_comm): and(X, Y) = and(Y, X).
+  Axiom 26 (bvand_id): and(X, allones) = X.
+  Axiom 27 (bvand_allones): and(X, allones) = X.
+  Axiom 28 (bvand_zero): and(X, zero) = zero.
+  Axiom 29 (bvsub_add): sub(X, neg(Y)) = add(X, Y).
+  Axiom 30 (bvnot_self): not(X) = sub(neg(X), one).
+  Axiom 31 (bvadd_neg): add(X, neg(X)) = zero.
+  Axiom 32 (bvsub_def): sub(X, Y) = add(X, neg(Y)).
+  Axiom 33 (bvadd_sub): add(X, neg(Y)) = sub(X, Y).
+  Axiom 34 (bvor_neg): or(X, not(X)) = allones.
+  Axiom 35 (bvshl_def): shl(X, Y) = mul(X, shl(one, Y)).
+  Axiom 36 (bvmul_assoc): mul(mul(X, Y), Z) = mul(X, mul(Y, Z)).
+  Axiom 37 (bvxor_assoc): xor(xor(X, Y), Z) = xor(X, xor(Y, Z)).
+  Axiom 38 (bvadd_assoc): add(add(X, Y), Z) = add(X, add(Y, Z)).
+  Axiom 39 (bvor_absorb): or(X, and(X, Y)) = X.
+  Axiom 40 (bvor_assoc): or(or(X, Y), Z) = or(X, or(Y, Z)).
+  Axiom 41 (bvand_absorb): and(X, or(X, Y)) = X.
+  Axiom 42 (bvand_assoc): and(and(X, Y), Z) = and(X, and(Y, Z)).
+  Axiom 43 (bvand_or): and(X, or(Y, Z)) = or(and(X, Y), and(X, Z)).
+  Axiom 44 (bvshr_and): shr(and(X, Y), Z) = and(shr(X, Z), shr(Y, Z)).
+  Axiom 45 (bvshl_and): shl(and(X, Y), Z) = and(shl(X, Z), shl(Y, Z)).
+  Axiom 46 (bvor_and): or(X, and(Y, Z)) = and(or(X, Y), or(X, Z)).
+  Axiom 47 (bvor_and_not): or(and(X, Y), and(X, not(Y))) = X.
+  Goal 1 (goal): true = false.
+
+1. shr(X, zero) -> X
+2. shr(zero, X) -> zero
+3. sub(X, X) -> zero
+4. sub(X, zero) -> X
+5. sub(zero, X) -> neg(X)
+6. shl(X, zero) -> X
+7. shl(zero, X) -> zero
+8. mul(X, Y) <-> mul(Y, X)
+9. mul(X, one) -> X
+10. mul(X, zero) -> zero
+11. xor(X, X) -> zero
+12. xor(X, Y) <-> xor(Y, X)
+13. xor(X, zero) -> X
+14. add(X, Y) <-> add(Y, X)
+15. add(X, zero) -> X
+16. or(X, X) -> X
+17. or(X, Y) <-> or(Y, X)
+18. or(X, zero) -> X
+19. and(X, X) -> X
+20. and(X, Y) <-> and(Y, X)
+21. and(X, allones) -> X
+22. and(X, zero) -> zero
+23. sub(X, neg(Y)) -> add(X, Y)
+24. sub(neg(X), one) -> not(X)
+25. add(X, neg(X)) -> zero
+26. add(X, neg(Y)) -> sub(X, Y)
+27. or(X, not(X)) -> allones
+28. mul(X, shl(one, Y)) -> shl(X, Y)
+29. mul(mul(X, Y), Z) -> mul(X, mul(Y, Z))
+30. xor(xor(X, Y), Z) -> xor(X, xor(Y, Z))
+31. add(add(X, Y), Z) -> add(X, add(Y, Z))
+32. or(X, and(X, Y)) -> X
+33. or(or(X, Y), Z) -> or(X, or(Y, Z))
+34. and(X, or(X, Y)) -> X
+35. and(and(X, Y), Z) -> and(X, and(Y, Z))
+36. or(and(X, Y), and(X, Z)) -> and(X, or(Y, Z))
+37. and(shr(X, Y), shr(Z, Y)) -> shr(and(X, Z), Y)
+38. and(shl(X, Y), shl(Z, Y)) -> shl(and(X, Z), Y)
+39. and(or(X, Y), or(X, Z)) -> or(X, and(Y, Z))
+40. neg(zero) -> zero
+41. mul(one, X) -> X
+42. xor(zero, X) -> X
+43. add(zero, X) -> X
+44. or(zero, X) -> X
+45. not(zero) -> allones
+46. and(allones, X) -> X
+47. neg(one) -> allones
+48. mul(zero, X) -> zero
+49. and(zero, X) -> zero
+50. neg(neg(X)) -> X
+51. neg(allones) -> one
+52. or(X, allones) -> allones
+53. not(allones) -> zero
+54. sub(X, one) -> not(neg(X))
+55. or(allones, X) -> allones
+56. add(neg(X), Y) -> sub(Y, X)
+57. add(one, allones) -> zero
+58. add(X, one) -> sub(X, allones)
+59. add(X, allones) -> not(neg(X))
+60. or(X, and(Y, X)) -> X
+61. and(X, or(Y, X)) -> X
+62. sub(allones, X) -> not(X)
+63. sub(neg(X), Y) <-> sub(neg(Y), X)
+64. or(X, or(X, Y)) -> or(X, Y)
+65. and(X, and(X, Y)) -> and(X, Y)
+66. xor(X, xor(X, Y)) -> Y
+67. add(one, X) -> sub(X, allones)
+68. add(allones, X) -> not(neg(X))
+69. xor(X, xor(Y, X)) -> Y
+70. mul(shl(one, X), Y) -> shl(Y, X)
+71. mul(X, mul(Y, Z)) <-> mul(Y, mul(X, Z))
+72. mul(X, shl(Y, Z)) -> shl(mul(X, Y), Z)
+73. xor(X, xor(Y, Z)) <-> xor(Y, xor(X, Z))
+74. add(X, add(Y, Z)) <-> add(Y, add(X, Z))
+75. add(X, sub(Y, X)) -> Y
+76. sub(not(X), allones) -> neg(X)
+77. add(X, sub(Y, Z)) -> sub(add(X, Y), Z)
+78. sub(add(X, Y), X) -> Y
+79. or(X, or(Y, Z)) <-> or(Y, or(X, Z))
+80. and(X, and(Y, Z)) <-> and(Y, and(X, Z))
+81. or(X, or(Y, X)) -> or(X, Y)
+82. and(X, and(Y, X)) -> and(X, Y)
+83. sub(add(X, Y), Y) -> X
+84. sub(sub(X, Y), X) -> neg(Y)
+85. add(X, not(X)) -> allones
+86. not(not(X)) -> X
+87. not(neg(sub(X, Y))) -> add(X, not(Y))
+88. sub(not(X), Y) <-> sub(not(Y), X)
+89. or(X, and(Y, not(X))) -> or(X, Y)
+90. or(X, or(Y, not(X))) -> allones
+91. sub(neg(X), allones) -> sub(one, X)
+92. mul(shl(X, Y), Z) -> shl(mul(X, Z), Y)
+93. shl(shl(X, Y), Z) <-> shl(shl(X, Z), Y)
+94. add(sub(X, Y), Z) -> sub(add(X, Z), Y)
+95. sub(sub(X, Y), Z) <-> sub(sub(X, Z), Y)
+96. or(X, or(not(X), Y)) -> allones
+97. sub(X, allones) -> neg(not(X))
+98. sub(X, sub(X, Y)) -> Y
+99. sub(not(one), X) -> not(neg(not(X)))
+100. sub(neg(X), not(X)) -> one
+101. neg(sub(X, Y)) -> sub(Y, X)
+102. sub(X, add(X, Y)) -> neg(Y)
+103. sub(not(neg(X)), Y) -> add(X, not(Y))
+104. or(X, and(not(X), Y)) -> or(X, Y)
+105. neg(not(neg(X))) -> sub(one, X)
+106. sub(neg(X), Y) -> neg(add(X, Y))
+107. add(X, not(one)) -> not(sub(one, X))
+108. add(not(one), X) -> not(sub(one, X))
+109. add(X, not(neg(Y))) -> not(neg(add(X, Y)))
+110. add(not(neg(X)), Y) -> not(neg(add(X, Y)))
+111. or(X, or(Y, and(X, Z))) -> or(X, Y)
+112. and(X, and(Y, or(X, Z))) -> and(X, Y)
+113. or(X, and(Y, and(X, Z))) -> X
+114. and(X, or(Y, or(X, Z))) -> X
+115. sub(X, not(neg(X))) -> one
+116. sub(X, add(Y, X)) -> neg(Y)
+117. add(X, not(Y)) -> not(sub(Y, X))
+118. sub(X, not(Y)) <-> sub(Y, not(X))
+119. sub(not(X), Y) -> not(add(X, Y))
+120. or(and(X, Y), and(Y, Z)) -> and(Y, or(X, Z))
+121. or(and(X, Y), and(Z, X)) -> and(X, or(Y, Z))
+122. and(or(X, Y), or(Y, Z)) -> or(Y, and(X, Z))
+123. or(not(X), and(X, Y)) -> or(Y, not(X))
+124. and(or(X, Y), or(Z, X)) -> or(X, and(Y, Z))
+125. or(not(X), and(Y, X)) -> or(Y, not(X))
+126. or(X, or(Y, not(or(X, Y)))) -> allones
+127. or(X, or(Y, and(Z, X))) -> or(X, Y)
+128. and(X, and(Y, or(Z, X))) -> and(X, Y)
+129. or(X, or(and(X, Y), Z)) -> or(X, Z)
+130. or(X, not(and(X, Y))) -> allones
+131. or(X, not(and(Y, X))) -> allones
+132. and(X, and(or(X, Y), Z)) -> and(X, Z)
+133. or(X, and(Y, and(Z, X))) -> X
+134. and(X, or(Y, or(Z, X))) -> X
+135. add(not(X), Y) -> not(sub(X, Y))
+136. or(X, and(Y, or(X, Z))) -> or(X, and(Z, Y))
+137. and(X, or(Y, and(X, Z))) -> and(X, or(Z, Y))
+138. or(and(X, Y), and(Z, Y)) -> and(Y, or(X, Z))
+139. and(or(X, Y), or(Z, Y)) -> or(Y, and(X, Z))
+  (hard) xor(Y, Z) = xor(X, xor(Y, xor(X, Z)))
+140. sub(add(X, add(Y, Z)), Y) -> add(X, Z)
+141. sub(sub(add(X, Y), Z), X) -> sub(Y, Z)
+142. or(X, or(Y, or(Z, not(X)))) -> allones
+143. or(X, or(and(Y, X), Z)) -> or(X, Z)
+144. and(X, and(or(Y, X), Z)) -> and(X, Z)
+145. sub(X, not(sub(Y, X))) -> neg(not(Y))
+146. neg(not(add(X, Y))) -> sub(X, not(Y))
+147. sub(add(X, Y), Z) -> sub(Y, sub(Z, X))
+148. sub(X, sub(Y, Z)) <-> sub(Z, sub(Y, X))
+149. sub(sub(X, Y), Z) -> sub(X, add(Y, Z))
+150. or(X, and(Y, or(Z, not(X)))) -> or(X, Y)
+  (hard) or(X, or(Y, Z)) = or(X, or(Y, or(X, Z)))
+  (hard) and(X, and(Y, Z)) = and(X, and(Y, and(X, Z)))
+151. or(X, and(Y, or(Z, X))) -> or(X, and(Z, Y))
+152. or(X, and(or(X, Y), Z)) -> or(X, and(Y, Z))
+153. and(X, or(and(X, Y), Z)) -> and(X, or(Y, Z))
+154. and(X, or(Y, and(Z, X))) -> and(X, or(Z, Y))
+155. sub(X, not(neg(Y))) -> neg(not(sub(X, Y)))
+156. sub(X, sub(one, Y)) -> not(neg(add(X, Y)))
+157. or(X, or(Y, or(not(X), Z))) -> allones
+158. or(shr(X, Y), shr(and(X, Z), Y)) -> shr(X, Y)
+159. or(shr(X, Y), shr(allones, Y)) -> shr(allones, Y)
+160. or(shr(allones, X), shr(Y, X)) -> shr(allones, X)
+161. or(shl(X, Y), shl(and(X, Z), Y)) -> shl(X, Y)
+162. or(shl(X, Y), shl(allones, Y)) -> shl(allones, Y)
+163. or(shl(allones, X), shl(Y, X)) -> shl(allones, X)
+164. or(X, or(Y, and(Z, not(X)))) -> or(X, or(Z, Y))
+165. or(X, and(Y, and(Z, not(X)))) -> or(X, and(Y, Z))
+166. or(X, and(Y, not(and(X, Z)))) -> or(X, Y)
+167. or(X, and(Y, or(not(X), Z))) -> or(X, Y)
+168. or(X, and(or(Y, not(X)), Z)) -> or(X, Z)
+169. or(X, and(or(Y, X), Z)) -> or(X, and(Y, Z))
+170. and(X, or(and(Y, X), Z)) -> and(X, or(Y, Z))
+171. sub(one, sub(X, Y)) -> neg(not(sub(Y, X)))
+172. or(X, or(Y, not(and(X, Z)))) -> allones
+173. or(X, not(and(Y, and(X, Z)))) -> allones
+  (hard) allones = or(X, or(not(Y), or(Z, Y)))
+174. sub(X, sub(Y, not(one))) -> not(neg(not(sub(Y, X))))
+175. sub(X, sub(Y, not(X))) -> not(Y)
+176. or(not(X), and(Y, or(X, Z))) -> or(Y, not(X))
+177. or(X, or(Y, and(Z, and(X, W)))) -> or(X, Y)
+178. and(X, and(Y, or(Z, or(X, W)))) -> and(X, Y)
+179. or(shr(X, Y), shr(and(Z, X), Y)) -> shr(X, Y)
+180. or(shl(X, Y), shl(and(Z, X), Y)) -> shl(X, Y)
+181. sub(X, add(Y, add(X, Z))) -> neg(add(Z, Y))
+182. or(X, and(Y, and(Z, and(X, W)))) -> X
+183. and(X, or(Y, or(Z, or(X, W)))) -> X
+184. or(X, or(Y, and(not(X), Z))) -> or(X, or(Y, Z))
+185. or(X, and(Y, and(not(X), Z))) -> or(X, and(Y, Z))
+186. or(X, or(and(Y, not(X)), Z)) -> or(X, or(Y, Z))
+187. or(X, and(not(and(X, Y)), Z)) -> or(X, Z)
+188. or(X, and(Y, not(and(Z, X)))) -> or(X, Y)
+189. or(X, and(or(not(X), Y), Z)) -> or(X, Z)
+190. or(and(X, Y), or(Z, and(X, W))) -> or(Z, and(X, or(Y, W)))
+191. and(shr(X, Y), and(Z, shr(W, Y))) -> and(Z, shr(and(X, W), Y))
+192. and(shl(X, Y), and(Z, shl(W, Y))) -> and(Z, shl(and(X, W), Y))
+193. and(or(X, Y), and(Z, or(X, W))) -> and(Z, or(X, and(Y, W)))
+194. or(not(X), or(Y, and(X, Z))) -> or(Z, or(Y, not(X)))
+195. or(not(X), and(Y, and(X, Z))) -> or(not(X), and(Z, Y))
+196. or(X, or(Y, not(and(Z, X)))) -> allones
+197. or(X, or(not(and(X, Y)), Z)) -> allones
+198. or(X, not(and(Y, and(Z, X)))) -> allones
+199. or(X, or(Y, or(Z, and(X, W)))) -> or(X, or(Y, Z))
+200. or(X, and(Y, or(Z, and(X, W)))) -> or(X, and(Z, Y))
+201. and(X, and(Y, and(Z, or(X, W)))) -> and(X, and(Y, Z))
+202. and(X, or(Y, and(Z, or(X, W)))) -> and(X, or(Z, Y))
+203. sub(X, not(sub(one, Y))) = sub(one, not(sub(X, Y)))
+204. or(not(X), and(Y, or(Z, X))) -> or(Y, not(X))
+205. or(not(X), and(or(X, Y), Z)) -> or(Z, not(X))
+206. or(X, or(Y, or(Z, not(or(X, Y))))) -> allones
+207. or(X, or(Y, or(Z, not(or(X, Z))))) -> allones
+208. or(X, or(and(Y, and(X, Z)), W)) -> or(X, W)
+209. and(X, and(or(Y, or(X, Z)), W)) -> and(X, W)
+210. or(X, or(Y, and(Z, and(W, X)))) -> or(X, Y)
+211. and(X, and(Y, or(Z, or(W, X)))) -> and(X, Y)
+212. sub(X, add(Y, add(Z, X))) -> neg(add(Y, Z))
+213. or(X, and(Y, and(Z, and(W, X)))) -> X
+214. and(X, or(Y, or(Z, or(W, X)))) -> X
+215. and(shr(X, Y), or(Z, shr(allones, Y))) -> shr(X, Y)
+216. and(shl(X, Y), or(Z, shl(allones, Y))) -> shl(X, Y)
+217. or(shr(allones, X), and(Y, shr(Z, X))) -> shr(allones, X)
+218. or(shl(allones, X), and(Y, shl(Z, X))) -> shl(allones, X)
+219. or(X, or(and(not(X), Y), Z)) -> or(X, or(Z, Y))
+220. sub(X, not(add(Y, Z))) <-> sub(Y, not(add(X, Z)))
+221. sub(X, not(sub(Y, Z))) <-> sub(Y, not(sub(X, Z)))
+222. sub(X, sub(Y, not(Z))) -> not(sub(Y, sub(X, Z)))
+  (hard) sub(X, not(add(Y, Z))) = sub(Y, not(add(Z, X)))
+223. or(X, and(not(and(Y, X)), Z)) -> or(X, Z)
+224. and(or(X, or(Y, Z)), or(Y, W)) -> or(Y, and(W, or(X, Z)))
+225. and(or(X, Y), or(Z, or(X, W))) -> or(X, and(Y, or(Z, W)))
+226. or(and(X, and(Y, Z)), and(Y, W)) -> and(Y, or(W, and(X, Z)))
+227. or(and(X, Y), and(Z, and(X, W))) -> and(X, or(Y, and(Z, W)))
+228. or(and(X, Y), or(Z, and(Y, W))) -> or(Z, and(Y, or(X, W)))
+229. or(and(X, and(Y, Z)), and(Z, W)) -> and(Z, or(W, and(X, Y)))
+230. or(and(X, Y), and(Z, and(Y, W))) -> and(Y, or(X, and(Z, W)))
+231. or(and(X, Y), or(Z, and(W, X))) -> or(Z, and(X, or(Y, W)))
+232. or(and(X, and(Y, Z)), and(W, Y)) -> and(Y, or(W, and(X, Z)))
+233. and(or(X, or(Y, Z)), or(Z, W)) -> or(Z, and(W, or(X, Y)))
+234. and(or(X, Y), and(Z, or(Y, W))) -> and(Z, or(Y, and(X, W)))
+235. and(or(X, Y), or(Z, or(Y, W))) -> or(Y, and(X, or(Z, W)))
+236. and(or(X, or(Y, Z)), or(W, Y)) -> or(Y, and(W, or(X, Z)))
+237. and(or(X, Y), and(Z, or(W, X))) -> and(Z, or(X, and(Y, W)))
+238. or(and(X, Y), or(and(X, Z), W)) -> or(W, and(X, or(Y, Z)))
+239. and(shr(X, Y), and(shr(Z, Y), W)) -> and(W, shr(and(X, Z), Y))
+240. and(shl(X, Y), and(shl(Z, Y), W)) -> and(W, shl(and(X, Z), Y))
+241. and(or(X, Y), and(or(X, Z), W)) -> and(W, or(X, and(Y, Z)))
+242. or(not(X), or(Y, and(Z, X))) -> or(Z, or(Y, not(X)))
+243. or(X, and(Y, or(Z, not(or(X, Z))))) -> or(X, Y)
+244. or(and(X, Y), not(and(X, Z))) -> or(Y, not(and(X, Z)))
+245. sub(X, sub(Y, sub(Z, X))) -> sub(Z, Y)
+246. or(not(X), or(and(X, Y), Z)) -> or(Z, or(Y, not(X)))
+247. or(not(X), and(Y, and(Z, X))) -> or(not(X), and(Z, Y))
+248. or(X, or(not(and(Y, X)), Z)) -> allones
+249. or(X, or(Y, or(Z, and(W, X)))) -> or(X, or(Y, Z))
+250. and(X, and(Y, and(Z, or(W, X)))) -> and(X, and(Y, Z))
+251. or(X, or(Y, or(and(X, Z), W))) -> or(X, or(Y, W))
+252. and(X, and(Y, and(or(X, Z), W))) -> and(X, and(Y, W))
+253. or(shr(X, Y), shr(or(X, Z), Y)) -> shr(or(X, Z), Y)
+254. or(shl(X, Y), shl(or(X, Z), Y)) -> shl(or(X, Z), Y)
+255. or(X, and(Y, or(and(X, Z), W))) -> or(X, and(W, Y))
+256. or(X, and(or(Y, and(X, Z)), W)) -> or(X, and(Y, W))
+257. or(X, and(Y, or(Z, and(W, X)))) -> or(X, and(Z, Y))
+258. and(X, or(and(Y, or(X, Z)), W)) -> and(X, or(Y, W))
+259. and(X, or(Y, and(Z, or(W, X)))) -> and(X, or(Z, Y))
+260. and(X, or(Y, and(or(X, Z), W))) -> and(X, or(W, Y))
+261. or(not(X), and(or(Y, X), Z)) -> or(Z, not(X))
+262. or(X, or(Y, not(or(Y, and(X, Z))))) -> allones
+263. or(X, or(Y, or(Z, or(W, not(X))))) -> allones
+264. or(X, or(and(Y, and(Z, X)), W)) -> or(X, W)
+265. and(X, and(or(Y, or(Z, X)), W)) -> and(X, W)
+266. or(not(and(X, Y)), and(X, or(Y, Z))) -> allones
+267. or(X, or(Y, or(not(or(X, Y)), Z))) -> allones
+  (hard) or(X, or(Y, or(Z, not(or(Z, Y))))) = allones
+268. or(shr(X, Y), or(Z, shr(allones, Y))) -> or(Z, shr(allones, Y))
+269. or(shr(allones, X), not(shr(Y, X))) -> allones
+270. or(shl(X, Y), or(Z, shl(allones, Y))) -> or(Z, shl(allones, Y))
+271. or(shl(allones, X), not(shl(Y, X))) -> allones
+272. neg(not(sub(X, sub(Y, Z)))) -> sub(X, not(sub(Z, Y)))
+273. and(shr(X, Y), or(shr(allones, Y), Z)) -> shr(X, Y)
+274. and(or(X, shr(allones, Y)), shr(Z, Y)) -> shr(Z, Y)
+275. and(shl(X, Y), or(shl(allones, Y), Z)) -> shl(X, Y)
+276. and(or(X, shl(allones, Y)), shl(Z, Y)) -> shl(Z, Y)
+277. or(X, or(Y, or(Z, not(and(W, or(X, Y)))))) -> allones
+278. or(shl(allones, X), shl(shl(Y, X), Z)) -> shl(allones, X)
+279. or(shr(allones, X), and(shr(Y, X), Z)) -> shr(allones, X)
+280. or(shl(allones, X), and(shl(Y, X), Z)) -> shl(allones, X)
+281. or(and(X, Y), and(Z, or(X, W))) = or(and(Z, W), and(X, or(Y, Z)))
+  (hard) or(and(X, Y), or(Z, X)) = or(X, Z)
+282. and(or(X, Y), or(Z, and(X, W))) = and(or(Z, W), or(X, and(Y, Z)))
+  (hard) and(or(X, Y), and(Z, X)) = and(X, Z)
+283. or(X, or(Y, and(Z, not(or(X, Y))))) -> or(X, or(Y, Z))
+284. and(shl(shl(X, Y), Z), shl(W, Y)) -> shl(and(W, shl(X, Z)), Y)
+285. and(shl(X, Y), shl(shl(Z, Y), W)) -> shl(and(X, shl(Z, W)), Y)
+286. or(X, or(Y, and(Z, or(X, W)))) -> or(X, or(Y, and(Z, W)))
+287. or(X, and(Y, and(Z, or(X, W)))) -> or(X, and(W, and(Y, Z)))
+288. or(X, and(Y, or(Z, or(X, W)))) -> or(X, and(Y, or(Z, W)))
+289. and(X, or(Y, or(Z, and(X, W)))) -> and(X, or(W, or(Y, Z)))
+290. and(X, and(Y, or(Z, and(X, W)))) -> and(X, and(Y, or(Z, W)))
+291. and(X, or(Y, and(Z, and(X, W)))) -> and(X, or(Y, and(Z, W)))
+292. or(and(X, Y), or(Z, and(W, Y))) -> or(Z, and(Y, or(X, W)))
+293. or(and(X, and(Y, Z)), and(W, Z)) -> and(Z, or(W, and(X, Y)))
+294. or(and(X, Y), and(Z, and(W, Y))) -> and(Y, or(X, and(Z, W)))
+295. and(or(X, or(Y, Z)), or(W, Z)) -> or(Z, and(W, or(X, Y)))
+296. and(or(X, Y), or(Z, or(W, Y))) -> or(Y, and(X, or(Z, W)))
+297. and(or(X, Y), and(Z, or(W, Y))) -> and(Z, or(Y, and(X, W)))
+298. and(or(X, Y), or(Z, or(W, X))) -> or(X, and(Y, or(Z, W)))
+299. or(and(X, Y), and(Z, and(W, X))) -> and(X, or(Y, and(Z, W)))
+300. or(and(X, Y), or(and(Y, Z), W)) -> or(W, and(Y, or(Z, X)))
+301. or(and(X, Y), or(and(Z, X), W)) -> or(W, and(X, or(Y, Z)))
+302. or(X, or(Y, not(and(Z, or(X, Y))))) -> allones
+303. and(or(X, Y), and(or(Y, Z), W)) -> and(W, or(Y, and(Z, X)))
+304. and(or(X, Y), and(or(Z, X), W)) -> and(W, or(X, and(Y, Z)))
+305. or(and(X, Y), not(and(Y, Z))) -> or(X, not(and(Y, Z)))
+306. or(X, and(Y, or(Z, or(W, not(X))))) -> or(X, Y)
+307. or(X, and(Y, or(Z, not(and(X, W))))) -> or(X, Y)
+308. or(not(X), or(and(Y, X), Z)) -> or(Z, or(Y, not(X)))
+309. or(X, and(Y, or(Z, not(or(Z, X))))) -> or(X, Y)
+310. or(X, and(or(Y, not(or(X, Y))), Z)) -> or(X, Z)
+311. or(not(and(X, Y)), and(X, Z)) -> or(Z, not(and(Y, X)))
+312. or(and(X, Y), not(and(Z, X))) -> or(Y, not(and(X, Z)))
+313. or(X, or(Y, or(and(Z, X), W))) -> or(X, or(Y, W))
+314. and(X, and(Y, and(or(Z, X), W))) -> and(X, and(Y, W))
+315. sub(one, not(add(X, Y))) -> neg(not(sub(X, not(Y))))
+316. or(shr(X, Y), shr(or(Z, X), Y)) -> shr(or(X, Z), Y)
+317. or(shl(X, Y), shl(or(Z, X), Y)) -> shl(or(X, Z), Y)
+318. or(X, and(or(and(X, Y), Z), W)) -> or(X, and(Z, W))
+319. or(X, and(Y, or(and(Z, X), W))) -> or(X, and(W, Y))
+320. or(X, and(or(Y, and(Z, X)), W)) -> or(X, and(Y, W))
+321. and(X, or(and(Y, or(Z, X)), W)) -> and(X, or(Y, W))
+322. and(X, or(and(or(X, Y), Z), W)) -> and(X, or(Z, W))
+323. and(X, or(Y, and(or(Z, X), W))) -> and(X, or(W, Y))
+324. or(shr(X, Y), not(shr(and(X, Z), Y))) -> allones
+325. or(shl(X, Y), not(shl(and(X, Z), Y))) -> allones
+326. or(X, or(Y, or(Z, or(not(X), W)))) -> allones
+327. or(X, or(Y, not(or(X, and(Y, Z))))) -> allones
+328. or(X, or(Y, not(or(and(X, Z), Y)))) -> allones
+329. or(X, or(Y, not(or(Y, and(Z, X))))) -> allones
+330. or(not(and(X, Y)), and(Y, or(X, Z))) -> allones
+331. or(not(and(X, Y)), and(or(Y, Z), X)) -> allones
+332. or(shr(allones, X), or(Y, shr(Z, X))) -> or(Y, shr(allones, X))
+333. or(shl(allones, X), or(Y, shl(Z, X))) -> or(Y, shl(allones, X))
+334. or(shr(X, Y), or(shr(allones, Y), Z)) -> or(Z, shr(allones, Y))
+335. or(shl(X, Y), or(shl(allones, Y), Z)) -> or(Z, shl(allones, Y))
+336. or(shr(X, Y), and(Z, shr(and(X, W), Y))) -> shr(X, Y)
+337. or(shr(X, Y), shr(and(Z, and(X, W)), Y)) -> shr(X, Y)
+338. or(shl(X, Y), and(Z, shl(and(X, W), Y))) -> shl(X, Y)
+339. or(shl(X, Y), shl(and(Z, and(X, W)), Y)) -> shl(X, Y)
+340. and(or(shr(allones, X), Y), shr(Z, X)) -> shr(Z, X)
+341. and(or(shl(allones, X), Y), shl(Z, X)) -> shl(Z, X)
+342. sub(X, not(sub(Y, add(X, Z)))) -> neg(not(sub(Y, Z)))
+343. sub(X, sub(Y, add(Z, W))) <-> sub(Z, sub(Y, add(X, W)))
+344. sub(X, sub(Y, sub(Z, W))) <-> sub(Z, sub(Y, sub(X, W)))
+  (hard) sub(X, sub(Y, add(Z, W))) = sub(Z, sub(Y, add(W, X)))
+345. and(or(X, Y), or(Z, and(W, Y))) -> or(and(Y, W), and(Z, or(Y, X)))
+346. and(or(X, Y), or(Z, and(X, W))) -> or(and(X, W), and(Z, or(X, Y)))
+347. and(or(X, Y), or(Z, and(Y, W))) -> or(and(Y, W), and(Z, or(X, Y)))
+348. or(and(X, or(Y, Z)), and(Y, W)) = or(and(X, Z), and(Y, or(W, X)))
+349. or(and(X, or(Y, Z)), and(Z, W)) = or(and(X, Y), and(Z, or(X, W)))
+350. or(and(X, Y), and(Z, or(W, X))) = or(and(Z, W), and(X, or(Y, Z)))
+351. or(and(X, Y), and(Z, or(X, W))) = or(and(Z, W), and(X, or(Z, Y)))
+352. or(and(X, Y), and(Z, or(W, X))) = or(and(W, Z), and(X, or(Z, Y)))
+353. or(and(X, Y), and(Z, or(X, W))) = or(and(W, Z), and(X, or(Y, Z)))
+  (hard) or(and(X, Y), or(Z, Y)) = or(Y, Z)
+354. or(and(X, Y), and(Z, or(W, X))) = or(and(Z, W), and(or(Z, Y), X))
+355. or(and(X, Y), and(Z, or(X, W))) = or(and(Z, W), and(or(Y, Z), X))
+356. and(or(X, Y), or(Z, and(W, X))) = or(and(Z, Y), and(X, or(W, Z)))
+357. and(or(X, Y), or(and(X, Z), W)) -> or(and(X, Z), and(W, or(Y, X)))
+358. and(or(X, Y), or(and(Z, X), W)) -> or(and(X, Z), and(W, or(Y, X)))
+359. and(or(X, and(Y, Z)), or(Y, W)) -> or(and(Y, Z), and(X, or(W, Y)))
+360. and(or(X, and(Y, Z)), or(Z, W)) = or(and(X, W), and(Z, or(X, Y)))
+361. and(or(X, Y), or(Z, and(W, X))) -> or(and(X, W), and(Z, or(Y, X)))
+362. or(and(X, or(Y, Z)), and(Y, or(W, X))) -> or(and(Y, W), and(X, or(Y, Z)))
+363. or(and(X, or(Y, Z)), and(Y, or(X, W))) -> or(and(Y, W), and(X, or(Z, Y)))
+364. or(and(X, or(Y, Z)), and(Z, or(W, X))) -> or(and(Z, W), and(X, or(Z, Y)))
+365. or(and(X, or(Y, Z)), and(Z, or(X, W))) -> or(and(Z, W), and(X, or(Y, Z)))
+366. or(X, or(Y, and(Z, or(W, not(X))))) -> or(X, or(Z, Y))
+  (hard) or(X, or(Y, Z)) = or(X, or(and(Y, W), or(Z, Y)))
+367. or(X, and(Y, and(Z, or(W, not(X))))) -> or(X, and(Y, Z))
+368. or(X, and(Y, and(Z, not(and(X, W))))) -> or(X, and(Y, Z))
+369. or(and(X, not(Y)), and(Y, or(Z, X))) -> or(X, and(Y, Z))
+370. or(X, or(Y, and(not(or(X, Y)), Z))) -> or(X, or(Y, Z))
+371. or(X, or(Y, and(Z, or(W, X)))) -> or(X, or(Y, and(Z, W)))
+372. or(X, or(Y, and(or(X, Z), W))) -> or(X, or(Y, and(Z, W)))
+373. or(X, and(or(Y, or(X, Z)), W)) -> or(X, and(W, or(Y, Z)))
+374. or(X, and(Y, and(or(X, Z), W))) -> or(X, and(Z, and(Y, W)))
+375. and(X, or(Y, or(and(X, Z), W))) -> and(X, or(Z, or(Y, W)))
+376. and(X, and(Y, or(and(X, Z), W))) -> and(X, and(Y, or(Z, W)))
+377. and(X, or(and(Y, and(X, Z)), W)) -> and(X, or(W, and(Y, Z)))
+378. and(X, and(Y, or(Z, and(W, X)))) -> and(X, and(Y, or(Z, W)))
+379. or(X, or(and(Y, or(X, Z)), W)) -> or(X, or(W, and(Y, Z)))
+380. or(X, and(Y, and(Z, or(W, X)))) -> or(X, and(W, and(Y, Z)))
+381. or(X, and(Y, or(Z, or(W, X)))) -> or(X, and(Y, or(Z, W)))
+382. and(X, or(Y, or(Z, and(W, X)))) -> and(X, or(W, or(Y, Z)))
+383. and(X, and(or(Y, and(X, Z)), W)) -> and(X, and(W, or(Y, Z)))
+384. and(X, or(Y, and(Z, and(W, X)))) -> and(X, or(Y, and(Z, W)))
+385. or(and(X, Y), or(and(Z, Y), W)) -> or(W, and(Y, or(Z, X)))
+386. and(or(X, Y), and(or(Z, Y), W)) -> and(W, or(Y, and(Z, X)))
+387. and(X, or(Y, and(Z, and(W, or(X, V))))) -> and(X, or(Y, and(Z, W)))
+388. and(shr(allones, X), or(Y, shr(Z, X))) -> or(shr(Z, X), and(Y, shr(allones, X)))
+389. and(shl(allones, X), or(Y, shl(Z, X))) -> or(shl(Z, X), and(Y, shl(allones, X)))
+390. or(X, and(Y, not(and(Z, and(X, W))))) -> or(X, Y)
+391. or(X, and(Y, or(Z, or(not(X), W)))) -> or(X, Y)
+392. or(X, and(or(Y, or(Z, not(X))), W)) -> or(X, W)
+393. or(not(and(X, Y)), and(Z, X)) -> or(Z, not(and(X, Y)))
+394. or(and(X, Y), not(and(Z, Y))) -> or(X, not(and(Y, Z)))
+395. or(X, and(Y, or(not(and(X, Z)), W))) -> or(X, Y)
+396. or(X, and(or(Y, not(and(X, Z))), W)) -> or(X, W)
+397. or(X, and(Y, or(Z, not(and(W, X))))) -> or(X, Y)
+398. or(X, and(or(Y, not(or(Y, X))), Z)) -> or(X, Z)
+399. or(not(and(X, Y)), and(Y, Z)) -> or(Z, not(and(Y, X)))
+400. or(and(X, not(Y)), and(Z, or(Y, X))) -> or(and(Y, Z), and(X, not(Y)))
+401. or(X, or(and(Y, Z), not(or(X, Y)))) -> or(X, or(Z, not(or(X, Y))))
+  (hard) and(X, and(or(Y, Z), and(W, Z))) = and(X, and(Z, W))
+402. or(X, and(or(and(Y, X), Z), W)) -> or(X, and(Z, W))
+403. and(X, or(and(or(Y, X), Z), W)) -> and(X, or(Z, W))
+  (simplifying rules with respect to one another...)
+  (delete rule 24)
+  (delete rule 28)
+  (delete rule 57)
+  (delete rule 58)
+404. add(X, one) -> neg(not(X))
+  (delete rule 63)
+  (delete rule 64)
+  (delete rule 65)
+  (delete rule 66)
+  (delete rule 67)
+405. add(one, X) -> neg(not(X))
+  (delete rule 70)
+  (delete rule 75)
+  (delete rule 76)
+  (delete rule 77)
+406. add(X, sub(Y, Z)) -> sub(X, sub(Z, Y))
+  (delete rule 78)
+  (delete rule 83)
+  (delete rule 84)
+  (delete rule 87)
+  (delete rule 88)
+  (delete rule 91)
+  (delete rule 94)
+407. add(sub(X, Y), Z) -> sub(X, sub(Y, Z))
+  (delete rule 95)
+  (delete rule 98)
+  (delete rule 99)
+  (delete rule 100)
+  (delete rule 102)
+  (delete rule 103)
+  (delete rule 107)
+  (delete rule 108)
+  (delete rule 109)
+  (delete rule 110)
+  (delete rule 113)
+  (delete rule 114)
+  (delete rule 121)
+  (delete rule 123)
+  (delete rule 124)
+  (delete rule 130)
+  (delete rule 136)
+  (delete rule 137)
+  (delete rule 140)
+  (delete rule 141)
+  (delete rule 145)
+  (delete rule 147)
+408. sub(add(X, Y), Z) -> sub(X, sub(Z, Y))
+  (delete rule 158)
+  (delete rule 161)
+  (delete rule 166)
+  (delete rule 174)
+  (delete rule 175)
+  (delete rule 176)
+  (delete rule 200)
+  (delete rule 202)
+  (delete rule 203)
+  (delete rule 232)
+  (delete rule 236)
+  (delete rule 243)
+  (delete rule 244)
+  (delete rule 245)
+  (delete rule 253)
+  (delete rule 254)
+  (delete rule 262)
+  (delete rule 266)
+  (delete rule 277)
+  (delete rule 282)
+  (delete rule 287)
+  (delete rule 289)
+  (delete rule 301)
+  (delete rule 304)
+  (delete rule 305)
+  (delete rule 307)
+  (delete rule 327)
+  (delete rule 330)
+  (delete rule 331)
+  (delete rule 345)
+  (delete rule 346)
+  (delete rule 347)
+  (delete rule 356)
+409. sub(X, sub(Y, sub(Z, add(Z, W)))) -> sub(X, add(Y, W))
+410. or(X, and(Y, or(Z, and(X, or(W, V))))) -> or(X, and(Z, Y))
+411. or(X, and(Y, or(X, not(Z)))) -> or(X, and(Y, not(Z)))
+412. or(X, or(X, not(Y))) -> or(X, not(Y))
+413. and(X, or(Y, and(Z, or(X, and(W, V))))) -> and(X, or(Z, Y))
+414. not(sub(X, sub(Y, add(Y, Z)))) -> not(add(X, Z))
+415. sub(X, sub(Y, add(Y, Z))) -> add(X, Z)
+416. sub(X, sub(Y, sub(Y, Z))) -> sub(X, Z)
+417. sub(X, sub(X, add(Y, Z))) -> add(Z, Y)
+418. or(and(X, Y), not(and(X, and(Z, Y)))) -> allones
+419. or(X, or(Y, or(Z, not(and(X, W))))) -> allones
+420. or(X, or(Y, not(and(Z, and(X, W))))) -> allones
+421. or(X, not(and(Y, and(Z, and(X, W))))) -> allones
+422. or(and(X, Y), and(not(Y), or(X, Z))) -> or(X, and(Z, not(Y)))
+423. or(X, and(Y, and(Y, not(Z)))) -> or(X, and(Y, not(Z)))
+424. and(X, and(X, not(Y))) -> and(X, not(Y))
+425. or(X, not(and(X, not(Y)))) -> allones
+426. or(not(X), and(X, not(Y))) -> or(not(X), not(Y))
+427. and(X, or(Y, and(X, not(Z)))) -> and(X, or(Y, not(Z)))
+428. or(X, or(X, and(Y, not(Z)))) -> or(X, and(Y, not(Z)))
+429. or(X, or(X, and(Y, Z))) -> or(X, and(Y, Z))
+430. or(X, or(X, shr(Y, Z))) -> or(X, shr(Y, Z))
+431. or(X, or(X, shl(Y, Z))) -> or(X, shl(Y, Z))
+432. and(X, and(X, or(Y, not(Z)))) -> and(X, or(Y, not(Z)))
+433. and(X, and(X, or(Y, Z))) -> and(X, or(Y, Z))
+434. and(X, and(X, shr(Y, Z))) -> and(X, shr(Y, Z))
+435. and(X, and(X, shl(Y, Z))) -> and(X, shl(Y, Z))
+436. or(X, not(and(X, or(Y, Z)))) -> allones
+437. and(X, and(X, and(Y, not(Z)))) -> and(X, and(Y, not(Z)))
+438. or(X, not(and(X, shr(Y, Z)))) -> allones
+439. or(X, not(and(X, shl(Y, Z)))) -> allones
+440. or(X, or(Y, not(and(or(X, Y), Z)))) -> allones
+441. or(shr(X, Y), not(shr(and(Z, X), Y))) -> allones
+442. or(shl(X, Y), not(shl(and(Z, X), Y))) -> allones
+  (hard) allones = or(X, or(Y, or(not(Z), or(W, Z))))
+443. or(X, or(Y, not(or(and(Y, Z), X)))) -> allones
+444. or(X, or(Y, not(or(and(Z, X), Y)))) -> allones
+445. or(X, or(Y, not(or(X, and(Z, Y))))) -> allones
+446. or(X, or(and(Y, Z), not(and(Y, or(X, Z))))) -> allones
+447. or(X, or(and(Y, Z), not(and(Z, or(X, Y))))) -> allones
+448. or(shr(allones, X), or(shr(Y, X), Z)) -> or(Z, shr(allones, X))
+449. or(shl(allones, X), or(shl(Y, X), Z)) -> or(Z, shl(allones, X))
+450. or(not(X), and(Y, or(X, or(Z, W)))) -> or(Y, not(X))
+451. or(X, or(Y, or(Z, not(or(X, or(Y, Z)))))) -> allones
+452. or(X, or(Y, and(Z, and(W, and(X, V))))) -> or(X, Y)
+453. and(X, and(Y, or(Z, or(W, or(X, V))))) -> and(X, Y)
+454. or(shr(allones, X), or(Y, not(shr(Z, X)))) -> allones
+455. or(shl(allones, X), or(Y, not(shl(Z, X)))) -> allones
+456. or(shl(allones, X), not(shl(shl(Y, X), Z))) -> allones
+457. or(shr(allones, X), not(and(Y, shr(Z, X)))) -> allones
+458. or(shl(allones, X), not(and(Y, shl(Z, X)))) -> allones
+459. or(shr(X, Y), and(shr(and(X, Z), Y), W)) -> shr(X, Y)
+460. or(shr(X, Y), and(Z, shr(and(W, X), Y))) -> shr(X, Y)
+461. or(shr(X, Y), shr(and(Z, and(W, X)), Y)) -> shr(X, Y)
+462. or(shl(X, Y), and(shl(and(X, Z), Y), W)) -> shl(X, Y)
+463. or(shl(X, Y), and(Z, shl(and(W, X), Y))) -> shl(X, Y)
+464. or(shl(X, Y), shl(and(Z, and(W, X)), Y)) -> shl(X, Y)
+465. or(X, and(Y, not(and(X, not(Z))))) -> or(X, Y)
+466. or(X, or(Y, or(Z, and(W, not(X))))) -> or(X, or(W, or(Y, Z)))
+467. or(X, or(Y, or(Y, Z))) -> or(X, or(Y, Z))
+468. or(X, or(X, or(Y, Z))) -> or(Y, or(X, Z))
+469. or(X, or(Y, X)) <-> or(Y, or(Y, X))
+470. or(X, or(X, Y)) -> or(X, Y)
+  (hard) or(Y, or(Z, or(X, Z))) = or(X, or(Y, or(X, Z)))
+  (hard) or(X, or(Y, Z)) = or(X, or(Y, or(Z, X)))
+  (hard) or(X, or(Z, not(Y))) = or(X, or(not(Y), or(Z, not(Y))))
+471. or(X, or(Y, and(Z, and(W, not(X))))) -> or(X, or(Y, and(Z, W)))
+472. or(X, and(Y, or(Z, and(W, not(X))))) -> or(X, and(Y, or(Z, W)))
+473. or(X, and(Y, and(Z, and(W, not(X))))) -> or(X, and(Y, and(Z, W)))
+474. sub(X, not(sub(Y, add(Z, X)))) -> neg(not(sub(Y, Z)))
+475. or(X, and(Y, and(Z, and(W, and(X, V))))) -> X
+476. and(X, or(Y, or(Z, or(W, or(X, V))))) -> X
+477. and(or(X, and(Y, Z)), or(Z, W)) -> or(and(Y, Z), and(X, or(Z, W)))
+478. or(and(X, and(X, Y)), and(Z, or(X, W))) -> or(and(X, Y), and(Z, or(X, W)))
+479. or(X, and(Y, or(X, and(Z, or(W, V))))) -> or(X, and(Y, and(Z, or(W, V))))
+480. and(X, or(Y, and(X, shr(and(Z, W), V)))) -> and(X, or(Y, shr(and(Z, W), V)))
+481. and(X, or(Y, and(X, shl(and(Z, W), V)))) -> and(X, or(Y, shl(and(Z, W), V)))
+482. and(X, or(Y, and(X, or(Z, and(W, V))))) -> and(X, or(Y, or(Z, and(W, V))))
+483. and(or(X, Y), or(Z, and(X, W))) -> or(and(X, W), and(Z, or(X, Y)))
+  (hard) or(and(Z, X), and(Y, or(Z, W))) = or(and(Y, or(W, Z)), and(Z, X))
+484. or(X, and(Y, and(Z, or(X, and(W, V))))) -> or(X, and(W, and(V, and(Y, Z))))
+485. and(X, or(Y, or(Z, and(X, or(W, V))))) -> and(X, or(W, or(V, or(Y, Z))))
+486. or(and(X, Y), and(Z, or(Y, W))) = and(or(X, Z), or(Y, and(Z, W)))
+487. and(X, or(Y, and(X, Z))) -> and(X, or(Y, Z))
+488. or(X, and(Y, or(X, Z))) -> or(X, and(Y, Z))
+489. or(X, and(Y, and(Y, Z))) -> or(X, and(Y, Z))
+490. or(and(X, and(X, Y)), Z) -> or(Z, and(X, Y))
+491. or(X, not(and(X, Y))) -> allones
+492. and(or(X, Y), or(Z, and(Y, W))) -> or(and(Y, W), and(Z, or(X, Y)))
+493. or(and(X, or(Y, Z)), and(Z, W)) = or(and(Z, or(X, W)), and(X, Y))
+  (hard) or(and(X, Y), and(Z, or(W, X))) = or(and(X, or(Y, Z)), and(Z, W))
+494. or(and(X, or(Y, Z)), and(Y, W)) = or(and(X, Z), and(Y, or(X, W)))
+  (hard) or(and(X, Y), and(Z, X)) = and(X, or(Y, Z))
+495. or(and(X, Y), and(Z, or(W, X))) = or(and(or(Z, Y), X), and(Z, W))
+  (hard) and(X, or(Y, Z)) = and(X, or(and(Y, W), or(Z, Y)))
+496. or(and(X, or(Y, Z)), and(Y, W)) = or(and(Z, X), and(Y, or(W, X)))
+  (hard) and(X, or(Y, Z)) = and(X, or(and(W, Y), or(Z, Y)))
+497. or(and(X, Y), and(Z, or(W, X))) = or(and(X, or(Z, Y)), and(W, Z))
+498. or(and(X, or(Y, and(Z, or(X, W)))), and(Y, V)) -> or(and(X, Z), and(Y, or(X, V)))
+499. or(and(X, Y), and(Z, or(X, W))) = or(and(or(Y, Z), X), and(Z, W))
+500. or(and(X, or(Y, Z)), and(Z, W)) = or(and(Y, X), and(Z, or(X, W)))
+
+Gave up on reaching the given resource limit.
+Here is the final rewrite system:
+  neg(zero) -> zero
+  neg(one) -> allones
+  neg(allones) -> one
+  not(zero) -> allones
+  not(allones) -> zero
+  add(X, Y) <-> add(Y, X)
+  add(X, zero) -> X
+  add(X, one) -> neg(not(X))
+  add(X, allones) -> not(neg(X))
+  add(zero, X) -> X
+  add(one, X) -> neg(not(X))
+  add(allones, X) -> not(neg(X))
+  neg(neg(X)) -> X
+  sub(X, X) -> zero
+  sub(X, zero) -> X
+  sub(X, one) -> not(neg(X))
+  sub(X, allones) -> neg(not(X))
+  sub(zero, X) -> neg(X)
+  sub(allones, X) -> not(X)
+  mul(X, Y) <-> mul(Y, X)
+  mul(X, zero) -> zero
+  mul(X, one) -> X
+  mul(zero, X) -> zero
+  mul(one, X) -> X
+  and(X, X) -> X
+  and(X, Y) <-> and(Y, X)
+  and(X, zero) -> zero
+  and(X, allones) -> X
+  and(zero, X) -> zero
+  and(allones, X) -> X
+  or(X, X) -> X
+  or(X, Y) <-> or(Y, X)
+  or(X, zero) -> X
+  or(X, allones) -> allones
+  or(zero, X) -> X
+  or(allones, X) -> allones
+  not(not(X)) -> X
+  xor(X, X) -> zero
+  xor(X, Y) <-> xor(Y, X)
+  xor(X, zero) -> X
+  xor(zero, X) -> X
+  shl(X, zero) -> X
+  shl(zero, X) -> zero
+  shr(X, zero) -> X
+  shr(zero, X) -> zero
+  add(X, neg(X)) -> zero
+  add(X, neg(Y)) -> sub(X, Y)
+  add(X, not(X)) -> allones
+  add(X, not(Y)) -> not(sub(Y, X))
+  add(neg(X), Y) -> sub(Y, X)
+  add(not(X), Y) -> not(sub(X, Y))
+  neg(sub(X, Y)) -> sub(Y, X)
+  neg(not(neg(X))) -> sub(one, X)
+  sub(X, neg(Y)) -> add(X, Y)
+  sub(X, not(Y)) <-> sub(Y, not(X))
+  sub(neg(X), Y) -> neg(add(X, Y))
+  sub(not(X), Y) -> not(add(X, Y))
+  or(X, not(X)) -> allones
+  add(X, sub(Y, Z)) -> sub(X, sub(Z, Y))
+  add(X, add(Y, Z)) <-> add(Y, add(X, Z))
+  add(add(X, Y), Z) -> add(X, add(Y, Z))
+  add(sub(X, Y), Z) -> sub(X, sub(Y, Z))
+  neg(not(add(X, Y))) -> sub(X, not(Y))
+  sub(X, add(Y, X)) -> neg(Y)
+  sub(X, sub(one, Y)) -> not(neg(add(X, Y)))
+  sub(X, not(neg(X))) -> one
+  sub(X, not(neg(Y))) -> neg(not(sub(X, Y)))
+  sub(X, sub(Y, Z)) <-> sub(Z, sub(Y, X))
+  sub(one, sub(X, Y)) -> neg(not(sub(Y, X)))
+  sub(add(X, Y), Z) -> sub(X, sub(Z, Y))
+  sub(sub(X, Y), Z) -> sub(X, add(Y, Z))
+  mul(X, shl(Y, Z)) -> shl(mul(X, Y), Z)
+  mul(X, mul(Y, Z)) <-> mul(Y, mul(X, Z))
+  mul(mul(X, Y), Z) -> mul(X, mul(Y, Z))
+  mul(shl(X, Y), Z) -> shl(mul(X, Z), Y)
+  and(X, and(Y, X)) -> and(X, Y)
+  and(X, and(Y, Z)) <-> and(Y, and(X, Z))
+  and(X, or(X, Y)) -> X
+  and(X, or(Y, X)) -> X
+  and(and(X, Y), Z) -> and(X, and(Y, Z))
+  or(X, and(X, Y)) -> X
+  or(X, and(Y, X)) -> X
+  or(X, or(Y, Z)) <-> or(Y, or(X, Z))
+  or(or(X, Y), Z) -> or(X, or(Y, Z))
+  xor(X, xor(Y, X)) -> Y
+  xor(X, xor(Y, Z)) <-> xor(Y, xor(X, Z))
+  xor(xor(X, Y), Z) -> xor(X, xor(Y, Z))
+  shl(shl(X, Y), Z) <-> shl(shl(X, Z), Y)
+  sub(X, sub(Y, not(Z))) -> not(sub(Y, sub(X, Z)))
+  sub(X, not(add(Y, Z))) <-> sub(Y, not(add(X, Z)))
+  sub(X, not(sub(Y, Z))) <-> sub(Y, not(sub(X, Z)))
+  sub(one, not(add(X, Y))) -> neg(not(sub(X, not(Y))))
+  and(X, and(X, not(Y))) -> and(X, not(Y))
+  or(X, and(Y, not(X))) -> or(X, Y)
+  or(X, and(not(X), Y)) -> or(X, Y)
+  or(X, or(Y, not(X))) -> allones
+  or(X, or(not(X), Y)) -> allones
+  or(X, not(and(Y, X))) -> allones
+  or(not(X), and(Y, X)) -> or(Y, not(X))
+  neg(not(sub(X, sub(Y, Z)))) -> sub(X, not(sub(Z, Y)))
+  sub(X, add(Y, add(Z, X))) -> neg(add(Y, Z))
+  sub(X, add(Y, add(X, Z))) -> neg(add(Z, Y))
+  sub(X, sub(X, add(Y, Z))) -> add(Z, Y)
+  sub(X, sub(Y, sub(Y, Z))) -> sub(X, Z)
+  sub(X, sub(Y, sub(Z, W))) <-> sub(Z, sub(Y, sub(X, W)))
+  sub(X, sub(Y, add(Z, W))) <-> sub(Z, sub(Y, add(X, W)))
+  and(X, and(X, or(Y, Z))) -> and(X, or(Y, Z))
+  and(X, and(X, shl(Y, Z))) -> and(X, shl(Y, Z))
+  and(X, and(X, shr(Y, Z))) -> and(X, shr(Y, Z))
+  and(X, and(Y, or(Z, X))) -> and(X, Y)
+  and(X, and(Y, or(X, Z))) -> and(X, Y)
+  and(X, and(or(X, Y), Z)) -> and(X, Z)
+  and(X, and(or(Y, X), Z)) -> and(X, Z)
+  and(X, or(Y, and(X, Z))) -> and(X, or(Y, Z))
+  and(X, or(Y, or(Z, X))) -> X
+  and(X, or(Y, and(Z, X))) -> and(X, or(Z, Y))
+  and(X, or(and(X, Y), Z)) -> and(X, or(Y, Z))
+  and(X, or(and(Y, X), Z)) -> and(X, or(Y, Z))
+  and(or(X, Y), or(X, Z)) -> or(X, and(Y, Z))
+  and(or(X, Y), or(Y, Z)) -> or(Y, and(X, Z))
+  and(or(X, Y), or(Z, Y)) -> or(Y, and(X, Z))
+  and(shl(X, Y), shl(Z, Y)) -> shl(and(X, Z), Y)
+  and(shr(X, Y), shr(Z, Y)) -> shr(and(X, Z), Y)
+  or(X, and(Y, and(Y, Z))) -> or(X, and(Y, Z))
+  or(X, and(Y, and(Z, X))) -> X
+  or(X, and(Y, or(X, Z))) -> or(X, and(Y, Z))
+  or(X, and(Y, or(Z, X))) -> or(X, and(Z, Y))
+  or(X, and(or(X, Y), Z)) -> or(X, and(Y, Z))
+  or(X, and(or(Y, X), Z)) -> or(X, and(Y, Z))
+  or(X, or(Y, and(Z, X))) -> or(X, Y)
+  or(X, or(Y, and(X, Z))) -> or(X, Y)
+  or(X, or(and(X, Y), Z)) -> or(X, Z)
+  or(X, or(and(Y, X), Z)) -> or(X, Z)
+  or(not(X), and(X, not(Y))) -> or(not(X), not(Y))
+  or(and(X, Y), and(X, Z)) -> and(X, or(Y, Z))
+  or(and(X, Y), and(Y, Z)) -> and(Y, or(X, Z))
+  or(and(X, Y), and(Z, Y)) -> and(Y, or(X, Z))
+  or(shl(X, Y), shl(allones, Y)) -> shl(allones, Y)
+  or(shl(allones, X), shl(Y, X)) -> shl(allones, X)
+  or(shr(X, Y), shr(allones, Y)) -> shr(allones, Y)
+  or(shr(allones, X), shr(Y, X)) -> shr(allones, X)
+  or(and(X, and(X, Y)), Z) -> or(Z, and(X, Y))
+  sub(X, not(sub(Y, add(X, Z)))) -> neg(not(sub(Y, Z)))
+  sub(X, not(sub(Y, add(Z, X)))) -> neg(not(sub(Y, Z)))
+  and(X, and(X, and(Y, not(Z)))) -> and(X, and(Y, not(Z)))
+  or(X, and(Y, and(Z, not(X)))) -> or(X, and(Y, Z))
+  or(X, and(Y, and(not(X), Z))) -> or(X, and(Y, Z))
+  or(X, and(Y, or(not(X), Z))) -> or(X, Y)
+  or(X, and(Y, not(and(Z, X)))) -> or(X, Y)
+  or(X, and(Y, or(Z, not(X)))) -> or(X, Y)
+  or(X, and(or(Y, not(X)), Z)) -> or(X, Z)
+  or(X, and(or(not(X), Y), Z)) -> or(X, Z)
+  or(X, and(not(and(X, Y)), Z)) -> or(X, Z)
+  or(X, and(not(and(Y, X)), Z)) -> or(X, Z)
+  or(X, or(Y, and(not(X), Z))) -> or(X, or(Y, Z))
+  or(X, or(Y, or(Z, not(X)))) -> allones
+  or(X, or(Y, or(not(X), Z))) -> allones
+  or(X, or(Y, not(and(Z, X)))) -> allones
+  or(X, or(Y, not(or(X, Y)))) -> allones
+  or(X, or(Y, and(Z, not(X)))) -> or(X, or(Z, Y))
+  or(X, or(Y, not(and(X, Z)))) -> allones
+  or(X, or(and(Y, not(X)), Z)) -> or(X, or(Y, Z))
+  or(X, or(and(not(X), Y), Z)) -> or(X, or(Z, Y))
+  or(X, or(not(and(X, Y)), Z)) -> allones
+  or(X, or(not(and(Y, X)), Z)) -> allones
+  or(X, not(and(Y, and(X, Z)))) -> allones
+  or(X, not(and(Y, and(Z, X)))) -> allones
+  or(not(X), and(Y, and(X, Z))) -> or(not(X), and(Z, Y))
+  or(not(X), and(Y, and(Z, X))) -> or(not(X), and(Z, Y))
+  or(not(X), or(Y, and(X, Z))) -> or(Z, or(Y, not(X)))
+  or(not(X), or(Y, and(Z, X))) -> or(Z, or(Y, not(X)))
+  or(not(X), or(and(X, Y), Z)) -> or(Z, or(Y, not(X)))
+  or(not(X), or(and(Y, X), Z)) -> or(Z, or(Y, not(X)))
+  or(not(X), and(Y, or(Z, X))) -> or(Y, not(X))
+  or(not(X), and(or(Y, X), Z)) -> or(Z, not(X))
+  or(not(X), and(or(X, Y), Z)) -> or(Z, not(X))
+  or(and(X, Y), not(and(Z, Y))) -> or(X, not(and(Y, Z)))
+  or(and(X, Y), not(and(Z, X))) -> or(Y, not(and(X, Z)))
+  or(shl(allones, X), not(shl(Y, X))) -> allones
+  or(shr(allones, X), not(shr(Y, X))) -> allones
+  or(not(and(X, Y)), and(Z, X)) -> or(Z, not(and(X, Y)))
+  or(not(and(X, Y)), and(Y, Z)) -> or(Z, not(and(Y, X)))
+  or(not(and(X, Y)), and(X, Z)) -> or(Z, not(and(Y, X)))
+  and(X, and(Y, and(Z, or(X, W)))) -> and(X, and(Y, Z))
+  and(X, and(Y, and(Z, or(W, X)))) -> and(X, and(Y, Z))
+  and(X, and(Y, and(or(X, Z), W))) -> and(X, and(Y, W))
+  and(X, and(Y, and(or(Z, X), W))) -> and(X, and(Y, W))
+  and(X, and(Y, or(Z, and(W, X)))) -> and(X, and(Y, or(Z, W)))
+  and(X, and(Y, or(Z, or(X, W)))) -> and(X, Y)
+  and(X, and(Y, or(Z, or(W, X)))) -> and(X, Y)
+  and(X, and(Y, or(and(X, Z), W))) -> and(X, and(Y, or(Z, W)))
+  and(X, and(Y, or(Z, and(X, W)))) -> and(X, and(Y, or(Z, W)))
+  and(X, and(or(Y, and(X, Z)), W)) -> and(X, and(W, or(Y, Z)))
+  and(X, and(or(Y, or(X, Z)), W)) -> and(X, W)
+  and(X, and(or(Y, or(Z, X)), W)) -> and(X, W)
+  and(X, or(Y, and(Z, and(W, X)))) -> and(X, or(Y, and(Z, W)))
+  and(X, or(Y, or(Z, or(X, W)))) -> X
+  and(X, or(Y, or(Z, or(W, X)))) -> X
+  and(X, or(Y, and(Z, or(W, X)))) -> and(X, or(Z, Y))
+  and(X, or(Y, and(or(X, Z), W))) -> and(X, or(W, Y))
+  and(X, or(Y, and(or(Z, X), W))) -> and(X, or(W, Y))
+  and(X, or(Y, or(Z, and(W, X)))) -> and(X, or(W, or(Y, Z)))
+  and(X, or(Y, or(and(X, Z), W))) -> and(X, or(Z, or(Y, W)))
+  and(X, or(Y, and(Z, and(X, W)))) -> and(X, or(Y, and(Z, W)))
+  and(X, or(and(Y, and(X, Z)), W)) -> and(X, or(W, and(Y, Z)))
+  and(X, or(and(Y, or(X, Z)), W)) -> and(X, or(Y, W))
+  and(X, or(and(Y, or(Z, X)), W)) -> and(X, or(Y, W))
+  and(X, or(and(or(X, Y), Z), W)) -> and(X, or(Z, W))
+  and(X, or(and(or(Y, X), Z), W)) -> and(X, or(Z, W))
+  and(or(X, Y), and(Z, or(W, X))) -> and(Z, or(X, and(Y, W)))
+  and(or(X, Y), and(Z, or(X, W))) -> and(Z, or(X, and(Y, W)))
+  and(or(X, Y), and(Z, or(Y, W))) -> and(Z, or(Y, and(X, W)))
+  and(or(X, Y), and(Z, or(W, Y))) -> and(Z, or(Y, and(X, W)))
+  and(or(X, Y), or(Z, or(X, W))) -> or(X, and(Y, or(Z, W)))
+  and(or(X, Y), or(Z, or(W, X))) -> or(X, and(Y, or(Z, W)))
+  and(or(X, Y), or(Z, or(Y, W))) -> or(Y, and(X, or(Z, W)))
+  and(or(X, Y), or(Z, or(W, Y))) -> or(Y, and(X, or(Z, W)))
+  and(or(X, Y), or(Z, and(W, X))) -> or(and(X, W), and(Z, or(Y, X)))
+  and(or(X, Y), or(and(X, Z), W)) -> or(and(X, Z), and(W, or(Y, X)))
+  and(or(X, Y), or(and(Z, X), W)) -> or(and(X, Z), and(W, or(Y, X)))
+  and(or(X, Y), and(or(Z, Y), W)) -> and(W, or(Y, and(Z, X)))
+  and(or(X, Y), and(or(X, Z), W)) -> and(W, or(X, and(Y, Z)))
+  and(or(X, Y), and(or(Y, Z), W)) -> and(W, or(Y, and(Z, X)))
+  and(shl(X, Y), and(Z, shl(W, Y))) -> and(Z, shl(and(X, W), Y))
+  and(shl(X, Y), or(Z, shl(allones, Y))) -> shl(X, Y)
+  and(shl(X, Y), or(shl(allones, Y), Z)) -> shl(X, Y)
+  and(shl(X, Y), shl(shl(Z, Y), W)) -> shl(and(X, shl(Z, W)), Y)
+  and(shl(X, Y), and(shl(Z, Y), W)) -> and(W, shl(and(X, Z), Y))
+  and(shl(allones, X), or(Y, shl(Z, X))) -> or(shl(Z, X), and(Y, shl(allones, X)))
+  and(shr(X, Y), and(Z, shr(W, Y))) -> and(Z, shr(and(X, W), Y))
+  and(shr(X, Y), or(Z, shr(allones, Y))) -> shr(X, Y)
+  and(shr(X, Y), or(shr(allones, Y), Z)) -> shr(X, Y)
+  and(shr(X, Y), and(shr(Z, Y), W)) -> and(W, shr(and(X, Z), Y))
+  and(shr(allones, X), or(Y, shr(Z, X))) -> or(shr(Z, X), and(Y, shr(allones, X)))
+  and(or(X, and(Y, Z)), or(Y, W)) -> or(and(Y, Z), and(X, or(W, Y)))
+  and(or(X, shl(allones, Y)), shl(Z, Y)) -> shl(Z, Y)
+  and(or(X, shr(allones, Y)), shr(Z, Y)) -> shr(Z, Y)
+  and(or(X, or(Y, Z)), or(Y, W)) -> or(Y, and(W, or(X, Z)))
+  and(or(X, or(Y, Z)), or(Z, W)) -> or(Z, and(W, or(X, Y)))
+  and(or(X, or(Y, Z)), or(W, Z)) -> or(Z, and(W, or(X, Y)))
+  and(or(shl(allones, X), Y), shl(Z, X)) -> shl(Z, X)
+  and(or(shr(allones, X), Y), shr(Z, X)) -> shr(Z, X)
+  and(shl(shl(X, Y), Z), shl(W, Y)) -> shl(and(W, shl(X, Z)), Y)
+  or(X, and(Y, and(Z, and(X, W)))) -> X
+  or(X, and(Y, and(Z, and(W, X)))) -> X
+  or(X, and(Y, or(Z, or(W, X)))) -> or(X, and(Y, or(Z, W)))
+  or(X, and(Y, not(and(X, not(Z))))) -> or(X, Y)
+  or(X, and(Y, and(Z, or(W, X)))) -> or(X, and(W, and(Y, Z)))
+  or(X, and(Y, and(or(X, Z), W))) -> or(X, and(Z, and(Y, W)))
+  or(X, and(Y, or(Z, and(W, X)))) -> or(X, and(Z, Y))
+  or(X, and(Y, or(and(X, Z), W))) -> or(X, and(W, Y))
+  or(X, and(Y, or(and(Z, X), W))) -> or(X, and(W, Y))
+  or(X, and(Y, or(Z, or(X, W)))) -> or(X, and(Y, or(Z, W)))
+  or(X, and(or(Y, and(X, Z)), W)) -> or(X, and(Y, W))
+  or(X, and(or(Y, and(Z, X)), W)) -> or(X, and(Y, W))
+  or(X, and(or(Y, or(X, Z)), W)) -> or(X, and(W, or(Y, Z)))
+  or(X, and(or(and(X, Y), Z), W)) -> or(X, and(Z, W))
+  or(X, and(or(and(Y, X), Z), W)) -> or(X, and(Z, W))
+  or(X, or(Y, and(Z, and(X, W)))) -> or(X, Y)
+  or(X, or(Y, and(Z, and(W, X)))) -> or(X, Y)
+  or(X, or(Y, and(Z, or(W, X)))) -> or(X, or(Y, and(Z, W)))
+  or(X, or(Y, and(or(X, Z), W))) -> or(X, or(Y, and(Z, W)))
+  or(X, or(Y, or(Z, and(X, W)))) -> or(X, or(Y, Z))
+  or(X, or(Y, or(Z, and(W, X)))) -> or(X, or(Y, Z))
+  or(X, or(Y, or(and(X, Z), W))) -> or(X, or(Y, W))
+  or(X, or(Y, or(and(Z, X), W))) -> or(X, or(Y, W))
+  or(X, or(Y, and(Z, or(X, W)))) -> or(X, or(Y, and(Z, W)))
+  or(X, or(and(Y, and(X, Z)), W)) -> or(X, W)
+  or(X, or(and(Y, and(Z, X)), W)) -> or(X, W)
+  or(X, or(and(Y, or(X, Z)), W)) -> or(X, or(W, and(Y, Z)))
+  or(and(X, Y), and(Z, and(X, W))) -> and(X, or(Y, and(Z, W)))
+  or(and(X, Y), and(Z, and(W, X))) -> and(X, or(Y, and(Z, W)))
+  or(and(X, Y), and(Z, or(X, W))) = or(and(Z, W), and(X, or(Y, Z)))
+  or(and(X, Y), and(Z, or(X, W))) = or(and(or(Y, Z), X), and(Z, W))
+  or(and(X, Y), and(Z, or(W, X))) = or(and(X, or(Z, Y)), and(W, Z))
+  or(and(X, Y), or(Z, and(W, X))) -> or(Z, and(X, or(Y, W)))
+  or(and(X, Y), or(Z, and(X, W))) -> or(Z, and(X, or(Y, W)))
+  or(and(X, Y), or(Z, and(Y, W))) -> or(Z, and(Y, or(X, W)))
+  or(and(X, Y), or(Z, and(W, Y))) -> or(Z, and(Y, or(X, W)))
+  or(and(X, Y), and(Z, and(Y, W))) -> and(Y, or(X, and(Z, W)))
+  or(and(X, Y), and(Z, and(W, Y))) -> and(Y, or(X, and(Z, W)))
+  or(and(X, Y), or(and(Z, Y), W)) -> or(W, and(Y, or(Z, X)))
+  or(and(X, Y), or(and(X, Z), W)) -> or(W, and(X, or(Y, Z)))
+  or(and(X, Y), or(and(Y, Z), W)) -> or(W, and(Y, or(Z, X)))
+  or(and(X, Y), and(Z, or(W, X))) = or(and(W, Z), and(X, or(Z, Y)))
+  or(and(X, Y), and(Z, or(W, X))) = or(and(Z, W), and(X, or(Y, Z)))
+  or(and(X, Y), and(Z, or(W, X))) = or(and(Z, W), and(or(Z, Y), X))
+  or(and(X, Y), and(Z, or(W, X))) = or(and(or(Z, Y), X), and(Z, W))
+  or(and(X, Y), and(Z, or(X, W))) = or(and(W, Z), and(X, or(Y, Z)))
+  or(and(X, Y), and(Z, or(X, W))) = or(and(Z, W), and(X, or(Z, Y)))
+  or(and(X, Y), and(Z, or(X, W))) = or(and(Z, W), and(or(Y, Z), X))
+  or(shl(X, Y), or(Z, shl(allones, Y))) -> or(Z, shl(allones, Y))
+  or(shl(X, Y), or(shl(allones, Y), Z)) -> or(Z, shl(allones, Y))
+  or(shl(X, Y), shl(and(Z, X), Y)) -> shl(X, Y)
+  or(shl(X, Y), shl(or(Z, X), Y)) -> shl(or(X, Z), Y)
+  or(shl(allones, X), and(Y, shl(Z, X))) -> shl(allones, X)
+  or(shl(allones, X), and(shl(Y, X), Z)) -> shl(allones, X)
+  or(shl(allones, X), or(Y, shl(Z, X))) -> or(Y, shl(allones, X))
+  or(shl(allones, X), shl(shl(Y, X), Z)) -> shl(allones, X)
+  or(shl(allones, X), or(shl(Y, X), Z)) -> or(Z, shl(allones, X))
+  or(shr(X, Y), or(Z, shr(allones, Y))) -> or(Z, shr(allones, Y))
+  or(shr(X, Y), or(shr(allones, Y), Z)) -> or(Z, shr(allones, Y))
+  or(shr(X, Y), shr(and(Z, X), Y)) -> shr(X, Y)
+  or(shr(X, Y), shr(or(Z, X), Y)) -> shr(or(X, Z), Y)
+  or(shr(allones, X), and(Y, shr(Z, X))) -> shr(allones, X)
+  or(shr(allones, X), and(shr(Y, X), Z)) -> shr(allones, X)
+  or(shr(allones, X), or(Y, shr(Z, X))) -> or(Y, shr(allones, X))
+  or(shr(allones, X), or(shr(Y, X), Z)) -> or(Z, shr(allones, X))
+  or(and(X, or(Y, Z)), and(Y, W)) = or(and(X, Z), and(Y, or(X, W)))
+  or(and(X, or(Y, Z)), and(Y, W)) = or(and(Z, X), and(Y, or(W, X)))
+  or(and(X, or(Y, Z)), and(Z, W)) = or(and(X, Y), and(Z, or(X, W)))
+  or(and(X, or(Y, Z)), and(Z, W)) = or(and(Y, X), and(Z, or(X, W)))
+  or(and(X, and(Y, Z)), and(Y, W)) -> and(Y, or(W, and(X, Z)))
+  or(and(X, and(Y, Z)), and(Z, W)) -> and(Z, or(W, and(X, Y)))
+  or(and(X, and(Y, Z)), and(W, Z)) -> and(Z, or(W, and(X, Y)))
+  or(X, and(Y, and(Z, and(W, not(X))))) -> or(X, and(Y, and(Z, W)))
+  or(X, and(Y, and(Z, or(W, not(X))))) -> or(X, and(Y, Z))
+  or(X, and(Y, and(Z, not(and(X, W))))) -> or(X, and(Y, Z))
+  or(X, and(Y, or(Z, or(not(X), W)))) -> or(X, Y)
+  or(X, and(Y, or(Z, not(and(W, X))))) -> or(X, Y)
+  or(X, and(Y, or(Z, not(or(Z, X))))) -> or(X, Y)
+  or(X, and(Y, or(not(and(X, Z)), W))) -> or(X, Y)
+  or(X, and(Y, not(and(Z, and(X, W))))) -> or(X, Y)
+  or(X, and(Y, or(Z, and(W, not(X))))) -> or(X, and(Y, or(Z, W)))
+  or(X, and(Y, or(Z, or(W, not(X))))) -> or(X, Y)
+  or(X, and(or(Y, or(Z, not(X))), W)) -> or(X, W)
+  or(X, and(or(Y, not(and(X, Z))), W)) -> or(X, W)
+  or(X, and(or(Y, not(or(X, Y))), Z)) -> or(X, Z)
+  or(X, and(or(Y, not(or(Y, X))), Z)) -> or(X, Z)
+  or(X, or(Y, and(Z, not(or(X, Y))))) -> or(X, or(Y, Z))
+  or(X, or(Y, and(not(or(X, Y)), Z))) -> or(X, or(Y, Z))
+  or(X, or(Y, or(Z, or(W, not(X))))) -> allones
+  or(X, or(Y, or(Z, or(not(X), W)))) -> allones
+  or(X, or(Y, or(Z, not(and(X, W))))) -> allones
+  or(X, or(Y, or(Z, not(or(X, Y))))) -> allones
+  or(X, or(Y, or(Z, not(or(X, Z))))) -> allones
+  or(X, or(Y, or(not(or(X, Y)), Z))) -> allones
+  or(X, or(Y, not(and(Z, and(X, W))))) -> allones
+  or(X, or(Y, not(and(Z, or(X, Y))))) -> allones
+  or(X, or(Y, not(and(or(X, Y), Z)))) -> allones
+  or(X, or(Y, not(or(Y, and(Z, X))))) -> allones
+  or(X, or(Y, not(or(and(X, Z), Y)))) -> allones
+  or(X, or(Y, not(or(and(Y, Z), X)))) -> allones
+  or(X, or(Y, not(or(and(Z, X), Y)))) -> allones
+  or(X, or(Y, or(Z, and(W, not(X))))) -> or(X, or(W, or(Y, Z)))
+  or(X, or(Y, not(or(X, and(Z, Y))))) -> allones
+  or(X, or(Y, and(Z, and(W, not(X))))) -> or(X, or(Y, and(Z, W)))
+  or(X, or(Y, and(Z, or(W, not(X))))) -> or(X, or(Z, Y))
+  or(X, or(and(Y, Z), not(or(X, Y)))) -> or(X, or(Z, not(or(X, Y))))
+  or(X, not(and(Y, and(Z, and(X, W))))) -> allones
+  or(not(X), and(Y, or(X, or(Z, W)))) -> or(Y, not(X))
+  or(and(X, Y), and(not(Y), or(X, Z))) -> or(X, and(Z, not(Y)))
+  or(and(X, Y), not(and(X, and(Z, Y)))) -> allones
+  or(shl(X, Y), not(shl(and(Z, X), Y))) -> allones
+  or(shl(allones, X), or(Y, not(shl(Z, X)))) -> allones
+  or(shl(allones, X), not(shl(shl(Y, X), Z))) -> allones
+  or(shl(allones, X), not(and(Y, shl(Z, X)))) -> allones
+  or(shr(X, Y), not(shr(and(Z, X), Y))) -> allones
+  or(shr(allones, X), or(Y, not(shr(Z, X)))) -> allones
+  or(shr(allones, X), not(and(Y, shr(Z, X)))) -> allones
+  or(and(X, not(Y)), and(Y, or(Z, X))) -> or(X, and(Y, Z))
+  or(and(X, not(Y)), and(Z, or(Y, X))) -> or(and(Y, Z), and(X, not(Y)))
+  and(X, and(Y, or(Z, or(W, or(X, V))))) -> and(X, Y)
+  and(X, or(Y, or(Z, or(W, or(X, V))))) -> X
+  and(X, or(Y, and(Z, or(X, and(W, V))))) -> and(X, or(Z, Y))
+  and(X, or(Y, or(Z, and(X, or(W, V))))) -> and(X, or(W, or(V, or(Y, Z))))
+  and(X, or(Y, and(Z, and(W, or(X, V))))) -> and(X, or(Y, and(Z, W)))
+  or(X, and(Y, and(Z, and(W, and(X, V))))) -> X
+  or(X, and(Y, and(Z, or(X, and(W, V))))) -> or(X, and(W, and(V, and(Y, Z))))
+  or(X, and(Y, or(Z, and(X, or(W, V))))) -> or(X, and(Z, Y))
+  or(X, or(Y, and(Z, and(W, and(X, V))))) -> or(X, Y)
+  or(shl(X, Y), and(Z, shl(and(W, X), Y))) -> shl(X, Y)
+  or(shl(X, Y), and(shl(and(X, Z), Y), W)) -> shl(X, Y)
+  or(shl(X, Y), shl(and(Z, and(X, W)), Y)) -> shl(X, Y)
+  or(shl(X, Y), shl(and(Z, and(W, X)), Y)) -> shl(X, Y)
+  or(shr(X, Y), and(Z, shr(and(W, X), Y))) -> shr(X, Y)
+  or(shr(X, Y), and(shr(and(X, Z), Y), W)) -> shr(X, Y)
+  or(shr(X, Y), shr(and(Z, and(X, W)), Y)) -> shr(X, Y)
+  or(shr(X, Y), shr(and(Z, and(W, X)), Y)) -> shr(X, Y)
+  or(and(X, or(Y, Z)), and(Y, or(X, W))) -> or(and(Y, W), and(X, or(Z, Y)))
+  or(and(X, or(Y, Z)), and(Y, or(W, X))) -> or(and(Y, W), and(X, or(Y, Z)))
+  or(and(X, or(Y, Z)), and(Z, or(X, W))) -> or(and(Z, W), and(X, or(Y, Z)))
+  or(and(X, or(Y, Z)), and(Z, or(W, X))) -> or(and(Z, W), and(X, or(Z, Y)))
+  or(X, or(Y, or(Z, not(or(X, or(Y, Z)))))) -> allones
+  or(X, or(and(Y, Z), not(and(Z, or(X, Y))))) -> allones
+  or(and(X, or(Y, and(Z, or(X, W)))), and(Y, V)) -> or(and(X, Z), and(Y, or(X, V)))
+
+RESULT: GaveUp (couldn't solve the problem).
+
+Execution time: 1.71535 seconds
+

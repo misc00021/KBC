@@ -6,4 +6,4 @@ cnf(associativity, axiom,
     X + (Y + Z) = (X + Y) + Z).
 
 cnf(goal, conjecture,
-    true = false).
+    X + -X = '0').

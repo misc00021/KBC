@@ -1,0 +1,213 @@
+Here is the input problem:
+  Axiom 1 (add_comm): add(X, Y) = add(Y, X).
+  Axiom 2 (add_zero): add(X, zero) = X.
+  Axiom 3 (mul_comm): mul(X, Y) = mul(Y, X).
+  Axiom 4 (mul_one): mul(X, one) = X.
+  Axiom 5 (mul_zero): mul(X, zero) = zero.
+  Axiom 6 (add_inv): add(X, neg(X)) = zero.
+  Axiom 7 (add_assoc): add(X, add(Y, Z)) = add(add(X, Y), Z).
+  Axiom 8 (mul_assoc): mul(X, mul(Y, Z)) = mul(mul(X, Y), Z).
+  Axiom 9 (distrib_left): mul(X, add(Y, Z)) = add(mul(X, Y), mul(X, Z)).
+  Axiom 10 (distrib_right): mul(add(X, Y), Z) = add(mul(X, Z), mul(Y, Z)).
+  Goal 1 (goal): true = false.
+
+1. add(X, Y) <-> add(Y, X)
+2. add(X, zero) -> X
+3. mul(X, Y) <-> mul(Y, X)
+4. mul(X, one) -> X
+5. mul(X, zero) -> zero
+6. add(X, neg(X)) -> zero
+7. add(add(X, Y), Z) -> add(X, add(Y, Z))
+8. mul(mul(X, Y), Z) -> mul(X, mul(Y, Z))
+9. add(mul(X, Y), mul(X, Z)) -> mul(X, add(Y, Z))
+10. add(mul(X, Y), mul(Z, Y)) -> mul(add(X, Z), Y)
+11. add(zero, X) -> X
+12. neg(zero) -> zero
+13. mul(one, X) -> X
+14. mul(zero, X) -> zero
+15. add(X, add(Y, Z)) <-> add(Y, add(X, Z))
+16. mul(X, mul(Y, Z)) <-> mul(Y, mul(X, Z))
+17. mul(X, add(Y, Y)) = mul(Y, add(X, X))
+18. mul(X, add(Y, one)) = add(X, mul(X, Y))
+19. mul(X, add(one, one)) = add(X, X)
+20. add(X, add(Y, neg(X))) -> Y
+21. mul(X, add(Y, Y)) = mul(add(X, X), Y)
+22. add(X, add(neg(X), Y)) -> Y
+23. neg(neg(X)) -> X
+24. add(X, mul(X, Y)) = mul(X, add(one, Y))
+25. add(X, mul(X, Y)) = mul(add(Y, one), X)
+26. mul(X, add(Y, one)) = add(X, mul(Y, X))
+27. add(X, X) = mul(add(one, one), X)
+28. mul(add(one, X), Y) = add(Y, mul(Y, X))
+29. mul(X, add(one, Y)) = add(X, mul(Y, X))
+30. mul(add(X, one), Y) = add(Y, mul(X, Y))
+  (hard) mul(Y, add(one, X)) = mul(add(X, one), Y)
+31. add(X, mul(X, neg(one))) -> zero
+32. mul(neg(X), neg(one)) -> X
+33. mul(X, neg(one)) -> neg(X)
+34. mul(neg(one), X) -> neg(X)
+35. mul(X, neg(Y)) -> neg(mul(X, Y))
+36. add(mul(X, Y), mul(Y, Z)) -> mul(Y, add(X, Z))
+37. mul(add(one, X), Y) = add(Y, mul(X, Y))
+  (hard) mul(add(one, X), Y) = mul(Y, add(X, one))
+38. add(X, add(Y, neg(add(X, Y)))) -> zero
+39. add(neg(one), neg(one)) -> neg(add(one, one))
+40. neg(add(X, neg(Y))) -> add(Y, neg(X))
+41. mul(neg(X), Y) -> neg(mul(X, Y))
+42. add(neg(X), neg(Y)) -> neg(add(X, Y))
+43. neg(add(neg(X), Y)) -> add(X, neg(Y))
+44. mul(X, mul(Y, add(Z, Z))) = mul(Y, mul(Z, add(X, X)))
+45. mul(X, mul(add(Y, Y), Z)) = mul(Y, mul(add(X, X), Z))
+46. add(X, add(Y, add(Z, neg(X)))) -> add(Y, Z)
+47. add(X, add(Y, mul(X, Z))) = add(mul(X, add(Z, one)), Y)
+48. add(X, mul(X, add(Y, Z))) = mul(X, add(Y, add(Z, one)))
+49. mul(add(X, mul(X, Y)), Z) -> mul(X, mul(add(Y, one), Z))
+50. add(X, add(Y, mul(X, Z))) = add(Y, mul(X, add(Z, one)))
+51. mul(X, mul(Y, add(Z, one))) = mul(Y, add(X, mul(X, Z)))
+52. mul(X, add(one, mul(Y, Z))) = add(X, mul(Y, mul(X, Z)))
+53. mul(X, add(Y, add(Y, one))) = add(X, mul(Y, add(X, X)))
+  (hard) add(X, add(X, one)) = add(one, add(X, X))
+54. mul(X, add(Y, add(one, one))) = add(X, add(X, mul(X, Y)))
+55. add(X, add(X, Y)) = add(mul(X, add(one, one)), Y)
+56. mul(X, mul(add(one, one), Y)) = mul(add(X, X), Y)
+57. add(X, add(Y, X)) = add(Y, mul(X, add(one, one)))
+58. mul(X, mul(Y, add(one, one))) = mul(Y, add(X, X))
+59. mul(add(X, X), Y) = mul(X, mul(Y, add(one, one)))
+60. mul(X, add(one, add(one, one))) = add(X, add(X, X))
+61. mul(add(one, add(one, one)), X) = add(X, add(X, X))
+62. mul(X, mul(add(Y, Y), Z)) = mul(add(X, X), mul(Y, Z))
+63. mul(X, mul(add(Y, Y), Z)) = mul(Z, mul(X, add(Y, Y)))
+64. mul(X, mul(add(Y, Y), Z)) = mul(Y, mul(X, add(Z, Z)))
+65. mul(X, mul(add(Y, Y), Z)) = mul(Y, mul(Z, add(X, X)))
+66. mul(X, mul(Y, add(Z, Z))) = mul(Z, mul(Y, add(X, X)))
+67. mul(X, mul(add(Y, Y), Z)) = mul(add(X, X), mul(Z, Y))
+  (hard) add(X, add(Y, mul(X, Z))) = add(X, add(mul(Z, X), Y))
+68. mul(X, add(Y, mul(Y, Z))) = mul(Y, add(X, mul(X, Z)))
+69. mul(X, add(Y, mul(Y, Z))) = mul(Y, add(X, mul(Z, X)))
+70. add(X, add(Y, add(neg(X), Z))) -> add(Y, Z)
+71. add(X, neg(add(X, X))) -> neg(X)
+72. mul(X, add(Y, add(Y, one))) = add(X, mul(add(X, X), Y))
+73. add(X, add(Y, mul(X, Z))) = add(mul(X, add(one, Z)), Y)
+74. add(X, add(Y, mul(X, Z))) = add(Y, mul(X, add(one, Z)))
+75. add(X, mul(X, add(Y, Z))) = mul(X, add(Y, add(one, Z)))
+76. mul(X, mul(Y, add(one, Z))) = mul(Y, add(X, mul(X, Z)))
+77. mul(X, add(one, add(Y, Y))) = add(X, mul(Y, add(X, X)))
+78. mul(X, add(one, add(Y, Y))) = add(X, mul(add(X, X), Y))
+79. add(X, add(Y, mul(X, Z))) = add(mul(add(Z, one), X), Y)
+80. add(X, mul(X, add(Y, Z))) = mul(add(Y, add(Z, one)), X)
+81. add(X, add(Y, mul(X, Z))) = add(Y, mul(add(Z, one), X))
+82. mul(add(one, mul(X, Y)), Z) = add(Z, mul(X, mul(Z, Y)))
+83. mul(add(X, one), mul(Y, Z)) = mul(Y, add(Z, mul(Z, X)))
+84. mul(add(X, add(X, one)), Y) = add(Y, mul(X, add(Y, Y)))
+85. add(X, mul(add(Y, Z), X)) = mul(X, add(Y, add(Z, one)))
+86. mul(add(X, mul(Y, X)), Z) -> mul(X, mul(add(Y, one), Z))
+87. add(X, add(Y, mul(Z, X))) = add(Y, mul(X, add(Z, one)))
+88. add(X, neg(add(X, one))) -> neg(one)
+89. add(X, neg(add(one, X))) -> neg(one)
+90. mul(X, mul(Y, add(Z, one))) = mul(Y, add(X, mul(Z, X)))
+91. add(mul(X, add(Y, one)), Z) = add(X, add(mul(X, Y), Z))
+92. add(mul(X, add(Y, one)), Z) = add(X, add(Z, mul(Y, X)))
+  (hard) add(X, mul(X, add(Y, Z))) = mul(X, add(Z, add(one, Y)))
+93. mul(X, mul(add(Y, one), Z)) = mul(Z, add(X, mul(X, Y)))
+94. add(X, mul(Y, add(Z, one))) = add(Y, add(mul(Y, Z), X))
+95. add(X, add(X, Y)) <-> add(Y, add(X, X))
+  (hard) mul(X, add(one, mul(Y, Z))) = add(X, mul(X, mul(Z, Y)))
+96. add(X, mul(Y, mul(X, Z))) = mul(X, add(one, mul(Z, Y)))
+97. mul(X, add(one, mul(Y, Z))) = add(X, mul(Y, mul(Z, X)))
+98. add(X, mul(Y, add(X, one))) <-> add(Y, mul(X, add(Y, one)))
+  (hard) mul(X, add(one, add(Y, Z))) = mul(X, add(Y, add(Z, one)))
+99. mul(add(X, mul(X, Y)), Z) -> mul(X, mul(Z, add(Y, one)))
+  (hard) mul(X, mul(Y, add(Z, one))) = mul(Y, mul(X, add(one, Z)))
+100. mul(X, mul(Y, add(Z, one))) = mul(Y, mul(add(Z, one), X))
+
+Gave up on reaching the given resource limit.
+Here is the final rewrite system:
+  neg(zero) -> zero
+  add(X, X) = mul(add(one, one), X)
+  add(X, Y) <-> add(Y, X)
+  add(X, zero) -> X
+  add(zero, X) -> X
+  neg(neg(X)) -> X
+  mul(X, Y) <-> mul(Y, X)
+  mul(X, zero) -> zero
+  mul(X, one) -> X
+  mul(zero, X) -> zero
+  mul(one, X) -> X
+  add(X, neg(X)) -> zero
+  mul(X, neg(Y)) -> neg(mul(X, Y))
+  mul(neg(X), Y) -> neg(mul(X, Y))
+  add(X, add(X, Y)) = add(mul(X, add(one, one)), Y)
+  add(X, add(Y, Z)) <-> add(Y, add(X, Z))
+  add(X, mul(X, Y)) = mul(X, add(one, Y))
+  add(X, add(Y, X)) = add(Y, mul(X, add(one, one)))
+  add(X, add(X, Y)) <-> add(Y, add(X, X))
+  add(neg(X), neg(Y)) -> neg(add(X, Y))
+  add(add(X, Y), Z) -> add(X, add(Y, Z))
+  neg(add(X, neg(Y))) -> add(Y, neg(X))
+  neg(add(neg(X), Y)) -> add(X, neg(Y))
+  mul(X, add(Y, Y)) = mul(add(X, X), Y)
+  mul(X, add(Y, one)) = add(X, mul(Y, X))
+  mul(X, add(one, Y)) = add(X, mul(Y, X))
+  mul(X, add(one, one)) = add(X, X)
+  mul(X, add(Y, Y)) = mul(Y, add(X, X))
+  mul(X, mul(Y, Z)) <-> mul(Y, mul(X, Z))
+  mul(add(X, X), Y) = mul(X, mul(Y, add(one, one)))
+  mul(add(X, one), Y) = add(Y, mul(X, Y))
+  mul(add(one, X), Y) = add(Y, mul(X, Y))
+  mul(mul(X, Y), Z) -> mul(X, mul(Y, Z))
+  add(X, add(Y, neg(X))) -> Y
+  add(X, add(neg(X), Y)) -> Y
+  add(X, neg(add(X, X))) -> neg(X)
+  add(X, neg(add(X, one))) -> neg(one)
+  add(X, neg(add(one, X))) -> neg(one)
+  add(X, add(Y, mul(X, Z))) = add(Y, mul(X, add(one, Z)))
+  add(X, add(Y, mul(Z, X))) = add(Y, mul(X, add(Z, one)))
+  add(X, add(Y, mul(X, Z))) = add(mul(X, add(one, Z)), Y)
+  add(X, add(Y, mul(X, Z))) = add(mul(add(Z, one), X), Y)
+  add(X, mul(X, add(Y, Z))) = mul(X, add(Y, add(Z, one)))
+  add(X, mul(X, add(Y, Z))) = mul(X, add(Y, add(one, Z)))
+  add(X, mul(Y, add(X, one))) <-> add(Y, mul(X, add(Y, one)))
+  add(X, mul(Y, add(Z, one))) = add(Y, add(mul(Y, Z), X))
+  add(X, mul(add(Y, Z), X)) = mul(X, add(Y, add(Z, one)))
+  add(X, add(Y, mul(X, Z))) = add(Y, mul(add(Z, one), X))
+  add(X, mul(X, add(Y, Z))) = mul(add(Y, add(Z, one)), X)
+  add(mul(X, Y), mul(X, Z)) -> mul(X, add(Y, Z))
+  add(mul(X, Y), mul(Z, Y)) -> mul(add(X, Z), Y)
+  add(mul(X, Y), mul(Y, Z)) -> mul(Y, add(X, Z))
+  add(mul(X, add(Y, one)), Z) = add(X, add(Z, mul(Y, X)))
+  add(mul(X, add(Y, one)), Z) = add(X, add(mul(X, Y), Z))
+  mul(X, add(Y, add(Y, one))) = add(X, mul(Y, add(X, X)))
+  mul(X, add(Y, add(one, one))) = add(X, add(X, mul(X, Y)))
+  mul(X, add(one, add(Y, Y))) = add(X, mul(Y, add(X, X)))
+  mul(X, add(one, add(Y, Y))) = add(X, mul(add(X, X), Y))
+  mul(X, add(one, add(one, one))) = add(X, add(X, X))
+  mul(X, add(one, mul(Y, Z))) = add(X, mul(Y, mul(X, Z)))
+  mul(X, add(one, mul(Y, Z))) = add(X, mul(Y, mul(Z, X)))
+  mul(X, mul(Y, add(Z, one))) = mul(Y, add(X, mul(X, Z)))
+  mul(X, mul(Y, add(Z, one))) = mul(Y, add(X, mul(Z, X)))
+  mul(X, mul(Y, add(one, Z))) = mul(Y, add(X, mul(X, Z)))
+  mul(X, mul(Y, add(one, one))) = mul(Y, add(X, X))
+  mul(X, mul(add(Y, Y), Z)) = mul(Y, mul(X, add(Z, Z)))
+  mul(X, mul(add(Y, Y), Z)) = mul(Y, mul(Z, add(X, X)))
+  mul(X, mul(add(Y, Y), Z)) = mul(add(X, X), mul(Y, Z))
+  mul(X, mul(add(Y, Y), Z)) = mul(add(X, X), mul(Z, Y))
+  mul(X, mul(add(Y, one), Z)) = mul(Z, add(X, mul(X, Y)))
+  mul(X, mul(add(one, one), Y)) = mul(add(X, X), Y)
+  mul(X, add(Y, mul(Y, Z))) = mul(Y, add(X, mul(Z, X)))
+  mul(X, add(Y, mul(Y, Z))) = mul(Y, add(X, mul(X, Z)))
+  mul(X, mul(Y, add(Z, Z))) = mul(Z, mul(Y, add(X, X)))
+  mul(X, mul(Y, add(Z, one))) = mul(Y, mul(add(Z, one), X))
+  mul(add(X, one), mul(Y, Z)) = mul(Y, add(Z, mul(Z, X)))
+  mul(add(X, add(X, one)), Y) = add(Y, mul(X, add(Y, Y)))
+  mul(add(X, mul(X, Y)), Z) -> mul(X, mul(Z, add(Y, one)))
+  mul(add(X, mul(Y, X)), Z) -> mul(X, mul(add(Y, one), Z))
+  mul(add(one, add(one, one)), X) = add(X, add(X, X))
+  mul(add(one, mul(X, Y)), Z) = add(Z, mul(X, mul(Z, Y)))
+  add(X, add(Y, add(Z, neg(X)))) -> add(Y, Z)
+  add(X, add(Y, add(neg(X), Z))) -> add(Y, Z)
+  add(X, add(Y, neg(add(X, Y)))) -> zero
+
+RESULT: GaveUp (couldn't solve the problem).
+
+Execution time: 0.184146 seconds
+

@@ -1,0 +1,248 @@
+Here is the input problem:
+  Axiom 1 (bvshr_zero): shr(X, zero) = X.
+  Axiom 2 (bvshr_zero_shift): shr(X, zero) = X.
+  Axiom 3 (bvshr_allzeros): shr(zero, X) = zero.
+  Axiom 4 (bvsub_self): sub(X, X) = zero.
+  Axiom 5 (bvsub_zero): sub(X, zero) = X.
+  Axiom 6 (bvsub_id): sub(zero, X) = neg(X).
+  Axiom 7 (bvshl_zero): shl(X, zero) = X.
+  Axiom 8 (bvshl_zero_shift): shl(X, zero) = X.
+  Axiom 9 (bvshl_allzeros): shl(zero, X) = zero.
+  Axiom 10 (bvmul_comm): mul(X, Y) = mul(Y, X).
+  Axiom 11 (bvmul_id): mul(X, one) = X.
+  Axiom 12 (bvmul_zero): mul(X, zero) = zero.
+  Axiom 13 (bvxor_self): xor(X, X) = zero.
+  Axiom 14 (bvxor_comm): xor(X, Y) = xor(Y, X).
+  Axiom 15 (bvxor_id): xor(X, zero) = X.
+  Axiom 16 (bvxor_zero): xor(X, zero) = X.
+  Axiom 17 (bvxor_allzeros): xor(X, zero) = X.
+  Axiom 18 (bvadd_comm): add(X, Y) = add(Y, X).
+  Axiom 19 (bvadd_id): add(X, zero) = X.
+  Axiom 20 (bvor_self): or(X, X) = X.
+  Axiom 21 (bvor_comm): or(X, Y) = or(Y, X).
+  Axiom 22 (bvor_id): or(X, zero) = X.
+  Axiom 23 (bvor_allzeros): or(X, zero) = X.
+  Axiom 24 (bvand_self): and(X, X) = X.
+  Axiom 25 (bvand_comm): and(X, Y) = and(Y, X).
+  Axiom 26 (bvand_id): and(X, allones) = X.
+  Axiom 27 (bvand_allones): and(X, allones) = X.
+  Axiom 28 (bvand_zero): and(X, zero) = zero.
+  Axiom 29 (bvsub_add): sub(X, neg(Y)) = add(X, Y).
+  Axiom 30 (bvnot_self): not(X) = sub(neg(X), one).
+  Axiom 31 (bvadd_neg): add(X, neg(X)) = zero.
+  Axiom 32 (bvsub_def): sub(X, Y) = add(X, neg(Y)).
+  Axiom 33 (bvadd_sub): add(X, neg(Y)) = sub(X, Y).
+  Axiom 34 (bvor_neg): or(X, not(X)) = allones.
+  Axiom 35 (bvshl_def): shl(X, Y) = mul(X, shl(one, Y)).
+  Axiom 36 (bvmul_assoc): mul(mul(X, Y), Z) = mul(X, mul(Y, Z)).
+  Axiom 37 (bvxor_assoc): xor(xor(X, Y), Z) = xor(X, xor(Y, Z)).
+  Axiom 38 (bvadd_assoc): add(add(X, Y), Z) = add(X, add(Y, Z)).
+  Axiom 39 (bvor_absorb): or(X, and(X, Y)) = X.
+  Axiom 40 (bvor_assoc): or(or(X, Y), Z) = or(X, or(Y, Z)).
+  Axiom 41 (bvand_absorb): and(X, or(X, Y)) = X.
+  Axiom 42 (bvand_assoc): and(and(X, Y), Z) = and(X, and(Y, Z)).
+  Axiom 43 (bvand_or): and(X, or(Y, Z)) = or(and(X, Y), and(X, Z)).
+  Axiom 44 (bvshr_and): shr(and(X, Y), Z) = and(shr(X, Z), shr(Y, Z)).
+  Axiom 45 (bvshl_and): shl(and(X, Y), Z) = and(shl(X, Z), shl(Y, Z)).
+  Axiom 46 (bvor_and): or(X, and(Y, Z)) = and(or(X, Y), or(X, Z)).
+  Axiom 47 (bvor_and_not): or(and(X, Y), and(X, not(Y))) = X.
+  Goal 1 (goal): true = false.
+
+1. shr(X, zero) -> X
+2. shr(zero, X) -> zero
+3. sub(X, X) -> zero
+4. sub(X, zero) -> X
+5. sub(zero, X) -> neg(X)
+6. shl(X, zero) -> X
+7. shl(zero, X) -> zero
+8. mul(X, Y) <-> mul(Y, X)
+9. mul(X, one) -> X
+10. mul(X, zero) -> zero
+11. xor(X, X) -> zero
+12. xor(X, Y) <-> xor(Y, X)
+13. xor(X, zero) -> X
+14. add(X, Y) <-> add(Y, X)
+15. add(X, zero) -> X
+16. or(X, X) -> X
+17. or(X, Y) <-> or(Y, X)
+18. or(X, zero) -> X
+19. and(X, X) -> X
+20. and(X, Y) <-> and(Y, X)
+21. and(X, allones) -> X
+22. and(X, zero) -> zero
+23. sub(X, neg(Y)) -> add(X, Y)
+24. sub(neg(X), one) -> not(X)
+25. add(X, neg(X)) -> zero
+26. add(X, neg(Y)) -> sub(X, Y)
+27. or(X, not(X)) -> allones
+28. mul(X, shl(one, Y)) -> shl(X, Y)
+29. mul(mul(X, Y), Z) -> mul(X, mul(Y, Z))
+30. xor(xor(X, Y), Z) -> xor(X, xor(Y, Z))
+31. add(add(X, Y), Z) -> add(X, add(Y, Z))
+32. or(X, and(X, Y)) -> X
+33. or(or(X, Y), Z) -> or(X, or(Y, Z))
+34. and(X, or(X, Y)) -> X
+35. and(and(X, Y), Z) -> and(X, and(Y, Z))
+36. or(and(X, Y), and(X, Z)) -> and(X, or(Y, Z))
+37. and(shr(X, Y), shr(Z, Y)) -> shr(and(X, Z), Y)
+38. and(shl(X, Y), shl(Z, Y)) -> shl(and(X, Z), Y)
+39. and(or(X, Y), or(X, Z)) -> or(X, and(Y, Z))
+40. neg(zero) -> zero
+41. mul(one, X) -> X
+42. xor(zero, X) -> X
+43. add(zero, X) -> X
+44. or(zero, X) -> X
+45. not(zero) -> allones
+46. and(allones, X) -> X
+47. neg(one) -> allones
+48. mul(zero, X) -> zero
+49. and(zero, X) -> zero
+50. neg(neg(X)) -> X
+51. neg(allones) -> one
+52. or(X, allones) -> allones
+53. not(allones) -> zero
+54. sub(X, one) -> not(neg(X))
+55. or(allones, X) -> allones
+56. add(neg(X), Y) -> sub(Y, X)
+57. add(one, allones) -> zero
+58. add(X, one) -> sub(X, allones)
+59. add(X, allones) -> not(neg(X))
+60. or(X, and(Y, X)) -> X
+61. and(X, or(Y, X)) -> X
+62. sub(allones, X) -> not(X)
+63. sub(neg(X), Y) <-> sub(neg(Y), X)
+64. or(X, or(X, Y)) -> or(X, Y)
+65. and(X, and(X, Y)) -> and(X, Y)
+66. xor(X, xor(X, Y)) -> Y
+67. add(one, X) -> sub(X, allones)
+68. add(allones, X) -> not(neg(X))
+69. xor(X, xor(Y, X)) -> Y
+70. mul(shl(one, X), Y) -> shl(Y, X)
+71. mul(X, mul(Y, Z)) <-> mul(Y, mul(X, Z))
+72. mul(X, shl(Y, Z)) -> shl(mul(X, Y), Z)
+73. xor(X, xor(Y, Z)) <-> xor(Y, xor(X, Z))
+74. add(X, add(Y, Z)) <-> add(Y, add(X, Z))
+75. add(X, sub(Y, X)) -> Y
+76. sub(not(X), allones) -> neg(X)
+77. add(X, sub(Y, Z)) -> sub(add(X, Y), Z)
+78. sub(add(X, Y), X) -> Y
+79. or(X, or(Y, Z)) <-> or(Y, or(X, Z))
+80. and(X, and(Y, Z)) <-> and(Y, and(X, Z))
+81. or(X, or(Y, X)) -> or(X, Y)
+82. and(X, and(Y, X)) -> and(X, Y)
+83. sub(add(X, Y), Y) -> X
+84. sub(sub(X, Y), X) -> neg(Y)
+85. add(X, not(X)) -> allones
+86. not(not(X)) -> X
+87. not(neg(sub(X, Y))) -> add(X, not(Y))
+88. sub(not(X), Y) <-> sub(not(Y), X)
+89. or(X, and(Y, not(X))) -> or(X, Y)
+90. or(X, or(Y, not(X))) -> allones
+91. sub(neg(X), allones) -> sub(one, X)
+92. mul(shl(X, Y), Z) -> shl(mul(X, Z), Y)
+93. shl(shl(X, Y), Z) <-> shl(shl(X, Z), Y)
+94. add(sub(X, Y), Z) -> sub(add(X, Z), Y)
+95. sub(sub(X, Y), Z) <-> sub(sub(X, Z), Y)
+96. or(X, or(not(X), Y)) -> allones
+97. sub(X, allones) -> neg(not(X))
+98. sub(X, sub(X, Y)) -> Y
+99. sub(not(one), X) -> not(neg(not(X)))
+100. sub(neg(X), not(X)) -> one
+
+Gave up on reaching the given resource limit.
+Here is the final rewrite system:
+  neg(zero) -> zero
+  neg(one) -> allones
+  neg(allones) -> one
+  not(zero) -> allones
+  not(allones) -> zero
+  add(X, Y) <-> add(Y, X)
+  add(X, zero) -> X
+  add(X, one) -> neg(not(X))
+  add(X, allones) -> not(neg(X))
+  add(zero, X) -> X
+  add(one, X) -> neg(not(X))
+  add(allones, X) -> not(neg(X))
+  neg(neg(X)) -> X
+  sub(X, X) -> zero
+  sub(X, zero) -> X
+  sub(X, one) -> not(neg(X))
+  sub(X, allones) -> neg(not(X))
+  sub(zero, X) -> neg(X)
+  sub(allones, X) -> not(X)
+  mul(X, Y) <-> mul(Y, X)
+  mul(X, zero) -> zero
+  mul(X, one) -> X
+  mul(zero, X) -> zero
+  mul(one, X) -> X
+  and(X, X) -> X
+  and(X, Y) <-> and(Y, X)
+  and(X, zero) -> zero
+  and(X, allones) -> X
+  and(zero, X) -> zero
+  and(allones, X) -> X
+  or(X, X) -> X
+  or(X, Y) <-> or(Y, X)
+  or(X, zero) -> X
+  or(X, allones) -> allones
+  or(zero, X) -> X
+  or(allones, X) -> allones
+  not(not(X)) -> X
+  xor(X, X) -> zero
+  xor(X, Y) <-> xor(Y, X)
+  xor(X, zero) -> X
+  xor(zero, X) -> X
+  shl(X, zero) -> X
+  shl(zero, X) -> zero
+  shr(X, zero) -> X
+  shr(zero, X) -> zero
+  add(X, neg(X)) -> zero
+  add(X, neg(Y)) -> sub(X, Y)
+  add(X, not(X)) -> allones
+  add(neg(X), Y) -> sub(Y, X)
+  neg(not(neg(X))) -> sub(one, X)
+  sub(X, neg(Y)) -> add(X, Y)
+  sub(neg(X), Y) <-> sub(neg(Y), X)
+  sub(not(X), Y) <-> sub(not(Y), X)
+  sub(not(one), X) -> not(neg(not(X)))
+  or(X, not(X)) -> allones
+  add(X, sub(Y, Z)) -> sub(add(X, Y), Z)
+  add(X, add(Y, Z)) <-> add(Y, add(X, Z))
+  add(add(X, Y), Z) -> add(X, add(Y, Z))
+  add(sub(X, Y), Z) -> sub(add(X, Z), Y)
+  sub(X, sub(X, Y)) -> Y
+  sub(neg(X), not(X)) -> one
+  sub(add(X, Y), Y) -> X
+  sub(sub(X, Y), X) -> neg(Y)
+  sub(sub(X, Y), Z) <-> sub(sub(X, Z), Y)
+  mul(X, shl(Y, Z)) -> shl(mul(X, Y), Z)
+  mul(X, mul(Y, Z)) <-> mul(Y, mul(X, Z))
+  mul(mul(X, Y), Z) -> mul(X, mul(Y, Z))
+  mul(shl(X, Y), Z) -> shl(mul(X, Z), Y)
+  and(X, and(Y, X)) -> and(X, Y)
+  and(X, and(Y, Z)) <-> and(Y, and(X, Z))
+  and(X, or(X, Y)) -> X
+  and(X, or(Y, X)) -> X
+  and(and(X, Y), Z) -> and(X, and(Y, Z))
+  or(X, and(X, Y)) -> X
+  or(X, and(Y, X)) -> X
+  or(X, or(Y, X)) -> or(X, Y)
+  or(X, or(Y, Z)) <-> or(Y, or(X, Z))
+  or(or(X, Y), Z) -> or(X, or(Y, Z))
+  not(neg(sub(X, Y))) -> add(X, not(Y))
+  xor(X, xor(Y, X)) -> Y
+  xor(X, xor(Y, Z)) <-> xor(Y, xor(X, Z))
+  xor(xor(X, Y), Z) -> xor(X, xor(Y, Z))
+  shl(shl(X, Y), Z) <-> shl(shl(X, Z), Y)
+  or(X, and(Y, not(X))) -> or(X, Y)
+  or(X, or(Y, not(X))) -> allones
+  or(X, or(not(X), Y)) -> allones
+  and(or(X, Y), or(X, Z)) -> or(X, and(Y, Z))
+  and(shl(X, Y), shl(Z, Y)) -> shl(and(X, Z), Y)
+  and(shr(X, Y), shr(Z, Y)) -> shr(and(X, Z), Y)
+  or(and(X, Y), and(X, Z)) -> and(X, or(Y, Z))
+
+RESULT: GaveUp (couldn't solve the problem).
+
+Execution time: 0.0559235 seconds
+

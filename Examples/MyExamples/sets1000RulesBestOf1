@@ -1,0 +1,70 @@
+Here is the input problem:
+  Axiom 1 (diff_self): diff(X, X) = empty.
+  Axiom 2 (diff_full): diff(X, full) = empty.
+  Axiom 3 (diff_empty): diff(X, empty) = X.
+  Axiom 4 (union_self): union(X, X) = X.
+  Axiom 5 (union_comm): union(X, Y) = union(Y, X).
+  Axiom 6 (union_full): union(X, full) = full.
+  Axiom 7 (union_empty): union(X, empty) = X.
+  Axiom 8 (inter_self): inter(X, X) = X.
+  Axiom 9 (inter_comm): inter(X, Y) = inter(Y, X).
+  Axiom 10 (inter_full): inter(X, full) = X.
+  Axiom 11 (inter_empty): inter(X, empty) = empty.
+  Axiom 12 (union_assoc): union(union(X, Y), Z) = union(X, union(Y, Z)).
+  Axiom 13 (inter_assoc): inter(inter(X, Y), Z) = inter(X, inter(Y, Z)).
+  Goal 1 (goal): true = false.
+
+1. diff(X, X) -> empty
+2. diff(X, full) -> empty
+3. diff(X, empty) -> X
+4. union(X, X) -> X
+5. union(X, Y) <-> union(Y, X)
+6. union(X, full) -> full
+7. union(X, empty) -> X
+8. inter(X, X) -> X
+9. inter(X, Y) <-> inter(Y, X)
+10. inter(X, full) -> X
+11. inter(X, empty) -> empty
+12. union(union(X, Y), Z) -> union(X, union(Y, Z))
+13. inter(inter(X, Y), Z) -> inter(X, inter(Y, Z))
+14. union(empty, X) -> X
+15. inter(full, X) -> X
+16. union(full, X) -> full
+17. inter(empty, X) -> empty
+18. union(X, union(X, Y)) -> union(X, Y)
+19. inter(X, inter(X, Y)) -> inter(X, Y)
+20. union(X, union(Y, Z)) <-> union(Y, union(X, Z))
+21. inter(X, inter(Y, Z)) <-> inter(Y, inter(X, Z))
+22. union(X, union(Y, X)) -> union(X, Y)
+23. inter(X, inter(Y, X)) -> inter(X, Y)
+  (hard) union(X, union(Y, Z)) = union(X, union(Y, union(X, Z)))
+  (hard) inter(X, inter(Y, Z)) = inter(X, inter(Y, inter(X, Z)))
+
+Gave up on reaching the given resource limit.
+Here is the final rewrite system:
+  union(X, X) -> X
+  union(X, Y) <-> union(Y, X)
+  union(X, empty) -> X
+  union(X, full) -> full
+  union(empty, X) -> X
+  union(full, X) -> full
+  inter(X, X) -> X
+  inter(X, Y) <-> inter(Y, X)
+  inter(X, empty) -> empty
+  inter(X, full) -> X
+  inter(empty, X) -> empty
+  inter(full, X) -> X
+  diff(X, X) -> empty
+  diff(X, empty) -> X
+  diff(X, full) -> empty
+  union(X, union(Y, X)) -> union(X, Y)
+  union(X, union(Y, Z)) <-> union(Y, union(X, Z))
+  union(union(X, Y), Z) -> union(X, union(Y, Z))
+  inter(X, inter(Y, X)) -> inter(X, Y)
+  inter(X, inter(Y, Z)) <-> inter(Y, inter(X, Z))
+  inter(inter(X, Y), Z) -> inter(X, inter(Y, Z))
+
+RESULT: GaveUp (couldn't solve the problem).
+
+Execution time: 0.0450366 seconds
+
