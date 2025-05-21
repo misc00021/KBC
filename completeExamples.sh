@@ -2,7 +2,7 @@
 
 #limited by rules
 for file in Examples/MyExamples/*.p; do
-        for i in 100 500 1000; do
+        for i in 100 500 1000 50000; do
             for j in 1 10; do
                 start=$(date +%s.%N)
                 twee --complete --max-rules $i --random-mode-best-of $j "$file" > "${file%.*}${i}RulesBestOf${j}";
