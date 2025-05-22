@@ -1,0 +1,257 @@
+Here is the input problem:
+  Axiom 1 (types17): neg(X) = neg(X).
+  Axiom 2 (types18): true = true.
+  Axiom 3 (types19): false = false.
+  Axiom 4 (types15): 1 = 1.
+  Axiom 5 (types14): 0 = 0.
+  Axiom 6 (types16): neg(X) = neg(X).
+  Axiom 7 (one_def): one = c(1, 0).
+  Axiom 8 (zero_def): zero = c(0, 0).
+  Axiom 9 (real_add_comm): X + Y = Y + X.
+  Axiom 10 (add_inv_def): X + neg(X) = 0.
+  Axiom 11 (real_add_inv): X + neg(X) = 0.
+  Axiom 12 (add_id_left): 0 + X = X.
+  Axiom 13 (real_add_id): 0 + X = X.
+  Axiom 14 (real_mul_comm): X * Y = Y * X.
+  Axiom 15 (mul_id_left): 1 * X = X.
+  Axiom 16 (real_mul_id): 1 * X = X.
+  Axiom 17 (types3): real(X) = real(X).
+  Axiom 18 (types4): imag(X) = imag(X).
+  Axiom 19 (types20): X = X.
+  Axiom 20 (neg_def): cneg(c(X, Y)) = c(neg(X), neg(Y)).
+  Axiom 21 (types13): X - Y = X - Y.
+  Axiom 22 (types12): X - Y = X - Y.
+  Axiom 23 (types2): c(X, Y) = c(X, Y).
+  Axiom 24 (types1): c(X, Y) = c(X, Y).
+  Axiom 25 (types7): X + Y = X + Y.
+  Axiom 26 (types6): X + Y = X + Y.
+  Axiom 27 (types10): X * Y = X * Y.
+  Axiom 28 (types9): X * Y = X * Y.
+  Axiom 29 (types11): X - Y = X - Y.
+  Axiom 30 (types5): X + Y = X + Y.
+  Axiom 31 (types8): X * Y = X * Y.
+  Axiom 32 (real_add_assoc): (X + Y) + Z = X + (Y + Z).
+  Axiom 33 (real_mul_assoc): (X * Y) * Z = X * (Y * Z).
+  Axiom 34 (plus_def): plus(c(X, Y), c(Z, W)) = c(X + Z, Y + W).
+  Axiom 35 (real_dist): X * (Y + Z) = (X * Y) + (X * Z).
+  Axiom 36 (add_real): real(plus(c(X, Y), c(Z, W))) = X + Z.
+  Axiom 37 (mul_real): real(times(c(X, Y), c(Z, W))) = (X * Z) - (Y * W).
+  Axiom 38 (add_imag): imag(plus(c(X, Y), c(Z, W))) = Y + W.
+  Axiom 39 (mul_imag): imag(times(c(X, Y), c(Z, W))) = (X * W) + (Y * Z).
+  Axiom 40 (times_def): times(c(X, Y), c(Z, W)) = c((X * Z) - (Y * W), (X * W) + (Y * Z)).
+  Goal 1 (goal): true = false.
+
+1. neg(X) -> neg(X)
+2. true -> true
+3. false -> false
+4. 1 -> 1
+5. 0 -> 0
+6. neg(X) -> neg(X)
+7. c(1, 0) -> one
+8. c(0, 0) -> zero
+9. X + Y <-> Y + X
+10. X + neg(X) -> 0
+11. 0 + X -> X
+12. X * Y <-> Y * X
+13. 1 * X -> X
+14. real(X) -> real(X)
+15. imag(X) -> imag(X)
+16. X -> X
+17. cneg(c(X, Y)) -> c(neg(X), neg(Y))
+18. X - Y -> X - Y
+19. X - Y -> X - Y
+20. c(X, Y) -> c(X, Y)
+21. c(X, Y) -> c(X, Y)
+22. X + Y -> X + Y
+23. X + Y -> X + Y
+24. X * Y -> X * Y
+25. X * Y -> X * Y
+26. X - Y -> X - Y
+27. X + Y -> X + Y
+28. X * Y -> X * Y
+29. (X + Y) + Z -> X + (Y + Z)
+30. (X * Y) * Z -> X * (Y * Z)
+31. c(X + Y, Z + W) -> plus(c(X, Z), c(Y, W))
+32. (X * Y) + (X * Z) -> X * (Y + Z)
+33. real(plus(c(X, Y), c(Z, W))) -> X + Z
+34. real(times(c(X, Y), c(Z, W))) -> (X * Z) - (Y * W)
+35. imag(plus(c(X, Y), c(Z, W))) -> Y + W
+36. imag(times(c(X, Y), c(Z, W))) -> (X * W) + (Y * Z)
+37. c((X * Y) - (Z * W), (X * W) + (Z * Y)) -> times(c(X, Z), c(Y, W))
+38. neg(0) -> 0
+39. X + 0 -> X
+40. X * 1 -> X
+41. cneg(zero) -> zero
+42. c(neg(1), 0) -> cneg(one)
+43. X + (Y + Z) <-> Y + (X + Z)
+44. X * (Y * Z) <-> Y * (X * Z)
+45. X + (Y + neg(X)) -> Y
+46. real(plus(zero, c(X, Y))) -> X
+47. imag(plus(one, c(X, Y))) -> Y
+48. imag(plus(zero, c(X, Y))) -> Y
+49. real(plus(one, c(X, Y))) -> X + 1
+50. real(plus(c(X, Y), one)) -> X + 1
+51. real(plus(c(X, Y), zero)) -> X
+52. imag(plus(c(X, Y), one)) -> Y
+53. imag(plus(c(X, Y), zero)) -> Y
+54. real(times(one, c(X, Y))) -> X - (Y * 0)
+55. imag(times(one, c(X, Y))) -> Y + (X * 0)
+56. imag(times(zero, c(X, Y))) -> 0 * (X + Y)
+57. (X * Y) + (Y * Z) -> Y * (X + Z)
+58. (X * Y) + (Z * X) -> X * (Y + Z)
+59. X + (Y + neg(X + Y)) -> 0
+60. plus(c(0, X), c(Y, Z)) -> c(Y, X + Z)
+61. plus(c(X, 0), c(Y, Z)) -> c(X + Y, Z)
+62. plus(c(X, Y), c(Z, W)) <-> plus(c(Z, Y), c(X, W))
+63. plus(c(X, Y), c(Z, W)) <-> plus(c(X, W), c(Z, Y))
+64. real(times(c(X, Y), one)) -> X - (Y * 0)
+65. (X * 0) - (Y * 0) -> real(times(zero, c(X, Y)))
+66. real(times(c(X, Y), zero)) -> real(times(zero, c(X, Y)))
+67. imag(times(c(X, Y), one)) -> Y + (X * 0)
+68. (X * 0) + (Y * 0) -> imag(times(c(X, Y), zero))
+69. plus(c(X, Y), c(neg(X), Z)) -> c(0, Y + Z)
+70. plus(c(X, Y), c(Z, neg(Y))) -> c(X + Z, 0)
+71. (X * Y) + (Z + (X * W)) -> Z + (X * (Y + W))
+72. cneg(plus(c(X, Y), c(Z, W))) -> c(neg(X + Z), neg(Y + W))
+73. plus(c(X, Y), c(Z + W, V)) <-> plus(c(W, Y), c(X + Z, V))
+74. plus(c(X, Y), c(Z, W + V)) <-> plus(c(X, V), c(Z, Y + W))
+75. c(X - (Y * Z), Y + (X * Z)) -> times(c(1, Z), c(X, Y))
+76. c((X * Y) - Z, Y + (X * Z)) -> times(c(X, 1), c(Y, Z))
+77. plus(c(X * Y, Z), c(X * W, V)) -> c(X * (Y + W), Z + V)
+78. plus(c(X, Y * Z), c(W, Y * V)) -> c(X + W, Y * (Z + V))
+79. real(plus(plus(c(X, Y), c(Z, W)), c(V, U))) -> X + (Z + V)
+80. real(plus(c(X, Y), plus(c(Z, W), c(V, U)))) -> X + (Z + V)
+81. imag(plus(plus(c(X, Y), c(Z, W)), c(V, U))) -> U + (Y + W)
+82. imag(plus(c(X, Y), plus(c(Z, W), c(V, U)))) -> W + (U + Y)
+83. real(plus(times(c(X, Y), c(Z, W)), c(V, U))) -> V + ((X * Z) - (Y * W))
+84. real(plus(c(X, Y), times(c(Z, W), c(V, U)))) -> X + ((Z * V) - (W * U))
+85. imag(plus(times(c(X, Y), c(Z, W)), c(V, U))) -> U + ((X * W) + (Y * Z))
+86. imag(plus(c(X, Y), times(c(Z, W), c(V, U)))) -> Y + ((V * W) + (U * Z))
+87. c((X * Y) - (X * Z), X * (Y + Z)) -> times(c(X, X), c(Y, Z))
+88. real(times(plus(c(X, Y), c(Z, W)), c(V, U))) -> (V * (X + Z)) - (U * (Y + W))
+89. real(times(c(X, Y), plus(c(Z, W), c(V, U)))) -> (X * (Z + V)) - (Y * (W + U))
+90. imag(times(plus(c(X, Y), c(Z, W)), c(V, U))) -> (U * (X + Z)) + (V * (Y + W))
+91. imag(times(c(X, Y), plus(c(Z, W), c(V, U)))) -> (X * (W + U)) + (Y * (Z + V))
+92. c((X * Y) - (Z * W), (Z * Y) + (X * W)) -> times(c(X, Z), c(Y, W))
+93. c((X * Y) - (Z * W), (Y * W) + (Z * X)) -> times(c(Y, Z), c(X, W))
+94. c((X * Y) - (Z * W), (X * Z) + (W * Y)) -> times(c(X, W), c(Y, Z))
+95. c((X * Y) - (Z * W), (W * X) + (Z * Y)) -> times(c(X, Z), c(Y, W))
+96. c((X * Y) - (Z * W), (X * W) + (Y * Z)) -> times(c(X, Z), c(Y, W))
+97. c(neg((X * Y) - (Z * W)), neg((X * W) + (Y * Z))) -> cneg(times(c(X, Z), c(Y, W)))
+98. c((X * (Y * Z)) - (W * V), (W * Z) + (X * (Y * V))) -> times(c(X * Y, W), c(Z, V))
+99. c((X * Y) - (Z * (W * V)), (X * V) + (Z * (W * Y))) -> times(c(X, Z * W), c(Y, V))
+100. (X * ((Y * Z) - (W * V))) - (U * ((W * Z) + (V * Y))) -> real(times(times(c(Z, V), c(Y, W)), c(X, U)))
+101. real(times(times(c(X, Y), c(Z, W)), c(V, U))) = real(times(c(V, U), times(c(X, Y), c(Z, W))))
+102. (X * ((Y * Z) + (W * V))) + (U * ((V * Z) - (Y * W))) -> imag(times(times(c(Z, W), c(V, Y)), c(X, U)))
+103. (X * ((Y * Z) - (W * V))) + (U * ((Y * W) + (V * Z))) -> imag(times(c(U, X), times(c(Z, W), c(Y, V))))
+
+Gave up on reaching the given resource limit.
+Here is the final rewrite system:
+  neg(0) -> 0
+  0 -> 0
+  1 -> 1
+  true -> true
+  false -> false
+  cneg(zero) -> zero
+  neg(X) -> neg(X)
+  neg(X) -> neg(X)
+  c(0, 0) -> zero
+  c(1, 0) -> one
+  X -> X
+  real(X) -> real(X)
+  imag(X) -> imag(X)
+  X + Y <-> Y + X
+  X + 0 -> X
+  0 + X -> X
+  X * Y <-> Y * X
+  X * 1 -> X
+  1 * X -> X
+  c(neg(1), 0) -> cneg(one)
+  X + neg(X) -> 0
+  c(X, Y) -> c(X, Y)
+  c(X, Y) -> c(X, Y)
+  X + Y -> X + Y
+  X * Y -> X * Y
+  X - Y -> X - Y
+  X + Y -> X + Y
+  X + Y -> X + Y
+  X * Y -> X * Y
+  X * Y -> X * Y
+  X - Y -> X - Y
+  X - Y -> X - Y
+  cneg(c(X, Y)) -> c(neg(X), neg(Y))
+  X + (Y + Z) <-> Y + (X + Z)
+  (X + Y) + Z -> X + (Y + Z)
+  X * (Y * Z) <-> Y * (X * Z)
+  (X * Y) * Z -> X * (Y * Z)
+  X + (Y + neg(X)) -> Y
+  real(plus(zero, c(X, Y))) -> X
+  real(plus(one, c(X, Y))) -> X + 1
+  real(plus(c(X, Y), zero)) -> X
+  real(plus(c(X, Y), one)) -> X + 1
+  real(times(one, c(X, Y))) -> X - (Y * 0)
+  real(times(c(X, Y), zero)) -> real(times(zero, c(X, Y)))
+  real(times(c(X, Y), one)) -> X - (Y * 0)
+  imag(plus(zero, c(X, Y))) -> Y
+  imag(plus(one, c(X, Y))) -> Y
+  imag(plus(c(X, Y), zero)) -> Y
+  imag(plus(c(X, Y), one)) -> Y
+  imag(times(zero, c(X, Y))) -> 0 * (X + Y)
+  imag(times(one, c(X, Y))) -> Y + (X * 0)
+  imag(times(c(X, Y), one)) -> Y + (X * 0)
+  c(X + Y, Z + W) -> plus(c(X, Z), c(Y, W))
+  (X * Y) + (X * Z) -> X * (Y + Z)
+  (X * Y) + (Z * X) -> X * (Y + Z)
+  (X * 0) + (Y * 0) -> imag(times(c(X, Y), zero))
+  (X * Y) + (Y * Z) -> Y * (X + Z)
+  (X * 0) - (Y * 0) -> real(times(zero, c(X, Y)))
+  plus(c(X, Y), c(Z, 0)) -> c(X + Z, Y)
+  plus(c(X, Y), c(0, Z)) -> c(X, Y + Z)
+  plus(c(X, Y), c(Z, W)) <-> plus(c(Z, Y), c(X, W))
+  plus(c(X, Y), c(Z, W)) <-> plus(c(X, W), c(Z, Y))
+  X + (Y + neg(X + Y)) -> 0
+  plus(c(X, Y), c(Z, neg(Y))) -> c(X + Z, 0)
+  plus(c(X, Y), c(neg(X), Z)) -> c(0, Y + Z)
+  real(plus(c(X, Y), c(Z, W))) -> X + Z
+  real(times(c(X, Y), c(Z, W))) -> (X * Z) - (Y * W)
+  imag(plus(c(X, Y), c(Z, W))) -> Y + W
+  imag(times(c(X, Y), c(Z, W))) -> (X * W) + (Y * Z)
+  cneg(plus(c(X, Y), c(Z, W))) -> c(neg(X + Z), neg(Y + W))
+  (X * Y) + (Z + (X * W)) -> Z + (X * (Y + W))
+  plus(c(X, Y), c(Z, W + V)) <-> plus(c(X, V), c(Z, Y + W))
+  plus(c(X, Y), c(Z + W, V)) <-> plus(c(W, Y), c(X + Z, V))
+  c(X - (Y * Z), Y + (X * Z)) -> times(c(1, Z), c(X, Y))
+  c((X * Y) - Z, Y + (X * Z)) -> times(c(X, 1), c(Y, Z))
+  plus(c(X, Y * Z), c(W, Y * V)) -> c(X + W, Y * (Z + V))
+  plus(c(X * Y, Z), c(X * W, V)) -> c(X * (Y + W), Z + V)
+  real(plus(c(X, Y), plus(c(Z, W), c(V, U)))) -> X + (Z + V)
+  real(plus(c(X, Y), times(c(Z, W), c(V, U)))) -> X + ((Z * V) - (W * U))
+  real(plus(plus(c(X, Y), c(Z, W)), c(V, U))) -> X + (Z + V)
+  real(plus(times(c(X, Y), c(Z, W)), c(V, U))) -> V + ((X * Z) - (Y * W))
+  real(times(c(X, Y), plus(c(Z, W), c(V, U)))) -> (X * (Z + V)) - (Y * (W + U))
+  real(times(plus(c(X, Y), c(Z, W)), c(V, U))) -> (V * (X + Z)) - (U * (Y + W))
+  real(times(times(c(X, Y), c(Z, W)), c(V, U))) = real(times(c(V, U), times(c(X, Y), c(Z, W))))
+  imag(plus(c(X, Y), times(c(Z, W), c(V, U)))) -> Y + ((V * W) + (U * Z))
+  imag(plus(c(X, Y), plus(c(Z, W), c(V, U)))) -> W + (U + Y)
+  imag(plus(plus(c(X, Y), c(Z, W)), c(V, U))) -> U + (Y + W)
+  imag(plus(times(c(X, Y), c(Z, W)), c(V, U))) -> U + ((X * W) + (Y * Z))
+  imag(times(c(X, Y), plus(c(Z, W), c(V, U)))) -> (X * (W + U)) + (Y * (Z + V))
+  imag(times(plus(c(X, Y), c(Z, W)), c(V, U))) -> (U * (X + Z)) + (V * (Y + W))
+  c((X * Y) - (X * Z), X * (Y + Z)) -> times(c(X, X), c(Y, Z))
+  c((X * Y) - (Z * W), (X * W) + (Z * Y)) -> times(c(X, Z), c(Y, W))
+  c((X * Y) - (Z * W), (X * W) + (Y * Z)) -> times(c(X, Z), c(Y, W))
+  c((X * Y) - (Z * W), (Z * Y) + (X * W)) -> times(c(X, Z), c(Y, W))
+  c((X * Y) - (Z * W), (W * X) + (Z * Y)) -> times(c(X, Z), c(Y, W))
+  c((X * Y) - (Z * W), (X * Z) + (W * Y)) -> times(c(X, W), c(Y, Z))
+  c((X * Y) - (Z * W), (Y * W) + (Z * X)) -> times(c(Y, Z), c(X, W))
+  c(neg((X * Y) - (Z * W)), neg((X * W) + (Y * Z))) -> cneg(times(c(X, Z), c(Y, W)))
+  c((X * Y) - (Z * (W * V)), (X * V) + (Z * (W * Y))) -> times(c(X, Z * W), c(Y, V))
+  c((X * (Y * Z)) - (W * V), (W * Z) + (X * (Y * V))) -> times(c(X * Y, W), c(Z, V))
+  (X * ((Y * Z) + (W * V))) + (U * ((V * Z) - (Y * W))) -> imag(times(times(c(Z, W), c(V, Y)), c(X, U)))
+  (X * ((Y * Z) - (W * V))) + (U * ((Y * W) + (V * Z))) -> imag(times(c(U, X), times(c(Z, W), c(Y, V))))
+  (X * ((Y * Z) - (W * V))) - (U * ((Y * V) + (Z * W))) -> real(times(c(X, U), times(c(Z, V), c(Y, W))))
+
+RESULT: GaveUp (couldn't solve the problem).
+
+Execution time: 0.0483663 seconds
+

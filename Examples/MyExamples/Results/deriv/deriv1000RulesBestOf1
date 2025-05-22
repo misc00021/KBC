@@ -1,0 +1,1253 @@
+Here is the input problem:
+  Axiom 1 (derivative of 1): d(1) = 0.
+  Axiom 2 (derivative of 0): d(0) = 0.
+  Axiom 3 (derivative of x): d(x) = 1.
+  Axiom 4 (flattening): sin2 = sin(x).
+  Axiom 5 (flattening): cos2 = cos(x).
+  Axiom 6 (flattening): d2 = d(sin(x)).
+  Axiom 7 (commutativity of +): X + Y = Y + X.
+  Axiom 8 (plus 0): 0 + X = X.
+  Axiom 9 (commutativity of *): X * Y = Y * X.
+  Axiom 10 (times 1): 1 * X = X.
+  Axiom 11 (times 0): 0 * X = 0.
+  Axiom 12 (derivative of +): d(X + Y) = d(X) + d(Y).
+  Axiom 13 (minus): X + -X = 0.
+  Axiom 14 (flattening): *2 = 1 * cos(x).
+  Axiom 15 (derivative of sin): d(sin(X)) = cos(X) * d(X).
+  Axiom 16 (derivative of cos): d(cos(X)) = -(sin(X) * d(X)).
+  Axiom 17 (associativity of +): X + (Y + Z) = (X + Y) + Z.
+  Axiom 18 (associativity of *): X * (Y * Z) = (X * Y) * Z.
+  Axiom 19 (distributivity): X * (Y + Z) = (X * Y) + (X * Z).
+  Axiom 20 (derivative of *): d(X * Y) = (X * d(Y)) + (Y * d(X)).
+  Goal 1 (goal): d(sin(x)) = 1 * cos(x).
+
+1. d(1) -> 0
+2. d(0) -> 0
+3. d(x) -> 1
+4. sin(x) -> sin2
+5. cos(x) -> cos2
+6. d(sin2) -> d2
+7. X + Y <-> Y + X
+8. 0 + X -> X
+9. X * Y <-> Y * X
+10. 1 * X -> X
+11. 0 * X -> 0
+12. d(X + Y) -> d(X) + d(Y)
+13. X + -X -> 0
+14. cos2 -> *2
+15. d(X) * cos(X) -> d(sin(X))
+16. -(d(X) * sin(X)) -> d(cos(X))
+17. (X + Y) + Z -> X + (Y + Z)
+18. (X * Y) * Z -> X * (Y * Z)
+19. (X * Y) + (X * Z) -> X * (Y + Z)
+20. (X * d(Y)) + (Y * d(X)) -> d(X * Y)
+21. d2 -> *2
+22. -0 -> 0
+23. -sin2 -> d(*2)
+24. X + 0 -> X
+25. X * 1 -> X
+26. X * 0 -> 0
+27. d(sin(1)) -> 0
+28. d(sin(0)) -> 0
+29. d(cos(1)) -> 0
+30. d(cos(0)) -> 0
+31. *2 * cos(sin2) -> d(sin(sin2))
+32. sin2 + d(*2) -> 0
+33. d(sin(sin(1))) -> 0
+34. d(cos(sin(1))) -> 0
+35. d(sin(sin(0))) -> 0
+36. d(cos(sin(0))) -> 0
+37. d(sin(cos(1))) -> 0
+38. d(cos(cos(1))) -> 0
+39. d(sin(cos(0))) -> 0
+40. d(cos(cos(0))) -> 0
+41. X + (Y + Z) <-> Y + (X + Z)
+42. X * (Y * Z) <-> Y * (X * Z)
+43. -(*2 * sin(sin2)) -> d(cos(sin2))
+44. X + (Y + -X) -> Y
+45. d(X) + d(-X) -> 0
+46. d(-1) -> 0
+47. d(-sin(1)) -> 0
+48. d(-sin(0)) -> 0
+49. d(-cos(1)) -> 0
+50. d(-cos(0)) -> 0
+51. d(sin(-1)) -> 0
+52. d(cos(-1)) -> 0
+53. d(--1) -> 0
+54. 1 + d(-x) -> 0
+55. d(d(-x)) -> 0
+56. *2 + d(d(*2)) -> 0
+57. X + (-X + Y) -> Y
+58. --X -> X
+59. -d(*2) -> sin2
+60. d(sin(sin(sin(1)))) -> 0
+61. d(cos(sin(sin(1)))) -> 0
+62. d(sin(cos(sin(1)))) -> 0
+63. d(cos(cos(sin(1)))) -> 0
+64. d(sin(sin(sin(0)))) -> 0
+65. d(cos(sin(sin(0)))) -> 0
+66. d(sin(cos(sin(0)))) -> 0
+67. d(cos(cos(sin(0)))) -> 0
+68. d(sin(sin(cos(1)))) -> 0
+69. d(cos(sin(cos(1)))) -> 0
+70. d(sin(cos(cos(1)))) -> 0
+71. d(cos(cos(cos(1)))) -> 0
+72. d(sin(sin(cos(0)))) -> 0
+73. d(cos(sin(cos(0)))) -> 0
+74. d(sin(cos(cos(0)))) -> 0
+75. d(cos(cos(cos(0)))) -> 0
+76. d(-sin(sin(1))) -> 0
+77. d(-cos(sin(1))) -> 0
+78. d(-sin(sin(0))) -> 0
+79. d(-cos(sin(0))) -> 0
+80. d(-sin(cos(1))) -> 0
+81. d(-cos(cos(1))) -> 0
+82. d(-sin(cos(0))) -> 0
+83. d(-cos(cos(0))) -> 0
+84. d(sin(-sin(1))) -> 0
+85. d(cos(-sin(1))) -> 0
+86. d(sin(-sin(0))) -> 0
+87. d(cos(-sin(0))) -> 0
+88. d(sin(-cos(1))) -> 0
+89. d(cos(-cos(1))) -> 0
+90. d(sin(-cos(0))) -> 0
+91. d(cos(-cos(0))) -> 0
+92. X * (Y + 1) = X + (X * Y)
+93. X * (d(X) + d(X)) -> d(X * X)
+94. d(sin(1) * sin(1)) -> 0
+95. d(sin(0) * sin(0)) -> 0
+96. d(cos(1) * cos(1)) -> 0
+97. d(cos(0) * cos(0)) -> 0
+98. d(-1 * -1) -> 0
+99. d(x * x) -> x + x
+100. sin2 * (*2 + *2) -> d(sin2 * sin2)
+101. d(X * sin(1)) -> d(X) * sin(1)
+102. d(X * sin(0)) -> d(X) * sin(0)
+103. d(X * cos(1)) -> d(X) * cos(1)
+104. d(X * cos(0)) -> d(X) * cos(0)
+105. X * (1 + 1) = X + X
+106. *2 * sin(sin2) -> -d(cos(sin2))
+107. d(sin(sin(-1))) -> 0
+108. d(cos(sin(-1))) -> 0
+109. d(-sin(-1)) -> 0
+110. d(sin(cos(-1))) -> 0
+111. d(cos(cos(-1))) -> 0
+112. d(-cos(-1)) -> 0
+113. d(sin(d(-x))) -> 0
+114. d(cos(d(-x))) -> 0
+115. d(-d(-x)) -> 0
+116. X + (X * Y) = X * (1 + Y)
+117. X + (X * Y) = (Y + 1) * X
+118. X * (Y + 1) = X + (Y * X)
+119. sin2 + (X + d(*2)) -> X
+120. d(X * -1) -> d(X) * -1
+121. d(sin(1) * X) -> d(X) * sin(1)
+122. d(sin(0) * X) -> d(X) * sin(0)
+123. d(cos(1) * X) -> d(X) * cos(1)
+124. d(cos(0) * X) -> d(X) * cos(0)
+125. X + X = (1 + 1) * X
+126. d(*2) + d(d(d(*2))) -> 0
+127. d(X) * sin(X) -> -d(cos(X))
+128. d(sin(sin(1)) * sin(sin(1))) -> 0
+129. d(cos(sin(1)) * cos(sin(1))) -> 0
+130. d(sin(sin(0)) * sin(sin(0))) -> 0
+131. d(cos(sin(0)) * cos(sin(0))) -> 0
+132. d(sin(cos(1)) * sin(cos(1))) -> 0
+133. d(cos(cos(1)) * cos(cos(1))) -> 0
+134. d(sin(cos(0)) * sin(cos(0))) -> 0
+135. d(cos(cos(0)) * cos(cos(0))) -> 0
+136. d(-sin(1) * -sin(1)) -> 0
+137. d(-sin(0) * -sin(0)) -> 0
+138. d(-cos(1) * -cos(1)) -> 0
+139. d(-cos(0) * -cos(0)) -> 0
+140. d(sin(sin(1) * sin(1))) -> 0
+141. d(cos(sin(1) * sin(1))) -> 0
+142. d(-(sin(1) * sin(1))) -> 0
+143. d(sin(sin(0) * sin(0))) -> 0
+144. d(cos(sin(0) * sin(0))) -> 0
+145. d(-(sin(0) * sin(0))) -> 0
+146. d(sin(cos(1) * cos(1))) -> 0
+147. d(cos(cos(1) * cos(1))) -> 0
+148. d(-(cos(1) * cos(1))) -> 0
+149. d(sin(cos(0) * cos(0))) -> 0
+150. d(cos(cos(0) * cos(0))) -> 0
+151. d(-(cos(0) * cos(0))) -> 0
+152. (X * Y) + (Y * Z) -> Y * (X + Z)
+153. (X * Y) + (Z * X) -> X * (Y + Z)
+154. X * (Y + Y) = Y * (X + X)
+155. X * (Y + Y) = (X + X) * Y
+156. *2 * (sin2 + sin2) -> d(sin2 * sin2)
+157. (1 + X) * Y = Y + (Y * X)
+158. X * (1 + Y) = X + (Y * X)
+159. (X + 1) * Y = Y + (X * Y)
+  (hard) Y * (1 + X) = (X + 1) * Y
+160. *2 * (X * cos(sin2)) -> X * d(sin(sin2))
+161. X + (Y + -(X + Y)) -> 0
+162. X + (X * -1) -> 0
+163. -X * -1 -> X
+164. X * -1 -> -X
+165. d(-X) -> -d(X)
+166. -*2 -> d(d(*2))
+167. d(X) * (Y * cos(X)) -> Y * d(sin(X))
+168. -1 * X -> -X
+169. sin2 + (d(*2) + X) -> X
+170. d(d(d(*2))) -> sin2
+171. X + -(X + -Y) -> Y
+172. X + -(X + Y) -> -Y
+173. -d(d(*2)) -> *2
+174. -(X + -Y) -> Y + -X
+175. d(sin(sin(sin(sin(1))))) -> 0
+176. d(cos(sin(sin(sin(1))))) -> 0
+177. d(sin(cos(sin(sin(1))))) -> 0
+178. d(cos(cos(sin(sin(1))))) -> 0
+179. d(sin(sin(cos(sin(1))))) -> 0
+180. d(cos(sin(cos(sin(1))))) -> 0
+181. d(sin(cos(cos(sin(1))))) -> 0
+182. d(cos(cos(cos(sin(1))))) -> 0
+183. d(sin(sin(sin(sin(0))))) -> 0
+184. d(cos(sin(sin(sin(0))))) -> 0
+185. d(sin(cos(sin(sin(0))))) -> 0
+186. d(cos(cos(sin(sin(0))))) -> 0
+187. d(sin(sin(cos(sin(0))))) -> 0
+188. d(cos(sin(cos(sin(0))))) -> 0
+189. d(sin(cos(cos(sin(0))))) -> 0
+190. d(cos(cos(cos(sin(0))))) -> 0
+191. d(sin(sin(sin(cos(1))))) -> 0
+192. d(cos(sin(sin(cos(1))))) -> 0
+193. d(sin(cos(sin(cos(1))))) -> 0
+194. d(cos(cos(sin(cos(1))))) -> 0
+195. d(sin(sin(cos(cos(1))))) -> 0
+196. d(cos(sin(cos(cos(1))))) -> 0
+197. d(sin(cos(cos(cos(1))))) -> 0
+198. d(cos(cos(cos(cos(1))))) -> 0
+199. d(sin(sin(sin(cos(0))))) -> 0
+200. d(cos(sin(sin(cos(0))))) -> 0
+201. d(sin(cos(sin(cos(0))))) -> 0
+202. d(cos(cos(sin(cos(0))))) -> 0
+203. d(sin(sin(cos(cos(0))))) -> 0
+204. d(cos(sin(cos(cos(0))))) -> 0
+205. d(sin(cos(cos(cos(0))))) -> 0
+206. d(cos(cos(cos(cos(0))))) -> 0
+207. d(sin(-sin(sin(1)))) -> 0
+208. d(cos(-sin(sin(1)))) -> 0
+209. d(sin(-cos(sin(1)))) -> 0
+210. d(cos(-cos(sin(1)))) -> 0
+211. d(sin(-sin(sin(0)))) -> 0
+212. d(cos(-sin(sin(0)))) -> 0
+213. d(sin(-cos(sin(0)))) -> 0
+214. d(cos(-cos(sin(0)))) -> 0
+215. d(sin(-sin(cos(1)))) -> 0
+216. d(cos(-sin(cos(1)))) -> 0
+217. d(sin(-cos(cos(1)))) -> 0
+218. d(cos(-cos(cos(1)))) -> 0
+219. d(sin(-sin(cos(0)))) -> 0
+220. d(cos(-sin(cos(0)))) -> 0
+221. d(sin(-cos(cos(0)))) -> 0
+222. d(cos(-cos(cos(0)))) -> 0
+223. d(sin(sin(-sin(1)))) -> 0
+224. d(cos(sin(-sin(1)))) -> 0
+225. d(sin(cos(-sin(1)))) -> 0
+226. d(cos(cos(-sin(1)))) -> 0
+227. d(sin(sin(-sin(0)))) -> 0
+228. d(cos(sin(-sin(0)))) -> 0
+229. d(sin(cos(-sin(0)))) -> 0
+230. d(cos(cos(-sin(0)))) -> 0
+231. d(sin(sin(-cos(1)))) -> 0
+232. d(cos(sin(-cos(1)))) -> 0
+233. d(sin(cos(-cos(1)))) -> 0
+234. d(cos(cos(-cos(1)))) -> 0
+235. d(sin(sin(-cos(0)))) -> 0
+236. d(cos(sin(-cos(0)))) -> 0
+237. d(sin(cos(-cos(0)))) -> 0
+238. d(cos(cos(-cos(0)))) -> 0
+239. d(sin(-1) * sin(-1)) -> 0
+240. d(cos(-1) * cos(-1)) -> 0
+241. X * -Y -> -(X * Y)
+242. sin2 + -X -> -(X + d(*2))
+243. (X * Y) + (Z * Y) -> Y * (X + Z)
+244. (1 + X) * Y = Y + (X * Y)
+  (hard) (1 + X) * Y = Y * (X + 1)
+245. *2 + (X + d(d(*2))) -> X
+246. *2 * (cos(sin2) * X) -> X * d(sin(sin2))
+247. d(X) * (cos(X) * Y) -> Y * d(sin(X))
+248. X + -(Y + X) -> -Y
+249. -1 + -1 -> -(1 + 1)
+250. d(X * sin(sin(1))) -> d(X) * sin(sin(1))
+251. d(X * cos(sin(1))) -> d(X) * cos(sin(1))
+252. d(X * sin(sin(0))) -> d(X) * sin(sin(0))
+253. d(X * cos(sin(0))) -> d(X) * cos(sin(0))
+254. d(X * sin(cos(1))) -> d(X) * sin(cos(1))
+255. d(X * cos(cos(1))) -> d(X) * cos(cos(1))
+256. d(X * sin(cos(0))) -> d(X) * sin(cos(0))
+257. d(X * cos(cos(0))) -> d(X) * cos(cos(0))
+258. -(-X + Y) -> X + -Y
+259. -X + -Y -> -(X + Y)
+260. d(X) + d(X) = d(X * (1 + 1))
+261. d(sin(sin(sin(-1)))) -> 0
+262. d(cos(sin(sin(-1)))) -> 0
+263. d(sin(cos(sin(-1)))) -> 0
+264. d(cos(cos(sin(-1)))) -> 0
+265. d(sin(-sin(-1))) -> 0
+266. d(cos(-sin(-1))) -> 0
+267. d(sin(sin(cos(-1)))) -> 0
+268. d(cos(sin(cos(-1)))) -> 0
+269. d(sin(cos(cos(-1)))) -> 0
+270. d(cos(cos(cos(-1)))) -> 0
+271. d(sin(-cos(-1))) -> 0
+272. d(cos(-cos(-1))) -> 0
+273. -(d(*2) + d(*2)) -> sin2 + sin2
+274. -(sin2 + sin2) -> d(*2) + d(*2)
+275. -X * Y -> -(X * Y)
+276. X + (x * d(X)) -> d(X * x)
+277. sin2 + (*2 * x) -> d(sin2 * x)
+278. *2 + d(*2 * x) -> d(d(sin2 * x))
+279. d(x * sin(-1)) -> sin(-1)
+280. d(x * cos(-1)) -> cos(-1)
+281. d(X) + d(x * d(X)) -> d(d(X * x))
+282. (X * *2) + (sin2 * d(X)) -> d(X * sin2)
+283. (sin2 * d(X)) + (X * *2) -> d(X * sin2)
+284. X + (Y + (Z + -X)) -> Y + Z
+285. d(*2) + -X -> -(X + sin2)
+286. *2 + (d(d(*2)) + X) -> X
+287. -(X * sin2) -> X * d(*2)
+288. *2 * (X + cos(sin2)) -> d(sin(sin2)) + (X * *2)
+289. d(sin(sin(sin(1))) * sin(sin(sin(1)))) -> 0
+290. d(cos(sin(sin(1))) * cos(sin(sin(1)))) -> 0
+291. d(sin(cos(sin(1))) * sin(cos(sin(1)))) -> 0
+292. d(cos(cos(sin(1))) * cos(cos(sin(1)))) -> 0
+293. d(sin(sin(sin(0))) * sin(sin(sin(0)))) -> 0
+294. d(cos(sin(sin(0))) * cos(sin(sin(0)))) -> 0
+295. d(sin(cos(sin(0))) * sin(cos(sin(0)))) -> 0
+296. d(cos(cos(sin(0))) * cos(cos(sin(0)))) -> 0
+297. d(sin(sin(cos(1))) * sin(sin(cos(1)))) -> 0
+298. d(cos(sin(cos(1))) * cos(sin(cos(1)))) -> 0
+299. d(sin(cos(cos(1))) * sin(cos(cos(1)))) -> 0
+300. d(cos(cos(cos(1))) * cos(cos(cos(1)))) -> 0
+301. d(sin(sin(cos(0))) * sin(sin(cos(0)))) -> 0
+302. d(cos(sin(cos(0))) * cos(sin(cos(0)))) -> 0
+303. d(sin(cos(cos(0))) * sin(cos(cos(0)))) -> 0
+304. d(cos(cos(cos(0))) * cos(cos(cos(0)))) -> 0
+305. d(sin(-sin(1)) * sin(-sin(1))) -> 0
+306. d(cos(-sin(1)) * cos(-sin(1))) -> 0
+307. d(sin(-sin(0)) * sin(-sin(0))) -> 0
+308. d(cos(-sin(0)) * cos(-sin(0))) -> 0
+309. d(sin(-cos(1)) * sin(-cos(1))) -> 0
+310. d(cos(-cos(1)) * cos(-cos(1))) -> 0
+311. d(sin(-cos(0)) * sin(-cos(0))) -> 0
+312. d(cos(-cos(0)) * cos(-cos(0))) -> 0
+313. d(sin(sin(sin(1)) * sin(sin(1)))) -> 0
+314. d(cos(sin(sin(1)) * sin(sin(1)))) -> 0
+315. d(sin(cos(sin(1)) * cos(sin(1)))) -> 0
+316. d(cos(cos(sin(1)) * cos(sin(1)))) -> 0
+317. d(sin(sin(sin(0)) * sin(sin(0)))) -> 0
+318. d(cos(sin(sin(0)) * sin(sin(0)))) -> 0
+319. d(sin(cos(sin(0)) * cos(sin(0)))) -> 0
+320. d(cos(cos(sin(0)) * cos(sin(0)))) -> 0
+321. d(sin(sin(cos(1)) * sin(cos(1)))) -> 0
+322. d(cos(sin(cos(1)) * sin(cos(1)))) -> 0
+323. d(sin(cos(cos(1)) * cos(cos(1)))) -> 0
+324. d(cos(cos(cos(1)) * cos(cos(1)))) -> 0
+325. d(sin(sin(cos(0)) * sin(cos(0)))) -> 0
+326. d(cos(sin(cos(0)) * sin(cos(0)))) -> 0
+327. d(sin(cos(cos(0)) * cos(cos(0)))) -> 0
+328. d(cos(cos(cos(0)) * cos(cos(0)))) -> 0
+329. d(sin(sin(sin(1) * sin(1)))) -> 0
+330. d(cos(sin(sin(1) * sin(1)))) -> 0
+331. d(sin(cos(sin(1) * sin(1)))) -> 0
+332. d(cos(cos(sin(1) * sin(1)))) -> 0
+333. d(sin(-(sin(1) * sin(1)))) -> 0
+334. d(cos(-(sin(1) * sin(1)))) -> 0
+335. d(sin(sin(sin(0) * sin(0)))) -> 0
+336. d(cos(sin(sin(0) * sin(0)))) -> 0
+337. d(sin(cos(sin(0) * sin(0)))) -> 0
+338. d(cos(cos(sin(0) * sin(0)))) -> 0
+339. d(sin(-(sin(0) * sin(0)))) -> 0
+340. d(cos(-(sin(0) * sin(0)))) -> 0
+341. d(sin(sin(cos(1) * cos(1)))) -> 0
+342. d(cos(sin(cos(1) * cos(1)))) -> 0
+343. d(sin(cos(cos(1) * cos(1)))) -> 0
+344. d(cos(cos(cos(1) * cos(1)))) -> 0
+345. d(sin(-(cos(1) * cos(1)))) -> 0
+346. d(cos(-(cos(1) * cos(1)))) -> 0
+347. d(sin(sin(cos(0) * cos(0)))) -> 0
+348. d(cos(sin(cos(0) * cos(0)))) -> 0
+349. d(sin(cos(cos(0) * cos(0)))) -> 0
+350. d(cos(cos(cos(0) * cos(0)))) -> 0
+351. d(sin(-(cos(0) * cos(0)))) -> 0
+352. d(cos(-(cos(0) * cos(0)))) -> 0
+353. d(sin2 * sin(-1)) -> *2 * sin(-1)
+354. d(sin2 * cos(-1)) -> *2 * cos(-1)
+355. d(X * sin(-1)) -> d(X) * sin(-1)
+356. d(X * cos(-1)) -> d(X) * cos(-1)
+357. d(sin(sin(1)) * X) -> d(X) * sin(sin(1))
+358. d(cos(sin(1)) * X) -> d(X) * cos(sin(1))
+359. d(sin(sin(0)) * X) -> d(X) * sin(sin(0))
+360. d(cos(sin(0)) * X) -> d(X) * cos(sin(0))
+361. d(sin(cos(1)) * X) -> d(X) * sin(cos(1))
+362. d(cos(cos(1)) * X) -> d(X) * cos(cos(1))
+363. d(sin(cos(0)) * X) -> d(X) * sin(cos(0))
+364. d(cos(cos(0)) * X) -> d(X) * cos(cos(0))
+365. X + -d(X * x) -> -(x * d(X))
+366. d(X) + d(X) = d((1 + 1) * X)
+367. *2 + -X -> -(X + d(d(*2)))
+368. d(X) + d(X * Y) = d(X * (Y + 1))
+369. X * (Y * (Z + Z)) = Z * (X * (Y + Y))
+370. X * ((Y + Y) * Z) = Y * ((X + X) * Z)
+371. d(X) * (Y + cos(X)) -> d(sin(X)) + (Y * d(X))
+372. cos(sin2) * (*2 + 1) -> cos(sin2) + d(sin(sin2))
+373. X + (Y + (-X + Z)) -> Y + Z
+374. (*2 * X) + (sin2 * d(X)) -> d(X * sin2)
+375. d(sin2 * sin2) + d(sin2 * sin2) -> d(sin2 * (sin2 + sin2))
+376. X + (Y + (X * Z)) = (X * (Z + 1)) + Y
+377. X + (X * (Y + Z)) = X * (Y + (Z + 1))
+378. (X + (X * Y)) * Z -> X * ((Y + 1) * Z)
+379. X + (Y + (X * Z)) = Y + (X * (Z + 1))
+380. X * (Y * (Z + 1)) = Y * (X + (X * Z))
+381. X * (1 + (Y * Z)) = X + (Y * (X * Z))
+382. X * (Y + (Y + 1)) = X + (Y * (X + X))
+  (hard) X + (X + 1) = 1 + (X + X)
+383. (X * d(Y)) + (d(X) * Y) -> d(X * Y)
+384. -(sin2 * X) -> X * d(*2)
+385. X * (Y + (1 + 1)) = X + (X + (X * Y))
+386. *2 * ((sin2 + sin2) * X) -> X * d(sin2 * sin2)
+387. sin2 + (X + (*2 * x)) -> X + d(sin2 * x)
+388. *2 * (cos(sin2) + X) -> d(sin(sin2)) + (X * *2)
+389. d(*2) + d(sin2 * x) -> *2 * x
+390. X * ((d(X) + d(X)) * Y) -> Y * d(X * X)
+391. X * (Y * (d(X) + d(X))) -> Y * d(X * X)
+392. x * (X * (1 + 1)) -> X * (x + x)
+393. sin2 * (X * (*2 + *2)) -> X * d(sin2 * sin2)
+394. d(X * (Y * sin(1))) -> sin(1) * d(X * Y)
+395. d(X * (Y * sin(0))) -> sin(0) * d(X * Y)
+396. d(X * (Y * cos(1))) -> cos(1) * d(X * Y)
+397. d(X * (Y * cos(0))) -> cos(0) * d(X * Y)
+398. d(sin(sin(-1)) * sin(sin(-1))) -> 0
+399. d(cos(sin(-1)) * cos(sin(-1))) -> 0
+400. d(sin(cos(-1)) * sin(cos(-1))) -> 0
+401. d(cos(cos(-1)) * cos(cos(-1))) -> 0
+402. d(sin(sin(sin(sin(sin(1)))))) -> 0
+403. d(cos(sin(sin(sin(sin(1)))))) -> 0
+404. d(sin(cos(sin(sin(sin(1)))))) -> 0
+405. d(cos(cos(sin(sin(sin(1)))))) -> 0
+406. d(sin(sin(cos(sin(sin(1)))))) -> 0
+407. d(cos(sin(cos(sin(sin(1)))))) -> 0
+408. d(sin(cos(cos(sin(sin(1)))))) -> 0
+409. d(cos(cos(cos(sin(sin(1)))))) -> 0
+410. d(sin(sin(sin(cos(sin(1)))))) -> 0
+411. d(cos(sin(sin(cos(sin(1)))))) -> 0
+412. d(sin(cos(sin(cos(sin(1)))))) -> 0
+413. d(cos(cos(sin(cos(sin(1)))))) -> 0
+414. d(sin(sin(cos(cos(sin(1)))))) -> 0
+415. d(cos(sin(cos(cos(sin(1)))))) -> 0
+416. d(sin(cos(cos(cos(sin(1)))))) -> 0
+417. d(cos(cos(cos(cos(sin(1)))))) -> 0
+418. d(sin(sin(sin(sin(sin(0)))))) -> 0
+419. d(cos(sin(sin(sin(sin(0)))))) -> 0
+420. d(sin(cos(sin(sin(sin(0)))))) -> 0
+421. d(cos(cos(sin(sin(sin(0)))))) -> 0
+422. d(sin(sin(cos(sin(sin(0)))))) -> 0
+423. d(cos(sin(cos(sin(sin(0)))))) -> 0
+424. d(sin(cos(cos(sin(sin(0)))))) -> 0
+425. d(cos(cos(cos(sin(sin(0)))))) -> 0
+426. d(sin(sin(sin(cos(sin(0)))))) -> 0
+427. d(cos(sin(sin(cos(sin(0)))))) -> 0
+428. d(sin(cos(sin(cos(sin(0)))))) -> 0
+429. d(cos(cos(sin(cos(sin(0)))))) -> 0
+430. d(sin(sin(cos(cos(sin(0)))))) -> 0
+431. d(cos(sin(cos(cos(sin(0)))))) -> 0
+432. d(sin(cos(cos(cos(sin(0)))))) -> 0
+433. d(cos(cos(cos(cos(sin(0)))))) -> 0
+434. d(sin(sin(sin(sin(cos(1)))))) -> 0
+435. d(cos(sin(sin(sin(cos(1)))))) -> 0
+436. d(sin(cos(sin(sin(cos(1)))))) -> 0
+437. d(cos(cos(sin(sin(cos(1)))))) -> 0
+438. d(sin(sin(cos(sin(cos(1)))))) -> 0
+439. d(cos(sin(cos(sin(cos(1)))))) -> 0
+440. d(sin(cos(cos(sin(cos(1)))))) -> 0
+441. d(cos(cos(cos(sin(cos(1)))))) -> 0
+442. d(sin(sin(sin(cos(cos(1)))))) -> 0
+443. d(cos(sin(sin(cos(cos(1)))))) -> 0
+444. d(sin(cos(sin(cos(cos(1)))))) -> 0
+445. d(cos(cos(sin(cos(cos(1)))))) -> 0
+446. d(sin(sin(cos(cos(cos(1)))))) -> 0
+447. d(cos(sin(cos(cos(cos(1)))))) -> 0
+448. d(sin(cos(cos(cos(cos(1)))))) -> 0
+449. d(cos(cos(cos(cos(cos(1)))))) -> 0
+450. d(sin(sin(sin(sin(cos(0)))))) -> 0
+451. d(cos(sin(sin(sin(cos(0)))))) -> 0
+452. d(sin(cos(sin(sin(cos(0)))))) -> 0
+453. d(cos(cos(sin(sin(cos(0)))))) -> 0
+454. d(sin(sin(cos(sin(cos(0)))))) -> 0
+455. d(cos(sin(cos(sin(cos(0)))))) -> 0
+456. d(sin(cos(cos(sin(cos(0)))))) -> 0
+457. d(cos(cos(cos(sin(cos(0)))))) -> 0
+458. d(sin(sin(sin(cos(cos(0)))))) -> 0
+459. d(cos(sin(sin(cos(cos(0)))))) -> 0
+460. d(sin(cos(sin(cos(cos(0)))))) -> 0
+461. d(cos(cos(sin(cos(cos(0)))))) -> 0
+462. d(sin(sin(cos(cos(cos(0)))))) -> 0
+463. d(cos(sin(cos(cos(cos(0)))))) -> 0
+464. d(sin(cos(cos(cos(cos(0)))))) -> 0
+465. d(cos(cos(cos(cos(cos(0)))))) -> 0
+466. d(sin(sin(-sin(sin(1))))) -> 0
+467. d(cos(sin(-sin(sin(1))))) -> 0
+468. d(sin(cos(-sin(sin(1))))) -> 0
+469. d(cos(cos(-sin(sin(1))))) -> 0
+470. d(sin(sin(-cos(sin(1))))) -> 0
+471. d(cos(sin(-cos(sin(1))))) -> 0
+472. d(sin(cos(-cos(sin(1))))) -> 0
+473. d(cos(cos(-cos(sin(1))))) -> 0
+474. d(sin(sin(-sin(sin(0))))) -> 0
+475. d(cos(sin(-sin(sin(0))))) -> 0
+476. d(sin(cos(-sin(sin(0))))) -> 0
+477. d(cos(cos(-sin(sin(0))))) -> 0
+478. d(sin(sin(-cos(sin(0))))) -> 0
+479. d(cos(sin(-cos(sin(0))))) -> 0
+480. d(sin(cos(-cos(sin(0))))) -> 0
+481. d(cos(cos(-cos(sin(0))))) -> 0
+482. d(sin(sin(-sin(cos(1))))) -> 0
+483. d(cos(sin(-sin(cos(1))))) -> 0
+484. d(sin(cos(-sin(cos(1))))) -> 0
+485. d(cos(cos(-sin(cos(1))))) -> 0
+486. d(sin(sin(-cos(cos(1))))) -> 0
+487. d(cos(sin(-cos(cos(1))))) -> 0
+488. d(sin(cos(-cos(cos(1))))) -> 0
+489. d(cos(cos(-cos(cos(1))))) -> 0
+490. d(sin(sin(-sin(cos(0))))) -> 0
+491. d(cos(sin(-sin(cos(0))))) -> 0
+492. d(sin(cos(-sin(cos(0))))) -> 0
+493. d(cos(cos(-sin(cos(0))))) -> 0
+494. d(sin(sin(-cos(cos(0))))) -> 0
+495. d(cos(sin(-cos(cos(0))))) -> 0
+496. d(sin(cos(-cos(cos(0))))) -> 0
+497. d(cos(cos(-cos(cos(0))))) -> 0
+498. d(sin(sin(sin(-sin(1))))) -> 0
+499. d(cos(sin(sin(-sin(1))))) -> 0
+500. d(sin(cos(sin(-sin(1))))) -> 0
+501. d(cos(cos(sin(-sin(1))))) -> 0
+502. d(sin(sin(cos(-sin(1))))) -> 0
+503. d(cos(sin(cos(-sin(1))))) -> 0
+504. d(sin(cos(cos(-sin(1))))) -> 0
+505. d(cos(cos(cos(-sin(1))))) -> 0
+506. d(sin(sin(sin(-sin(0))))) -> 0
+507. d(cos(sin(sin(-sin(0))))) -> 0
+508. d(sin(cos(sin(-sin(0))))) -> 0
+509. d(cos(cos(sin(-sin(0))))) -> 0
+510. d(sin(sin(cos(-sin(0))))) -> 0
+511. d(cos(sin(cos(-sin(0))))) -> 0
+512. d(sin(cos(cos(-sin(0))))) -> 0
+513. d(cos(cos(cos(-sin(0))))) -> 0
+514. d(sin(sin(sin(-cos(1))))) -> 0
+515. d(cos(sin(sin(-cos(1))))) -> 0
+516. d(sin(cos(sin(-cos(1))))) -> 0
+517. d(cos(cos(sin(-cos(1))))) -> 0
+518. d(sin(sin(cos(-cos(1))))) -> 0
+519. d(cos(sin(cos(-cos(1))))) -> 0
+520. d(sin(cos(cos(-cos(1))))) -> 0
+521. d(cos(cos(cos(-cos(1))))) -> 0
+522. d(sin(sin(sin(-cos(0))))) -> 0
+523. d(cos(sin(sin(-cos(0))))) -> 0
+524. d(sin(cos(sin(-cos(0))))) -> 0
+525. d(cos(cos(sin(-cos(0))))) -> 0
+526. d(sin(sin(cos(-cos(0))))) -> 0
+527. d(cos(sin(cos(-cos(0))))) -> 0
+528. d(sin(cos(cos(-cos(0))))) -> 0
+529. d(cos(cos(cos(-cos(0))))) -> 0
+530. d(sin(sin(-1) * sin(-1))) -> 0
+531. d(cos(sin(-1) * sin(-1))) -> 0
+532. d(sin(cos(-1) * cos(-1))) -> 0
+533. d(cos(cos(-1) * cos(-1))) -> 0
+534. X + (X + Y) = (X * (1 + 1)) + Y
+535. X * ((1 + 1) * Y) = (X + X) * Y
+536. X + (Y + X) = Y + (X * (1 + 1))
+537. X * (Y * (1 + 1)) = Y * (X + X)
+538. (X + X) * Y = X * (Y * (1 + 1))
+539. -(X * d(*2)) -> X * sin2
+540. X + (Y + (x * d(X))) -> Y + d(X * x)
+541. -X + d(X * x) -> x * d(X)
+542. -X + d(x * X) -> x * d(X)
+543. *2 * (X * sin(sin2)) -> -(X * d(cos(sin2)))
+544. -(d(*2) + d(d(*2))) -> *2 + sin2
+545. -(*2 + sin2) -> d(*2) + d(d(*2))
+546. d(X * (1 + 1)) -> d(X) * (1 + 1)
+547. d(sin(-1) * X) -> d(X) * sin(-1)
+548. d(cos(-1) * X) -> d(X) * cos(-1)
+549. -(d(d(*2)) + d(d(*2))) -> *2 + *2
+550. -(*2 + *2) -> d(d(*2)) + d(d(*2))
+551. x * (x + (x + x)) -> d(x * (x * x))
+552. X + -d(x * X) -> -(x * d(X))
+553. d(d(*2)) + -X -> -(X + *2)
+554. -(*2 + d(*2)) -> sin2 + d(d(*2))
+555. X * (1 + (1 + 1)) = X + (X + X)
+556. d(X) + d(X * Y) = d(X * (1 + Y))
+557. d(X) + d(Y * X) = d((Y + 1) * X)
+558. (1 + (1 + 1)) * X = X + (X + X)
+559. d(x * sin(sin(sin(1)))) -> sin(sin(sin(1)))
+560. d(x * cos(sin(sin(1)))) -> cos(sin(sin(1)))
+561. d(x * sin(cos(sin(1)))) -> sin(cos(sin(1)))
+562. d(x * cos(cos(sin(1)))) -> cos(cos(sin(1)))
+563. d(x * sin(sin(sin(0)))) -> sin(sin(sin(0)))
+564. d(x * cos(sin(sin(0)))) -> cos(sin(sin(0)))
+565. d(x * sin(cos(sin(0)))) -> sin(cos(sin(0)))
+566. d(x * cos(cos(sin(0)))) -> cos(cos(sin(0)))
+567. d(x * sin(sin(cos(1)))) -> sin(sin(cos(1)))
+568. d(x * cos(sin(cos(1)))) -> cos(sin(cos(1)))
+569. d(x * sin(cos(cos(1)))) -> sin(cos(cos(1)))
+570. d(x * cos(cos(cos(1)))) -> cos(cos(cos(1)))
+571. d(x * sin(sin(cos(0)))) -> sin(sin(cos(0)))
+572. d(x * cos(sin(cos(0)))) -> cos(sin(cos(0)))
+573. d(x * sin(cos(cos(0)))) -> sin(cos(cos(0)))
+574. d(x * cos(cos(cos(0)))) -> cos(cos(cos(0)))
+575. d(x * sin(-sin(1))) -> sin(-sin(1))
+576. d(x * cos(-sin(1))) -> cos(-sin(1))
+577. d(x * sin(-sin(0))) -> sin(-sin(0))
+578. d(x * cos(-sin(0))) -> cos(-sin(0))
+579. d(x * sin(-cos(1))) -> sin(-cos(1))
+580. d(x * cos(-cos(1))) -> cos(-cos(1))
+581. d(x * sin(-cos(0))) -> sin(-cos(0))
+582. d(x * cos(-cos(0))) -> cos(-cos(0))
+583. d(X) + d(X * Y) = d((Y + 1) * X)
+584. d(X * (Y + 1)) = d(X) + d(Y * X)
+585. X * ((Y + Y) * Z) = (X + X) * (Y * Z)
+586. d(X * Y) + d(X * Y) -> d((X + X) * Y)
+587. X * ((Y + Y) * Z) = Y * (X * (Z + Z))
+588. (X + X) * (Y * Z) = Y * (X * (Z + Z))
+  (hard) (Y + Y) * X = (X + X) * Y
+589. x * (X + d(X * x)) -> d(X * (x * x))
+590. X * (Y * (Z + Z)) = Z * ((X + X) * Y)
+591. X * (Y * (Z + Z)) = Z * (Y * (X + X))
+592. X * (Y * (Z + Z)) = Y * ((Z + Z) * X)
+593. X * ((Y + Y) * Z) = (X + X) * (Z * Y)
+  (hard) X + (Y + (X * Z)) = X + ((Z * X) + Y)
+594. X * (Y + (Y * Z)) = Y * (X + (X * Z))
+595. X * (Y + (Y * Z)) = Y * (X + (Z * X))
+596. d(sin(X)) + (Y * cos(X)) -> cos(X) * (Y + d(X))
+597. cos(sin2) * (*2 + *2) -> d(sin(sin2)) + d(sin(sin2))
+598. cos(X) * (d(X) + d(X)) -> d(sin(X)) + d(sin(X))
+599. cos(X) * (1 + d(X)) -> cos(X) + d(sin(X))
+600. cos(-x) + d(sin(-x)) -> 0
+601. -cos(-x) -> d(sin(-x))
+602. -d(sin(-x)) -> cos(-x)
+603. d(X) * (cos(X) + Y) -> d(sin(X)) + (Y * d(X))
+604. d(X * Y) + d(X * Z) -> d(X * (Y + Z))
+  (hard) X + (-Y + (Z + Y)) = X + Z
+605. -(sin2 + d(d(*2))) -> *2 + d(*2)
+606. (X * Y) + (Z + (X * W)) -> Z + (X * (Y + W))
+607. X + (Y + (X * Z)) = (X * (1 + Z)) + Y
+608. X + (Y + (X * Z)) = Y + (X * (1 + Z))
+609. X + (X * (Y + Z)) = X * (Y + (1 + Z))
+610. X * (Y * (1 + Z)) = Y * (X + (X * Z))
+611. X + (Y + (X * Z)) = ((Z + 1) * X) + Y
+612. X + (X * (Y + Z)) = (Y + (Z + 1)) * X
+613. X + (Y + (X * Z)) = Y + ((Z + 1) * X)
+614. (1 + (X * Y)) * Z = Z + (X * (Z * Y))
+615. (X + 1) * (Y * Z) = Y * (Z + (Z * X))
+616. X + ((Y + Z) * X) = X * (Y + (Z + 1))
+617. (X + (Y * X)) * Z -> X * ((Y + 1) * Z)
+618. X + (Y + (Z * X)) = Y + (X * (Z + 1))
+619. X * (Y * (Z + 1)) = Y * (X + (Z * X))
+620. X * (1 + (Y + Y)) = X + (Y * (X + X))
+621. (X + (X + 1)) * Y = Y + (X * (Y + Y))
+622. X * (Y + (Y + 1)) = X + ((X + X) * Y)
+623. X * (1 + (Y + Y)) = X + ((X + X) * Y)
+624. *2 * (X * (sin2 + sin2)) -> X * d(sin2 * sin2)
+625. *2 * (sin2 * (X + X)) -> X * d(sin2 * sin2)
+626. (X * (Y + 1)) + Z = X + ((X * Y) + Z)
+627. (X * (Y + 1)) + Z = X + (Z + (Y * X))
+  (hard) X + (X * (Y + Z)) = X * (Z + (1 + Y))
+628. X * ((Y + 1) * Z) = Z * (X + (X * Y))
+629. X + (Y * (Z + 1)) = Y + ((Y * Z) + X)
+630. X + (X + Y) <-> Y + (X + X)
+  (hard) X * (1 + (Y * Z)) = X + (X * (Z * Y))
+631. X + (Y * (X * Z)) = X * (1 + (Z * Y))
+632. X * (1 + (Y * Z)) = X + (Y * (Z * X))
+633. d(*2) * d(*2) -> sin2 * sin2
+634. X + (Y * (X + 1)) <-> Y + (X * (Y + 1))
+  (hard) X * (1 + (Y + Z)) = X * (Y + (Z + 1))
+635. (X + (X * Y)) * Z -> X * (Z * (Y + 1))
+  (hard) X * (Y * (Z + 1)) = Y * (X * (1 + Z))
+636. X * (Y * (Z + 1)) = Y * ((Z + 1) * X)
+637. X + (X * (Y + -1)) -> X * Y
+638. X + (X * (-1 + Y)) -> X * Y
+639. d(sin(sin(1) * sin(1)) * sin(sin(1) * sin(1))) -> 0
+640. d(cos(sin(1) * sin(1)) * cos(sin(1) * sin(1))) -> 0
+641. d(sin(sin(0) * sin(0)) * sin(sin(0) * sin(0))) -> 0
+642. d(cos(sin(0) * sin(0)) * cos(sin(0) * sin(0))) -> 0
+643. d(sin(cos(1) * cos(1)) * sin(cos(1) * cos(1))) -> 0
+644. d(cos(cos(1) * cos(1)) * cos(cos(1) * cos(1))) -> 0
+645. d(sin(cos(0) * cos(0)) * sin(cos(0) * cos(0))) -> 0
+646. d(cos(cos(0) * cos(0)) * cos(cos(0) * cos(0))) -> 0
+647. -X + (X * (Y + 1)) -> X * Y
+648. X * (d(X) * (Y + Y)) -> Y * d(X * X)
+649. -X + (X * Y) = X * (Y + -1)
+650. X * (Y + (d(X) + d(X))) -> (X * Y) + d(X * X)
+651. X + (X + (Y + Y)) = (X + Y) * (1 + 1)
+652. X * (1 + (Y + 1)) = X + (X + (X * Y))
+653. X * (1 + (1 + Y)) = X + (X + (X * Y))
+654. (X + (1 + 1)) * Y = Y + (Y + (Y * X))
+655. (1 + (X + 1)) * Y = Y + (Y + (Y * X))
+656. X * (Y + (1 + 1)) = X + (X + (Y * X))
+657. X * (1 + (Y + 1)) = X + (X + (Y * X))
+658. (X + (1 + 1)) * Y = Y + (Y + (X * Y))
+659. X * (1 + (1 + Y)) = X + (X + (Y * X))
+660. sin2 + ((*2 * x) + X) -> X + d(sin2 * x)
+661. X + (Y + (Z + -(X + Y))) -> Z
+662. d(sin(X)) * (X + X) -> cos(X) * d(X * X)
+663. sin2 + (X + (Y + d(*2))) -> X + Y
+664. d(X * (sin(1) * Y)) -> sin(1) * d(X * Y)
+665. d(X * (sin(0) * Y)) -> sin(0) * d(X * Y)
+666. d(X * (cos(1) * Y)) -> cos(1) * d(X * Y)
+667. d(X * (cos(0) * Y)) -> cos(0) * d(X * Y)
+668. sin2 * cos(d(d(*2))) -> d(sin(d(d(*2))))
+669. d(sin(sin(sin(sin(-1))))) -> 0
+670. d(cos(sin(sin(sin(-1))))) -> 0
+671. d(sin(cos(sin(sin(-1))))) -> 0
+672. d(cos(cos(sin(sin(-1))))) -> 0
+673. d(sin(sin(cos(sin(-1))))) -> 0
+674. d(cos(sin(cos(sin(-1))))) -> 0
+675. d(sin(cos(cos(sin(-1))))) -> 0
+676. d(cos(cos(cos(sin(-1))))) -> 0
+677. d(sin(sin(-sin(-1)))) -> 0
+678. d(cos(sin(-sin(-1)))) -> 0
+679. d(sin(cos(-sin(-1)))) -> 0
+680. d(cos(cos(-sin(-1)))) -> 0
+681. d(sin(sin(sin(cos(-1))))) -> 0
+682. d(cos(sin(sin(cos(-1))))) -> 0
+683. d(sin(cos(sin(cos(-1))))) -> 0
+684. d(cos(cos(sin(cos(-1))))) -> 0
+685. d(sin(sin(cos(cos(-1))))) -> 0
+686. d(cos(sin(cos(cos(-1))))) -> 0
+687. d(sin(cos(cos(cos(-1))))) -> 0
+688. d(cos(cos(cos(cos(-1))))) -> 0
+689. d(sin(sin(-cos(-1)))) -> 0
+690. d(cos(sin(-cos(-1)))) -> 0
+691. d(sin(cos(-cos(-1)))) -> 0
+692. d(cos(cos(-cos(-1)))) -> 0
+693. -(cos(sin2) * d(cos(sin2))) -> sin(sin2) * d(sin(sin2))
+694. (X + X) * (d(X) + d(X)) -> d(X * (X + X))
+695. X + (X + Y) = ((1 + 1) * X) + Y
+696. sin2 + (X + (X + d(*2))) -> (1 + 1) * X
+697. (1 + 1) * (X * Y) = (X + X) * Y
+698. (X * Y) + (X * Y) -> (X + X) * Y
+699. X + (Y + X) = Y + ((1 + 1) * X)
+700. (1 + 1) * (X * Y) = X * (Y + Y)
+701. X * (Y + Y) = Y * ((1 + 1) * X)
+702. X + (Y * (1 + 1)) = Y + (Y + X)
+703. sin2 + (X + (X + d(*2))) -> X * (1 + 1)
+704. (X + X) * Y = (1 + 1) * (Y * X)
+705. -(d(*2) * X) -> X * sin2
+706. sin2 * sin(*2) -> d(cos(*2))
+707. X + ((x * d(X)) + Y) -> Y + d(X * x)
+  (hard) X * (Y * (1 + 1)) = (Y + Y) * X
+  (hard) X + (Y + X) = (X * (1 + 1)) + Y
+708. sin2 * cos(*2) -> -d(sin(*2))
+709. d((1 + 1) * X) -> d(X) * (1 + 1)
+710. *2 * (sin(sin2) * X) -> -(X * d(cos(sin2)))
+711. X + (x * (Y + d(X))) = (Y * x) + d(X * x)
+712. d(sin2 * sin(sin(sin(1)))) -> *2 * sin(sin(sin(1)))
+713. d(sin2 * cos(sin(sin(1)))) -> *2 * cos(sin(sin(1)))
+714. d(sin2 * sin(cos(sin(1)))) -> *2 * sin(cos(sin(1)))
+715. d(sin2 * cos(cos(sin(1)))) -> *2 * cos(cos(sin(1)))
+716. d(sin2 * sin(sin(sin(0)))) -> *2 * sin(sin(sin(0)))
+717. d(sin2 * cos(sin(sin(0)))) -> *2 * cos(sin(sin(0)))
+718. d(sin2 * sin(cos(sin(0)))) -> *2 * sin(cos(sin(0)))
+719. d(sin2 * cos(cos(sin(0)))) -> *2 * cos(cos(sin(0)))
+720. d(sin2 * sin(sin(cos(1)))) -> *2 * sin(sin(cos(1)))
+721. d(sin2 * cos(sin(cos(1)))) -> *2 * cos(sin(cos(1)))
+722. d(sin2 * sin(cos(cos(1)))) -> *2 * sin(cos(cos(1)))
+723. d(sin2 * cos(cos(cos(1)))) -> *2 * cos(cos(cos(1)))
+724. d(sin2 * sin(sin(cos(0)))) -> *2 * sin(sin(cos(0)))
+725. d(sin2 * cos(sin(cos(0)))) -> *2 * cos(sin(cos(0)))
+726. d(sin2 * sin(cos(cos(0)))) -> *2 * sin(cos(cos(0)))
+727. d(sin2 * cos(cos(cos(0)))) -> *2 * cos(cos(cos(0)))
+728. d(sin2 * sin(-sin(1))) -> *2 * sin(-sin(1))
+729. d(sin2 * cos(-sin(1))) -> *2 * cos(-sin(1))
+730. d(sin2 * sin(-sin(0))) -> *2 * sin(-sin(0))
+731. d(sin2 * cos(-sin(0))) -> *2 * cos(-sin(0))
+732. d(sin2 * sin(-cos(1))) -> *2 * sin(-cos(1))
+733. d(sin2 * cos(-cos(1))) -> *2 * cos(-cos(1))
+734. d(sin2 * sin(-cos(0))) -> *2 * sin(-cos(0))
+735. d(sin2 * cos(-cos(0))) -> *2 * cos(-cos(0))
+736. d(*2 * (x * x)) -> x * d(d(sin2 * x))
+737. x + (x + (x + x)) -> d(x * (x + x))
+738. (*2 + *2) * (sin2 + sin2) -> d(sin2 * (sin2 + sin2))
+739. (1 + 1) * (X + 1) = 1 + (1 + (X + X))
+740. -(X + (Y + -Z)) -> Z + -(X + Y)
+741. -d(cos(-x)) -> d(d(sin(-x)))
+742. d(X * sin(sin(sin(1)))) -> d(X) * sin(sin(sin(1)))
+743. d(X * cos(sin(sin(1)))) -> d(X) * cos(sin(sin(1)))
+744. d(X * sin(cos(sin(1)))) -> d(X) * sin(cos(sin(1)))
+745. d(X * cos(cos(sin(1)))) -> d(X) * cos(cos(sin(1)))
+746. d(X * sin(sin(sin(0)))) -> d(X) * sin(sin(sin(0)))
+747. d(X * cos(sin(sin(0)))) -> d(X) * cos(sin(sin(0)))
+748. d(X * sin(cos(sin(0)))) -> d(X) * sin(cos(sin(0)))
+749. d(X * cos(cos(sin(0)))) -> d(X) * cos(cos(sin(0)))
+750. d(X * sin(sin(cos(1)))) -> d(X) * sin(sin(cos(1)))
+751. d(X * cos(sin(cos(1)))) -> d(X) * cos(sin(cos(1)))
+752. d(X * sin(cos(cos(1)))) -> d(X) * sin(cos(cos(1)))
+753. d(X * cos(cos(cos(1)))) -> d(X) * cos(cos(cos(1)))
+754. d(X * sin(sin(cos(0)))) -> d(X) * sin(sin(cos(0)))
+755. d(X * cos(sin(cos(0)))) -> d(X) * cos(sin(cos(0)))
+756. d(X * sin(cos(cos(0)))) -> d(X) * sin(cos(cos(0)))
+757. d(X * cos(cos(cos(0)))) -> d(X) * cos(cos(cos(0)))
+758. d(X * sin(-sin(1))) -> d(X) * sin(-sin(1))
+759. d(X * cos(-sin(1))) -> d(X) * cos(-sin(1))
+760. d(X * sin(-sin(0))) -> d(X) * sin(-sin(0))
+761. d(X * cos(-sin(0))) -> d(X) * cos(-sin(0))
+762. d(X * sin(-cos(1))) -> d(X) * sin(-cos(1))
+763. d(X * cos(-cos(1))) -> d(X) * cos(-cos(1))
+764. d(X * sin(-cos(0))) -> d(X) * sin(-cos(0))
+765. d(X * cos(-cos(0))) -> d(X) * cos(-cos(0))
+766. d(X) * (Y * sin(X)) -> -(Y * d(cos(X)))
+767. -(cos(X) * d(cos(X))) -> sin(X) * d(sin(X))
+768. sin(1) * (d(X) + d(X)) = d(X * (sin(1) + sin(1)))
+769. sin(0) * (d(X) + d(X)) = d(X * (sin(0) + sin(0)))
+770. cos(1) * (d(X) + d(X)) = d(X * (cos(1) + cos(1)))
+771. cos(0) * (d(X) + d(X)) = d(X * (cos(0) + cos(0)))
+772. sin(1) * (d(X) + d(X)) = d((sin(1) + sin(1)) * X)
+773. sin(0) * (d(X) + d(X)) = d((sin(0) + sin(0)) * X)
+774. cos(1) * (d(X) + d(X)) = d((cos(1) + cos(1)) * X)
+775. cos(0) * (d(X) + d(X)) = d((cos(0) + cos(0)) * X)
+776. d(X) + d(Y * X) = d((1 + Y) * X)
+777. d(x * sin(sin(-1))) -> sin(sin(-1))
+778. d(x * cos(sin(-1))) -> cos(sin(-1))
+779. d(x * sin(cos(-1))) -> sin(cos(-1))
+780. d(x * cos(cos(-1))) -> cos(cos(-1))
+781. -(d(d(*2)) + (sin2 * x)) -> -d(x * d(d(*2)))
+782. d(X * (1 + sin(1))) = d(X) + (d(X) * sin(1))
+783. d(X * (1 + sin(0))) = d(X) + (d(X) * sin(0))
+784. d(X * (1 + cos(1))) = d(X) + (d(X) * cos(1))
+785. d(X * (1 + cos(0))) = d(X) + (d(X) * cos(0))
+786. d(X * (1 + Y)) = d(X) + d(Y * X)
+  (hard) d(Y) + d(Y * X) = d((1 + X) * Y)
+787. d(sin(X)) + (X * d(cos(X))) -> d(X * cos(X))
+788. (X + X) * (Y * Z) = X * (Z * (Y + Y))
+789. (X + X) * (Y * Z) = X * (Y * (Z + Z))
+790. X * ((Y + Y) * Z) = Y * ((Z + Z) * X)
+  (hard) Z * (Y * (X + X)) = X * ((Y + Y) * Z)
+  (hard) Z * (Y * (X + X)) = (Y + Y) * (X * Z)
+791. (X + X) * (Y * Z) = Y * (Z * (X + X))
+  (hard) Z * (Y * (X + X)) = (X + X) * (Y * Z)
+792. x * (X + d(x * X)) -> d(X * (x * x))
+793. d(x * (x * d(X))) -> x * d(d(X * x))
+  (hard) (X + X) * (Y * Z) = Z * ((X + X) * Y)
+794. (X + (Y * X)) * Z = X * (Z + (Z * Y))
+795. X * (Y + (Z * Y)) = Y * (X + (Z * X))
+796. -X + (Y * X) = X * (Y + -1)
+  (hard) Z + (Y + (Z * X)) = Y + (Z + (X * Z))
+797. X + (Y * (Z + Z)) = ((Y + Y) * Z) + X
+798. X + (Y * (Z + Z)) = ((Z + Z) * Y) + X
+  (hard) X + (Y + (Z * X)) = X + ((X * Z) + Y)
+  (hard) Z + (Y * (Z * X)) = Z + (Z * (X * Y))
+  (hard) Z + (Y * (X * Z)) = Z + (X * (Z * Y))
+  (hard) Z + (Y * (Z * X)) = Z + (X * (Z * Y))
+  (hard) Z + (Y * (X * Z)) = Z + (Z * (Y * X))
+799. sin2 * sin(d(d(*2))) -> -d(cos(d(d(*2))))
+800. d(sin(X)) + (cos(X) * Y) -> cos(X) * (Y + d(X))
+801. (x + x) * cos(x * x) -> d(sin(x * x))
+802. d(X * Y) + d(Y * Z) -> d(Y * (X + Z))
+803. -(X * *2) -> X * d(d(*2))
+804. d(X * Y) + d(Z * X) -> d(X * (Y + Z))
+805. d(X * Y) * (Z + Z) = Z * d(X * (Y + Y))
+806. d(d(X * Y)) + d(d(X * Y)) -> d(d(X * (Y + Y)))
+807. (X * (Y * Z)) + (Y * W) -> Y * (W + (X * Z))
+808. (X * Y) + (Z * (X * W)) -> X * (Y + (Z * W))
+809. (X * Y) + (Z + (Y * W)) -> Z + (Y * (X + W))
+810. (X * (Y * Z)) + (Z * W) -> Z * (W + (X * Y))
+811. (X * Y) + (Z * (Y * W)) -> Y * (X + (Z * W))
+812. (X * Y) + (Z + (W * X)) -> Z + (X * (Y + W))
+813. (X * (Y * Z)) + (W * Y) -> Y * (W + (X * Z))
+814. X + (Y + (X * Z)) = ((1 + Z) * X) + Y
+815. X + (X * (Y + Z)) = (Y + (1 + Z)) * X
+816. X + (Y + (X * Z)) = Y + ((1 + Z) * X)
+817. (1 + X) * (Y * Z) = Y * (Z + (Z * X))
+818. (1 + (X + X)) * Y = Y + (X * (Y + Y))
+819. X + ((Y + Z) * X) = X * (Y + (1 + Z))
+820. X + (Y + (Z * X)) = Y + (X * (1 + Z))
+821. X * (Y * (1 + Z)) = Y * (X + (Z * X))
+822. X + ((Y + Z) * X) = (Y + (Z + 1)) * X
+823. X + (Y + (Z * X)) = Y + ((Z + 1) * X)
+824. (X + 1) * (Y * Z) = Y * (Z + (X * Z))
+825. X + -(X * (1 + 1)) -> -X
+826. X + -((1 + 1) * X) -> -X
+827. -(*2 * (sin(1) * sin(1))) -> d(d(*2)) * (sin(1) * sin(1))
+828. -(*2 * (sin(0) * sin(0))) -> d(d(*2)) * (sin(0) * sin(0))
+829. -(*2 * (cos(1) * cos(1))) -> d(d(*2)) * (cos(1) * cos(1))
+830. -(*2 * (cos(0) * cos(0))) -> d(d(*2)) * (cos(0) * cos(0))
+  (hard) Z + (Z * (Y + X)) = (X + (1 + Y)) * Z
+  (hard) X + ((Y + Z) * X) = X * (Z + (1 + Y))
+831. (X + (X * Y)) * Z = X * (Z + (Z * Y))
+832. X * (Y + (Y * Z)) = Y * ((1 + Z) * X)
+833. (X + (X * Y)) * Z = X * (Z + (Y * Z))
+  (hard) Z * (Y + (X * Y)) = Y * ((X + 1) * Z)
+834. X * (Y + (Z * Y)) = Y * ((1 + Z) * X)
+835. x + (x + d(X * x)) -> d(x * (X + x))
+836. d(x * (x + sin(1))) -> x + (x + sin(1))
+837. d(x * (x + sin(0))) -> x + (x + sin(0))
+838. d(x * (x + cos(1))) -> x + (x + cos(1))
+839. d(x * (x + cos(0))) -> x + (x + cos(0))
+840. (X * Y) + ((X * Z) + W) -> W + (X * (Y + Z))
+841. (X * (1 + Y)) + Z = X + ((X * Y) + Z)
+842. (X * (1 + Y)) + Z = X + (Z + (Y * X))
+  (hard) X + (X * (Y + Z)) = X * (1 + (Z + Y))
+  (hard) Z + (Z * (Y + X)) = (1 + (X + Y)) * Z
+  (hard) X + ((Y + Z) * X) = X * (1 + (Z + Y))
+843. X + (Y * (1 + Z)) = Y + ((Y * Z) + X)
+  (simplifying rules with respect to one another...)
+  (delete rule 5)
+844. cos(x) -> *2
+  (delete rule 6)
+845. d(sin2) -> *2
+  (delete rule 16)
+  (delete rule 43)
+  (delete rule 45)
+  (delete rule 46)
+  (delete rule 47)
+  (delete rule 48)
+  (delete rule 49)
+  (delete rule 50)
+  (delete rule 53)
+  (delete rule 54)
+  (delete rule 55)
+  (delete rule 76)
+  (delete rule 77)
+  (delete rule 78)
+  (delete rule 79)
+  (delete rule 80)
+  (delete rule 81)
+  (delete rule 82)
+  (delete rule 83)
+  (delete rule 92)
+  (delete rule 94)
+  (delete rule 95)
+  (delete rule 96)
+  (delete rule 97)
+  (delete rule 98)
+  (delete rule 100)
+  (delete rule 109)
+  (delete rule 112)
+  (delete rule 113)
+  (delete rule 114)
+  (delete rule 115)
+  (delete rule 117)
+  (delete rule 120)
+  (delete rule 126)
+  (delete rule 128)
+  (delete rule 129)
+  (delete rule 130)
+  (delete rule 131)
+  (delete rule 132)
+  (delete rule 133)
+  (delete rule 134)
+  (delete rule 135)
+  (delete rule 136)
+  (delete rule 137)
+  (delete rule 138)
+  (delete rule 139)
+  (delete rule 142)
+  (delete rule 145)
+  (delete rule 148)
+  (delete rule 151)
+  (delete rule 153)
+  (delete rule 157)
+  (delete rule 161)
+  (delete rule 162)
+  (delete rule 163)
+  (delete rule 164)
+  (delete rule 168)
+  (delete rule 171)
+  (delete rule 172)
+  (delete rule 239)
+  (delete rule 240)
+  (delete rule 249)
+  (delete rule 279)
+  (delete rule 280)
+  (delete rule 283)
+  (delete rule 289)
+  (delete rule 290)
+  (delete rule 291)
+  (delete rule 292)
+  (delete rule 293)
+  (delete rule 294)
+  (delete rule 295)
+  (delete rule 296)
+  (delete rule 297)
+  (delete rule 298)
+  (delete rule 299)
+  (delete rule 300)
+  (delete rule 301)
+  (delete rule 302)
+  (delete rule 303)
+  (delete rule 304)
+  (delete rule 305)
+  (delete rule 306)
+  (delete rule 307)
+  (delete rule 308)
+  (delete rule 309)
+  (delete rule 310)
+  (delete rule 311)
+  (delete rule 312)
+  (delete rule 353)
+  (delete rule 354)
+  (delete rule 368)
+  (delete rule 369)
+  (delete rule 370)
+  (delete rule 375)
+  (delete rule 376)
+  (delete rule 378)
+  (delete rule 379)
+  (delete rule 385)
+  (delete rule 392)
+  (delete rule 393)
+  (delete rule 536)
+  (delete rule 556)
+  (delete rule 557)
+  (delete rule 559)
+  (delete rule 560)
+  (delete rule 561)
+  (delete rule 562)
+  (delete rule 563)
+  (delete rule 564)
+  (delete rule 565)
+  (delete rule 566)
+  (delete rule 567)
+  (delete rule 568)
+  (delete rule 569)
+  (delete rule 570)
+  (delete rule 571)
+  (delete rule 572)
+  (delete rule 573)
+  (delete rule 574)
+  (delete rule 575)
+  (delete rule 576)
+  (delete rule 577)
+  (delete rule 578)
+  (delete rule 579)
+  (delete rule 580)
+  (delete rule 581)
+  (delete rule 582)
+  (delete rule 583)
+  (delete rule 588)
+  (delete rule 593)
+  (delete rule 604)
+  (delete rule 607)
+  (delete rule 622)
+  (delete rule 631)
+  (delete rule 652)
+  (delete rule 657)
+  (delete rule 693)
+  (delete rule 696)
+  (delete rule 712)
+  (delete rule 713)
+  (delete rule 714)
+  (delete rule 715)
+  (delete rule 716)
+  (delete rule 717)
+  (delete rule 718)
+  (delete rule 719)
+  (delete rule 720)
+  (delete rule 721)
+  (delete rule 722)
+  (delete rule 723)
+  (delete rule 724)
+  (delete rule 725)
+  (delete rule 726)
+  (delete rule 727)
+  (delete rule 728)
+  (delete rule 729)
+  (delete rule 730)
+  (delete rule 731)
+  (delete rule 732)
+  (delete rule 733)
+  (delete rule 734)
+  (delete rule 735)
+  (delete rule 802)
+  (delete rule 831)
+  (delete rule 832)
+  (hard) X * (Y + (1 + Y)) = X + (Y * (X + X))
+846. ((X + 1) * Y) + Z = Y + ((Y * X) + Z)
+847. ((X + 1) * Y) + Z = Y + (Z + (X * Y))
+848. X + ((Y + 1) * Z) = Z + ((Z * Y) + X)
+849. X + (Y * (X * Z)) = (1 + (Z * Y)) * X
+850. (1 + (X * Y)) * Z = Z + (X * (Y * Z))
+851. X * (Y + (Y * Z)) = (Z + 1) * (Y * X)
+852. X * (Y + (Z * Y)) = (Z + 1) * (Y * X)
+853. X + (Y * (Z + 1)) = Y + ((Z * Y) + X)
+854. (X * (Y + 1)) + Z = X + ((Y * X) + Z)
+  (hard) X + (X * (Y + Z)) = X * (Z + (Y + 1))
+  (hard) X + ((Y + Z) * X) = X * (Z + (Y + 1))
+855. (X + 1) * (Y * Z) = Y * (Z * (1 + X))
+856. X + (Y * (1 + X)) = Y + (X * (Y + 1))
+  (hard) Y + (X * (1 + Y)) = X + (Y * (1 + X))
+  (hard) Y + (X * (1 + Y)) = X + ((X + 1) * Y)
+  (hard) X + ((X + 1) * Y) = Y + (X * (Y + 1))
+  (hard) Y + ((Y + 1) * X) = X + ((X + 1) * Y)
+857. X + (Y * (1 + Z)) = ((Z + 1) * Y) + X
+  (hard) Z * (1 + (Y + X)) = (Y + (X + 1)) * Z
+  (hard) Z * (Y + (1 + X)) = (Y + (X + 1)) * Z
+858. X * ((Y + 1) * Z) = (Y + 1) * (Z * X)
+  (hard) (X + 1) * (Y * X) = Y * (X * (X + 1))
+859. (X + 1) * (Y * Z) = Z * (Y * (X + 1))
+860. X * (Y * (1 + Z)) = (Z + 1) * (Y * X)
+861. (X + (Y * X)) * Z -> X * (Z * (Y + 1))
+  (hard) X * ((Y + 1) * Z) = Z * (X * (1 + Y))
+862. X * (Y * (Z + 1)) = Y * ((1 + Z) * X)
+863. (X + 1) * (Y * Z) = Y * (Z * (X + 1))
+864. -(sin(X) * d(sin(X))) -> cos(X) * d(cos(X))
+865. X + ((Y + -1) * X) -> X * Y
+866. X + ((-1 + Y) * X) -> X * Y
+867. *2 * (X * (Y * cos(sin2))) -> X * (Y * d(sin(sin2)))
+868. d(sin(sin(sin(sin(1)))) * sin(sin(sin(sin(1))))) -> 0
+869. d(cos(sin(sin(sin(1)))) * cos(sin(sin(sin(1))))) -> 0
+870. d(sin(cos(sin(sin(1)))) * sin(cos(sin(sin(1))))) -> 0
+871. d(cos(cos(sin(sin(1)))) * cos(cos(sin(sin(1))))) -> 0
+872. d(sin(sin(cos(sin(1)))) * sin(sin(cos(sin(1))))) -> 0
+873. d(cos(sin(cos(sin(1)))) * cos(sin(cos(sin(1))))) -> 0
+874. d(sin(cos(cos(sin(1)))) * sin(cos(cos(sin(1))))) -> 0
+875. d(cos(cos(cos(sin(1)))) * cos(cos(cos(sin(1))))) -> 0
+876. d(sin(sin(sin(sin(0)))) * sin(sin(sin(sin(0))))) -> 0
+877. d(cos(sin(sin(sin(0)))) * cos(sin(sin(sin(0))))) -> 0
+878. d(sin(cos(sin(sin(0)))) * sin(cos(sin(sin(0))))) -> 0
+879. d(cos(cos(sin(sin(0)))) * cos(cos(sin(sin(0))))) -> 0
+880. d(sin(sin(cos(sin(0)))) * sin(sin(cos(sin(0))))) -> 0
+881. d(cos(sin(cos(sin(0)))) * cos(sin(cos(sin(0))))) -> 0
+882. d(sin(cos(cos(sin(0)))) * sin(cos(cos(sin(0))))) -> 0
+883. d(cos(cos(cos(sin(0)))) * cos(cos(cos(sin(0))))) -> 0
+884. d(sin(sin(sin(cos(1)))) * sin(sin(sin(cos(1))))) -> 0
+885. d(cos(sin(sin(cos(1)))) * cos(sin(sin(cos(1))))) -> 0
+886. d(sin(cos(sin(cos(1)))) * sin(cos(sin(cos(1))))) -> 0
+887. d(cos(cos(sin(cos(1)))) * cos(cos(sin(cos(1))))) -> 0
+888. d(sin(sin(cos(cos(1)))) * sin(sin(cos(cos(1))))) -> 0
+889. d(cos(sin(cos(cos(1)))) * cos(sin(cos(cos(1))))) -> 0
+890. d(sin(cos(cos(cos(1)))) * sin(cos(cos(cos(1))))) -> 0
+891. d(cos(cos(cos(cos(1)))) * cos(cos(cos(cos(1))))) -> 0
+892. d(sin(sin(sin(cos(0)))) * sin(sin(sin(cos(0))))) -> 0
+893. d(cos(sin(sin(cos(0)))) * cos(sin(sin(cos(0))))) -> 0
+894. d(sin(cos(sin(cos(0)))) * sin(cos(sin(cos(0))))) -> 0
+895. d(cos(cos(sin(cos(0)))) * cos(cos(sin(cos(0))))) -> 0
+896. d(sin(sin(cos(cos(0)))) * sin(sin(cos(cos(0))))) -> 0
+897. d(cos(sin(cos(cos(0)))) * cos(sin(cos(cos(0))))) -> 0
+898. d(sin(cos(cos(cos(0)))) * sin(cos(cos(cos(0))))) -> 0
+899. d(cos(cos(cos(cos(0)))) * cos(cos(cos(cos(0))))) -> 0
+900. d(sin(-sin(sin(1))) * sin(-sin(sin(1)))) -> 0
+901. d(cos(-sin(sin(1))) * cos(-sin(sin(1)))) -> 0
+902. d(sin(-cos(sin(1))) * sin(-cos(sin(1)))) -> 0
+903. d(cos(-cos(sin(1))) * cos(-cos(sin(1)))) -> 0
+904. d(sin(-sin(sin(0))) * sin(-sin(sin(0)))) -> 0
+905. d(cos(-sin(sin(0))) * cos(-sin(sin(0)))) -> 0
+906. d(sin(-cos(sin(0))) * sin(-cos(sin(0)))) -> 0
+907. d(cos(-cos(sin(0))) * cos(-cos(sin(0)))) -> 0
+908. d(sin(-sin(cos(1))) * sin(-sin(cos(1)))) -> 0
+909. d(cos(-sin(cos(1))) * cos(-sin(cos(1)))) -> 0
+910. d(sin(-cos(cos(1))) * sin(-cos(cos(1)))) -> 0
+911. d(cos(-cos(cos(1))) * cos(-cos(cos(1)))) -> 0
+912. d(sin(-sin(cos(0))) * sin(-sin(cos(0)))) -> 0
+913. d(cos(-sin(cos(0))) * cos(-sin(cos(0)))) -> 0
+914. d(sin(-cos(cos(0))) * sin(-cos(cos(0)))) -> 0
+915. d(cos(-cos(cos(0))) * cos(-cos(cos(0)))) -> 0
+916. d(sin(sin(-sin(1))) * sin(sin(-sin(1)))) -> 0
+917. d(cos(sin(-sin(1))) * cos(sin(-sin(1)))) -> 0
+918. d(sin(cos(-sin(1))) * sin(cos(-sin(1)))) -> 0
+919. d(cos(cos(-sin(1))) * cos(cos(-sin(1)))) -> 0
+920. d(sin(sin(-sin(0))) * sin(sin(-sin(0)))) -> 0
+921. d(cos(sin(-sin(0))) * cos(sin(-sin(0)))) -> 0
+922. d(sin(cos(-sin(0))) * sin(cos(-sin(0)))) -> 0
+923. d(cos(cos(-sin(0))) * cos(cos(-sin(0)))) -> 0
+924. d(sin(sin(-cos(1))) * sin(sin(-cos(1)))) -> 0
+925. d(cos(sin(-cos(1))) * cos(sin(-cos(1)))) -> 0
+926. d(sin(cos(-cos(1))) * sin(cos(-cos(1)))) -> 0
+927. d(cos(cos(-cos(1))) * cos(cos(-cos(1)))) -> 0
+928. d(sin(sin(-cos(0))) * sin(sin(-cos(0)))) -> 0
+929. d(cos(sin(-cos(0))) * cos(sin(-cos(0)))) -> 0
+930. d(sin(cos(-cos(0))) * sin(cos(-cos(0)))) -> 0
+931. d(cos(cos(-cos(0))) * cos(cos(-cos(0)))) -> 0
+932. sin2 + d(x * d(*2)) -> x * d(d(*2))
+933. sin2 + d(d(*2 * x)) -> d(x * d(*2))
+934. d(sin(sin(sin(sin(1)) * sin(sin(1))))) -> 0
+935. d(sin(cos(sin(sin(1)) * sin(sin(1))))) -> 0
+936. d(sin(sin(cos(sin(1)) * cos(sin(1))))) -> 0
+937. d(sin(cos(cos(sin(1)) * cos(sin(1))))) -> 0
+938. d(sin(sin(sin(sin(0)) * sin(sin(0))))) -> 0
+939. d(sin(cos(sin(sin(0)) * sin(sin(0))))) -> 0
+940. d(sin(sin(cos(sin(0)) * cos(sin(0))))) -> 0
+941. d(sin(cos(cos(sin(0)) * cos(sin(0))))) -> 0
+942. d(sin(sin(sin(cos(1)) * sin(cos(1))))) -> 0
+943. d(sin(cos(sin(cos(1)) * sin(cos(1))))) -> 0
+944. d(sin(sin(cos(cos(1)) * cos(cos(1))))) -> 0
+945. d(sin(cos(cos(cos(1)) * cos(cos(1))))) -> 0
+946. d(sin(sin(sin(cos(0)) * sin(cos(0))))) -> 0
+947. d(sin(cos(sin(cos(0)) * sin(cos(0))))) -> 0
+948. d(sin(sin(cos(cos(0)) * cos(cos(0))))) -> 0
+949. d(sin(cos(cos(cos(0)) * cos(cos(0))))) -> 0
+950. d(sin(sin(sin(sin(1) * sin(1))))) -> 0
+951. d(sin(cos(sin(sin(1) * sin(1))))) -> 0
+952. d(sin(sin(cos(sin(1) * sin(1))))) -> 0
+953. d(sin(cos(cos(sin(1) * sin(1))))) -> 0
+954. d(sin(sin(-(sin(1) * sin(1))))) -> 0
+955. d(sin(cos(-(sin(1) * sin(1))))) -> 0
+956. d(sin(sin(sin(sin(0) * sin(0))))) -> 0
+957. d(sin(cos(sin(sin(0) * sin(0))))) -> 0
+958. d(sin(sin(cos(sin(0) * sin(0))))) -> 0
+959. d(sin(cos(cos(sin(0) * sin(0))))) -> 0
+960. d(sin(sin(-(sin(0) * sin(0))))) -> 0
+961. d(sin(cos(-(sin(0) * sin(0))))) -> 0
+962. d(sin(sin(sin(cos(1) * cos(1))))) -> 0
+963. d(sin(cos(sin(cos(1) * cos(1))))) -> 0
+964. d(sin(sin(cos(cos(1) * cos(1))))) -> 0
+965. d(sin(cos(cos(cos(1) * cos(1))))) -> 0
+966. d(sin(sin(-(cos(1) * cos(1))))) -> 0
+967. d(sin(cos(-(cos(1) * cos(1))))) -> 0
+968. d(sin(sin(sin(cos(0) * cos(0))))) -> 0
+969. d(sin(cos(sin(cos(0) * cos(0))))) -> 0
+970. d(sin(sin(cos(cos(0) * cos(0))))) -> 0
+971. d(sin(cos(cos(cos(0) * cos(0))))) -> 0
+972. d(sin(sin(-(cos(0) * cos(0))))) -> 0
+973. d(sin(cos(-(cos(0) * cos(0))))) -> 0
+974. X * ((Y + Y) * d(X)) -> Y * d(X * X)
+975. d((1 + (1 + 1)) * (1 + (1 + 1))) -> 0
+976. -X + (X * (1 + Y)) -> X * Y
+977. -X + ((Y + 1) * X) -> X * Y
+978. -X + (-X + Y) -> Y + -(X + X)
+979. -X + (X * Y) = X * (-1 + Y)
+980. (X + -1) * Y = -Y + (Y * X)
+981. d(d((sin(1) + sin(1)) * (sin(1) + sin(1)))) -> 0
+982. d(d((sin(0) + sin(0)) * (sin(0) + sin(0)))) -> 0
+983. d(d((cos(1) + cos(1)) * (cos(1) + cos(1)))) -> 0
+984. d(d((cos(0) + cos(0)) * (cos(0) + cos(0)))) -> 0
+985. d(sin(sin(sin(1))) * cos(sin(sin(sin(1))))) -> 0
+986. d(cos(sin(sin(1))) * cos(cos(sin(sin(1))))) -> 0
+987. d(sin(cos(sin(1))) * cos(sin(cos(sin(1))))) -> 0
+988. d(cos(cos(sin(1))) * cos(cos(cos(sin(1))))) -> 0
+989. d(sin(sin(sin(0))) * cos(sin(sin(sin(0))))) -> 0
+990. d(cos(sin(sin(0))) * cos(cos(sin(sin(0))))) -> 0
+991. d(sin(cos(sin(0))) * cos(sin(cos(sin(0))))) -> 0
+992. d(cos(cos(sin(0))) * cos(cos(cos(sin(0))))) -> 0
+993. d(sin(sin(cos(1))) * cos(sin(sin(cos(1))))) -> 0
+994. d(cos(sin(cos(1))) * cos(cos(sin(cos(1))))) -> 0
+995. d(sin(cos(cos(1))) * cos(sin(cos(cos(1))))) -> 0
+996. d(cos(cos(cos(1))) * cos(cos(cos(cos(1))))) -> 0
+997. d(sin(sin(cos(0))) * cos(sin(sin(cos(0))))) -> 0
+998. d(cos(sin(cos(0))) * cos(cos(sin(cos(0))))) -> 0
+999. d(sin(cos(cos(0))) * cos(sin(cos(cos(0))))) -> 0
+1000. d(cos(cos(cos(0))) * cos(cos(cos(cos(0))))) -> 0
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (derivative of x): d(x) = 1.
+Axiom 2 (commutativity of *): X * Y = Y * X.
+Axiom 3 (derivative of sin): d(sin(X)) = cos(X) * d(X).
+
+Goal 1 (goal): d(sin(x)) = 1 * cos(x).
+Proof:
+  d(sin(x))
+= { by axiom 3 (derivative of sin) }
+  cos(x) * d(x)
+= { by axiom 2 (commutativity of *) }
+  d(x) * cos(x)
+= { by axiom 1 (derivative of x) }
+  1 * cos(x)
+
+RESULT: Theorem (the conjecture is true).
+
+Execution time: 1.39325 seconds
+

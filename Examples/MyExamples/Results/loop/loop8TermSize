@@ -1,0 +1,66 @@
+Here is the input problem:
+  Axiom 1 (flattening): \2 = a \ a.
+  Axiom 2 (flattening): /2 = a / a.
+  Axiom 3 (ld_mult): X \ (X * Y) = Y.
+  Axiom 4 (rd_mult): (X * Y) / Y = X.
+  Axiom 5 (mult_ld): X * (X \ Y) = Y.
+  Axiom 6 (mult_rd): (X / Y) * Y = X.
+  Axiom 7 (moufang): X * (Y * (X * Z)) = ((X * Y) * X) * Z.
+  Goal 1 (conjecture): a \ a = a / a.
+
+1. a \ a -> \2
+2. a / a -> /2
+3. X \ (X * Y) -> Y
+4. (X * Y) / Y -> X
+5. X * (X \ Y) -> Y
+6. (X / Y) * Y -> X
+7. ((X * Y) * X) * Z -> X * (Y * (X * Z))
+8. a * \2 -> a
+9. /2 * a -> a
+10. a / \2 -> a
+11. /2 \ a -> a
+12. X / (Y \ X) -> Y
+13. (X / Y) \ X -> Y
+14. a * (\2 * (a * X)) -> (a * a) * X
+15. (a * a) * \2 -> a * (\2 * a)
+16. /2 * (a * (/2 * X)) -> (a * /2) * X
+17. (a * /2) * a -> /2 * (a * a)
+18. a \ ((a * a) * X) -> \2 * (a * X)
+19. (a * a) * (a \ X) -> a * (\2 * X)
+20. /2 \ ((a * /2) * X) -> a * (/2 * X)
+21. (a * /2) * (/2 \ X) -> /2 * (a * X)
+22. (a * (\2 * a)) / \2 -> a * a
+23. (/2 * (a * a)) / a -> a * /2
+24. (/2 * (a * a)) * X -> a * (/2 * (a * X))
+
+Gave up on reaching the given resource limit.
+Here is the final rewrite system:
+  a \ a -> \2
+  /2 \ a -> a
+  a * \2 -> a
+  /2 * a -> a
+  a / \2 -> a
+  a / a -> /2
+  X \ (X * Y) -> Y
+  (X / Y) \ X -> Y
+  X * (X \ Y) -> Y
+  (a * a) * \2 -> a * (\2 * a)
+  (a * /2) * a -> /2 * (a * a)
+  (X / Y) * Y -> X
+  X / (Y \ X) -> Y
+  (X * Y) / Y -> X
+  a \ ((a * a) * X) -> \2 * (a * X)
+  /2 \ ((a * /2) * X) -> a * (/2 * X)
+  a * (\2 * (a * X)) -> (a * a) * X
+  /2 * (a * (/2 * X)) -> (a * /2) * X
+  (a * a) * (a \ X) -> a * (\2 * X)
+  (a * /2) * (/2 \ X) -> /2 * (a * X)
+  (/2 * (a * a)) * X -> a * (/2 * (a * X))
+  ((X * Y) * X) * Z -> X * (Y * (X * Z))
+  (a * (\2 * a)) / \2 -> a * a
+  (/2 * (a * a)) / a -> a * /2
+
+RESULT: GaveUp (couldn't solve the problem).
+
+Execution time: 0.016753 seconds
+

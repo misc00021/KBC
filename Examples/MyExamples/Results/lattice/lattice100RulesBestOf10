@@ -1,0 +1,129 @@
+Here is the input problem:
+  Axiom 1 (idempotent_join): X ∨ X = X.
+  Axiom 2 (commutative_join): X ∨ Y = Y ∨ X.
+  Axiom 3 (idempotent_meet): X ∧ X = X.
+  Axiom 4 (commutative_meet): X ∧ Y = Y ∧ X.
+  Axiom 5 (absorption_join): X ∨ (X ∧ Y) = X.
+  Axiom 6 (associative_join): X ∨ (Y ∨ Z) = (X ∨ Y) ∨ Z.
+  Axiom 7 (absorption_meet): X ∧ (X ∨ Y) = X.
+  Axiom 8 (associative_meet): X ∧ (Y ∧ Z) = (X ∧ Y) ∧ Z.
+  Goal 1 (goal): x = x.
+
+1. X ∨ X -> X
+2. X ∨ Y <-> Y ∨ X
+3. X ∧ X -> X
+4. X ∧ Y <-> Y ∧ X
+5. X ∨ (X ∧ Y) -> X
+6. (X ∨ Y) ∨ Z -> X ∨ (Y ∨ Z)
+7. X ∧ (X ∨ Y) -> X
+8. (X ∧ Y) ∧ Z -> X ∧ (Y ∧ Z)
+9. X ∨ (Y ∧ X) -> X
+10. X ∧ (Y ∨ X) -> X
+11. X ∨ (X ∨ Y) -> X ∨ Y
+12. X ∧ (X ∧ Y) -> X ∧ Y
+13. X ∨ (Y ∨ Z) <-> Y ∨ (X ∨ Z)
+14. X ∧ (Y ∧ Z) <-> Y ∧ (X ∧ Z)
+15. X ∨ (Y ∨ X) -> X ∨ Y
+16. X ∧ (Y ∧ X) -> X ∧ Y
+17. X ∨ (Y ∨ (X ∧ Z)) -> X ∨ Y
+18. X ∧ (Y ∧ (X ∨ Z)) -> X ∧ Y
+19. X ∨ (Y ∧ (X ∧ Z)) -> X
+20. X ∧ (Y ∨ (X ∨ Z)) -> X
+21. X ∨ (Y ∨ (Z ∧ X)) -> X ∨ Y
+22. X ∧ (Y ∧ (Z ∨ X)) -> X ∧ Y
+23. X ∨ ((X ∧ Y) ∨ Z) -> X ∨ Z
+24. X ∧ ((X ∨ Y) ∧ Z) -> X ∧ Z
+25. X ∨ (Y ∧ (Z ∧ X)) -> X
+26. X ∧ (Y ∨ (Z ∨ X)) -> X
+27. X ∨ ((Y ∧ X) ∨ Z) -> X ∨ Z
+28. X ∧ ((Y ∨ X) ∧ Z) -> X ∧ Z
+  (hard) X ∨ (Y ∨ Z) = X ∨ (Y ∨ (X ∨ Z))
+  (hard) X ∧ (Y ∧ Z) = X ∧ (Y ∧ (X ∧ Z))
+29. X ∨ (Y ∨ (Z ∧ (X ∨ Y))) -> X ∨ Y
+30. (X ∨ Y) ∧ (X ∨ (Y ∨ Z)) -> X ∨ Y
+31. (X ∧ Y) ∨ (X ∧ (Y ∧ Z)) -> X ∧ Y
+32. X ∧ (Y ∧ (Z ∨ (X ∧ Y))) -> X ∧ Y
+33. (X ∨ Y) ∧ (X ∨ (Z ∨ Y)) -> X ∨ Y
+34. (X ∧ Y) ∨ (X ∧ (Z ∧ Y)) -> X ∧ Y
+35. X ∨ (Y ∨ (Z ∧ (X ∧ W))) -> X ∨ Y
+36. X ∧ (Y ∧ (Z ∨ (X ∨ W))) -> X ∧ Y
+37. X ∨ (Y ∨ ((X ∨ Y) ∧ Z)) -> X ∨ Y
+38. X ∧ (Y ∧ ((X ∧ Y) ∨ Z)) -> X ∧ Y
+39. X ∨ (Y ∧ (Z ∧ (X ∧ W))) -> X
+40. X ∧ (Y ∨ (Z ∨ (X ∨ W))) -> X
+41. X ∨ (Y ∨ (Z ∨ (X ∧ W))) -> X ∨ (Y ∨ Z)
+42. (X ∨ Y) ∧ (X ∨ (Y ∧ Z)) -> X ∨ (Y ∧ Z)
+43. X ∧ (Y ∧ (Z ∧ (X ∨ W))) -> X ∧ (Y ∧ Z)
+44. (X ∧ Y) ∨ (X ∧ (Y ∨ Z)) -> X ∧ (Y ∨ Z)
+45. X ∨ ((Y ∧ (X ∧ Z)) ∨ W) -> X ∨ W
+46. X ∧ ((Y ∨ (X ∨ Z)) ∧ W) -> X ∧ W
+47. X ∨ (Y ∨ (Z ∧ (W ∧ X))) -> X ∨ Y
+48. X ∧ (Y ∧ (Z ∨ (W ∨ X))) -> X ∧ Y
+49. X ∨ (Y ∧ (Z ∧ (W ∧ X))) -> X
+50. X ∧ (Y ∨ (Z ∨ (W ∨ X))) -> X
+51. (X ∨ Y) ∧ (X ∨ (Z ∧ Y)) -> X ∨ (Z ∧ Y)
+52. X ∨ (Y ∨ (Z ∨ (W ∧ X))) -> X ∨ (Y ∨ Z)
+53. (X ∧ Y) ∨ (X ∧ (Z ∨ Y)) -> X ∧ (Z ∨ Y)
+54. X ∧ (Y ∧ (Z ∧ (W ∨ X))) -> X ∧ (Y ∧ Z)
+55. X ∨ (Y ∨ ((X ∧ Z) ∨ W)) -> X ∨ (Y ∨ W)
+56. X ∧ (Y ∧ ((X ∨ Z) ∧ W)) -> X ∧ (Y ∧ W)
+57. (X ∨ Y) ∧ (Y ∨ (X ∧ Z)) -> Y ∨ (X ∧ Z)
+58. (X ∨ Y) ∧ ((Y ∧ Z) ∨ X) -> X ∨ (Y ∧ Z)
+59. (X ∧ Y) ∨ (Y ∧ (X ∨ Z)) -> Y ∧ (X ∨ Z)
+60. (X ∧ Y) ∨ ((Y ∨ Z) ∧ X) -> X ∧ (Y ∨ Z)
+61. (X ∨ Y) ∧ (X ∨ (Z ∧ (X ∨ Y))) -> X ∨ (Z ∧ (X ∨ Y))
+62. X ∧ (Y ∨ (X ∧ (Y ∨ Z))) -> X ∧ (Y ∨ Z)
+63. (X ∧ Y) ∨ (X ∧ (Z ∨ (X ∧ Y))) -> X ∧ (Z ∨ (X ∧ Y))
+64. X ∨ (Y ∧ (X ∨ (Y ∧ Z))) -> X ∨ (Y ∧ Z)
+65. X ∨ ((Y ∧ (Z ∧ X)) ∨ W) -> X ∨ W
+66. X ∧ ((Y ∨ (Z ∨ X)) ∧ W) -> X ∧ W
+67. X ∨ (Y ∨ ((Z ∧ X) ∨ W)) -> X ∨ (Y ∨ W)
+68. X ∧ (Y ∧ ((Z ∨ X) ∧ W)) -> X ∧ (Y ∧ W)
+69. (X ∨ Y) ∧ (Y ∨ (Z ∧ X)) -> Y ∨ (X ∧ Z)
+70. (X ∨ Y) ∧ ((Z ∧ Y) ∨ X) -> X ∨ (Z ∧ Y)
+71. (X ∧ Y) ∨ (Y ∧ (Z ∨ X)) -> Y ∧ (X ∨ Z)
+72. (X ∧ Y) ∨ ((Z ∨ Y) ∧ X) -> X ∧ (Z ∨ Y)
+  (hard) X ∨ ((Y ∧ Z) ∨ (W ∨ Y)) = X ∨ (Y ∨ W)
+  (hard) X ∧ ((Y ∨ Z) ∧ (W ∧ Y)) = X ∧ (Y ∧ W)
+73. (X ∨ Y) ∧ ((X ∧ Z) ∨ Y) -> Y ∨ (X ∧ Z)
+74. (X ∧ Y) ∨ ((X ∨ Z) ∧ Y) -> Y ∧ (X ∨ Z)
+75. X ∧ (Y ∨ (X ∧ (Z ∨ Y))) -> X ∧ (Y ∨ Z)
+76. X ∧ (Y ∨ ((Y ∨ Z) ∧ X)) -> X ∧ (Y ∨ Z)
+77. X ∨ (Y ∧ ((Y ∧ Z) ∨ X)) -> X ∨ (Y ∧ Z)
+78. X ∨ (Y ∧ (X ∨ (Z ∧ Y))) -> X ∨ (Y ∧ Z)
+79. (X ∨ Y) ∧ (X ∨ ((X ∨ Y) ∧ Z)) -> X ∨ (Z ∧ (X ∨ Y))
+80. (X ∧ Y) ∨ (X ∧ ((X ∧ Y) ∨ Z)) -> X ∧ (Z ∨ (X ∧ Y))
+81. X ∨ (Y ∨ (Z ∧ (W ∧ (X ∨ Y)))) -> X ∨ Y
+82. (X ∨ Y) ∧ (X ∨ (Z ∨ (Y ∨ W))) -> X ∨ Y
+83. (X ∧ Y) ∨ (X ∧ (Z ∧ (Y ∧ W))) -> X ∧ Y
+84. X ∧ (Y ∧ (Z ∨ (W ∨ (X ∧ Y)))) -> X ∧ Y
+85. X ∧ ((X ∧ Y) ∨ (X ∧ Z)) -> (X ∧ Y) ∨ (X ∧ Z)
+86. X ∧ ((Y ∧ X) ∨ (X ∧ Z)) -> (Y ∧ X) ∨ (X ∧ Z)
+87. X ∧ ((X ∧ Y) ∨ (Y ∧ Z)) -> X ∧ Y
+88. X ∨ ((X ∨ Y) ∧ (X ∨ Z)) -> (X ∨ Y) ∧ (X ∨ Z)
+89. X ∨ ((Y ∨ X) ∧ (X ∨ Z)) -> (Y ∨ X) ∧ (X ∨ Z)
+90. X ∨ ((X ∨ Y) ∧ (Y ∨ Z)) -> X ∨ Y
+  (hard) X ∨ ((Y ∧ Z) ∨ (W ∨ Z)) = X ∨ (Z ∨ W)
+  (hard) X ∧ ((Y ∨ Z) ∧ (W ∧ Z)) = X ∧ (Z ∧ W)
+91. (X ∨ Y) ∧ ((Z ∧ X) ∨ Y) -> Y ∨ (X ∧ Z)
+92. (X ∧ Y) ∨ ((Z ∨ X) ∧ Y) -> Y ∧ (X ∨ Z)
+93. X ∧ (Y ∨ ((Z ∨ Y) ∧ X)) -> X ∧ (Y ∨ Z)
+94. X ∨ (Y ∧ ((Z ∧ Y) ∨ X)) -> X ∨ (Y ∧ Z)
+95. X ∧ ((Y ∧ Z) ∨ (X ∧ Y)) -> X ∧ Y
+96. X ∧ ((Y ∧ X) ∨ (Y ∧ Z)) -> X ∧ Y
+97. X ∧ ((X ∧ Y) ∨ (Z ∧ Y)) -> X ∧ Y
+98. X ∨ ((Y ∨ X) ∧ (Y ∨ Z)) -> X ∨ Y
+99. X ∨ ((X ∨ Y) ∧ (Z ∨ Y)) -> X ∨ Y
+100. X ∨ ((Y ∨ Z) ∧ (X ∨ Y)) -> X ∨ Y
+
+The conjecture is true! Here is a proof.
+
+
+Goal 1 (goal): x = x.
+Proof:
+Reflexivity.
+
+RESULT: Theorem (the conjecture is true).
+
+Execution time: 0.186644 seconds
+

@@ -1,0 +1,137 @@
+Here is the input problem:
+  Axiom 1 (types17): neg(X) = neg(X).
+  Axiom 2 (types18): true = true.
+  Axiom 3 (types19): false = false.
+  Axiom 4 (types15): 1 = 1.
+  Axiom 5 (types14): 0 = 0.
+  Axiom 6 (types16): neg(X) = neg(X).
+  Axiom 7 (one_def): one = c(1, 0).
+  Axiom 8 (zero_def): zero = c(0, 0).
+  Axiom 9 (real_add_comm): X + Y = Y + X.
+  Axiom 10 (add_inv_def): X + neg(X) = 0.
+  Axiom 11 (real_add_inv): X + neg(X) = 0.
+  Axiom 12 (add_id_left): 0 + X = X.
+  Axiom 13 (real_add_id): 0 + X = X.
+  Axiom 14 (real_mul_comm): X * Y = Y * X.
+  Axiom 15 (mul_id_left): 1 * X = X.
+  Axiom 16 (real_mul_id): 1 * X = X.
+  Axiom 17 (types3): real(X) = real(X).
+  Axiom 18 (types4): imag(X) = imag(X).
+  Axiom 19 (types20): X = X.
+  Axiom 20 (neg_def): cneg(c(X, Y)) = c(neg(X), neg(Y)).
+  Axiom 21 (types13): X - Y = X - Y.
+  Axiom 22 (types12): X - Y = X - Y.
+  Axiom 23 (types2): c(X, Y) = c(X, Y).
+  Axiom 24 (types1): c(X, Y) = c(X, Y).
+  Axiom 25 (types7): X + Y = X + Y.
+  Axiom 26 (types6): X + Y = X + Y.
+  Axiom 27 (types10): X * Y = X * Y.
+  Axiom 28 (types9): X * Y = X * Y.
+  Axiom 29 (types11): X - Y = X - Y.
+  Axiom 30 (types5): X + Y = X + Y.
+  Axiom 31 (types8): X * Y = X * Y.
+  Axiom 32 (real_add_assoc): (X + Y) + Z = X + (Y + Z).
+  Axiom 33 (real_mul_assoc): (X * Y) * Z = X * (Y * Z).
+  Axiom 34 (plus_def): plus(c(X, Y), c(Z, W)) = c(X + Z, Y + W).
+  Axiom 35 (real_dist): X * (Y + Z) = (X * Y) + (X * Z).
+  Axiom 36 (add_real): real(plus(c(X, Y), c(Z, W))) = X + Z.
+  Axiom 37 (mul_real): real(times(c(X, Y), c(Z, W))) = (X * Z) - (Y * W).
+  Axiom 38 (add_imag): imag(plus(c(X, Y), c(Z, W))) = Y + W.
+  Axiom 39 (mul_imag): imag(times(c(X, Y), c(Z, W))) = (X * W) + (Y * Z).
+  Axiom 40 (times_def): times(c(X, Y), c(Z, W)) = c((X * Z) - (Y * W), (X * W) + (Y * Z)).
+  Goal 1 (goal): true = false.
+
+1. neg(X) -> neg(X)
+2. true -> true
+3. false -> false
+4. 1 -> 1
+5. 0 -> 0
+6. neg(X) -> neg(X)
+7. c(1, 0) -> one
+8. c(0, 0) -> zero
+9. X + Y <-> Y + X
+10. X + neg(X) -> 0
+11. 0 + X -> X
+12. X * Y <-> Y * X
+13. 1 * X -> X
+14. real(X) -> real(X)
+15. imag(X) -> imag(X)
+16. X -> X
+17. cneg(c(X, Y)) -> c(neg(X), neg(Y))
+18. X - Y -> X - Y
+19. X - Y -> X - Y
+20. c(X, Y) -> c(X, Y)
+21. c(X, Y) -> c(X, Y)
+22. X + Y -> X + Y
+23. X + Y -> X + Y
+24. X * Y -> X * Y
+25. X * Y -> X * Y
+26. X - Y -> X - Y
+27. X + Y -> X + Y
+28. X * Y -> X * Y
+29. (X + Y) + Z -> X + (Y + Z)
+30. (X * Y) * Z -> X * (Y * Z)
+31. c(X + Y, Z + W) -> plus(c(X, Z), c(Y, W))
+32. (X * Y) + (X * Z) -> X * (Y + Z)
+33. real(plus(c(X, Y), c(Z, W))) -> X + Z
+34. real(times(c(X, Y), c(Z, W))) -> (X * Z) - (Y * W)
+35. imag(plus(c(X, Y), c(Z, W))) -> Y + W
+36. imag(times(c(X, Y), c(Z, W))) -> (X * W) + (Y * Z)
+37. c((X * Y) - (Z * W), (X * W) + (Z * Y)) -> times(c(X, Z), c(Y, W))
+38. neg(0) -> 0
+39. X + 0 -> X
+40. X * 1 -> X
+41. cneg(zero) -> zero
+42. c(neg(1), 0) -> cneg(one)
+43. c(neg(neg(1)), 0) -> cneg(cneg(one))
+
+Gave up on reaching the given resource limit.
+Here is the final rewrite system:
+  neg(0) -> 0
+  0 -> 0
+  1 -> 1
+  true -> true
+  false -> false
+  cneg(zero) -> zero
+  neg(X) -> neg(X)
+  neg(X) -> neg(X)
+  c(0, 0) -> zero
+  c(1, 0) -> one
+  X -> X
+  real(X) -> real(X)
+  imag(X) -> imag(X)
+  X + Y <-> Y + X
+  X + 0 -> X
+  0 + X -> X
+  X * Y <-> Y * X
+  X * 1 -> X
+  1 * X -> X
+  c(neg(1), 0) -> cneg(one)
+  X + neg(X) -> 0
+  c(neg(neg(1)), 0) -> cneg(cneg(one))
+  c(X, Y) -> c(X, Y)
+  c(X, Y) -> c(X, Y)
+  X + Y -> X + Y
+  X * Y -> X * Y
+  X - Y -> X - Y
+  X + Y -> X + Y
+  X + Y -> X + Y
+  X * Y -> X * Y
+  X * Y -> X * Y
+  X - Y -> X - Y
+  X - Y -> X - Y
+  cneg(c(X, Y)) -> c(neg(X), neg(Y))
+  (X + Y) + Z -> X + (Y + Z)
+  (X * Y) * Z -> X * (Y * Z)
+  c(X + Y, Z + W) -> plus(c(X, Z), c(Y, W))
+  (X * Y) + (X * Z) -> X * (Y + Z)
+  real(plus(c(X, Y), c(Z, W))) -> X + Z
+  real(times(c(X, Y), c(Z, W))) -> (X * Z) - (Y * W)
+  imag(plus(c(X, Y), c(Z, W))) -> Y + W
+  imag(times(c(X, Y), c(Z, W))) -> (X * W) + (Y * Z)
+  c((X * Y) - (Z * W), (X * W) + (Z * Y)) -> times(c(X, Z), c(Y, W))
+
+RESULT: GaveUp (couldn't solve the problem).
+
+Execution time: 0.0182772 seconds
+

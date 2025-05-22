@@ -1,0 +1,152 @@
+Here is the input problem:
+  Axiom 1 (dot_comm): dot(X, Y) = dot(Y, X).
+  Axiom 2 (vec_add_comm): vadd(X, Y) = vadd(Y, X).
+  Axiom 3 (vec_add_zero_right): vadd(X, 0v) = X.
+  Axiom 4 (vec_add_inv): vadd(X, vneg(X)) = 0v.
+  Axiom 5 (vec_add_zero_left): vadd(0v, X) = X.
+  Axiom 6 (add_comm): add(X, Y) = add(Y, X).
+  Axiom 7 (add_zero_right): add(X, 0) = X.
+  Axiom 8 (add_zero_left): add(0, X) = X.
+  Axiom 9 (mul_comm): mul(X, Y) = mul(Y, X).
+  Axiom 10 (mul_one_left): mul(1, X) = X.
+  Axiom 11 (mul_zero_left): mul(0, X) = 0.
+  Axiom 12 (cross_comm_anti): cross(X, Y) = vneg(cross(Y, X)).
+  Axiom 13 (neg_add_cancel): add(X, neg(X)) = 0.
+  Axiom 14 (curlOfGradZero): cross(NAB, appl(NAB, X)) = 0v.
+  Axiom 15 (scalar_triple_product): dot(X, cross(Y, Z)) = dot(Y, cross(Z, X)).
+  Axiom 16 (divOfCurlZero): dot(NAB, cross(NAB, X)) = 0.
+  Axiom 17 (vec_add_assoc): vadd(X, vadd(Y, Z)) = vadd(vadd(X, Y), Z).
+  Axiom 18 (add_assoc): add(X, add(Y, Z)) = add(add(X, Y), Z).
+  Axiom 19 (mul_assoc): mul(X, mul(Y, Z)) = mul(mul(X, Y), Z).
+  Axiom 20 (curlDist): cross(NAB, vadd(X, Y)) = vadd(cross(NAB, X), cross(NAB, Y)).
+  Axiom 21 (gradDist): appl(NAB, vadd(X, Y)) = vadd(appl(NAB, X), appl(NAB, Y)).
+  Axiom 22 (divDist): dot(NAB, vadd(X, Y)) = add(dot(NAB, X), dot(NAB, Y)).
+  Axiom 23 (left_distrib): mul(X, add(Y, Z)) = add(mul(X, Y), mul(X, Z)).
+  Axiom 24 (chain): appl(NAB, appl(X, Y)) = appl(appl(appl(NAB, X), Y), appl(NAB, Y)).
+  Axiom 25 (vector_triple_product): cross(X, cross(Y, Z)) = vsub(vmul(Y, dot(X, Z)), vmul(Z, dot(X, Y))).
+  Axiom 26 (divProdRule): dot(NAB, vmul(X, Y)) = add(mul(appl(NAB, X), Y), mul(X, dot(NAB, Y))).
+  Axiom 27 (gradProdRule): appl(NAB, mul(X, Y)) = add(mul(appl(NAB, X), Y), mul(X, appl(NAB, Y))).
+  Axiom 28 (reflexivity): equals(X, X) = true.
+  Axiom 29 (test_goal): equals(add(0, X), X) = false.
+  Goal 1 (true_equals_false): true = false.
+
+1. dot(X, Y) <-> dot(Y, X)
+2. vadd(X, Y) <-> vadd(Y, X)
+3. vadd(X, 0v) -> X
+4. vadd(X, vneg(X)) -> 0v
+5. vadd(0v, X) -> X
+6. add(X, Y) <-> add(Y, X)
+7. add(X, 0) -> X
+8. add(0, X) -> X
+9. mul(X, Y) <-> mul(Y, X)
+10. mul(1, X) -> X
+11. mul(0, X) -> 0
+12. vneg(cross(X, Y)) -> cross(Y, X)
+13. add(X, neg(X)) -> 0
+14. cross(NAB, appl(NAB, X)) -> 0v
+15. dot(X, cross(Y, Z)) <-> dot(Y, cross(Z, X))
+16. dot(NAB, cross(NAB, X)) -> 0
+17. vadd(vadd(X, Y), Z) -> vadd(X, vadd(Y, Z))
+18. add(add(X, Y), Z) -> add(X, add(Y, Z))
+19. mul(mul(X, Y), Z) -> mul(X, mul(Y, Z))
+20. vadd(cross(NAB, X), cross(NAB, Y)) -> cross(NAB, vadd(X, Y))
+21. vadd(appl(NAB, X), appl(NAB, Y)) -> appl(NAB, vadd(X, Y))
+22. add(dot(NAB, X), dot(NAB, Y)) -> dot(NAB, vadd(X, Y))
+23. add(mul(X, Y), mul(X, Z)) -> mul(X, add(Y, Z))
+24. appl(appl(appl(NAB, X), Y), appl(NAB, Y)) -> appl(NAB, appl(X, Y))
+25. vsub(vmul(X, dot(Y, Z)), vmul(Z, dot(Y, X))) -> cross(Y, cross(X, Z))
+26. add(mul(X, dot(NAB, Y)), mul(appl(NAB, X), Y)) -> dot(NAB, vmul(X, Y))
+27. add(mul(X, appl(NAB, Y)), mul(appl(NAB, X), Y)) -> appl(NAB, mul(X, Y))
+28. equals(X, X) -> true
+29. false -> true
+30. vneg(0v) -> 0v
+31. neg(0) -> 0
+32. mul(X, 1) -> X
+33. mul(X, 0) -> 0
+34. dot(0v, NAB) -> 0
+35. dot(NAB, cross(X, NAB)) -> 0
+36. dot(X, cross(NAB, NAB)) -> 0
+37. cross(appl(NAB, X), NAB) -> 0v
+38. mul(X, appl(NAB, 0)) -> appl(NAB, 0)
+39. appl(NAB, 0) -> 0
+40. cross(NAB, 0) -> 0v
+41. cross(0, NAB) -> 0v
+42. dot(cross(NAB, NAB), X) -> 0
+43. dot(cross(X, Y), Z) -> dot(X, cross(Y, Z))
+44. vadd(X, vadd(Y, Z)) <-> vadd(Y, vadd(X, Z))
+45. add(X, add(Y, Z)) <-> add(Y, add(X, Z))
+46. mul(X, mul(Y, Z)) <-> mul(Y, mul(X, Z))
+47. vadd(X, vadd(Y, vneg(X))) -> Y
+48. add(X, add(Y, neg(X))) -> Y
+49. dot(NAB, vmul(0, X)) -> 0
+50. vadd(X, vadd(vneg(X), Y)) -> Y
+51. vneg(vneg(X)) -> X
+52. add(X, add(neg(X), Y)) -> Y
+53. neg(neg(X)) -> X
+54. mul(X, add(Y, 1)) = add(X, mul(X, Y))
+55. mul(X, dot(0, NAB)) -> dot(NAB, vmul(X, 0))
+56. vadd(cross(X, Y), cross(Y, X)) -> 0v
+57. cross(NAB, vadd(NAB, NAB)) -> 0v
+58. cross(vadd(NAB, NAB), NAB) -> 0v
+59. mul(X, add(1, 1)) = add(X, X)
+60. dot(NAB, vmul(1, 0)) -> dot(0, NAB)
+61. add(X, mul(X, Y)) = mul(X, add(1, Y))
+62. add(X, mul(X, Y)) = mul(add(Y, 1), X)
+63. mul(X, add(Y, 1)) = add(X, mul(Y, X))
+64. appl(NAB, vadd(X, 0)) -> vadd(0, appl(NAB, X))
+65. vadd(0, appl(NAB, 0v)) -> 0
+66. mul(dot(0, NAB), X) -> dot(NAB, vmul(X, 0))
+67. add(X, X) = mul(add(1, 1), X)
+68. dot(0, cross(X, NAB)) -> dot(X, 0v)
+69. cross(NAB, vadd(X, 0)) -> cross(NAB, X)
+70. cross(NAB, 0v) -> 0v
+71. cross(0v, NAB) -> 0v
+72. dot(0v, 0) -> dot(0v, 0v)
+73. dot(0, cross(NAB, X)) -> dot(X, 0v)
+74. dot(NAB, cross(appl(NAB, X), Y)) -> dot(Y, 0v)
+75. cross(NAB, vadd(X, appl(NAB, Y))) -> cross(NAB, X)
+76. dot(NAB, vadd(X, cross(NAB, Y))) -> dot(X, NAB)
+  (hard) Y = vadd(vneg(X), vadd(Y, X))
+77. dot(X, cross(Y, cross(NAB, NAB))) -> 0
+78. add(mul(X, Y), mul(Y, Z)) -> mul(Y, add(X, Z))
+79. add(mul(X, Y), mul(Z, X)) -> mul(X, add(Y, Z))
+80. mul(X, add(Y, Y)) = mul(Y, add(X, X))
+81. mul(X, add(Y, Y)) = mul(add(X, X), Y)
+82. mul(add(1, X), Y) = add(Y, mul(Y, X))
+83. mul(X, add(1, Y)) = add(X, mul(Y, X))
+84. mul(add(X, 1), Y) = add(Y, mul(X, Y))
+  (hard) mul(Y, add(1, X)) = mul(add(X, 1), Y)
+85. vadd(X, vadd(Y, vneg(vadd(X, Y)))) -> 0v
+86. appl(NAB, 0v) -> 0v
+87. add(X, add(Y, neg(add(X, Y)))) -> 0
+88. add(X, mul(X, neg(1))) -> 0
+89. mul(neg(X), neg(1)) -> X
+90. mul(X, neg(1)) -> neg(X)
+91. mul(neg(1), X) -> neg(X)
+92. appl(NAB, vadd(0, X)) -> vadd(0, appl(NAB, X))
+93. cross(NAB, vadd(0, X)) -> cross(NAB, X)
+94. cross(NAB, vneg(0)) -> 0v
+95. cross(vneg(0), NAB) -> 0v
+96. cross(vadd(X, 0), NAB) -> cross(X, NAB)
+97. dot(0v, vadd(X, 0)) -> dot(X, 0v)
+98. add(dot(X, NAB), dot(NAB, Y)) -> dot(NAB, vadd(X, Y))
+99. dot(0v, appl(NAB, X)) -> dot(0v, 0v)
+100. vadd(X, vneg(vadd(X, vneg(Y)))) -> Y
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (add_zero_left): add(0, X) = X.
+
+Goal 1 (test_goal): add(0, X) = X.
+The goal is true when:
+  X = X
+
+Proof:
+  add(0, X)
+= { by axiom 1 (add_zero_left) }
+  X
+
+RESULT: Unsatisfiable (the axioms are contradictory).
+
+Execution time: 0.0607734 seconds
+

@@ -1,0 +1,44 @@
+Here is the input problem:
+  Axiom 1 (flattening): -2 = -0.
+  Axiom 2 (minus_minus): --X = X.
+  Axiom 3 (plus_zero): X + 0 = X.
+  Axiom 4 (plus_zero): 0 + X = X.
+  Axiom 5 (minus_plus): -(X + Y) = -X + -Y.
+  Goal 1 (goal): -0 = 0.
+
+1. -0 -> -2
+2. --X -> X
+3. X + 0 -> X
+4. 0 + X -> X
+5. -(X + Y) -> -X + -Y
+6. --2 -> 0
+7. -X + -2 -> -X
+8. 0 -> -2
+9. X + -2 -> X
+10. -2 + X -> X
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (minus_minus): --X = X.
+Axiom 2 (plus_zero): X + 0 = X.
+Axiom 3 (plus_zero): 0 + X = X.
+Axiom 4 (minus_plus): -(X + Y) = -X + -Y.
+
+Goal 1 (goal): -0 = 0.
+Proof:
+  -0
+= { by axiom 3 (plus_zero) R->L }
+  0 + -0
+= { by axiom 1 (minus_minus) R->L }
+  --0 + -0
+= { by axiom 4 (minus_plus) R->L }
+  -(-0 + 0)
+= { by axiom 2 (plus_zero) }
+  --0
+= { by axiom 1 (minus_minus) }
+  0
+
+RESULT: Theorem (the conjecture is true).
+
+Execution time: 0.0126364 seconds
+

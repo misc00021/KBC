@@ -1,0 +1,50 @@
+Here is the input problem:
+  Axiom 1 (flattening): -2 = -x.
+  Axiom 2 (plus_zero): 0 + X = X.
+  Axiom 3 (flattening): +2 = x + -x.
+  Axiom 4 (minus_minus): -X + X = 0.
+  Axiom 5 (associativity): X + (Y + Z) = (X + Y) + Z.
+  Goal 1 (goal): x + -x = 0.
+
+1. -x -> -2
+2. 0 + X -> X
+3. x + -2 -> +2
+4. -X + X -> 0
+5. (X + Y) + Z -> X + (Y + Z)
+6. -2 + x -> 0
+7. x + (-2 + X) -> +2 + X
+8. x + 0 -> +2 + x
+9. -2 + (x + X) -> X
+10. -X + (X + Y) -> Y
+11. -2 + +2 -> -2
+12. -0 + X -> X
+13. --2 + 0 -> x
+14. --X + 0 -> X
+15. --X + Y -> X + Y
+16. -2 + (+2 + X) -> -2 + X
+17. -(X + Y) + (X + (Y + Z)) -> Z
+
+Gave up on reaching the given resource limit.
+Here is the final rewrite system:
+  -x -> -2
+  X + 0 -> X
+  0 + X -> X
+  x + 0 -> +2 + x
+  x + -2 -> +2
+  -2 + +2 -> -2
+  -2 + x -> 0
+  -X + X -> 0
+  -0 + X -> X
+  --2 + 0 -> x
+  --X + Y -> X + Y
+  x + (-2 + X) -> +2 + X
+  -2 + (+2 + X) -> -2 + X
+  -2 + (x + X) -> X
+  (X + Y) + Z -> X + (Y + Z)
+  -X + (X + Y) -> Y
+  -(X + Y) + (X + (Y + Z)) -> Z
+
+RESULT: GaveUp (couldn't solve the problem).
+
+Execution time: 0.0104918 seconds
+

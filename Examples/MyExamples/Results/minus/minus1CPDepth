@@ -1,0 +1,32 @@
+Here is the input problem:
+  Axiom 1 (flattening): -2 = -0.
+  Axiom 2 (minus_minus): --X = X.
+  Axiom 3 (plus_zero): X + 0 = X.
+  Axiom 4 (plus_zero): 0 + X = X.
+  Axiom 5 (minus_plus): -(X + Y) = -X + -Y.
+  Goal 1 (goal): -0 = 0.
+
+1. -0 -> -2
+2. --X -> X
+3. X + 0 -> X
+4. 0 + X -> X
+5. -(X + Y) -> -X + -Y
+6. --2 -> 0
+7. -X + -2 -> -X
+8. -2 + -X -> -X
+
+Gave up on reaching the given resource limit.
+Here is the final rewrite system:
+  -0 -> -2
+  --2 -> 0
+  --X -> X
+  X + 0 -> X
+  0 + X -> X
+  -2 + -X -> -X
+  -X + -2 -> -X
+  -(X + Y) -> -X + -Y
+
+RESULT: GaveUp (couldn't solve the problem).
+
+Execution time: 0.00788283 seconds
+

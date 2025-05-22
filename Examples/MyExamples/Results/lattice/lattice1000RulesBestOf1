@@ -1,0 +1,1238 @@
+Here is the input problem:
+  Axiom 1 (idempotent_join): X ∨ X = X.
+  Axiom 2 (commutative_join): X ∨ Y = Y ∨ X.
+  Axiom 3 (idempotent_meet): X ∧ X = X.
+  Axiom 4 (commutative_meet): X ∧ Y = Y ∧ X.
+  Axiom 5 (absorption_join): X ∨ (X ∧ Y) = X.
+  Axiom 6 (associative_join): X ∨ (Y ∨ Z) = (X ∨ Y) ∨ Z.
+  Axiom 7 (absorption_meet): X ∧ (X ∨ Y) = X.
+  Axiom 8 (associative_meet): X ∧ (Y ∧ Z) = (X ∧ Y) ∧ Z.
+  Goal 1 (goal): x = x.
+
+1. X ∨ X -> X
+2. X ∨ Y <-> Y ∨ X
+3. X ∧ X -> X
+4. X ∧ Y <-> Y ∧ X
+5. X ∨ (X ∧ Y) -> X
+6. (X ∨ Y) ∨ Z -> X ∨ (Y ∨ Z)
+7. X ∧ (X ∨ Y) -> X
+8. (X ∧ Y) ∧ Z -> X ∧ (Y ∧ Z)
+9. X ∨ (Y ∧ X) -> X
+10. X ∧ (Y ∨ X) -> X
+11. X ∨ (X ∨ Y) -> X ∨ Y
+12. X ∧ (X ∧ Y) -> X ∧ Y
+13. X ∨ (Y ∨ Z) <-> Y ∨ (X ∨ Z)
+14. X ∧ (Y ∧ Z) <-> Y ∧ (X ∧ Z)
+15. X ∨ (Y ∨ X) -> X ∨ Y
+16. X ∧ (Y ∧ X) -> X ∧ Y
+17. X ∨ (Y ∨ (X ∧ Z)) -> X ∨ Y
+18. X ∧ (Y ∧ (X ∨ Z)) -> X ∧ Y
+19. X ∨ (Y ∧ (X ∧ Z)) -> X
+20. X ∧ (Y ∨ (X ∨ Z)) -> X
+21. X ∨ (Y ∨ (Z ∧ X)) -> X ∨ Y
+22. X ∧ (Y ∧ (Z ∨ X)) -> X ∧ Y
+23. X ∨ ((X ∧ Y) ∨ Z) -> X ∨ Z
+24. X ∧ ((X ∨ Y) ∧ Z) -> X ∧ Z
+25. X ∨ (Y ∧ (Z ∧ X)) -> X
+26. X ∧ (Y ∨ (Z ∨ X)) -> X
+27. X ∨ ((Y ∧ X) ∨ Z) -> X ∨ Z
+28. X ∧ ((Y ∨ X) ∧ Z) -> X ∧ Z
+  (hard) X ∨ (Y ∨ Z) = X ∨ (Y ∨ (X ∨ Z))
+  (hard) X ∧ (Y ∧ Z) = X ∧ (Y ∧ (X ∧ Z))
+29. X ∨ (Y ∨ (Z ∧ (X ∨ Y))) -> X ∨ Y
+30. (X ∨ Y) ∧ (X ∨ (Y ∨ Z)) -> X ∨ Y
+31. (X ∧ Y) ∨ (X ∧ (Y ∧ Z)) -> X ∧ Y
+32. X ∧ (Y ∧ (Z ∨ (X ∧ Y))) -> X ∧ Y
+33. (X ∨ Y) ∧ (X ∨ (Z ∨ Y)) -> X ∨ Y
+34. (X ∧ Y) ∨ (X ∧ (Z ∧ Y)) -> X ∧ Y
+35. X ∨ (Y ∨ (Z ∧ (X ∧ W))) -> X ∨ Y
+36. X ∧ (Y ∧ (Z ∨ (X ∨ W))) -> X ∧ Y
+37. X ∨ (Y ∨ ((X ∨ Y) ∧ Z)) -> X ∨ Y
+38. X ∧ (Y ∧ ((X ∧ Y) ∨ Z)) -> X ∧ Y
+39. X ∨ (Y ∧ (Z ∧ (X ∧ W))) -> X
+40. X ∧ (Y ∨ (Z ∨ (X ∨ W))) -> X
+41. X ∨ (Y ∨ (Z ∨ (X ∧ W))) -> X ∨ (Y ∨ Z)
+42. (X ∨ Y) ∧ (X ∨ (Y ∧ Z)) -> X ∨ (Y ∧ Z)
+43. X ∧ (Y ∧ (Z ∧ (X ∨ W))) -> X ∧ (Y ∧ Z)
+44. (X ∧ Y) ∨ (X ∧ (Y ∨ Z)) -> X ∧ (Y ∨ Z)
+45. X ∨ ((Y ∧ (X ∧ Z)) ∨ W) -> X ∨ W
+46. X ∧ ((Y ∨ (X ∨ Z)) ∧ W) -> X ∧ W
+47. X ∨ (Y ∨ (Z ∧ (W ∧ X))) -> X ∨ Y
+48. X ∧ (Y ∧ (Z ∨ (W ∨ X))) -> X ∧ Y
+49. X ∨ (Y ∧ (Z ∧ (W ∧ X))) -> X
+50. X ∧ (Y ∨ (Z ∨ (W ∨ X))) -> X
+51. (X ∨ Y) ∧ (X ∨ (Z ∧ Y)) -> X ∨ (Z ∧ Y)
+52. X ∨ (Y ∨ (Z ∨ (W ∧ X))) -> X ∨ (Y ∨ Z)
+53. (X ∧ Y) ∨ (X ∧ (Z ∨ Y)) -> X ∧ (Z ∨ Y)
+54. X ∧ (Y ∧ (Z ∧ (W ∨ X))) -> X ∧ (Y ∧ Z)
+55. X ∨ (Y ∨ ((X ∧ Z) ∨ W)) -> X ∨ (Y ∨ W)
+56. X ∧ (Y ∧ ((X ∨ Z) ∧ W)) -> X ∧ (Y ∧ W)
+57. (X ∨ Y) ∧ (Y ∨ (X ∧ Z)) -> Y ∨ (X ∧ Z)
+58. (X ∨ Y) ∧ ((Y ∧ Z) ∨ X) -> X ∨ (Y ∧ Z)
+59. (X ∧ Y) ∨ (Y ∧ (X ∨ Z)) -> Y ∧ (X ∨ Z)
+60. (X ∧ Y) ∨ ((Y ∨ Z) ∧ X) -> X ∧ (Y ∨ Z)
+61. (X ∨ Y) ∧ (X ∨ (Z ∧ (X ∨ Y))) -> X ∨ (Z ∧ (X ∨ Y))
+62. X ∧ (Y ∨ (X ∧ (Y ∨ Z))) -> X ∧ (Y ∨ Z)
+63. (X ∧ Y) ∨ (X ∧ (Z ∨ (X ∧ Y))) -> X ∧ (Z ∨ (X ∧ Y))
+64. X ∨ (Y ∧ (X ∨ (Y ∧ Z))) -> X ∨ (Y ∧ Z)
+65. X ∨ ((Y ∧ (Z ∧ X)) ∨ W) -> X ∨ W
+66. X ∧ ((Y ∨ (Z ∨ X)) ∧ W) -> X ∧ W
+67. X ∨ (Y ∨ ((Z ∧ X) ∨ W)) -> X ∨ (Y ∨ W)
+68. X ∧ (Y ∧ ((Z ∨ X) ∧ W)) -> X ∧ (Y ∧ W)
+69. (X ∨ Y) ∧ (Y ∨ (Z ∧ X)) -> Y ∨ (X ∧ Z)
+70. (X ∨ Y) ∧ ((Z ∧ Y) ∨ X) -> X ∨ (Z ∧ Y)
+71. (X ∧ Y) ∨ (Y ∧ (Z ∨ X)) -> Y ∧ (X ∨ Z)
+72. (X ∧ Y) ∨ ((Z ∨ Y) ∧ X) -> X ∧ (Z ∨ Y)
+  (hard) X ∨ ((Y ∧ Z) ∨ (W ∨ Y)) = X ∨ (Y ∨ W)
+  (hard) X ∧ ((Y ∨ Z) ∧ (W ∧ Y)) = X ∧ (Y ∧ W)
+73. (X ∨ Y) ∧ ((X ∧ Z) ∨ Y) -> Y ∨ (X ∧ Z)
+74. (X ∧ Y) ∨ ((X ∨ Z) ∧ Y) -> Y ∧ (X ∨ Z)
+75. X ∧ (Y ∨ (X ∧ (Z ∨ Y))) -> X ∧ (Y ∨ Z)
+76. X ∧ (Y ∨ ((Y ∨ Z) ∧ X)) -> X ∧ (Y ∨ Z)
+77. X ∨ (Y ∧ ((Y ∧ Z) ∨ X)) -> X ∨ (Y ∧ Z)
+78. X ∨ (Y ∧ (X ∨ (Z ∧ Y))) -> X ∨ (Y ∧ Z)
+79. (X ∨ Y) ∧ (X ∨ ((X ∨ Y) ∧ Z)) -> X ∨ (Z ∧ (X ∨ Y))
+80. (X ∧ Y) ∨ (X ∧ ((X ∧ Y) ∨ Z)) -> X ∧ (Z ∨ (X ∧ Y))
+81. X ∨ (Y ∨ (Z ∧ (W ∧ (X ∨ Y)))) -> X ∨ Y
+82. (X ∨ Y) ∧ (X ∨ (Z ∨ (Y ∨ W))) -> X ∨ Y
+83. (X ∧ Y) ∨ (X ∧ (Z ∧ (Y ∧ W))) -> X ∧ Y
+84. X ∧ (Y ∧ (Z ∨ (W ∨ (X ∧ Y)))) -> X ∧ Y
+85. X ∧ ((X ∧ Y) ∨ (X ∧ Z)) -> (X ∧ Y) ∨ (X ∧ Z)
+86. X ∧ ((Y ∧ X) ∨ (X ∧ Z)) -> (Y ∧ X) ∨ (X ∧ Z)
+87. X ∧ ((X ∧ Y) ∨ (Y ∧ Z)) -> X ∧ Y
+88. X ∨ ((X ∨ Y) ∧ (X ∨ Z)) -> (X ∨ Y) ∧ (X ∨ Z)
+89. X ∨ ((Y ∨ X) ∧ (X ∨ Z)) -> (Y ∨ X) ∧ (X ∨ Z)
+90. X ∨ ((X ∨ Y) ∧ (Y ∨ Z)) -> X ∨ Y
+  (hard) X ∨ ((Y ∧ Z) ∨ (W ∨ Z)) = X ∨ (Z ∨ W)
+  (hard) X ∧ ((Y ∨ Z) ∧ (W ∧ Z)) = X ∧ (Z ∧ W)
+91. (X ∨ Y) ∧ ((Z ∧ X) ∨ Y) -> Y ∨ (X ∧ Z)
+92. (X ∧ Y) ∨ ((Z ∨ X) ∧ Y) -> Y ∧ (X ∨ Z)
+93. X ∧ (Y ∨ ((Z ∨ Y) ∧ X)) -> X ∧ (Y ∨ Z)
+94. X ∨ (Y ∧ ((Z ∧ Y) ∨ X)) -> X ∨ (Y ∧ Z)
+95. X ∧ ((Y ∧ Z) ∨ (X ∧ Y)) -> X ∧ Y
+96. X ∧ ((Y ∧ X) ∨ (Y ∧ Z)) -> X ∧ Y
+97. X ∧ ((X ∧ Y) ∨ (Z ∧ Y)) -> X ∧ Y
+98. X ∨ ((Y ∨ X) ∧ (Y ∨ Z)) -> X ∨ Y
+99. X ∨ ((X ∨ Y) ∧ (Z ∨ Y)) -> X ∨ Y
+100. X ∨ ((Y ∨ Z) ∧ (X ∨ Y)) -> X ∨ Y
+101. X ∨ (Y ∨ (Z ∨ (W ∧ (X ∨ Y)))) -> X ∨ (Y ∨ Z)
+102. (X ∧ Y) ∨ (Z ∨ (X ∧ (Y ∧ W))) -> Z ∨ (X ∧ Y)
+103. (X ∨ Y) ∧ (Z ∧ (X ∨ (Y ∨ W))) -> Z ∧ (X ∨ Y)
+104. X ∧ (Y ∧ (Z ∧ (W ∨ (X ∧ Y)))) -> X ∧ (Y ∧ Z)
+105. X ∨ (Y ∨ (Z ∨ (W ∧ (X ∨ Z)))) -> X ∨ (Y ∨ Z)
+106. X ∧ (Y ∧ (Z ∧ (W ∨ (X ∧ Z)))) -> X ∧ (Y ∧ Z)
+107. (X ∧ Y) ∨ (Z ∧ (X ∧ (Y ∧ W))) -> X ∧ Y
+108. (X ∨ Y) ∧ (Z ∨ (X ∨ (Y ∨ W))) -> X ∨ Y
+109. X ∨ (Y ∨ (Z ∧ (Y ∨ (X ∧ W)))) -> X ∨ Y
+110. X ∧ (Y ∧ (Z ∨ (Y ∧ (X ∨ W)))) -> X ∧ Y
+111. X ∨ (Y ∨ (Z ∧ (W ∧ (X ∧ V)))) -> X ∨ Y
+112. X ∧ (Y ∧ (Z ∨ (W ∨ (X ∨ V)))) -> X ∧ Y
+113. X ∨ (Y ∨ (Z ∧ ((X ∨ Y) ∧ W))) -> X ∨ Y
+114. X ∧ (Y ∧ (Z ∨ ((X ∧ Y) ∨ W))) -> X ∧ Y
+115. (X ∨ Y) ∧ (Z ∨ (Y ∨ (W ∨ X))) -> X ∨ Y
+116. (X ∨ Y) ∧ (X ∨ (Z ∨ (W ∨ Y))) -> X ∨ Y
+117. (X ∧ Y) ∨ (Z ∧ (Y ∧ (W ∧ X))) -> X ∧ Y
+118. (X ∧ Y) ∨ (X ∧ (Z ∧ (W ∧ Y))) -> X ∧ Y
+119. X ∨ (Y ∧ (Z ∧ (W ∧ (X ∧ V)))) -> X
+120. X ∧ (Y ∨ (Z ∨ (W ∨ (X ∨ V)))) -> X
+121. X ∨ (Y ∧ ((X ∧ Z) ∨ (X ∧ W))) -> X
+122. X ∧ (Y ∨ ((X ∨ Z) ∧ (X ∨ W))) -> X
+123. X ∧ ((X ∧ Y) ∨ (Z ∧ X)) -> (X ∧ Y) ∨ (X ∧ Z)
+124. X ∧ ((Y ∧ X) ∨ (Z ∧ X)) -> (Y ∧ X) ∨ (X ∧ Z)
+125. X ∨ ((X ∨ Y) ∧ (Z ∨ X)) -> (X ∨ Y) ∧ (X ∨ Z)
+126. X ∨ ((Y ∨ X) ∧ (Z ∨ X)) -> (Y ∨ X) ∧ (X ∨ Z)
+127. X ∧ ((Y ∧ Z) ∨ (X ∧ Z)) -> X ∧ Z
+128. X ∧ ((Y ∧ Z) ∨ (Y ∧ X)) -> X ∧ Y
+129. X ∧ ((Y ∧ X) ∨ (Z ∧ Y)) -> X ∧ Y
+130. X ∨ ((Y ∨ X) ∧ (Z ∨ Y)) -> X ∨ Y
+131. X ∨ ((Y ∨ Z) ∧ (Y ∨ X)) -> X ∨ Y
+132. X ∨ ((Y ∨ Z) ∧ (X ∨ Z)) -> X ∨ Z
+133. (X ∧ Y) ∨ (Z ∨ (X ∧ (W ∧ Y))) -> Z ∨ (X ∧ Y)
+134. (X ∨ Y) ∧ (Z ∧ (X ∨ (W ∨ Y))) -> Z ∧ (X ∨ Y)
+135. (X ∧ Y) ∨ ((X ∧ (Y ∧ Z)) ∨ W) -> W ∨ (X ∧ Y)
+136. (X ∨ Y) ∧ ((X ∨ (Y ∨ Z)) ∧ W) -> W ∧ (X ∨ Y)
+137. X ∨ (Y ∨ (Z ∨ (W ∧ (X ∧ V)))) -> X ∨ (Y ∨ Z)
+138. X ∧ (Y ∧ (Z ∧ (W ∨ (X ∨ V)))) -> X ∧ (Y ∧ Z)
+139. X ∨ (Y ∨ (Z ∨ ((X ∨ Z) ∧ W))) -> X ∨ (Y ∨ Z)
+140. X ∧ (Y ∧ (Z ∧ ((X ∧ Z) ∨ W))) -> X ∧ (Y ∧ Z)
+141. (X ∨ (Y ∨ Z)) ∧ (X ∨ (Y ∧ W)) -> X ∨ (Y ∧ W)
+142. (X ∧ (Y ∨ Z)) ∨ (X ∧ (Y ∧ W)) -> X ∧ (Y ∨ Z)
+143. X ∨ (Y ∨ ((Z ∧ (X ∨ Y)) ∨ W)) -> X ∨ (Y ∨ W)
+144. X ∨ (Y ∨ (Z ∨ ((X ∨ Y) ∧ W))) -> X ∨ (Y ∨ Z)
+145. X ∧ (Y ∧ (Z ∧ ((X ∧ Y) ∨ W))) -> X ∧ (Y ∧ Z)
+146. X ∧ (Y ∧ ((Z ∨ (X ∧ Y)) ∧ W)) -> X ∧ (Y ∧ W)
+  (hard) X ∨ (Y ∨ (W ∨ (Z ∧ (W ∨ Y)))) = X ∨ (Y ∨ W)
+  (hard) X ∧ (Y ∧ (W ∧ (Z ∨ (W ∧ Y)))) = X ∧ (Y ∧ W)
+147. (X ∧ Y) ∨ (Z ∧ (X ∧ (W ∧ Y))) -> X ∧ Y
+148. (X ∨ Y) ∧ (Z ∨ (X ∨ (W ∨ Y))) -> X ∨ Y
+149. X ∨ ((Y ∧ (Z ∧ (X ∧ W))) ∨ V) -> X ∨ V
+150. X ∧ ((Y ∨ (Z ∨ (X ∨ W))) ∧ V) -> X ∧ V
+151. X ∨ (Y ∨ (Z ∧ (X ∨ (Y ∧ W)))) -> X ∨ Y
+152. X ∧ (Y ∧ (Z ∨ (X ∧ (Y ∨ W)))) -> X ∧ Y
+153. X ∨ (Y ∨ (Z ∧ ((X ∧ W) ∨ Y))) -> X ∨ Y
+154. X ∨ (Y ∨ ((Y ∨ (X ∧ Z)) ∧ W)) -> X ∨ Y
+155. X ∨ (Y ∨ (Z ∧ (Y ∨ (W ∧ X)))) -> X ∨ Y
+156. X ∧ (Y ∧ ((Y ∧ (X ∨ Z)) ∨ W)) -> X ∧ Y
+157. X ∧ (Y ∧ (Z ∨ (Y ∧ (W ∨ X)))) -> X ∧ Y
+158. X ∧ (Y ∧ (Z ∨ ((X ∨ W) ∧ Y))) -> X ∧ Y
+159. X ∨ (Y ∨ (Z ∧ (W ∧ (V ∧ X)))) -> X ∨ Y
+160. X ∧ (Y ∧ (Z ∨ (W ∨ (V ∨ X)))) -> X ∧ Y
+  (hard) X ∨ Y = (X ∨ Y) ∧ (Y ∨ (Z ∨ (X ∨ W)))
+  (hard) X ∨ Y = (X ∨ Y) ∧ (Z ∨ (Y ∨ (X ∨ W)))
+  (hard) X ∧ Y = (X ∧ Y) ∨ (Y ∧ (Z ∧ (X ∧ W)))
+  (hard) X ∧ Y = (X ∧ Y) ∨ (Z ∧ (Y ∧ (X ∧ W)))
+161. X ∨ (Y ∧ (Z ∧ (W ∧ (V ∧ X)))) -> X
+162. X ∧ (Y ∨ (Z ∨ (W ∨ (V ∨ X)))) -> X
+163. X ∨ (((X ∧ Y) ∨ (X ∧ Z)) ∧ W) -> X
+164. X ∨ (Y ∧ ((Z ∧ X) ∨ (X ∧ W))) -> X
+165. X ∨ (Y ∧ ((X ∧ Z) ∨ (W ∧ X))) -> X
+166. X ∧ (((X ∨ Y) ∧ (X ∨ Z)) ∨ W) -> X
+167. X ∧ (Y ∨ ((Z ∨ X) ∧ (X ∨ W))) -> X
+168. X ∧ (Y ∨ ((X ∨ Z) ∧ (W ∨ X))) -> X
+169. X ∨ (Y ∨ (Z ∨ (W ∨ (X ∧ V)))) -> X ∨ (Y ∨ (Z ∨ W))
+170. (X ∨ Y) ∧ (Z ∧ (X ∨ (Y ∧ W))) -> Z ∧ (X ∨ (Y ∧ W))
+171. (X ∨ Y) ∧ (X ∨ (Z ∧ (Y ∧ W))) -> X ∨ (Y ∧ (Z ∧ W))
+172. X ∧ (Y ∧ (Z ∧ (W ∧ (X ∨ V)))) -> X ∧ (Y ∧ (Z ∧ W))
+173. (X ∧ Y) ∨ (Z ∨ (X ∧ (Y ∨ W))) -> Z ∨ (X ∧ (Y ∨ W))
+174. (X ∧ Y) ∨ (X ∧ (Z ∨ (Y ∨ W))) -> X ∧ (Y ∨ (Z ∨ W))
+175. (X ∨ Y) ∧ (Y ∨ (Z ∧ (Y ∨ X))) -> Y ∨ (Z ∧ (X ∨ Y))
+176. (X ∨ Y) ∧ (Y ∨ (Z ∧ (X ∨ Y))) -> Y ∨ (Z ∧ (X ∨ Y))
+177. (X ∨ Y) ∧ (Y ∨ ((X ∨ Y) ∧ Z)) -> Y ∨ (Z ∧ (X ∨ Y))
+178. (X ∧ Y) ∨ (Y ∧ (Z ∨ (Y ∧ X))) -> Y ∧ (Z ∨ (X ∧ Y))
+179. (X ∧ Y) ∨ (Y ∧ (Z ∨ (X ∧ Y))) -> Y ∧ (Z ∨ (X ∧ Y))
+180. (X ∧ Y) ∨ (Y ∧ ((X ∧ Y) ∨ Z)) -> Y ∧ (Z ∨ (X ∧ Y))
+181. X ∧ ((Y ∧ Z) ∨ (Z ∧ X)) -> X ∧ Z
+182. X ∨ ((Y ∨ Z) ∧ (Z ∨ X)) -> X ∨ Z
+183. (X ∧ (Y ∨ Z)) ∨ (X ∧ (Z ∧ W)) -> X ∧ (Y ∨ Z)
+184. (X ∧ (Y ∧ Z)) ∨ (Y ∧ (W ∨ Z)) -> Y ∧ (W ∨ Z)
+185. (X ∨ (Y ∨ Z)) ∧ (Z ∨ (Y ∧ W)) -> Z ∨ (Y ∧ W)
+186. (X ∨ (Y ∨ Z)) ∧ (Y ∨ (W ∧ Z)) -> Y ∨ (W ∧ Z)
+187. (X ∧ Y) ∨ ((X ∧ (Z ∧ Y)) ∨ W) -> W ∨ (X ∧ Y)
+188. (X ∨ Y) ∧ ((X ∨ (Z ∨ Y)) ∧ W) -> W ∧ (X ∨ Y)
+189. X ∨ (Y ∨ ((Z ∧ (X ∧ W)) ∨ V)) -> X ∨ (Y ∨ V)
+190. X ∧ (Y ∧ ((Z ∨ (X ∨ W)) ∧ V)) -> X ∧ (Y ∧ V)
+191. X ∨ (Y ∨ (Z ∨ (W ∧ (V ∧ X)))) -> X ∨ (Y ∨ Z)
+192. X ∧ (Y ∧ (Z ∧ (W ∨ (V ∨ X)))) -> X ∧ (Y ∧ Z)
+193. X ∧ (Y ∨ ((X ∨ Z) ∧ (Y ∨ W))) -> X ∧ (Y ∨ W)
+194. X ∨ (Y ∧ ((X ∧ Z) ∨ (Y ∧ W))) -> X ∨ (Y ∧ W)
+  (hard) X ∨ (Y ∨ (Z ∨ ((Z ∨ Y) ∧ W))) = X ∨ (Y ∨ Z)
+195. X ∨ (Y ∨ (((X ∨ Y) ∧ Z) ∨ W)) -> X ∨ (W ∨ Y)
+  (hard) X ∧ (Y ∧ (Z ∧ ((Z ∧ Y) ∨ W))) = X ∧ (Y ∧ Z)
+196. X ∧ (Y ∧ (((X ∧ Y) ∨ Z) ∧ W)) -> X ∧ (W ∧ Y)
+197. (X ∨ (Y ∨ Z)) ∧ (Z ∨ (X ∧ W)) -> Z ∨ (X ∧ W)
+198. (X ∨ (Y ∨ Z)) ∧ (X ∨ (Z ∧ W)) -> X ∨ (Z ∧ W)
+199. (X ∨ (Y ∨ Z)) ∧ ((Y ∧ W) ∨ X) -> X ∨ (Y ∧ W)
+200. (X ∨ (Y ∧ Z)) ∧ (X ∨ (Y ∨ W)) -> X ∨ (Y ∧ Z)
+201. (X ∨ (Y ∨ Z)) ∧ (X ∨ (W ∧ Y)) -> X ∨ (Y ∧ W)
+202. (X ∨ (Y ∨ Z)) ∧ (Y ∨ (X ∧ W)) -> Y ∨ (X ∧ W)
+203. (X ∧ (Y ∧ Z)) ∨ (X ∧ (Y ∨ W)) -> X ∧ (Y ∨ W)
+204. ((X ∨ Y) ∧ Z) ∨ (Z ∧ (X ∧ W)) -> Z ∧ (X ∨ Y)
+205. (X ∧ (Y ∨ Z)) ∨ (Y ∧ (W ∧ X)) -> X ∧ (Y ∨ Z)
+206. (X ∧ (Y ∨ Z)) ∨ (X ∧ (W ∧ Y)) -> X ∧ (Y ∨ Z)
+207. (X ∧ (Y ∨ Z)) ∨ (Y ∧ (X ∧ W)) -> X ∧ (Y ∨ Z)
+208. X ∨ ((Y ∧ (Z ∧ (W ∧ X))) ∨ V) -> X ∨ V
+209. X ∧ ((Y ∨ (Z ∨ (W ∨ X))) ∧ V) -> X ∧ V
+210. X ∨ ((Y ∨ Z) ∧ (Y ∨ (X ∧ W))) -> X ∨ Y
+211. X ∧ ((Y ∧ Z) ∨ (Y ∧ (X ∨ W))) -> X ∧ Y
+212. X ∨ (Y ∨ ((X ∨ (Y ∧ Z)) ∧ W)) -> X ∨ Y
+213. X ∨ (Y ∨ (Z ∧ (X ∨ (W ∧ Y)))) -> X ∨ Y
+214. X ∧ (Y ∧ ((X ∧ (Y ∨ Z)) ∨ W)) -> X ∧ Y
+215. X ∧ (Y ∧ (Z ∨ (X ∧ (W ∨ Y)))) -> X ∧ Y
+216. X ∨ (Y ∨ (((X ∧ Z) ∨ Y) ∧ W)) -> X ∨ Y
+217. X ∨ (Y ∨ (Z ∧ ((W ∧ X) ∨ Y))) -> X ∨ Y
+218. X ∨ (Y ∨ ((Y ∨ (Z ∧ X)) ∧ W)) -> X ∨ Y
+219. X ∧ (Y ∧ ((Y ∧ (Z ∨ X)) ∨ W)) -> X ∧ Y
+220. X ∧ (Y ∧ (((X ∨ Z) ∧ Y) ∨ W)) -> X ∧ Y
+221. X ∧ (Y ∧ (Z ∨ ((W ∨ X) ∧ Y))) -> X ∧ Y
+222. X ∨ (((Y ∧ X) ∨ (X ∧ Z)) ∧ W) -> X
+223. X ∨ (((X ∧ Y) ∨ (Z ∧ X)) ∧ W) -> X
+224. X ∨ (Y ∧ ((Z ∧ X) ∨ (W ∧ X))) -> X
+225. X ∧ (((Y ∨ X) ∧ (X ∨ Z)) ∨ W) -> X
+226. X ∧ (((X ∨ Y) ∧ (Z ∨ X)) ∨ W) -> X
+227. X ∧ (Y ∨ ((Z ∨ X) ∧ (W ∨ X))) -> X
+228. (X ∨ Y) ∧ (Z ∧ (X ∨ (W ∧ Y))) -> Z ∧ (X ∨ (Y ∧ W))
+229. (X ∨ Y) ∧ (X ∨ (Z ∧ (W ∧ Y))) -> X ∨ (Z ∧ (W ∧ Y))
+230. X ∨ (Y ∨ (Z ∨ (W ∨ (V ∧ X)))) -> X ∨ (Y ∨ (Z ∨ W))
+231. (X ∧ Y) ∨ (Z ∨ (X ∧ (W ∨ Y))) -> Z ∨ (X ∧ (Y ∨ W))
+232. (X ∧ Y) ∨ (X ∧ (Z ∨ (W ∨ Y))) -> X ∧ (Z ∨ (W ∨ Y))
+  (simplifying rules with respect to one another...)
+  (delete rule 11)
+  (delete rule 12)
+  (delete rule 19)
+  (delete rule 20)
+  (delete rule 42)
+  (delete rule 44)
+  (delete rule 51)
+  (delete rule 53)
+  (delete rule 58)
+  (delete rule 60)
+  (delete rule 61)
+  (delete rule 62)
+  (delete rule 63)
+  (delete rule 64)
+  (delete rule 70)
+  (delete rule 72)
+  (delete rule 85)
+  (delete rule 86)
+  (delete rule 87)
+  (delete rule 88)
+  (delete rule 89)
+  (delete rule 90)
+  (delete rule 95)
+  (delete rule 100)
+  (delete rule 109)
+  (delete rule 110)
+  (delete rule 115)
+  (delete rule 117)
+  (delete rule 121)
+  (delete rule 122)
+  (delete rule 123)
+  (delete rule 125)
+  (delete rule 129)
+  (delete rule 130)
+  (delete rule 141)
+  (delete rule 142)
+  (delete rule 151)
+  (delete rule 152)
+  (delete rule 165)
+  (delete rule 168)
+  (delete rule 175)
+  (delete rule 178)
+  (delete rule 183)
+  (delete rule 184)
+  (delete rule 185)
+  (delete rule 186)
+233. X ∧ (Y ∧ (Z ∧ (W ∧ (V ∨ X)))) -> X ∧ (Y ∧ (Z ∧ W))
+234. X ∨ (Y ∨ (Z ∨ ((X ∧ W) ∨ V))) -> X ∨ (Y ∨ (Z ∨ V))
+235. X ∧ (Y ∧ (Z ∧ ((X ∨ W) ∧ V))) -> X ∧ (Y ∧ (Z ∧ V))
+236. (X ∨ Y) ∧ (Z ∧ (Y ∨ (X ∧ W))) -> Z ∧ (Y ∨ (X ∧ W))
+237. (X ∨ Y) ∧ (Y ∨ (Z ∧ (X ∧ W))) -> Y ∨ (X ∧ (Z ∧ W))
+238. (X ∧ Y) ∨ (Z ∨ (Y ∧ (X ∨ W))) -> Z ∨ (Y ∧ (X ∨ W))
+239. (X ∧ Y) ∨ (Y ∧ (Z ∨ (X ∨ W))) -> Y ∧ (X ∨ (Z ∨ W))
+240. (X ∨ Y) ∧ (Z ∧ ((Y ∧ W) ∨ X)) -> Z ∧ (X ∨ (Y ∧ W))
+241. (X ∨ Y) ∧ ((X ∨ (Y ∧ Z)) ∧ W) -> W ∧ (X ∨ (Y ∧ Z))
+242. (X ∨ Y) ∧ ((Z ∧ (Y ∧ W)) ∨ X) -> X ∨ (Y ∧ (Z ∧ W))
+243. (X ∧ Y) ∨ ((X ∧ (Y ∨ Z)) ∨ W) -> W ∨ (X ∧ (Y ∨ Z))
+244. (X ∧ Y) ∨ (Z ∨ ((Y ∨ W) ∧ X)) -> Z ∨ (X ∧ (Y ∨ W))
+245. (X ∧ Y) ∨ ((Z ∨ (Y ∨ W)) ∧ X) -> X ∧ (Y ∨ (Z ∨ W))
+246. (X ∨ Y) ∧ (X ∨ (Z ∧ (W ∧ (X ∨ Y)))) -> X ∨ (Z ∧ (W ∧ (X ∨ Y)))
+247. (X ∧ Y) ∨ (X ∧ (Z ∨ (W ∨ (X ∧ Y)))) -> X ∧ (Z ∨ (W ∨ (X ∧ Y)))
+248. X ∨ (Y ∨ ((Z ∧ (W ∧ X)) ∨ V)) -> X ∨ (Y ∨ V)
+249. X ∧ (Y ∧ ((Z ∨ (W ∨ X)) ∧ V)) -> X ∧ (Y ∧ V)
+250. X ∧ (Y ∨ ((X ∨ Z) ∧ (W ∨ Y))) -> X ∧ (W ∨ Y)
+251. X ∨ (Y ∧ ((X ∧ Z) ∨ (W ∧ Y))) -> X ∨ (W ∧ Y)
+  (hard) X ∨ ((Y ∧ (Z ∧ W)) ∨ (V ∨ Z)) = X ∨ (Z ∨ V)
+  (hard) X ∧ ((Y ∨ (Z ∨ W)) ∧ (V ∧ Z)) = X ∧ (Z ∧ V)
+252. X ∧ (Y ∨ ((Z ∨ X) ∧ (Y ∨ W))) -> X ∧ (Y ∨ W)
+253. X ∧ (Y ∨ ((Y ∨ Z) ∧ (X ∨ W))) -> X ∧ (Y ∨ Z)
+254. X ∨ (Y ∧ ((Y ∧ Z) ∨ (X ∧ W))) -> X ∨ (Y ∧ Z)
+255. X ∨ (Y ∧ ((Z ∧ X) ∨ (Y ∧ W))) -> X ∨ (Y ∧ W)
+256. (X ∨ (Y ∨ Z)) ∧ (Y ∨ (Z ∧ W)) -> Y ∨ (W ∧ Z)
+257. (X ∨ (Y ∨ Z)) ∧ ((X ∧ W) ∨ Z) -> Z ∨ (X ∧ W)
+258. (X ∨ (Y ∧ Z)) ∧ (Y ∨ (W ∨ X)) -> X ∨ (Y ∧ Z)
+259. (X ∨ (Y ∨ Z)) ∧ (Z ∨ (W ∧ X)) -> Z ∨ (X ∧ W)
+260. (X ∨ (Y ∨ Z)) ∧ ((Z ∧ W) ∨ X) -> X ∨ (Z ∧ W)
+261. (X ∨ (Y ∧ Z)) ∧ (X ∨ (W ∨ Y)) -> X ∨ (Y ∧ Z)
+262. (X ∨ (Y ∨ Z)) ∧ (X ∨ (W ∧ Z)) -> X ∨ (Z ∧ W)
+263. ((X ∧ Y) ∨ Z) ∧ (Z ∨ (X ∨ W)) -> Z ∨ (X ∧ Y)
+264. (X ∨ (Y ∨ Z)) ∧ ((W ∧ Y) ∨ X) -> X ∨ (Y ∧ W)
+265. (X ∨ (Y ∨ Z)) ∧ ((X ∧ W) ∨ Y) -> Y ∨ (X ∧ W)
+266. (X ∨ (Y ∧ Z)) ∧ (X ∨ (Z ∨ W)) -> X ∨ (Z ∧ Y)
+267. (X ∨ (Y ∧ Z)) ∧ (Y ∨ (X ∨ W)) -> X ∨ (Y ∧ Z)
+268. (X ∨ (Y ∨ Z)) ∧ (Y ∨ (W ∧ X)) -> Y ∨ (X ∧ W)
+269. (X ∧ (Y ∧ Z)) ∨ (X ∧ (W ∨ Y)) -> X ∧ (Y ∨ W)
+270. (X ∧ (Y ∧ Z)) ∨ (Z ∧ (X ∨ W)) -> Z ∧ (X ∨ W)
+271. (X ∧ (Y ∧ Z)) ∨ (X ∧ (Z ∨ W)) -> X ∧ (Z ∨ W)
+272. (X ∧ (Y ∧ Z)) ∨ ((Y ∨ W) ∧ X) -> X ∧ (Y ∨ W)
+273. (X ∧ (Y ∧ Z)) ∨ (Y ∧ (X ∨ W)) -> Y ∧ (X ∨ W)
+274. ((X ∨ Y) ∧ Z) ∨ (Z ∧ (Y ∧ W)) -> Z ∧ (X ∨ Y)
+275. ((X ∨ Y) ∧ Z) ∨ (X ∧ (W ∧ Z)) -> Z ∧ (X ∨ Y)
+276. ((X ∨ Y) ∧ Z) ∨ (Z ∧ (W ∧ X)) -> Z ∧ (X ∨ Y)
+277. ((X ∨ Y) ∧ Z) ∨ (X ∧ (Z ∧ W)) -> Z ∧ (X ∨ Y)
+278. (X ∧ (Y ∨ Z)) ∨ (Z ∧ (W ∧ X)) -> X ∧ (Z ∨ Y)
+279. (X ∧ (Y ∨ Z)) ∨ (W ∧ (X ∧ Y)) -> X ∧ (Y ∨ Z)
+280. (X ∧ (Y ∨ Z)) ∨ (W ∧ (Y ∧ X)) -> X ∧ (Y ∨ Z)
+281. (X ∧ (Y ∨ Z)) ∨ (X ∧ (W ∧ Z)) -> X ∧ (Z ∨ Y)
+282. (X ∧ (Y ∨ Z)) ∨ (Z ∧ (X ∧ W)) -> X ∧ (Z ∨ Y)
+283. (X ∨ (Y ∨ Z)) ∧ (Z ∨ (W ∧ (Y ∨ Z))) -> Z ∨ (W ∧ (Y ∨ Z))
+284. (X ∧ (Y ∧ Z)) ∨ (Z ∧ (W ∨ (Y ∧ Z))) -> Z ∧ (W ∨ (Y ∧ Z))
+285. X ∨ ((Y ∨ Z) ∧ (Z ∨ (X ∧ W))) -> X ∨ Z
+286. X ∨ ((Y ∨ Z) ∧ ((X ∧ W) ∨ Y)) -> X ∨ Y
+287. X ∨ ((Y ∨ (X ∧ Z)) ∧ (Y ∨ W)) -> X ∨ Y
+288. X ∨ ((Y ∨ Z) ∧ (Y ∨ (W ∧ X))) -> X ∨ Y
+289. X ∧ ((Y ∧ (X ∨ Z)) ∨ (Y ∧ W)) -> X ∧ Y
+290. X ∧ ((Y ∧ Z) ∨ (Y ∧ (W ∨ X))) -> X ∧ Y
+291. X ∧ ((Y ∧ Z) ∨ (Z ∧ (X ∨ W))) -> X ∧ Z
+292. X ∧ ((Y ∧ Z) ∨ ((X ∨ W) ∧ Y)) -> X ∧ Y
+293. X ∨ (Y ∨ ((X ∨ (Z ∧ Y)) ∧ W)) -> X ∨ Y
+294. X ∧ (Y ∧ ((X ∧ (Z ∨ Y)) ∨ W)) -> X ∧ Y
+295. X ∨ (Y ∨ (((Z ∧ X) ∨ Y) ∧ W)) -> X ∨ Y
+296. X ∧ (Y ∧ (((Z ∨ X) ∧ Y) ∨ W)) -> X ∧ Y
+297. X ∨ (Y ∨ (Z ∨ (W ∧ (X ∨ (Y ∨ Z))))) -> X ∨ (Y ∨ Z)
+298. (X ∨ (Y ∨ Z)) ∧ (X ∨ (Y ∨ (Z ∨ W))) -> X ∨ (Y ∨ Z)
+299. (X ∧ (Y ∧ Z)) ∨ (X ∧ (Y ∧ (Z ∧ W))) -> X ∧ (Y ∧ Z)
+300. X ∧ (Y ∧ (Z ∧ (W ∨ (X ∧ (Y ∧ Z))))) -> X ∧ (Y ∧ Z)
+301. X ∨ (((Y ∧ X) ∨ (Z ∧ X)) ∧ W) -> X
+302. X ∧ (((Y ∨ X) ∧ (Z ∨ X)) ∨ W) -> X
+303. X ∨ (Y ∨ (Z ∧ (W ∧ (V ∧ (X ∨ Y))))) -> X ∨ Y
+304. X ∨ (Y ∨ (Z ∧ (W ∧ (Y ∨ (X ∧ V))))) -> X ∨ Y
+305. (X ∨ Y) ∧ (X ∨ (Z ∨ (W ∨ (Y ∨ V)))) -> X ∨ Y
+306. (X ∧ Y) ∨ (X ∧ (Z ∧ (W ∧ (Y ∧ V)))) -> X ∧ Y
+307. X ∧ (Y ∧ (Z ∨ (W ∨ (V ∨ (X ∧ Y))))) -> X ∧ Y
+308. X ∧ (Y ∧ (Z ∨ (W ∨ (Y ∧ (X ∨ V))))) -> X ∧ Y
+309. X ∨ (Y ∧ (Z ∧ ((X ∧ W) ∨ (X ∧ V)))) -> X
+310. X ∧ (Y ∨ (Z ∨ ((X ∨ W) ∧ (X ∨ V)))) -> X
+311. X ∨ (Y ∨ (Z ∨ ((W ∧ X) ∨ V))) -> X ∨ (Y ∨ (Z ∨ V))
+312. X ∧ (Y ∧ (Z ∧ ((W ∨ X) ∧ V))) -> X ∧ (Y ∧ (Z ∧ V))
+313. (X ∨ Y) ∧ (Y ∨ (Z ∧ (W ∧ X))) -> Y ∨ (X ∧ (Z ∧ W))
+314. (X ∨ Y) ∧ (Z ∧ (Y ∨ (W ∧ X))) -> Z ∧ (Y ∨ (X ∧ W))
+315. (X ∧ Y) ∨ (Y ∧ (Z ∨ (W ∨ X))) -> Y ∧ (X ∨ (Z ∨ W))
+316. (X ∧ Y) ∨ (Z ∨ (Y ∧ (W ∨ X))) -> Z ∨ (Y ∧ (X ∨ W))
+317. (X ∨ Y) ∧ (Z ∧ ((X ∧ W) ∨ Y)) -> Z ∧ (Y ∨ (X ∧ W))
+318. (X ∨ Y) ∧ ((Z ∧ (X ∧ W)) ∨ Y) -> Y ∨ (X ∧ (Z ∧ W))
+319. (X ∧ Y) ∨ (Z ∨ ((X ∨ W) ∧ Y)) -> Z ∨ (Y ∧ (X ∨ W))
+320. (X ∧ Y) ∨ ((Z ∨ (X ∨ W)) ∧ Y) -> Y ∧ (X ∨ (Z ∨ W))
+321. X ∧ (Y ∨ (X ∧ (Z ∨ (Y ∨ W)))) -> X ∧ (Y ∨ (Z ∨ W))
+322. X ∧ (Y ∧ (Z ∨ (X ∧ (Z ∨ W)))) -> X ∧ (Y ∧ (Z ∨ W))
+323. X ∧ (Y ∧ (Z ∨ (X ∧ (W ∨ Z)))) -> X ∧ (Y ∧ (Z ∨ W))
+324. X ∧ (Y ∨ ((Z ∨ (Y ∨ W)) ∧ X)) -> X ∧ (Y ∨ (Z ∨ W))
+325. X ∧ (Y ∧ (Z ∨ ((Z ∨ W) ∧ X))) -> X ∧ (Y ∧ (Z ∨ W))
+326. X ∨ (Y ∨ (Z ∧ (X ∨ (Z ∧ W)))) -> X ∨ (Y ∨ (Z ∧ W))
+327. X ∨ (Y ∨ (Z ∧ ((Z ∧ W) ∨ X))) -> X ∨ (Y ∨ (Z ∧ W))
+328. X ∨ (Y ∧ ((Z ∧ (Y ∧ W)) ∨ X)) -> X ∨ (Y ∧ (Z ∧ W))
+329. X ∨ (Y ∧ (X ∨ (Z ∧ (Y ∧ W)))) -> X ∨ (Y ∧ (Z ∧ W))
+330. X ∨ (Y ∨ (Z ∧ (X ∨ (W ∧ Z)))) -> X ∨ (Y ∨ (Z ∧ W))
+331. (X ∨ Y) ∧ ((X ∧ Z) ∨ (Y ∧ W)) -> (X ∧ Z) ∨ (Y ∧ W)
+332. (X ∨ Y) ∧ ((Z ∧ X) ∨ (Y ∧ W)) -> (Z ∧ X) ∨ (Y ∧ W)
+333. (X ∨ Y) ∧ ((X ∧ Z) ∨ (X ∧ W)) -> (X ∧ Z) ∨ (X ∧ W)
+334. (X ∨ Y) ∧ ((Z ∧ Y) ∨ (Y ∧ W)) -> (Z ∧ Y) ∨ (Y ∧ W)
+335. (X ∧ Y) ∨ ((X ∨ Z) ∧ (Y ∨ W)) -> (X ∨ Z) ∧ (Y ∨ W)
+336. (X ∧ Y) ∨ ((Z ∨ X) ∧ (Y ∨ W)) -> (Z ∨ X) ∧ (Y ∨ W)
+337. (X ∧ Y) ∨ ((X ∨ Z) ∧ (X ∨ W)) -> (X ∨ Z) ∧ (X ∨ W)
+338. (X ∧ Y) ∨ ((Z ∨ Y) ∧ (Y ∨ W)) -> (Z ∨ Y) ∧ (Y ∨ W)
+339. (X ∨ Y) ∧ (Z ∧ ((W ∧ Y) ∨ X)) -> Z ∧ (X ∨ (Y ∧ W))
+  (simplifying rules with respect to one another...)
+  (delete rule 193)
+  (delete rule 194)
+  (delete rule 199)
+  (delete rule 204)
+  (delete rule 210)
+  (delete rule 211)
+  (delete rule 223)
+  (delete rule 226)
+  (delete rule 240)
+  (delete rule 242)
+  (delete rule 244)
+  (delete rule 245)
+  (delete rule 250)
+  (delete rule 251)
+  (delete rule 331)
+  (delete rule 333)
+  (delete rule 335)
+  (delete rule 337)
+340. (X ∨ Y) ∧ ((X ∨ (Z ∧ Y)) ∧ W) -> W ∧ (X ∨ (Y ∧ Z))
+341. (X ∨ Y) ∧ ((Z ∧ (W ∧ Y)) ∨ X) -> X ∨ (Z ∧ (W ∧ Y))
+342. (X ∧ Y) ∨ ((X ∧ (Z ∨ Y)) ∨ W) -> W ∨ (X ∧ (Y ∨ Z))
+343. (X ∧ Y) ∨ (Z ∨ ((W ∨ Y) ∧ X)) -> Z ∨ (X ∧ (Y ∨ W))
+344. (X ∧ Y) ∨ ((Z ∨ (W ∨ Y)) ∧ X) -> X ∧ (Z ∨ (W ∨ Y))
+345. (X ∨ Y) ∧ ((Y ∨ (X ∧ Z)) ∧ W) -> W ∧ (Y ∨ (Z ∧ X))
+346. (X ∧ Y) ∨ ((Y ∧ (X ∨ Z)) ∨ W) -> W ∨ (Y ∧ (Z ∨ X))
+347. (X ∨ Y) ∧ (((Y ∧ Z) ∨ X) ∧ W) -> W ∧ (X ∨ (Y ∧ Z))
+348. (X ∧ Y) ∨ (((Y ∨ Z) ∧ X) ∨ W) -> W ∨ (X ∧ (Y ∨ Z))
+349. (X ∨ Y) ∧ (Z ∧ (X ∨ ((X ∨ Y) ∧ W))) -> Z ∧ (X ∨ (W ∧ (X ∨ Y)))
+350. (X ∨ Y) ∧ (X ∨ (Z ∧ ((X ∨ Y) ∧ W))) -> X ∨ (Z ∧ (W ∧ (X ∨ Y)))
+351. (X ∧ Y) ∨ (Z ∨ (X ∧ ((X ∧ Y) ∨ W))) -> Z ∨ (X ∧ (W ∨ (X ∧ Y)))
+352. (X ∧ Y) ∨ (X ∧ (Z ∨ ((X ∧ Y) ∨ W))) -> X ∧ (Z ∨ (W ∨ (X ∧ Y)))
+  (hard) X ∨ ((Y ∧ (Z ∧ W)) ∨ (V ∨ W)) = X ∨ (W ∨ V)
+  (hard) X ∧ ((Y ∨ (Z ∨ W)) ∧ (V ∧ W)) = X ∧ (W ∧ V)
+353. X ∧ (Y ∨ ((Z ∨ X) ∧ (W ∨ Y))) -> X ∧ (Y ∨ W)
+354. X ∧ (Y ∨ ((Y ∨ Z) ∧ (W ∨ X))) -> X ∧ (Y ∨ Z)
+355. X ∧ (Y ∨ ((Z ∨ Y) ∧ (X ∨ W))) -> X ∧ (Y ∨ Z)
+356. X ∨ (Y ∧ ((Z ∧ Y) ∨ (X ∧ W))) -> X ∨ (Y ∧ Z)
+357. X ∨ (Y ∧ ((Y ∧ Z) ∨ (W ∧ X))) -> X ∨ (Y ∧ Z)
+358. X ∨ (Y ∧ ((Z ∧ X) ∨ (W ∧ Y))) -> X ∨ (Y ∧ W)
+359. (X ∨ (Y ∨ Z)) ∧ ((Z ∧ W) ∨ Y) -> Y ∨ (Z ∧ W)
+360. (X ∨ (Y ∧ Z)) ∧ (W ∨ (X ∨ Y)) -> X ∨ (Z ∧ Y)
+361. ((X ∧ Y) ∨ Z) ∧ (X ∨ (W ∨ Z)) -> Z ∨ (X ∧ Y)
+362. (X ∨ (Y ∨ Z)) ∧ ((W ∧ X) ∨ Z) -> Z ∨ (X ∧ W)
+363. (X ∨ (Y ∨ Z)) ∧ ((Y ∧ W) ∨ Z) -> Z ∨ (W ∧ Y)
+364. (X ∨ (Y ∧ Z)) ∧ (Z ∨ (W ∨ X)) -> X ∨ (Z ∧ Y)
+365. (X ∨ (Y ∧ Z)) ∧ (W ∨ (Y ∨ X)) -> X ∨ (Y ∧ Z)
+366. (X ∨ (Y ∨ Z)) ∧ (Z ∨ (W ∧ Y)) -> Z ∨ (W ∧ Y)
+367. ((X ∧ Y) ∨ Z) ∧ (Z ∨ (W ∨ X)) -> Z ∨ (X ∧ Y)
+368. (X ∨ (Y ∨ Z)) ∧ ((W ∧ Z) ∨ X) -> X ∨ (Z ∧ W)
+369. (X ∨ (Y ∧ Z)) ∧ (X ∨ (W ∨ Z)) -> X ∨ (Z ∧ Y)
+370. ((X ∧ Y) ∨ Z) ∧ (Z ∨ (Y ∨ W)) -> Z ∨ (X ∧ Y)
+371. ((X ∧ Y) ∨ Z) ∧ (X ∨ (Z ∨ W)) -> Z ∨ (X ∧ Y)
+372. (X ∨ (Y ∨ Z)) ∧ ((W ∧ X) ∨ Y) -> Y ∨ (X ∧ W)
+373. (X ∨ (Y ∧ Z)) ∧ (Z ∨ (X ∨ W)) -> X ∨ (Z ∧ Y)
+374. (X ∧ (Y ∧ Z)) ∨ (Z ∧ (W ∨ X)) -> Z ∧ (X ∨ W)
+375. (X ∧ (Y ∧ Z)) ∨ (X ∧ (W ∨ Z)) -> X ∧ (Z ∨ W)
+376. (X ∧ (Y ∧ Z)) ∨ ((W ∨ Y) ∧ X) -> X ∧ (Y ∨ W)
+377. (X ∧ (Y ∧ Z)) ∨ (Y ∧ (W ∨ X)) -> Y ∧ (X ∨ W)
+378. (X ∧ (Y ∧ Z)) ∨ (Y ∧ (Z ∨ W)) -> Y ∧ (W ∨ Z)
+379. (X ∧ (Y ∧ Z)) ∨ ((X ∨ W) ∧ Z) -> Z ∧ (X ∨ W)
+380. (X ∧ (Y ∧ Z)) ∨ (Z ∧ (Y ∨ W)) -> Z ∧ (W ∨ Y)
+381. (X ∧ (Y ∧ Z)) ∨ ((Z ∨ W) ∧ X) -> X ∧ (Z ∨ W)
+382. (X ∧ (Y ∧ Z)) ∨ ((X ∨ W) ∧ Y) -> Y ∧ (X ∨ W)
+383. ((X ∨ Y) ∧ Z) ∨ (Y ∧ (W ∧ Z)) -> Z ∧ (X ∨ Y)
+384. ((X ∨ Y) ∧ Z) ∨ (Z ∧ (W ∧ Y)) -> Z ∧ (X ∨ Y)
+385. ((X ∨ Y) ∧ Z) ∨ (Y ∧ (Z ∧ W)) -> Z ∧ (X ∨ Y)
+386. ((X ∨ Y) ∧ Z) ∨ (W ∧ (Z ∧ X)) -> Z ∧ (X ∨ Y)
+387. ((X ∨ Y) ∧ Z) ∨ (W ∧ (X ∧ Z)) -> Z ∧ (X ∨ Y)
+388. (X ∧ (Y ∨ Z)) ∨ (W ∧ (X ∧ Z)) -> X ∧ (Z ∨ Y)
+389. (X ∧ (Y ∨ Z)) ∨ (W ∧ (Z ∧ X)) -> X ∧ (Z ∨ Y)
+390. (X ∨ (Y ∧ (Z ∨ X))) ∧ (W ∨ (Z ∨ X)) -> X ∨ (Y ∧ (X ∨ Z))
+391. (X ∨ (Y ∨ Z)) ∧ (Z ∨ ((Y ∨ Z) ∧ W)) -> Z ∨ (W ∧ (Y ∨ Z))
+392. (X ∧ (Y ∨ (Z ∧ X))) ∨ (W ∧ (Z ∧ X)) -> X ∧ (Y ∨ (X ∧ Z))
+393. (X ∧ (Y ∧ Z)) ∨ (Z ∧ ((Y ∧ Z) ∨ W)) -> Z ∧ (W ∨ (Y ∧ Z))
+394. (X ∨ (Y ∨ Z)) ∧ (Y ∨ (W ∧ (Y ∨ Z))) -> Y ∨ (W ∧ (Y ∨ Z))
+395. (X ∧ (Y ∧ Z)) ∨ (Y ∧ (W ∨ (Y ∧ Z))) -> Y ∧ (W ∨ (Y ∧ Z))
+396. X ∧ ((Y ∧ X) ∨ (Z ∧ (Y ∧ W))) -> X ∧ Y
+397. X ∧ ((X ∧ Y) ∨ (Z ∧ (Y ∧ W))) -> X ∧ Y
+398. X ∨ ((Y ∨ X) ∧ (Z ∨ (Y ∨ W))) -> X ∨ Y
+399. X ∨ ((X ∨ Y) ∧ (Z ∨ (Y ∨ W))) -> X ∨ Y
+400. X ∨ ((Y ∨ Z) ∧ ((X ∧ W) ∨ Z)) -> X ∨ Z
+401. X ∨ ((Y ∨ (X ∧ Z)) ∧ (W ∨ Y)) -> X ∨ Y
+402. X ∨ ((Y ∨ Z) ∧ (Z ∨ (W ∧ X))) -> X ∨ Z
+403. X ∨ (((X ∧ Y) ∨ Z) ∧ (Z ∨ W)) -> X ∨ Z
+404. X ∨ ((Y ∨ Z) ∧ ((W ∧ X) ∨ Y)) -> X ∨ Y
+405. X ∨ ((Y ∨ (Z ∧ X)) ∧ (Y ∨ W)) -> X ∨ Y
+406. X ∧ ((Y ∧ (Z ∨ X)) ∨ (Y ∧ W)) -> X ∧ Y
+407. X ∧ (((X ∨ Y) ∧ Z) ∨ (Z ∧ W)) -> X ∧ Z
+408. X ∧ ((Y ∧ (X ∨ Z)) ∨ (W ∧ Y)) -> X ∧ Y
+409. X ∧ ((Y ∧ Z) ∨ (Z ∧ (W ∨ X))) -> X ∧ Z
+410. X ∧ ((Y ∧ Z) ∨ ((W ∨ X) ∧ Y)) -> X ∧ Y
+411. X ∧ ((Y ∧ Z) ∨ ((X ∨ W) ∧ Z)) -> X ∧ Z
+412. (X ∨ (Y ∨ Z)) ∧ (Y ∨ (W ∨ (X ∨ Z))) -> Y ∨ (X ∨ Z)
+413. (X ∨ (Y ∨ Z)) ∧ (X ∨ (Y ∨ (W ∨ Z))) -> X ∨ (Y ∨ Z)
+414. (X ∧ (Y ∧ Z)) ∨ (Y ∧ (W ∧ (X ∧ Z))) -> Y ∧ (X ∧ Z)
+  (simplifying rules with respect to one another...)
+  (delete rule 260)
+  (delete rule 261)
+  (delete rule 263)
+  (delete rule 264)
+  (delete rule 269)
+  (delete rule 272)
+  (delete rule 274)
+  (delete rule 276)
+  (delete rule 279)
+  (delete rule 359)
+  (delete rule 412)
+415. (X ∧ (Y ∧ Z)) ∨ (X ∧ (Y ∧ (W ∧ Z))) -> X ∧ (Y ∧ Z)
+416. X ∨ (Y ∨ (Z ∨ (W ∧ (V ∧ (X ∨ Y))))) -> X ∨ (Y ∨ Z)
+417. (X ∧ Y) ∨ (Z ∨ (W ∧ (X ∧ (Y ∧ V)))) -> Z ∨ (X ∧ Y)
+418. (X ∨ Y) ∧ (Z ∧ (W ∨ (X ∨ (Y ∨ V)))) -> Z ∧ (X ∨ Y)
+419. X ∧ (Y ∧ (Z ∧ (W ∨ (V ∨ (X ∧ Y))))) -> X ∧ (Y ∧ Z)
+420. X ∨ (Y ∨ (Z ∨ (W ∧ (V ∧ (X ∨ Z))))) -> X ∨ (Y ∨ Z)
+421. (X ∨ Y) ∧ (Z ∧ (X ∨ (W ∨ (Y ∨ V)))) -> Z ∧ (X ∨ Y)
+422. (X ∧ Y) ∨ (Z ∨ (X ∧ (W ∧ (Y ∧ V)))) -> Z ∨ (X ∧ Y)
+423. X ∧ (Y ∧ (Z ∧ (W ∨ (V ∨ (X ∧ Z))))) -> X ∧ (Y ∧ Z)
+424. X ∨ (Y ∨ (Z ∨ ((X ∨ (Y ∨ Z)) ∧ W))) -> X ∨ (Y ∨ Z)
+425. X ∧ (Y ∧ (Z ∧ ((X ∧ (Y ∧ Z)) ∨ W))) -> X ∧ (Y ∧ Z)
+426. (X ∧ Y) ∨ (Z ∧ (W ∧ (X ∧ (Y ∧ V)))) -> X ∧ Y
+427. (X ∨ Y) ∧ (Z ∨ (W ∨ (X ∨ (Y ∨ V)))) -> X ∨ Y
+428. (X ∧ Y) ∨ (Z ∧ (X ∧ (W ∧ (Y ∧ V)))) -> X ∧ Y
+429. (X ∨ Y) ∧ (Z ∨ (X ∨ (W ∨ (Y ∨ V)))) -> X ∨ Y
+430. X ∨ (Y ∨ (Z ∧ (W ∧ (V ∧ (X ∧ U))))) -> X ∨ Y
+431. X ∧ (Y ∧ (Z ∨ (W ∨ (V ∨ (X ∨ U))))) -> X ∧ Y
+432. X ∨ (Y ∨ (Z ∧ (W ∧ ((X ∨ Y) ∧ V)))) -> X ∨ Y
+433. X ∨ (Y ∨ (Z ∧ (X ∨ (W ∧ (X ∨ Y))))) -> X ∨ Y
+434. X ∧ (Y ∧ (Z ∨ (W ∨ ((X ∧ Y) ∨ V)))) -> X ∧ Y
+435. X ∧ (Y ∧ (Z ∨ (X ∧ (W ∨ (X ∧ Y))))) -> X ∧ Y
+436. X ∨ (Y ∨ (Z ∧ (W ∧ (X ∨ (Y ∧ V))))) -> Y ∨ X
+437. X ∨ (Y ∨ (Z ∧ (W ∧ ((X ∧ V) ∨ Y)))) -> X ∨ Y
+438. X ∨ (Y ∨ (Z ∧ ((Y ∨ (X ∧ W)) ∧ V))) -> X ∨ Y
+439. X ∨ (Y ∨ (Z ∧ (W ∧ (Y ∨ (V ∧ X))))) -> X ∨ Y
+440. (X ∨ Y) ∧ (Z ∨ (W ∨ (Y ∨ (V ∨ X)))) -> X ∨ Y
+441. (X ∨ Y) ∧ (X ∨ (Z ∨ (W ∨ (V ∨ Y)))) -> X ∨ Y
+442. (X ∧ Y) ∨ (Z ∧ (W ∧ (Y ∧ (V ∧ X)))) -> X ∧ Y
+443. (X ∧ Y) ∨ (X ∧ (Z ∧ (W ∧ (V ∧ Y)))) -> X ∧ Y
+444. X ∧ (Y ∧ (Z ∨ ((Y ∧ (X ∨ W)) ∨ V))) -> X ∧ Y
+445. X ∧ (Y ∧ (Z ∨ (W ∨ (Y ∧ (V ∨ X))))) -> X ∧ Y
+446. X ∧ (Y ∧ (Z ∨ (W ∨ (X ∧ (Y ∨ V))))) -> Y ∧ X
+447. X ∧ (Y ∧ (Z ∨ (W ∨ ((X ∨ V) ∧ Y)))) -> X ∧ Y
+448. X ∨ (Y ∧ (Z ∧ (W ∧ (V ∧ (X ∧ U))))) -> X
+449. X ∧ (Y ∨ (Z ∨ (W ∨ (V ∨ (X ∨ U))))) -> X
+450. X ∨ (Y ∧ (((X ∧ Z) ∨ (X ∧ W)) ∧ V)) -> X
+451. X ∨ (Y ∧ (Z ∧ ((W ∧ X) ∨ (X ∧ V)))) -> X
+452. X ∨ (Y ∧ (Z ∧ ((X ∧ W) ∨ (V ∧ X)))) -> X
+453. X ∧ (Y ∨ (((X ∨ Z) ∧ (X ∨ W)) ∨ V)) -> X
+454. X ∧ (Y ∨ (Z ∨ ((W ∨ X) ∧ (X ∨ V)))) -> X
+455. X ∧ (Y ∨ (Z ∨ ((X ∨ W) ∧ (V ∨ X)))) -> X
+456. (X ∨ Y) ∧ ((Z ∧ (W ∧ X)) ∨ Y) -> Y ∨ (X ∧ (Z ∧ W))
+457. (X ∨ Y) ∧ (Z ∧ ((W ∧ X) ∨ Y)) -> Z ∧ (Y ∨ (X ∧ W))
+458. (X ∧ Y) ∨ ((Z ∨ (W ∨ X)) ∧ Y) -> Y ∧ (X ∨ (Z ∨ W))
+459. (X ∧ Y) ∨ (Z ∨ ((W ∨ X) ∧ Y)) -> Z ∨ (Y ∧ (X ∨ W))
+460. X ∧ (Y ∨ ((Z ∨ (W ∨ Y)) ∧ X)) -> X ∧ (Y ∨ (Z ∨ W))
+461. X ∧ (Y ∧ (Z ∨ ((W ∨ Z) ∧ X))) -> X ∧ (Y ∧ (Z ∨ W))
+462. X ∨ (Y ∧ ((Z ∧ (W ∧ Y)) ∨ X)) -> X ∨ (Y ∧ (Z ∧ W))
+463. X ∨ (Y ∨ (Z ∧ ((W ∧ Z) ∨ X))) -> X ∨ (Y ∨ (Z ∧ W))
+464. (X ∨ Y) ∧ ((Y ∨ (Z ∧ X)) ∧ W) -> W ∧ (Y ∨ (Z ∧ X))
+465. (X ∧ Y) ∨ ((Y ∧ (Z ∨ X)) ∨ W) -> W ∨ (Y ∧ (Z ∨ X))
+466. (X ∨ Y) ∧ (((X ∧ Z) ∨ Y) ∧ W) -> W ∧ (Y ∨ (Z ∧ X))
+467. (X ∧ Y) ∨ (((X ∨ Z) ∧ Y) ∨ W) -> W ∨ (Y ∧ (Z ∨ X))
+468. X ∧ (Y ∨ (X ∧ (Z ∨ (W ∨ Y)))) -> X ∧ (Y ∨ (Z ∨ W))
+469. X ∧ ((Y ∨ (X ∧ (Y ∨ Z))) ∧ W) -> X ∧ (W ∧ (Y ∨ Z))
+470. X ∧ ((Y ∨ (X ∧ (Z ∨ Y))) ∧ W) -> X ∧ (W ∧ (Y ∨ Z))
+471. X ∧ ((Y ∨ ((Y ∨ Z) ∧ X)) ∧ W) -> X ∧ (W ∧ (Y ∨ Z))
+472. X ∨ ((Y ∧ (X ∨ (Y ∧ Z))) ∨ W) -> X ∨ (W ∨ (Y ∧ Z))
+473. X ∨ ((Y ∧ ((Y ∧ Z) ∨ X)) ∨ W) -> X ∨ (W ∨ (Y ∧ Z))
+474. X ∨ (Y ∧ (X ∨ (Z ∧ (W ∧ Y)))) -> X ∨ (Y ∧ (Z ∧ W))
+475. X ∨ ((Y ∧ (X ∨ (Z ∧ Y))) ∨ W) -> X ∨ (W ∨ (Y ∧ Z))
+476. (X ∨ Y) ∧ ((Z ∧ Y) ∨ (X ∧ W)) -> (W ∧ X) ∨ (Y ∧ Z)
+477. (X ∨ Y) ∧ ((Y ∧ Z) ∨ (W ∧ X)) -> (W ∧ X) ∨ (Y ∧ Z)
+478. (X ∨ Y) ∧ ((Z ∧ X) ∨ (W ∧ Y)) -> (Z ∧ X) ∨ (Y ∧ W)
+479. (X ∨ Y) ∧ ((Z ∧ X) ∨ (X ∧ W)) -> (Z ∧ X) ∨ (X ∧ W)
+480. (X ∨ Y) ∧ ((Y ∧ Z) ∨ (W ∧ Y)) -> (Z ∧ Y) ∨ (Y ∧ W)
+481. ((X ∧ Y) ∨ (Y ∧ Z)) ∧ (W ∨ Y) -> (X ∧ Y) ∨ (Y ∧ Z)
+482. (X ∨ Y) ∧ ((Y ∧ Z) ∨ (Y ∧ W)) -> (W ∧ Y) ∨ (Y ∧ Z)
+483. (X ∨ Y) ∧ ((Z ∧ Y) ∨ (W ∧ Y)) -> (W ∧ Y) ∨ (Y ∧ Z)
+  (simplifying rules with respect to one another...)
+  (delete rule 304)
+  (delete rule 308)
+  (delete rule 309)
+  (delete rule 310)
+  (delete rule 321)
+  (delete rule 329)
+  (delete rule 332)
+  (delete rule 334)
+  (delete rule 339)
+  (delete rule 341)
+  (delete rule 343)
+  (delete rule 344)
+  (delete rule 347)
+  (delete rule 348)
+  (delete rule 414)
+  (delete rule 480)
+484. (X ∧ Y) ∨ ((Z ∨ X) ∧ (W ∨ Y)) -> (Z ∨ X) ∧ (Y ∨ W)
+485. (X ∧ Y) ∨ ((Z ∨ Y) ∧ (X ∨ W)) -> (W ∨ X) ∧ (Y ∨ Z)
+486. (X ∧ Y) ∨ ((Y ∨ Z) ∧ (W ∨ X)) -> (W ∨ X) ∧ (Y ∨ Z)
+487. ((X ∨ Y) ∧ (Y ∨ Z)) ∨ (W ∧ Y) -> (X ∨ Y) ∧ (Y ∨ Z)
+488. (X ∧ Y) ∨ ((Y ∨ Z) ∧ (Y ∨ W)) -> (W ∨ Y) ∧ (Y ∨ Z)
+489. (X ∧ Y) ∨ ((Z ∨ Y) ∧ (W ∨ Y)) -> (W ∨ Y) ∧ (Y ∨ Z)
+490. (X ∧ Y) ∨ ((Z ∨ X) ∧ (X ∨ W)) -> (Z ∨ X) ∧ (X ∨ W)
+491. (X ∨ Y) ∧ (((Z ∧ Y) ∨ X) ∧ W) -> W ∧ (X ∨ (Y ∧ Z))
+492. (X ∧ Y) ∨ (((Z ∨ Y) ∧ X) ∨ W) -> W ∨ (X ∧ (Y ∨ Z))
+493. (X ∨ (Y ∨ Z)) ∧ (Z ∨ (W ∧ (X ∨ (Y ∨ Z)))) -> Z ∨ (W ∧ (X ∨ (Y ∨ Z)))
+494. (X ∨ Y) ∧ (Z ∧ (Y ∨ (W ∧ (X ∨ Y)))) -> Z ∧ (Y ∨ (W ∧ (X ∨ Y)))
+495. (X ∨ Y) ∧ (Y ∨ (Z ∧ (W ∧ (X ∨ Y)))) -> Y ∨ (Z ∧ (W ∧ (X ∨ Y)))
+496. (X ∧ Y) ∨ (Z ∨ (Y ∧ (W ∨ (X ∧ Y)))) -> Z ∨ (Y ∧ (W ∨ (X ∧ Y)))
+497. (X ∧ Y) ∨ (Y ∧ (Z ∨ (W ∨ (X ∧ Y)))) -> Y ∧ (Z ∨ (W ∨ (X ∧ Y)))
+498. (X ∧ (Y ∧ Z)) ∨ (Z ∧ (W ∨ (X ∧ (Y ∧ Z)))) -> Z ∧ (W ∨ (X ∧ (Y ∧ Z)))
+499. (X ∨ Y) ∧ ((Z ∧ Y) ∨ (W ∧ (X ∨ Y))) -> (Z ∧ Y) ∨ (W ∧ (X ∨ Y))
+500. X ∧ ((Y ∧ Z) ∨ (X ∧ (W ∨ Y))) -> X ∧ (W ∨ Y)
+501. (X ∧ Y) ∨ ((Z ∨ Y) ∧ (W ∨ (X ∧ Y))) -> (Z ∨ Y) ∧ (W ∨ (X ∧ Y))
+502. X ∨ ((Y ∨ Z) ∧ (X ∨ (W ∧ Y))) -> X ∨ (W ∧ Y)
+503. (X ∨ Y) ∧ ((X ∨ ((X ∨ Y) ∧ Z)) ∧ W) -> W ∧ (X ∨ (Z ∧ (X ∨ Y)))
+504. (X ∨ Y) ∧ (Z ∧ (X ∨ (W ∧ (X ∨ Y)))) -> Z ∧ (X ∨ (W ∧ (X ∨ Y)))
+505. (X ∧ Y) ∨ ((X ∧ ((X ∧ Y) ∨ Z)) ∨ W) -> W ∨ (X ∧ (Z ∨ (X ∧ Y)))
+506. (X ∧ Y) ∨ (Z ∨ (X ∧ (W ∨ (X ∧ Y)))) -> Z ∨ (X ∧ (W ∨ (X ∧ Y)))
+507. X ∧ (Y ∧ ((X ∧ Z) ∨ (Z ∧ W))) -> X ∧ (Z ∧ Y)
+508. X ∧ (Y ∧ ((Z ∧ X) ∨ (Z ∧ W))) -> X ∧ (Y ∧ Z)
+509. X ∧ (Y ∧ ((X ∧ Z) ∨ (W ∧ Z))) -> X ∧ (Y ∧ Z)
+510. X ∨ (Y ∨ ((X ∨ Z) ∧ (Z ∨ W))) -> X ∨ (Z ∨ Y)
+511. X ∨ (Y ∨ ((Z ∨ X) ∧ (Z ∨ W))) -> X ∨ (Y ∨ Z)
+512. X ∨ (Y ∨ ((X ∨ Z) ∧ (W ∨ Z))) -> X ∨ (Y ∨ Z)
+513. X ∧ (Y ∨ ((Z ∨ Y) ∧ (W ∨ X))) -> X ∧ (Y ∨ Z)
+514. X ∨ (Y ∧ ((Z ∧ Y) ∨ (W ∧ X))) -> X ∨ (Y ∧ Z)
+515. ((X ∧ Y) ∨ Z) ∧ (W ∨ (Z ∨ X)) -> Z ∨ (X ∧ Y)
+516. (X ∨ (Y ∧ Z)) ∧ (W ∨ (X ∨ Z)) -> X ∨ (Y ∧ Z)
+517. ((X ∧ Y) ∨ Z) ∧ (Y ∨ (W ∨ Z)) -> Z ∨ (X ∧ Y)
+518. ((X ∧ Y) ∨ Z) ∧ (W ∨ (X ∨ Z)) -> Z ∨ (X ∧ Y)
+519. (X ∨ (Y ∨ Z)) ∧ ((W ∧ Z) ∨ Y) -> Y ∨ (W ∧ Z)
+520. (X ∨ (Y ∨ Z)) ∧ ((W ∧ Y) ∨ Z) -> Z ∨ (W ∧ Y)
+521. (X ∨ (Y ∧ Z)) ∧ (W ∨ (Z ∨ X)) -> X ∨ (Z ∧ Y)
+522. ((X ∧ Y) ∨ Z) ∧ (Z ∨ (W ∨ Y)) -> Z ∨ (X ∧ Y)
+523. ((X ∧ Y) ∨ Z) ∧ (Y ∨ (Z ∨ W)) -> Z ∨ (X ∧ Y)
+524. (X ∧ (Y ∧ Z)) ∨ ((W ∨ X) ∧ Z) -> Z ∧ (X ∨ W)
+525. (X ∧ (Y ∧ Z)) ∨ (Z ∧ (W ∨ Y)) -> Z ∧ (W ∨ Y)
+526. (X ∧ (Y ∧ Z)) ∨ ((W ∨ Z) ∧ X) -> X ∧ (Z ∨ W)
+527. (X ∧ (Y ∧ Z)) ∨ ((W ∨ X) ∧ Y) -> Y ∧ (X ∨ W)
+528. (X ∧ (Y ∧ Z)) ∨ ((Z ∨ W) ∧ Y) -> Y ∧ (Z ∨ W)
+529. (X ∧ (Y ∧ Z)) ∨ ((Y ∨ W) ∧ Z) -> Z ∧ (W ∨ Y)
+530. ((X ∨ Y) ∧ Z) ∨ (W ∧ (Z ∧ Y)) -> Z ∧ (X ∨ Y)
+531. ((X ∨ Y) ∧ Z) ∨ (W ∧ (Y ∧ Z)) -> Z ∧ (X ∨ Y)
+532. X ∧ ((X ∧ (Y ∨ Z)) ∨ (Z ∧ W)) -> X ∧ (Y ∨ Z)
+533. X ∧ ((Y ∧ Z) ∨ (X ∧ (Y ∨ W))) -> X ∧ (W ∨ Y)
+534. X ∧ ((Y ∧ Z) ∨ (X ∧ (W ∨ Z))) -> X ∧ (W ∨ Z)
+535. X ∧ ((Y ∧ Z) ∨ ((W ∨ Y) ∧ X)) -> X ∧ (W ∨ Y)
+536. X ∨ ((Y ∨ Z) ∧ (X ∨ (Y ∧ W))) -> X ∨ (Y ∧ W)
+537. X ∨ ((Y ∨ Z) ∧ (X ∨ (W ∧ Z))) -> X ∨ (W ∧ Z)
+538. X ∨ ((Y ∨ Z) ∧ ((W ∧ Y) ∨ X)) -> X ∨ (W ∧ Y)
+539. X ∨ ((X ∨ (Y ∧ Z)) ∧ (Z ∨ W)) -> X ∨ (Y ∧ Z)
+540. (X ∨ (Y ∨ Z)) ∧ (X ∨ (Y ∨ (Z ∧ W))) -> X ∨ (Y ∨ (Z ∧ W))
+541. (X ∨ (Y ∨ Z)) ∧ (X ∨ (Y ∨ (W ∧ Z))) -> X ∨ (Y ∨ (W ∧ Z))
+542. (X ∨ (Y ∨ Z)) ∧ (X ∨ (Z ∨ (Y ∧ W))) -> X ∨ (Z ∨ (Y ∧ W))
+543. (X ∧ (Y ∧ Z)) ∨ (X ∧ (Y ∧ (Z ∨ W))) -> X ∧ (Y ∧ (Z ∨ W))
+544. (X ∧ (Y ∧ Z)) ∨ (X ∧ (Y ∧ (W ∨ Z))) -> X ∧ (Y ∧ (W ∨ Z))
+545. (X ∧ (Y ∧ Z)) ∨ (X ∧ (Z ∧ (Y ∨ W))) -> X ∧ (Z ∧ (Y ∨ W))
+546. X ∨ (Y ∨ (Z ∨ (W ∨ (V ∧ (X ∨ Y))))) -> X ∨ (Y ∨ (Z ∨ W))
+547. (X ∧ Y) ∨ (Z ∨ (W ∨ (X ∧ (Y ∧ V)))) -> Z ∨ (W ∨ (X ∧ Y))
+548. (X ∨ Y) ∧ (Z ∧ (W ∧ (X ∨ (Y ∨ V)))) -> Z ∧ (W ∧ (X ∨ Y))
+549. X ∧ (Y ∧ (Z ∧ (W ∧ (V ∨ (X ∧ Y))))) -> X ∧ (Y ∧ (Z ∧ W))
+550. X ∨ (Y ∨ (Z ∨ (W ∨ (V ∧ (X ∨ Z))))) -> X ∨ (Y ∨ (Z ∨ W))
+551. X ∧ (Y ∧ (Z ∧ (W ∧ (V ∨ (X ∧ Z))))) -> X ∧ (Y ∧ (Z ∧ W))
+552. X ∨ (Y ∨ (Z ∨ (W ∨ (V ∧ (X ∨ W))))) -> X ∨ (Y ∨ (Z ∨ W))
+553. X ∧ (Y ∧ (Z ∧ (W ∧ (V ∨ (X ∧ W))))) -> X ∧ (Y ∧ (Z ∧ W))
+554. (X ∨ ((Y ∨ X) ∧ Z)) ∧ (W ∨ (Y ∨ X)) -> X ∨ (Z ∧ (X ∨ Y))
+555. (X ∧ ((Y ∧ X) ∨ Z)) ∨ (W ∧ (Y ∧ X)) -> X ∧ (Z ∨ (X ∧ Y))
+556. (X ∨ (Y ∧ (X ∨ Z))) ∧ (W ∨ (X ∨ Z)) -> X ∨ (Y ∧ (X ∨ Z))
+557. (X ∨ (Y ∨ Z)) ∧ (Y ∨ ((Y ∨ Z) ∧ W)) -> Y ∨ (W ∧ (Z ∨ Y))
+558. (X ∧ (Y ∨ (X ∧ Z))) ∨ (W ∧ (X ∧ Z)) -> X ∧ (Y ∨ (X ∧ Z))
+559. (X ∧ (Y ∧ Z)) ∨ (Y ∧ ((Y ∧ Z) ∨ W)) -> Y ∧ (W ∨ (Z ∧ Y))
+560. X ∧ ((Y ∧ (Z ∧ W)) ∨ (X ∧ W)) -> X ∧ W
+561. X ∧ ((Y ∧ (Z ∧ W)) ∨ (Z ∧ X)) -> X ∧ Z
+562. X ∨ ((Y ∨ (Z ∨ W)) ∧ (Z ∨ X)) -> X ∨ Z
+563. X ∨ ((Y ∨ (Z ∨ W)) ∧ (X ∨ W)) -> X ∨ W
+564. X ∧ ((Y ∧ X) ∨ (Z ∧ (W ∧ Y))) -> X ∧ Y
+565. X ∧ ((X ∧ Y) ∨ (Z ∧ (W ∧ Y))) -> X ∧ Y
+566. X ∨ ((Y ∨ X) ∧ (Z ∨ (W ∨ Y))) -> X ∨ Y
+567. X ∨ ((X ∨ Y) ∧ (Z ∨ (W ∨ Y))) -> X ∨ Y
+568. X ∨ (((X ∧ Y) ∨ Z) ∧ (W ∨ Z)) -> X ∨ Z
+569. X ∨ ((Y ∨ Z) ∧ ((W ∧ X) ∨ Z)) -> X ∨ Z
+570. X ∨ ((Y ∨ (Z ∧ X)) ∧ (W ∨ Y)) -> X ∨ Y
+571. X ∨ (((Y ∧ X) ∨ Z) ∧ (Z ∨ W)) -> X ∨ Z
+572. X ∧ (((Y ∨ X) ∧ Z) ∨ (Z ∧ W)) -> X ∧ Z
+573. X ∧ ((Y ∧ (Z ∨ X)) ∨ (W ∧ Y)) -> X ∧ Y
+574. X ∧ (((X ∨ Y) ∧ Z) ∨ (W ∧ Z)) -> X ∧ Z
+575. X ∧ ((Y ∧ Z) ∨ ((W ∨ X) ∧ Z)) -> X ∧ Z
+576. (X ∧ Y) ∨ ((Z ∧ (X ∧ (Y ∧ W))) ∨ V) -> V ∨ (X ∧ Y)
+577. (X ∨ Y) ∧ ((Z ∨ (X ∨ (Y ∨ W))) ∧ V) -> V ∧ (X ∨ Y)
+578. (X ∧ Y) ∨ (Z ∨ (W ∧ (X ∧ (V ∧ Y)))) -> Z ∨ (X ∧ Y)
+579. (X ∨ Y) ∧ (Z ∧ (W ∨ (X ∨ (V ∨ Y)))) -> Z ∧ (X ∨ Y)
+580. (X ∧ (Y ∨ Z)) ∨ (X ∧ (Z ∨ (Y ∧ W))) -> X ∧ (Y ∨ Z)
+581. (X ∨ (Y ∧ Z)) ∧ (X ∨ (Z ∧ (Y ∨ W))) -> X ∨ (Y ∧ Z)
+582. X ∨ (Y ∨ (Z ∨ (W ∧ (V ∧ (X ∧ U))))) -> X ∨ (Y ∨ Z)
+583. X ∧ (Y ∧ (Z ∧ (W ∨ (V ∨ (X ∨ U))))) -> X ∧ (Y ∧ Z)
+584. X ∨ (Y ∨ (Z ∨ (W ∧ ((X ∨ Z) ∧ V)))) -> X ∨ (Y ∨ Z)
+585. X ∧ (Y ∧ (Z ∧ (W ∨ ((X ∧ Z) ∨ V)))) -> X ∧ (Y ∧ Z)
+586. (X ∨ Y) ∧ (Z ∧ (X ∨ (W ∨ (V ∨ Y)))) -> Z ∧ (X ∨ Y)
+587. (X ∧ Y) ∨ (Z ∨ (X ∧ (W ∧ (V ∧ Y)))) -> Z ∨ (X ∧ Y)
+588. (X ∧ Y) ∨ ((X ∧ (Z ∧ (Y ∧ W))) ∨ V) -> V ∨ (X ∧ Y)
+589. (X ∨ Y) ∧ ((X ∨ (Z ∨ (Y ∨ W))) ∧ V) -> V ∧ (X ∨ Y)
+590. X ∨ (Y ∨ ((Z ∧ (W ∧ (X ∨ Y))) ∨ V)) -> X ∨ (Y ∨ V)
+591. X ∨ (Y ∨ (Z ∨ (W ∧ ((X ∨ Y) ∧ V)))) -> X ∨ (Y ∨ Z)
+592. X ∧ (Y ∧ (Z ∧ (W ∨ ((X ∧ Y) ∨ V)))) -> X ∧ (Y ∧ Z)
+593. X ∧ (Y ∧ ((Z ∨ (W ∨ (X ∧ Y))) ∧ V)) -> X ∧ (Y ∧ V)
+  (simplifying rules with respect to one another...)
+  (delete rule 246)
+  (delete rule 247)
+  (delete rule 280)
+  (delete rule 336)
+  (delete rule 338)
+  (delete rule 360)
+  (delete rule 365)
+  (delete rule 367)
+  (delete rule 368)
+  (delete rule 370)
+  (delete rule 376)
+  (delete rule 381)
+  (delete rule 384)
+  (delete rule 386)
+  (delete rule 387)
+  (delete rule 500)
+  (delete rule 502)
+  (delete rule 519)
+  (delete rule 528)
+  (delete rule 536)
+  (hard) X ∨ (Y ∨ (V ∨ (Z ∧ (W ∧ (V ∨ Y))))) = X ∨ (Y ∨ V)
+  (hard) X ∧ (Y ∧ (V ∧ (Z ∨ (W ∨ (V ∧ Y))))) = X ∧ (Y ∧ V)
+594. (X ∧ Y) ∨ (Z ∧ (W ∧ (X ∧ (V ∧ Y)))) -> X ∧ Y
+595. (X ∨ Y) ∧ (Z ∨ (W ∨ (X ∨ (V ∨ Y)))) -> X ∨ Y
+596. (X ∧ Y) ∨ (Z ∧ (X ∧ (W ∧ (V ∧ Y)))) -> X ∧ Y
+597. (X ∨ Y) ∧ (Z ∨ (X ∨ (W ∨ (V ∨ Y)))) -> X ∨ Y
+598. X ∨ ((Y ∧ (Z ∧ (W ∧ (X ∧ V)))) ∨ U) -> X ∨ U
+599. X ∧ ((Y ∨ (Z ∨ (W ∨ (X ∨ V)))) ∧ U) -> X ∧ U
+600. X ∨ (Y ∨ (Z ∧ ((W ∧ (X ∧ V)) ∨ Y))) -> X ∨ Y
+601. X ∨ (Y ∨ (Z ∧ ((X ∧ W) ∨ (Y ∧ V)))) -> X ∨ Y
+602. X ∨ (Y ∨ ((Y ∨ (Z ∧ (X ∧ W))) ∧ V)) -> X ∨ Y
+603. X ∨ (Y ∨ (Z ∧ (Y ∨ (W ∧ (X ∧ V))))) -> X ∨ Y
+604. X ∧ (Y ∧ ((Y ∧ (Z ∨ (X ∨ W))) ∨ V)) -> X ∧ Y
+605. X ∧ (Y ∧ (Z ∨ ((X ∨ W) ∧ (Y ∨ V)))) -> X ∧ Y
+606. X ∧ (Y ∧ (Z ∨ (Y ∧ (W ∨ (X ∨ V))))) -> X ∧ Y
+607. X ∧ (Y ∧ (Z ∨ ((W ∨ (X ∨ V)) ∧ Y))) -> X ∧ Y
+608. X ∨ (Y ∨ (Z ∧ (W ∧ (V ∧ (U ∧ X))))) -> X ∨ Y
+609. X ∧ (Y ∧ (Z ∨ (W ∨ (V ∨ (U ∨ X))))) -> X ∧ Y
+610. X ∨ (Y ∨ (Z ∧ (Y ∨ (W ∧ (Y ∨ X))))) -> X ∨ Y
+611. X ∨ (Y ∨ (Z ∧ (X ∨ (W ∧ (Y ∨ X))))) -> X ∨ Y
+612. X ∨ (Y ∨ ((X ∨ (Z ∧ (X ∨ Y))) ∧ W)) -> X ∨ Y
+613. X ∨ (Y ∨ (Z ∧ (X ∨ ((X ∨ Y) ∧ W)))) -> X ∨ Y
+614. X ∧ (Y ∧ ((X ∧ (Z ∨ (X ∧ Y))) ∨ W)) -> X ∧ Y
+615. X ∧ (Y ∧ (Z ∨ (X ∧ ((X ∧ Y) ∨ W)))) -> X ∧ Y
+616. X ∧ (Y ∧ (Z ∨ (Y ∧ (W ∨ (Y ∧ X))))) -> Y ∧ X
+617. X ∧ (Y ∧ (Z ∨ (X ∧ (W ∨ (Y ∧ X))))) -> X ∧ Y
+618. X ∨ (Y ∨ (Z ∧ ((X ∨ (Y ∧ W)) ∧ V))) -> Y ∨ X
+619. X ∨ (Y ∨ (Z ∧ (W ∧ (X ∨ (V ∧ Y))))) -> Y ∨ X
+620. X ∨ (Y ∨ (Z ∧ (((X ∧ W) ∨ Y) ∧ V))) -> X ∨ Y
+621. X ∨ (Y ∨ (Z ∧ (W ∧ ((V ∧ X) ∨ Y)))) -> X ∨ Y
+622. X ∨ (Y ∨ (Z ∧ ((Y ∨ (W ∧ X)) ∧ V))) -> X ∨ Y
+  (hard) X ∨ Y = (X ∨ Y) ∧ (Z ∨ (Y ∨ (W ∨ (X ∨ V))))
+  (hard) X ∨ Y = (X ∨ Y) ∧ (Z ∨ (W ∨ (Y ∨ (X ∨ V))))
+  (hard) X ∧ Y = (X ∧ Y) ∨ (Z ∧ (Y ∧ (W ∧ (X ∧ V))))
+  (hard) X ∧ Y = (X ∧ Y) ∨ (Z ∧ (W ∧ (Y ∧ (X ∧ V))))
+623. X ∧ (Y ∧ (Z ∨ ((Y ∧ (W ∨ X)) ∨ V))) -> X ∧ Y
+624. X ∧ (Y ∧ (Z ∨ ((X ∧ (Y ∨ W)) ∨ V))) -> Y ∧ X
+625. X ∧ (Y ∧ (Z ∨ (((X ∨ W) ∧ Y) ∨ V))) -> X ∧ Y
+626. X ∧ (Y ∧ (Z ∨ (W ∨ (X ∧ (V ∨ Y))))) -> Y ∧ X
+627. X ∧ (Y ∧ (Z ∨ (W ∨ ((V ∨ X) ∧ Y)))) -> X ∧ Y
+628. (X ∧ Y) ∨ (X ∧ ((Y ∧ Z) ∨ (Y ∧ W))) -> X ∧ Y
+629. (X ∨ Y) ∧ (X ∨ ((Y ∨ Z) ∧ (Y ∨ W))) -> X ∨ Y
+630. (X ∧ (Y ∨ Z)) ∨ (X ∧ (Y ∨ (W ∧ (Y ∨ Z)))) -> X ∧ (Y ∨ Z)
+631. (X ∨ (Y ∧ Z)) ∧ (X ∨ (Y ∧ (W ∨ (Y ∧ Z)))) -> X ∨ (Y ∧ Z)
+632. X ∧ (Y ∧ ((X ∧ Z) ∨ (X ∧ W))) -> Y ∧ ((X ∧ Z) ∨ (X ∧ W))
+633. X ∧ ((Y ∧ (Z ∧ X)) ∨ (W ∧ X)) -> (W ∧ X) ∨ (X ∧ (Z ∧ Y))
+634. X ∧ ((Y ∧ X) ∨ (Z ∧ (X ∧ W))) -> (Y ∧ X) ∨ (X ∧ (Z ∧ W))
+635. X ∧ (Y ∧ ((Z ∧ X) ∨ (W ∧ X))) -> Y ∧ ((X ∧ Z) ∨ (X ∧ W))
+636. X ∨ (Y ∨ ((X ∨ Z) ∧ (X ∨ W))) -> Y ∨ ((X ∨ Z) ∧ (X ∨ W))
+637. X ∨ ((Y ∨ (Z ∨ X)) ∧ (W ∨ X)) -> (W ∨ X) ∧ (X ∨ (Z ∨ Y))
+638. X ∨ ((Y ∨ X) ∧ (Z ∨ (X ∨ W))) -> (Y ∨ X) ∧ (X ∨ (Z ∨ W))
+639. X ∨ (Y ∨ ((Z ∨ X) ∧ (W ∨ X))) -> Y ∨ ((X ∨ Z) ∧ (X ∨ W))
+640. X ∨ (((Y ∧ (X ∧ Z)) ∨ (X ∧ W)) ∧ V) -> X
+641. X ∨ (((X ∧ Y) ∨ (Z ∧ (X ∧ W))) ∧ V) -> X
+642. X ∨ (Y ∧ ((Z ∧ (W ∧ X)) ∨ (X ∧ V))) -> X
+643. X ∨ (Y ∧ ((Z ∧ X) ∨ (W ∧ (X ∧ V)))) -> X
+644. X ∧ (((Y ∨ (X ∨ Z)) ∧ (X ∨ W)) ∨ V) -> X
+645. X ∧ (((X ∨ Y) ∧ (Z ∨ (X ∨ W))) ∨ V) -> X
+646. X ∧ (Y ∨ ((Z ∨ (W ∨ X)) ∧ (X ∨ V))) -> X
+647. X ∧ (Y ∨ ((Z ∨ X) ∧ (W ∨ (X ∨ V)))) -> X
+648. X ∨ (Y ∧ (Z ∧ (W ∧ (V ∧ (U ∧ X))))) -> X
+649. X ∧ (Y ∨ (Z ∨ (W ∨ (V ∨ (U ∨ X))))) -> X
+650. X ∨ (Y ∧ (((Z ∧ X) ∨ (X ∧ W)) ∧ V)) -> X
+651. X ∨ (Y ∧ (((X ∧ Z) ∨ (W ∧ X)) ∧ V)) -> X
+652. X ∨ (Y ∧ (Z ∧ ((W ∧ X) ∨ (V ∧ X)))) -> X
+653. X ∧ (Y ∨ (((Z ∨ X) ∧ (X ∨ W)) ∨ V)) -> X
+654. X ∧ (Y ∨ (((X ∨ Z) ∧ (W ∨ X)) ∨ V)) -> X
+655. X ∧ (Y ∨ (Z ∨ ((W ∨ X) ∧ (V ∨ X)))) -> X
+656. (X ∨ Y) ∧ (((Z ∧ X) ∨ Y) ∧ W) -> W ∧ (Y ∨ (Z ∧ X))
+657. (X ∧ Y) ∨ (((Z ∨ X) ∧ Y) ∨ W) -> W ∨ (Y ∧ (Z ∨ X))
+658. X ∧ ((Y ∨ ((Z ∨ Y) ∧ X)) ∧ W) -> X ∧ (W ∧ (Y ∨ Z))
+659. X ∨ ((Y ∧ ((Z ∧ Y) ∨ X)) ∨ W) -> X ∨ (W ∨ (Y ∧ Z))
+660. (X ∨ Y) ∧ ((X ∧ Z) ∨ (W ∧ Y)) -> (Z ∧ X) ∨ (Y ∧ W)
+661. (X ∨ Y) ∧ ((Y ∧ Z) ∨ (X ∧ W)) -> (W ∧ X) ∨ (Y ∧ Z)
+662. (X ∨ Y) ∧ ((Z ∧ Y) ∨ (W ∧ X)) -> (W ∧ X) ∨ (Y ∧ Z)
+663. (X ∨ Y) ∧ ((X ∧ Z) ∨ (W ∧ X)) -> (W ∧ X) ∨ (X ∧ Z)
+664. ((X ∧ Y) ∨ (Y ∧ Z)) ∧ (Y ∨ W) -> (X ∧ Y) ∨ (Y ∧ Z)
+665. (X ∨ Y) ∧ ((Z ∧ X) ∨ (W ∧ X)) -> (Z ∧ X) ∨ (X ∧ W)
+666. ((X ∧ Y) ∨ (Z ∧ X)) ∧ (W ∨ X) -> (Z ∧ X) ∨ (X ∧ Y)
+667. ((X ∧ Y) ∨ (X ∧ Z)) ∧ (W ∨ X) -> (Y ∧ X) ∨ (X ∧ Z)
+668. ((X ∧ Y) ∨ (Z ∧ Y)) ∧ (W ∨ Y) -> (X ∧ Y) ∨ (Y ∧ Z)
+669. (X ∧ Y) ∨ ((X ∨ Z) ∧ (W ∨ Y)) -> (Z ∨ X) ∧ (Y ∨ W)
+670. (X ∧ Y) ∨ ((Z ∨ Y) ∧ (W ∨ X)) -> (W ∨ X) ∧ (Y ∨ Z)
+671. (X ∧ Y) ∨ ((Y ∨ Z) ∧ (X ∨ W)) -> (W ∨ X) ∧ (Y ∨ Z)
+672. ((X ∨ Y) ∧ (X ∨ Z)) ∨ (W ∧ X) -> (Y ∨ X) ∧ (X ∨ Z)
+673. ((X ∨ Y) ∧ (Z ∨ Y)) ∨ (W ∧ Y) -> (X ∨ Y) ∧ (Y ∨ Z)
+674. ((X ∨ Y) ∧ (Y ∨ Z)) ∨ (Y ∧ W) -> (X ∨ Y) ∧ (Y ∨ Z)
+675. (X ∧ Y) ∨ ((Z ∨ X) ∧ (W ∨ X)) -> (W ∨ X) ∧ (X ∨ Z)
+676. (X ∨ Y) ∧ (Z ∧ (Y ∨ ((X ∨ Y) ∧ W))) -> Z ∧ (Y ∨ (W ∧ (X ∨ Y)))
+677. (X ∨ Y) ∧ (Y ∨ (Z ∧ ((X ∨ Y) ∧ W))) -> Y ∨ (W ∧ (Z ∧ (X ∨ Y)))
+678. (X ∧ Y) ∨ (Z ∨ (Y ∧ ((X ∧ Y) ∨ W))) -> Z ∨ (Y ∧ (W ∨ (X ∧ Y)))
+679. (X ∧ Y) ∨ (Y ∧ (Z ∨ ((X ∧ Y) ∨ W))) -> Y ∧ (W ∨ (Z ∨ (X ∧ Y)))
+680. (X ∨ (Y ∨ Z)) ∧ (Z ∨ ((X ∨ (Y ∨ Z)) ∧ W)) -> Z ∨ (W ∧ (Y ∨ (X ∨ Z)))
+681. (X ∨ Y) ∧ ((Y ∨ (Z ∧ (X ∨ Y))) ∧ W) -> W ∧ (Y ∨ (Z ∧ (X ∨ Y)))
+682. (X ∧ Y) ∨ ((Y ∧ (Z ∨ (X ∧ Y))) ∨ W) -> W ∨ (Y ∧ (Z ∨ (X ∧ Y)))
+683. (X ∧ (Y ∧ Z)) ∨ (Z ∧ ((X ∧ (Y ∧ Z)) ∨ W)) -> Z ∧ (W ∨ (Y ∧ (X ∧ Z)))
+684. (X ∨ Y) ∧ ((Z ∧ (X ∨ Y)) ∨ (W ∧ Y)) -> (Y ∧ W) ∨ (Z ∧ (X ∨ Y))
+685. (X ∨ Y) ∧ ((Y ∧ Z) ∨ (W ∧ (X ∨ Y))) -> (Y ∧ Z) ∨ (W ∧ (X ∨ Y))
+686. (X ∨ Y) ∧ ((Z ∧ Y) ∨ ((X ∨ Y) ∧ W)) -> (Y ∧ Z) ∨ (W ∧ (X ∨ Y))
+687. (X ∧ Y) ∨ ((Z ∨ X) ∧ (W ∨ (X ∧ Y))) -> (Z ∨ X) ∧ (W ∨ (X ∧ Y))
+  (simplifying rules with respect to one another...)
+  (delete rule 433)
+  (delete rule 435)
+  (delete rule 440)
+  (delete rule 442)
+  (delete rule 452)
+  (delete rule 455)
+  (delete rule 477)
+  (delete rule 481)
+  (delete rule 486)
+  (delete rule 487)
+  (delete rule 491)
+  (delete rule 492)
+  (delete rule 501)
+  (delete rule 663)
+  (delete rule 666)
+  (delete rule 687)
+688. (X ∨ Y) ∧ ((X ∨ (Z ∧ (X ∨ Y))) ∧ W) -> W ∧ (X ∨ (Z ∧ (X ∨ Y)))
+689. (X ∧ Y) ∨ ((X ∧ (Z ∨ (X ∧ Y))) ∨ W) -> W ∨ (X ∧ (Z ∨ (X ∧ Y)))
+690. X ∧ (Y ∧ ((Z ∧ W) ∨ (X ∧ W))) -> X ∧ (Y ∧ W)
+691. X ∧ (Y ∧ ((Z ∧ W) ∨ (Z ∧ X))) -> X ∧ (Y ∧ Z)
+692. X ∨ (Y ∨ ((Z ∨ W) ∧ (Z ∨ X))) -> X ∨ (Y ∨ Z)
+693. X ∨ (Y ∨ ((Z ∨ W) ∧ (X ∨ W))) -> X ∨ (Y ∨ W)
+694. X ∧ (((X ∧ Y) ∨ (Y ∧ Z)) ∧ W) -> X ∧ (Y ∧ W)
+695. X ∧ (((Y ∧ X) ∨ (Y ∧ Z)) ∧ W) -> X ∧ (W ∧ Y)
+696. X ∧ (Y ∧ ((Z ∧ X) ∨ (W ∧ Z))) -> X ∧ (Y ∧ Z)
+697. X ∧ (((X ∧ Y) ∨ (Z ∧ Y)) ∧ W) -> X ∧ (W ∧ Y)
+698. X ∨ (((X ∨ Y) ∧ (Y ∨ Z)) ∨ W) -> X ∨ (Y ∨ W)
+699. X ∨ (((Y ∨ X) ∧ (Y ∨ Z)) ∨ W) -> X ∨ (W ∨ Y)
+700. X ∨ (Y ∨ ((Z ∨ X) ∧ (W ∨ Z))) -> X ∨ (Y ∨ Z)
+701. X ∨ (((X ∨ Y) ∧ (Z ∨ Y)) ∨ W) -> X ∨ (W ∨ Y)
+702. ((X ∧ Y) ∨ Z) ∧ (W ∨ (Z ∨ Y)) -> Z ∨ (X ∧ Y)
+703. ((X ∧ Y) ∨ Z) ∧ (W ∨ (Y ∨ Z)) -> Z ∨ (X ∧ Y)
+704. (X ∧ (Y ∧ Z)) ∨ ((W ∨ Z) ∧ Y) -> Y ∧ (W ∨ Z)
+705. (X ∧ (Y ∧ Z)) ∨ ((W ∨ Y) ∧ Z) -> Z ∧ (W ∨ Y)
+706. X ∧ ((X ∧ (Y ∨ Z)) ∨ (Y ∧ W)) -> X ∧ (Z ∨ Y)
+707. X ∧ (((Y ∨ Z) ∧ X) ∨ (Z ∧ W)) -> X ∧ (Y ∨ Z)
+708. X ∧ ((X ∧ (Y ∨ Z)) ∨ (W ∧ Z)) -> X ∧ (Y ∨ Z)
+709. X ∧ ((Y ∧ Z) ∨ (X ∧ (Z ∨ W))) -> X ∧ (W ∨ Z)
+710. X ∧ ((Y ∧ Z) ∨ ((Y ∨ W) ∧ X)) -> X ∧ (W ∨ Y)
+711. X ∧ ((Y ∧ Z) ∨ ((W ∨ Z) ∧ X)) -> X ∧ (W ∨ Z)
+712. X ∨ ((Y ∨ Z) ∧ ((W ∧ Z) ∨ X)) -> X ∨ (W ∧ Z)
+713. X ∨ ((X ∨ (Y ∧ Z)) ∧ (W ∨ Z)) -> X ∨ (Y ∧ Z)
+714. X ∨ ((Y ∨ Z) ∧ (X ∨ (Z ∧ W))) -> X ∨ (W ∧ Z)
+715. X ∨ (((Y ∧ Z) ∨ X) ∧ (Z ∨ W)) -> X ∨ (Y ∧ Z)
+716. X ∨ ((Y ∨ Z) ∧ ((Y ∧ W) ∨ X)) -> X ∨ (W ∧ Y)
+717. X ∨ ((X ∨ (Y ∧ Z)) ∧ (Y ∨ W)) -> X ∨ (Z ∧ Y)
+718. (X ∧ Y) ∨ (Z ∨ (W ∨ (X ∧ (V ∧ Y)))) -> Z ∨ (W ∨ (X ∧ Y))
+719. (X ∨ Y) ∧ (Z ∧ (W ∧ (X ∨ (V ∨ Y)))) -> Z ∧ (W ∧ (X ∨ Y))
+720. (X ∧ Y) ∨ (Z ∨ ((X ∧ (Y ∧ W)) ∨ V)) -> Z ∨ (V ∨ (X ∧ Y))
+721. (X ∨ Y) ∧ (Z ∧ ((X ∨ (Y ∨ W)) ∧ V)) -> Z ∧ (V ∧ (X ∨ Y))
+722. (X ∨ (Y ∨ Z)) ∧ (Y ∨ ((X ∨ Z) ∧ W)) -> Y ∨ (W ∧ (X ∨ Z))
+723. (X ∨ (Y ∨ Z)) ∧ (Y ∨ (Z ∨ (X ∧ W))) -> Z ∨ (Y ∨ (W ∧ X))
+724. ((X ∧ Y) ∨ Z) ∧ (Z ∨ (X ∧ (Y ∧ W))) -> Z ∨ (X ∧ (Y ∧ W))
+725. ((X ∨ Y) ∧ Z) ∨ (Z ∧ (X ∨ (Y ∨ W))) -> Z ∧ (X ∨ (Y ∨ W))
+726. (X ∧ (Y ∧ Z)) ∨ (Y ∧ ((X ∧ Z) ∨ W)) -> Y ∧ (W ∨ (X ∧ Z))
+727. (X ∧ (Y ∧ Z)) ∨ (Y ∧ (Z ∧ (X ∨ W))) -> Z ∧ (Y ∧ (W ∨ X))
+728. X ∨ (Y ∨ (Z ∨ (W ∨ (V ∧ (X ∧ U))))) -> X ∨ (Y ∨ (Z ∨ W))
+729. X ∧ (Y ∧ (Z ∧ (W ∧ (V ∨ (X ∨ U))))) -> X ∧ (Y ∧ (Z ∧ W))
+730. X ∨ (Y ∨ (Z ∨ (W ∨ ((X ∨ W) ∧ V)))) -> X ∨ (Y ∨ (Z ∨ W))
+731. X ∧ (Y ∧ (Z ∧ (W ∧ ((X ∧ W) ∨ V)))) -> X ∧ (Y ∧ (Z ∧ W))
+732. X ∨ (Y ∨ (Z ∨ ((W ∧ (X ∨ Z)) ∨ V))) -> X ∨ (Y ∨ (Z ∨ V))
+733. X ∨ (Y ∨ (Z ∨ ((W ∧ (X ∨ Y)) ∨ V))) -> X ∨ (Y ∨ (Z ∨ V))
+734. X ∨ (Y ∨ (Z ∨ (W ∨ ((X ∨ Z) ∧ V)))) -> X ∨ (Y ∨ (Z ∨ W))
+735. X ∧ (Y ∧ (Z ∧ (W ∧ ((X ∧ Z) ∨ V)))) -> X ∧ (Y ∧ (Z ∧ W))
+736. X ∧ (Y ∧ (Z ∧ ((W ∨ (X ∧ Z)) ∧ V))) -> X ∧ (Y ∧ (Z ∧ V))
+737. X ∧ (Y ∧ (Z ∧ ((W ∨ (X ∧ Y)) ∧ V))) -> X ∧ (Y ∧ (Z ∧ V))
+738. (X ∨ (Y ∨ Z)) ∧ (Y ∨ ((Z ∧ W) ∨ X)) -> X ∨ (Y ∨ (Z ∧ W))
+739. (X ∨ (Y ∨ Z)) ∧ (X ∨ ((Z ∧ W) ∨ Y)) -> X ∨ (Y ∨ (Z ∧ W))
+740. (X ∨ (Y ∨ Z)) ∧ (Z ∨ (X ∨ (W ∧ Y))) -> Z ∨ (X ∨ (W ∧ Y))
+741. (X ∨ (Y ∨ Z)) ∧ (X ∨ (Z ∨ (W ∧ Y))) -> X ∨ (Z ∨ (W ∧ Y))
+742. (X ∨ (Y ∨ Z)) ∧ (Y ∨ ((W ∧ Z) ∨ X)) -> X ∨ (Y ∨ (W ∧ Z))
+743. (X ∨ (Y ∨ Z)) ∧ (X ∨ ((W ∧ Z) ∨ Y)) -> X ∨ (Y ∨ (W ∧ Z))
+  (hard) Z ∨ (W ∨ (X ∧ Y)) = (Y ∨ (Z ∨ W)) ∧ (W ∨ (Z ∨ (Y ∧ X)))
+744. (X ∨ (Y ∨ Z)) ∧ (Z ∨ ((Y ∧ W) ∨ X)) -> X ∨ (Z ∨ (Y ∧ W))
+745. (X ∨ (Y ∨ Z)) ∧ (X ∨ ((Y ∧ W) ∨ Z)) -> X ∨ (Z ∨ (Y ∧ W))
+746. (X ∧ (Y ∧ Z)) ∨ (Y ∧ ((Z ∨ W) ∧ X)) -> X ∧ (Y ∧ (Z ∨ W))
+747. (X ∧ (Y ∧ Z)) ∨ (X ∧ ((Z ∨ W) ∧ Y)) -> X ∧ (Y ∧ (Z ∨ W))
+748. (X ∧ (Y ∧ Z)) ∨ (Z ∧ (X ∧ (W ∨ Y))) -> Z ∧ (X ∧ (W ∨ Y))
+749. (X ∧ (Y ∧ Z)) ∨ (X ∧ (Z ∧ (W ∨ Y))) -> X ∧ (Z ∧ (W ∨ Y))
+750. (X ∧ (Y ∧ Z)) ∨ (Y ∧ ((W ∨ Z) ∧ X)) -> X ∧ (Y ∧ (W ∨ Z))
+751. (X ∧ (Y ∧ Z)) ∨ (X ∧ ((W ∨ Z) ∧ Y)) -> X ∧ (Y ∧ (W ∨ Z))
+  (hard) Z ∧ (W ∧ (X ∨ Y)) = (Y ∧ (Z ∧ W)) ∨ (W ∧ (Z ∧ (Y ∨ X)))
+752. (X ∧ (Y ∧ Z)) ∨ (Z ∧ ((Y ∨ W) ∧ X)) -> X ∧ (Z ∧ (Y ∨ W))
+753. (X ∧ (Y ∧ Z)) ∨ (X ∧ ((Y ∨ W) ∧ Z)) -> X ∧ (Z ∧ (Y ∨ W))
+754. X ∨ (Y ∨ (Z ∨ (W ∨ ((X ∨ Y) ∧ V)))) -> X ∨ (Y ∨ (Z ∨ W))
+755. X ∧ (Y ∧ (Z ∧ (W ∧ ((X ∧ Y) ∨ V)))) -> X ∧ (Y ∧ (Z ∧ W))
+  (hard) X ∨ (Y ∨ (Z ∨ (V ∨ (W ∧ (V ∨ Y))))) = X ∨ (Y ∨ (Z ∨ V))
+  (hard) X ∧ (Y ∧ (Z ∧ (V ∧ (W ∨ (V ∧ Y))))) = X ∧ (Y ∧ (Z ∧ V))
+756. (X ∨ ((X ∨ Y) ∧ Z)) ∧ (W ∨ (X ∨ Y)) -> X ∨ (Z ∧ (X ∨ Y))
+757. (X ∧ ((X ∧ Y) ∨ Z)) ∨ (W ∧ (X ∧ Y)) -> X ∧ (Z ∨ (X ∧ Y))
+758. (X ∨ (Y ∨ Z)) ∧ (X ∨ (Y ∨ (W ∧ (Y ∨ Z)))) -> X ∨ (Y ∨ (W ∧ (Y ∨ Z)))
+759. (X ∧ (Y ∧ Z)) ∨ (X ∧ (Y ∧ (W ∨ (Y ∧ Z)))) -> X ∧ (Y ∧ (W ∨ (Y ∧ Z)))
+760. X ∧ ((Y ∧ (Z ∧ W)) ∨ (W ∧ X)) -> X ∧ W
+761. X ∨ ((Y ∨ (Z ∨ W)) ∧ (W ∨ X)) -> X ∨ W
+762. X ∨ (((Y ∧ X) ∨ Z) ∧ (W ∨ Z)) -> X ∨ Z
+763. X ∧ (((Y ∨ X) ∧ Z) ∨ (W ∧ Z)) -> X ∧ Z
+764. (X ∧ Y) ∨ ((Z ∧ (X ∧ (W ∧ Y))) ∨ V) -> V ∨ (X ∧ Y)
+765. (X ∨ Y) ∧ ((Z ∨ (X ∨ (W ∨ Y))) ∧ V) -> V ∧ (X ∨ Y)
+766. X ∨ (Y ∨ ((Z ∧ (W ∧ (X ∧ V))) ∨ U)) -> X ∨ (Y ∨ U)
+767. X ∧ (Y ∧ ((Z ∨ (W ∨ (X ∨ V))) ∧ U)) -> X ∧ (Y ∧ U)
+768. X ∨ (Y ∨ (Z ∨ (W ∧ (Y ∨ (X ∧ V))))) -> X ∨ (Y ∨ Z)
+769. X ∨ (Y ∨ (Z ∨ (W ∧ ((X ∧ V) ∨ Z)))) -> X ∨ (Y ∨ Z)
+770. X ∨ (Y ∨ (Z ∨ ((Z ∨ (X ∧ W)) ∧ V))) -> X ∨ (Y ∨ Z)
+771. X ∨ (Y ∨ (Z ∨ (W ∧ (Z ∨ (V ∧ X))))) -> X ∨ (Y ∨ Z)
+772. X ∧ (Y ∧ (Z ∧ (W ∨ (Y ∧ (X ∨ V))))) -> X ∧ (Y ∧ Z)
+773. X ∧ (Y ∧ (Z ∧ ((Z ∧ (X ∨ W)) ∨ V))) -> X ∧ (Y ∧ Z)
+774. X ∧ (Y ∧ (Z ∧ (W ∨ (Z ∧ (V ∨ X))))) -> X ∧ (Y ∧ Z)
+775. X ∧ (Y ∧ (Z ∧ (W ∨ ((X ∨ V) ∧ Z)))) -> X ∧ (Y ∧ Z)
+776. X ∨ (Y ∨ (Z ∨ (W ∧ (V ∧ (U ∧ X))))) -> X ∨ (Y ∨ Z)
+777. X ∧ (Y ∧ (Z ∧ (W ∨ (V ∨ (U ∨ X))))) -> X ∧ (Y ∧ Z)
+778. (X ∧ Y) ∨ ((X ∧ (Z ∧ (W ∧ Y))) ∨ V) -> V ∨ (X ∧ Y)
+779. (X ∨ Y) ∧ ((X ∨ (Z ∨ (W ∨ Y))) ∧ V) -> V ∧ (X ∨ Y)
+780. X ∨ (Y ∨ ((Z ∧ ((X ∨ Y) ∧ W)) ∨ V)) -> X ∨ (V ∨ Y)
+781. X ∧ (Y ∧ ((Z ∨ ((X ∧ Y) ∨ W)) ∧ V)) -> X ∧ (V ∧ Y)
+782. (X ∨ (Y ∨ (Z ∨ W))) ∧ (W ∨ (X ∧ V)) -> W ∨ (X ∧ V)
+783. (X ∨ (Y ∨ (Z ∨ W))) ∧ (X ∨ (W ∧ V)) -> X ∨ (W ∧ V)
+784. (X ∨ (Y ∧ Z)) ∧ (X ∨ (W ∨ (Y ∨ V))) -> X ∨ (Y ∧ Z)
+785. (X ∨ (Y ∨ (Z ∨ W))) ∧ (X ∨ (V ∧ Z)) -> X ∨ (Z ∧ V)
+786. (X ∨ (Y ∨ (Z ∨ W))) ∧ (Z ∨ (X ∧ V)) -> Z ∨ (X ∧ V)
+787. (X ∧ (Y ∧ (Z ∧ W))) ∨ (X ∧ (Z ∨ V)) -> X ∧ (Z ∨ V)
+788. (X ∧ (Y ∨ Z)) ∨ (Y ∧ (W ∧ (X ∧ V))) -> X ∧ (Y ∨ Z)
+789. (X ∧ (Y ∨ Z)) ∨ (X ∧ (W ∧ (Y ∧ V))) -> X ∧ (Y ∨ Z)
+790. (X ∨ (Y ∧ Z)) ∧ (Y ∨ (W ∨ (X ∨ V))) -> X ∨ (Y ∧ Z)
+  (simplifying rules with respect to one another...)
+  (delete rule 515)
+  (delete rule 518)
+  (delete rule 522)
+  (delete rule 526)
+  (delete rule 530)
+  (delete rule 540)
+  (delete rule 541)
+  (delete rule 542)
+  (delete rule 543)
+  (delete rule 544)
+  (delete rule 545)
+  (delete rule 702)
+  (delete rule 704)
+  (delete rule 738)
+  (delete rule 739)
+  (delete rule 740)
+  (delete rule 742)
+  (delete rule 746)
+  (delete rule 747)
+  (delete rule 748)
+  (delete rule 750)
+791. (X ∧ (Y ∨ Z)) ∨ (X ∧ (Y ∨ (Z ∧ W))) -> X ∧ (Z ∨ Y)
+792. (X ∧ (Y ∨ Z)) ∨ (X ∧ ((Y ∧ W) ∨ Z)) -> X ∧ (Y ∨ Z)
+793. ((X ∨ Y) ∧ Z) ∨ (Z ∧ (Y ∨ (X ∧ W))) -> Z ∧ (X ∨ Y)
+794. (X ∧ (Y ∨ Z)) ∨ ((Z ∨ (Y ∧ W)) ∧ X) -> X ∧ (Y ∨ Z)
+795. (X ∧ (Y ∨ Z)) ∨ (X ∧ (Z ∨ (W ∧ Y))) -> X ∧ (Y ∨ Z)
+796. ((X ∧ Y) ∨ Z) ∧ (Z ∨ (Y ∧ (X ∨ W))) -> Z ∨ (X ∧ Y)
+797. (X ∨ (Y ∧ Z)) ∧ ((Z ∧ (Y ∨ W)) ∨ X) -> X ∨ (Y ∧ Z)
+798. (X ∨ (Y ∧ Z)) ∧ (X ∨ (Z ∧ (W ∨ Y))) -> X ∨ (Y ∧ Z)
+799. (X ∨ (Y ∧ Z)) ∧ (X ∨ (Y ∧ (Z ∨ W))) -> X ∨ (Z ∧ Y)
+800. (X ∨ (Y ∧ Z)) ∧ (X ∨ ((Y ∨ W) ∧ Z)) -> X ∨ (Y ∧ Z)
+  (hard) X ∨ (Y ∨ (W ∨ (Z ∧ ((W ∨ Y) ∧ V)))) = X ∨ (Y ∨ W)
+  (hard) X ∧ (Y ∧ (W ∧ (Z ∨ ((W ∧ Y) ∨ V)))) = X ∧ (Y ∧ W)
+801. (X ∨ (Y ∧ Z)) ∧ (W ∨ (X ∨ (V ∨ Y))) -> X ∨ (Y ∧ Z)
+802. (X ∧ (Y ∨ Z)) ∨ (W ∧ (X ∧ (V ∧ Y))) -> X ∧ (Y ∨ Z)
+803. X ∨ (Y ∨ (Z ∧ ((X ∧ W) ∨ (X ∧ V)))) -> X ∨ Y
+804. X ∨ (Y ∨ (((X ∧ Z) ∨ (X ∧ W)) ∧ V)) -> X ∨ Y
+805. X ∨ (Y ∨ (Z ∧ ((W ∧ X) ∨ (X ∧ V)))) -> X ∨ Y
+806. X ∧ (Y ∧ (Z ∨ ((X ∨ W) ∧ (X ∨ V)))) -> X ∧ Y
+807. X ∧ (Y ∧ (((X ∨ Z) ∧ (X ∨ W)) ∨ V)) -> X ∧ Y
+808. X ∧ (Y ∧ (Z ∨ ((W ∨ X) ∧ (X ∨ V)))) -> X ∧ Y
+809. X ∨ ((Y ∧ (Z ∧ (W ∧ (V ∧ X)))) ∨ U) -> X ∨ U
+810. X ∧ ((Y ∨ (Z ∨ (W ∨ (V ∨ X)))) ∧ U) -> X ∧ U
+811. X ∨ (Y ∨ ((X ∨ (Z ∧ (Y ∧ W))) ∧ V)) -> X ∨ Y
+812. X ∨ (Y ∨ (Z ∧ (X ∨ (W ∧ (Y ∧ V))))) -> X ∨ Y
+813. X ∧ (Y ∧ ((X ∧ (Z ∨ (Y ∨ W))) ∨ V)) -> X ∧ Y
+814. X ∧ (Y ∧ (Z ∨ (X ∧ (W ∨ (Y ∨ V))))) -> X ∧ Y
+815. X ∨ (Y ∨ (((Z ∧ (X ∧ W)) ∨ Y) ∧ V)) -> X ∨ Y
+816. X ∨ (Y ∨ (Z ∧ ((W ∧ (V ∧ X)) ∨ Y))) -> X ∨ Y
+817. X ∨ (Y ∨ ((Y ∨ (Z ∧ (W ∧ X))) ∧ V)) -> X ∨ Y
+818. X ∧ (Y ∧ ((Y ∧ (Z ∨ (W ∨ X))) ∨ V)) -> X ∧ Y
+819. X ∧ (Y ∧ (((Z ∨ (X ∨ W)) ∧ Y) ∨ V)) -> X ∧ Y
+820. X ∧ (Y ∧ (Z ∨ ((W ∨ (V ∨ X)) ∧ Y))) -> X ∧ Y
+821. X ∨ (Y ∨ (Z ∧ ((Y ∧ W) ∨ (X ∧ V)))) -> Y ∨ X
+822. X ∨ (Y ∨ (((X ∧ Z) ∨ (Y ∧ W)) ∧ V)) -> X ∨ Y
+823. X ∨ (Y ∨ (Z ∧ ((W ∧ X) ∨ (Y ∧ V)))) -> X ∨ Y
+824. X ∨ (Y ∨ (Z ∧ ((X ∧ W) ∨ (V ∧ Y)))) -> X ∨ Y
+825. X ∨ (Y ∨ (Z ∧ (Y ∨ (W ∧ (V ∧ X))))) -> X ∨ Y
+826. X ∧ (Y ∧ (((X ∨ Z) ∧ (Y ∨ W)) ∨ V)) -> X ∧ Y
+827. X ∧ (Y ∧ (Z ∨ ((W ∨ X) ∧ (Y ∨ V)))) -> X ∧ Y
+828. X ∧ (Y ∧ (Z ∨ ((X ∨ W) ∧ (V ∨ Y)))) -> X ∧ Y
+829. X ∧ (Y ∧ (Z ∨ ((Y ∨ W) ∧ (X ∨ V)))) -> Y ∧ X
+830. X ∧ (Y ∧ (Z ∨ (Y ∧ (W ∨ (V ∨ X))))) -> X ∧ Y
+831. X ∨ (Y ∨ (Z ∧ (Y ∨ (W ∧ (X ∨ Y))))) -> X ∨ Y
+832. X ∨ (Y ∨ ((Y ∨ (Z ∧ (Y ∨ X))) ∧ W)) -> X ∨ Y
+833. X ∨ (Y ∨ (Z ∧ (Y ∨ ((Y ∨ X) ∧ W)))) -> X ∨ Y
+834. X ∨ (Y ∨ ((X ∨ (Z ∧ (Y ∨ X))) ∧ W)) -> X ∨ Y
+835. X ∨ (Y ∨ (Z ∧ (X ∨ ((Y ∨ X) ∧ W)))) -> X ∨ Y
+836. X ∨ (Y ∨ ((X ∨ ((X ∨ Y) ∧ Z)) ∧ W)) -> X ∨ Y
+837. X ∧ (Y ∧ ((X ∧ ((X ∧ Y) ∨ Z)) ∨ W)) -> X ∧ Y
+838. X ∧ (Y ∧ ((Y ∧ (Z ∨ (Y ∧ X))) ∨ W)) -> Y ∧ X
+839. X ∧ (Y ∧ ((X ∧ (Z ∨ (Y ∧ X))) ∨ W)) -> X ∧ Y
+840. X ∧ (Y ∧ (Z ∨ (Y ∧ ((Y ∧ X) ∨ W)))) -> Y ∧ X
+841. X ∧ (Y ∧ (Z ∨ (X ∧ ((Y ∧ X) ∨ W)))) -> X ∧ Y
+842. X ∧ (Y ∧ (Z ∨ (Y ∧ (W ∨ (X ∧ Y))))) -> Y ∧ X
+843. X ∨ (Y ∨ (Z ∧ ((X ∨ (W ∧ Y)) ∧ V))) -> Y ∨ X
+844. X ∨ (Y ∨ (Z ∧ (((W ∧ X) ∨ Y) ∧ V))) -> X ∨ Y
+845. X ∧ (Y ∧ (Z ∨ ((X ∧ (W ∨ Y)) ∨ V))) -> Y ∧ X
+846. X ∧ (Y ∧ (Z ∨ (((W ∨ X) ∧ Y) ∨ V))) -> X ∧ Y
+847. (X ∧ Y) ∨ (Y ∧ ((X ∧ Z) ∨ (X ∧ W))) -> Y ∧ X
+848. (X ∧ Y) ∨ (((Y ∧ Z) ∨ (Y ∧ W)) ∧ X) -> X ∧ Y
+849. (X ∧ Y) ∨ (X ∧ ((Z ∧ Y) ∨ (Y ∧ W))) -> X ∧ Y
+850. (X ∧ Y) ∨ (X ∧ ((Y ∧ Z) ∨ (W ∧ Y))) -> X ∧ Y
+851. (X ∨ Y) ∧ (Y ∨ ((X ∨ Z) ∧ (X ∨ W))) -> Y ∨ X
+852. (X ∨ Y) ∧ (((Y ∨ Z) ∧ (Y ∨ W)) ∨ X) -> X ∨ Y
+853. (X ∨ Y) ∧ (X ∨ ((Z ∨ Y) ∧ (Y ∨ W))) -> X ∨ Y
+854. (X ∨ Y) ∧ (X ∨ ((Y ∨ Z) ∧ (W ∨ Y))) -> X ∨ Y
+855. ((X ∨ Y) ∧ Z) ∨ (Z ∧ (X ∨ (W ∧ (X ∨ Y)))) -> Z ∧ (X ∨ Y)
+856. (X ∧ (Y ∨ Z)) ∨ ((Y ∨ (W ∧ (Y ∨ Z))) ∧ X) -> X ∧ (Y ∨ Z)
+857. (X ∧ (Y ∨ Z)) ∨ (X ∧ (Y ∨ ((Y ∨ Z) ∧ W))) -> X ∧ (Y ∨ Z)
+858. ((X ∧ Y) ∨ Z) ∧ (Z ∨ (X ∧ (W ∨ (X ∧ Y)))) -> Z ∨ (X ∧ Y)
+859. (X ∨ (Y ∧ Z)) ∧ ((Y ∧ (W ∨ (Y ∧ Z))) ∨ X) -> X ∨ (Y ∧ Z)
+860. (X ∨ (Y ∧ Z)) ∧ (X ∨ (Y ∧ ((Y ∧ Z) ∨ W))) -> X ∨ (Y ∧ Z)
+861. X ∨ (((Y ∧ (Z ∧ X)) ∨ (X ∧ W)) ∧ V) -> X
+862. X ∨ (((Y ∧ X) ∨ (Z ∧ (X ∧ W))) ∧ V) -> X
+863. X ∨ (Y ∧ ((Z ∧ (W ∧ X)) ∨ (V ∧ X))) -> X
+864. X ∨ (Y ∧ ((Z ∧ X) ∨ (W ∧ (V ∧ X)))) -> X
+865. X ∧ (((Y ∨ (Z ∨ X)) ∧ (X ∨ W)) ∨ V) -> X
+866. X ∧ (((Y ∨ X) ∧ (Z ∨ (X ∨ W))) ∨ V) -> X
+867. X ∧ (Y ∨ ((Z ∨ (W ∨ X)) ∧ (V ∨ X))) -> X
+868. X ∧ (Y ∨ ((Z ∨ X) ∧ (W ∨ (V ∨ X)))) -> X
+869. X ∧ (((X ∧ Y) ∨ (X ∧ Z)) ∧ W) -> W ∧ ((X ∧ Y) ∨ (X ∧ Z))
+870. X ∧ (Y ∧ ((Z ∧ X) ∨ (X ∧ W))) -> Y ∧ ((X ∧ Z) ∨ (X ∧ W))
+871. X ∧ ((Y ∧ X) ∨ (Z ∧ (W ∧ X))) -> (Y ∧ X) ∨ (X ∧ (W ∧ Z))
+872. X ∧ ((Y ∧ (X ∧ Z)) ∨ (W ∧ X)) -> (W ∧ X) ∨ (X ∧ (Y ∧ Z))
+873. X ∧ ((Y ∧ (Z ∧ X)) ∨ (X ∧ W)) -> (W ∧ X) ∨ (X ∧ (Z ∧ Y))
+874. X ∧ ((X ∧ Y) ∨ (Z ∧ (X ∧ W))) -> (Y ∧ X) ∨ (X ∧ (Z ∧ W))
+875. X ∧ (((Y ∧ X) ∨ (Z ∧ X)) ∧ W) -> W ∧ ((X ∧ Y) ∨ (X ∧ Z))
+876. X ∨ (((X ∨ Y) ∧ (X ∨ Z)) ∨ W) -> W ∨ ((X ∨ Y) ∧ (X ∨ Z))
+877. X ∨ (Y ∨ ((Z ∨ X) ∧ (X ∨ W))) -> Y ∨ ((X ∨ Z) ∧ (X ∨ W))
+878. X ∨ ((Y ∨ (X ∨ Z)) ∧ (W ∨ X)) -> (W ∨ X) ∧ (X ∨ (Y ∨ Z))
+879. X ∨ ((Y ∨ (Z ∨ X)) ∧ (X ∨ W)) -> (W ∨ X) ∧ (X ∨ (Z ∨ Y))
+880. X ∨ ((Y ∨ X) ∧ (Z ∨ (W ∨ X))) -> (Y ∨ X) ∧ (X ∨ (W ∨ Z))
+881. X ∨ ((X ∨ Y) ∧ (Z ∨ (X ∨ W))) -> (Y ∨ X) ∧ (X ∨ (Z ∨ W))
+882. X ∨ (((Y ∨ X) ∧ (Z ∨ X)) ∨ W) -> W ∨ ((X ∨ Y) ∧ (X ∨ Z))
+883. X ∨ (Y ∧ ((Z ∧ (X ∧ W)) ∨ (X ∧ V))) -> X
+884. X ∨ (((Y ∧ (X ∧ Z)) ∨ (W ∧ X)) ∧ V) -> X
+885. X ∨ (Y ∧ ((X ∧ Z) ∨ (W ∧ (X ∧ V)))) -> X
+886. X ∨ (((X ∧ Y) ∨ (Z ∧ (W ∧ X))) ∧ V) -> X
+887. X ∨ (Y ∧ ((X ∧ Z) ∨ (W ∧ (V ∧ X)))) -> X
+888. X ∧ (Y ∨ ((Z ∨ (X ∨ W)) ∧ (X ∨ V))) -> X
+889. X ∧ (((Y ∨ (X ∨ Z)) ∧ (W ∨ X)) ∨ V) -> X
+890. X ∧ (Y ∨ ((X ∨ Z) ∧ (W ∨ (X ∨ V)))) -> X
+  (simplifying rules with respect to one another...)
+  (delete rule 580)
+  (delete rule 581)
+  (delete rule 601)
+  (delete rule 605)
+  (delete rule 610)
+  (delete rule 611)
+  (delete rule 616)
+  (delete rule 617)
+  (delete rule 628)
+  (delete rule 629)
+891. X ∧ (((X ∨ Y) ∧ (Z ∨ (W ∨ X))) ∨ V) -> X
+892. X ∧ (Y ∨ ((X ∨ Z) ∧ (W ∨ (V ∨ X)))) -> X
+893. X ∨ (Y ∧ (((Z ∧ X) ∨ (W ∧ X)) ∧ V)) -> X
+894. X ∧ (Y ∨ (((Z ∨ X) ∧ (W ∨ X)) ∨ V)) -> X
+895. ((X ∧ Y) ∨ (Z ∧ X)) ∧ (X ∨ W) -> (Z ∧ X) ∨ (X ∧ Y)
+896. ((X ∧ Y) ∨ (X ∧ Z)) ∧ (X ∨ W) -> (Y ∧ X) ∨ (X ∧ Z)
+897. ((X ∧ Y) ∨ (Z ∧ Y)) ∧ (Y ∨ W) -> (X ∧ Y) ∨ (Y ∧ Z)
+898. ((X ∨ Y) ∧ (X ∨ Z)) ∨ (X ∧ W) -> (Y ∨ X) ∧ (X ∨ Z)
+899. ((X ∨ Y) ∧ (Z ∨ Y)) ∨ (Y ∧ W) -> (X ∨ Y) ∧ (Y ∨ Z)
+900. (X ∨ Y) ∧ (X ∨ ((Y ∧ Z) ∨ (Y ∧ W))) -> X ∨ ((Y ∧ Z) ∨ (Y ∧ W))
+901. (X ∨ Y) ∧ (X ∨ ((Z ∧ Y) ∨ (Y ∧ W))) -> X ∨ ((Z ∧ Y) ∨ (Y ∧ W))
+902. (X ∧ Y) ∨ (X ∧ ((Y ∨ Z) ∧ (Y ∨ W))) -> X ∧ ((Y ∨ Z) ∧ (Y ∨ W))
+903. (X ∧ Y) ∨ (X ∧ ((Z ∨ Y) ∧ (Y ∨ W))) -> X ∧ ((Z ∨ Y) ∧ (Y ∨ W))
+904. X ∨ (Y ∨ (Z ∨ (W ∨ (V ∨ (X ∧ U))))) -> X ∨ (Y ∨ (Z ∨ (W ∨ V)))
+905. (X ∨ Y) ∧ (Z ∧ (W ∧ (X ∨ (Y ∧ V)))) -> W ∧ (Z ∧ (X ∨ (V ∧ Y)))
+906. (X ∨ Y) ∧ (Z ∧ (X ∨ (W ∧ (Y ∧ V)))) -> Z ∧ (X ∨ (Y ∧ (W ∧ V)))
+907. (X ∨ Y) ∧ (X ∨ (Z ∧ (W ∧ (Y ∧ V)))) -> X ∨ (Y ∧ (Z ∧ (W ∧ V)))
+908. X ∧ (Y ∧ (Z ∧ (W ∧ (V ∧ (X ∨ U))))) -> X ∧ (Y ∧ (Z ∧ (W ∧ V)))
+909. (X ∧ Y) ∨ (Z ∨ (W ∨ (X ∧ (Y ∨ V)))) -> W ∨ (Z ∨ (X ∧ (V ∨ Y)))
+910. (X ∧ Y) ∨ (Z ∨ (X ∧ (W ∨ (Y ∨ V)))) -> Z ∨ (X ∧ (Y ∨ (W ∨ V)))
+911. (X ∧ Y) ∨ (X ∧ (Z ∨ (W ∨ (Y ∨ V)))) -> X ∧ (Y ∨ (Z ∨ (W ∨ V)))
+912. (X ∨ Y) ∧ ((Y ∨ ((X ∨ Y) ∧ Z)) ∧ W) -> W ∧ (Y ∨ (Z ∧ (X ∨ Y)))
+913. (X ∧ Y) ∨ ((Y ∧ ((X ∧ Y) ∨ Z)) ∨ W) -> W ∨ (Y ∧ (Z ∨ (X ∧ Y)))
+914. (X ∨ Y) ∧ (((X ∨ Y) ∧ Z) ∨ (W ∧ Y)) -> (W ∧ Y) ∨ (Z ∧ (X ∨ Y))
+915. (X ∨ Y) ∧ ((Z ∧ (X ∨ Y)) ∨ (Y ∧ W)) -> (W ∧ Y) ∨ (Z ∧ (X ∨ Y))
+916. (X ∨ Y) ∧ ((Y ∧ Z) ∨ ((X ∨ Y) ∧ W)) -> (Z ∧ Y) ∨ (W ∧ (X ∨ Y))
+917. (X ∨ Y) ∧ (X ∨ (Z ∧ (Y ∨ (X ∧ W)))) -> X ∨ (Z ∧ (Y ∨ (X ∧ W)))
+918. (X ∧ Y) ∨ (X ∧ (Z ∨ (Y ∧ (X ∨ W)))) -> X ∧ (Z ∨ (Y ∧ (X ∨ W)))
+919. (X ∨ (Y ∨ Z)) ∧ (X ∨ (Y ∨ (W ∧ (X ∨ (Y ∨ Z))))) -> X ∨ (Y ∨ (W ∧ (X ∨ (Y ∨ Z))))
+920. X ∧ (Y ∨ (Z ∨ (X ∧ (Y ∨ (Z ∨ W))))) -> X ∧ (Y ∨ (Z ∨ W))
+921. (X ∧ (Y ∧ Z)) ∨ (X ∧ (Y ∧ (W ∨ (X ∧ (Y ∧ Z))))) -> X ∧ (Y ∧ (W ∨ (X ∧ (Y ∧ Z))))
+922. X ∨ (Y ∧ (Z ∧ (X ∨ (Y ∧ (Z ∧ W))))) -> X ∨ (Y ∧ (Z ∧ W))
+923. X ∧ (Y ∧ ((Z ∧ W) ∨ (W ∧ X))) -> X ∧ (Y ∧ W)
+924. X ∨ (Y ∨ ((Z ∨ W) ∧ (W ∨ X))) -> X ∨ (Y ∨ W)
+925. X ∧ (((Y ∧ Z) ∨ (X ∧ Z)) ∧ W) -> X ∧ (W ∧ Z)
+926. X ∧ (((Y ∧ Z) ∨ (Y ∧ X)) ∧ W) -> X ∧ (W ∧ Y)
+927. X ∨ (((Y ∨ Z) ∧ (Y ∨ X)) ∨ W) -> X ∨ (W ∨ Y)
+928. X ∨ (((Y ∨ Z) ∧ (X ∨ Z)) ∨ W) -> X ∨ (W ∨ Z)
+929. X ∧ (((Y ∧ X) ∨ (Z ∧ Y)) ∧ W) -> X ∧ (W ∧ Y)
+930. X ∨ (((Y ∨ X) ∧ (Z ∨ Y)) ∨ W) -> X ∨ (W ∨ Y)
+931. X ∧ (((Y ∨ Z) ∧ X) ∨ (Y ∧ W)) -> X ∧ (Z ∨ Y)
+932. X ∧ ((Y ∧ Z) ∨ ((Z ∨ W) ∧ X)) -> X ∧ (W ∨ Z)
+933. X ∨ (((Y ∧ Z) ∨ X) ∧ (W ∨ Z)) -> X ∨ (Y ∧ Z)
+934. X ∨ ((Y ∨ Z) ∧ ((Z ∧ W) ∨ X)) -> X ∨ (W ∧ Z)
+935. X ∨ (((Y ∧ Z) ∨ X) ∧ (Y ∨ W)) -> X ∨ (Z ∧ Y)
+936. (X ∧ Y) ∨ (Z ∨ ((X ∧ (W ∧ Y)) ∨ V)) -> Z ∨ (V ∨ (X ∧ Y))
+937. (X ∨ Y) ∧ (Z ∧ ((X ∨ (W ∨ Y)) ∧ V)) -> Z ∧ (V ∧ (X ∨ Y))
+938. (X ∨ (Y ∨ Z)) ∧ (Y ∨ (W ∧ (X ∨ Z))) -> Y ∨ (W ∧ (X ∨ Z))
+939. (X ∨ (Y ∨ Z)) ∧ (Y ∨ (Z ∨ (W ∧ X))) -> Z ∨ (Y ∨ (W ∧ X))
+940. ((X ∧ Y) ∨ Z) ∧ (Z ∨ (X ∧ (W ∧ Y))) -> Z ∨ (X ∧ (Y ∧ W))
+941. (X ∧ (Y ∧ Z)) ∨ (Y ∧ (W ∨ (X ∧ Z))) -> Y ∧ (W ∨ (X ∧ Z))
+942. (X ∧ (Y ∧ Z)) ∨ (Y ∧ (Z ∧ (W ∨ X))) -> Z ∧ (Y ∧ (W ∨ X))
+943. ((X ∨ Y) ∧ Z) ∨ (Z ∧ (X ∨ (W ∨ Y))) -> Z ∧ (X ∨ (Y ∨ W))
+944. (X ∨ (Y ∨ Z)) ∧ (((X ∨ Z) ∧ W) ∨ Y) -> Y ∨ (W ∧ (X ∨ Z))
+945. ((X ∧ Y) ∨ Z) ∧ ((X ∧ (Y ∧ W)) ∨ Z) -> Z ∨ (X ∧ (Y ∧ W))
+946. (X ∨ (Y ∨ Z)) ∧ (Y ∨ ((X ∧ W) ∨ Z)) -> Z ∨ (Y ∨ (W ∧ X))
+947. ((X ∨ Y) ∧ Z) ∨ ((X ∨ (Y ∨ W)) ∧ Z) -> Z ∧ (X ∨ (Y ∨ W))
+948. (X ∧ (Y ∧ Z)) ∨ (((X ∧ Z) ∨ W) ∧ Y) -> Y ∧ (W ∨ (X ∧ Z))
+949. (X ∧ (Y ∧ Z)) ∨ (Y ∧ ((X ∨ W) ∧ Z)) -> Z ∧ (Y ∧ (W ∨ X))
+950. X ∧ (Y ∧ (Z ∨ (X ∧ (Y ∧ (Z ∨ W))))) -> X ∧ (Y ∧ (Z ∨ W))
+951. X ∧ ((Y ∧ Z) ∨ (X ∧ (Z ∧ (Y ∨ W)))) -> X ∧ (Z ∧ (Y ∨ W))
+952. X ∨ (Y ∨ (Z ∧ (X ∨ (Y ∨ (Z ∧ W))))) -> X ∨ (Y ∨ (Z ∧ W))
+953. X ∨ ((Y ∨ Z) ∧ (X ∨ (Z ∨ (Y ∧ W)))) -> X ∨ (Z ∨ (Y ∧ W))
+954. X ∨ (Y ∨ (Z ∨ ((W ∧ (X ∧ V)) ∨ U))) -> X ∨ (Y ∨ (Z ∨ U))
+955. X ∧ (Y ∧ (Z ∧ ((W ∨ (X ∨ V)) ∧ U))) -> X ∧ (Y ∧ (Z ∧ U))
+956. X ∨ (Y ∨ (Z ∨ (W ∨ (V ∧ (U ∧ X))))) -> X ∨ (Y ∨ (Z ∨ W))
+957. X ∧ (Y ∧ (Z ∧ (W ∧ (V ∨ (U ∨ X))))) -> X ∧ (Y ∧ (Z ∧ W))
+958. X ∨ (Y ∨ (Z ∨ (((X ∨ Z) ∧ W) ∨ V))) -> X ∨ (Y ∨ (Z ∨ V))
+959. X ∨ (Y ∨ (Z ∨ (((X ∨ Y) ∧ W) ∨ V))) -> X ∨ (Z ∨ (V ∨ Y))
+960. X ∧ (Y ∧ (Z ∧ (((X ∧ Z) ∨ W) ∧ V))) -> X ∧ (Y ∧ (Z ∧ V))
+961. X ∧ (Y ∧ (Z ∧ (((X ∧ Y) ∨ W) ∧ V))) -> X ∧ (Z ∧ (V ∧ Y))
+962. (X ∨ (Y ∨ Z)) ∧ (W ∧ (Z ∨ (X ∧ V))) -> W ∧ (Z ∨ (X ∧ V))
+963. (X ∨ (Y ∨ Z)) ∧ (Z ∨ (W ∧ (X ∧ V))) -> Z ∨ (X ∧ (W ∧ V))
+964. (X ∨ (Y ∨ Z)) ∧ (W ∧ (X ∨ (Z ∧ V))) -> W ∧ (X ∨ (Z ∧ V))
+  (simplifying rules with respect to one another...)
+  (delete rule 651)
+  (delete rule 654)
+  (delete rule 667)
+  (delete rule 668)
+  (delete rule 672)
+  (delete rule 673)
+  (delete rule 744)
+  (delete rule 752)
+  (delete rule 895)
+  (delete rule 933)
+965. (X ∨ (Y ∨ Z)) ∧ (X ∨ (W ∧ (Z ∧ V))) -> X ∨ (Z ∧ (W ∧ V))
+966. (X ∨ (Y ∨ Z)) ∧ (W ∧ (X ∨ (Y ∧ V))) -> W ∧ (X ∨ (Y ∧ V))
+967. (X ∨ (Y ∧ Z)) ∧ (W ∧ (X ∨ (Y ∨ V))) -> W ∧ (X ∨ (Y ∧ Z))
+968. (X ∨ (Y ∧ (Z ∧ W))) ∧ (X ∨ (Z ∨ V)) -> X ∨ (Z ∧ (Y ∧ W))
+969. (X ∨ (Y ∨ Z)) ∧ (W ∧ (X ∨ (V ∧ Y))) -> W ∧ (X ∨ (Y ∧ V))
+970. (X ∨ (Y ∨ Z)) ∧ (X ∨ (W ∧ (Y ∧ V))) -> X ∨ (Y ∧ (W ∧ V))
+971. (X ∨ (Y ∨ Z)) ∧ (W ∧ (Y ∨ (X ∧ V))) -> W ∧ (Y ∨ (X ∧ V))
+972. (X ∨ (Y ∨ Z)) ∧ (Y ∨ (W ∧ (X ∧ V))) -> Y ∨ (X ∧ (W ∧ V))
+973. (X ∧ (Y ∨ Z)) ∨ (W ∨ (X ∧ (Y ∧ V))) -> W ∨ (X ∧ (Y ∨ Z))
+974. (X ∧ (Y ∧ Z)) ∨ (W ∨ (X ∧ (Y ∨ V))) -> W ∨ (X ∧ (Y ∨ V))
+975. (X ∧ (Y ∧ Z)) ∨ (X ∧ (W ∨ (Y ∨ V))) -> X ∧ (Y ∨ (W ∨ V))
+976. (X ∧ (Y ∨ Z)) ∨ (W ∨ (Y ∧ (V ∧ X))) -> W ∨ (X ∧ (Y ∨ Z))
+977. (X ∧ (Y ∨ (Z ∨ W))) ∨ (Z ∧ (V ∧ X)) -> X ∧ (Z ∨ (Y ∨ W))
+978. (X ∧ (Y ∨ Z)) ∨ (W ∨ (X ∧ (V ∧ Y))) -> W ∨ (X ∧ (Y ∨ Z))
+979. (X ∧ (Y ∨ (Z ∨ W))) ∨ (X ∧ (V ∧ Z)) -> X ∧ (Z ∨ (Y ∨ W))
+980. (X ∧ (Y ∨ Z)) ∨ (W ∨ (Y ∧ (X ∧ V))) -> W ∨ (X ∧ (Y ∨ Z))
+981. (X ∧ (Y ∨ (Z ∨ W))) ∨ (Z ∧ (X ∧ V)) -> X ∧ (Z ∨ (Y ∨ W))
+982. (X ∨ (Y ∨ Z)) ∧ (Y ∨ (W ∧ (X ∨ Y))) -> Y ∨ (W ∧ (X ∨ Y))
+983. (X ∨ (Y ∨ Z)) ∧ (Z ∨ (W ∧ (X ∨ Z))) -> Z ∨ (W ∧ (X ∨ Z))
+984. (X ∧ (Y ∧ Z)) ∨ (Y ∧ (W ∨ (X ∧ Y))) -> Y ∧ (W ∨ (X ∧ Y))
+985. (X ∧ (Y ∧ Z)) ∨ (Z ∧ (W ∨ (X ∧ Z))) -> Z ∧ (W ∨ (X ∧ Z))
+986. (X ∧ Y) ∨ (Z ∨ (W ∨ (Y ∧ (V ∧ X)))) -> W ∨ (Z ∨ (X ∧ Y))
+987. (X ∧ Y) ∨ (Z ∨ (W ∨ (V ∧ (Y ∧ X)))) -> W ∨ (Z ∨ (Y ∧ X))
+988. (X ∨ Y) ∧ (Z ∧ (W ∧ (Y ∨ (V ∨ X)))) -> W ∧ (Z ∧ (X ∨ Y))
+989. (X ∨ Y) ∧ (Z ∧ (W ∧ (V ∨ (Y ∨ X)))) -> W ∧ (Z ∧ (Y ∨ X))
+990. X ∨ ((Y ∧ (Z ∧ W)) ∨ (V ∨ (Y ∧ Z))) -> X ∨ (V ∨ (Y ∧ Z))
+991. X ∧ ((Y ∨ (Z ∨ W)) ∧ (V ∧ (Y ∨ Z))) -> X ∧ (V ∧ (Y ∨ Z))
+  (hard) X ∨ (Y ∧ (Z ∨ W)) = (X ∨ (W ∨ Z)) ∧ (X ∨ ((Z ∨ W) ∧ Y))
+992. (X ∨ (Y ∨ Z)) ∧ (Z ∨ ((X ∨ Y) ∧ W)) -> Z ∨ (W ∧ (Y ∨ X))
+993. (X ∨ (Y ∧ Z)) ∧ (X ∨ (Y ∧ (Z ∧ W))) -> X ∨ (Y ∧ (Z ∧ W))
+994. ((X ∨ Y) ∧ Z) ∨ (Z ∧ (Y ∨ (W ∨ X))) -> Z ∧ (X ∨ (Y ∨ W))
+995. (X ∧ (Y ∨ Z)) ∨ (X ∧ (Y ∨ (Z ∨ W))) -> X ∧ (Y ∨ (Z ∨ W))
+  (hard) X ∧ (Y ∨ (Z ∧ W)) = (X ∧ (W ∧ Z)) ∨ (X ∧ ((Z ∧ W) ∨ Y))
+996. (X ∧ (Y ∧ Z)) ∨ (Z ∧ ((X ∧ Y) ∨ W)) -> Z ∧ (W ∨ (Y ∧ X))
+  (hard) X ∨ (Y ∨ ((Z ∧ (W ∨ Y)) ∨ (V ∨ W))) = X ∨ (Y ∨ (W ∨ V))
+  (hard) X ∨ (Y ∨ (Z ∨ (W ∨ ((W ∨ Y) ∧ V)))) = X ∨ (Y ∨ (Z ∨ W))
+  (hard) X ∧ (Y ∧ (Z ∧ (W ∧ ((W ∧ Y) ∨ V)))) = X ∧ (Y ∧ (Z ∧ W))
+  (hard) X ∧ (Y ∧ ((Z ∨ (W ∧ Y)) ∧ (V ∧ W))) = X ∧ (Y ∧ (W ∧ V))
+  (hard) Z ∨ (W ∨ (X ∧ Y)) = (X ∨ (Z ∨ W)) ∧ (W ∨ (Z ∨ (Y ∧ X)))
+997. (X ∨ (Y ∨ Z)) ∧ (Z ∨ ((W ∧ Y) ∨ X)) -> X ∨ (Z ∨ (W ∧ Y))
+998. (X ∨ (Y ∨ Z)) ∧ (X ∨ ((W ∧ Y) ∨ Z)) -> X ∨ (Z ∨ (W ∧ Y))
+999. (X ∨ (Y ∨ Z)) ∧ (Z ∨ ((X ∧ W) ∨ Y)) -> Y ∨ (Z ∨ (W ∧ X))
+  (hard) Z ∧ (W ∧ (X ∨ Y)) = (X ∧ (Z ∧ W)) ∨ (W ∧ (Z ∧ (Y ∨ X)))
+1000. (X ∧ (Y ∧ Z)) ∨ (Z ∧ ((W ∨ Y) ∧ X)) -> X ∧ (Z ∧ (W ∨ Y))
+
+The conjecture is true! Here is a proof.
+
+
+Goal 1 (goal): x = x.
+Proof:
+Reflexivity.
+
+RESULT: Theorem (the conjecture is true).
+
+Execution time: 23.8241 seconds
+

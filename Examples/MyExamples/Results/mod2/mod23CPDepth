@@ -1,0 +1,147 @@
+Here is the input problem:
+  Axiom 1 (mul_comm): X * Y = Y * X.
+  Axiom 2 (add_inv): X + X = zero.
+  Axiom 3 (add_comm): X + Y = Y + X.
+  Axiom 4 (add_id): X + zero = X.
+  Axiom 5 (mul_assoc): (X * Y) * Z = X * (Y * Z).
+  Axiom 6 (add_assoc): (X + Y) + Z = X + (Y + Z).
+  Axiom 7 (mul_dist): X * (Y + Z) = (X * Y) + (X * Z).
+  Goal 1 (goal): x = x.
+
+1. X * Y <-> Y * X
+2. X + X -> zero
+3. X + Y <-> Y + X
+4. X + zero -> X
+5. (X * Y) * Z -> X * (Y * Z)
+6. (X + Y) + Z -> X + (Y + Z)
+7. (X * Y) + (X * Z) -> X * (Y + Z)
+8. zero + X -> X
+9. X * zero -> zero
+10. zero * X -> zero
+11. X + (X + Y) -> Y
+12. X + (Y + X) -> Y
+13. X * (Y * Z) <-> Y * (X * Z)
+14. X + (Y + Z) <-> Y + (X + Z)
+15. (X * Y) + (Y * Z) -> Y * (X + Z)
+16. (X * Y) + (Z * X) -> X * (Y + Z)
+17. (X * Y) + (Z * Y) -> Y * (X + Z)
+  (hard) Y + Z = X + (Y + (X + Z))
+18. (X * Y) + (Z + (X * W)) -> Z + (X * (Y + W))
+19. (X * (Y * Z)) + (Y * W) -> Y * (W + (X * Z))
+20. X * (Y + (Y * Z)) = Y * (X + (X * Z))
+21. (X * Y) + (Z * (X * W)) -> X * (Y + (Z * W))
+22. (X * (Y * Z)) + (Z * W) -> Z * (W + (X * Y))
+23. (X * Y) + (Z + (Y * W)) -> Z + (Y * (X + W))
+24. (X * Y) + (Z * (Y * W)) -> Y * (X + (Z * W))
+25. (X * (Y * Z)) + (W * Y) -> Y * (W + (X * Z))
+26. (X * Y) + (Z + (W * X)) -> Z + (X * (Y + W))
+27. (X * Y) + ((X * Z) + W) -> W + (X * (Y + Z))
+28. (X * Y) + (Z * (X + W)) = (Z * W) + (X * (Y + Z))
+29. (X * (Y * Z)) + (W * Z) -> Z * (W + (X * Y))
+30. (X * Y) + (Z * (W * Y)) -> Y * (X + (Z * W))
+31. (X * Y) + (Z + (W * Y)) -> Z + (Y * (X + W))
+32. (X * Y) + (Z * (W * X)) -> X * (Y + (Z * W))
+33. (X * Y) + ((Y * Z) + W) -> W + (Y * (Z + X))
+34. (X * Y) + ((Z * X) + W) -> W + (X * (Y + Z))
+35. (X * Y) + (Z * (W + X)) = (W * Z) + (X * (Z + Y))
+36. (X * Y) + (Z * (X + W)) = (W * Z) + (X * (Y + Z))
+37. (X * Y) + (Z * (W + X)) = (Z * W) + ((Z + Y) * X)
+38. (X * Y) + (Z * (X + W)) = (Z * W) + ((Y + Z) * X)
+39. (X * Y) + (Z * (W + X)) = (X * (Z + Y)) + (Z * W)
+40. (X * (Y + Z)) + (Z * W) = (X * Y) + (Z * (X + W))
+41. (X * Y) + (Z * (W + X)) = (Z * W) + (X * (Y + Z))
+42. (X * Y) + (Z * (X + W)) = (Z * W) + (X * (Z + Y))
+43. (X * Y) + (Z + (W + (X * V))) -> W + (Z + (X * (V + Y)))
+44. (X * (Y * Z)) + (W + (Y * V)) -> W + (Y * (V + (X * Z)))
+45. (X * Y) + (Z + (W * (X * V))) -> Z + (X * (Y + (W * V)))
+46. (X * (Y + Z)) + (Y * (W + X)) -> (X * Z) + (Y * W)
+47. (X * (Y + Z)) + (Z * (W + X)) -> (X * Y) + (Z * W)
+48. (X * Y) + (Z * (Z + (Y + X))) -> (X + Z) * (Y + Z)
+49. (X * Y) + (Z * (X + (Y + Z))) -> (X + Z) * (Z + Y)
+50. (X * (Y * (Z * W))) + (Z * V) -> Z * (V + (W * (Y * X)))
+51. (X * (Y * Z)) + (W * (Y * V)) -> Y * ((Z * X) + (V * W))
+52. (X * Y) + (Z * (W * (X * V))) -> X * (Y + (Z * (W * V)))
+53. (X * (Y * (Z * W))) + (W * V) -> W * (V + (Z * (Y * X)))
+54. (X * Y) + (Z + (W * (V * Y))) -> Z + (Y * (X + (V * W)))
+55. (X * (Y * Z)) + (W * (Z * V)) -> Z * ((Y * X) + (V * W))
+56. (X * (Y * Z)) + (W + (Z * V)) -> W + (Z * (V + (X * Y)))
+57. (X * Y) + (Z + (W + (Y * V))) -> W + (Z + (Y * (V + X)))
+58. (X * Y) + (Z + (W * (Y * V))) -> Z + (Y * (X + (W * V)))
+59. (X * Y) + (Z * (W * (Y * V))) -> Y * (X + (Z * (W * V)))
+60. (X * (Y * (Z * W))) + (V * Z) -> Z * (V + (W * (Y * X)))
+61. (X * (Y * Z)) + (W * (V * Y)) -> Y * ((Z * X) + (V * W))
+62. (X * (Y * Z)) + (W + (V * Y)) -> W + (Y * (V + (X * Z)))
+63. (X * Y) + (Z + (W * (V * X))) -> Z + (X * (Y + (W * V)))
+64. (X * Y) + (Z + (W + (V * X))) -> W + (Z + (X * (V + Y)))
+65. (X * (Y * Z)) + ((Y * W) + V) -> V + (Y * (W + (X * Z)))
+66. (X * Y) + ((Z * (X * W)) + V) -> V + (X * (Y + (Z * W)))
+67. (X * Y) + (Z + ((X * W) + V)) -> Z + (V + (X * (Y + W)))
+68. (X * Y) + ((Y + Z) * (X + W)) = (X * Z) + (W * (Y + Z))
+69. (X * Y) + ((Z + Y) * (X + W)) = (X * Z) + (W * (Y + Z))
+70. (X * Y) + (Z * (X + (X * W))) = X * (Y + (Z + (Z * W)))
+71. (X * Y) + (Z * (X + (W * X))) = X * (Y + (Z + (Z * W)))
+72. (X * Y) + (Z * (W + (X * V))) = (Z * W) + (X * (Y + (Z * V)))
+73. (X * Y) + (Z + (W * (Y + V))) = (W * V) + ((Y * (X + W)) + Z)
+74. (X * Y) + (Z + (W * (V + Y))) = (W * V) + ((Y * (W + X)) + Z)
+75. (X * (Y + Z)) + (W * (X + V)) = (W * V) + (X * (Y + (Z + W)))
+76. (X * Y) + (Z * ((W * V) + X)) = (W * (Z * V)) + (X * (Z + Y))
+77. (X * Y) + (Z * (X + (W * V))) = (W * (Z * V)) + (X * (Y + Z))
+78. (X * Y) + (Z + (W * (X + V))) = Z + ((W * V) + (X * (Y + W)))
+79. (X * Y) + (Z + (W * (V + X))) = Z + ((W * V) + (X * (W + Y)))
+80. (X * (Y + Z)) + (W * (V + X)) = (W * V) + (X * (Y + (W + Z)))
+81. (X * (Y + Z)) + (Y * (W + V)) = (X * Z) + (Y * (W + (V + X)))
+82. (X * (Y + Z)) + (Z * (W + V)) = (X * Y) + (Z * (W + (X + V)))
+83. (X * Y) + (Z * (((Z + Y) * W) + X)) -> (Y + Z) * (X + (Z * W))
+84. (X * Y) + (Z * (X + ((Y + Z) * W))) -> (Z + Y) * (X + (W * Z))
+85. (X * Y) + (Z * (W * (V + X))) = (W * (V * Z)) + (X * ((Z * W) + Y))
+86. (X * Y) + (Z * (W * (X + V))) = (Z * (W * V)) + (X * (Y + (Z * W)))
+87. (X * (Y * Z)) + (W * ((X * Y) + V)) = (W * V) + (X * (Y * (Z + W)))
+88. (X * Y) + ((Z + W) * (V + X)) = ((Z + W) * V) + (X * (Z + (W + Y)))
+89. (X * Y) + ((Z + W) * (X + V)) = ((Z + W) * V) + (X * (Z + (Y + W)))
+90. (X * Y) + (Z + (W + (V + (X * U)))) -> W + (Z + (V + (X * (Y + U))))
+91. (X * (Y * Z)) + (W + (V + (Y * U))) -> W + (V + (Y * (U + (Z * X))))
+92. (X * Y) + (Z + (W + (V * (X * U)))) -> W + (Z + (X * (Y + (V * U))))
+93. (X * (Y * (Z * W))) + (V + (Z * U)) -> V + (Z * (U + (W * (Y * X))))
+94. (X * (Y * Z)) + (W + (V * (Y * U))) -> W + (Y * ((Z * X) + (U * V)))
+95. (X * Y) + (Z + (W * (V * (X * U)))) -> Z + (X * (Y + (W * (V * U))))
+96. X * ((Y * Z) + ((W + Z) * V)) = X * ((V * W) + ((V + Y) * Z))
+97. X * ((Y * Z) + ((Z + W) * V)) = X * ((W * V) + ((Y + V) * Z))
+98. ((X + Y) * Z) + ((W * Y) + (X * (V + W))) -> (X * V) + ((X + Y) * (Z + W))
+99. ((X + Y) * Z) + ((W * X) + (Y * (W + V))) -> (Y * V) + ((Y + X) * (Z + W))
+100. X * ((Y * (Z + W)) + (V * (U * Z))) = X * ((Y * W) + (Z * (Y + (U * V))))
+101. X * ((Y * (Z + W)) + (V * (U * W))) = X * ((Y * Z) + (W * (Y + (U * V))))
+102. (X * (Y + (Z * W))) + (Z * (V * (U + X))) = (Z * (V * U)) + (X * (Y + (Z * (V + W))))
+103. (X * (Y + (Z * W))) + (V * (Z * (U + X))) = (Z * (V * U)) + (X * (Y + (Z * (V + W))))
+104. (X * (Y * (Z * W))) + (V * (Z * (U + X))) = Z * ((V * U) + (X * (V + (Y * W))))
+105. (X * (Y * (Z * W))) + (V * (Z * (X + U))) = Z * ((V * U) + (X * (V + (Y * W))))
+106. (X * (Y + (Z * W))) + (W * (V * (U + X))) = (W * (V * U)) + (X * (Y + (W * (V + Z))))
+107. (X * ((Y * Z) + W)) + (Y * (V * (U + X))) = (Y * (V * U)) + (X * (W + (Y * (V + Z))))
+108. (X * (Y * Z)) + ((W + (Y * V)) * (X + U)) = (U * (W + (V * Y))) + (X * (W + (Y * (V + Z))))
+109. X * ((Y * Z) + (W * ((V + Z) * U))) = X * ((U * (W * V)) + (Z * (Y + (U * W))))
+110. X * ((Y * Z) + (W * ((Z + V) * U))) = X * ((U * (W * V)) + (Z * (Y + (U * W))))
+111. (X * (Y * Z)) + (W * (V * (Y * (U + X)))) = Y * ((W * (V * U)) + (X * (Z + (W * V))))
+112. (X * (Y * Z)) + ((W + (Z * V)) * (X + U)) = (U * (W + (V * Z))) + (X * (W + (Z * (V + Y))))
+113. (X * (Y * Z)) + ((W + (V * Y)) * (X + U)) = (U * (W + (V * Y))) + (X * (W + (Y * (V + Z))))
+114. (X * (Y * Z)) + (((Y * W) + V) * (X + U)) = (U * (V + (W * Y))) + (X * (V + (Y * (W + Z))))
+115. (X * (Y * (Z + W))) + (Z * (V * (U + X))) = (Z * (V * U)) + (X * ((Y * W) + (Z * (V + Y))))
+116. (X * (Y * (Z + W))) + (W * (V * (U + X))) = (W * (V * U)) + (X * ((Y * Z) + (W * (Y + V))))
+117. (X * (Y + (Z + (W * V)))) + (W * (U * (T + X))) = (W * (U * T)) + (X * (Y + (Z + (W * (V + U)))))
+118. (X * (Y + (Z * (W * V)))) + (W * (U * (T + X))) = (W * (U * T)) + (X * (Y + (W * (U + (Z * V)))))
+119. (X * (Y * Z)) + (W * ((Y + V) * (X + U))) = (W * ((Y + V) * U)) + (X * ((W * V) + (Y * (Z + W))))
+120. (X * (Y * Z)) + (W * ((V + Y) * (X + U))) = (W * ((V + Y) * U)) + (X * ((W * V) + (Y * (W + Z))))
+121. (X * (Y + (Z * W))) + (V * (Z * (U * (T + X)))) = (T * (U * (V * Z))) + (X * (Y + (Z * (W + (U * V)))))
+122. (X * (Y * (Z * W))) + ((V + (Z * U)) * (X + T)) = (T * (V + (U * Z))) + (X * (V + (Z * (U + (Y * W)))))
+123. (X * (Y * Z)) + ((W + (V + (Y * U))) * (X + T)) = (T * (V + (W + (U * Y)))) + (X * (V + (W + (Y * (U + Z)))))
+124. (X * (Y * Z)) + ((W + (V * (Y * U))) * (X + T)) = (T * (W + (U * (V * Y)))) + (X * (W + (Y * (Z + (U * V)))))
+
+The conjecture is true! Here is a proof.
+
+
+Goal 1 (goal): x = x.
+Proof:
+Reflexivity.
+
+RESULT: Theorem (the conjecture is true).
+
+Execution time: 0.204756 seconds
+

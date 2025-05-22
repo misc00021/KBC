@@ -1,0 +1,133 @@
+Here is the input problem:
+  Axiom 1 (dot_comm): dot(X, Y) = dot(Y, X).
+  Axiom 2 (vec_add_comm): vadd(X, Y) = vadd(Y, X).
+  Axiom 3 (vec_add_zero_right): vadd(X, 0v) = X.
+  Axiom 4 (vec_add_inv): vadd(X, vneg(X)) = 0v.
+  Axiom 5 (vec_add_zero_left): vadd(0v, X) = X.
+  Axiom 6 (add_comm): add(X, Y) = add(Y, X).
+  Axiom 7 (add_zero_right): add(X, 0) = X.
+  Axiom 8 (add_zero_left): add(0, X) = X.
+  Axiom 9 (mul_comm): mul(X, Y) = mul(Y, X).
+  Axiom 10 (mul_one_left): mul(1, X) = X.
+  Axiom 11 (mul_zero_left): mul(0, X) = 0.
+  Axiom 12 (cross_comm_anti): cross(X, Y) = vneg(cross(Y, X)).
+  Axiom 13 (neg_add_cancel): add(X, neg(X)) = 0.
+  Axiom 14 (curlOfGradZero): cross(NAB, appl(NAB, X)) = 0v.
+  Axiom 15 (scalar_triple_product): dot(X, cross(Y, Z)) = dot(Y, cross(Z, X)).
+  Axiom 16 (divOfCurlZero): dot(NAB, cross(NAB, X)) = 0.
+  Axiom 17 (vec_add_assoc): vadd(X, vadd(Y, Z)) = vadd(vadd(X, Y), Z).
+  Axiom 18 (add_assoc): add(X, add(Y, Z)) = add(add(X, Y), Z).
+  Axiom 19 (mul_assoc): mul(X, mul(Y, Z)) = mul(mul(X, Y), Z).
+  Axiom 20 (curlDist): cross(NAB, vadd(X, Y)) = vadd(cross(NAB, X), cross(NAB, Y)).
+  Axiom 21 (gradDist): appl(NAB, vadd(X, Y)) = vadd(appl(NAB, X), appl(NAB, Y)).
+  Axiom 22 (divDist): dot(NAB, vadd(X, Y)) = add(dot(NAB, X), dot(NAB, Y)).
+  Axiom 23 (left_distrib): mul(X, add(Y, Z)) = add(mul(X, Y), mul(X, Z)).
+  Axiom 24 (chain): appl(NAB, appl(X, Y)) = appl(appl(appl(NAB, X), Y), appl(NAB, Y)).
+  Axiom 25 (vector_triple_product): cross(X, cross(Y, Z)) = vsub(vmul(Y, dot(X, Z)), vmul(Z, dot(X, Y))).
+  Axiom 26 (divProdRule): dot(NAB, vmul(X, Y)) = add(mul(appl(NAB, X), Y), mul(X, dot(NAB, Y))).
+  Axiom 27 (gradProdRule): appl(NAB, mul(X, Y)) = add(mul(appl(NAB, X), Y), mul(X, appl(NAB, Y))).
+  Axiom 28 (reflexivity): equals(X, X) = true.
+  Axiom 29 (test_goal): equals(add(0, X), X) = false.
+  Goal 1 (true_equals_false): true = false.
+
+1. dot(X, Y) <-> dot(Y, X)
+2. vadd(X, Y) <-> vadd(Y, X)
+3. vadd(X, 0v) -> X
+4. vadd(X, vneg(X)) -> 0v
+5. vadd(0v, X) -> X
+6. add(X, Y) <-> add(Y, X)
+7. add(X, 0) -> X
+8. add(0, X) -> X
+9. mul(X, Y) <-> mul(Y, X)
+10. mul(1, X) -> X
+11. mul(0, X) -> 0
+12. vneg(cross(X, Y)) -> cross(Y, X)
+13. add(X, neg(X)) -> 0
+14. cross(NAB, appl(NAB, X)) -> 0v
+15. dot(X, cross(Y, Z)) <-> dot(Y, cross(Z, X))
+16. dot(NAB, cross(NAB, X)) -> 0
+17. vadd(vadd(X, Y), Z) -> vadd(X, vadd(Y, Z))
+18. add(add(X, Y), Z) -> add(X, add(Y, Z))
+19. mul(mul(X, Y), Z) -> mul(X, mul(Y, Z))
+20. vadd(cross(NAB, X), cross(NAB, Y)) -> cross(NAB, vadd(X, Y))
+21. vadd(appl(NAB, X), appl(NAB, Y)) -> appl(NAB, vadd(X, Y))
+22. add(dot(NAB, X), dot(NAB, Y)) -> dot(NAB, vadd(X, Y))
+23. add(mul(X, Y), mul(X, Z)) -> mul(X, add(Y, Z))
+24. appl(appl(appl(NAB, X), Y), appl(NAB, Y)) -> appl(NAB, appl(X, Y))
+25. vsub(vmul(X, dot(Y, Z)), vmul(Z, dot(Y, X))) -> cross(Y, cross(X, Z))
+26. add(mul(X, dot(NAB, Y)), mul(appl(NAB, X), Y)) -> dot(NAB, vmul(X, Y))
+27. add(mul(X, appl(NAB, Y)), mul(appl(NAB, X), Y)) -> appl(NAB, mul(X, Y))
+28. equals(X, X) -> true
+29. false -> true
+30. vneg(0v) -> 0v
+31. neg(0) -> 0
+32. mul(X, 1) -> X
+33. mul(X, 0) -> 0
+34. dot(0v, NAB) -> 0
+35. dot(NAB, cross(X, NAB)) -> 0
+36. dot(X, cross(NAB, NAB)) -> 0
+37. cross(appl(NAB, X), NAB) -> 0v
+38. mul(X, appl(NAB, 0)) -> appl(NAB, 0)
+39. dot(cross(X, Y), Z) -> dot(X, cross(Y, Z))
+40. vadd(X, vadd(Y, Z)) <-> vadd(Y, vadd(X, Z))
+41. add(X, add(Y, Z)) <-> add(Y, add(X, Z))
+42. mul(X, mul(Y, Z)) <-> mul(Y, mul(X, Z))
+43. vadd(X, vadd(Y, vneg(X))) -> Y
+44. add(X, add(Y, neg(X))) -> Y
+45. dot(NAB, vmul(0, X)) -> appl(NAB, 0)
+46. vadd(cross(X, Y), cross(Y, X)) -> 0v
+47. dot(NAB, cross(appl(NAB, X), Y)) -> dot(Y, 0v)
+48. cross(NAB, vadd(X, appl(NAB, Y))) -> cross(NAB, X)
+49. dot(NAB, vadd(X, cross(NAB, Y))) -> dot(X, NAB)
+50. add(mul(X, Y), mul(Y, Z)) -> mul(Y, add(X, Z))
+51. add(mul(X, Y), mul(Z, X)) -> mul(X, add(Y, Z))
+52. vadd(X, vadd(Y, vneg(vadd(X, Y)))) -> 0v
+53. add(X, add(Y, neg(add(X, Y)))) -> 0
+54. add(dot(X, NAB), dot(NAB, Y)) -> dot(NAB, vadd(X, Y))
+55. add(appl(NAB, X), mul(X, appl(NAB, 1))) -> appl(NAB, X)
+56. add(mul(X, Y), add(Z, mul(X, W))) -> add(Z, mul(X, add(Y, W)))
+57. add(dot(X, NAB), mul(X, appl(NAB, 1))) -> dot(NAB, vmul(1, X))
+58. vadd(cross(NAB, X), vadd(Y, cross(NAB, Z))) -> vadd(Y, cross(NAB, vadd(X, Z)))
+59. vadd(appl(NAB, X), vadd(Y, appl(NAB, Z))) -> vadd(Y, appl(NAB, vadd(X, Z)))
+60. add(dot(X, cross(Y, NAB)), dot(NAB, Z)) -> dot(NAB, vadd(Z, cross(X, Y)))
+61. add(dot(X, cross(NAB, Y)), dot(NAB, Z)) -> dot(NAB, vadd(Z, cross(Y, X)))
+62. add(dot(NAB, X), dot(Y, cross(Z, NAB))) -> dot(NAB, vadd(X, cross(Y, Z)))
+63. add(dot(NAB, X), dot(Y, cross(NAB, Z))) -> dot(NAB, vadd(X, cross(Z, Y)))
+64. add(dot(X, NAB), add(Y, dot(NAB, Z))) -> add(Y, dot(NAB, vadd(X, Z)))
+65. vsub(vmul(X, dot(Y, Z)), vmul(Y, dot(Z, X))) -> cross(Z, cross(X, Y))
+66. vsub(vmul(X, dot(Y, Z)), vmul(Z, dot(X, Y))) -> cross(Y, cross(X, Z))
+67. add(mul(X, dot(Y, NAB)), mul(appl(NAB, X), Y)) -> dot(NAB, vmul(X, Y))
+68. add(mul(dot(NAB, X), Y), mul(appl(NAB, Y), X)) -> dot(NAB, vmul(Y, X))
+69. add(mul(X, dot(NAB, Y)), mul(Y, appl(NAB, X))) -> dot(NAB, vmul(X, Y))
+70. add(mul(X, appl(NAB, Y)), mul(Y, appl(NAB, X))) -> appl(NAB, mul(X, Y))
+71. vsub(vmul(X, 0), vmul(cross(NAB, Y), dot(X, NAB))) -> cross(NAB, cross(X, cross(NAB, Y)))
+72. vsub(vmul(cross(NAB, X), dot(Y, NAB)), vmul(Y, 0)) -> cross(NAB, cross(cross(NAB, X), Y))
+73. mul(cross(NAB, X), appl(NAB, Y)) -> dot(NAB, vmul(Y, cross(NAB, X)))
+74. add(mul(X, dot(Y, NAB)), add(Z, mul(appl(NAB, X), Y))) -> add(Z, dot(NAB, vmul(X, Y)))
+75. add(mul(X, appl(NAB, Y)), add(Z, mul(appl(NAB, X), Y))) -> add(Z, appl(NAB, mul(X, Y)))
+76. vsub(vmul(X, dot(Y, cross(Z, W))), vmul(cross(Y, Z), dot(W, X))) -> cross(W, cross(X, cross(Y, Z)))
+77. vsub(vmul(X, dot(Y, cross(Z, W))), vmul(cross(W, Y), dot(Z, X))) -> cross(Z, cross(X, cross(W, Y)))
+78. vsub(vmul(cross(X, Y), dot(Z, W)), vmul(W, dot(X, cross(Y, Z)))) -> cross(Z, cross(cross(X, Y), W))
+79. vsub(vmul(cross(X, Y), dot(Z, W)), vmul(W, dot(Y, cross(Z, X)))) -> cross(Z, cross(cross(X, Y), W))
+80. add(mul(X, dot(Y, cross(Z, NAB))), mul(appl(NAB, X), cross(Y, Z))) -> dot(NAB, vmul(X, cross(Y, Z)))
+81. add(mul(X, dot(Y, cross(NAB, Z))), mul(appl(NAB, X), cross(Z, Y))) -> dot(NAB, vmul(X, cross(Z, Y)))
+82. add(mul(X, mul(Y, dot(Z, NAB))), mul(Z, appl(NAB, mul(X, Y)))) -> dot(NAB, vmul(mul(X, Y), Z))
+83. add(mul(X, mul(Y, appl(NAB, Z))), mul(Z, appl(NAB, mul(X, Y)))) -> appl(NAB, mul(X, mul(Y, Z)))
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (add_zero_left): add(0, X) = X.
+
+Goal 1 (test_goal): add(0, X) = X.
+The goal is true when:
+  X = X
+
+Proof:
+  add(0, X)
+= { by axiom 1 (add_zero_left) }
+  X
+
+RESULT: Unsatisfiable (the axioms are contradictory).
+
+Execution time: 0.0472622 seconds
+

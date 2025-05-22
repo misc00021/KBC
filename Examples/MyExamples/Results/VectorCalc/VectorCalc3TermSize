@@ -1,0 +1,84 @@
+Here is the input problem:
+  Axiom 1 (dot_comm): dot(X, Y) = dot(Y, X).
+  Axiom 2 (vec_add_comm): vadd(X, Y) = vadd(Y, X).
+  Axiom 3 (vec_add_zero_right): vadd(X, 0v) = X.
+  Axiom 4 (vec_add_inv): vadd(X, vneg(X)) = 0v.
+  Axiom 5 (vec_add_zero_left): vadd(0v, X) = X.
+  Axiom 6 (add_comm): add(X, Y) = add(Y, X).
+  Axiom 7 (add_zero_right): add(X, 0) = X.
+  Axiom 8 (add_zero_left): add(0, X) = X.
+  Axiom 9 (mul_comm): mul(X, Y) = mul(Y, X).
+  Axiom 10 (mul_one_left): mul(1, X) = X.
+  Axiom 11 (mul_zero_left): mul(0, X) = 0.
+  Axiom 12 (cross_comm_anti): cross(X, Y) = vneg(cross(Y, X)).
+  Axiom 13 (neg_add_cancel): add(X, neg(X)) = 0.
+  Axiom 14 (curlOfGradZero): cross(NAB, appl(NAB, X)) = 0v.
+  Axiom 15 (scalar_triple_product): dot(X, cross(Y, Z)) = dot(Y, cross(Z, X)).
+  Axiom 16 (divOfCurlZero): dot(NAB, cross(NAB, X)) = 0.
+  Axiom 17 (vec_add_assoc): vadd(X, vadd(Y, Z)) = vadd(vadd(X, Y), Z).
+  Axiom 18 (add_assoc): add(X, add(Y, Z)) = add(add(X, Y), Z).
+  Axiom 19 (mul_assoc): mul(X, mul(Y, Z)) = mul(mul(X, Y), Z).
+  Axiom 20 (curlDist): cross(NAB, vadd(X, Y)) = vadd(cross(NAB, X), cross(NAB, Y)).
+  Axiom 21 (gradDist): appl(NAB, vadd(X, Y)) = vadd(appl(NAB, X), appl(NAB, Y)).
+  Axiom 22 (divDist): dot(NAB, vadd(X, Y)) = add(dot(NAB, X), dot(NAB, Y)).
+  Axiom 23 (left_distrib): mul(X, add(Y, Z)) = add(mul(X, Y), mul(X, Z)).
+  Axiom 24 (chain): appl(NAB, appl(X, Y)) = appl(appl(appl(NAB, X), Y), appl(NAB, Y)).
+  Axiom 25 (vector_triple_product): cross(X, cross(Y, Z)) = vsub(vmul(Y, dot(X, Z)), vmul(Z, dot(X, Y))).
+  Axiom 26 (divProdRule): dot(NAB, vmul(X, Y)) = add(mul(appl(NAB, X), Y), mul(X, dot(NAB, Y))).
+  Axiom 27 (gradProdRule): appl(NAB, mul(X, Y)) = add(mul(appl(NAB, X), Y), mul(X, appl(NAB, Y))).
+  Axiom 28 (reflexivity): equals(X, X) = true.
+  Axiom 29 (test_goal): equals(add(0, X), X) = false.
+  Goal 1 (true_equals_false): true = false.
+
+1. dot(X, Y) <-> dot(Y, X)
+2. vadd(X, Y) <-> vadd(Y, X)
+3. vadd(X, 0v) -> X
+4. vadd(X, vneg(X)) -> 0v
+5. vadd(0v, X) -> X
+6. add(X, Y) <-> add(Y, X)
+7. add(X, 0) -> X
+8. add(0, X) -> X
+9. mul(X, Y) <-> mul(Y, X)
+10. mul(1, X) -> X
+11. mul(0, X) -> 0
+12. vneg(cross(X, Y)) -> cross(Y, X)
+13. add(X, neg(X)) -> 0
+14. cross(NAB, appl(NAB, X)) -> 0v
+15. dot(X, cross(Y, Z)) <-> dot(Y, cross(Z, X))
+16. dot(NAB, cross(NAB, X)) -> 0
+17. vadd(vadd(X, Y), Z) -> vadd(X, vadd(Y, Z))
+18. add(add(X, Y), Z) -> add(X, add(Y, Z))
+19. mul(mul(X, Y), Z) -> mul(X, mul(Y, Z))
+20. vadd(cross(NAB, X), cross(NAB, Y)) -> cross(NAB, vadd(X, Y))
+21. vadd(appl(NAB, X), appl(NAB, Y)) -> appl(NAB, vadd(X, Y))
+22. add(dot(NAB, X), dot(NAB, Y)) -> dot(NAB, vadd(X, Y))
+23. add(mul(X, Y), mul(X, Z)) -> mul(X, add(Y, Z))
+24. appl(appl(appl(NAB, X), Y), appl(NAB, Y)) -> appl(NAB, appl(X, Y))
+25. vsub(vmul(X, dot(Y, Z)), vmul(Z, dot(Y, X))) -> cross(Y, cross(X, Z))
+26. add(mul(X, dot(NAB, Y)), mul(appl(NAB, X), Y)) -> dot(NAB, vmul(X, Y))
+27. add(mul(X, appl(NAB, Y)), mul(appl(NAB, X), Y)) -> appl(NAB, mul(X, Y))
+28. equals(X, X) -> true
+29. false -> true
+30. vneg(0v) -> 0v
+31. neg(0) -> 0
+32. mul(X, 1) -> X
+33. mul(X, 0) -> 0
+34. dot(0v, NAB) -> 0
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (add_zero_left): add(0, X) = X.
+
+Goal 1 (test_goal): add(0, X) = X.
+The goal is true when:
+  X = X
+
+Proof:
+  add(0, X)
+= { by axiom 1 (add_zero_left) }
+  X
+
+RESULT: Unsatisfiable (the axioms are contradictory).
+
+Execution time: 0.0640287 seconds
+

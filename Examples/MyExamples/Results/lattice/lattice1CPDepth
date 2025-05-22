@@ -1,0 +1,43 @@
+Here is the input problem:
+  Axiom 1 (idempotent_join): X ∨ X = X.
+  Axiom 2 (commutative_join): X ∨ Y = Y ∨ X.
+  Axiom 3 (idempotent_meet): X ∧ X = X.
+  Axiom 4 (commutative_meet): X ∧ Y = Y ∧ X.
+  Axiom 5 (absorption_join): X ∨ (X ∧ Y) = X.
+  Axiom 6 (associative_join): X ∨ (Y ∨ Z) = (X ∨ Y) ∨ Z.
+  Axiom 7 (absorption_meet): X ∧ (X ∨ Y) = X.
+  Axiom 8 (associative_meet): X ∧ (Y ∧ Z) = (X ∧ Y) ∧ Z.
+  Goal 1 (goal): x = x.
+
+1. X ∨ X -> X
+2. X ∨ Y <-> Y ∨ X
+3. X ∧ X -> X
+4. X ∧ Y <-> Y ∧ X
+5. X ∨ (X ∧ Y) -> X
+6. (X ∨ Y) ∨ Z -> X ∨ (Y ∨ Z)
+7. X ∧ (X ∨ Y) -> X
+8. (X ∧ Y) ∧ Z -> X ∧ (Y ∧ Z)
+9. X ∨ (Y ∧ X) -> X
+10. X ∧ (Y ∨ X) -> X
+11. X ∨ (X ∨ Y) -> X ∨ Y
+12. X ∧ (X ∧ Y) -> X ∧ Y
+13. X ∨ (Y ∨ Z) <-> Y ∨ (X ∨ Z)
+14. X ∧ (Y ∧ Z) <-> Y ∧ (X ∧ Z)
+15. X ∨ (Y ∨ (X ∧ Z)) -> X ∨ Y
+16. X ∧ (Y ∧ (X ∨ Z)) -> X ∧ Y
+17. X ∨ (Y ∨ (Z ∧ (X ∨ Y))) -> X ∨ Y
+18. (X ∨ Y) ∧ (X ∨ (Y ∨ Z)) -> X ∨ Y
+19. (X ∧ Y) ∨ (X ∧ (Y ∧ Z)) -> X ∧ Y
+20. X ∧ (Y ∧ (Z ∨ (X ∧ Y))) -> X ∧ Y
+
+The conjecture is true! Here is a proof.
+
+
+Goal 1 (goal): x = x.
+Proof:
+Reflexivity.
+
+RESULT: Theorem (the conjecture is true).
+
+Execution time: 0.0177839 seconds
+

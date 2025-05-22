@@ -1,0 +1,76 @@
+Here is the input problem:
+  Axiom 1 (flattening): -2 = -x.
+  Axiom 2 (plus_zero): 0 + X = X.
+  Axiom 3 (flattening): +2 = x + -x.
+  Axiom 4 (minus_minus): -X + X = 0.
+  Axiom 5 (associativity): X + (Y + Z) = (X + Y) + Z.
+  Goal 1 (goal): x + -x = 0.
+
+1. -x -> -2
+2. 0 + X -> X
+3. x + -2 -> +2
+4. -X + X -> 0
+5. (X + Y) + Z -> X + (Y + Z)
+6. -2 + x -> 0
+7. x + (-2 + X) -> +2 + X
+8. x + 0 -> +2 + x
+9. -2 + (x + X) -> X
+10. -2 + +2 -> -2
+11. +2 + +2 -> +2
+12. -X + (X + Y) -> Y
+13. 0 -> +2
+14. -+2 + X -> X
+15. +2 + X -> X
+16. --2 + +2 -> x
+17. --X + +2 -> X
+18. --2 + X -> x + X
+19. x + +2 -> x
+20. --X + Y -> X + Y
+21. X + +2 -> X
+22. -+2 -> +2
+23. --2 -> x
+24. --X -> X
+25. X + -X -> +2
+26. X + (-X + Y) -> Y
+27. X + (Y + -(X + Y)) -> +2
+28. X + -(-2 + X) -> x
+29. -(-2 + -2) -> x + x
+30. -(-2 + X) -> -X + x
+31. -(x + x) -> -2 + -2
+32. X + -(x + X) -> -2
+33. -(x + X) -> -X + -2
+34. X + -(Y + X) -> -Y
+35. -(X + -2) -> x + -X
+36. -(X + x) -> -2 + -X
+37. -(X + Y) -> -Y + -X
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (plus_zero): 0 + X = X.
+Axiom 2 (minus_minus): -X + X = 0.
+Axiom 3 (associativity): X + (Y + Z) = (X + Y) + Z.
+
+Lemma 4: -X + (X + Y) = Y.
+Proof:
+  -X + (X + Y)
+= { by axiom 3 (associativity) }
+  (-X + X) + Y
+= { by axiom 2 (minus_minus) }
+  0 + Y
+= { by axiom 1 (plus_zero) }
+  Y
+
+Goal 1 (goal): x + -x = 0.
+Proof:
+  x + -x
+= { by lemma 4 R->L }
+  --x + (-x + (x + -x))
+= { by lemma 4 }
+  --x + -x
+= { by axiom 2 (minus_minus) }
+  0
+
+RESULT: Theorem (the conjecture is true).
+
+Execution time: 0.0162787 seconds
+

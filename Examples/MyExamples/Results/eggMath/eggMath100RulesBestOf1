@@ -1,0 +1,198 @@
+Here is the input problem:
+  Axiom 1 (sub_cancel): minus(X, X) = zero.
+  Axiom 2 (pow_one): pow(X, one) = X.
+  Axiom 3 (add_comm): plus(X, Y) = plus(Y, X).
+  Axiom 4 (add_zero_right): plus(X, zero) = X.
+  Axiom 5 (add_zero_left): X = plus(X, zero).
+  Axiom 6 (pow_two): pow(X, two) = times(X, X).
+  Axiom 7 (mul_comm): times(X, Y) = times(Y, X).
+  Axiom 8 (mul_one_right): times(X, one) = X.
+  Axiom 9 (mul_one_left): X = times(X, one).
+  Axiom 10 (mul_zero_right): times(X, zero) = zero.
+  Axiom 11 (sub_to_add): minus(X, Y) = plus(X, times(minus_one, Y)).
+  Axiom 12 (add_assoc): plus(X, plus(Y, Z)) = plus(plus(X, Y), Z).
+  Axiom 13 (mul_assoc): times(X, times(Y, Z)) = times(times(X, Y), Z).
+  Axiom 14 (distribute): times(X, plus(Y, Z)) = plus(times(X, Y), times(X, Z)).
+  Axiom 15 (factor): plus(times(X, Y), times(X, Z)) = times(X, plus(Y, Z)).
+  Axiom 16 (pow_mul_merge): times(pow(X, Y), pow(X, Z)) = pow(X, plus(Y, Z)).
+  Goal 1 (goal): true = false.
+
+1. minus(X, X) -> zero
+2. pow(X, one) -> X
+3. plus(X, Y) <-> plus(Y, X)
+4. plus(X, zero) -> X
+5. times(X, X) -> pow(X, two)
+6. times(X, Y) <-> times(Y, X)
+7. times(X, one) -> X
+8. times(X, zero) -> zero
+9. plus(X, times(minus_one, Y)) -> minus(X, Y)
+10. plus(plus(X, Y), Z) -> plus(X, plus(Y, Z))
+11. times(times(X, Y), Z) -> times(X, times(Y, Z))
+12. plus(times(X, Y), times(X, Z)) -> times(X, plus(Y, Z))
+13. times(pow(X, Y), pow(X, Z)) -> pow(X, plus(Y, Z))
+14. plus(zero, X) -> X
+15. times(one, X) -> X
+16. minus(X, zero) -> X
+17. times(zero, X) -> zero
+18. pow(one, two) -> one
+19. pow(zero, two) -> zero
+20. plus(X, minus_one) -> minus(X, one)
+21. minus(zero, one) -> minus_one
+22. times(X, minus_one) -> minus(zero, X)
+23. plus(minus_one, X) -> minus(X, one)
+24. times(minus_one, X) -> minus(zero, X)
+25. pow(minus_one, two) -> minus(zero, minus_one)
+26. plus(X, minus(zero, Y)) -> minus(X, Y)
+27. pow(zero, plus(X, two)) -> zero
+28. plus(X, plus(Y, Z)) <-> plus(Y, plus(X, Z))
+29. plus(X, minus(Y, Z)) -> minus(plus(X, Y), Z)
+30. minus(plus(X, Y), X) -> Y
+31. times(X, times(Y, Z)) <-> times(Y, times(X, Z))
+32. times(X, times(X, Y)) = times(pow(X, two), Y)
+33. times(X, plus(Y, one)) = plus(X, times(X, Y))
+34. times(X, pow(X, Y)) -> pow(X, plus(Y, one))
+35. pow(zero, plus(X, one)) -> zero
+36. pow(zero, zero) -> zero
+37. pow(zero, X) -> zero
+38. pow(one, plus(two, one)) -> one
+39. pow(X, plus(Y, Y)) = pow(pow(X, Y), two)
+40. pow(one, plus(two, two)) -> one
+41. minus(minus(zero, X), Y) -> minus(zero, plus(X, Y))
+42. minus(plus(X, Y), Y) -> X
+43. plus(minus(zero, X), Y) -> minus(Y, X)
+44. minus(minus(X, one), X) -> minus_one
+45. times(X, plus(one, one)) = plus(X, X)
+46. pow(one, plus(X, two)) -> pow(one, X)
+47. pow(one, zero) -> one
+48. minus(zero, plus(X, one)) -> minus(minus_one, X)
+49. pow(X, plus(one, one)) -> pow(X, two)
+50. pow(one, plus(X, one)) -> pow(one, X)
+51. pow(one, minus_one) -> one
+52. minus(minus(X, one), minus_one) -> X
+53. minus(zero, minus_one) -> one
+54. plus(X, one) -> minus(X, minus_one)
+55. plus(one, X) -> minus(X, minus_one)
+56. plus(minus(X, Y), Z) -> minus(plus(X, Z), Y)
+57. minus(minus(X, Y), Z) -> minus(X, plus(Y, Z))
+58. minus(X, plus(X, Y)) -> minus(zero, Y)
+59. times(X, times(Y, X)) = times(Y, pow(X, two))
+60. minus(zero, minus(zero, X)) -> X
+61. times(X, pow(Y, two)) = times(Y, times(Y, X))
+62. plus(X, times(X, Y)) = times(X, minus(Y, minus_one))
+63. times(X, minus(Y, minus_one)) = plus(X, times(Y, X))
+64. times(X, minus(X, minus_one)) -> plus(X, pow(X, two))
+65. minus(X, minus(zero, Y)) -> plus(X, Y)
+66. minus(X, minus(X, minus_one)) -> minus_one
+67. plus(X, X) = times(X, minus(one, minus_one))
+68. minus(X, minus(X, one)) -> one
+69. minus(zero, minus(X, minus_one)) -> minus(minus_one, X)
+70. pow(one, plus(two, X)) -> pow(one, X)
+71. pow(one, minus(X, minus_one)) -> pow(one, X)
+72. pow(one, minus(two, one)) -> one
+73. pow(one, minus(minus_one, one)) -> one
+74. minus(X, plus(Y, X)) -> minus(zero, Y)
+75. times(minus(X, minus_one), Y) = plus(Y, times(Y, X))
+76. plus(X, times(Y, X)) = times(minus(Y, minus_one), X)
+77. times(X, minus(zero, Y)) -> minus(zero, times(X, Y))
+78. times(minus(zero, X), Y) -> minus(zero, times(X, Y))
+79. minus(X, minus(X, Y)) -> Y
+80. minus(zero, minus(X, Y)) -> minus(Y, X)
+81. pow(one, minus(zero, X)) -> pow(one, minus(two, X))
+82. pow(one, minus(one, X)) -> pow(one, minus(two, X))
+83. times(minus(one, minus_one), X) = plus(X, X)
+84. pow(one, minus(X, one)) -> pow(one, X)
+85. minus(minus_one, minus(X, one)) -> minus(zero, X)
+86. pow(X, minus(one, minus_one)) -> pow(X, two)
+87. pow(minus(zero, X), two) -> pow(X, two)
+88. minus(plus(X, Y), Z) -> minus(X, minus(Z, Y))
+89. plus(times(X, Y), times(Y, Z)) -> times(Y, plus(X, Z))
+90. times(X, minus(Y, one)) = minus(times(X, Y), X)
+91. plus(times(X, Y), times(Z, X)) -> times(X, plus(Y, Z))
+92. times(X, plus(Y, Y)) = times(Y, plus(X, X))
+93. times(X, plus(Y, Y)) = times(plus(X, X), Y)
+94. minus(zero, plus(X, X)) = times(X, minus(minus_one, one))
+95. times(X, minus(one, Y)) = minus(X, times(X, Y))
+96. times(minus(X, one), Y) = minus(times(Y, X), Y)
+97. times(X, minus(Y, one)) = minus(times(Y, X), X)
+98. times(X, times(X, pow(Y, two))) -> pow(times(X, Y), two)
+99. times(X, minus(X, one)) -> minus(pow(X, two), X)
+100. plus(pow(X, two), times(X, Y)) -> times(X, plus(X, Y))
+
+Gave up on reaching the given resource limit.
+Here is the final rewrite system:
+  plus(X, X) = times(X, minus(one, minus_one))
+  plus(X, Y) <-> plus(Y, X)
+  plus(X, minus_one) -> minus(X, one)
+  plus(X, zero) -> X
+  plus(X, one) -> minus(X, minus_one)
+  plus(minus_one, X) -> minus(X, one)
+  plus(zero, X) -> X
+  plus(one, X) -> minus(X, minus_one)
+  times(X, X) -> pow(X, two)
+  times(X, Y) <-> times(Y, X)
+  times(X, minus_one) -> minus(zero, X)
+  times(X, zero) -> zero
+  times(X, one) -> X
+  times(minus_one, X) -> minus(zero, X)
+  times(zero, X) -> zero
+  times(one, X) -> X
+  minus(X, X) -> zero
+  minus(X, zero) -> X
+  minus(zero, minus_one) -> one
+  minus(zero, one) -> minus_one
+  pow(X, one) -> X
+  pow(minus_one, two) -> one
+  pow(zero, X) -> zero
+  pow(one, minus_one) -> one
+  pow(one, zero) -> one
+  pow(one, two) -> one
+  plus(X, times(X, Y)) = times(X, minus(Y, minus_one))
+  plus(X, minus(Y, Z)) -> minus(X, minus(Z, Y))
+  plus(X, times(Y, X)) = times(minus(Y, minus_one), X)
+  plus(X, plus(Y, Z)) <-> plus(Y, plus(X, Z))
+  plus(plus(X, Y), Z) -> plus(X, plus(Y, Z))
+  plus(minus(X, Y), Z) -> minus(X, minus(Y, Z))
+  times(X, plus(Y, Y)) = times(plus(X, X), Y)
+  times(X, times(X, Y)) = times(pow(X, two), Y)
+  times(X, times(Y, Z)) <-> times(Y, times(X, Z))
+  times(X, minus(X, minus_one)) -> plus(X, pow(X, two))
+  times(X, minus(X, one)) -> minus(pow(X, two), X)
+  times(X, minus(Y, minus_one)) = plus(X, times(Y, X))
+  times(X, minus(Y, one)) = minus(times(Y, X), X)
+  times(X, minus(zero, Y)) -> minus(zero, times(X, Y))
+  times(X, minus(one, Y)) = minus(X, times(X, Y))
+  times(X, pow(X, Y)) -> pow(X, minus(Y, minus_one))
+  times(X, plus(Y, Y)) = times(Y, plus(X, X))
+  times(X, pow(Y, two)) = times(Y, times(Y, X))
+  times(times(X, Y), Z) -> times(X, times(Y, Z))
+  times(minus(X, one), Y) = minus(times(Y, X), Y)
+  times(minus(zero, X), Y) -> minus(zero, times(X, Y))
+  times(minus(one, minus_one), X) = plus(X, X)
+  minus(X, plus(Y, X)) -> minus(zero, Y)
+  minus(X, minus(X, Y)) -> Y
+  minus(X, minus(zero, Y)) -> plus(X, Y)
+  minus(minus_one, minus(X, one)) -> minus(zero, X)
+  minus(zero, plus(X, X)) = times(X, minus(minus_one, one))
+  minus(zero, minus(X, Y)) -> minus(Y, X)
+  minus(plus(X, Y), Z) -> minus(X, minus(Z, Y))
+  minus(minus(X, Y), Z) -> minus(X, plus(Y, Z))
+  pow(X, plus(Y, Y)) = pow(pow(X, Y), two)
+  pow(X, minus(one, minus_one)) -> pow(X, two)
+  pow(one, plus(X, two)) -> pow(one, X)
+  pow(one, plus(two, X)) -> pow(one, X)
+  pow(one, minus(X, minus_one)) -> pow(one, X)
+  pow(one, minus(X, one)) -> pow(one, X)
+  pow(one, minus(zero, X)) -> pow(one, minus(two, X))
+  pow(one, minus(one, X)) -> pow(one, minus(two, X))
+  pow(minus(zero, X), two) -> pow(X, two)
+  plus(times(X, Y), times(X, Z)) -> times(X, plus(Y, Z))
+  plus(times(X, Y), times(Z, X)) -> times(X, plus(Y, Z))
+  plus(times(X, Y), times(Y, Z)) -> times(Y, plus(X, Z))
+  plus(pow(X, two), times(X, Y)) -> times(X, plus(X, Y))
+  times(X, times(X, pow(Y, two))) -> pow(times(X, Y), two)
+  times(pow(X, Y), pow(X, Z)) -> pow(X, plus(Y, Z))
+
+RESULT: GaveUp (couldn't solve the problem).
+
+Execution time: 0.0522439 seconds
+

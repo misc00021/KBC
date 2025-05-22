@@ -1,0 +1,187 @@
+Here is the input problem:
+  Axiom 1 (flattening): \2 = a \ a.
+  Axiom 2 (flattening): /2 = a / a.
+  Axiom 3 (ld_mult): X \ (X * Y) = Y.
+  Axiom 4 (rd_mult): (X * Y) / Y = X.
+  Axiom 5 (mult_ld): X * (X \ Y) = Y.
+  Axiom 6 (mult_rd): (X / Y) * Y = X.
+  Axiom 7 (moufang): X * (Y * (X * Z)) = ((X * Y) * X) * Z.
+  Goal 1 (conjecture): a \ a = a / a.
+
+1. a \ a -> \2
+2. a / a -> /2
+3. X \ (X * Y) -> Y
+4. (X * Y) / Y -> X
+5. X * (X \ Y) -> Y
+6. (X / Y) * Y -> X
+7. ((X * Y) * X) * Z -> X * (Y * (X * Z))
+8. a * \2 -> a
+9. /2 * a -> a
+10. a / \2 -> a
+11. /2 \ a -> a
+12. X / (Y \ X) -> Y
+13. (X / Y) \ X -> Y
+14. a * (\2 * (a * X)) -> (a * a) * X
+15. (a * a) * \2 -> a * (\2 * a)
+16. /2 * (a * (/2 * X)) -> (a * /2) * X
+17. (a * /2) * a -> /2 * (a * a)
+18. a \ ((a * a) * X) -> \2 * (a * X)
+19. (a * a) * (a \ X) -> a * (\2 * X)
+20. /2 \ ((a * /2) * X) -> a * (/2 * X)
+21. (a * /2) * (/2 \ X) -> /2 * (a * X)
+22. (X * (Y * (X * Z))) / Z -> (X * Y) * X
+23. (a * (X * a)) / \2 -> (a * X) * a
+24. (a * /2) * a -> (a * a) / \2
+25. /2 * (a * a) -> (a * a) / \2
+26. (/2 * (X * a)) / a -> (/2 * X) * /2
+27. (/2 * /2) * /2 -> /2
+28. /2 * /2 -> /2 / /2
+29. /2 \ (/2 / /2) -> /2
+30. (/2 / /2) / /2 -> /2
+31. (a * (X / a)) * a -> (a * X) / \2
+32. (/2 * (X / a)) * /2 -> (/2 * X) / a
+33. /2 * (/2 * (/2 * X)) -> /2 * X
+34. /2 * (/2 * X) -> X
+35. /2 * X -> /2 \ X
+36. /2 / /2 -> /2 \ /2
+37. /2 \ (/2 \ X) -> X
+38. (/2 \ X) / X -> /2
+39. (/2 \ /2) * /2 -> /2
+40. (/2 \ /2) \ /2 -> /2
+41. X * ((X \ Y) * (X * Z)) -> (Y * X) * Z
+42. (X \ Y) * (X * Z) -> X \ ((Y * X) * Z)
+43. (X * Y) * (Y \ Z) -> Y * ((Y \ X) * Z)
+44. a * ((a \ /2) * X) -> X
+45. (a \ /2) * X -> a \ X
+46. (a \ /2) \ X -> a * X
+47. (a \ X) / X -> a \ /2
+48. \2 / a -> a \ /2
+49. X / (a * X) -> a \ /2
+50. a * ((a \ X) * a) -> (X * a) * \2
+51. /2 \ ((/2 \ X) * a) -> (X * /2) * a
+52. (a * /2) * a -> /2 \ (a * a)
+53. (a * a) / \2 -> /2 \ (a * a)
+54. (/2 \ (a * /2)) * /2 -> a
+55. /2 \ (a * /2) -> a / /2
+56. /2 \ (a / /2) -> a * /2
+57. a \ ((X * a) * \2) -> (a \ X) * a
+58. /2 \ ((X * /2) * a) -> (/2 \ X) * a
+59. \2 * ((\2 \ a) * X) -> a * (\2 \ X)
+60. (/2 \ (a * a)) / a -> a * /2
+61. (/2 \ (a * a)) \ (a * a) -> \2
+62. ((a * X) / \2) / a -> a * (X / a)
+63. ((/2 \ X) / a) / /2 -> /2 \ (X / a)
+64. (/2 \ X) / /2 -> /2 \ (X * /2)
+65. a * (/2 \ /2) -> (a / /2) / /2
+66. (a \ (X / a)) * a -> a \ (X * \2)
+67. (/2 \ (X / /2)) * a -> /2 \ (X * a)
+68. \2 \ (a * (\2 \ X)) -> (\2 \ a) * X
+69. (X * (Y * Z)) / (X \ Z) -> (X * Y) * X
+70. (X * a) / (X \ \2) -> (X * a) * X
+71. a / (/2 \ \2) -> a * /2
+72. (a * /2) \ a -> /2 \ \2
+73. (X * a) / (X \ a) -> (X * /2) * X
+74. \2 / (a * a) -> a \ (a \ /2)
+75. a \ (\2 * a) -> \2
+76. \2 * a -> a
+77. a / a -> \2
+78. /2 -> \2
+79. \2 \ a -> a
+80. \2 \ \2 -> \2
+81. \2 * X -> \2 \ X
+82. \2 / \2 -> \2
+83. ((X * a) * X) \ (X * a) -> X \ \2
+84. (X * (Y / Z)) * X -> (X * Y) / (X \ Z)
+85. (a \ \2) * a -> \2
+86. (\2 \ (a \ \2)) \ \2 -> a
+87. \2 \ (a \ \2) -> a \ \2
+88. (a \ \2) / (a \ \2) -> \2
+89. (a \ \2) \ \2 -> a
+90. X / ((X / a) \ \2) -> X * (X / a)
+91. \2 \ (a * a) -> a * a
+92. (a * a) / (a * a) -> \2
+93. (X * a) / (X \ a) -> (X * \2) * X
+94. (X / Y) * (Y * ((X / Y) * Z)) -> (X * (X / Y)) * Z
+95. (X * (X / Y)) * Y -> (X / Y) * (Y * X)
+96. (a \ \2) * X -> a \ X
+97. a * (\2 \ (a * X)) -> (a * a) * X
+98. (X / X) * (X * X) -> (X * X) / (X \ X)
+99. (X * (X / a)) \ X -> (X / a) \ \2
+100. (\2 \ X) / X -> \2
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (ld_mult): X \ (X * Y) = Y.
+Axiom 2 (rd_mult): (X * Y) / Y = X.
+Axiom 3 (mult_ld): X * (X \ Y) = Y.
+Axiom 4 (mult_rd): (X / Y) * Y = X.
+Axiom 5 (moufang): X * (Y * (X * Z)) = ((X * Y) * X) * Z.
+
+Lemma 6: X * ((X \ Y) * (X * Z)) = (Y * X) * Z.
+Proof:
+  X * ((X \ Y) * (X * Z))
+= { by axiom 5 (moufang) }
+  ((X * (X \ Y)) * X) * Z
+= { by axiom 3 (mult_ld) }
+  (Y * X) * Z
+
+Lemma 7: X * ((X \ (X / X)) * Y) = Y.
+Proof:
+  X * ((X \ (X / X)) * Y)
+= { by axiom 3 (mult_ld) R->L }
+  X * ((X \ (X / X)) * (X * (X \ Y)))
+= { by lemma 6 }
+  ((X / X) * X) * (X \ Y)
+= { by axiom 4 (mult_rd) }
+  X * (X \ Y)
+= { by axiom 3 (mult_ld) }
+  Y
+
+Lemma 8: (X \ (X / X)) * Y = X \ Y.
+Proof:
+  (X \ (X / X)) * Y
+= { by axiom 1 (ld_mult) R->L }
+  X \ (X * ((X \ (X / X)) * Y))
+= { by lemma 7 }
+  X \ Y
+
+Goal 1 (conjecture): a \ a = a / a.
+Proof:
+  a \ a
+= { by axiom 2 (rd_mult) R->L }
+  ((a \ a) * a) / a
+= { by axiom 3 (mult_ld) R->L }
+  (a * (a \ ((a \ a) * a))) / a
+= { by lemma 8 R->L }
+  (a * (a \ (((a \ (a / a)) * a) * a))) / a
+= { by lemma 6 R->L }
+  (a * (a \ (a * ((a \ (a \ (a / a))) * (a * a))))) / a
+= { by axiom 1 (ld_mult) }
+  (a * ((a \ (a \ (a / a))) * (a * a))) / a
+= { by lemma 8 R->L }
+  (a * (((a \ (a / a)) * (a \ (a / a))) * (a * a))) / a
+= { by lemma 8 R->L }
+  (a * ((((a \ (a / a)) * (a / a)) * (a \ (a / a))) * (a * a))) / a
+= { by axiom 2 (rd_mult) R->L }
+  (a * ((((((a \ (a / a)) * (a / a)) * (a \ (a / a))) * ((a \ (a / a)) \ a)) / ((a \ (a / a)) \ a)) * (a * a))) / a
+= { by axiom 5 (moufang) R->L }
+  (a * ((((a \ (a / a)) * ((a / a) * ((a \ (a / a)) * ((a \ (a / a)) \ a)))) / ((a \ (a / a)) \ a)) * (a * a))) / a
+= { by axiom 3 (mult_ld) }
+  (a * ((((a \ (a / a)) * ((a / a) * a)) / ((a \ (a / a)) \ a)) * (a * a))) / a
+= { by axiom 4 (mult_rd) }
+  (a * ((((a \ (a / a)) * a) / ((a \ (a / a)) \ a)) * (a * a))) / a
+= { by lemma 8 }
+  (a * (((a \ a) / ((a \ (a / a)) \ a)) * (a * a))) / a
+= { by lemma 7 R->L }
+  (a * (((a \ a) / (a * ((a \ (a / a)) * ((a \ (a / a)) \ a)))) * (a * a))) / a
+= { by axiom 3 (mult_ld) }
+  (a * (((a \ a) / (a * a)) * (a * a))) / a
+= { by axiom 4 (mult_rd) }
+  (a * (a \ a)) / a
+= { by axiom 3 (mult_ld) }
+  a / a
+
+RESULT: Theorem (the conjecture is true).
+
+Execution time: 0.0536299 seconds
+

@@ -1,0 +1,379 @@
+Here is the input problem:
+  Axiom 1 (dot_comm): dot(X, Y) = dot(Y, X).
+  Axiom 2 (vec_add_comm): vadd(X, Y) = vadd(Y, X).
+  Axiom 3 (vec_add_zero_right): vadd(X, 0v) = X.
+  Axiom 4 (vec_add_inv): vadd(X, vneg(X)) = 0v.
+  Axiom 5 (vec_add_zero_left): vadd(0v, X) = X.
+  Axiom 6 (add_comm): add(X, Y) = add(Y, X).
+  Axiom 7 (add_zero_right): add(X, 0) = X.
+  Axiom 8 (add_zero_left): add(0, X) = X.
+  Axiom 9 (mul_comm): mul(X, Y) = mul(Y, X).
+  Axiom 10 (mul_one_left): mul(1, X) = X.
+  Axiom 11 (mul_zero_left): mul(0, X) = 0.
+  Axiom 12 (cross_comm_anti): cross(X, Y) = vneg(cross(Y, X)).
+  Axiom 13 (neg_add_cancel): add(X, neg(X)) = 0.
+  Axiom 14 (curlOfGradZero): cross(NAB, appl(NAB, X)) = 0v.
+  Axiom 15 (scalar_triple_product): dot(X, cross(Y, Z)) = dot(Y, cross(Z, X)).
+  Axiom 16 (divOfCurlZero): dot(NAB, cross(NAB, X)) = 0.
+  Axiom 17 (vec_add_assoc): vadd(X, vadd(Y, Z)) = vadd(vadd(X, Y), Z).
+  Axiom 18 (add_assoc): add(X, add(Y, Z)) = add(add(X, Y), Z).
+  Axiom 19 (mul_assoc): mul(X, mul(Y, Z)) = mul(mul(X, Y), Z).
+  Axiom 20 (curlDist): cross(NAB, vadd(X, Y)) = vadd(cross(NAB, X), cross(NAB, Y)).
+  Axiom 21 (gradDist): appl(NAB, vadd(X, Y)) = vadd(appl(NAB, X), appl(NAB, Y)).
+  Axiom 22 (divDist): dot(NAB, vadd(X, Y)) = add(dot(NAB, X), dot(NAB, Y)).
+  Axiom 23 (left_distrib): mul(X, add(Y, Z)) = add(mul(X, Y), mul(X, Z)).
+  Axiom 24 (chain): appl(NAB, appl(X, Y)) = appl(appl(appl(NAB, X), Y), appl(NAB, Y)).
+  Axiom 25 (vector_triple_product): cross(X, cross(Y, Z)) = vsub(vmul(Y, dot(X, Z)), vmul(Z, dot(X, Y))).
+  Axiom 26 (divProdRule): dot(NAB, vmul(X, Y)) = add(mul(appl(NAB, X), Y), mul(X, dot(NAB, Y))).
+  Axiom 27 (gradProdRule): appl(NAB, mul(X, Y)) = add(mul(appl(NAB, X), Y), mul(X, appl(NAB, Y))).
+  Axiom 28 (reflexivity): equals(X, X) = true.
+  Axiom 29 (test_goal): equals(add(0, X), X) = false.
+  Goal 1 (true_equals_false): true = false.
+
+1. dot(X, Y) <-> dot(Y, X)
+2. vadd(X, Y) <-> vadd(Y, X)
+3. vadd(X, 0v) -> X
+4. vadd(X, vneg(X)) -> 0v
+5. vadd(0v, X) -> X
+6. add(X, Y) <-> add(Y, X)
+7. add(X, 0) -> X
+8. add(0, X) -> X
+9. mul(X, Y) <-> mul(Y, X)
+10. mul(1, X) -> X
+11. mul(0, X) -> 0
+12. vneg(cross(X, Y)) -> cross(Y, X)
+13. add(X, neg(X)) -> 0
+14. cross(NAB, appl(NAB, X)) -> 0v
+15. dot(X, cross(Y, Z)) <-> dot(Y, cross(Z, X))
+16. dot(NAB, cross(NAB, X)) -> 0
+17. vadd(vadd(X, Y), Z) -> vadd(X, vadd(Y, Z))
+18. add(add(X, Y), Z) -> add(X, add(Y, Z))
+19. mul(mul(X, Y), Z) -> mul(X, mul(Y, Z))
+20. vadd(cross(NAB, X), cross(NAB, Y)) -> cross(NAB, vadd(X, Y))
+21. vadd(appl(NAB, X), appl(NAB, Y)) -> appl(NAB, vadd(X, Y))
+22. add(dot(NAB, X), dot(NAB, Y)) -> dot(NAB, vadd(X, Y))
+23. add(mul(X, Y), mul(X, Z)) -> mul(X, add(Y, Z))
+24. appl(appl(appl(NAB, X), Y), appl(NAB, Y)) -> appl(NAB, appl(X, Y))
+25. vsub(vmul(X, dot(Y, Z)), vmul(Z, dot(Y, X))) -> cross(Y, cross(X, Z))
+26. add(mul(X, dot(NAB, Y)), mul(appl(NAB, X), Y)) -> dot(NAB, vmul(X, Y))
+27. add(mul(X, appl(NAB, Y)), mul(appl(NAB, X), Y)) -> appl(NAB, mul(X, Y))
+28. equals(X, X) -> true
+29. false -> true
+30. vneg(0v) -> 0v
+31. neg(0) -> 0
+32. mul(X, 1) -> X
+33. mul(X, 0) -> 0
+34. dot(0v, NAB) -> 0
+35. dot(NAB, cross(X, NAB)) -> 0
+36. dot(X, cross(NAB, NAB)) -> 0
+37. cross(appl(NAB, X), NAB) -> 0v
+38. mul(X, appl(NAB, 0)) -> appl(NAB, 0)
+39. appl(NAB, 0) -> 0
+40. dot(cross(NAB, NAB), X) -> 0
+41. dot(cross(X, Y), Z) -> dot(X, cross(Y, Z))
+42. vadd(X, vadd(Y, Z)) <-> vadd(Y, vadd(X, Z))
+43. add(X, add(Y, Z)) <-> add(Y, add(X, Z))
+44. mul(X, mul(Y, Z)) <-> mul(Y, mul(X, Z))
+45. vadd(X, vadd(Y, vneg(X))) -> Y
+46. add(X, add(Y, neg(X))) -> Y
+47. dot(NAB, vmul(0, X)) -> 0
+48. vadd(X, vadd(vneg(X), Y)) -> Y
+49. add(X, add(neg(X), Y)) -> Y
+50. mul(X, add(Y, 1)) = add(X, mul(X, Y))
+51. mul(X, dot(0, NAB)) -> dot(NAB, vmul(X, 0))
+52. vadd(cross(X, Y), cross(Y, X)) -> 0v
+53. cross(NAB, vadd(NAB, NAB)) -> 0v
+54. dot(NAB, cross(appl(NAB, X), Y)) -> dot(Y, 0v)
+55. cross(NAB, vadd(X, appl(NAB, Y))) -> cross(NAB, X)
+56. cross(NAB, 0v) -> 0v
+57. dot(NAB, vadd(X, cross(NAB, Y))) -> dot(X, NAB)
+58. dot(X, cross(Y, cross(NAB, NAB))) -> 0
+59. add(mul(X, Y), mul(Y, Z)) -> mul(Y, add(X, Z))
+60. add(mul(X, Y), mul(Z, X)) -> mul(X, add(Y, Z))
+61. mul(X, add(Y, Y)) = mul(Y, add(X, X))
+62. vadd(X, vadd(Y, vneg(vadd(X, Y)))) -> 0v
+63. add(X, add(Y, neg(add(X, Y)))) -> 0
+64. add(dot(X, NAB), dot(NAB, Y)) -> dot(NAB, vadd(X, Y))
+65. dot(NAB, vadd(X, cross(Y, NAB))) -> dot(X, NAB)
+66. dot(NAB, cross(X, appl(NAB, Y))) -> dot(X, 0v)
+67. dot(NAB, vadd(X, vmul(0, Y))) -> dot(X, NAB)
+68. cross(NAB, vadd(appl(NAB, X), Y)) -> cross(NAB, Y)
+69. cross(vadd(X, appl(NAB, Y)), NAB) -> cross(X, NAB)
+70. dot(NAB, vadd(cross(NAB, X), Y)) -> dot(Y, NAB)
+71. add(mul(X, Y), mul(Z, Y)) -> mul(Y, add(X, Z))
+72. mul(appl(NAB, X), add(X, X)) -> appl(NAB, mul(X, X))
+73. add(dot(X, NAB), dot(Y, NAB)) -> dot(NAB, vadd(X, Y))
+74. dot(X, cross(Y, cross(Z, W))) <-> dot(Z, cross(W, cross(X, Y)))
+75. dot(X, cross(Y, cross(Z, W))) = dot(W, cross(cross(X, Y), Z))
+76. vadd(X, vadd(Y, vadd(Z, vneg(X)))) -> vadd(Y, Z)
+77. add(X, add(Y, add(Z, neg(X)))) -> add(Y, Z)
+78. mul(cross(X, NAB), appl(NAB, Y)) -> dot(NAB, vmul(Y, cross(X, NAB)))
+79. mul(vmul(0, X), appl(NAB, Y)) -> dot(NAB, vmul(Y, vmul(0, X)))
+80. vadd(cross(X, Y), vadd(Z, cross(Y, X))) -> Z
+81. add(appl(NAB, X), mul(X, appl(NAB, 1))) -> appl(NAB, X)
+82. mul(X, appl(NAB, 1)) -> 0
+83. add(appl(NAB, 1), appl(NAB, 1)) -> appl(NAB, 1)
+84. add(mul(X, Y), add(Z, mul(X, W))) -> add(Z, mul(X, add(Y, W)))
+85. dot(NAB, vmul(1, X)) -> dot(X, NAB)
+86. dot(NAB, vadd(X, vmul(1, Y))) -> dot(NAB, vadd(X, Y))
+87. add(appl(NAB, X), mul(appl(NAB, 1), X)) -> appl(NAB, X)
+88. vadd(X, vadd(Y, vadd(Z, vneg(vadd(X, Y))))) -> Z
+89. add(X, add(Y, add(Z, neg(add(X, Y))))) -> Z
+90. vadd(X, vadd(Y, vadd(Z, vneg(vadd(X, Z))))) -> Y
+91. add(X, add(Y, add(Z, neg(add(X, Z))))) -> Y
+92. vadd(cross(NAB, X), vadd(Y, cross(NAB, Z))) -> vadd(Y, cross(NAB, vadd(X, Z)))
+93. vadd(cross(X, NAB), cross(NAB, vadd(X, Y))) -> cross(NAB, Y)
+94. vadd(appl(NAB, X), vadd(Y, appl(NAB, Z))) -> vadd(Y, appl(NAB, vadd(X, Z)))
+95. add(dot(X, cross(Y, NAB)), dot(NAB, Z)) -> dot(NAB, vadd(Z, cross(X, Y)))
+96. add(dot(X, cross(NAB, Y)), dot(NAB, Z)) -> dot(NAB, vadd(Z, cross(Y, X)))
+97. add(dot(NAB, X), dot(Y, cross(Z, NAB))) -> dot(NAB, vadd(X, cross(Y, Z)))
+98. add(dot(NAB, X), dot(Y, cross(NAB, Z))) -> dot(NAB, vadd(X, cross(Z, Y)))
+99. add(dot(X, NAB), add(Y, dot(NAB, Z))) -> add(Y, dot(NAB, vadd(X, Z)))
+100. dot(NAB, cross(vadd(X, appl(NAB, Y)), Z)) -> dot(X, cross(Z, NAB))
+101. cross(NAB, vadd(X, vadd(Y, appl(NAB, Z)))) -> cross(NAB, vadd(X, Y))
+102. dot(NAB, vadd(X, vadd(Y, cross(NAB, Z)))) -> dot(NAB, vadd(X, Y))
+103. mul(X, add(dot(X, NAB), appl(NAB, X))) -> dot(NAB, vmul(X, X))
+104. dot(NAB, vadd(vmul(0, X), cross(Y, Z))) -> dot(Y, cross(Z, NAB))
+105. add(mul(X, mul(Y, Z)), mul(Y, W)) -> mul(Y, add(W, mul(X, Z)))
+106. add(mul(X, Y), mul(Z, mul(X, W))) -> mul(X, add(Y, mul(Z, W)))
+107. add(mul(X, Y), add(Z, mul(Y, W))) -> add(Z, mul(Y, add(X, W)))
+108. add(mul(X, mul(Y, Z)), mul(Z, W)) -> mul(Z, add(W, mul(X, Y)))
+109. add(mul(X, Y), mul(Z, mul(Y, W))) -> mul(Y, add(X, mul(Z, W)))
+110. add(mul(X, Y), add(Z, mul(W, X))) -> add(Z, mul(X, add(Y, W)))
+111. add(mul(X, mul(Y, Z)), mul(W, Y)) -> mul(Y, add(W, mul(X, Z)))
+112. add(mul(X, Y), add(mul(X, Z), W)) -> add(W, mul(X, add(Y, Z)))
+113. add(appl(NAB, X), mul(X, dot(1, NAB))) -> dot(NAB, vmul(X, 1))
+114. vsub(vmul(X, 0), vmul(NAB, dot(X, 0v))) -> cross(0v, cross(X, NAB))
+115. vsub(vmul(NAB, dot(X, 0v)), vmul(X, 0)) -> cross(0v, cross(NAB, X))
+116. add(dot(NAB, X), add(Y, dot(NAB, Z))) -> add(Y, dot(NAB, vadd(X, Z)))
+117. add(dot(X, NAB), dot(Y, cross(Z, NAB))) -> dot(NAB, vadd(X, cross(Y, Z)))
+118. add(dot(X, NAB), dot(Y, cross(NAB, Z))) -> dot(NAB, vadd(X, cross(Z, Y)))
+119. vadd(cross(NAB, X), vadd(cross(NAB, Y), Z)) -> vadd(Z, cross(NAB, vadd(Y, X)))
+120. vadd(appl(NAB, X), vadd(appl(NAB, Y), Z)) -> vadd(Z, appl(NAB, vadd(Y, X)))
+121. add(dot(X, NAB), add(Y, dot(Z, NAB))) -> add(Y, dot(NAB, vadd(X, Z)))
+  (hard) add(X, dot(NAB, vadd(Y, Z))) = add(X, add(dot(NAB, Z), dot(Y, NAB)))
+122. add(dot(X, NAB), add(dot(NAB, Y), Z)) -> add(Z, dot(NAB, vadd(Y, X)))
+123. dot(NAB, vadd(X, cross(appl(NAB, Y), Z))) -> add(dot(X, NAB), dot(Z, 0v))
+124. dot(NAB, vadd(X, cross(Y, appl(NAB, Z)))) -> add(dot(X, NAB), dot(Y, 0v))
+125. add(mul(X, Y), mul(Z, add(X, W))) = add(mul(Z, W), mul(X, add(Y, Z)))
+126. vsub(vmul(X, dot(Y, Z)), vmul(Y, dot(Z, X))) -> cross(Z, cross(X, Y))
+127. cross(cross(NAB, NAB), cross(X, Y)) -> vsub(vmul(X, 0), vmul(Y, 0))
+128. vsub(vmul(X, 0), vmul(0v, dot(X, NAB))) -> cross(NAB, cross(X, 0v))
+129. vsub(vmul(X, dot(Y, Z)), vmul(Z, dot(X, Y))) -> cross(Y, cross(X, Z))
+130. vsub(vmul(0v, dot(X, NAB)), vmul(X, 0)) -> cross(NAB, cross(0v, X))
+131. dot(NAB, vadd(vmul(1, X), cross(Y, Z))) -> dot(NAB, vadd(X, cross(Y, Z)))
+132. dot(NAB, vadd(X, vadd(Y, cross(Z, NAB)))) -> dot(NAB, vadd(X, Y))
+133. add(mul(X, dot(Y, NAB)), mul(appl(NAB, X), Y)) -> dot(NAB, vmul(X, Y))
+134. mul(0v, appl(NAB, X)) -> dot(NAB, vmul(X, 0v))
+135. add(mul(dot(NAB, X), Y), mul(appl(NAB, Y), X)) -> dot(NAB, vmul(Y, X))
+136. mul(cross(NAB, X), appl(NAB, Y)) -> dot(NAB, vmul(Y, cross(NAB, X)))
+137. add(mul(X, dot(NAB, Y)), mul(Y, appl(NAB, X))) -> dot(NAB, vmul(X, Y))
+138. add(mul(X, appl(NAB, Y)), mul(Y, appl(NAB, X))) -> appl(NAB, mul(X, Y))
+139. vsub(vmul(X, dot(Y, Z)), vmul(Y, dot(X, Z))) -> cross(Z, cross(X, Y))
+140. vadd(X, vadd(Y, vadd(Z, vneg(vadd(X, vadd(Y, Z)))))) -> 0v
+141. add(X, add(Y, add(Z, neg(add(X, add(Y, Z)))))) -> 0
+142. add(mul(dot(X, NAB), Y), mul(appl(NAB, Y), X)) -> dot(NAB, vmul(Y, X))
+143. add(mul(X, dot(Y, NAB)), mul(Y, appl(NAB, X))) -> dot(NAB, vmul(X, Y))
+144. add(mul(X, appl(NAB, Y)), mul(Y, dot(X, NAB))) -> dot(NAB, vmul(Y, X))
+145. add(mul(X, appl(NAB, Y)), mul(Y, dot(NAB, X))) -> dot(NAB, vmul(Y, X))
+146. add(mul(X, appl(NAB, Y)), mul(dot(NAB, X), Y)) -> dot(NAB, vmul(Y, X))
+147. vsub(vmul(X, 0), vmul(cross(NAB, Y), dot(X, NAB))) -> cross(NAB, cross(X, cross(NAB, Y)))
+148. vsub(vmul(0v, 0), vmul(cross(NAB, X), 0)) -> cross(NAB, cross(0v, cross(NAB, X)))
+149. vsub(vmul(cross(NAB, X), dot(Y, NAB)), vmul(Y, 0)) -> cross(NAB, cross(cross(NAB, X), Y))
+150. vsub(vmul(cross(NAB, X), 0), vmul(0v, 0)) -> cross(NAB, cross(cross(NAB, X), 0v))
+151. dot(NAB, vadd(X, cross(vadd(Y, appl(NAB, Z)), W))) -> dot(NAB, vadd(X, cross(Y, W)))
+152. add(mul(X, Y), add(Z, add(W, mul(X, V)))) -> add(W, add(Z, mul(X, add(V, Y))))
+153. add(mul(X, mul(Y, Z)), add(W, mul(Y, V))) -> add(W, mul(Y, add(V, mul(X, Z))))
+154. add(mul(X, Y), add(Z, mul(W, mul(X, V)))) -> add(Z, mul(X, add(Y, mul(W, V))))
+155. add(appl(NAB, X), mul(X, add(Y, appl(NAB, 1)))) -> add(appl(NAB, X), mul(X, Y))
+156. vsub(vmul(X, 0), vmul(cross(Y, NAB), dot(X, NAB))) -> cross(NAB, cross(X, cross(Y, NAB)))
+157. vsub(vmul(cross(X, NAB), dot(Y, NAB)), vmul(Y, 0)) -> cross(NAB, cross(cross(X, NAB), Y))
+158. vsub(vmul(X, 0), vmul(cross(NAB, NAB), dot(X, Y))) -> cross(Y, cross(X, cross(NAB, NAB)))
+159. vsub(vmul(cross(NAB, NAB), dot(X, Y)), vmul(X, 0)) -> cross(Y, cross(cross(NAB, NAB), X))
+160. vsub(vmul(X, 0), vmul(vmul(0, Y), dot(X, NAB))) -> cross(NAB, cross(X, vmul(0, Y)))
+161. vsub(vmul(vmul(0, X), dot(Y, NAB)), vmul(Y, 0)) -> cross(NAB, cross(vmul(0, X), Y))
+162. vsub(vmul(X, 0), vmul(NAB, dot(X, cross(NAB, Y)))) -> cross(cross(NAB, Y), cross(X, NAB))
+163. vsub(vmul(X, 0), vmul(NAB, dot(X, cross(Y, NAB)))) -> cross(cross(Y, NAB), cross(X, NAB))
+164. vsub(vmul(X, 0), vmul(NAB, dot(X, vmul(0, Y)))) -> cross(vmul(0, Y), cross(X, NAB))
+165. vsub(vmul(NAB, dot(X, cross(Y, NAB))), vmul(Y, 0)) -> cross(cross(NAB, X), cross(NAB, Y))
+166. vsub(vmul(NAB, dot(X, cross(Y, NAB))), vmul(X, 0)) -> cross(cross(Y, NAB), cross(NAB, X))
+167. vsub(vmul(NAB, dot(X, vmul(0, Y))), vmul(X, 0)) -> cross(vmul(0, Y), cross(NAB, X))
+168. vsub(vmul(X, 0), vmul(cross(NAB, Y), dot(NAB, X))) -> cross(NAB, cross(X, cross(NAB, Y)))
+169. vsub(vmul(cross(NAB, X), dot(NAB, Y)), vmul(Y, 0)) -> cross(NAB, cross(cross(NAB, X), Y))
+170. vadd(cross(NAB, X), vadd(Y, vadd(Z, cross(NAB, W)))) -> vadd(Z, vadd(Y, cross(NAB, vadd(W, X))))
+171. vadd(appl(NAB, X), vadd(Y, vadd(Z, appl(NAB, W)))) -> vadd(Z, vadd(Y, appl(NAB, vadd(W, X))))
+172. add(dot(X, cross(Y, NAB)), dot(Z, cross(W, NAB))) -> dot(NAB, vadd(cross(X, Y), cross(Z, W)))
+173. add(dot(X, cross(Y, NAB)), dot(Z, cross(NAB, W))) -> dot(NAB, vadd(cross(X, Y), cross(W, Z)))
+174. add(dot(X, NAB), add(Y, dot(Z, cross(W, NAB)))) -> add(Y, dot(NAB, vadd(X, cross(Z, W))))
+175. add(dot(X, cross(Y, cross(Z, NAB))), dot(NAB, W)) -> dot(NAB, vadd(W, cross(cross(X, Y), Z)))
+176. add(dot(X, cross(Y, NAB)), add(Z, dot(NAB, W))) -> add(Z, dot(NAB, vadd(W, cross(X, Y))))
+177. add(dot(X, cross(NAB, Y)), dot(Z, cross(W, NAB))) -> dot(NAB, vadd(cross(Y, X), cross(Z, W)))
+178. add(dot(X, cross(NAB, Y)), dot(Z, cross(NAB, W))) -> dot(NAB, vadd(cross(Y, X), cross(W, Z)))
+179. add(dot(X, NAB), add(Y, dot(Z, cross(NAB, W)))) -> add(Y, dot(NAB, vadd(X, cross(W, Z))))
+180. add(dot(X, cross(Y, cross(NAB, Z))), dot(NAB, W)) -> dot(NAB, vadd(W, cross(Z, cross(X, Y))))
+181. add(dot(X, cross(NAB, Y)), add(Z, dot(NAB, W))) -> add(Z, dot(NAB, vadd(W, cross(Y, X))))
+182. add(dot(NAB, X), dot(Y, cross(Z, cross(W, NAB)))) -> dot(NAB, vadd(X, cross(cross(Y, Z), W)))
+183. add(dot(NAB, X), add(Y, dot(Z, cross(W, NAB)))) -> add(Y, dot(NAB, vadd(X, cross(Z, W))))
+184. add(dot(NAB, X), dot(Y, cross(Z, cross(NAB, W)))) -> dot(NAB, vadd(X, cross(W, cross(Y, Z))))
+185. add(dot(NAB, X), add(Y, dot(Z, cross(NAB, W)))) -> add(Y, dot(NAB, vadd(X, cross(W, Z))))
+186. add(dot(X, NAB), add(Y, add(Z, dot(NAB, W)))) -> add(Z, add(Y, dot(NAB, vadd(W, X))))
+187. add(mul(X, Y), add(mul(Y, Z), neg(mul(Y, add(X, Z))))) -> 0
+188. add(mul(X, dot(Y, NAB)), add(Z, mul(appl(NAB, X), Y))) -> add(Z, dot(NAB, vmul(X, Y)))
+189. add(appl(NAB, mul(X, Y)), mul(X, dot(Y, NAB))) -> add(dot(NAB, vmul(X, Y)), mul(X, appl(NAB, Y)))
+190. add(mul(X, appl(NAB, Y)), add(Z, mul(appl(NAB, X), Y))) -> add(Z, appl(NAB, mul(X, Y)))
+191. add(mul(X, dot(NAB, Y)), add(Z, mul(appl(NAB, X), Y))) -> add(Z, dot(NAB, vmul(X, Y)))
+192. add(mul(dot(NAB, X), Y), add(Z, mul(appl(NAB, Y), X))) -> add(Z, dot(NAB, vmul(Y, X)))
+193. add(mul(X, dot(Y, NAB)), add(Z, mul(Y, appl(NAB, X)))) -> add(Z, dot(NAB, vmul(X, Y)))
+194. add(mul(X, dot(NAB, Y)), add(Z, mul(Y, appl(NAB, X)))) -> add(Z, dot(NAB, vmul(X, Y)))
+195. add(mul(X, appl(NAB, Y)), add(Z, mul(Y, appl(NAB, X)))) -> add(Z, appl(NAB, mul(X, Y)))
+196. add(mul(X, dot(Y, NAB)), add(mul(appl(NAB, X), Y), Z)) -> add(Z, dot(NAB, vmul(X, Y)))
+197. add(mul(dot(X, NAB), Y), add(Z, mul(appl(NAB, Y), X))) -> add(Z, dot(NAB, vmul(Y, X)))
+198. add(mul(X, appl(NAB, Y)), add(mul(appl(NAB, X), Y), Z)) -> add(Z, appl(NAB, mul(Y, X)))
+199. add(mul(appl(NAB, X), Y), add(Z, mul(appl(NAB, Y), X))) -> add(Z, appl(NAB, mul(X, Y)))
+200. add(appl(NAB, appl(NAB, X)), mul(X, appl(NAB, appl(NAB, 1)))) -> appl(NAB, appl(NAB, X))
+201. vsub(vmul(X, dot(Y, NAB)), vmul(vmul(1, Y), dot(X, NAB))) -> cross(NAB, cross(X, vmul(1, Y)))
+202. vsub(vmul(vmul(1, X), dot(Y, NAB)), vmul(Y, dot(X, NAB))) -> cross(NAB, cross(vmul(1, X), Y))
+203. add(mul(X, dot(Y, NAB)), mul(vmul(1, Y), appl(NAB, X))) -> dot(NAB, vmul(X, vmul(1, Y)))
+204. vsub(vmul(X, dot(Y, NAB)), vmul(NAB, dot(X, vmul(1, Y)))) -> cross(vmul(1, Y), cross(X, NAB))
+205. vsub(vmul(NAB, dot(X, vmul(1, Y))), vmul(X, dot(Y, NAB))) -> cross(vmul(1, Y), cross(NAB, X))
+206. add(mul(X, dot(Y, NAB)), mul(Y, add(Z, appl(NAB, X)))) -> add(mul(Y, Z), dot(NAB, vmul(X, Y)))
+207. add(mul(X, appl(NAB, Y)), mul(Y, add(Z, appl(NAB, X)))) -> add(mul(Y, Z), appl(NAB, mul(X, Y)))
+208. vsub(vmul(X, dot(Y, cross(Z, W))), vmul(cross(Y, Z), dot(W, X))) -> cross(W, cross(X, cross(Y, Z)))
+209. vsub(vmul(NAB, dot(X, cross(Y, 0v))), vmul(cross(X, Y), 0)) -> cross(0v, cross(NAB, cross(X, Y)))
+210. vsub(vmul(X, dot(Y, cross(Z, W))), vmul(cross(W, Y), dot(Z, X))) -> cross(Z, cross(X, cross(W, Y)))
+211. vsub(vmul(cross(X, Y), dot(Z, W)), vmul(W, dot(X, cross(Y, Z)))) -> cross(Z, cross(cross(X, Y), W))
+212. vsub(vmul(cross(X, Y), 0), vmul(NAB, dot(X, cross(Y, 0v)))) -> cross(0v, cross(cross(X, Y), NAB))
+213. vsub(vmul(cross(X, Y), dot(Z, W)), vmul(W, dot(Y, cross(Z, X)))) -> cross(Z, cross(cross(X, Y), W))
+214. add(mul(X, dot(Y, NAB)), mul(appl(NAB, X), add(Y, Z))) -> add(dot(NAB, vmul(X, Y)), mul(Z, appl(NAB, X)))
+215. add(mul(X, appl(NAB, Y)), mul(appl(NAB, X), add(Y, Z))) -> add(appl(NAB, mul(X, Y)), mul(Z, appl(NAB, X)))
+216. add(mul(X, dot(Y, cross(Z, NAB))), mul(appl(NAB, X), cross(Y, Z))) -> dot(NAB, vmul(X, cross(Y, Z)))
+217. mul(cross(X, Y), add(dot(X, cross(Y, NAB)), appl(NAB, cross(X, Y)))) -> dot(NAB, vmul(cross(X, Y), cross(X, Y)))
+218. add(mul(X, dot(Y, cross(NAB, Z))), mul(appl(NAB, X), cross(Z, Y))) -> dot(NAB, vmul(X, cross(Z, Y)))
+219. add(mul(X, mul(Y, dot(Z, NAB))), mul(Z, appl(NAB, mul(X, Y)))) -> dot(NAB, vmul(mul(X, Y), Z))
+220. mul(X, dot(NAB, vmul(Y, 0))) -> dot(NAB, vmul(mul(X, Y), 0))
+221. mul(X, add(appl(NAB, mul(X, Y)), mul(Y, dot(X, NAB)))) -> dot(NAB, vmul(mul(X, Y), X))
+222. add(appl(NAB, mul(X, Y)), mul(X, mul(Y, dot(1, NAB)))) -> dot(NAB, vmul(mul(X, Y), 1))
+223. add(mul(X, mul(Y, appl(NAB, Z))), mul(Z, appl(NAB, mul(X, Y)))) -> appl(NAB, mul(X, mul(Y, Z)))
+224. mul(X, add(appl(NAB, mul(X, Y)), mul(Y, appl(NAB, X)))) -> appl(NAB, mul(X, mul(X, Y)))
+225. vsub(vmul(X, dot(Y, cross(Z, W))), vmul(W, dot(Y, cross(Z, X)))) -> cross(cross(Y, Z), cross(X, W))
+226. vsub(vmul(X, dot(Y, cross(Z, W))), vmul(Y, dot(Z, cross(W, X)))) -> cross(cross(Z, W), cross(X, Y))
+227. vsub(vmul(cross(X, Y), dot(Z, W)), vmul(Z, dot(X, cross(Y, W)))) -> cross(W, cross(cross(X, Y), Z))
+228. vsub(vmul(cross(X, Y), dot(Z, W)), vmul(Z, dot(Y, cross(W, X)))) -> cross(W, cross(cross(X, Y), Z))
+229. vsub(vmul(X, dot(Y, cross(Z, W))), vmul(cross(Y, Z), dot(X, W))) -> cross(W, cross(X, cross(Y, Z)))
+230. vsub(vmul(X, dot(Y, cross(Z, W))), vmul(cross(W, Y), dot(X, Z))) -> cross(Z, cross(X, cross(W, Y)))
+231. add(mul(X, dot(NAB, mul(Y, Z))), mul(Y, mul(appl(NAB, X), Z))) -> dot(NAB, vmul(X, mul(Y, Z)))
+232. add(mul(X, appl(NAB, mul(Y, Z))), mul(Y, mul(appl(NAB, X), Z))) -> appl(NAB, mul(X, mul(Y, Z)))
+233. add(mul(dot(X, cross(Y, NAB)), Z), mul(appl(NAB, Z), cross(X, Y))) -> dot(NAB, vmul(Z, cross(X, Y)))
+234. add(mul(dot(X, cross(NAB, Y)), Z), mul(appl(NAB, Z), cross(Y, X))) -> dot(NAB, vmul(Z, cross(Y, X)))
+235. add(mul(X, mul(dot(NAB, Y), Z)), mul(appl(NAB, mul(X, Z)), Y)) -> dot(NAB, vmul(mul(X, Z), Y))
+236. add(mul(X, mul(Y, appl(NAB, Z))), mul(Z, dot(NAB, mul(X, Y)))) -> dot(NAB, vmul(Z, mul(X, Y)))
+237. add(mul(X, dot(Y, cross(Z, NAB))), mul(cross(Y, Z), appl(NAB, X))) -> dot(NAB, vmul(X, cross(Y, Z)))
+238. add(mul(X, dot(Y, cross(NAB, Z))), mul(cross(Z, Y), appl(NAB, X))) -> dot(NAB, vmul(X, cross(Z, Y)))
+239. add(mul(X, dot(NAB, mul(Y, Z))), mul(Y, mul(Z, appl(NAB, X)))) -> dot(NAB, vmul(X, mul(Y, Z)))
+240. add(mul(X, appl(NAB, mul(Y, Z))), mul(Y, mul(Z, appl(NAB, X)))) -> appl(NAB, mul(X, mul(Y, Z)))
+241. add(mul(X, mul(Y, dot(NAB, Z))), mul(Z, appl(NAB, mul(X, Y)))) -> dot(NAB, vmul(mul(X, Y), Z))
+242. add(mul(X, appl(NAB, mul(Y, Z))), mul(Y, mul(Z, dot(X, NAB)))) -> dot(NAB, vmul(mul(Z, Y), X))
+243. add(mul(X, mul(dot(Y, NAB), Z)), mul(Y, appl(NAB, mul(Z, X)))) -> dot(NAB, vmul(mul(X, Z), Y))
+244. add(mul(X, mul(dot(Y, NAB), Z)), mul(Y, appl(NAB, mul(X, Z)))) -> dot(NAB, vmul(mul(X, Z), Y))
+245. add(mul(X, mul(Y, dot(Z, NAB))), mul(appl(NAB, mul(X, Y)), Z)) -> dot(NAB, vmul(mul(X, Y), Z))
+246. add(mul(X, mul(appl(NAB, Y), Z)), mul(Y, appl(NAB, mul(Z, X)))) -> appl(NAB, mul(Y, mul(X, Z)))
+247. add(mul(X, mul(appl(NAB, Y), Z)), mul(Y, appl(NAB, mul(X, Z)))) -> appl(NAB, mul(X, mul(Z, Y)))
+248. add(mul(X, mul(Y, appl(NAB, Z))), mul(appl(NAB, mul(X, Y)), Z)) -> appl(NAB, mul(X, mul(Y, Z)))
+249. add(appl(NAB, appl(NAB, X)), mul(X, dot(NAB, appl(NAB, 1)))) -> add(appl(NAB, appl(NAB, X)), dot(NAB, vmul(X, appl(NAB, 1))))
+250. add(mul(X, dot(Y, NAB)), add(Z, add(W, mul(appl(NAB, X), Y)))) -> add(W, add(Z, dot(NAB, vmul(X, Y))))
+251. add(mul(X, appl(NAB, Y)), add(Z, add(W, mul(appl(NAB, X), Y)))) -> add(W, add(Z, appl(NAB, mul(Y, X))))
+252. vsub(vmul(X, dot(Y, 0v)), vmul(cross(appl(NAB, Z), Y), dot(X, NAB))) -> cross(NAB, cross(X, cross(appl(NAB, Z), Y)))
+253. vsub(vmul(cross(appl(NAB, X), Y), dot(Z, NAB)), vmul(Z, dot(Y, 0v))) -> cross(NAB, cross(cross(appl(NAB, X), Y), Z))
+254. add(mul(X, dot(Y, 0v)), mul(appl(NAB, X), cross(appl(NAB, Z), Y))) -> dot(NAB, vmul(X, cross(appl(NAB, Z), Y)))
+255. vsub(vmul(X, dot(Y, NAB)), vmul(vadd(Y, cross(NAB, Z)), dot(X, NAB))) -> cross(NAB, cross(X, vadd(Y, cross(NAB, Z))))
+256. vsub(vmul(vadd(X, cross(NAB, Y)), dot(Z, NAB)), vmul(Z, dot(X, NAB))) -> cross(NAB, cross(vadd(X, cross(NAB, Y)), Z))
+257. add(mul(X, dot(Y, NAB)), mul(appl(NAB, X), vadd(Y, cross(NAB, Z)))) -> dot(NAB, vmul(X, vadd(Y, cross(NAB, Z))))
+258. vsub(vmul(X, dot(Y, 0v)), vmul(NAB, dot(X, cross(appl(NAB, Z), Y)))) -> cross(cross(appl(NAB, Z), Y), cross(X, NAB))
+259. vsub(vmul(X, dot(Y, NAB)), vmul(NAB, dot(X, vadd(Y, cross(NAB, Z))))) -> cross(vadd(Y, cross(NAB, Z)), cross(X, NAB))
+260. vsub(vmul(NAB, dot(X, cross(appl(NAB, Y), Z))), vmul(X, dot(Z, 0v))) -> cross(cross(appl(NAB, Y), Z), cross(NAB, X))
+261. vsub(vmul(NAB, dot(X, vadd(Y, cross(NAB, Z)))), vmul(X, dot(Y, NAB))) -> cross(vadd(Y, cross(NAB, Z)), cross(NAB, X))
+262. vsub(vmul(cross(X, Y), 0), vmul(cross(NAB, Z), dot(X, cross(Y, NAB)))) -> cross(NAB, cross(cross(X, Y), cross(NAB, Z)))
+263. vsub(vmul(cross(NAB, X), dot(Y, cross(Z, NAB))), vmul(cross(Y, Z), 0)) -> cross(NAB, cross(cross(NAB, X), cross(Y, Z)))
+264. vsub(vmul(X, dot(Y, 0v)), vmul(cross(Y, NAB), dot(X, appl(NAB, Z)))) -> cross(appl(NAB, Z), cross(X, cross(Y, NAB)))
+265. vsub(vmul(cross(X, NAB), dot(Y, cross(Z, NAB))), vmul(cross(Y, Z), 0)) -> cross(NAB, cross(cross(X, NAB), cross(Y, Z)))
+266. vsub(vmul(cross(NAB, NAB), dot(X, cross(Y, Z))), vmul(cross(Y, Z), 0)) -> cross(X, vsub(vmul(Y, 0), vmul(Z, 0)))
+267. vsub(vmul(X, dot(Y, 0v)), vmul(cross(Y, appl(NAB, Z)), dot(X, NAB))) -> cross(NAB, cross(X, cross(Y, appl(NAB, Z))))
+268. vsub(vmul(vmul(0, X), dot(Y, cross(Z, NAB))), vmul(cross(Y, Z), 0)) -> cross(NAB, cross(vmul(0, X), cross(Y, Z)))
+269. vsub(vmul(X, dot(Y, 0v)), vmul(cross(NAB, Y), dot(X, appl(NAB, Z)))) -> cross(appl(NAB, Z), cross(X, cross(NAB, Y)))
+270. vsub(vmul(cross(X, NAB), dot(Y, appl(NAB, Z))), vmul(Y, dot(X, 0v))) -> cross(appl(NAB, Z), cross(cross(X, NAB), Y))
+271. vsub(vmul(cross(X, Y), 0), vmul(cross(Z, NAB), dot(X, cross(Y, NAB)))) -> cross(NAB, cross(cross(X, Y), cross(Z, NAB)))
+272. vsub(vmul(cross(X, Y), 0), vmul(cross(NAB, NAB), dot(Y, cross(Z, X)))) -> cross(Z, cross(cross(X, Y), cross(NAB, NAB)))
+273. vsub(vmul(cross(X, appl(NAB, Y)), dot(Z, NAB)), vmul(Z, dot(X, 0v))) -> cross(NAB, cross(cross(X, appl(NAB, Y)), Z))
+274. vsub(vmul(cross(X, Y), 0), vmul(vmul(0, Z), dot(X, cross(Y, NAB)))) -> cross(NAB, cross(cross(X, Y), vmul(0, Z)))
+275. vsub(vmul(cross(NAB, X), dot(Y, appl(NAB, Z))), vmul(Y, dot(X, 0v))) -> cross(appl(NAB, Z), cross(cross(NAB, X), Y))
+276. add(mul(X, dot(Y, 0v)), mul(appl(NAB, X), cross(Y, appl(NAB, Z)))) -> dot(NAB, vmul(X, cross(Y, appl(NAB, Z))))
+277. add(appl(NAB, mul(X, cross(Y, Z))), mul(X, dot(Y, cross(Z, NAB)))) -> add(dot(NAB, vmul(X, cross(Y, Z))), mul(X, appl(NAB, cross(Y, Z))))
+278. add(dot(X, NAB), add(dot(Y, cross(NAB, Z)), neg(dot(NAB, vadd(X, cross(Z, Y)))))) -> 0
+279. add(mul(X, dot(Y, NAB)), add(mul(Y, appl(NAB, X)), neg(dot(NAB, vmul(X, Y))))) -> 0
+280. add(mul(X, appl(NAB, Y)), add(mul(Y, appl(NAB, X)), neg(appl(NAB, mul(X, Y))))) -> 0
+281. add(dot(NAB, vmul(X, appl(NAB, Y))), mul(Y, dot(NAB, appl(NAB, X)))) <-> add(dot(NAB, vmul(Y, appl(NAB, X))), mul(X, dot(NAB, appl(NAB, Y))))
+282. add(appl(NAB, mul(X, appl(NAB, Y))), mul(Y, dot(NAB, appl(NAB, X)))) -> add(dot(NAB, vmul(Y, appl(NAB, X))), mul(X, appl(NAB, appl(NAB, Y))))
+283. add(appl(NAB, mul(X, appl(NAB, Y))), mul(Y, appl(NAB, appl(NAB, X)))) <-> add(appl(NAB, mul(Y, appl(NAB, X))), mul(X, appl(NAB, appl(NAB, Y))))
+284. add(mul(X, mul(Y, dot(Z, NAB))), add(W, mul(appl(NAB, mul(X, Y)), Z))) -> add(W, dot(NAB, vmul(mul(X, Y), Z)))
+285. add(mul(X, dot(Y, cross(Z, NAB))), add(W, mul(appl(NAB, X), cross(Y, Z)))) -> add(W, dot(NAB, vmul(X, cross(Y, Z))))
+286. add(mul(X, dot(NAB, mul(Y, Z))), add(W, mul(Y, mul(appl(NAB, X), Z)))) -> add(W, dot(NAB, vmul(X, mul(Y, Z))))
+287. add(mul(X, mul(Y, appl(NAB, Z))), add(W, mul(appl(NAB, mul(X, Y)), Z))) -> add(W, appl(NAB, mul(X, mul(Y, Z))))
+288. add(mul(X, appl(NAB, mul(Y, Z))), add(W, mul(Y, mul(appl(NAB, X), Z)))) -> add(W, appl(NAB, mul(X, mul(Y, Z))))
+289. add(mul(X, dot(Y, cross(NAB, Z))), add(W, mul(appl(NAB, X), cross(Z, Y)))) -> add(W, dot(NAB, vmul(X, cross(Z, Y))))
+290. add(mul(X, mul(Y, dot(Z, NAB))), add(W, mul(Z, appl(NAB, mul(X, Y))))) -> add(W, dot(NAB, vmul(mul(X, Y), Z)))
+291. add(mul(X, mul(Y, appl(NAB, Z))), add(W, mul(Z, appl(NAB, mul(X, Y))))) -> add(W, appl(NAB, mul(X, mul(Y, Z))))
+292. vsub(vmul(vmul(1, X), dot(Y, cross(Z, NAB))), vmul(cross(Y, Z), dot(X, NAB))) -> cross(NAB, cross(vmul(1, X), cross(Y, Z)))
+293. vsub(vmul(cross(X, Y), dot(Z, NAB)), vmul(vmul(1, Z), dot(X, cross(Y, NAB)))) -> cross(NAB, cross(cross(X, Y), vmul(1, Z)))
+294. add(mul(X, mul(Y, dot(Z, NAB))), mul(Z, add(W, appl(NAB, mul(X, Y))))) -> add(mul(Z, W), dot(NAB, vmul(mul(X, Y), Z)))
+295. add(mul(X, mul(Y, appl(NAB, Z))), mul(Z, add(W, appl(NAB, mul(X, Y))))) -> add(mul(Z, W), appl(NAB, mul(X, mul(Y, Z))))
+296. add(mul(X, dot(Y, cross(Z, NAB))), mul(appl(NAB, X), add(W, cross(Y, Z)))) -> add(mul(W, appl(NAB, X)), dot(NAB, vmul(X, cross(Y, Z))))
+297. vsub(vmul(cross(X, Y), dot(Z, cross(W, V))), vmul(cross(Z, W), dot(X, cross(Y, V)))) -> cross(V, cross(cross(X, Y), cross(Z, W)))
+298. vsub(vmul(cross(X, Y), dot(Z, cross(W, V))), vmul(cross(Z, W), dot(Y, cross(V, X)))) -> cross(V, cross(cross(X, Y), cross(Z, W)))
+299. vsub(vmul(X, dot(Y, cross(Z, cross(W, V)))), vmul(cross(cross(Y, Z), W), dot(V, X))) -> cross(V, cross(X, cross(cross(Y, Z), W)))
+300. vsub(vmul(X, dot(Y, cross(Z, cross(W, V)))), vmul(cross(Y, Z), dot(W, cross(V, X)))) -> cross(cross(W, V), cross(X, cross(Y, Z)))
+301. vsub(vmul(cross(X, Y), dot(Z, cross(W, V))), vmul(cross(V, Z), dot(X, cross(Y, W)))) -> cross(W, cross(cross(X, Y), cross(V, Z)))
+302. vsub(vmul(cross(X, Y), dot(Z, cross(W, V))), vmul(cross(V, Z), dot(Y, cross(W, X)))) -> cross(W, cross(cross(X, Y), cross(V, Z)))
+303. vsub(vmul(X, dot(Y, cross(Z, cross(W, V)))), vmul(cross(V, cross(Y, Z)), dot(W, X))) -> cross(W, cross(X, cross(V, cross(Y, Z))))
+304. vsub(vmul(X, dot(Y, cross(cross(Z, W), V))), vmul(cross(V, Y), dot(Z, cross(W, X)))) -> cross(cross(Z, W), cross(X, cross(V, Y)))
+305. vsub(vmul(cross(cross(X, Y), Z), dot(W, V)), vmul(V, dot(X, cross(Y, cross(Z, W))))) -> cross(W, cross(cross(cross(X, Y), Z), V))
+306. vsub(vmul(cross(X, cross(Y, Z)), dot(W, V)), vmul(V, dot(Y, cross(Z, cross(W, X))))) -> cross(W, cross(cross(X, cross(Y, Z)), V))
+307. add(mul(X, mul(Y, dot(Z, cross(W, NAB)))), mul(cross(Z, W), appl(NAB, mul(X, Y)))) -> dot(NAB, vmul(mul(X, Y), cross(Z, W)))
+308. add(mul(X, dot(Y, cross(Z, cross(W, NAB)))), mul(appl(NAB, X), cross(cross(Y, Z), W))) -> dot(NAB, vmul(X, cross(cross(Y, Z), W)))
+309. add(mul(X, dot(Y, cross(Z, cross(NAB, W)))), mul(appl(NAB, X), cross(W, cross(Y, Z)))) -> dot(NAB, vmul(X, cross(W, cross(Y, Z))))
+310. add(mul(X, mul(Y, mul(Z, dot(W, NAB)))), mul(W, appl(NAB, mul(X, mul(Y, Z))))) -> dot(NAB, vmul(mul(X, mul(Y, Z)), W))
+311. add(mul(X, mul(Y, dot(NAB, mul(Z, W)))), mul(Z, mul(W, appl(NAB, mul(X, Y))))) -> dot(NAB, vmul(mul(X, Y), mul(Z, W)))
+312. add(mul(X, mul(Y, mul(Z, appl(NAB, W)))), mul(W, appl(NAB, mul(X, mul(Y, Z))))) -> appl(NAB, mul(X, mul(Y, mul(Z, W))))
+313. add(mul(X, mul(Y, appl(NAB, mul(Z, W)))), mul(Z, mul(W, appl(NAB, mul(X, Y))))) -> appl(NAB, mul(X, mul(Y, mul(Z, W))))
+314. vsub(vmul(cross(appl(NAB, X), Y), dot(Z, cross(W, NAB))), vmul(cross(Z, W), dot(Y, 0v))) -> cross(NAB, cross(cross(appl(NAB, X), Y), cross(Z, W)))
+315. vsub(vmul(X, dot(Y, cross(NAB, Z))), vmul(cross(Y, NAB), dot(X, vadd(Z, appl(NAB, W))))) -> cross(vadd(Z, appl(NAB, W)), cross(X, cross(Y, NAB)))
+316. vsub(vmul(vadd(X, cross(NAB, Y)), dot(Z, cross(W, NAB))), vmul(cross(Z, W), dot(X, NAB))) -> cross(NAB, cross(vadd(X, cross(NAB, Y)), cross(Z, W)))
+317. vsub(vmul(X, dot(Y, cross(Z, NAB))), vmul(cross(vadd(Y, appl(NAB, W)), Z), dot(X, NAB))) -> cross(NAB, cross(X, cross(vadd(Y, appl(NAB, W)), Z)))
+318. vsub(vmul(cross(X, Y), dot(Z, 0v)), vmul(cross(appl(NAB, W), Z), dot(X, cross(Y, NAB)))) -> cross(NAB, cross(cross(X, Y), cross(appl(NAB, W), Z)))
+319. vsub(vmul(cross(X, NAB), dot(Y, vadd(Z, appl(NAB, W)))), vmul(Y, dot(X, cross(NAB, Z)))) -> cross(vadd(Z, appl(NAB, W)), cross(cross(X, NAB), Y))
+320. vsub(vmul(cross(X, Y), dot(Z, NAB)), vmul(vadd(Z, cross(NAB, W)), dot(X, cross(Y, NAB)))) -> cross(NAB, cross(cross(X, Y), vadd(Z, cross(NAB, W))))
+321. vsub(vmul(cross(vadd(X, appl(NAB, Y)), Z), dot(W, NAB)), vmul(W, dot(X, cross(Z, NAB)))) -> cross(NAB, cross(cross(vadd(X, appl(NAB, Y)), Z), W))
+322. add(mul(X, dot(Y, cross(Z, NAB))), mul(appl(NAB, X), cross(vadd(Y, appl(NAB, W)), Z))) -> dot(NAB, vmul(X, cross(vadd(Y, appl(NAB, W)), Z)))
+323. add(mul(X, dot(Y, cross(Z, NAB))), add(mul(cross(Y, Z), appl(NAB, X)), neg(dot(NAB, vmul(X, cross(Y, Z)))))) -> 0
+324. add(mul(X, appl(NAB, mul(Y, Z))), add(mul(Y, mul(Z, dot(X, NAB))), neg(dot(NAB, vmul(mul(Y, Z), X))))) -> 0
+325. add(appl(NAB, mul(X, appl(NAB, mul(Y, Z)))), mul(Y, mul(Z, dot(NAB, appl(NAB, X))))) -> add(dot(NAB, vmul(mul(Y, Z), appl(NAB, X))), mul(X, appl(NAB, appl(NAB, mul(Y, Z)))))
+326. add(appl(NAB, mul(X, mul(Y, appl(NAB, Z)))), mul(Z, dot(NAB, appl(NAB, mul(X, Y))))) -> add(dot(NAB, vmul(Z, appl(NAB, mul(X, Y)))), mul(X, mul(Y, appl(NAB, appl(NAB, Z)))))
+327. add(appl(NAB, mul(X, appl(NAB, mul(Y, Z)))), mul(Y, mul(Z, appl(NAB, appl(NAB, X))))) = add(appl(NAB, mul(Y, mul(Z, appl(NAB, X)))), mul(X, appl(NAB, appl(NAB, mul(Y, Z)))))
+328. add(mul(X, appl(NAB, mul(Y, Z))), add(mul(Y, mul(Z, appl(NAB, X))), neg(appl(NAB, mul(X, mul(Y, Z)))))) -> 0
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (add_zero_left): add(0, X) = X.
+
+Goal 1 (test_goal): add(0, X) = X.
+The goal is true when:
+  X = X
+
+Proof:
+  add(0, X)
+= { by axiom 1 (add_zero_left) }
+  X
+
+RESULT: Unsatisfiable (the axioms are contradictory).
+
+Execution time: 0.243113 seconds
+

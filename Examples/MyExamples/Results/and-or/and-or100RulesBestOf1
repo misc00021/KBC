@@ -1,0 +1,212 @@
+Here is the input problem:
+  Axiom 1 (not_not): not(not(X)) = X.
+  Axiom 2 (or_comm): X + Y = Y + X.
+  Axiom 3 (or_false): X + 0 = X.
+  Axiom 4 (lem): X + not(X) = 1.
+  Axiom 5 (and_comm): X * Y = Y * X.
+  Axiom 6 (and_false): X * 0 = 0.
+  Axiom 7 (contra): X * not(X) = 0.
+  Axiom 8 (de_morgan): not(X + Y) = not(X) * not(Y).
+  Axiom 9 (or_assoc): X + (Y + Z) = (X + Y) + Z.
+  Axiom 10 (and_assoc): X * (Y * Z) = (X * Y) * Z.
+  Axiom 11 (distrib): X * (Y + Z) = (X * Y) + (X * Z).
+  Axiom 12 (distrib): X + (Y * Z) = (X + Y) * (X + Z).
+  Goal 1 (a): a = b.
+
+1. not(not(X)) -> X
+2. X + Y <-> Y + X
+3. X + 0 -> X
+4. X + not(X) -> 1
+5. X * Y <-> Y * X
+6. X * 0 -> 0
+7. X * not(X) -> 0
+8. not(X + Y) -> not(X) * not(Y)
+9. (X + Y) + Z -> X + (Y + Z)
+10. (X * Y) * Z -> X * (Y * Z)
+11. (X * Y) + (X * Z) -> X * (Y + Z)
+12. (X + Y) * (X + Z) -> X + (Y * Z)
+13. not(1) -> 0
+14. not(0) -> 1
+15. 0 + X -> X
+16. 0 * X -> 0
+17. X * (X + Y) -> X
+18. X * X -> X
+19. X * 1 -> X
+20. 1 * X -> X
+21. X + 1 -> 1
+22. X * (Y + X) -> X
+23. X + (X * Y) -> X
+24. X + X -> X
+25. 1 + X -> 1
+26. X + (Y + Z) <-> Y + (X + Z)
+27. X * (Y * Z) <-> Y * (X * Z)
+28. X + (Y * X) -> X
+29. X * (Y + not(X)) -> X * Y
+30. X + (Y + not(X)) -> 1
+31. X * (Y * not(X)) -> 0
+32. not(not(X) * not(Y)) -> X + Y
+33. not(X * not(Y)) -> Y + not(X)
+34. not(not(X) * Y) -> X + not(Y)
+35. X * (X * Y) -> X * Y
+36. not(X) + (Y + X) -> 1
+37. X + (not(X) + Y) -> 1
+38. not(X) * (Y * X) -> 0
+39. X * (not(X) * Y) -> 0
+40. X + (Y * not(X)) -> X + Y
+41. not(X * Y) -> not(X) + not(Y)
+42. X * (not(X) + Y) -> X * Y
+43. X + (not(X) * Y) -> X + Y
+44. X + (X + Y) -> X + Y
+45. X * (Y * X) -> X * Y
+46. not(X) * (Y + X) -> Y * not(X)
+47. not(X) + (Y * X) -> Y + not(X)
+48. X * (Y + (X + Z)) -> X
+49. X + (Y + X) -> X + Y
+50. (X * Y) + (Y * Z) -> Y * (X + Z)
+51. (X * Y) + (Z * X) -> X * (Y + Z)
+52. (X + Y) * (Y + Z) -> Y + (X * Z)
+53. (X + Y) * (Z + X) -> X + (Y * Z)
+54. not(X) * (X + Y) -> Y * not(X)
+55. not(X) + (X * Y) -> Y + not(X)
+56. X * (Y * (X + Z)) -> X * Y
+57. X + (Y * (X * Z)) -> X
+58. X * (Y + (Z + X)) -> X
+59. (X * Y) + (Z * Y) -> Y * (X + Z)
+60. X + (Y * (X + Z)) -> X + (Z * Y)
+61. (X + Y) * (Z + Y) -> Y + (X * Z)
+62. X + (Y + (X * Z)) -> X + Y
+63. X * (Y * (Z + X)) -> X * Y
+64. X + (Y + (Z + not(X))) -> 1
+65. X * (Y * (Z * not(X))) -> 0
+66. X * ((X + Y) * Z) -> X * Z
+67. X + (Y * (Z * X)) -> X
+68. X + (Y * (Z + not(X))) -> X + Y
+69. X * (Y + (Z * not(X))) -> X * Y
+70. X * (Y + (X * Z)) -> X * (Z + Y)
+71. X + (Y * (Z + X)) -> X + (Z * Y)
+72. X + ((X + Y) * Z) -> X + (Y * Z)
+73. X + (Y + (Z * X)) -> X + Y
+  (hard) 1 = not(X) + (Y + (Z + X))
+74. X + (Y + (not(X) + Z)) -> 1
+  (hard) 0 = not(X) * (Y * (Z * X))
+75. X * (Y * (not(X) * Z)) -> 0
+76. X + ((X * Y) + Z) -> X + Z
+77. X * ((Y + X) * Z) -> X * Z
+78. X * (Y + (Z + not(X))) -> X * (Y + Z)
+79. X * (Y * (Z + not(X))) -> X * (Z * Y)
+80. X + (Y + (Z * not(X))) -> X + (Z + Y)
+81. X + (Y * (Z * not(X))) -> X + (Y * Z)
+82. X + (Y * (not(X) + Z)) -> X + Y
+83. X + ((Y + not(X)) * Z) -> X + Z
+84. X * ((Y * not(X)) + Z) -> X * Z
+85. X * (Y + (not(X) * Z)) -> X * Y
+86. X * ((X * Y) + Z) -> X * (Y + Z)
+87. X * (Y + (Z * X)) -> X * (Z + Y)
+88. X + ((Y + X) * Z) -> X + (Y * Z)
+89. X + ((Y * X) + Z) -> X + Z
+  (hard) 1 = not(X) + (Y + (X + Z))
+  (hard) 0 = not(X) * (Y * (X * Z))
+90. not(X) + (Y * (X + Z)) -> Y + not(X)
+91. not(X) * (Y + (X * Z)) -> Y * not(X)
+92. not(X) + (Y * (Z + X)) -> Y + not(X)
+93. not(X) * (Y + (Z * X)) -> Y * not(X)
+94. X * (Y + (Z + (X + W))) -> X
+95. X * (Y + (not(X) + Z)) -> X * (Y + Z)
+96. X * (Y * (not(X) + Z)) -> X * (Y * Z)
+97. X + (Y + (not(X) * Z)) -> X + (Y + Z)
+98. X + (Y * (not(X) * Z)) -> X + (Y * Z)
+99. X * ((Y + not(X)) * Z) -> X * (Y * Z)
+100. X + ((Y * not(X)) + Z) -> X + (Y + Z)
+
+Gave up on reaching the given resource limit.
+Here is the final rewrite system:
+  not(0) -> 1
+  not(1) -> 0
+  not(not(X)) -> X
+  X + X -> X
+  X + Y <-> Y + X
+  X + 0 -> X
+  X + 1 -> 1
+  0 + X -> X
+  1 + X -> 1
+  X * X -> X
+  X * Y <-> Y * X
+  X * 0 -> 0
+  X * 1 -> X
+  0 * X -> 0
+  1 * X -> X
+  X + not(X) -> 1
+  X * not(X) -> 0
+  not(X + Y) -> not(X) * not(Y)
+  not(X * Y) -> not(X) + not(Y)
+  X + (Y + X) -> X + Y
+  X + (Y + Z) <-> Y + (X + Z)
+  X + (Y * X) -> X
+  (X + Y) + Z -> X + (Y + Z)
+  X * (Y + X) -> X
+  X * (Y * X) -> X * Y
+  X * (Y * Z) <-> Y * (X * Z)
+  (X * Y) * Z -> X * (Y * Z)
+  X + (Y + not(X)) -> 1
+  X + (not(X) + Y) -> 1
+  X + (Y * not(X)) -> X + Y
+  X + (not(X) * Y) -> X + Y
+  not(X) + (X * Y) -> Y + not(X)
+  not(X) + (Y * X) -> Y + not(X)
+  X * (Y + not(X)) -> X * Y
+  X * (not(X) + Y) -> X * Y
+  X * (Y * not(X)) -> 0
+  X * (not(X) * Y) -> 0
+  not(X) * (X + Y) -> Y * not(X)
+  not(X) * (Y + X) -> Y * not(X)
+  X + (Y + (Z * X)) -> X + Y
+  X + (Y + (X * Z)) -> X + Y
+  X + ((X * Y) + Z) -> X + Z
+  X + ((Y * X) + Z) -> X + Z
+  X + (Y * (X * Z)) -> X
+  X + (Y * (Z * X)) -> X
+  X + (Y * (Z + X)) -> X + (Z * Y)
+  X + ((X + Y) * Z) -> X + (Y * Z)
+  X + ((Y + X) * Z) -> X + (Y * Z)
+  (X * Y) + (X * Z) -> X * (Y + Z)
+  (X * Y) + (Y * Z) -> Y * (X + Z)
+  (X * Y) + (Z * Y) -> Y * (X + Z)
+  X * (Y + (X + Z)) -> X
+  X * (Y + (Z + X)) -> X
+  X * (Y + (Z * X)) -> X * (Z + Y)
+  X * ((X * Y) + Z) -> X * (Y + Z)
+  X * (Y * (Z + X)) -> X * Y
+  X * (Y * (X + Z)) -> X * Y
+  X * ((X + Y) * Z) -> X * Z
+  X * ((Y + X) * Z) -> X * Z
+  (X + Y) * (X + Z) -> X + (Y * Z)
+  (X + Y) * (Y + Z) -> Y + (X * Z)
+  (X + Y) * (Z + Y) -> Y + (X * Z)
+  X + (Y + (Z + not(X))) -> 1
+  X + (Y + (not(X) + Z)) -> 1
+  X + (Y + (not(X) * Z)) -> X + (Y + Z)
+  X + (Y + (Z * not(X))) -> X + (Z + Y)
+  X + ((Y * not(X)) + Z) -> X + (Y + Z)
+  X + (Y * (not(X) + Z)) -> X + Y
+  X + (Y * (Z * not(X))) -> X + (Y * Z)
+  X + (Y * (not(X) * Z)) -> X + (Y * Z)
+  X + (Y * (Z + not(X))) -> X + Y
+  X + ((Y + not(X)) * Z) -> X + Z
+  not(X) + (Y * (Z + X)) -> Y + not(X)
+  X * (Y + (Z + not(X))) -> X * (Y + Z)
+  X * (Y + (not(X) + Z)) -> X * (Y + Z)
+  X * (Y + (not(X) * Z)) -> X * Y
+  X * (Y + (Z * not(X))) -> X * Y
+  X * ((Y * not(X)) + Z) -> X * Z
+  X * (Y * (not(X) + Z)) -> X * (Y * Z)
+  X * (Y * (Z * not(X))) -> 0
+  X * (Y * (not(X) * Z)) -> 0
+  X * (Y * (Z + not(X))) -> X * (Z * Y)
+  X * ((Y + not(X)) * Z) -> X * (Y * Z)
+  not(X) * (Y + (Z * X)) -> Y * not(X)
+  X * (Y + (Z + (X + W))) -> X
+
+RESULT: GaveUp (couldn't solve the problem).
+
+Execution time: 0.117527 seconds
+

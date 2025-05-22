@@ -1,0 +1,144 @@
+Here is the input problem:
+  Axiom 1 (derivative of 1): d(1) = 0.
+  Axiom 2 (derivative of 0): d(0) = 0.
+  Axiom 3 (derivative of x): d(x) = 1.
+  Axiom 4 (flattening): sin2 = sin(x).
+  Axiom 5 (flattening): cos2 = cos(x).
+  Axiom 6 (flattening): d2 = d(sin(x)).
+  Axiom 7 (commutativity of +): X + Y = Y + X.
+  Axiom 8 (plus 0): 0 + X = X.
+  Axiom 9 (commutativity of *): X * Y = Y * X.
+  Axiom 10 (times 1): 1 * X = X.
+  Axiom 11 (times 0): 0 * X = 0.
+  Axiom 12 (derivative of +): d(X + Y) = d(X) + d(Y).
+  Axiom 13 (minus): X + -X = 0.
+  Axiom 14 (flattening): *2 = 1 * cos(x).
+  Axiom 15 (derivative of sin): d(sin(X)) = cos(X) * d(X).
+  Axiom 16 (derivative of cos): d(cos(X)) = -(sin(X) * d(X)).
+  Axiom 17 (associativity of +): X + (Y + Z) = (X + Y) + Z.
+  Axiom 18 (associativity of *): X * (Y * Z) = (X * Y) * Z.
+  Axiom 19 (distributivity): X * (Y + Z) = (X * Y) + (X * Z).
+  Axiom 20 (derivative of *): d(X * Y) = (X * d(Y)) + (Y * d(X)).
+  Goal 1 (goal): d(sin(x)) = 1 * cos(x).
+
+1. d(1) -> 0
+2. d(0) -> 0
+3. d(x) -> 1
+4. sin(x) -> sin2
+5. cos(x) -> cos2
+6. d(sin2) -> d2
+7. X + Y <-> Y + X
+8. 0 + X -> X
+9. X * Y <-> Y * X
+10. 1 * X -> X
+11. 0 * X -> 0
+12. d(X + Y) -> d(X) + d(Y)
+13. X + -X -> 0
+14. cos2 -> *2
+15. d(X) * cos(X) -> d(sin(X))
+16. -(d(X) * sin(X)) -> d(cos(X))
+17. (X + Y) + Z -> X + (Y + Z)
+18. (X * Y) * Z -> X * (Y * Z)
+19. (X * Y) + (X * Z) -> X * (Y + Z)
+20. (X * d(Y)) + (Y * d(X)) -> d(X * Y)
+21. d2 -> *2
+22. -0 -> 0
+23. -sin2 -> d(*2)
+24. X + 0 -> X
+25. X * 1 -> X
+26. X * 0 -> 0
+27. d(sin(1)) -> 0
+28. d(sin(0)) -> 0
+29. d(cos(1)) -> 0
+30. d(cos(0)) -> 0
+31. *2 * cos(sin2) -> d(sin(sin2))
+32. sin2 + d(*2) -> 0
+33. d(sin(sin(1))) -> 0
+34. d(cos(sin(1))) -> 0
+35. d(sin(sin(0))) -> 0
+36. d(cos(sin(0))) -> 0
+37. d(sin(cos(1))) -> 0
+38. d(cos(cos(1))) -> 0
+39. d(sin(cos(0))) -> 0
+40. d(cos(cos(0))) -> 0
+41. X + (Y + Z) <-> Y + (X + Z)
+42. X * (Y * Z) <-> Y * (X * Z)
+43. -(*2 * sin(sin2)) -> d(cos(sin2))
+44. X + (Y + -X) -> Y
+45. d(X) + d(-X) -> 0
+46. d(-1) -> 0
+47. d(-sin(1)) -> 0
+48. d(-sin(0)) -> 0
+49. d(-cos(1)) -> 0
+50. d(-cos(0)) -> 0
+51. d(sin(-1)) -> 0
+52. d(cos(-1)) -> 0
+53. d(--1) -> 0
+54. 1 + d(-x) -> 0
+55. d(d(-x)) -> 0
+56. *2 + d(d(*2)) -> 0
+57. X + (-X + Y) -> Y
+58. --X -> X
+59. -d(*2) -> sin2
+60. d(sin(sin(sin(1)))) -> 0
+61. d(cos(sin(sin(1)))) -> 0
+62. d(sin(cos(sin(1)))) -> 0
+63. d(cos(cos(sin(1)))) -> 0
+64. d(sin(sin(sin(0)))) -> 0
+65. d(cos(sin(sin(0)))) -> 0
+66. d(sin(cos(sin(0)))) -> 0
+67. d(cos(cos(sin(0)))) -> 0
+68. d(sin(sin(cos(1)))) -> 0
+69. d(cos(sin(cos(1)))) -> 0
+70. d(sin(cos(cos(1)))) -> 0
+71. d(cos(cos(cos(1)))) -> 0
+72. d(sin(sin(cos(0)))) -> 0
+73. d(cos(sin(cos(0)))) -> 0
+74. d(sin(cos(cos(0)))) -> 0
+75. d(cos(cos(cos(0)))) -> 0
+76. d(-sin(sin(1))) -> 0
+77. d(-cos(sin(1))) -> 0
+78. d(-sin(sin(0))) -> 0
+79. d(-cos(sin(0))) -> 0
+80. d(-sin(cos(1))) -> 0
+81. d(-cos(cos(1))) -> 0
+82. d(-sin(cos(0))) -> 0
+83. d(-cos(cos(0))) -> 0
+84. d(sin(-sin(1))) -> 0
+85. d(cos(-sin(1))) -> 0
+86. d(sin(-sin(0))) -> 0
+87. d(cos(-sin(0))) -> 0
+88. d(sin(-cos(1))) -> 0
+89. d(cos(-cos(1))) -> 0
+90. d(sin(-cos(0))) -> 0
+91. d(cos(-cos(0))) -> 0
+92. X * (Y + 1) = X + (X * Y)
+93. X * (d(X) + d(X)) -> d(X * X)
+94. d(sin(1) * sin(1)) -> 0
+95. d(sin(0) * sin(0)) -> 0
+96. d(cos(1) * cos(1)) -> 0
+97. d(cos(0) * cos(0)) -> 0
+98. d(-1 * -1) -> 0
+99. d(x * x) -> x + x
+100. sin2 * (*2 + *2) -> d(sin2 * sin2)
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (derivative of x): d(x) = 1.
+Axiom 2 (commutativity of *): X * Y = Y * X.
+Axiom 3 (derivative of sin): d(sin(X)) = cos(X) * d(X).
+
+Goal 1 (goal): d(sin(x)) = 1 * cos(x).
+Proof:
+  d(sin(x))
+= { by axiom 3 (derivative of sin) }
+  cos(x) * d(x)
+= { by axiom 2 (commutativity of *) }
+  d(x) * cos(x)
+= { by axiom 1 (derivative of x) }
+  1 * cos(x)
+
+RESULT: Theorem (the conjecture is true).
+
+Execution time: 0.0265496 seconds
+

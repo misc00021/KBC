@@ -1,0 +1,1097 @@
+Here is the input problem:
+  Axiom 1 (not_not): not(not(X)) = X.
+  Axiom 2 (or_comm): X + Y = Y + X.
+  Axiom 3 (or_false): X + 0 = X.
+  Axiom 4 (lem): X + not(X) = 1.
+  Axiom 5 (and_comm): X * Y = Y * X.
+  Axiom 6 (and_false): X * 0 = 0.
+  Axiom 7 (contra): X * not(X) = 0.
+  Axiom 8 (de_morgan): not(X + Y) = not(X) * not(Y).
+  Axiom 9 (or_assoc): X + (Y + Z) = (X + Y) + Z.
+  Axiom 10 (and_assoc): X * (Y * Z) = (X * Y) * Z.
+  Axiom 11 (distrib): X * (Y + Z) = (X * Y) + (X * Z).
+  Axiom 12 (distrib): X + (Y * Z) = (X + Y) * (X + Z).
+  Goal 1 (a): a = b.
+
+1. not(not(X)) -> X
+2. X + Y <-> Y + X
+3. X + 0 -> X
+4. X + not(X) -> 1
+5. X * Y <-> Y * X
+6. X * 0 -> 0
+7. X * not(X) -> 0
+8. not(X + Y) -> not(X) * not(Y)
+9. (X + Y) + Z -> X + (Y + Z)
+10. (X * Y) * Z -> X * (Y * Z)
+11. (X * Y) + (X * Z) -> X * (Y + Z)
+12. (X + Y) * (X + Z) -> X + (Y * Z)
+13. not(1) -> 0
+14. not(0) -> 1
+15. 0 + X -> X
+16. 0 * X -> 0
+17. X * (X + Y) -> X
+18. X * X -> X
+19. X * 1 -> X
+20. 1 * X -> X
+21. X + 1 -> 1
+22. X * (Y + X) -> X
+23. X + (X * Y) -> X
+24. X + X -> X
+25. 1 + X -> 1
+26. X + (Y + Z) <-> Y + (X + Z)
+27. X * (Y * Z) <-> Y * (X * Z)
+28. X + (Y * X) -> X
+29. X * (Y + not(X)) -> X * Y
+30. X + (Y + not(X)) -> 1
+31. X * (Y * not(X)) -> 0
+32. not(not(X) * not(Y)) -> X + Y
+33. not(X * not(Y)) -> Y + not(X)
+34. not(not(X) * Y) -> X + not(Y)
+35. X * (X * Y) -> X * Y
+36. not(X) + (Y + X) -> 1
+37. X + (not(X) + Y) -> 1
+38. not(X) * (Y * X) -> 0
+39. X * (not(X) * Y) -> 0
+40. X + (Y * not(X)) -> X + Y
+41. not(X * Y) -> not(X) + not(Y)
+42. X * (not(X) + Y) -> X * Y
+43. X + (not(X) * Y) -> X + Y
+44. X + (X + Y) -> X + Y
+45. X * (Y * X) -> X * Y
+46. not(X) * (Y + X) -> Y * not(X)
+47. not(X) + (Y * X) -> Y + not(X)
+48. X * (Y + (X + Z)) -> X
+49. X + (Y + X) -> X + Y
+50. (X * Y) + (Y * Z) -> Y * (X + Z)
+51. (X * Y) + (Z * X) -> X * (Y + Z)
+52. (X + Y) * (Y + Z) -> Y + (X * Z)
+53. (X + Y) * (Z + X) -> X + (Y * Z)
+54. not(X) * (X + Y) -> Y * not(X)
+55. not(X) + (X * Y) -> Y + not(X)
+56. X * (Y * (X + Z)) -> X * Y
+57. X + (Y * (X * Z)) -> X
+58. X * (Y + (Z + X)) -> X
+59. (X * Y) + (Z * Y) -> Y * (X + Z)
+60. X + (Y * (X + Z)) -> X + (Z * Y)
+61. (X + Y) * (Z + Y) -> Y + (X * Z)
+62. X + (Y + (X * Z)) -> X + Y
+63. X * (Y * (Z + X)) -> X * Y
+64. X + (Y + (Z + not(X))) -> 1
+65. X * (Y * (Z * not(X))) -> 0
+66. X * ((X + Y) * Z) -> X * Z
+67. X + (Y * (Z * X)) -> X
+68. X + (Y * (Z + not(X))) -> X + Y
+69. X * (Y + (Z * not(X))) -> X * Y
+70. X * (Y + (X * Z)) -> X * (Z + Y)
+71. X + (Y * (Z + X)) -> X + (Z * Y)
+72. X + ((X + Y) * Z) -> X + (Y * Z)
+73. X + (Y + (Z * X)) -> X + Y
+  (hard) 1 = not(X) + (Y + (Z + X))
+74. X + (Y + (not(X) + Z)) -> 1
+  (hard) 0 = not(X) * (Y * (Z * X))
+75. X * (Y * (not(X) * Z)) -> 0
+76. X + ((X * Y) + Z) -> X + Z
+77. X * ((Y + X) * Z) -> X * Z
+78. X * (Y + (Z + not(X))) -> X * (Y + Z)
+79. X * (Y * (Z + not(X))) -> X * (Z * Y)
+80. X + (Y + (Z * not(X))) -> X + (Z + Y)
+81. X + (Y * (Z * not(X))) -> X + (Y * Z)
+82. X + (Y * (not(X) + Z)) -> X + Y
+83. X + ((Y + not(X)) * Z) -> X + Z
+84. X * ((Y * not(X)) + Z) -> X * Z
+85. X * (Y + (not(X) * Z)) -> X * Y
+86. X * ((X * Y) + Z) -> X * (Y + Z)
+87. X * (Y + (Z * X)) -> X * (Z + Y)
+88. X + ((Y + X) * Z) -> X + (Y * Z)
+89. X + ((Y * X) + Z) -> X + Z
+  (hard) 1 = not(X) + (Y + (X + Z))
+  (hard) 0 = not(X) * (Y * (X * Z))
+90. not(X) + (Y * (X + Z)) -> Y + not(X)
+91. not(X) * (Y + (X * Z)) -> Y * not(X)
+92. not(X) + (Y * (Z + X)) -> Y + not(X)
+93. not(X) * (Y + (Z * X)) -> Y * not(X)
+94. X * (Y + (Z + (X + W))) -> X
+95. X * (Y + (not(X) + Z)) -> X * (Y + Z)
+96. X * (Y * (not(X) + Z)) -> X * (Y * Z)
+97. X + (Y + (not(X) * Z)) -> X + (Y + Z)
+98. X + (Y * (not(X) * Z)) -> X + (Y * Z)
+99. X * ((Y + not(X)) * Z) -> X * (Y * Z)
+100. X + ((Y * not(X)) + Z) -> X + (Y + Z)
+101. X + ((not(X) + Y) * Z) -> X + Z
+102. X * ((not(X) * Y) + Z) -> X * Z
+  (hard) X * (Y * Z) = X * (Y * (X * Z))
+103. X * ((Y * X) + Z) -> X * (Y + Z)
+104. (X * Y) + (Z + (X * W)) -> Z + (X * (Y + W))
+105. (X + Y) * (Z * (X + W)) -> Z * (X + (Y * W))
+106. not(X) * (Y + (X + Z)) -> not(X) * (Y + Z)
+107. not(X) * (Y * (Z + X)) -> Z * (Y * not(X))
+108. not(X) + (Y + (Z * X)) -> Z + (Y + not(X))
+109. not(X) + (Y * (X * Z)) -> not(X) + (Y * Z)
+110. not(X) * (Y + (Z + X)) -> not(X) * (Y + Z)
+111. not(X) + (Y * (Z * X)) -> not(X) + (Y * Z)
+112. not(X) + ((Y + X) * Z) -> Z + not(X)
+113. not(X) * ((Y * X) + Z) -> Z * not(X)
+114. not(X) + ((X + Y) * Z) -> Z + not(X)
+115. not(X) * ((X * Y) + Z) -> Z * not(X)
+116. X * (Y * (Z + (X + W))) -> X * Y
+117. X + (Y * (Z * (X * W))) -> X
+118. X * (Y + (Z + (W + X))) -> X
+119. X * ((not(X) + Y) * Z) -> X * (Z * Y)
+120. X + ((not(X) * Y) + Z) -> X + (Z + Y)
+  (hard) X + (Y + Z) = X + (Y + (X + Z))
+121. (X + (Y + Z)) * (Y + W) -> Y + (W * (X + Z))
+122. (X + Y) * (Z + (X + W)) -> X + (Y * (Z + W))
+123. (X * (Y * Z)) + (Y * W) -> Y * (W + (X * Z))
+124. (X * Y) + (Z * (X * W)) -> X * (Y + (Z * W))
+125. (X * Y) + (Z + (Y * W)) -> Z + (Y * (X + W))
+126. (X * (Y * Z)) + (Z * W) -> Z * (W + (X * Y))
+127. (X * Y) + (Z * (Y * W)) -> Y * (X + (Z * W))
+128. (X * Y) + (Z + (W * X)) -> Z + (X * (Y + W))
+129. (X * (Y * Z)) + (W * Y) -> Y * (W + (X * Z))
+130. (X + (Y + Z)) * (Z + W) -> Z + (W * (X + Y))
+131. (X + Y) * (Z * (Y + W)) -> Z * (Y + (X * W))
+132. (X + Y) * (Z + (Y + W)) -> Y + (X * (Z + W))
+133. (X + (Y + Z)) * (W + Y) -> Y + (W * (X + Z))
+134. (X + Y) * (Z * (W + X)) -> Z * (X + (Y * W))
+135. (X * Y) + ((X * Z) + W) -> W + (X * (Y + Z))
+136. (X + Y) * ((X + Z) * W) -> W * (X + (Y * Z))
+137. not(X) * (Y * (X + Z)) -> Z * (Y * not(X))
+138. not(X) + (Y + (X * Z)) -> Z + (Y + not(X))
+139. not(X) * ((Y + X) * Z) -> Y * (Z * not(X))
+140. not(X) + ((Y * X) + Z) -> Y + (Z + not(X))
+141. X * (Y * (Z * (X + W))) -> X * (Y * Z)
+142. X * (Y + (Z * (X + W))) -> X * (Z + Y)
+143. X + (Y * (Z + (X * W))) -> X + (Y * Z)
+144. X + (Y + (Z * (X * W))) -> X + Y
+145. X * (Y * (Z + (W + X))) -> X * Y
+146. X + (Y + (Z + (W + not(X)))) -> 1
+147. X * (Y * (Z * (W * not(X)))) -> 0
+148. X * ((Y + (X + Z)) * W) -> X * W
+149. X + (Y * (Z * (W * X))) -> X
+150. (X * Y) + (Z * (X + W)) = (Z * W) + (X * (Y + Z))
+  (hard) (X * Y) + (Z + X) = X + Z
+151. (X + Y) * (Z + (X * W)) = (Z + W) * (X + (Y * Z))
+  (hard) (X + Y) * (Z * X) = X * Z
+152. (X * Y) + (Z + (W * Y)) -> Z + (Y * (X + W))
+153. (X * (Y * Z)) + (W * Z) -> Z * (W + (X * Y))
+154. (X * Y) + (Z * (W * Y)) -> Y * (X + (Z * W))
+155. X + (Y + (Z * (X + W))) -> X + (Y + (Z * W))
+156. X + (Y * (Z * (X + W))) -> X + (W * (Y * Z))
+157. X + (Y * (Z + (X + W))) -> X + (Y * (Z + W))
+158. (X + (Y + Z)) * (W + Z) -> Z + (W * (X + Y))
+159. (X + Y) * (Z + (W + Y)) -> Y + (X * (Z + W))
+160. (X + Y) * (Z * (W + Y)) -> Z * (Y + (X * W))
+161. (X + Y) * (Z + (W + X)) -> X + (Y * (Z + W))
+162. (X * Y) + (Z * (W * X)) -> X * (Y + (Z * W))
+163. (X * Y) + ((Y * Z) + W) -> W + (Y * (Z + X))
+164. (X * Y) + ((Z * X) + W) -> W + (X * (Y + Z))
+165. (X + Y) * ((Y + Z) * W) -> W * (Y + (Z * X))
+166. X * (Y + (Z + (X * W))) -> X * (W + (Y + Z))
+167. (X + Y) * ((Z + X) * W) -> W * (X + (Y * Z))
+168. (X + Y) * (Z * (not(X) * not(Y))) -> 0
+  (hard) 1 = (not(X) * not(Y)) + (Z + (X + Y))
+169. X + (Y * (Z + (W + not(X)))) -> X + Y
+170. X * (Y + (Z * (W * not(X)))) -> X * Y
+171. not(X) * ((X + Y) * Z) -> Z * (Y * not(X))
+172. not(X) + ((X * Y) + Z) -> Z + (Y + not(X))
+173. X + (Y + (Z + (X * W))) -> X + (Y + Z)
+174. X * (Y * (Z * (W + X))) -> X * (Y * Z)
+175. X * (Y * ((X + Z) * W)) -> X * (Y * W)
+176. X * ((Y * (X + Z)) + W) -> X * (Y + W)
+177. X * (Y + (Z * (W + X))) -> X * (Z + Y)
+178. X * (Y + ((X + Z) * W)) -> X * (W + Y)
+179. X + (Y * ((X * Z) + W)) -> X + (Y * W)
+180. X + ((Y + (X * Z)) * W) -> X + (W * Y)
+181. X + (Y * (Z + (W * X))) -> X + (Y * Z)
+182. X + (Y + (Z * (W * X))) -> X + Y
+183. X + (Y + (Z + (not(X) + W))) -> 1
+184. X * (Y * (Z * (not(X) * W))) -> 0
+185. X + ((Y * (X * Z)) + W) -> X + W
+186. X * ((Y + (Z + X)) * W) -> X * W
+  (hard) 1 = not(X) + (Y + (Z + (W + X)))
+  (hard) 0 = not(X) * (Y * (Z * (W * X)))
+187. (X + Y) * (Z + (X * W)) -> (X * W) + (Z * (X + Y))
+188. (X + Y) * (Z + not(X)) -> (X * Z) + (Y * not(X))
+189. (X + Y) * (Z + (Y * W)) -> (Y * W) + (Z * (X + Y))
+190. (X * (Y + Z)) + (Y * W) = (X * Z) + (Y * (W + X))
+191. (X * (Y + Z)) + (Z * W) = (X * Y) + (Z * (X + W))
+192. (X * Y) + (Z * (W + X)) = (Z * W) + (X * (Y + Z))
+193. (X * Y) + (Z * (X + W)) = (Z * W) + (X * (Z + Y))
+194. (X * Y) + (Z * (W + X)) = (W * Z) + (X * (Z + Y))
+195. (X * Y) + (Z * (X + W)) = (W * Z) + (X * (Y + Z))
+  (hard) (X * Y) + (Z + Y) = Y + Z
+196. (X * Y) + (Z * (W + X)) = (Z * W) + ((Z + Y) * X)
+197. (X * Y) + (Z * (X + W)) = (Z * W) + ((Y + Z) * X)
+198. (X + Y) * (Z + (W * X)) = (Z * Y) + (X * (W + Z))
+199. (X + Y) * (Z + (W * Y)) -> (Y * W) + (Z * (X + Y))
+200. (X + Y) * ((X * Z) + W) -> (X * Z) + (W * (Y + X))
+201. (X + Y) * ((Z * X) + W) -> (X * Z) + (W * (Y + X))
+202. (X + (Y * Z)) * (Y + W) -> (Y * Z) + (X * (W + Y))
+203. (X + (Y * Z)) * (Z + W) = (X * W) + (Z * (X + Y))
+204. (X + Y) * (Z + (W * X)) -> (X * W) + (Z * (Y + X))
+205. X + (Y + (Z * (W + not(X)))) -> X + (Z + Y)
+  (hard) X + (Y + Z) = X + ((Y * W) + (Z + Y))
+206. X + (Y * (Z * (W + not(X)))) -> X + (Y * Z)
+207. X * (Y + (Z + (W * not(X)))) -> X * (Y + Z)
+208. X * (Y * (Z + (W * not(X)))) -> X * (Z * Y)
+209. (X * not(Y)) + (Y * (Z + X)) -> X + (Y * Z)
+210. (not(X) + Y) * (Z + X) -> (X * Y) + (Z * not(X))
+211. (X + Y) * (Z + not(Y)) -> (X * not(Y)) + (Z * Y)
+212. (X + Y) * (not(X) + Z) -> (X * Z) + (Y * not(X))
+213. (X + not(Y)) * (Y + Z) -> (Y * X) + (Z * not(Y))
+214. X * (Y * (Z + (X * W))) -> X * (Y * (Z + W))
+215. X * (Y + (Z * (X * W))) -> X * (Y + (Z * W))
+216. X + (Y + (Z * (W + X))) -> X + (Y + (Z * W))
+217. X + (Y + ((X + Z) * W)) -> X + (Y + (Z * W))
+218. X + ((Y + (X + Z)) * W) -> X + (W * (Y + Z))
+219. X + (Y * ((X + Z) * W)) -> X + (Z * (Y * W))
+220. (X * Y) + ((Z * Y) + W) -> W + (Y * (Z + X))
+221. X + ((Y * (X + Z)) + W) -> X + (W + (Y * Z))
+222. X + (Y * (Z * (W + X))) -> X + (W * (Y * Z))
+223. X + (Y * (Z + (W + X))) -> X + (Y * (Z + W))
+224. (X + Y) * ((Z + Y) * W) -> W * (Y + (Z * X))
+225. X * (Y + ((X * Z) + W)) -> X * (Z + (W + Y))
+226. X * (Y + (Z + (W * X))) -> X * (W + (Y + Z))
+  (hard) 1 = (X * not(Y)) + (Z + (Y + not(X)))
+  (hard) 1 = (not(X) * Y) + (Z + (X + not(Y)))
+  (hard) 0 = (X + not(Y)) * (Z * (Y * not(X)))
+227. (X + not(Y)) * (Z * (not(X) * Y)) -> 0
+228. X + (Y * (Z + (not(X) + W))) -> X + Y
+229. X + ((Y + (Z + not(X))) * W) -> X + W
+230. X * ((Y * (Z * not(X))) + W) -> X * W
+231. X * (Y + (Z * (not(X) * W))) -> X * Y
+  (hard) 0 = (not(X) + Y) * (Z * (X * not(Y)))
+232. (X * Y) + (Z * (X + not(Y))) -> (X * Y) + (Z * not(Y))
+233. (X * not(Y)) + (Z * (X + Y)) -> (X * not(Y)) + (Y * Z)
+234. X + (Y + (Z + (W * X))) -> X + (Y + Z)
+235. X + (Y + ((X * Z) + W)) -> X + (Y + W)
+236. X * (Y * ((Z + X) * W)) -> X * (Y * W)
+237. X * ((Y * (Z + X)) + W) -> X * (Y + W)
+238. X * (((X + Y) * Z) + W) -> X * (Z + W)
+239. X * (Y + ((Z + X) * W)) -> X * (W + Y)
+240. X + (((X * Y) + Z) * W) -> X + (W * Z)
+241. X + (Y * ((Z * X) + W)) -> X + (Y * W)
+242. X + ((Y + (Z * X)) * W) -> X + (W * Y)
+  (hard) X * (Y * Z) = X * ((Y + W) * (Z * Y))
+243. X + ((Y * (Z * X)) + W) -> X + W
+244. (X * Y) + (not(Y) * (X + Z)) -> X + (Z * not(Y))
+  (hard) 1 = not(X) + (Y + (Z + (X + W)))
+  (hard) 0 = not(X) * (Y * (Z * (X * W)))
+245. not(X) + (Y * (Z + (X + W))) -> Y + not(X)
+246. not(X) * (Y + (Z * (X * W))) -> Y * not(X)
+247. not(X) + (Y * (Z + (W + X))) -> Y + not(X)
+248. not(X) * (Y + (Z * (W * X))) -> Y * not(X)
+249. (X + Y) * (Z + (not(X) * not(Y))) -> Z * (X + Y)
+250. X * (Y + (Z + (W + not(X)))) -> X * (Y + (Z + W))
+251. X * (Y * (Z + (W + not(X)))) -> X * (Y * (Z + W))
+252. X * (Y * (Z * (W + not(X)))) -> X * (W * (Y * Z))
+253. X * (Y + (Z * (W + not(X)))) -> X * (Y + (Z * W))
+  (hard) X * (Z * W) = X * ((Z + Y) * (W * Z))
+254. X + (Y + (Z + (W * not(X)))) -> X + (W + (Y + Z))
+255. X + (Y + (Z * (W * not(X)))) -> X + (Y + (Z * W))
+  (simplifying rules with respect to one another...)
+  (delete rule 17)
+  (delete rule 23)
+  (delete rule 32)
+  (delete rule 33)
+  (delete rule 34)
+  (delete rule 35)
+  (delete rule 36)
+  (delete rule 38)
+  (delete rule 44)
+  (delete rule 51)
+  (delete rule 53)
+  (delete rule 60)
+  (delete rule 70)
+  (delete rule 90)
+  (delete rule 91)
+  (delete rule 106)
+  (delete rule 109)
+  (delete rule 129)
+  (delete rule 133)
+  (delete rule 142)
+  (delete rule 143)
+  (delete rule 151)
+  (delete rule 156)
+  (delete rule 164)
+  (delete rule 166)
+  (delete rule 167)
+  (delete rule 188)
+  (delete rule 198)
+256. X + (Y * (Z + (W * not(X)))) -> X + (Y * (Z + W))
+257. X + (Y * (Z * (W * not(X)))) -> X + (Y * (Z * W))
+258. X * (Y + (Z + (W + (X + V)))) -> X
+259. (X + Y) * ((Y * Z) + W) -> (Y * Z) + (W * (X + Y))
+260. (X + (Y * Z)) * (W + Y) -> (Y * Z) + (X * (W + Y))
+261. (X * (Y + Z)) + (Z * W) = (Z * (X + W)) + (X * Y)
+  (hard) (X * Y) + (Z * (W + X)) = (X * (Y + Z)) + (Z * W)
+262. (X * (Y + Z)) + (Y * W) = (X * Z) + (Y * (X + W))
+263. (X * Y) + (Z * (W + X)) = ((Z + Y) * X) + (Z * W)
+264. (X * (Y + Z)) + (Y * W) = (Z * X) + (Y * (W + X))
+265. (X * Y) + (Z * (W + X)) = (X * (Z + Y)) + (W * Z)
+266. (X * Y) + (Z * (X + W)) = ((Y + Z) * X) + (Z * W)
+267. (X * (Y + Z)) + (Z * W) = (Y * X) + (Z * (X + W))
+268. (X * Y) + (Z * (X + W)) = (X * (Y + Z)) + (W * Z)
+269. (X * Y) + (Z * (W + X)) = (W * Z) + (X * (Y + Z))
+  (hard) X + (Y + Z) = X + ((W * Y) + (Z + Y))
+270. (X * Y) + (Z * (W + X)) = (Z * W) + ((Y + Z) * X)
+271. (X * Y) + (Z * (X + W)) = (W * Z) + (X * (Z + Y))
+272. (X * Y) + (Z * (X + W)) = (Z * W) + ((Z + Y) * X)
+273. (X * Y) + (Z * (Y + W)) = (W * Z) + (Y * (X + Z))
+274. (X * Y) + (Z * (Y + W)) = (Z * W) + ((X + Z) * Y)
+275. (X * Y) + (Z * (W + X)) = (W * Z) + ((Z + Y) * X)
+276. (X * Y) + (Z * (Y + X)) <-> (X * Z) + (Y * (Z + X))
+277. (X * Y) + (Z * (W + Y)) = (Z * W) + ((Z + X) * Y)
+278. (X * Y) + (Z * (X + W)) = (W * Z) + ((Y + Z) * X)
+279. (X * Y) + (Z * (X + Y)) <-> (X * Z) + (Y * (X + Z))
+280. (X * Y) + ((X + Z) * W) = (W * Z) + ((Y + W) * X)
+281. ((X + Y) * Z) + (X * W) = (W * X) + (Z * (X + Y))
+282. (X * Y) + ((X + Z) * W) = (W * (X + Z)) + (X * Y)
+  (hard) (X * Y) + ((X + Z) * W) = (X * Y) + (W * (Z + X))
+  (hard) (X * Y) + ((X + Y) * Z) = (X * Z) + (Y * (Z + X))
+283. (X * Y) + ((Z + X) * W) = (W * (Z + X)) + (X * Y)
+  (hard) (X * Y) + (Z * (X + W)) = (X * Y) + ((W + X) * Z)
+  (hard) (X * Y) + ((Y + X) * Z) = (X * Z) + (Y * (X + Z))
+284. (X + Y) * ((Z * Y) + W) -> (Y * Z) + (W * (X + Y))
+285. (X + (Y * Z)) * (W + Z) -> (Z * Y) + (X * (W + Z))
+286. ((X * Y) + Z) * (X + W) -> (X * Y) + (Z * (X + W))
+287. ((X * Y) + Z) * (Y + W) -> (Y * X) + (Z * (Y + W))
+288. (X + (Y * Z)) * (Z + W) -> (Z * Y) + (X * (W + Z))
+289. (X + (Y * Z)) * (Z + W) = (X * W) + (Z * (Y + X))
+  (hard) 0 = not(Y) * ((X + Z) * (Y * (X * not(W))))
+  (hard) X * (Z * W) = X * ((Z + Y) * (W * Z))
+290. (X * (Y * not(Z))) + (Z * (W + X)) -> (Z * W) + (X * (Z + Y))
+291. (X * (not(Y) * Z)) + (Y * (W + X)) -> (Y * W) + (X * (Y + Z))
+292. (X * (Y + (Z * W))) + (Z * (V + X)) -> (Z * V) + (X * (Z + Y))
+293. (X * (Y + Z)) + (((X * Y) + Z) * W) -> (X * Y) + (Z * (X + W))
+294. (X * ((Y + not(Z)) * W)) + (Z * (V + X)) -> (Z * V) + (X * (Z + W))
+295. (X + (Y * Z)) * (Z + W) -> (Z * Y) + (X * (Z + W))
+296. (X + (Y * Z)) * (Z + W) -> (Y * Z) + (X * (W + Z))
+297. (X * Y) + ((Z + X) * W) = (Z * W) + (X * (Y + W))
+298. (X * Y) + ((Y + Z) * W) = (Y * (X + W)) + (W * Z)
+299. (X * Y) + ((Z + Y) * W) = (Z * W) + (Y * (W + X))
+300. (X * Y) + ((Z + X) * W) = (Z * W) + ((W + Y) * X)
+  (hard) (W * Z) + ((Y + Z) * X) = (X * (Y + Z)) + (W * Z)
+  (hard) (W * Z) + ((Z + Y) * X) = (X * (Y + Z)) + (W * Z)
+301. X + (Y + (Z * (not(X) + W))) -> X + (Y + Z)
+  (hard) X + (Y + Z) = X + ((Z * W) + (Y + Z))
+  (hard) X + (Y + Z) = X + ((W * Z) + (Y + Z))
+302. X + (Y + ((Z + not(X)) * W)) -> X + (Y + W)
+303. X + (Y * ((Z + not(X)) * W)) -> X + (Y * W)
+304. X * (Y + ((Z * not(X)) + W)) -> X * (Y + W)
+305. X * (Y * ((Z * not(X)) + W)) -> X * (Y * W)
+306. X * (Y * (Z + (not(X) * W))) -> X * (Y * Z)
+307. (X * not(Y)) + (Y * (X + Z)) -> X + (Y * Z)
+308. (X * not(Y)) + ((Z + X) * Y) -> X + (Z * Y)
+309. (not(X) * Y) + (X * (Z + Y)) -> Y + (X * Z)
+310. X + ((Y * (Z + not(X))) + W) -> X + (Y + W)
+311. X + (Y * (Z * (not(X) + W))) -> X + (Y * Z)
+312. X * (Y + (Z + (not(X) * W))) -> X * (Y + Z)
+313. X * ((Y + (Z * not(X))) * W) -> X * (Y * W)
+314. (X + not(Y)) * (Z + Y) -> (Y * X) + (Z * not(Y))
+315. (not(X) + Y) * (X + Z) -> (X * Y) + (Z * not(X))
+316. (X + Y) * (not(Y) + Z) -> (X * not(Y)) + (Z * Y)
+317. X * (Y * ((X * Z) + W)) -> X * (Y * (Z + W))
+  (simplifying rules with respect to one another...)
+  (delete rule 150)
+  (delete rule 190)
+  (delete rule 192)
+  (delete rule 203)
+  (delete rule 210)
+  (delete rule 260)
+  (delete rule 276)
+  (delete rule 288)
+  (delete rule 295)
+  (delete rule 297)
+  (delete rule 299)
+  (delete rule 300)
+318. X * ((Y * (X * Z)) + W) -> X * (W + (Y * Z))
+319. X * (Y * (Z + (W * X))) -> X * (Y * (Z + W))
+320. X + ((Y + (Z + X)) * W) -> X + (W * (Y + Z))
+321. X + (Y + ((Z + X) * W)) -> X + (Y + (Z * W))
+322. X + (Y * ((Z + X) * W)) -> X + (Z * (Y * W))
+323. X * ((Y + (X * Z)) * W) -> X * (W * (Y + Z))
+324. X * (Y + (Z * (W * X))) -> X * (Y + (Z * W))
+325. X + ((Y * (Z + X)) + W) -> X + (W + (Y * Z))
+326. X + (((X + Y) * Z) + W) -> X + (W + (Y * Z))
+327. X * (Y + ((Z * X) + W)) -> X * (Z + (W + Y))
+328. (X * Y) + (Z + (not(X) + not(Y))) -> 1
+329. X + ((Y + (not(X) + Z)) * W) -> X + W
+330. X * ((Y * (not(X) * Z)) + W) -> X * W
+  (hard) 0 = (not(X) + not(Y)) * (Z * (X * Y))
+331. (X * Y) + (Z * (Y + not(X))) -> (X * Y) + (Z * not(X))
+332. (X * not(Y)) + (Z * (Y + X)) -> (Y * Z) + (X * not(Y))
+333. X + (Y + ((Z * X) + W)) -> X + (Y + W)
+334. (X * Y) + ((X + not(Y)) * Z) -> (X * Y) + (Z * not(Y))
+335. (X * Y) + (Z * (not(Y) + X)) -> (X * Y) + (Z * not(Y))
+336. (X * not(Y)) + ((X + Y) * Z) -> (Y * Z) + (X * not(Y))
+337. (X * not(Y)) + ((X + Z) * Y) -> X + (Y * Z)
+338. (not(X) * Y) + (Z * (Y + X)) -> (Y * not(X)) + (X * Z)
+  (hard) X * ((Y + Z) * (W * Z)) = X * (Z * W)
+339. X * (((Y + X) * Z) + W) -> X * (Z + W)
+340. X + (((Y * X) + Z) * W) -> X + (W * Z)
+341. not(X) + (Y + (Z * (W + X))) -> Z + (Y + not(X))
+342. not(X) + (Y * (Z * (W + X))) -> not(X) + (Y * Z)
+343. not(X) * (Y + (Z + (W * X))) -> not(X) * (Y + Z)
+344. not(X) * (Y * (Z + (W * X))) -> Z * (Y * not(X))
+345. (X * Y) + (not(X) * (Y + Z)) -> Y + (Z * not(X))
+346. (X * Y) + ((X + Z) * not(Y)) -> X + (Z * not(Y))
+347. (X * Y) + (not(Y) * (Z + X)) -> X + (Z * not(Y))
+348. (X * Y) + (not(X) * (Z + Y)) -> Y + (Z * not(X))
+349. not(X) + ((Y + (Z + X)) * W) -> W + not(X)
+350. not(X) * ((Y * (Z * X)) + W) -> W * not(X)
+351. not(X) + ((Y + (X + Z)) * W) -> W + not(X)
+352. not(X) * ((Y * (X * Z)) + W) -> W * not(X)
+353. X * (Y * (Z + (W + (X + V)))) -> X * Y
+354. (X + Y) * ((not(X) * not(Y)) + Z) -> Z * (X + Y)
+355. X * (Y + (Z + (not(X) + W))) -> X * (Y + (Z + W))
+356. X * (Y * (Z + (not(X) + W))) -> X * (Y * (Z + W))
+357. X * (Y * (Z * (not(X) + W))) -> X * (Y * (Z * W))
+358. X + (Y + (Z + (not(X) * W))) -> X + (Y + (Z + W))
+359. X + (Y + (Z * (not(X) * W))) -> X + (Y + (Z * W))
+360. X + (Y * (Z * (not(X) * W))) -> X + (Y * (Z * W))
+361. X * ((Y + (Z + not(X))) * W) -> X * (W * (Y + Z))
+362. X * (Y * ((Z + not(X)) * W)) -> X * (Y * (Z * W))
+363. X + ((Y * (Z * not(X))) + W) -> X + (W + (Y * Z))
+364. X + (Y + ((Z * not(X)) + W)) -> X + (Y + (Z + W))
+365. X * ((Y * (Z + not(X))) + W) -> X * (W + (Y * Z))
+366. X * (Y + (Z * (not(X) + W))) -> X * (Y + (Z * W))
+367. X * (Y + ((Z + not(X)) * W)) -> X * (Y + (W * Z))
+368. X + (Y * ((Z * not(X)) + W)) -> X + (Y * (W + Z))
+369. X + ((Y + (Z * not(X))) * W) -> X + (W * (Y + Z))
+  (hard) X + (Z + W) = X + ((Z * Y) + (W + Z))
+370. X + (Y * (Z + (not(X) * W))) -> X + (Y * (Z + W))
+371. (not(X) * Y) + (X * (Y + Z)) -> Y + (X * Z)
+372. X + (Y * (Z * (W * (X * V)))) -> X
+  (hard) (W * Z) + (Y * (W + X)) = (Y * (X + W)) + (W * Z)
+373. X * (Y + (Z + (W + (V + X)))) -> X
+374. (X * (Y + Z)) + (Y * W) = ((W + X) * Y) + (X * Z)
+375. (X * (Y + Z)) + (Y * W) = (Y * (W + X)) + (Z * X)
+376. (X * (Y + Z)) + (Z * W) = (Z * (X + W)) + (Y * X)
+  (hard) (Z * X) + ((X + W) * Y) = (Y * (W + X)) + (X * Z)
+377. (X * Y) + (Z * (X + W)) = ((Z + Y) * X) + (Z * W)
+378. (X * (Y + Z)) + (Y * W) = (Z * X) + (Y * (X + W))
+379. (X * Y) + (Z * (X + W)) = (X * (Z + Y)) + (W * Z)
+  (hard) (X * Y) + (Z * (X + Y)) = (X * Z) + ((X + Z) * Y)
+  (hard) (X * Y) + (Z * (W + X)) = ((Y + Z) * X) + (Z * W)
+380. ((X + Y) * Z) + (X * W) = (Y * Z) + (X * (W + Z))
+  (hard) (X * Y) + (Z * (W + Y)) = (Y * (X + Z)) + (Z * W)
+381. (X * Y) + (Z * (W + Y)) = (Y * (Z + X)) + (W * Z)
+  (simplifying rules with respect to one another...)
+  (delete rule 298)
+  (delete rule 309)
+  (hard) (X * (Y + Z)) + (Y * W) = (Y * W) + (X * (Z + Y))
+  (hard) (W * Z) + (Y * (X + Z)) = (Y * (X + Z)) + (Z * W)
+  (hard) (X * Y) + (Z * (W + X)) = (X * (Y + Z)) + (W * Z)
+382. (X * Y) + (Z * (W + X)) = ((Z + Y) * X) + (W * Z)
+383. ((X + Y) * Z) + (Y * W) = (X * Z) + (Y * (Z + W))
+384. (X * Y) + (Z * (X + W)) = ((Y + Z) * X) + (W * Z)
+385. (X * Y) + (Z * (X + W)) = ((W + X) * Z) + (X * Y)
+386. (X * Y) + (Z * (W + Y)) = ((W + Y) * Z) + (Y * X)
+  (hard) ((X + Y) * Z) + (Y * W) = (Z * (Y + X)) + (Y * W)
+387. (X * Y) + (Z * (Y + W)) = (Y * (X + Z)) + (W * Z)
+  (hard) (W * Z) + (Y * (Z + X)) = (Y * (Z + X)) + (Z * W)
+388. (X * Y) + (Z * (W + Y)) = (W * Z) + (Y * (X + Z))
+389. (X * Y) + (Z * (W + X)) = (W * Z) + ((Y + Z) * X)
+  (hard) X + (Y + W) = X + ((W * Z) + (Y + W))
+  (hard) (X * Y) + (Z * (Y + X)) = (X * Z) + ((Z + X) * Y)
+  (hard) (X * Y) + ((X + Z) * W) = (Y * X) + (W * (Z + X))
+390. (X * Y) + ((Z + Y) * W) = (Z * W) + (Y * (X + W))
+  (hard) X + (Y + W) = X + ((Z * W) + (Y + W))
+391. ((X + Y) * Z) + (X * W) = (W * X) + (Z * (Y + X))
+392. (X * Y) + ((Z + X) * W) = (W * Z) + ((Y + W) * X)
+  (hard) (X * Y) + (Z * (Y + W)) = (Y * X) + ((W + Y) * Z)
+  (hard) (X * Y) + ((Z + X) * W) = ((X + Z) * W) + (X * Y)
+393. (X * Y) + (Z * (Y + W)) = (Z * W) + ((Z + X) * Y)
+394. ((X + Y) * Z) + (W * X) = (W * X) + (Z * (Y + X))
+395. (X * Y) + (Z * (Y + W)) = ((W + Y) * Z) + (Y * X)
+  (hard) ((X + Y) * Z) + (Y * W) = (Y * W) + ((Y + X) * Z)
+  (hard) (X * Y) + ((Y + X) * Z) = (Z * X) + (Y * (Z + X))
+  (hard) (W * X) + (Z * (Y + X)) = (W * X) + ((X + Y) * Z)
+  (hard) (W * Y) + ((X + Y) * Z) = (X * Z) + ((Z + W) * Y)
+  (hard) (X * Y) + (Z * (X + W)) = (Y * X) + ((W + X) * Z)
+  (hard) ((X + Y) * Z) + (Y * W) = (W * Y) + ((X + Y) * Z)
+  (hard) (X * Y) + (Z * (Y + W)) = (X * Y) + ((W + Y) * Z)
+396. ((X + Y) * Z) + (X * W) = (Z * Y) + ((W + Z) * X)
+  (hard) (X * Y) + ((X + Z) * W) = ((Y + W) * X) + (W * Z)
+397. ((X + Y) * Z) + (X * W) = (X * W) + (Z * (X + Y))
+  (hard) (W * Z) + (Y * (Z + X)) = (Y * (X + Z)) + (Z * W)
+  (hard) (X * (Z + Y)) + (Y * V) = (Y * V) + ((Y + Z) * X)
+  (hard) (X * Y) + ((X + Z) * W) = (X * (Y + W)) + (W * Z)
+  (hard) (X * (Y + Z)) + (Y * W) = (X * Z) + ((W + X) * Y)
+398. (X * Y) + (Z * (X + ((not(Z) * W) + V))) -> (Z * V) + (X * (Z + Y))
+399. (X + (Y * Z)) * (Z + W) -> (Y * Z) + (X * (Z + W))
+400. (X * Y) + (Z * (Y + ((W * (V * not(Z))) + U))) -> (Z * U) + (Y * (Z + X))
+  (hard) (W * Z) + (Y * (Z + X)) = (Y * (X + Z)) + (W * Z)
+  (hard) (X * (Y + Z)) + (Y * W) = (W * Y) + (X * (Z + Y))
+401. (X * (Y + Z)) + (Y * W) = (Y * (X + W)) + (Z * X)
+402. (X * (Y + Z)) + (Y * W) = ((X + W) * Y) + (X * Z)
+  (hard) (V * (W + Z)) + (Y * W) = ((Y + V) * W) + (V * Z)
+403. X + (Y + ((not(X) + Z) * W)) -> X + (Y + W)
+404. X + (Y * ((not(X) + Z) * W)) -> X + (Y * W)
+405. X * (Y + ((not(X) * Z) + W)) -> X * (Y + W)
+406. X * (Y * ((not(X) * Z) + W)) -> X * (Y * W)
+  (simplifying rules with respect to one another...)
+  (delete rule 196)
+  (delete rule 197)
+  (delete rule 263)
+  (delete rule 264)
+  (delete rule 265)
+  (delete rule 270)
+  (delete rule 272)
+  (delete rule 273)
+  (delete rule 275)
+  (delete rule 277)
+  (delete rule 278)
+  (delete rule 279)
+  (delete rule 280)
+  (delete rule 281)
+  (delete rule 289)
+  (delete rule 296)
+  (delete rule 379)
+  (delete rule 381)
+  (delete rule 382)
+  (delete rule 384)
+  (delete rule 387)
+  (delete rule 389)
+  (delete rule 390)
+  (delete rule 392)
+  (delete rule 398)
+407. X + ((Y * (not(X) + Z)) + W) -> X + (W + Y)
+408. X + (((Y + not(X)) * Z) + W) -> X + (W + Z)
+409. X * (((Y * not(X)) + Z) * W) -> X * (W * Z)
+410. X * ((Y + (not(X) * Z)) * W) -> X * (W * Y)
+411. X * ((Y * (Z * X)) + W) -> X * (W + (Y * Z))
+412. X * (Y * ((Z * X) + W)) -> X * (Y * (Z + W))
+413. X * (((X * Y) + Z) * W) -> X * (W * (Y + Z))
+414. X * ((Y + (Z * X)) * W) -> X * (W * (Y + Z))
+415. X + (((Y + X) * Z) + W) -> X + (W + (Y * Z))
+416. (X * Y) + (Z + (W + (X * V))) -> W + (Z + (X * (V + Y)))
+417. (X * (Y * Z)) + (W + (Y * V)) -> W + (Y * (V + (X * Z)))
+418. (X * Y) + (Z + (W * (X * V))) -> Z + (X * (Y + (W * V)))
+419. (X + Y) * (Z * (W * (X + V))) -> W * (Z * (X + (V * Y)))
+420. (X + (Y + Z)) * (W * (Y + V)) -> W * (Y + (V * (X + Z)))
+421. (X + Y) * (Z * (W + (X + V))) -> Z * (X + (Y * (W + V)))
+422. (X * not(Y)) + (Z * (Y + not(X))) -> Z + (X * not(Y))
+423. (not(X) + Y) * (Z + (X * not(Y))) -> Z * (Y + not(X))
+424. (X + not(Y)) * (Z + (not(X) * Y)) -> Z * (X + not(Y))
+425. (X + not(Y)) * (Z + (Y * not(X))) -> Z * (X + not(Y))
+426. (X * not(Y)) + (Z + (not(X) + Y)) -> 1
+427. (X * not(Y)) + ((Y + X) * Z) -> (Y * Z) + (X * not(Y))
+428. (not(X) * Y) + (Z * (X + Y)) -> (X * Z) + (Y * not(X))
+429. not(X) * (Y * (Z + (W + X))) -> Y * (not(X) * (W + Z))
+430. not(X) * (Y * (Z * (W + X))) -> Z * (Y * (W * not(X)))
+431. not(X) + (Y + (Z + (W * X))) -> Z + (Y + (W + not(X)))
+432. not(X) + (Y + (Z * (W * X))) -> Y + (not(X) + (W * Z))
+433. not(X) * (Y + (Z + (X + W))) -> not(X) * (Y + (Z + W))
+434. not(X) * (Y + (Z * (X + W))) -> not(X) * (Y + (Z * W))
+435. not(X) + (Y * (Z * (X * W))) -> not(X) + (Y * (Z * W))
+436. not(X) + (Y * (Z + (X * W))) -> not(X) + (Y * (Z + W))
+437. (X * Y) + ((not(Y) + X) * Z) -> (X * Y) + (Z * not(Y))
+438. (X * Y) + (Z * (not(X) + Y)) -> (X * Y) + (Z * not(X))
+439. not(X) * (Y + (Z + (W + X))) -> not(X) * (Y + (Z + W))
+440. not(X) * (Y + (Z * (W + X))) -> not(X) * (Y + (Z * W))
+441. not(X) + (Y * (Z + (W * X))) -> not(X) + (Y * (Z + W))
+442. not(X) + (Y * (Z * (W * X))) -> not(X) + (Y * (Z * W))
+443. (X * Y) + ((Y + not(X)) * Z) -> (X * Y) + (Z * not(X))
+444. (not(X) * Y) + ((Y + X) * Z) -> (X * Z) + (Y * not(X))
+445. X * (Y + (Z * (W * (X + V)))) -> X * (Y + (Z * W))
+446. not(X) + (Y + ((Z + X) * W)) -> W + (Y + not(X))
+447. not(X) + (Y * ((Z + X) * W)) -> not(X) + (W * Y)
+448. not(X) * (Y * ((Z * X) + W)) -> W * (Y * not(X))
+449. not(X) * (Y + ((Z * X) + W)) -> not(X) * (W + Y)
+450. not(X) + (Y + ((X + Z) * W)) -> W + (Y + not(X))
+451. not(X) + (Y * ((X + Z) * W)) -> not(X) + (W * Y)
+452. not(X) * (Y * ((X * Z) + W)) -> W * (Y * not(X))
+453. not(X) * (Y + ((X * Z) + W)) -> not(X) * (W + Y)
+454. X + (Y * (Z + (W + (V + not(X))))) -> X + Y
+455. X * (Y + (Z * (W * (V * not(X))))) -> X * Y
+456. not(X) + (Y + (Z * (X + W))) -> Y + (Z + not(X))
+457. not(X) * (Y * (Z + (X * W))) -> Y * (Z * not(X))
+458. not(X) + ((Y * (Z + X)) + W) -> Y + (W + not(X))
+459. not(X) + (Y * (Z * (X + W))) -> not(X) + (Y * Z)
+460. not(X) * (Y + (Z + (X * W))) -> not(X) * (Y + Z)
+461. not(X) * ((Y + (Z * X)) * W) -> Y * (W * not(X))
+462. (X * Y) + ((Z + X) * not(Y)) -> X + (Z * not(Y))
+463. X * (Y * (Z * (W + (X + V)))) -> X * (Y * Z)
+464. (not(X) * not(Y)) + (Z * (X + Y)) -> Z + (not(X) * not(Y))
+465. X + (Y + (Z * (W * (X * V)))) -> X + Y
+466. X * (Y * (Z + (W + (V + X)))) -> X * Y
+467. X + (Y + (Z + (W + (V + not(X))))) -> 1
+468. X * (Y * (Z * (W * (V * not(X))))) -> 0
+469. X * ((Y + (Z + (X + W))) * V) -> X * V
+470. (X * Y) + (Z * (not(X) + not(Y))) -> Z + (X * Y)
+471. (X * Y) + ((not(X) + not(Y)) * Z) -> Z + (X * Y)
+472. X * ((Y + (not(X) + Z)) * W) -> X * (W * (Y + Z))
+473. X * (Y * ((not(X) + Z) * W)) -> X * (Y * (W * Z))
+474. X + (Y + ((not(X) * Z) + W)) -> X + (Y + (Z + W))
+475. X + ((Y * (not(X) * Z)) + W) -> X + (W + (Y * Z))
+  (hard) X * ((Y + not(Z)) * (W * Z)) = X * (Y * (Z * W))
+  (hard) X + ((Y * not(Z)) + (W + Z)) = X + (Y + (Z + W))
+476. X * ((Y * (not(X) + Z)) + W) -> X * (W + (Y * Z))
+477. X * (((Y + not(X)) * Z) + W) -> X * (W + (Z * Y))
+478. X * (Y + ((not(X) + Z) * W)) -> X * (Y + (W * Z))
+479. X + (((Y * not(X)) + Z) * W) -> X + (W * (Z + Y))
+480. X + (Y * ((not(X) * Z) + W)) -> X + (Y * (W + Z))
+481. X + ((Y + (not(X) * Z)) * W) -> X + (W * (Y + Z))
+482. X + (Y * (Z * (W * (V * X)))) -> X
+  (hard) (X * (Y + Z)) + (W * Z) = (Z * W) + (X * (Z + Y))
+  (hard) (X * (Y + Z)) + (W * Z) = (X * Y) + ((X + W) * Z)
+483. (X * (Y + Z)) + (Z * W) = (Z * (W + X)) + (Y * X)
+  (hard) (X * (Y + Z)) + (W * Y) = (Y * W) + (X * (Y + Z))
+  (hard) (X * (Y + Z)) + (W * Y) = (X * Z) + ((W + X) * Y)
+484. ((X + Y) * Z) + (X * W) = (Y * Z) + (X * (Z + W))
+  (hard) ((X + Y) * Z) + (X * W) = (Z * (Y + X)) + (X * W)
+  (hard) (X * Y) + (Z * (W + Y)) = ((X + Z) * Y) + (Z * W)
+485. (X * Y) + (Z * (W + X)) = ((X + W) * Z) + (X * Y)
+486. ((X + Y) * Z) + (Y * W) = (Y * W) + (Z * (X + Y))
+  (hard) (W * Z) + (Y * (X + Z)) = ((X + Z) * Y) + (W * Z)
+  (hard) (W * Z) + (Y * (X + Z)) = (Y * (Z + X)) + (W * Z)
+  (hard) (W * Z) + (Y * (Z + X)) = (X * Y) + (Z * (Y + W))
+  (hard) (X * (Y + Z)) + (W * Y) = ((X + W) * Y) + (X * Z)
+  (hard) (W * (Z + Y)) + (X * Z) = (Z * (W + X)) + (Y * W)
+  (hard) (X * (Y + Z)) + (W * Y) = (X * Z) + ((X + W) * Y)
+  (hard) (W * (Z + Y)) + (X * Z) = ((Y + Z) * W) + (Z * X)
+  (hard) (X * Y) + ((X + Z) * W) = (X * (W + Y)) + (W * Z)
+  (hard) (W * (Z + Y)) + (Z * X) = (Z * (W + X)) + (W * Y)
+  (hard) (W * Z) + ((W + Y) * X) = ((X + Z) * W) + (X * Y)
+  (hard) ((X + Y) * Z) + (X * W) = (Z * (Y + X)) + (W * X)
+  (hard) (Z * Y) + ((Z + Y) * X) = (Z * X) + ((Z + X) * Y)
+  (hard) (W * Z) + ((Y + W) * X) = (X * (W + Y)) + (W * Z)
+487. X + (((not(X) + Y) * Z) + W) -> X + (W + Z)
+488. X * (((not(X) * Y) + Z) * W) -> X * (W * Z)
+489. X * (((Y * X) + Z) * W) -> X * (W * (Y + Z))
+490. (X + (Y + (Z + W))) * (Z + V) -> Z + (V * (W + (Y + X)))
+491. (X + (Y + Z)) * (W + (Y + V)) -> Y + ((Z + X) * (V + W))
+492. (X + Y) * (Z + (W + (X + V))) -> X + (Y * (Z + (W + V)))
+493. (X * (Y * (Z * W))) + (Z * V) -> Z * (V + (W * (Y * X)))
+494. (X * (Y * Z)) + (W * (Y * V)) -> Y * ((Z * X) + (V * W))
+495. (X * Y) + (Z * (W * (X * V))) -> X * (Y + (Z * (W * V)))
+496. (X * Y) + (Z + (W + (Y * V))) -> W + (Z + (Y * (V + X)))
+497. (X * (Y * Z)) + (W + (Z * V)) -> W + (Z * (V + (Y * X)))
+498. (X * Y) + (Z + (W * (Y * V))) -> Z + (Y * (X + (W * V)))
+499. (X * Y) + (Z + (W * (V * Y))) -> Z + (Y * (X + (V * W)))
+500. (X * (Y * (Z * W))) + (W * V) -> W * (V + (Z * (Y * X)))
+
+Gave up on reaching the given resource limit.
+Here is the final rewrite system:
+  not(0) -> 1
+  not(1) -> 0
+  not(not(X)) -> X
+  X + X -> X
+  X + Y <-> Y + X
+  X + 0 -> X
+  X + 1 -> 1
+  0 + X -> X
+  1 + X -> 1
+  X * X -> X
+  X * Y <-> Y * X
+  X * 0 -> 0
+  X * 1 -> X
+  0 * X -> 0
+  1 * X -> X
+  X + not(X) -> 1
+  X * not(X) -> 0
+  not(X + Y) -> not(X) * not(Y)
+  not(X * Y) -> not(X) + not(Y)
+  X + (Y + X) -> X + Y
+  X + (Y + Z) <-> Y + (X + Z)
+  X + (Y * X) -> X
+  (X + Y) + Z -> X + (Y + Z)
+  X * (Y + X) -> X
+  X * (Y * X) -> X * Y
+  X * (Y * Z) <-> Y * (X * Z)
+  (X * Y) * Z -> X * (Y * Z)
+  X + (Y + not(X)) -> 1
+  X + (not(X) + Y) -> 1
+  X + (Y * not(X)) -> X + Y
+  X + (not(X) * Y) -> X + Y
+  not(X) + (X * Y) -> Y + not(X)
+  not(X) + (Y * X) -> Y + not(X)
+  X * (Y + not(X)) -> X * Y
+  X * (not(X) + Y) -> X * Y
+  X * (Y * not(X)) -> 0
+  X * (not(X) * Y) -> 0
+  not(X) * (X + Y) -> Y * not(X)
+  not(X) * (Y + X) -> Y * not(X)
+  X + (Y + (Z * X)) -> X + Y
+  X + (Y + (X * Z)) -> X + Y
+  X + ((X * Y) + Z) -> X + Z
+  X + ((Y * X) + Z) -> X + Z
+  X + (Y * (X * Z)) -> X
+  X + (Y * (Z * X)) -> X
+  X + (Y * (Z + X)) -> X + (Z * Y)
+  X + ((X + Y) * Z) -> X + (Y * Z)
+  X + ((Y + X) * Z) -> X + (Y * Z)
+  (X * Y) + (X * Z) -> X * (Y + Z)
+  (X * Y) + (Y * Z) -> Y * (X + Z)
+  (X * Y) + (Z * Y) -> Y * (X + Z)
+  X * (Y + (X + Z)) -> X
+  X * (Y + (Z + X)) -> X
+  X * (Y + (Z * X)) -> X * (Z + Y)
+  X * ((X * Y) + Z) -> X * (Y + Z)
+  X * ((Y * X) + Z) -> X * (Y + Z)
+  X * (Y * (Z + X)) -> X * Y
+  X * (Y * (X + Z)) -> X * Y
+  X * ((X + Y) * Z) -> X * Z
+  X * ((Y + X) * Z) -> X * Z
+  (X + Y) * (X + Z) -> X + (Y * Z)
+  (X + Y) * (Y + Z) -> Y + (X * Z)
+  (X + Y) * (Z + Y) -> Y + (X * Z)
+  X + (Y + (Z + not(X))) -> 1
+  X + (Y + (not(X) + Z)) -> 1
+  X + (Y + (not(X) * Z)) -> X + (Y + Z)
+  X + (Y + (Z * not(X))) -> X + (Z + Y)
+  X + ((Y * not(X)) + Z) -> X + (Y + Z)
+  X + ((not(X) * Y) + Z) -> X + (Z + Y)
+  X + (Y * (not(X) + Z)) -> X + Y
+  X + (Y * (Z * not(X))) -> X + (Y * Z)
+  X + (Y * (not(X) * Z)) -> X + (Y * Z)
+  X + (Y * (Z + not(X))) -> X + Y
+  X + ((Y + not(X)) * Z) -> X + Z
+  X + ((not(X) + Y) * Z) -> X + Z
+  not(X) + (Y + (X * Z)) -> Z + (Y + not(X))
+  not(X) + (Y + (Z * X)) -> Z + (Y + not(X))
+  not(X) + ((X * Y) + Z) -> Z + (Y + not(X))
+  not(X) + ((Y * X) + Z) -> Y + (Z + not(X))
+  not(X) + (Y * (Z + X)) -> Y + not(X)
+  not(X) + (Y * (Z * X)) -> not(X) + (Y * Z)
+  not(X) + ((Y + X) * Z) -> Z + not(X)
+  not(X) + ((X + Y) * Z) -> Z + not(X)
+  X * (Y + (Z + not(X))) -> X * (Y + Z)
+  X * (Y + (not(X) + Z)) -> X * (Y + Z)
+  X * (Y + (not(X) * Z)) -> X * Y
+  X * (Y + (Z * not(X))) -> X * Y
+  X * ((Y * not(X)) + Z) -> X * Z
+  X * ((not(X) * Y) + Z) -> X * Z
+  X * (Y * (not(X) + Z)) -> X * (Y * Z)
+  X * (Y * (Z * not(X))) -> 0
+  X * (Y * (not(X) * Z)) -> 0
+  X * (Y * (Z + not(X))) -> X * (Z * Y)
+  X * ((Y + not(X)) * Z) -> X * (Y * Z)
+  X * ((not(X) + Y) * Z) -> X * (Z * Y)
+  not(X) * (Y + (Z + X)) -> not(X) * (Y + Z)
+  not(X) * (Y + (Z * X)) -> Y * not(X)
+  not(X) * ((Y * X) + Z) -> Z * not(X)
+  not(X) * (Y * (X + Z)) -> Z * (Y * not(X))
+  not(X) * (Y * (Z + X)) -> Z * (Y * not(X))
+  not(X) * ((X + Y) * Z) -> Z * (Y * not(X))
+  not(X) * ((Y + X) * Z) -> Y * (Z * not(X))
+  not(X) * ((X * Y) + Z) -> Z * not(X)
+  (X + Y) * (Z + not(Y)) -> (X * not(Y)) + (Z * Y)
+  (X + Y) * (not(X) + Z) -> (X * Z) + (Y * not(X))
+  (X + Y) * (not(Y) + Z) -> (X * not(Y)) + (Z * Y)
+  (X + not(Y)) * (Y + Z) -> (Y * X) + (Z * not(Y))
+  (X + not(Y)) * (Z + Y) -> (Y * X) + (Z * not(Y))
+  (not(X) + Y) * (X + Z) -> (X * Y) + (Z * not(X))
+  X + (Y + (Z + (X * W))) -> X + (Y + Z)
+  X + (Y + (Z + (W * X))) -> X + (Y + Z)
+  X + (Y + ((X * Z) + W)) -> X + (Y + W)
+  X + (Y + ((Z * X) + W)) -> X + (Y + W)
+  X + (Y + (Z * (W + X))) -> X + (Y + (Z * W))
+  X + (Y + (Z * (X * W))) -> X + Y
+  X + (Y + (Z * (W * X))) -> X + Y
+  X + (Y + ((X + Z) * W)) -> X + (Y + (Z * W))
+  X + (Y + ((Z + X) * W)) -> X + (Y + (Z * W))
+  X + (Y + (Z * (X + W))) -> X + (Y + (Z * W))
+  X + ((Y * (X + Z)) + W) -> X + (W + (Y * Z))
+  X + ((Y * (Z + X)) + W) -> X + (W + (Y * Z))
+  X + ((Y * (X * Z)) + W) -> X + W
+  X + ((Y * (Z * X)) + W) -> X + W
+  X + (((X + Y) * Z) + W) -> X + (W + (Y * Z))
+  X + (((Y + X) * Z) + W) -> X + (W + (Y * Z))
+  X + (Y * (Z + (W + X))) -> X + (Y * (Z + W))
+  X + (Y * (Z + (W * X))) -> X + (Y * Z)
+  X + (Y * ((X * Z) + W)) -> X + (Y * W)
+  X + (Y * ((Z * X) + W)) -> X + (Y * W)
+  X + (Y * (Z * (X * W))) -> X
+  X + (Y * (Z * (W * X))) -> X
+  X + (Y * (Z * (W + X))) -> X + (W * (Y * Z))
+  X + (Y * ((X + Z) * W)) -> X + (Z * (Y * W))
+  X + (Y * ((Z + X) * W)) -> X + (Z * (Y * W))
+  X + (Y * (Z + (X + W))) -> X + (Y * (Z + W))
+  X + ((Y + (X + Z)) * W) -> X + (W * (Y + Z))
+  X + ((Y + (Z + X)) * W) -> X + (W * (Y + Z))
+  X + ((Y + (X * Z)) * W) -> X + (W * Y)
+  X + ((Y + (Z * X)) * W) -> X + (W * Y)
+  X + (((X * Y) + Z) * W) -> X + (W * Z)
+  X + (((Y * X) + Z) * W) -> X + (W * Z)
+  (X * Y) + (Z + (W * X)) -> Z + (X * (Y + W))
+  (X * Y) + (Z + (X * W)) -> Z + (X * (Y + W))
+  (X * Y) + (Z + (Y * W)) -> Z + (Y * (X + W))
+  (X * Y) + (Z + (W * Y)) -> Z + (Y * (X + W))
+  (X * Y) + (Z * (X + W)) = (X * (Y + Z)) + (W * Z)
+  (X * Y) + (Z * (X * W)) -> X * (Y + (Z * W))
+  (X * Y) + (Z * (W * X)) -> X * (Y + (Z * W))
+  (X * Y) + (Z * (Y * W)) -> Y * (X + (Z * W))
+  (X * Y) + (Z * (W * Y)) -> Y * (X + (Z * W))
+  (X * Y) + ((Z * Y) + W) -> W + (Y * (Z + X))
+  (X * Y) + ((X * Z) + W) -> W + (X * (Y + Z))
+  (X * Y) + ((Y * Z) + W) -> W + (Y * (Z + X))
+  (X * Y) + (Z * (W + Y)) = (W * Z) + (Y * (X + Z))
+  (X * Y) + (Z * (W + X)) = (W * Z) + (X * (Z + Y))
+  (X * Y) + (Z * (W + X)) = (W * Z) + (X * (Y + Z))
+  (X * Y) + (Z * (Y + W)) = (Z * W) + ((Z + X) * Y)
+  (X * Y) + (Z * (Y + W)) = (Z * W) + ((X + Z) * Y)
+  (X * Y) + (Z * (X + W)) = (W * Z) + (X * (Z + Y))
+  (X * Y) + (Z * (X + W)) = (W * Z) + (X * (Y + Z))
+  (X * Y) + (Z * (X + W)) = (Z * W) + (X * (Z + Y))
+  (X * Y) + ((Z + X) * W) = (W * (Z + X)) + (X * Y)
+  (X * Y) + ((X + Z) * W) = (W * (X + Z)) + (X * Y)
+  (X * (Y + Z)) + (Y * W) = (X * Z) + (Y * (X + W))
+  (X * (Y + Z)) + (Y * W) = (Z * X) + (Y * (X + W))
+  (X * (Y + Z)) + (Z * W) = (X * Y) + (Z * (X + W))
+  (X * (Y + Z)) + (Z * W) = (Y * X) + (Z * (X + W))
+  (X * (Y * Z)) + (Y * W) -> Y * (W + (X * Z))
+  (X * (Y * Z)) + (Z * W) -> Z * (W + (X * Y))
+  (X * (Y * Z)) + (W * Z) -> Z * (W + (X * Y))
+  (X * (Y + Z)) + (Z * W) = (Z * (W + X)) + (Y * X)
+  (X * (Y + Z)) + (Z * W) = (Z * (X + W)) + (Y * X)
+  (X * (Y + Z)) + (Z * W) = (Z * (X + W)) + (X * Y)
+  (X * (Y + Z)) + (Y * W) = (Y * (W + X)) + (Z * X)
+  (X * (Y + Z)) + (Y * W) = (Y * (X + W)) + (Z * X)
+  ((X + Y) * Z) + (X * W) = (X * W) + (Z * (X + Y))
+  ((X + Y) * Z) + (X * W) = (Y * Z) + (X * (Z + W))
+  ((X + Y) * Z) + (Y * W) = (X * Z) + (Y * (Z + W))
+  ((X + Y) * Z) + (Y * W) = (Y * W) + (Z * (X + Y))
+  X * (Y + (Z + (X + W))) -> X
+  X * (Y + (Z + (W + X))) -> X
+  X * (Y + (Z * (W * X))) -> X * (Y + (Z * W))
+  X * (Y + (Z + (W * X))) -> X * (W + (Y + Z))
+  X * (Y + (Z * (W + X))) -> X * (Z + Y)
+  X * (Y + ((X + Z) * W)) -> X * (W + Y)
+  X * (Y + ((Z + X) * W)) -> X * (W + Y)
+  X * (Y + ((X * Z) + W)) -> X * (Z + (W + Y))
+  X * (Y + ((Z * X) + W)) -> X * (Z + (W + Y))
+  X * (Y + (Z * (X * W))) -> X * (Y + (Z * W))
+  X * ((Y * (X + Z)) + W) -> X * (Y + W)
+  X * ((Y * (Z + X)) + W) -> X * (Y + W)
+  X * ((Y * (X * Z)) + W) -> X * (W + (Y * Z))
+  X * ((Y * (Z * X)) + W) -> X * (W + (Y * Z))
+  X * (((X + Y) * Z) + W) -> X * (Z + W)
+  X * (((Y + X) * Z) + W) -> X * (Z + W)
+  X * (Y * (Z + (X + W))) -> X * Y
+  X * (Y * (Z + (W + X))) -> X * Y
+  X * (Y * (Z + (W * X))) -> X * (Y * (Z + W))
+  X * (Y * ((X * Z) + W)) -> X * (Y * (Z + W))
+  X * (Y * ((Z * X) + W)) -> X * (Y * (Z + W))
+  X * (Y * (Z * (X + W))) -> X * (Y * Z)
+  X * (Y * (Z * (W + X))) -> X * (Y * Z)
+  X * (Y * ((X + Z) * W)) -> X * (Y * W)
+  X * (Y * ((Z + X) * W)) -> X * (Y * W)
+  X * (Y * (Z + (X * W))) -> X * (Y * (Z + W))
+  X * ((Y + (X + Z)) * W) -> X * W
+  X * ((Y + (Z + X)) * W) -> X * W
+  X * ((Y + (X * Z)) * W) -> X * (W * (Y + Z))
+  X * ((Y + (Z * X)) * W) -> X * (W * (Y + Z))
+  X * (((X * Y) + Z) * W) -> X * (W * (Y + Z))
+  X * (((Y * X) + Z) * W) -> X * (W * (Y + Z))
+  (X + Y) * (Z + (X + W)) -> X + (Y * (Z + W))
+  (X + Y) * (Z + (W + X)) -> X + (Y * (Z + W))
+  (X + Y) * (Z + (X * W)) -> (X * W) + (Z * (X + Y))
+  (X + Y) * (Z + (Y * W)) -> (Y * W) + (Z * (X + Y))
+  (X + Y) * (Z + (W * Y)) -> (Y * W) + (Z * (X + Y))
+  (X + Y) * (Z * (W + X)) -> Z * (X + (Y * W))
+  (X + Y) * (Z * (X + W)) -> Z * (X + (Y * W))
+  (X + Y) * (Z * (Y + W)) -> Z * (Y + (X * W))
+  (X + Y) * (Z * (W + Y)) -> Z * (Y + (X * W))
+  (X + Y) * ((Z * Y) + W) -> (Y * Z) + (W * (X + Y))
+  (X + Y) * ((Y * Z) + W) -> (Y * Z) + (W * (X + Y))
+  (X + Y) * (Z + (Y + W)) -> Y + (X * (Z + W))
+  (X + Y) * (Z + (W + Y)) -> Y + (X * (Z + W))
+  (X + Y) * (Z + (W * X)) -> (X * W) + (Z * (Y + X))
+  (X + Y) * ((X * Z) + W) -> (X * Z) + (W * (Y + X))
+  (X + Y) * ((Z * X) + W) -> (X * Z) + (W * (Y + X))
+  (X + Y) * ((Z + Y) * W) -> W * (Y + (Z * X))
+  (X + Y) * ((X + Z) * W) -> W * (X + (Y * Z))
+  (X + Y) * ((Y + Z) * W) -> W * (Y + (Z * X))
+  (X + (Y * Z)) * (Z + W) -> (Y * Z) + (X * (Z + W))
+  (X + (Y * Z)) * (Y + W) -> (Y * Z) + (X * (W + Y))
+  (X + (Y + Z)) * (Y + W) -> Y + (W * (X + Z))
+  (X + (Y + Z)) * (Z + W) -> Z + (W * (X + Y))
+  (X + (Y + Z)) * (W + Z) -> Z + (W * (X + Y))
+  (X + (Y * Z)) * (W + Z) -> (Z * Y) + (X * (W + Z))
+  ((X * Y) + Z) * (X + W) -> (X * Y) + (Z * (X + W))
+  ((X * Y) + Z) * (Y + W) -> (Y * X) + (Z * (Y + W))
+  X + (Y + (Z + (W + not(X)))) -> 1
+  X + (Y + (Z + (not(X) + W))) -> 1
+  X + (Y + (Z + (not(X) * W))) -> X + (Y + (Z + W))
+  X + (Y + ((Z * not(X)) + W)) -> X + (Y + (Z + W))
+  X + (Y + ((not(X) * Z) + W)) -> X + (Y + (Z + W))
+  X + (Y + (Z * (not(X) + W))) -> X + (Y + Z)
+  X + (Y + (Z * (not(X) * W))) -> X + (Y + (Z * W))
+  X + (Y + ((Z + not(X)) * W)) -> X + (Y + W)
+  X + (Y + ((not(X) + Z) * W)) -> X + (Y + W)
+  X + (Y + (Z + (W * not(X)))) -> X + (W + (Y + Z))
+  X + (Y + (Z * (W + not(X)))) -> X + (Z + Y)
+  X + (Y + (Z * (W * not(X)))) -> X + (Y + (Z * W))
+  X + ((Y * (Z + not(X))) + W) -> X + (Y + W)
+  X + ((Y * (Z * not(X))) + W) -> X + (W + (Y * Z))
+  X + ((Y * (not(X) + Z)) + W) -> X + (W + Y)
+  X + ((Y * (not(X) * Z)) + W) -> X + (W + (Y * Z))
+  X + (((Y + not(X)) * Z) + W) -> X + (W + Z)
+  X + (((not(X) + Y) * Z) + W) -> X + (W + Z)
+  X + (Y * (Z + (not(X) + W))) -> X + Y
+  X + (Y * (Z + (not(X) * W))) -> X + (Y * (Z + W))
+  X + (Y * ((Z * not(X)) + W)) -> X + (Y * (W + Z))
+  X + (Y * ((not(X) * Z) + W)) -> X + (Y * (W + Z))
+  X + (Y * (Z * (W + not(X)))) -> X + (Y * Z)
+  X + (Y * (Z * (not(X) + W))) -> X + (Y * Z)
+  X + (Y * (Z * (W * not(X)))) -> X + (Y * (Z * W))
+  X + (Y * (Z * (not(X) * W))) -> X + (Y * (Z * W))
+  X + (Y * ((Z + not(X)) * W)) -> X + (Y * W)
+  X + (Y * ((not(X) + Z) * W)) -> X + (Y * W)
+  X + (Y * (Z + (W + not(X)))) -> X + Y
+  X + (Y * (Z + (W * not(X)))) -> X + (Y * (Z + W))
+  X + ((Y + (Z + not(X))) * W) -> X + W
+  X + ((Y + (not(X) + Z)) * W) -> X + W
+  X + ((Y + (Z * not(X))) * W) -> X + (W * (Y + Z))
+  X + ((Y + (not(X) * Z)) * W) -> X + (W * (Y + Z))
+  X + (((Y * not(X)) + Z) * W) -> X + (W * (Z + Y))
+  not(X) + (Y + (Z * (X + W))) -> Y + (Z + not(X))
+  not(X) + (Y + (Z * (W * X))) -> Y + (not(X) + (W * Z))
+  not(X) + (Y + (Z + (W * X))) -> Z + (Y + (W + not(X)))
+  not(X) + (Y + (Z * (W + X))) -> Z + (Y + not(X))
+  not(X) + (Y + ((X + Z) * W)) -> W + (Y + not(X))
+  not(X) + (Y + ((Z + X) * W)) -> W + (Y + not(X))
+  not(X) + ((Y * (Z + X)) + W) -> Y + (W + not(X))
+  not(X) + (Y * (Z + (W + X))) -> Y + not(X)
+  not(X) + (Y * (Z + (W * X))) -> not(X) + (Y * (Z + W))
+  not(X) + (Y * (Z * (X + W))) -> not(X) + (Y * Z)
+  not(X) + (Y * (Z * (X * W))) -> not(X) + (Y * (Z * W))
+  not(X) + (Y * (Z * (W * X))) -> not(X) + (Y * (Z * W))
+  not(X) + (Y * (Z + (X + W))) -> Y + not(X)
+  not(X) + (Y * ((Z + X) * W)) -> not(X) + (W * Y)
+  not(X) + (Y * ((X + Z) * W)) -> not(X) + (W * Y)
+  not(X) + ((Y + (X + Z)) * W) -> W + not(X)
+  not(X) + ((Y + (Z + X)) * W) -> W + not(X)
+  (X * Y) + (Z * (X + not(Y))) -> (X * Y) + (Z * not(Y))
+  (X * Y) + (Z * (Y + not(X))) -> (X * Y) + (Z * not(X))
+  (X * Y) + (Z * (not(X) + Y)) -> (X * Y) + (Z * not(X))
+  (X * Y) + (not(X) * (Y + Z)) -> Y + (Z * not(X))
+  (X * Y) + (not(Y) * (X + Z)) -> X + (Z * not(Y))
+  (X * Y) + ((X + Z) * not(Y)) -> X + (Z * not(Y))
+  (X * Y) + ((X + not(Y)) * Z) -> (X * Y) + (Z * not(Y))
+  (X * Y) + ((Y + not(X)) * Z) -> (X * Y) + (Z * not(X))
+  (X * Y) + ((not(Y) + X) * Z) -> (X * Y) + (Z * not(Y))
+  (X * Y) + (not(X) * (Z + Y)) -> Y + (Z * not(X))
+  (X * Y) + (not(Y) * (Z + X)) -> X + (Z * not(Y))
+  (X * Y) + ((Z + X) * not(Y)) -> X + (Z * not(Y))
+  (X * not(Y)) + (Y * (X + Z)) -> X + (Y * Z)
+  (X * not(Y)) + (Y * (Z + X)) -> X + (Y * Z)
+  (X * not(Y)) + (Z * (X + Y)) -> (X * not(Y)) + (Y * Z)
+  (X * not(Y)) + ((Z + X) * Y) -> X + (Z * Y)
+  (X * not(Y)) + (Z * (Y + X)) -> (Y * Z) + (X * not(Y))
+  (X * not(Y)) + ((Y + X) * Z) -> (Y * Z) + (X * not(Y))
+  (X * not(Y)) + ((X + Y) * Z) -> (Y * Z) + (X * not(Y))
+  (X * not(Y)) + ((X + Z) * Y) -> X + (Y * Z)
+  (not(X) * Y) + (Z * (X + Y)) -> (X * Z) + (Y * not(X))
+  (not(X) * Y) + (X * (Y + Z)) -> Y + (X * Z)
+  (not(X) * Y) + ((Y + X) * Z) -> (X * Z) + (Y * not(X))
+  X * (Y + (Z + (W + not(X)))) -> X * (Y + (Z + W))
+  X * (Y + (Z + (not(X) + W))) -> X * (Y + (Z + W))
+  X * (Y + (Z + (W * not(X)))) -> X * (Y + Z)
+  X * (Y + (Z + (not(X) * W))) -> X * (Y + Z)
+  X * (Y + ((Z * not(X)) + W)) -> X * (Y + W)
+  X * (Y + ((not(X) * Z) + W)) -> X * (Y + W)
+  X * (Y + (Z * (not(X) + W))) -> X * (Y + (Z * W))
+  X * (Y + (Z * (not(X) * W))) -> X * Y
+  X * (Y + ((Z + not(X)) * W)) -> X * (Y + (W * Z))
+  X * (Y + ((not(X) + Z) * W)) -> X * (Y + (W * Z))
+  X * (Y + (Z * (W + not(X)))) -> X * (Y + (Z * W))
+  X * (Y + (Z * (W * not(X)))) -> X * Y
+  X * ((Y * (Z + not(X))) + W) -> X * (W + (Y * Z))
+  X * ((Y * (not(X) + Z)) + W) -> X * (W + (Y * Z))
+  X * ((Y * (Z * not(X))) + W) -> X * W
+  X * ((Y * (not(X) * Z)) + W) -> X * W
+  X * (((Y + not(X)) * Z) + W) -> X * (W + (Z * Y))
+  X * (Y * (Z + (not(X) + W))) -> X * (Y * (Z + W))
+  X * (Y * (Z + (not(X) * W))) -> X * (Y * Z)
+  X * (Y * ((Z * not(X)) + W)) -> X * (Y * W)
+  X * (Y * ((not(X) * Z) + W)) -> X * (Y * W)
+  X * (Y * (Z * (not(X) + W))) -> X * (Y * (Z * W))
+  X * (Y * (Z * (W * not(X)))) -> 0
+  X * (Y * (Z * (not(X) * W))) -> 0
+  X * (Y * ((Z + not(X)) * W)) -> X * (Y * (Z * W))
+  X * (Y * ((not(X) + Z) * W)) -> X * (Y * (W * Z))
+  X * (Y * (Z * (W + not(X)))) -> X * (W * (Y * Z))
+  X * (Y * (Z + (W + not(X)))) -> X * (Y * (Z + W))
+  X * (Y * (Z + (W * not(X)))) -> X * (Z * Y)
+  X * ((Y + (Z + not(X))) * W) -> X * (W * (Y + Z))
+  X * ((Y + (Z * not(X))) * W) -> X * (Y * W)
+  X * ((Y + (not(X) + Z)) * W) -> X * (W * (Y + Z))
+  X * ((Y + (not(X) * Z)) * W) -> X * (W * Y)
+  X * (((Y * not(X)) + Z) * W) -> X * (W * Z)
+  X * (((not(X) * Y) + Z) * W) -> X * (W * Z)
+  not(X) * (Y + (Z + (X + W))) -> not(X) * (Y + (Z + W))
+  not(X) * (Y + (Z + (W + X))) -> not(X) * (Y + (Z + W))
+  not(X) * (Y + (Z + (X * W))) -> not(X) * (Y + Z)
+  not(X) * (Y + (Z * (W + X))) -> not(X) * (Y + (Z * W))
+  not(X) * (Y + (Z * (W * X))) -> Y * not(X)
+  not(X) * (Y * (Z + (X * W))) -> Y * (Z * not(X))
+  not(X) * (Y * (Z + (W + X))) -> Y * (not(X) * (W + Z))
+  not(X) * (Y * (Z * (W + X))) -> Z * (Y * (W * not(X)))
+  not(X) * (Y * (Z + (W * X))) -> Z * (Y * not(X))
+  not(X) * (Y * ((X * Z) + W)) -> W * (Y * not(X))
+  not(X) * (Y * ((Z * X) + W)) -> W * (Y * not(X))
+  not(X) * ((Y + (Z * X)) * W) -> Y * (W * not(X))
+  not(X) * (Y + (Z * (X * W))) -> Y * not(X)
+  not(X) * (Y + ((Z * X) + W)) -> not(X) * (W + Y)
+  not(X) * (Y + ((X * Z) + W)) -> not(X) * (W + Y)
+  not(X) * ((Y * (X * Z)) + W) -> W * not(X)
+  not(X) * ((Y * (Z * X)) + W) -> W * not(X)
+  (X * Y) + (Z + (not(X) + not(Y))) -> 1
+  (X * Y) + (Z * (not(X) + not(Y))) -> Z + (X * Y)
+  (X * Y) + ((not(X) + not(Y)) * Z) -> Z + (X * Y)
+  (X * not(Y)) + (Z + (not(X) + Y)) -> 1
+  (X * not(Y)) + (Z * (Y + not(X))) -> Z + (X * not(Y))
+  (not(X) * not(Y)) + (Z * (X + Y)) -> Z + (not(X) * not(Y))
+  (X + Y) * (Z + (not(X) * not(Y))) -> Z * (X + Y)
+  (X + Y) * ((not(X) * not(Y)) + Z) -> Z * (X + Y)
+  (X + Y) * (Z * (not(X) * not(Y))) -> 0
+  (X + not(Y)) * (Z + (Y * not(X))) -> Z * (X + not(Y))
+  (X + not(Y)) * (Z * (not(X) * Y)) -> 0
+  (X + not(Y)) * (Z + (not(X) * Y)) -> Z * (X + not(Y))
+  (not(X) + Y) * (Z + (X * not(Y))) -> Z * (Y + not(X))
+  X + (Y + (Z * (W * (X * V)))) -> X + Y
+  X + (Y * (Z * (W * (X * V)))) -> X
+  X + (Y * (Z * (W * (V * X)))) -> X
+  (X * Y) + (Z * (W * (X * V))) -> X * (Y + (Z * (W * V)))
+  (X * Y) + (Z + (W * (X * V))) -> Z + (X * (Y + (W * V)))
+  (X * Y) + (Z + (W * (V * Y))) -> Z + (Y * (X + (V * W)))
+  (X * Y) + (Z + (W + (Y * V))) -> W + (Z + (Y * (V + X)))
+  (X * Y) + (Z + (W * (Y * V))) -> Z + (Y * (X + (W * V)))
+  (X * Y) + (Z + (W + (X * V))) -> W + (Z + (X * (V + Y)))
+  (X * (Y * Z)) + (W * (Y * V)) -> Y * ((Z * X) + (V * W))
+  (X * (Y * Z)) + (W + (Y * V)) -> W + (Y * (V + (X * Z)))
+  (X * (Y * Z)) + (W + (Z * V)) -> W + (Z * (V + (Y * X)))
+  (X * (Y * (Z * W))) + (W * V) -> W * (V + (Z * (Y * X)))
+  (X * (Y * (Z * W))) + (Z * V) -> Z * (V + (W * (Y * X)))
+  X * (Y + (Z + (W + (X + V)))) -> X
+  X * (Y + (Z + (W + (V + X)))) -> X
+  X * (Y + (Z * (W * (X + V)))) -> X * (Y + (Z * W))
+  X * (Y * (Z + (W + (X + V)))) -> X * Y
+  X * (Y * (Z + (W + (V + X)))) -> X * Y
+  X * (Y * (Z * (W + (X + V)))) -> X * (Y * Z)
+  X * ((Y + (Z + (X + W))) * V) -> X * V
+  (X + Y) * (Z + (W + (X + V))) -> X + (Y * (Z + (W + V)))
+  (X + Y) * (Z * (W + (X + V))) -> Z * (X + (Y * (W + V)))
+  (X + Y) * (Z * (W * (X + V))) -> W * (Z * (X + (V * Y)))
+  (X + (Y + Z)) * (W + (Y + V)) -> Y + ((Z + X) * (V + W))
+  (X + (Y + Z)) * (W * (Y + V)) -> W * (Y + (V * (X + Z)))
+  (X + (Y + (Z + W))) * (Z + V) -> Z + (V * (W + (Y + X)))
+  X + (Y + (Z + (W + (V + not(X))))) -> 1
+  X + (Y * (Z + (W + (V + not(X))))) -> X + Y
+  (X * (Y * not(Z))) + (Z * (W + X)) -> (Z * W) + (X * (Z + Y))
+  (X * (not(Y) * Z)) + (Y * (W + X)) -> (Y * W) + (X * (Y + Z))
+  X * (Y + (Z * (W * (V * not(X))))) -> X * Y
+  X * (Y * (Z * (W * (V * not(X))))) -> 0
+  (X * (Y + Z)) + (((X * Y) + Z) * W) -> (X * Y) + (Z * (X + W))
+  (X * (Y + (Z * W))) + (Z * (V + X)) -> (Z * V) + (X * (Z + Y))
+  (X * ((Y + not(Z)) * W)) + (Z * (V + X)) -> (Z * V) + (X * (Z + W))
+  (X * Y) + (Z * (Y + ((W * (V * not(Z))) + U))) -> (Z * U) + (Y * (Z + X))
+
+RESULT: GaveUp (couldn't solve the problem).
+
+Execution time: 7.7425 seconds
+

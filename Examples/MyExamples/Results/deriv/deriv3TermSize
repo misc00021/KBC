@@ -1,0 +1,69 @@
+Here is the input problem:
+  Axiom 1 (derivative of 1): d(1) = 0.
+  Axiom 2 (derivative of 0): d(0) = 0.
+  Axiom 3 (derivative of x): d(x) = 1.
+  Axiom 4 (flattening): sin2 = sin(x).
+  Axiom 5 (flattening): cos2 = cos(x).
+  Axiom 6 (flattening): d2 = d(sin(x)).
+  Axiom 7 (commutativity of +): X + Y = Y + X.
+  Axiom 8 (plus 0): 0 + X = X.
+  Axiom 9 (commutativity of *): X * Y = Y * X.
+  Axiom 10 (times 1): 1 * X = X.
+  Axiom 11 (times 0): 0 * X = 0.
+  Axiom 12 (derivative of +): d(X + Y) = d(X) + d(Y).
+  Axiom 13 (minus): X + -X = 0.
+  Axiom 14 (flattening): *2 = 1 * cos(x).
+  Axiom 15 (derivative of sin): d(sin(X)) = cos(X) * d(X).
+  Axiom 16 (derivative of cos): d(cos(X)) = -(sin(X) * d(X)).
+  Axiom 17 (associativity of +): X + (Y + Z) = (X + Y) + Z.
+  Axiom 18 (associativity of *): X * (Y * Z) = (X * Y) * Z.
+  Axiom 19 (distributivity): X * (Y + Z) = (X * Y) + (X * Z).
+  Axiom 20 (derivative of *): d(X * Y) = (X * d(Y)) + (Y * d(X)).
+  Goal 1 (goal): d(sin(x)) = 1 * cos(x).
+
+1. d(1) -> 0
+2. d(0) -> 0
+3. d(x) -> 1
+4. sin(x) -> sin2
+5. cos(x) -> cos2
+6. d(sin2) -> d2
+7. X + Y <-> Y + X
+8. 0 + X -> X
+9. X * Y <-> Y * X
+10. 1 * X -> X
+11. 0 * X -> 0
+12. d(X + Y) -> d(X) + d(Y)
+13. X + -X -> 0
+14. cos2 -> *2
+15. d(X) * cos(X) -> d(sin(X))
+16. -(d(X) * sin(X)) -> d(cos(X))
+17. (X + Y) + Z -> X + (Y + Z)
+18. (X * Y) * Z -> X * (Y * Z)
+19. (X * Y) + (X * Z) -> X * (Y + Z)
+20. (X * d(Y)) + (Y * d(X)) -> d(X * Y)
+21. d2 -> *2
+22. -0 -> 0
+23. X + 0 -> X
+24. X * 1 -> X
+25. X * 0 -> 0
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (derivative of x): d(x) = 1.
+Axiom 2 (commutativity of *): X * Y = Y * X.
+Axiom 3 (derivative of sin): d(sin(X)) = cos(X) * d(X).
+
+Goal 1 (goal): d(sin(x)) = 1 * cos(x).
+Proof:
+  d(sin(x))
+= { by axiom 3 (derivative of sin) }
+  cos(x) * d(x)
+= { by axiom 2 (commutativity of *) }
+  d(x) * cos(x)
+= { by axiom 1 (derivative of x) }
+  1 * cos(x)
+
+RESULT: Theorem (the conjecture is true).
+
+Execution time: 0.0133624 seconds
+

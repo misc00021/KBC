@@ -1,0 +1,36 @@
+Here is the input problem:
+  Axiom 1 (mul_comm): X * Y = Y * X.
+  Axiom 2 (add_inv): X + X = zero.
+  Axiom 3 (add_comm): X + Y = Y + X.
+  Axiom 4 (add_id): X + zero = X.
+  Axiom 5 (mul_assoc): (X * Y) * Z = X * (Y * Z).
+  Axiom 6 (add_assoc): (X + Y) + Z = X + (Y + Z).
+  Axiom 7 (mul_dist): X * (Y + Z) = (X * Y) + (X * Z).
+  Goal 1 (goal): x = x.
+
+1. X * Y <-> Y * X
+2. X + X -> zero
+3. X + Y <-> Y + X
+4. X + zero -> X
+5. (X * Y) * Z -> X * (Y * Z)
+6. (X + Y) + Z -> X + (Y + Z)
+7. (X * Y) + (X * Z) -> X * (Y + Z)
+8. zero + X -> X
+9. X * zero -> zero
+10. zero * X -> zero
+11. X + (X + Y) -> Y
+12. X + (Y + X) -> Y
+13. X * (Y * Z) <-> Y * (X * Z)
+14. X + (Y + Z) <-> Y + (X + Z)
+
+The conjecture is true! Here is a proof.
+
+
+Goal 1 (goal): x = x.
+Proof:
+Reflexivity.
+
+RESULT: Theorem (the conjecture is true).
+
+Execution time: 0.0172541 seconds
+
