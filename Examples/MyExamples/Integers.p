@@ -28,5 +28,8 @@ cnf(distrib_left, axiom,
 cnf(distrib_right, axiom,
     mul(add(M, K), N) = add(mul(M, N), mul(K, N))).
 
+cnf(mul_inv, axiom, ((X = one)) => (mul(X, inv(X)) = one)).
+
+
 cnf(goal, conjecture,
-    true = false).
+    mul(one, inv(one)) = one).
