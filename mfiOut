@@ -1,0 +1,45 @@
+Executed in   12.59 millis
+
+
+Here is the input problem:
+  Axiom 1 (zero_plus): X + 0 = X.
+  Axiom 2 (plus_zero): 0 + X = X.
+  Axiom 3 (minus_minus): -X + X = 0.
+  Axiom 4 (associativity): X + (Y + Z) = (X + Y) + Z.
+  Goal 1 (goal): --x = x.
+
+1. X + 0 -> X
+2. 0 + X -> X
+3. -X + X -> 0
+4. (X + Y) + Z -> X + (Y + Z)
+5. -0 -> 0
+6. -X + (X + Y) -> Y
+7. --X -> X
+8. X + -X -> 0
+9. X + (-X + Y) -> Y
+10. X + (Y + -(X + Y)) -> 0
+11. X + -(Y + X) -> -Y
+12. -(X + Y) -> -Y + -X
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (zero_plus): X + 0 = X.
+Axiom 2 (plus_zero): 0 + X = X.
+Axiom 3 (minus_minus): -X + X = 0.
+Axiom 4 (associativity): X + (Y + Z) = (X + Y) + Z.
+
+Goal 1 (goal): --x = x.
+Proof:
+  --x
+= { by axiom 1 (zero_plus) R->L }
+  --x + 0
+= { by axiom 3 (minus_minus) R->L }
+  --x + (-x + x)
+= { by axiom 4 (associativity) }
+  (--x + -x) + x
+= { by axiom 3 (minus_minus) }
+  0 + x
+= { by axiom 2 (plus_zero) }
+  x
+
+RESULT: Theorem (the conjecture is true).
