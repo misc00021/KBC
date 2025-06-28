@@ -1,264 +1,264 @@
 
-Average time: 0.047307566700000005
+Average time: 0.04807285470000001
 Stop reason: Saturated
 Iterations: 7
 Original: (* b (+ 0 (* x (+ (+ (+ (* x 1) (- (pow y 0) (/ (* 0 z) (pow a 1)))) (/ (pow (pow b 1) 1) (* 1 1))) (/ (* d 0) (pow e 1))))))
 Simplified: (* (+ x (+ 1 b)) (* x b))
 
 
-Average time: 0.0008736446
+Average time: 0.0008862497
 Stop reason: Saturated
 Iterations: 3
 Original: (+ 0 x)
 Simplified: x
 
 
-Average time: 0.0017267217999999997
+Average time: 0.0017824050000000001
 Stop reason: Saturated
 Iterations: 4
 Original: (* 1 y)
 Simplified: y
 
 
-Average time: 0.0004588293
+Average time: 0.000477922
 Stop reason: Saturated
 Iterations: 2
 Original: (/ z 1)
 Simplified: z
 
 
-Average time: 0.0005013842
+Average time: 0.0005249826
 Stop reason: Saturated
 Iterations: 2
 Original: (pow a 0)
 Simplified: 1
 
 
-Average time: 0.000501909
+Average time: 0.0005130213000000001
 Stop reason: Saturated
 Iterations: 2
 Original: (pow b 1)
 Simplified: b
 
 
-Average time: 0.0021934286
+Average time: 0.0022732906
 Stop reason: Saturated
 Iterations: 5
 Original: (* x (/ 1 x))
 Simplified: 1
 
 
-Average time: 0.0014700197
+Average time: 0.0015214971000000002
 Stop reason: Saturated
 Iterations: 4
 Original: (+ x (- 0 x))
 Simplified: 0
 
 
-Average time: 0.000541298
+Average time: 0.0005537176999999999
 Stop reason: Saturated
 Iterations: 2
 Original: (/ (pow x 2) x)
 Simplified: x
 
 
-Average time: 5.1924055469
-Stop reason: TimeLimit(5.000205715)
+Average time: 5.191854520400001
+Stop reason: TimeLimit(5.001100086)
 Iterations: 31
 Original: (- (+ a b) b)
 Simplified: a
 
 
-Average time: 0.0017880163
+Average time: 0.0018008972999999998
 Stop reason: Saturated
 Iterations: 4
 Original: (* x (+ y (pow z 0)))
 Simplified: (+ x (* x y))
 
 
-Average time: 0.0007542271000000001
+Average time: 0.0007833629
 Stop reason: Saturated
 Iterations: 2
 Original: (/ (+ x (* y z)) (pow a 1))
 Simplified: (/ (+ x (* y z)) a)
 
 
-Average time: 0.0015953426
+Average time: 0.0016044668999999998
 Stop reason: Saturated
 Iterations: 5
 Original: (- (pow x 2) (/ (* y 0) z))
 Simplified: (pow x 2)
 
 
-Average time: 0.0042116425
+Average time: 0.004219167299999999
 Stop reason: Saturated
 Iterations: 5
 Original: (+ (pow x (+ 1 1)) (- 0 (* y 1)))
 Simplified: (- (pow x 2) y)
 
 
-Average time: 0.004621801399999999
+Average time: 0.0046426552
 Stop reason: Saturated
 Iterations: 5
 Original: (* (+ a (* b 0)) (/ 1 (pow c 1)))
 Simplified: (/ a c)
 
 
-Average time: 0.0024785125
+Average time: 0.0024986110000000004
 Stop reason: Saturated
 Iterations: 4
 Original: (+ (* x (/ y (pow z 1))) (- (pow a 0) (/ 0 b)))
 Simplified: (+ (* x (/ y z)) 1)
 
 
-Average time: 0.0034369336
+Average time: 0.0034730838
 Stop reason: Saturated
 Iterations: 6
 Original: (/ (* (pow x 2) (+ y 0)) (pow (pow z 1) 1))
 Simplified: (/ (* x (* x y)) z)
 
 
-Average time: 0.0029564472
+Average time: 0.0029764922000000004
 Stop reason: Saturated
 Iterations: 5
 Original: (* (- (pow x 2) (pow x 1)) (+ (/ x x) (/ 0 x)))
 Simplified: (- (pow x 2) x)
 
 
-Average time: 0.0017413859000000001
+Average time: 0.0017643254
 Stop reason: Saturated
 Iterations: 4
 Original: (- (pow (+ x 1) 1) (pow x 1))
 Simplified: 1
 
 
-Average time: 0.0005380549
+Average time: 0.0005416322000000001
 Stop reason: Saturated
 Iterations: 2
 Original: (pow (pow x 1) 1)
 Simplified: x
 
 
-Average time: 0.000572106
+Average time: 0.0005801873
 Stop reason: Saturated
 Iterations: 2
 Original: (/ (* x y) (/ x y))
 Simplified: (/ (* x y) (/ x y))
 
 
-Average time: 0.0012856537
+Average time: 0.0012949354
 Stop reason: Saturated
 Iterations: 3
 Original: (* x (- x -1))
 Simplified: (+ x (* x x))
 
 
-Average time: 0.0013069862999999999
+Average time: 0.0013005138000000004
 Stop reason: Saturated
 Iterations: 3
 Original: (+ (* x y) (* x z))
 Simplified: (* x (+ y z))
 
 
-Average time: 0.0005953183000000001
+Average time: 0.0005961812000000001
 Stop reason: Saturated
 Iterations: 2
 Original: (+ x (+ 0 (+ 0 (+ 0 (+ 0 (+ 0 (+ 0 (+ 0 0))))))))
 Simplified: x
 
 
-Average time: 0.0017195121000000001
+Average time: 0.0017244756
 Stop reason: Saturated
 Iterations: 4
 Original: (* y (* 1 (* 1 (* 1 (* 1 1)))))
 Simplified: y
 
 
-Average time: 0.0006511469
+Average time: 0.0006682706
 Stop reason: Saturated
 Iterations: 2
 Original: (- (- (- (- x 0) 0) 0) 0)
 Simplified: x
 
 
-Average time: 0.0124573457
+Average time: 0.012518049100000001
 Stop reason: Saturated
 Iterations: 7
 Original: (+ (+ (+ (* x 1) (* x 1)) (* x 1)) (* x 1))
 Simplified: (* x 4)
 
 
-Average time: 0.0028743614
+Average time: 0.0029526867999999993
 Stop reason: Saturated
 Iterations: 4
 Original: (* (* (+ x 0) (+ y 0)) (+ z 0))
 Simplified: (* x (* y z))
 
 
-Average time: 0.0005012096000000001
+Average time: 0.0005054893
 Stop reason: Saturated
 Iterations: 2
 Original: (/ (/ (/ a 1) 1) 1)
 Simplified: a
 
 
-Average time: 0.000570858
+Average time: 0.0005757926999999999
 Stop reason: Saturated
 Iterations: 2
 Original: (pow (pow (pow x 1) 1) 1)
 Simplified: x
 
 
-Average time: 1.0836051209000002
+Average time: 1.0887847805
 Stop reason: Saturated
 Iterations: 15
 Original: (* x (+ y (+ z (+ a (+ b (+ c (+ d e)))))))
 Simplified: (* x (+ d (+ (+ b e) (+ z (+ c (+ y a))))))
 
 
-Average time: 0.93495486
+Average time: 0.9385745339
 Stop reason: NodeLimit(11117)
 Iterations: 13
 Original: (+ (+ (+ (+ (+ (+ (+ x y) z) a) b) c) d) e)
 Simplified: (+ y (+ e (+ a (+ c (+ (+ z b) (+ x d))))))
 
 
-Average time: 0.8811607661
+Average time: 0.8830072208
 Stop reason: Saturated
 Iterations: 15
 Original: (- (- (- (- (- (- (- x y) z) a) b) c) d) e)
 Simplified: (- x (+ (+ b c) (+ y (+ z (+ e (+ a d))))))
 
 
-Average time: 0.9454042622
+Average time: 0.9494424157000001
 Stop reason: Saturated
 Iterations: 14
 Original: (* (* (* (* (* (* x y) z) a) b) c) d)
 Simplified: (* x (* y (* z (* d (* a (* b c))))))
 
 
-Average time: 0.0013825674999999999
+Average time: 0.0014516580999999998
 Stop reason: Saturated
 Iterations: 2
 Original: (+ x (* y (+ z (* a (+ b (* c (+ d (* e (+ f (* g h))))))))))
 Simplified: (+ x (* y (+ z (* a (+ b (* c (+ d (* e (+ f (* g h))))))))))
 
 
-Average time: 5.071340447500001
-Stop reason: TimeLimit(5.003490896)
+Average time: 5.0283766064
+Stop reason: TimeLimit(5.030086296)
 Iterations: 37
 Original: (/ (* x (* x (* x x))) (* x x))
 Simplified: (* x x)
 
 
-Average time: 0.1079589993
+Average time: 0.10846258090000001
 Stop reason: Saturated
 Iterations: 8
 Original: (+ (+ (+ (+ x (* x y)) (* x z)) (* x a)) (* x b))
 Simplified: (* x (+ z (+ a (- (+ y b) -1))))
 
 
-Average time: 0.0015272972
+Average time: 0.0015085778000000002
 Stop reason: Saturated
 Iterations: 3
 Original: (+ 0 (+ 0 (+ 0 (+ 0 (+ 0 (+ 0 (+ 0 (+ 0 (+ 0 x)))))))))

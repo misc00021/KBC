@@ -1,0 +1,575 @@
+
+
+Original term: (* 1 y)
+Simplified:
+	KBC: y
+	Egg: y
+Iters:
+	KBC:4
+	Egg:3
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.0020323933s
+	Egg:0.000862458s
+SpeedUp:0.42435585671336346
+
+Original term: (* y (* 1 (* 1 (* 1 (* 1 1)))))
+Simplified:
+	KBC: y
+	Egg: y
+Iters:
+	KBC:4
+	Egg:3
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.0017996237000000002s
+	Egg:0.0007928969000000001s
+SpeedUp:0.44059038564562136
+
+Original term: (- (+ a b) b)
+Simplified:
+	KBC: a
+	Egg: a
+Iters:
+	KBC:31
+	Egg:29
+Stop reason:
+	KBC:TimeLimit(5.000002438)
+	Egg:NodeLimit(10016)
+Ran for:
+	KBC:5.1821587437s
+	Egg:3.248857898s
+SpeedUp:0.6269313733296318
+
+Original term: (+ (+ (+ (* x 1) (* x 1)) (* x 1)) (* x 1))
+Simplified:
+	KBC: (* x 4)
+	Egg: (* x 4)
+Iters:
+	KBC:7
+	Egg:6
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.0126438398s
+	Egg:0.0084996404s
+SpeedUp:0.6722356921985043
+
+Original term: (* x (/ 1 x))
+Simplified:
+	KBC: 1
+	Egg: 1
+Iters:
+	KBC:5
+	Egg:4
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.0024815203000000006s
+	Egg:0.0019048649000000001s
+SpeedUp:0.7676201157814424
+
+Original term: (/ (* x (* x (* x x))) (* x x))
+Simplified:
+	KBC: (* x x)
+	Egg: (* x x)
+Iters:
+	KBC:37
+	Egg:25
+Stop reason:
+	KBC:TimeLimit(5.140293407)
+	Egg:NodeLimit(10833)
+Ran for:
+	KBC:5.0483968991s
+	Egg:3.9638258783000007s
+SpeedUp:0.7851652628593146
+
+Original term: (* (+ a (* b 0)) (/ 1 (pow c 1)))
+Simplified:
+	KBC: (/ a c)
+	Egg: (* a (/ 1 c))
+Iters:
+	KBC:5
+	Egg:4
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.0047133634s
+	Egg:0.0043384424s
+SpeedUp:0.9204557407985983
+
+Original term: (+ (pow x (+ 1 1)) (- 0 (* y 1)))
+Simplified:
+	KBC: (- (pow x 2) y)
+	Egg: (+ (* x x) (- 0 y))
+Iters:
+	KBC:5
+	Egg:4
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.0043180898s
+	Egg:0.0041399608s
+SpeedUp:0.9587481946299495
+
+Original term: (+ 0 x)
+Simplified:
+	KBC: x
+	Egg: x
+Iters:
+	KBC:3
+	Egg:4
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.0009222945000000001s
+	Egg:0.0010540069s
+SpeedUp:1.1428094822207004
+
+Original term: (+ 0 (+ 0 (+ 0 (+ 0 (+ 0 (+ 0 (+ 0 (+ 0 (+ 0 x)))))))))
+Simplified:
+	KBC: x
+	Egg: x
+Iters:
+	KBC:3
+	Egg:4
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.0015758731000000002s
+	Egg:0.0018728063000000004s
+SpeedUp:1.1884245628661345
+
+Original term: (+ x (+ 0 (+ 0 (+ 0 (+ 0 (+ 0 (+ 0 (+ 0 0))))))))
+Simplified:
+	KBC: x
+	Egg: x
+Iters:
+	KBC:2
+	Egg:4
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.0005966426000000001s
+	Egg:0.0010381303999999999s
+SpeedUp:1.7399535333212877
+
+Original term: (pow a 0)
+Simplified:
+	KBC: 1
+	Egg: 1
+Iters:
+	KBC:2
+	Egg:4
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.000604176s
+	Egg:0.0010847858s
+SpeedUp:1.7954797939673208
+
+Original term: (+ (+ (+ (+ (+ (+ (+ x y) z) a) b) c) d) e)
+Simplified:
+	KBC: (+ y (+ e (+ a (+ c (+ (+ z b) (+ x d))))))
+	Egg: (+ c (+ x (+ e (+ b (+ (+ y z) (+ a d))))))
+Iters:
+	KBC:13
+	Egg:22
+Stop reason:
+	KBC:NodeLimit(11117)
+	Egg:NodeLimit(11341)
+Ran for:
+	KBC:0.9443477966s
+	Egg:1.9584952976999996s
+SpeedUp:2.0739131332241194
+
+Original term: (pow (pow (pow x 1) 1) 1)
+Simplified:
+	KBC: x
+	Egg: x
+Iters:
+	KBC:2
+	Egg:4
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.0005892922999999999s
+	Egg:0.0012536178s
+SpeedUp:2.1273276436837882
+
+Original term: (* (* (* (* (* (* x y) z) a) b) c) d)
+Simplified:
+	KBC: (* x (* y (* z (* d (* a (* b c))))))
+	Egg: (* x (* z (* a (* b (* d (* y c))))))
+Iters:
+	KBC:14
+	Egg:23
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.9551484868s
+	Egg:2.0471810579s
+SpeedUp:2.143311837051219
+
+Original term: (pow b 1)
+Simplified:
+	KBC: b
+	Egg: b
+Iters:
+	KBC:2
+	Egg:4
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.0005415323999999999s
+	Egg:0.0011679944s
+SpeedUp:2.1568319827216254
+
+Original term: (- (- (- (- (- (- (- x y) z) a) b) c) d) e)
+Simplified:
+	KBC: (- x (+ (+ b c) (+ y (+ z (+ e (+ a d))))))
+	Egg: (- (- (- (- (- (- (- x y) z) a) b) c) d) e)
+Iters:
+	KBC:15
+	Egg:21
+Stop reason:
+	KBC:Saturated
+	Egg:NodeLimit(10767)
+Ran for:
+	KBC:0.8883464227s
+	Egg:1.9909968184s
+SpeedUp:2.241239191743075
+
+Original term: (- (- (- (- x 0) 0) 0) 0)
+Simplified:
+	KBC: x
+	Egg: x
+Iters:
+	KBC:2
+	Egg:4
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.0006535816000000001s
+	Egg:0.0014689949999999998s
+SpeedUp:2.2476076437892374
+
+Original term: (pow (pow x 1) 1)
+Simplified:
+	KBC: x
+	Egg: x
+Iters:
+	KBC:2
+	Egg:4
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.0005444612s
+	Egg:0.0012263956s
+SpeedUp:2.2524940252859156
+
+Original term: (+ x (- 0 x))
+Simplified:
+	KBC: 0
+	Egg: 0
+Iters:
+	KBC:4
+	Egg:5
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.0015695035s
+	Egg:0.0035832383999999996s
+SpeedUp:2.283039445276802
+
+Original term: (/ z 1)
+Simplified:
+	KBC: z
+	Egg: z
+Iters:
+	KBC:2
+	Egg:4
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.0005713938s
+	Egg:0.0015482792s
+SpeedUp:2.709653482414405
+
+Original term: (* b (+ 0 (* x (+ (+ (+ (* x 1) (- (pow y 0) (/ (* 0 z) (pow a 1)))) (/ (pow (pow b 1) 1) (* 1 1))) (/ (* d 0) (pow e 1))))))
+Simplified:
+	KBC: (* (+ x (+ 1 b)) (* x b))
+	Egg: (* (+ b (+ x 1)) (* b x))
+Iters:
+	KBC:7
+	Egg:8
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.0498188542s
+	Egg:0.1452368393s
+SpeedUp:2.9152986681897635
+
+Original term: (* x (+ y (+ z (+ a (+ b (+ c (+ d e)))))))
+Simplified:
+	KBC: (* x (+ d (+ (+ b e) (+ z (+ c (+ y a))))))
+	Egg: (* x (+ z (+ a (+ b (+ c (+ y (+ d e)))))))
+Iters:
+	KBC:15
+	Egg:27
+Stop reason:
+	KBC:Saturated
+	Egg:NodeLimit(12204)
+Ran for:
+	KBC:1.093241221s
+	Egg:3.3752122047s
+SpeedUp:3.0873444395123113
+
+Original term: (* (* (+ x 0) (+ y 0)) (+ z 0))
+Simplified:
+	KBC: (* x (* y z))
+	Egg: (* (* x y) z)
+Iters:
+	KBC:4
+	Egg:5
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.0029457865000000003s
+	Egg:0.0092954764s
+SpeedUp:3.1555159886841766
+
+Original term: (* x (+ y (pow z 0)))
+Simplified:
+	KBC: (+ x (* x y))
+	Egg: (+ x (* x y))
+Iters:
+	KBC:4
+	Egg:5
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.0017995331s
+	Egg:0.0061476719s
+SpeedUp:3.4162594175122427
+
+Original term: (* x (- x -1))
+Simplified:
+	KBC: (+ x (* x x))
+	Egg: (+ x (* x x))
+Iters:
+	KBC:3
+	Egg:5
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.0012912593s
+	Egg:0.004513212800000001s
+SpeedUp:3.495202551493725
+
+Original term: (/ (/ (/ a 1) 1) 1)
+Simplified:
+	KBC: a
+	Egg: a
+Iters:
+	KBC:2
+	Egg:4
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.0005106078s
+	Egg:0.0019905278s
+SpeedUp:3.8983497706067163
+
+Original term: (- (pow (+ x 1) 1) (pow x 1))
+Simplified:
+	KBC: 1
+	Egg: 1
+Iters:
+	KBC:4
+	Egg:6
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.0018072515999999997s
+	Egg:0.0070726094999999985s
+SpeedUp:3.9134614682316506
+
+Original term: (- (pow x 2) (/ (* y 0) z))
+Simplified:
+	KBC: (pow x 2)
+	Egg: (* x x)
+Iters:
+	KBC:5
+	Egg:6
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.0016600166s
+	Egg:0.0074735897999999995s
+SpeedUp:4.502117508945392
+
+Original term: (+ (+ (+ (+ x (* x y)) (* x z)) (* x a)) (* x b))
+Simplified:
+	KBC: (* x (+ z (+ a (- (+ y b) -1))))
+	Egg: (+ x (* x (+ (+ a b) (+ y z))))
+Iters:
+	KBC:8
+	Egg:16
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.11183177520000001s
+	Egg:0.5647079119s
+SpeedUp:5.049619492224603
+
+Original term: (+ (* x y) (* x z))
+Simplified:
+	KBC: (* x (+ y z))
+	Egg: (* x (+ y z))
+Iters:
+	KBC:3
+	Egg:5
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.0013162146s
+	Egg:0.0071013823s
+SpeedUp:5.395307345777809
+
+Original term: (+ (* x (/ y (pow z 1))) (- (pow a 0) (/ 0 b)))
+Simplified:
+	KBC: (+ (* x (/ y z)) 1)
+	Egg: (+ 1 (* x (/ y z)))
+Iters:
+	KBC:4
+	Egg:6
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.0025691018999999997s
+	Egg:0.0172498127s
+SpeedUp:6.714335737325172
+
+Original term: (/ (* (pow x 2) (+ y 0)) (pow (pow z 1) 1))
+Simplified:
+	KBC: (/ (* x (* x y)) z)
+	Egg: (/ (* x (* x y)) z)
+Iters:
+	KBC:6
+	Egg:7
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.0035742499000000006s
+	Egg:0.027851199600000005s
+SpeedUp:7.79218028375688
+
+Original term: (/ (* x y) (/ x y))
+Simplified:
+	KBC: (/ (* x y) (/ x y))
+	Egg: (/ (* x y) (/ x y))
+Iters:
+	KBC:2
+	Egg:6
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.0006013049s
+	Egg:0.012546723499999999s
+SpeedUp:20.86582613911844
+
+Original term: (/ (+ x (* y z)) (pow a 1))
+Simplified:
+	KBC: (/ (+ x (* y z)) a)
+	Egg: (/ (+ x (* y z)) a)
+Iters:
+	KBC:2
+	Egg:7
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.0008052988s
+	Egg:0.0198058981s
+SpeedUp:24.59447114536865
+
+Original term: (* (- (pow x 2) (pow x 1)) (+ (/ x x) (/ 0 x)))
+Simplified:
+	KBC: (- (pow x 2) x)
+	Egg: (- (* x x) x)
+Iters:
+	KBC:5
+	Egg:32
+Stop reason:
+	KBC:Saturated
+	Egg:TimeLimit(5.047922548)
+Ran for:
+	KBC:0.0030691746000000002s
+	Egg:5.0649839101000005s
+SpeedUp:1650.2755855271316
+
+Original term: (+ x (* y (+ z (* a (+ b (* c (+ d (* e (+ f (* g h))))))))))
+Simplified:
+	KBC: (+ x (* y (+ z (* a (+ b (* c (+ d (* e (+ f (* g h))))))))))
+	Egg: (+ x (* y (+ z (* a (+ b (* c (+ d (* e (+ f (* g h))))))))))
+Iters:
+	KBC:2
+	Egg:25
+Stop reason:
+	KBC:Saturated
+	Egg:Saturated
+Ran for:
+	KBC:0.0013879049s
+	Egg:2.9376658606s
+SpeedUp:2116.6189849174825
+
+Original term: (/ (pow x 2) x)
+Simplified:
+	KBC: x
+	Egg: x
+Iters:
+	KBC:2
+	Egg:28
+Stop reason:
+	KBC:Saturated
+	Egg:TimeLimit(5.015370434)
+Ran for:
+	KBC:0.0006382742s
+	Egg:5.0797578086s
+SpeedUp:7958.582390765599
+
+SpeedUp over all terms:2.130252102767049
+	KBCSum:14.333423759299999
+	EggSum:30.5338061031
