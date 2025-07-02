@@ -1,0 +1,494 @@
+
+Average time: 0.0479461639
+
+Apply time: 0.014110614
+
+Search time: 0.010196970999999999
+
+Rebuild time: 0.022914306000000002
+Stop reason: Saturated
+Iterations: 7
+Original: (* b (+ 0 (* x (+ (+ (+ (* x 1) (- (pow y 0) (/ (* 0 z) (pow a 1)))) (/ (pow (pow b 1) 1) (* 1 1))) (/ (* d 0) (pow e 1))))))
+Simplified: (* (+ x (+ 1 b)) (* x b))
+
+
+Average time: 0.0009111404999999999
+
+Apply time: 0.00032345
+
+Search time: 0.000465267
+
+Rebuild time: 0.000260462
+Stop reason: Saturated
+Iterations: 3
+Original: (+ 0 x)
+Simplified: x
+
+
+Average time: 0.0017726746000000001
+
+Apply time: 0.0006323480000000001
+
+Search time: 0.000734746
+
+Rebuild time: 0.00051097
+Stop reason: Saturated
+Iterations: 4
+Original: (* 1 y)
+Simplified: y
+
+
+Average time: 0.0004900373
+
+Apply time: 0.000097131
+
+Search time: 0.00025597
+
+Rebuild time: 0.000136967
+Stop reason: Saturated
+Iterations: 2
+Original: (/ z 1)
+Simplified: z
+
+
+Average time: 0.0004982500999999999
+
+Apply time: 0.000113358
+
+Search time: 0.00024286000000000002
+
+Rebuild time: 0.00012824400000000001
+Stop reason: Saturated
+Iterations: 2
+Original: (pow a 0)
+Simplified: 1
+
+
+Average time: 0.0005008185
+
+Apply time: 0.000086579
+
+Search time: 0.000283718
+
+Rebuild time: 0.000129717
+Stop reason: Saturated
+Iterations: 2
+Original: (pow b 1)
+Simplified: b
+
+
+Average time: 0.0021838036
+
+Apply time: 0.0006778820000000001
+
+Search time: 0.000848702
+
+Rebuild time: 0.00064548
+Stop reason: Saturated
+Iterations: 5
+Original: (* x (/ 1 x))
+Simplified: 1
+
+
+Average time: 0.0014600407000000004
+
+Apply time: 0.00041699500000000003
+
+Search time: 0.000654724
+
+Rebuild time: 0.000382379
+Stop reason: Saturated
+Iterations: 4
+Original: (+ x (- 0 x))
+Simplified: 0
+
+
+Average time: 0.0005346323
+
+Apply time: 0.000090236
+
+Search time: 0.000298759
+
+Rebuild time: 0.000138557
+Stop reason: Saturated
+Iterations: 2
+Original: (/ (pow x 2) x)
+Simplified: x
+
+
+Average time: 5.1728788918
+
+Apply time: 0.35261792900000005
+
+Search time: 2.022422775
+
+Rebuild time: 2.820572321
+Stop reason: TimeLimit(5.008062125)
+Iterations: 31
+Original: (- (+ a b) b)
+Simplified: a
+
+
+Average time: 0.0017992592999999998
+
+Apply time: 0.000421529
+
+Search time: 0.000910905
+
+Rebuild time: 0.00045129199999999995
+Stop reason: Saturated
+Iterations: 4
+Original: (* x (+ y (pow z 0)))
+Simplified: (+ x (* x y))
+
+
+Average time: 0.0007574696000000001
+
+Apply time: 0.00012578
+
+Search time: 0.00043786599999999997
+
+Rebuild time: 0.00019032
+Stop reason: Saturated
+Iterations: 2
+Original: (/ (+ x (* y z)) (pow a 1))
+Simplified: (/ (+ x (* y z)) a)
+
+
+Average time: 0.0015946813
+
+Apply time: 0.00031365500000000003
+
+Search time: 0.000833071
+
+Rebuild time: 0.00043587499999999996
+Stop reason: Saturated
+Iterations: 5
+Original: (- (pow x 2) (/ (* y 0) z))
+Simplified: (pow x 2)
+
+
+Average time: 0.004222421800000001
+
+Apply time: 0.001413597
+
+Search time: 0.001636106
+
+Rebuild time: 0.001170373
+Stop reason: Saturated
+Iterations: 5
+Original: (+ (pow x (+ 1 1)) (- 0 (* y 1)))
+Simplified: (- (pow x 2) y)
+
+
+Average time: 0.0046239766
+
+Apply time: 0.001533543
+
+Search time: 0.0016729940000000001
+
+Rebuild time: 0.001401427
+Stop reason: Saturated
+Iterations: 5
+Original: (* (+ a (* b 0)) (/ 1 (pow c 1)))
+Simplified: (/ a c)
+
+
+Average time: 0.0024994762
+
+Apply time: 0.0005842670000000001
+
+Search time: 0.001199656
+
+Rebuild time: 0.000705021
+Stop reason: Saturated
+Iterations: 4
+Original: (+ (* x (/ y (pow z 1))) (- (pow a 0) (/ 0 b)))
+Simplified: (+ (* x (/ y z)) 1)
+
+
+Average time: 0.0034737619999999996
+
+Apply time: 0.000816059
+
+Search time: 0.0018861619999999998
+
+Rebuild time: 0.0007663650000000001
+Stop reason: Saturated
+Iterations: 6
+Original: (/ (* (pow x 2) (+ y 0)) (pow (pow z 1) 1))
+Simplified: (/ (* x (* x y)) z)
+
+
+Average time: 0.0029744228
+
+Apply time: 0.000670305
+
+Search time: 0.001341263
+
+Rebuild time: 0.000953991
+Stop reason: Saturated
+Iterations: 5
+Original: (* (- (pow x 2) (pow x 1)) (+ (/ x x) (/ 0 x)))
+Simplified: (- (pow x 2) x)
+
+
+Average time: 0.0017589400999999997
+
+Apply time: 0.00039236800000000004
+
+Search time: 0.000964955
+
+Rebuild time: 0.000431823
+Stop reason: Saturated
+Iterations: 4
+Original: (- (pow (+ x 1) 1) (pow x 1))
+Simplified: 1
+
+
+Average time: 0.0005433686
+
+Apply time: 0.000092662
+
+Search time: 0.00029976
+
+Rebuild time: 0.000143478
+Stop reason: Saturated
+Iterations: 2
+Original: (pow (pow x 1) 1)
+Simplified: x
+
+
+Average time: 0.0005910953
+
+Apply time: 0.00010475799999999999
+
+Search time: 0.000358463
+
+Rebuild time: 0.000152802
+Stop reason: Saturated
+Iterations: 2
+Original: (/ (* x y) (/ x y))
+Simplified: (/ (* x y) (/ x y))
+
+
+Average time: 0.0013066697
+
+Apply time: 0.000279454
+
+Search time: 0.000704054
+
+Rebuild time: 0.000310181
+Stop reason: Saturated
+Iterations: 3
+Original: (* x (- x -1))
+Simplified: (+ x (* x x))
+
+
+Average time: 0.00129956
+
+Apply time: 0.000260466
+
+Search time: 0.000718971
+
+Rebuild time: 0.000309143
+Stop reason: Saturated
+Iterations: 3
+Original: (+ (* x y) (* x z))
+Simplified: (* x (+ y z))
+
+
+Average time: 0.0005912616
+
+Apply time: 0.000151116
+
+Search time: 0.000266582
+
+Rebuild time: 0.000170433
+Stop reason: Saturated
+Iterations: 2
+Original: (+ x (+ 0 (+ 0 (+ 0 (+ 0 (+ 0 (+ 0 (+ 0 0))))))))
+Simplified: x
+
+
+Average time: 0.0017140672999999998
+
+Apply time: 0.000529432
+
+Search time: 0.000664066
+
+Rebuild time: 0.0005057219999999999
+Stop reason: Saturated
+Iterations: 4
+Original: (* y (* 1 (* 1 (* 1 (* 1 1)))))
+Simplified: y
+
+
+Average time: 0.0006525774
+
+Apply time: 0.000170746
+
+Search time: 0.000313849
+
+Rebuild time: 0.000164026
+Stop reason: Saturated
+Iterations: 2
+Original: (- (- (- (- x 0) 0) 0) 0)
+Simplified: x
+
+
+Average time: 0.0125138576
+
+Apply time: 0.004725109
+
+Search time: 0.003410267
+
+Rebuild time: 0.0043477329999999995
+Stop reason: Saturated
+Iterations: 7
+Original: (+ (+ (+ (* x 1) (* x 1)) (* x 1)) (* x 1))
+Simplified: (* x 4)
+
+
+Average time: 0.0029055263999999996
+
+Apply time: 0.000910401
+
+Search time: 0.001338594
+
+Rebuild time: 0.000644129
+Stop reason: Saturated
+Iterations: 4
+Original: (* (* (+ x 0) (+ y 0)) (+ z 0))
+Simplified: (* x (* y z))
+
+
+Average time: 0.0004989275999999999
+
+Apply time: 0.00010808399999999999
+
+Search time: 0.000275767
+
+Rebuild time: 0.00014797699999999998
+Stop reason: Saturated
+Iterations: 2
+Original: (/ (/ (/ a 1) 1) 1)
+Simplified: a
+
+
+Average time: 0.0005719612
+
+Apply time: 0.00010101200000000001
+
+Search time: 0.000323393
+
+Rebuild time: 0.000144949
+Stop reason: Saturated
+Iterations: 2
+Original: (pow (pow (pow x 1) 1) 1)
+Simplified: x
+
+
+Average time: 1.0932521277
+
+Apply time: 0.482673015
+
+Search time: 0.226051768
+
+Rebuild time: 0.385638022
+Stop reason: Saturated
+Iterations: 15
+Original: (* x (+ y (+ z (+ a (+ b (+ c (+ d e)))))))
+Simplified: (* x (+ d (+ (+ b e) (+ z (+ c (+ y a))))))
+
+
+Average time: 0.9387096373
+
+Apply time: 0.32433916799999996
+
+Search time: 0.22391220999999997
+
+Rebuild time: 0.388085009
+Stop reason: NodeLimit(11117)
+Iterations: 13
+Original: (+ (+ (+ (+ (+ (+ (+ x y) z) a) b) c) d) e)
+Simplified: (+ y (+ e (+ a (+ c (+ (+ z b) (+ x d))))))
+
+
+Average time: 0.8860915383
+
+Apply time: 0.36862220300000004
+
+Search time: 0.19247502200000002
+
+Rebuild time: 0.32607581999999996
+Stop reason: Saturated
+Iterations: 15
+Original: (- (- (- (- (- (- (- x y) z) a) b) c) d) e)
+Simplified: (- x (+ (+ b c) (+ y (+ z (+ e (+ a d))))))
+
+
+Average time: 0.952653299
+
+Apply time: 0.357193589
+
+Search time: 0.281363703
+
+Rebuild time: 0.312940157
+Stop reason: Saturated
+Iterations: 14
+Original: (* (* (* (* (* (* x y) z) a) b) c) d)
+Simplified: (* x (* y (* z (* d (* a (* b c))))))
+
+
+Average time: 0.0013983117
+
+Apply time: 0.00023554799999999997
+
+Search time: 0.00077176
+
+Rebuild time: 0.000389741
+Stop reason: Saturated
+Iterations: 2
+Original: (+ x (* y (+ z (* a (+ b (* c (+ d (* e (+ f (* g h))))))))))
+Simplified: (+ x (* y (+ z (* a (+ b (* c (+ d (* e (+ f (* g h))))))))))
+
+
+Average time: 5.2982324678
+
+Apply time: 0.6627983289999999
+
+Search time: 0.905775799
+
+Rebuild time: 3.76013791
+Stop reason: TimeLimit(5.000337615)
+Iterations: 38
+Original: (/ (* x (* x (* x x))) (* x x))
+Simplified: (* x x)
+
+
+Average time: 0.10894394649999999
+
+Apply time: 0.046561807999999996
+
+Search time: 0.028772257
+
+Rebuild time: 0.035987095
+Stop reason: Saturated
+Iterations: 8
+Original: (+ (+ (+ (+ x (* x y)) (* x z)) (* x a)) (* x b))
+Simplified: (* x (+ z (+ a (- (+ y b) -1))))
+
+
+Average time: 0.0015031587000000001
+
+Apply time: 0.000395191
+
+Search time: 0.0005183060000000001
+
+Rebuild time: 0.000576029
+Stop reason: Saturated
+Iterations: 3
+Original: (+ 0 (+ 0 (+ 0 (+ 0 (+ 0 (+ 0 (+ 0 (+ 0 (+ 0 x)))))))))
+Simplified: x
+

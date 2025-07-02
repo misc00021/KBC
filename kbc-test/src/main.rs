@@ -4,10 +4,10 @@ use std::fs::File;
 use std::io::Write;
 
 use egg::{EGraph, RecExpr, Runner};
-use kbc_math::{ConstantFold, Math, rules};
+use math::{ConstantFold, Math, rules};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let mut file = File::create("/home/michi/Documents/thesis/KBC/kbc-test/kbc_math.txt")?;
+    let mut file = File::create("/home/michi/Documents/thesis/KBC/kbc-test/mathDetail.txt")?;
     let mut exprs: std::vec::Vec<RecExpr<Math>> = std::vec![];
     // Parse an expression to test
     exprs.push("(* b (+ 0 (* x (+ (+ (+ (* x 1) (- (pow y 0) (/ (* 0 z) (pow a 1)))) (/ (pow (pow b 1) 1) (* 1 1))) (/ (* d 0) (pow e 1))))))"
@@ -117,6 +117,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             total += runner.report().total_time;
             if i == 9 {
                 writeln!(file, "\nAverage time: {}", (total / 10.0))?;
+                writeln!(file, "\nApply time: {}", runner.report().apply_time)?;
+                writeln!(file, "\nSearch time: {}", runner.report().search_time)?;
+                writeln!(file, "\nRebuild time: {}", runner.report().rebuild_time)?;
                 writeln!(file, "Stop reason: {:?}", runner.report().stop_reason)?;
                 writeln!(file, "Iterations: {}", runner.iterations.len())?;
                 writeln!(file, "Original: {}", expr)?;
