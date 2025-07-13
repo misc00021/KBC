@@ -1,0 +1,139 @@
+Here is the input problem:
+  Axiom 1 (d_power): is_not_zero(X) = true2.
+  Axiom 2 (d_constant): is_sym(X) = true2.
+  Axiom 3 (cancel_sub): X - X = 0.
+  Axiom 4 (pow1): pow(X, 1) = X.
+  Axiom 5 (i_one): i(1, X) = X.
+  Axiom 6 (comm_add): X + Y = Y + X.
+  Axiom 7 (zero_add): X + 0 = X.
+  Axiom 8 (add_zero): X = X + 0.
+  Axiom 9 (pow2): pow(X, 2) = X * X.
+  Axiom 10 (comm_mul): X * Y = Y * X.
+  Axiom 11 (zero_mul): X * 0 = 0.
+  Axiom 12 (one_mul): X * 1 = X.
+  Axiom 13 (mul_one): X = X * 1.
+  Axiom 14 (i_cos): i(cos(X), X) = sin(X).
+  Axiom 15 (d_sin): d(X, sin(X)) = cos(X).
+  Axiom 16 (d_cos): d(X, cos(X)) = -1 * sin(X).
+  Axiom 17 (i_sin): i(sin(X), X) = -1 * cos(X).
+  Axiom 18 (ifeq_axiom): ifeq(X, X, Y, Z) = Y.
+  Axiom 19 (sub_canon): X - Y = X + (-1 * Y).
+  Axiom 20 (assoc_add): X + (Y + Z) = (X + Y) + Z.
+  Axiom 21 (assoc_mul): X * (Y * Z) = (X * Y) * Z.
+  Axiom 22 (i_dif): i(X - Y, Z) = i(X, Z) - i(Y, Z).
+  Axiom 23 (cancel_div): ifeq(is_not_zero(X), true2, X / X, 1) = 1.
+  Axiom 24 (pow0): ifeq(is_not_zero(X), true2, pow(X, 0), 1) = 1.
+  Axiom 25 (i_sum): i(X + Y, Z) = i(X, Z) + i(Y, Z).
+  Axiom 26 (d_add): d(X, Y + Z) = d(X, Y) + d(X, Z).
+  Axiom 27 (distribute): X * (Y + Z) = (X * Y) + (X * Z).
+  Axiom 28 (factor): (X * Y) + (X * Z) = X * (Y + Z).
+  Axiom 29 (pow_mul): pow(X, Y) * pow(X, Z) = pow(X, Y + Z).
+  Axiom 30 (d_variable): ifeq(is_sym(X), true2, d(X, X), 1) = 1.
+  Axiom 31 (pow_recip): ifeq(is_not_zero(X), true2, pow(X, -1), 1 / X) = 1 / X.
+  Axiom 32 (recip_mul_div): ifeq(is_not_zero(X), true2, X * (1 / X), 1) = 1.
+  Axiom 33 (d_constant_1): ifeq(is_const_or_distinct_var(X, Y), true2, d(Y, X), 0) = 0.
+  Axiom 34 (d_ln): ifeq(is_not_zero(X), true2, d(X, ln(X)), 1 / X) = 1 / X.
+  Axiom 35 (div_canon): ifeq(is_not_zero(X), true2, Y * pow(X, -1), Y / X) = Y / X.
+  Axiom 36 (d_mul): d(X, Y * Z) = (Y * d(X, Z)) + (Z * d(X, Y)).
+  Axiom 37 (i_parts): i(X * Y, Z) = (X * i(Y, Z)) - i(d(Z, X) * i(Y, Z), Z).
+  Axiom 38 (i_power_const): ifeq(is_const(X), true2, pow(Y, X + 1) / (X + 1), i(pow(Y, X), Y)) = i(pow(Y, X), Y).
+  Axiom 39 (d_power_1): ifeq(is_not_zero(X), true2, pow(Y, X) * ((d(Z, Y) * (X / Y)) + (d(Z, X) * ln(Y))), d(Z, pow(Y, X))) = d(Z, pow(Y, X)).
+  Goal 1 (goal): true = false.
+
+1. is_not_zero(X) -> true2
+2. is_sym(X) -> true2
+3. X - X -> 0
+4. pow(X, 1) -> X
+5. i(1, X) -> X
+6. X + Y <-> Y + X
+7. X + 0 -> X
+8. X * X -> pow(X, 2)
+9. X * Y <-> Y * X
+10. X * 0 -> 0
+11. X * 1 -> X
+12. i(cos(X), X) -> sin(X)
+13. d(X, sin(X)) -> cos(X)
+14. d(X, cos(X)) = -1 * sin(X)
+15. i(sin(X), X) = -1 * cos(X)
+16. ifeq(X, X, Y, Z) -> Y
+17. X + (-1 * Y) -> X - Y
+18. (X + Y) + Z -> X + (Y + Z)
+19. (X * Y) * Z -> X * (Y * Z)
+20. i(X, Y) - i(Z, Y) -> i(X - Z, Y)
+21. X / X -> 1
+22. pow(X, 0) -> 1
+23. i(X, Y) + i(Z, Y) -> i(X + Z, Y)
+24. d(X, Y) + d(X, Z) -> d(X, Y + Z)
+25. (X * Y) + (X * Z) -> X * (Y + Z)
+26. pow(X, Y) * pow(X, Z) -> pow(X, Y + Z)
+27. d(X, X) -> 1
+28. pow(X, -1) -> 1 / X
+29. X * (1 / X) -> 1
+30. ifeq(is_const_or_distinct_var(X, Y), true2, d(Y, X), 0) -> 0
+31. d(X, ln(X)) -> 1 / X
+32. X * (1 / Y) -> X / Y
+33. (X * d(Y, Z)) + (Z * d(Y, X)) -> d(Y, X * Z)
+34. (X * i(Y, Z)) - i(d(Z, X) * i(Y, Z), Z) -> i(X * Y, Z)
+35. ifeq(is_const(X), true2, pow(Y, X + 1) / (X + 1), i(pow(Y, X), Y)) -> i(pow(Y, X), Y)
+36. pow(X, Y) * ((d(Z, Y) * ln(X)) + (d(Z, X) * (Y / X))) -> d(Z, pow(X, Y))
+37. 0 + X -> X
+38. 1 * X -> X
+39. X - 0 -> X
+40. X / 1 -> X
+41. 0 * X -> 0
+42. 1 -> 0
+43. pow(X, 0) -> X
+44. X * 0 -> X
+45. 0 * X -> X
+46. 1 -> ?
+47. X ~> ?
+
+The conjecture is true! Here is a proof.
+
+Axiom 1 (d_power): is_not_zero(X) = true2.
+Axiom 2 (pow1): pow(X, 1) = X.
+Axiom 3 (comm_mul): X * Y = Y * X.
+Axiom 4 (zero_mul): X * 0 = 0.
+Axiom 5 (ifeq_axiom): ifeq(X, X, Y, Z) = Y.
+Axiom 6 (pow0): ifeq(is_not_zero(X), true2, pow(X, 0), 1) = 1.
+Axiom 7 (recip_mul_div): ifeq(is_not_zero(X), true2, X * (1 / X), 1) = 1.
+
+Lemma 8: pow(X, 0) = X.
+Proof:
+  pow(X, 0)
+= { by axiom 4 (zero_mul) R->L }
+  pow(X, (1 / 0) * 0)
+= { by axiom 3 (comm_mul) }
+  pow(X, 0 * (1 / 0))
+= { by axiom 5 (ifeq_axiom) R->L }
+  pow(X, ifeq(true2, true2, 0 * (1 / 0), 1))
+= { by axiom 1 (d_power) R->L }
+  pow(X, ifeq(is_not_zero(0), true2, 0 * (1 / 0), 1))
+= { by axiom 7 (recip_mul_div) }
+  pow(X, 1)
+= { by axiom 2 (pow1) }
+  X
+
+Lemma 9: pow(X, 0) = 1.
+Proof:
+  pow(X, 0)
+= { by axiom 5 (ifeq_axiom) R->L }
+  ifeq(true2, true2, pow(X, 0), 1)
+= { by axiom 1 (d_power) R->L }
+  ifeq(is_not_zero(X), true2, pow(X, 0), 1)
+= { by axiom 6 (pow0) }
+  1
+
+Goal 1 (goal): true = false.
+Proof:
+  true
+= { by lemma 8 R->L }
+  pow(true, 0)
+= { by lemma 9 }
+  1
+= { by lemma 9 R->L }
+  pow(false, 0)
+= { by lemma 8 }
+  false
+
+RESULT: Theorem (the conjecture is true).
