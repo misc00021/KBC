@@ -177,37 +177,37 @@ pub fn rules() -> Vec<Rewrite> { vec![
         if is_not_zero("?x")),
     rw!("recip-mul-div"; "(* ?x (/ 1 ?x))" => "1" if is_not_zero("?x")),
 
-    rw!("d-variable"; "(d ?x ?x)" => "1" if is_sym("?x")),
-    rw!("d-constant"; "(d ?x ?c)" => "0" if is_sym("?x") if is_const_or_distinct_var("?c", "?x")),
+    // rw!("d-variable"; "(d ?x ?x)" => "1" if is_sym("?x")),
+    // rw!("d-constant"; "(d ?x ?c)" => "0" if is_sym("?x") if is_const_or_distinct_var("?c", "?x")),
 
-    rw!("d-add"; "(d ?x (+ ?a ?b))" => "(+ (d ?x ?a) (d ?x ?b))"),
-    rw!("d-mul"; "(d ?x (* ?a ?b))" => "(+ (* ?a (d ?x ?b)) (* ?b (d ?x ?a)))"),
+    // rw!("d-add"; "(d ?x (+ ?a ?b))" => "(+ (d ?x ?a) (d ?x ?b))"),
+    // rw!("d-mul"; "(d ?x (* ?a ?b))" => "(+ (* ?a (d ?x ?b)) (* ?b (d ?x ?a)))"),
 
-    rw!("d-sin"; "(d ?x (sin ?x))" => "(cos ?x)"),
-    rw!("d-cos"; "(d ?x (cos ?x))" => "(* -1 (sin ?x))"),
+    // rw!("d-sin"; "(d ?x (sin ?x))" => "(cos ?x)"),
+    // rw!("d-cos"; "(d ?x (cos ?x))" => "(* -1 (sin ?x))"),
 
-    rw!("d-ln"; "(d ?x (ln ?x))" => "(/ 1 ?x)" if is_not_zero("?x")),
+    // rw!("d-ln"; "(d ?x (ln ?x))" => "(/ 1 ?x)" if is_not_zero("?x")),
 
-    rw!("d-power";
-        "(d ?x (pow ?f ?g))" =>
-        "(* (pow ?f ?g)
-            (+ (* (d ?x ?f)
-                  (/ ?g ?f))
-               (* (d ?x ?g)
-                  (ln ?f))))"
-        if is_not_zero("?f")
-        if is_not_zero("?g")
-    ),
+    // rw!("d-power";
+    //     "(d ?x (pow ?f ?g))" =>
+    //     "(* (pow ?f ?g)
+    //         (+ (* (d ?x ?f)
+    //               (/ ?g ?f))
+    //            (* (d ?x ?g)
+    //               (ln ?f))))"
+    //     if is_not_zero("?f")
+    //     if is_not_zero("?g")
+    // ),
 
-    rw!("i-one"; "(i 1 ?x)" => "?x"),
-    rw!("i-power-const"; "(i (pow ?x ?c) ?x)" =>
-        "(/ (pow ?x (+ ?c 1)) (+ ?c 1))" if is_const("?c")),
-    rw!("i-cos"; "(i (cos ?x) ?x)" => "(sin ?x)"),
-    rw!("i-sin"; "(i (sin ?x) ?x)" => "(* -1 (cos ?x))"),
-    rw!("i-sum"; "(i (+ ?f ?g) ?x)" => "(+ (i ?f ?x) (i ?g ?x))"),
-    rw!("i-dif"; "(i (- ?f ?g) ?x)" => "(- (i ?f ?x) (i ?g ?x))"),
-    rw!("i-parts"; "(i (* ?a ?b) ?x)" =>
-        "(- (* ?a (i ?b ?x)) (i (* (d ?x ?a) (i ?b ?x)) ?x))"),
+    // rw!("i-one"; "(i 1 ?x)" => "?x"),
+    // rw!("i-power-const"; "(i (pow ?x ?c) ?x)" =>
+    //     "(/ (pow ?x (+ ?c 1)) (+ ?c 1))" if is_const("?c")),
+    // rw!("i-cos"; "(i (cos ?x) ?x)" => "(sin ?x)"),
+    // rw!("i-sin"; "(i (sin ?x) ?x)" => "(* -1 (cos ?x))"),
+    // rw!("i-sum"; "(i (+ ?f ?g) ?x)" => "(+ (i ?f ?x) (i ?g ?x))"),
+    // rw!("i-dif"; "(i (- ?f ?g) ?x)" => "(- (i ?f ?x) (i ?g ?x))"),
+    // rw!("i-parts"; "(i (* ?a ?b) ?x)" =>
+    //     "(- (* ?a (i ?b ?x)) (i (* (d ?x ?a) (i ?b ?x)) ?x))"),
 ]}
 
 egg::test_fn! {

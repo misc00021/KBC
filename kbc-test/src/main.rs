@@ -99,10 +99,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             .parse()
             .unwrap(),
     );
+    exprs.push("--a".parse().unwrap());
 
     for expr in &exprs {
         let mut total: f64 = 0.0;
-        for i in 0..10 {
+        for i in 0..1 {
             // Run the rewrite rules on the expression
             let runner = Runner::default()
                 .with_explanations_enabled()
@@ -115,8 +116,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             let extractor = egg::Extractor::new(&runner.egraph, egg::AstSize);
             let (_cost, best) = extractor.find_best(root);
             total += runner.report().total_time;
-            if i == 9 {
-                writeln!(file, "\nAverage time: {}", (total / 10.0))?;
+            if i == 0 {
+                writeln!(file, "\nAverage time: {}", (total / 1.0))?;
                 writeln!(file, "\nApply time: {}", runner.report().apply_time)?;
                 writeln!(file, "\nSearch time: {}", runner.report().search_time)?;
                 writeln!(file, "\nRebuild time: {}", runner.report().rebuild_time)?;
