@@ -1,0 +1,45 @@
+Axiom 13 (r21): imul(x, 2) = iadd(x, x).
+becomes
+13. iadd(x, x) -> imul(x, 2)
+Axiom 16 (r4): iadd(x, ineg(y)) = isub(x, y).
+becomes
+16. isub(x, y) -> iadd(x, ineg(y))
+Axiom 27 (r23): power_of_two(X) -> imul(X, x) = ishl(x, log2(X)).
+becomes
+27. power_of_two(X) -> imul(X, x) -> ishl(x, log2(X))
+Axiom 28 (r22): power_of_two(X) -> imul(x, X) = ishl(x, log2(X)).
+becomes
+28. power_of_two(X) -> imul(x, X) -> ishl(x, log2(X))
+Axiom 30 (r33): bxor(a, bxor(b, bxor(c, d))) = bxor(bxor(a, b), bxor(c, d)).
+becomes
+30. bxor(bxor(a, b), bxor(c, d)) -> bxor(a, bxor(b, bxor(c, d)))
+Axiom 32 (r31): band(a, band(b, band(c, d))) = band(band(a, b), band(c, d)).
+becomes
+32. band(band(a, b), band(c, d)) -> band(a, band(b, band(c, d)))
+Axiom 34 (r29): imul(a, imul(b, imul(c, d))) = imul(imul(a, b), imul(c, d)).
+becomes
+34. imul(imul(a, b), imul(c, d)) -> imul(a, imul(b, imul(c, d)))
+Axiom 36 (r27): iadd(a, iadd(b, iadd(c, d))) = iadd(iadd(a, b), iadd(c, d)).
+becomes
+36. iadd(iadd(a, b), iadd(c, d)) -> iadd(a, iadd(b, iadd(c, d)))
+Axiom 37 (r41): iadd(a, iadd(b, isub(c, d))) = iadd(iadd(a, b), isub(c, d)).
+becomes
+37. iadd(iadd(a, b), isub(c, d)) -> iadd(a, iadd(b, isub(c, d)))
+Axiom 42 (r40): iadd(a, isub(b, iadd(c, d))) = isub(iadd(a, b), iadd(c, d)).
+becomes
+42. isub(iadd(a, b), iadd(c, d)) -> iadd(a, isub(b, iadd(c, d)))
+Axiom 43 (r39): iadd(a, isub(b, isub(c, d))) = isub(iadd(a, b), isub(c, d)).
+becomes
+43. isub(iadd(a, b), isub(c, d)) -> iadd(a, isub(b, isub(c, d)))
+Axiom 45 (r38): isub(a, iadd(b, iadd(c, d))) = isub(isub(a, b), iadd(c, d)).
+becomes
+45. isub(isub(a, b), iadd(c, d)) -> isub(a, iadd(b, iadd(c, d)))
+Axiom 46 (r43): iadd(isub(isub(a, b), c), d) = isub(isub(a, b), isub(c, d)).
+becomes
+46. isub(isub(a, b), isub(c, d)) -> iadd(isub(isub(a, b), c), d)
+Axiom 52 (r49): halfWidth(k) -> sshr(imul(sextend(x), sextend(y)), k) = sextend(smulhi(x, y)).
+becomes
+52. halfWidth(k) -> sshr(imul(sextend(x), sextend(y)), k) -> sextend(smulhi(x, y))
+Axiom 53 (r50): halfWidth(k) -> ushr(imul(uextend(x), uextend(y)), k) = uextend(umulhi(x, y)).
+becomes
+53. halfWidth(k) -> ushr(imul(uextend(x), uextend(y)), k) -> uextend(umulhi(x, y))

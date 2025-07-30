@@ -7,6 +7,7 @@ struct Symbol {
 }
 
 struct Rule {
+    ordered: bool,
     name: String,
     lhs: Vec<Symbol>,
     rhs: Vec<Symbol>,
@@ -129,7 +130,7 @@ fn get_cond(cond: Vec<&str>) -> Vec<Symbol> {
 }
 
 fn egg_to_flat(lines: Vec<String>) -> Vec<Rule> {
-    // Convert Egg format to Twee format
+    // Convert Egg format to flatterms
     let mut i = 0;
     let mut rules = Vec::new();
     while i < lines.len() {
@@ -152,7 +153,6 @@ fn egg_to_flat(lines: Vec<String>) -> Vec<Rule> {
         }
         working = working.trim().trim_end_matches(',').to_string();
         let working = &working[4..working.len() - 1];
-        println!("Processing line: {}", working);
         let working = working.split(';').collect::<Vec<&str>>();
         let name = working[0];
         let name = name.trim().trim_matches('"');
@@ -188,12 +188,13 @@ fn egg_to_flat(lines: Vec<String>) -> Vec<Rule> {
                 .collect::<VecDeque<char>>(),
         );
         let rule = Rule {
+            ordered: true,
             name: name.to_string().replace('-', "_"),
             lhs: lhs_twee,
             rhs: rhs_twee,
             cond: condition,
         };
-        println!("{}", rule_dump(&rule));
+        // println!("{}", rule_dump(&rule));
         i += 1;
         rules.push(rule);
     }
@@ -276,7 +277,206 @@ pub fn egg_to_twee(lines: Vec<String>) -> Vec<String> {
     return twee_lines;
 }
 
-pub fn twee_to_egg(lines: &mut Vec<String>) -> &mut Vec<String> {
-    // Convert Twee format to Egg format
+fn parse_twee_term(term: &mut VecDeque<char>) -> Vec<Symbol> {
+    let mut ret = Vec::new();
+    let mut char;
+    let mut lhs = Vec::new();
+    let mut name = String::new();
+    loop {
+        let c = term.pop_front();
+        if c.is_none() {
+            return ret;
+        } else if !c.unwrap().is_whitespace() {
+            char = c.unwrap();
+            break;
+        }
+    }
+    if char == '(' {
+        lhs.append(parse_twee_term(term).as_mut());
+        while term.front().is_some() && *term.front().unwrap() != ')' {
+            term.pop_front();
+        }
+        term.pop_front();
+        let c = term.pop_front();
+        if c.is_none() {
+            return lhs;
+        }
+        char = c.unwrap();
+    } else {
+        loop {
+            name.push(char);
+            let c = term.pop_front();
+            if c.is_none() {
+                ret.push(Symbol { name, length: 1 });
+                return ret;
+            } else {
+                char = c.unwrap();
+                if char == '(' || char.is_whitespace() || char == ')' || char == ',' {
+                    break;
+                }
+            }
+        }
+        if char == '(' {
+            lhs.push(Symbol { name, length: 1 });
+            loop {
+                let mut arg = parse_twee_term(term);
+                if arg.is_empty() {
+                    break;
+                }
+                lhs[0].length += arg.len();
+                lhs.append(arg.as_mut());
+                if term.front().is_some_and(|c| *c == ')') {
+                    term.pop_front();
+                    break;
+                } else if term.front().is_some_and(|c| *c == ',') {
+                    term.pop_front();
+                }
+            }
+            let c = term.pop_front();
+            if c.is_some() {
+                char = c.unwrap();
+            }
+        } else if char == ',' || char == ')' {
+            term.push_front(char);
+            ret.push(Symbol { name, length: 1 });
+            return ret;
+        } else {
+            lhs.push(Symbol { name, length: 1 });
+        }
+    }
+    if !char.is_whitespace() {
+        return lhs;
+    }
+    while char.is_whitespace() {
+        char = term.pop_front().unwrap();
+    }
+    let mut infix_op = String::new();
+    while !char.is_whitespace() {
+        infix_op.push(char);
+        char = term.pop_front().unwrap();
+    }
+    let mut rhs = parse_twee_term(term);
+    ret.push(Symbol {
+        name: infix_op,
+        length: 1 + lhs.len() + rhs.len(),
+    });
+    ret.append(lhs.as_mut());
+    ret.append(rhs.as_mut());
+
+    return ret;
+}
+
+// Split a term on ',' but only when not inside parentheses
+fn true_split(term: &str) -> Vec<String> {
+    let mut ret = Vec::<String>::new();
+    let mut paren = 0;
+    ret.push(String::new());
+    for c in term.chars() {
+        match c {
+            '(' => {
+                paren += 1;
+                ret.last_mut().unwrap().push(c);
+            }
+            ')' => {
+                paren -= 1;
+                ret.last_mut().unwrap().push(c);
+            }
+            ',' if paren == 0 => {
+                ret.push(String::new());
+            }
+            _ => {
+                ret.last_mut().unwrap().push(c);
+            }
+        }
+    }
+
+    ret
+}
+
+fn twee_term_to_flat(mut term: String) -> (Option<Vec<Symbol>>, Vec<Symbol>) {
+    let mut cond = Vec::new();
+    let flat;
+    let mut working: Vec<String>;
+    while term.trim().starts_with("ifeq") {
+        let mut parts = term.splitn(2, '(').collect::<Vec<&str>>();
+        if parts.len() < 2 {
+            break; // Malformed term
+        }
+        // True split on commas
+        working = true_split(parts[1]);
+        // Extract condition
+        let mut condition = parse_twee_term(&mut working[0].chars().collect::<VecDeque<char>>());
+        cond.append(condition.as_mut());
+        // Remove true2
+        term = working[2].clone();
+    }
+    let mut chars = term.trim().chars().collect::<VecDeque<char>>();
+    flat = parse_twee_term(&mut chars);
+    let mut cond_ret = None;
+    if !cond.is_empty() {
+        cond_ret = Some(cond);
+    }
+    return (cond_ret, flat);
+}
+
+fn twee_out_to_flat(lines: &Vec<String>) -> Vec<Rule> {
+    // Convert Egg format to flatterms
+    let mut i = 0;
+    let mut j = 0;
+    let mut rules = Vec::new();
+    while i < lines.len() && !lines[i].contains("final rewrite system:") {
+        i += 1;
+    }
+    i += 1; // Skip the "final rewrite system:" line
+    while i < lines.len() && !lines[i].is_empty() {
+        println!("Processing line: {}", lines[i]);
+        if lines[i].trim() == "ifeq(X, X, Y, Z) -> Y" {
+            i += 1;
+            continue;
+        }
+        let working;
+        let mut ordered = true;
+        if lines[i].contains(" = ") {
+            ordered = false;
+            working = lines[i].split('=').collect::<Vec<&str>>();
+        } else if lines[i].contains(" -> ") {
+            working = lines[i].split("->").collect::<Vec<&str>>();
+        } else {
+            working = lines[i].split("<->").collect::<Vec<&str>>();
+        }
+        let lhs_ret;
+        let cond_ret;
+        match twee_term_to_flat(working[0].trim().to_string()) {
+            (Some(cond), lhs) => {
+                lhs_ret = lhs;
+                cond_ret = cond;
+            }
+            (None, lhs) => {
+                lhs_ret = lhs;
+                cond_ret = Vec::new();
+            }
+        }
+        let rhs = twee_term_to_flat(working[1].trim().to_string()).1;
+        let name = format!("rule_{}", j);
+        i += 1;
+        j += 1;
+        let rule = Rule {
+            ordered,
+            name,
+            lhs: lhs_ret,
+            rhs,
+            cond: cond_ret,
+        };
+        rules.push(rule);
+    }
+    return rules;
+}
+
+pub fn twee_to_egg(lines: &Vec<String>) -> Vec<String> {
+    let rules = twee_out_to_flat(&lines);
+    let mut lines = Vec::new();
+    for mut rule in rules {
+        lines.push(flat_to_twee(&mut rule));
+    }
     return lines;
 }

@@ -29,9 +29,9 @@ fn main() -> io::Result<()> {
     }
 
     let out = Command::new("twee")
-        .arg(twee_file)
-        .arg("--complete")
+        .arg("--max-rules")
         .arg(target_num.to_string())
+        .arg(twee_file)
         .output()?;
 
     // Convert stdout (Vec<u8>) to a String
@@ -41,7 +41,7 @@ fn main() -> io::Result<()> {
     // Split into lines
     let mut lines: Vec<String> = stdout.lines().map(|s| s.to_string()).collect();
 
-    twee_to_egg(&mut lines);
+    lines = twee_to_egg(&lines);
 
     let output_file = input_file.replace(".txt", "KBC.txt");
     let mut output = File::create(output_file.clone())?;

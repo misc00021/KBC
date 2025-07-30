@@ -19,8 +19,8 @@ cnf(r18, axiom, bnot(iadd(x, neg('1'))) = ineg(x)).
 cnf(r19, axiom, sdiv(x,'1') = x).
 cnf(r20, axiom, udiv(x,'1') = x).
 cnf(r21, axiom, imul(x, '2') = iadd(x, x)).
-cnf(r22, axiom, power_of_two(C) -> imul(x, C) = ishl(x, log2(C))).
-cnf(r23, axiom, power_of_two(C) -> imul(C, x) = ishl(x, log2(C))).
+cnf(r22, axiom, power_of_two(C) => imul(x, C) = ishl(x, log2(C))).
+cnf(r23, axiom, power_of_two(C) => imul(C, x) = ishl(x, log2(C))).
 cnf(r24, axiom, fneg(fneg(x)) = x).
 cnf(r25, axiom, fma(fneg(x), fneg(y), z) = fma(x, y, z)).
 cnf(r26, axiom, fmul(fneg(x), fneg(y)) = fmul(x, y)).
@@ -50,12 +50,12 @@ cnf(r46, axiom, isub(isub(iadd(a, b), c), d) = isub(iadd(a, b), iadd(c, d))).
 cnf(r47, axiom, iadd(isub(iadd(a, b), c), d) = isub(iadd(a, b), isub(c, d))).
 cnf(r48, axiom, isub(iadd(iadd(a, b), c), d) = iadd(iadd(a, b), isub(c, d))).
 
-cnf(r49, axiom, halfWidth(k) -> sshr(imul(sextend(x), sextend(y)), k) = sextend(smulhi(x, y))).
-cnf(r50, axiom, halfWidth(k) -> ushr(imul(uextend(x), uextend(y)), k) = uextend(umulhi(x, y))).
+cnf(r49, axiom, halfWidth(k) => sshr(imul(sextend(x), sextend(y)), k) = sextend(smulhi(x, y))).
+cnf(r50, axiom, halfWidth(k) => ushr(imul(uextend(x), uextend(y)), k) = uextend(umulhi(x, y))).
 
 cnf(r51, axiom, fcvt_from_uint(uextend(x)) = fcvt_from_uint(x)).
 cnf(r52, axiom, fcvt_from_sint(sextend(x)) = fcvt_from_sint(x)).
 
-cnf(r53, axiom, iadd(bor(x, C), -C) = band(x, not(C))).
+cnf(r53, axiom, iadd(bor(x, C), neg(C)) = band(x, not(C))).
 
-cnf(goal, conjecture, true = true).
+cnf(goal, conjecture, true = false).

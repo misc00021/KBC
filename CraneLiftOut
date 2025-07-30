@@ -1,0 +1,118 @@
+Here is the input problem:
+  Axiom 1 (r8): ineg(ineg(x)) = x.
+  Axiom 2 (r10): iabs(ineg(x)) = iabs(x).
+  Axiom 3 (r19): sdiv(x, 1) = x.
+  Axiom 4 (r20): udiv(x, 1) = x.
+  Axiom 5 (r51): fcvt_from_uint(uextend(x)) = fcvt_from_uint(x).
+  Axiom 6 (r52): fcvt_from_sint(sextend(x)) = fcvt_from_sint(x).
+  Axiom 7 (r11): iabs(iabs(x)) = iabs(x).
+  Axiom 8 (r24): fneg(fneg(x)) = x.
+  Axiom 9 (r14): imul(x, 0) = 0.
+  Axiom 10 (r13): imul(x, 1) = x.
+  Axiom 11 (r9): imul(ineg(x), ineg(y)) = imul(x, y).
+  Axiom 12 (r1): iadd(x, 0) = x.
+  Axiom 13 (r21): imul(x, 2) = iadd(x, x).
+  Axiom 14 (r3): isub(0, x) = ineg(x).
+  Axiom 15 (r2): isub(x, 0) = x.
+  Axiom 16 (r4): iadd(x, ineg(y)) = isub(x, y).
+  Axiom 17 (r5): iadd(ineg(y), x) = isub(x, y).
+  Axiom 18 (r12): isub(x, x) = 0.
+  Axiom 19 (r7): isub(x, ineg(y)) = iadd(x, y).
+  Axiom 20 (r6): ineg(isub(y, x)) = isub(x, y).
+  Axiom 21 (r17): bnot(isub(x, 1)) = ineg(x).
+  Axiom 22 (r15): imul(x, neg(1)) = ineg(x).
+  Axiom 23 (r16): iadd(bnot(x), 1) = ineg(x).
+  Axiom 24 (r26): fmul(fneg(x), fneg(y)) = fmul(x, y).
+  Axiom 25 (r18): bnot(iadd(x, neg(1))) = ineg(x).
+  Axiom 26 (r25): fma(fneg(x), fneg(y), z) = fma(x, y, z).
+  Axiom 27 (r23): power_of_two(X) -> imul(X, x) = ishl(x, log2(X)).
+  Axiom 28 (r22): power_of_two(X) -> imul(x, X) = ishl(x, log2(X)).
+  Axiom 29 (r53): iadd(bor(x, X), neg(X)) = band(x, not(X)).
+  Axiom 30 (r33): bxor(a, bxor(b, bxor(c, d))) = bxor(bxor(a, b), bxor(c, d)).
+  Axiom 31 (r34): bxor(bxor(bxor(a, b), c), d) = bxor(bxor(a, b), bxor(c, d)).
+  Axiom 32 (r31): band(a, band(b, band(c, d))) = band(band(a, b), band(c, d)).
+  Axiom 33 (r32): band(band(band(a, b), c), d) = band(band(a, b), band(c, d)).
+  Axiom 34 (r29): imul(a, imul(b, imul(c, d))) = imul(imul(a, b), imul(c, d)).
+  Axiom 35 (r30): imul(imul(imul(a, b), c), d) = imul(imul(a, b), imul(c, d)).
+  Axiom 36 (r27): iadd(a, iadd(b, iadd(c, d))) = iadd(iadd(a, b), iadd(c, d)).
+  Axiom 37 (r41): iadd(a, iadd(b, isub(c, d))) = iadd(iadd(a, b), isub(c, d)).
+  Axiom 38 (r28): iadd(iadd(iadd(a, b), c), d) = iadd(iadd(a, b), iadd(c, d)).
+  Axiom 39 (r45): iadd(iadd(isub(a, b), c), d) = iadd(isub(a, b), iadd(c, d)).
+  Axiom 40 (r36): isub(a, isub(b, iadd(c, d))) = iadd(isub(a, b), iadd(c, d)).
+  Axiom 41 (r35): isub(a, isub(b, isub(c, d))) = iadd(isub(a, b), isub(c, d)).
+  Axiom 42 (r40): iadd(a, isub(b, iadd(c, d))) = isub(iadd(a, b), iadd(c, d)).
+  Axiom 43 (r39): iadd(a, isub(b, isub(c, d))) = isub(iadd(a, b), isub(c, d)).
+  Axiom 44 (r47): iadd(isub(iadd(a, b), c), d) = isub(iadd(a, b), isub(c, d)).
+  Axiom 45 (r38): isub(a, iadd(b, iadd(c, d))) = isub(isub(a, b), iadd(c, d)).
+  Axiom 46 (r43): iadd(isub(isub(a, b), c), d) = isub(isub(a, b), isub(c, d)).
+  Axiom 47 (r37): isub(a, iadd(b, isub(c, d))) = isub(isub(a, b), isub(c, d)).
+  Axiom 48 (r48): isub(iadd(iadd(a, b), c), d) = iadd(iadd(a, b), isub(c, d)).
+  Axiom 49 (r44): isub(iadd(isub(a, b), c), d) = iadd(isub(a, b), isub(c, d)).
+  Axiom 50 (r46): isub(isub(iadd(a, b), c), d) = isub(iadd(a, b), iadd(c, d)).
+  Axiom 51 (r42): isub(isub(isub(a, b), c), d) = isub(isub(a, b), iadd(c, d)).
+  Axiom 52 (r49): halfWidth(k) -> sshr(imul(sextend(x), sextend(y)), k) = sextend(smulhi(x, y)).
+  Axiom 53 (r50): halfWidth(k) -> ushr(imul(uextend(x), uextend(y)), k) = uextend(umulhi(x, y)).
+  Goal 1 (goal): true = true.
+
+1. ineg(ineg(x)) -> x
+2. iabs(ineg(x)) -> iabs(x)
+3. sdiv(x, 1) -> x
+4. udiv(x, 1) -> x
+5. fcvt_from_uint(uextend(x)) -> fcvt_from_uint(x)
+6. fcvt_from_sint(sextend(x)) -> fcvt_from_sint(x)
+7. iabs(iabs(x)) -> iabs(x)
+8. fneg(fneg(x)) -> x
+9. imul(x, 0) -> 0
+10. imul(x, 1) -> x
+11. imul(ineg(x), ineg(y)) -> imul(x, y)
+12. iadd(x, 0) -> x
+13. iadd(x, x) -> imul(x, 2)
+14. isub(0, x) -> ineg(x)
+15. isub(x, 0) -> x
+16. isub(x, y) -> iadd(x, ineg(y))
+17. iadd(ineg(y), x) -> iadd(x, ineg(y))
+18. isub(x, x) -> 0
+19. isub(x, ineg(y)) -> iadd(x, y)
+20. ineg(isub(y, x)) -> iadd(x, ineg(y))
+21. bnot(isub(x, 1)) -> ineg(x)
+22. imul(x, neg(1)) -> ineg(x)
+23. iadd(bnot(x), 1) -> ineg(x)
+24. fmul(fneg(x), fneg(y)) -> fmul(x, y)
+25. bnot(iadd(x, neg(1))) -> ineg(x)
+26. fma(fneg(x), fneg(y), z) -> fma(x, y, z)
+27. power_of_two(X) -> imul(X, x) -> ishl(x, log2(X))
+28. power_of_two(X) -> imul(x, X) -> ishl(x, log2(X))
+29. iadd(bor(x, X), neg(X)) -> band(x, not(X))
+30. bxor(bxor(a, b), bxor(c, d)) -> bxor(a, bxor(b, bxor(c, d)))
+31. bxor(bxor(bxor(a, b), c), d) -> bxor(a, bxor(b, bxor(c, d)))
+32. band(band(a, b), band(c, d)) -> band(a, band(b, band(c, d)))
+33. band(band(band(a, b), c), d) -> band(a, band(b, band(c, d)))
+34. imul(imul(a, b), imul(c, d)) -> imul(a, imul(b, imul(c, d)))
+35. imul(imul(imul(a, b), c), d) -> imul(a, imul(b, imul(c, d)))
+36. iadd(iadd(a, b), iadd(c, d)) -> iadd(a, iadd(b, iadd(c, d)))
+37. iadd(iadd(a, b), isub(c, d)) -> iadd(a, iadd(b, isub(c, d)))
+38. iadd(iadd(iadd(a, b), c), d) -> iadd(a, iadd(b, iadd(c, d)))
+39. iadd(iadd(isub(a, b), c), d) -> iadd(isub(a, b), iadd(c, d))
+40. isub(a, isub(b, iadd(c, d))) -> iadd(isub(a, b), iadd(c, d))
+41. isub(a, isub(b, isub(c, d))) -> iadd(isub(a, b), isub(c, d))
+42. isub(iadd(a, b), iadd(c, d)) -> iadd(a, isub(b, iadd(c, d)))
+43. isub(iadd(a, b), isub(c, d)) -> iadd(a, isub(b, isub(c, d)))
+44. iadd(isub(iadd(a, b), c), d) -> iadd(a, isub(b, isub(c, d)))
+45. isub(isub(a, b), iadd(c, d)) -> isub(a, iadd(b, iadd(c, d)))
+46. isub(isub(a, b), isub(c, d)) -> iadd(isub(isub(a, b), c), d)
+47. isub(a, iadd(b, isub(c, d))) -> iadd(isub(isub(a, b), c), d)
+48. isub(iadd(iadd(a, b), c), d) -> iadd(a, iadd(b, isub(c, d)))
+49. isub(iadd(isub(a, b), c), d) -> iadd(isub(a, b), isub(c, d))
+50. isub(isub(iadd(a, b), c), d) -> iadd(a, isub(b, iadd(c, d)))
+51. isub(isub(isub(a, b), c), d) -> isub(a, iadd(b, iadd(c, d)))
+52. halfWidth(k) -> sshr(imul(sextend(x), sextend(y)), k) -> sextend(smulhi(x, y))
+53. halfWidth(k) -> ushr(imul(uextend(x), uextend(y)), k) -> uextend(umulhi(x, y))
+
+The conjecture is true! Here is a proof.
+
+
+Goal 1 (goal): true = true.
+Proof:
+Reflexivity.
+
+RESULT: Theorem (the conjecture is true).
