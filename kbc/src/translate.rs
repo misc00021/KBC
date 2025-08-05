@@ -1,6 +1,7 @@
 use std::collections::VecDeque;
 use std::vec::Vec;
 
+#[derive(Clone)]
 struct Symbol {
     name: String,
     length: usize,
@@ -398,7 +399,7 @@ fn twee_term_to_flat(mut term: String) -> (Option<Vec<Symbol>>, Vec<Symbol>) {
     let flat;
     let mut working: Vec<String>;
     while term.trim().starts_with("ifeq") {
-        let mut parts = term.splitn(2, '(').collect::<Vec<&str>>();
+        let parts = term.splitn(2, '(').collect::<Vec<&str>>();
         if parts.len() < 2 {
             break; // Malformed term
         }
@@ -472,11 +473,111 @@ fn twee_out_to_flat(lines: &Vec<String>) -> Vec<Rule> {
     return rules;
 }
 
+fn egg_print(term: &mut Vec<Symbol>) -> String {
+    let mut ret = String::new();
+    ret.push('"');
+    let mut paren_at = Vec::new();
+    let mut i = 0;
+    while i < term.len() {
+        let s = term.get(i).unwrap();
+        if s.length == 1 {
+            if s.name.chars().next().unwrap().is_uppercase() {
+                ret.push_str(format!("?{}", s.name.to_ascii_lowercase()).as_str());
+            } else {
+                ret.push_str(format!("{}", s.name).as_str());
+            }
+            i += 1;
+            if !paren_at.is_empty() {
+                if paren_at[paren_at.len() - 1] != i {
+                    ret.push(' ');
+                } else {
+                    ret.push(')');
+                    paren_at.pop();
+                    if !paren_at.is_empty() {
+                        ret.push(' ');
+                    }
+                }
+            }
+        } else {
+            paren_at.push(i + s.length);
+            ret.push_str(format!("({} ", s.name).as_str());
+            i += 1;
+        }
+    }
+    while !paren_at.is_empty() {
+        ret.push(')');
+        paren_at.pop();
+    }
+    ret.push('"');
+    return ret;
+}
+
+fn egg_print_cond(cond: &mut Vec<Symbol>) -> String {
+    let mut ret = String::new();
+    let mut i = 0;
+    while i < cond.len() {
+        let s = cond.get(i).unwrap();
+        ret.push_str(&format!("if {}(", s.name));
+        for j in 1..s.length {
+            i += 1;
+            ret.push_str(egg_print(&mut vec![cond[i].clone()]).as_str());
+            if j < s.length - 1 {
+                ret.push_str(", ");
+            }
+        }
+        ret.push(')');
+        i += 1;
+    }
+    return ret;
+}
+
+fn order_rule(rule: &mut Rule) {
+    if rule.ordered {
+        return;
+    }
+    let mut lhs_count = 0;
+    let mut rhs_count = 0;
+    for s in &rule.lhs {
+        if s.length == 1 && s.name.chars().next().unwrap().is_uppercase() {
+            lhs_count += 1;
+        }
+    }
+    for s in &rule.rhs {
+        if s.length == 1 && s.name.chars().next().unwrap().is_uppercase() {
+            rhs_count += 1;
+        }
+    }
+    if rhs_count < lhs_count {
+        let temp = rule.lhs.clone();
+        rule.lhs = rule.rhs.clone();
+        rule.rhs = temp;
+    }
+    rule.ordered = true;
+}
+
+fn flat_to_egg(rule: &mut Rule) -> String {
+    let mut ret = String::new();
+    if !rule.ordered {
+        order_rule(rule);
+    }
+    ret.push_str(&format!(
+        "rw!(\"{}\"; {} => {}",
+        rule.name,
+        egg_print(&mut rule.lhs),
+        egg_print(&mut rule.rhs)
+    ));
+    if !rule.cond.is_empty() {
+        ret.push_str(&format!(" {}", egg_print_cond(&mut rule.cond)));
+    }
+    ret.push_str("),");
+    return ret;
+}
+
 pub fn twee_to_egg(lines: &Vec<String>) -> Vec<String> {
     let rules = twee_out_to_flat(&lines);
     let mut lines = Vec::new();
     for mut rule in rules {
-        lines.push(flat_to_twee(&mut rule));
+        lines.push(flat_to_egg(&mut rule));
     }
     return lines;
 }
