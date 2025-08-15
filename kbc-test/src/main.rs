@@ -7,7 +7,7 @@ use egg::{EGraph, RecExpr, Runner};
 use math::{ConstantFold, Math, rules};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let mut file = File::create("/home/michi/Documents/thesis/KBC/kbc-test/mathDetail.txt")?;
+    let mut file = File::create("/home/michi/Documents/thesis/KBC/kbc-test/test_terms.txt")?;
     let mut exprs: std::vec::Vec<RecExpr<Math>> = std::vec![];
     // Parse an expression to test
     exprs.push("(* b (+ 0 (* x (+ (+ (+ (* x 1) (- (pow y 0) (/ (* 0 z) (pow a 1)))) (/ (pow (pow b 1) 1) (* 1 1))) (/ (* d 0) (pow e 1))))))"
@@ -102,31 +102,32 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     exprs.push("--a".parse().unwrap());
 
     for expr in &exprs {
-        let mut total: f64 = 0.0;
-        for i in 0..1 {
-            // Run the rewrite rules on the expression
-            let runner = Runner::default()
-                .with_explanations_enabled()
-                .with_expr(expr)
-                .with_iter_limit(100)
-                .run(&rules());
+        // let mut total: f64 = 0.0;
+        // for i in 0..1 {
+        //     // Run the rewrite rules on the expression
+        //     let runner = Runner::default()
+        //         .with_explanations_enabled()
+        //         .with_expr(expr)
+        //         .with_iter_limit(100)
+        //         .run(&rules());
 
-            // Extract the best expression from the final e-graph
-            let root = runner.roots[0];
-            let extractor = egg::Extractor::new(&runner.egraph, egg::AstSize);
-            let (_cost, best) = extractor.find_best(root);
-            total += runner.report().total_time;
-            if i == 0 {
-                writeln!(file, "\nAverage time: {}", (total / 1.0))?;
-                writeln!(file, "\nApply time: {}", runner.report().apply_time)?;
-                writeln!(file, "\nSearch time: {}", runner.report().search_time)?;
-                writeln!(file, "\nRebuild time: {}", runner.report().rebuild_time)?;
-                writeln!(file, "Stop reason: {:?}", runner.report().stop_reason)?;
-                writeln!(file, "Iterations: {}", runner.iterations.len())?;
-                writeln!(file, "Original: {}", expr)?;
-                writeln!(file, "Simplified: {}\n", best)?;
-            }
-        }
+        //     // Extract the best expression from the final e-graph
+        //     let root = runner.roots[0];
+        //     let extractor = egg::Extractor::new(&runner.egraph, egg::AstSize);
+        //     let (_cost, best) = extractor.find_best(root);
+        //     total += runner.report().total_time;
+        //     if i == 0 {
+        //         writeln!(file, "\nAverage time: {}", (total / 1.0))?;
+        //         writeln!(file, "\nApply time: {}", runner.report().apply_time)?;
+        //         writeln!(file, "\nSearch time: {}", runner.report().search_time)?;
+        //         writeln!(file, "\nRebuild time: {}", runner.report().rebuild_time)?;
+        //         writeln!(file, "Stop reason: {:?}", runner.report().stop_reason)?;
+        //         writeln!(file, "Iterations: {}", runner.iterations.len())?;
+        //         writeln!(file, "Original: {}", expr)?;
+        //         writeln!(file, "Simplified: {}\n", best)?;
+        //     }
+        // }
+        writeln!(file, "{}", expr)?;
     }
     Ok(())
 }

@@ -1,0 +1,161 @@
+base term:
+{
+  "nodes": {
+    "++": {
+      "op": "root+",
+      "children": ["+", "a"],
+      "eclass": "top"
+    },
+    "+": {
+      "op": "+",
+      "eclass": "mid",
+      "children": ["--", "-"]
+    },
+    "--": {
+      "op": "-",
+      "eclass": "--a",
+      "children": ["-"]
+    },
+    "-": {
+      "op": "-",
+      "eclass": "-a",
+      "children": ["a"]
+    },
+    "a": {
+      "op": "a",
+      "eclass": "a"
+    }
+  }
+}
+
+R4
+
+{
+  "nodes": {
+    "++": {
+      "op": "root+",
+      "children": ["+", "a"],
+      "eclass": "top"
+    },
+    "+": {
+      "op": "+",
+      "eclass": "mid",
+      "children": ["--", "-"]
+    },
+    "--": {
+      "op": "-",
+      "eclass": "--a",
+      "children": ["-"]
+    },
+    "-": {
+      "op": "-",
+      "eclass": "-a",
+      "children": ["a"]
+    },
+    "a": {
+      "op": "a",
+      "eclass": "a"
+    },
+    "+++": {
+        "op": "+",
+        "children": ["--", "++++"],
+        "eclass": "top"
+    },
+    "++++": {
+        "op": "+",
+        "children": ["-", "a"],
+        "eclass": "mid2"
+    }
+  }
+}
+
+R3
+
+{
+  "nodes": {
+    "++": {
+      "op": "root+",
+      "children": ["+", "a"],
+      "eclass": "top"
+    },
+    "+": {
+      "op": "+",
+      "eclass": "0",
+      "children": ["--", "-"]
+    },
+    "--": {
+      "op": "-",
+      "eclass": "--a",
+      "children": ["-"]
+    },
+    "-": {
+      "op": "-",
+      "eclass": "-a",
+      "children": ["a"]
+    },
+    "a": {
+      "op": "a",
+      "eclass": "a"
+    },
+    "+++": {
+        "op": "+",
+        "children": ["--", "++++"],
+        "eclass": "top"
+    },
+    "++++": {
+        "op": "+",
+        "children": ["-", "a"],
+        "eclass": "0"
+    },
+    "0": {
+        "op": "0",
+        "eclass": "0"
+    }
+  }
+}
+
+R1 & R2
+
+{
+  "nodes": {
+    "++": {
+      "op": "root+",
+      "children": ["+", "a"],
+      "eclass": "a"
+    },
+    "+": {
+      "op": "+",
+      "eclass": "0",
+      "children": ["--", "-"]
+    },
+    "--": {
+      "op": "-",
+      "eclass": "a",
+      "children": ["-"]
+    },
+    "-": {
+      "op": "-",
+      "eclass": "-a",
+      "children": ["a"]
+    },
+    "a": {
+      "op": "a",
+      "eclass": "a"
+    },
+    "+++": {
+        "op": "+",
+        "children": ["--", "++++"],
+        "eclass": "a"
+    },
+    "++++": {
+        "op": "+",
+        "children": ["-", "a"],
+        "eclass": "0"
+    },
+    "0": {
+        "op": "0",
+        "eclass": "0"
+    }
+  }
+}
+
