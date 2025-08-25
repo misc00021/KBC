@@ -346,6 +346,7 @@ fn parse_twee_term(term: &mut VecDeque<char>) -> Vec<Symbol> {
         }
     }
     if !char.is_whitespace() {
+        term.push_front(char);
         return lhs;
     }
     while char.is_whitespace() {
@@ -468,6 +469,7 @@ fn twee_out_to_flat(lines: &Vec<String>) -> Vec<Rule> {
             rhs,
             cond: cond_ret,
         };
+        println!("{}", rule_dump(&rule));
         rules.push(rule);
     }
     return rules;
@@ -491,10 +493,12 @@ fn egg_print(term: &mut Vec<Symbol>) -> String {
                 if paren_at[paren_at.len() - 1] != i {
                     ret.push(' ');
                 } else {
-                    ret.push(')');
+                    while !paren_at.is_empty() && paren_at[paren_at.len() - 1] == i {
+                      ret.push(')');
                     paren_at.pop();
                     if !paren_at.is_empty() {
                         ret.push(' ');
+                    }  
                     }
                 }
             }

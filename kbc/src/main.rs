@@ -33,6 +33,8 @@ fn main() -> io::Result<()> {
         eprintln!("Error: <num_rules> must be a valid integer (e.g. 100 or --max-rules=100).");
         std::process::exit(1);
     }
+    // let rule_target = Some(100);
+    // let input_file = "/home/michi/Documents/Thesis/KBC/kbc/base_rules/as_egg/test.txt";
     let file = File::open(input_file).map_err(|e| {
         eprintln!("Failed to open input file '{}': {}", input_file, e);
         e
@@ -74,8 +76,6 @@ fn main() -> io::Result<()> {
 
     let mut lines: Vec<String> = stdout.lines().map(|s| s.to_string()).collect();
 
-    lines = twee_to_egg(&lines);
-
     let std_out_file_name = Path::new(input_file)
         .file_stem()
         .and_then(|s| s.to_str())
@@ -103,6 +103,9 @@ fn main() -> io::Result<()> {
         );
         e
     })?;
+
+    lines = twee_to_egg(&lines);
+
 
     let output_file_name = Path::new(input_file)
         .file_stem()

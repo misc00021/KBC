@@ -13,10 +13,10 @@ Here is the input problem:
   Axiom 12 (assoc_add): X + (Y + Z) = (X + Y) + Z.
   Axiom 13 (assoc_mul): X * (Y * Z) = (X * Y) * Z.
   Axiom 14 (sub_canon): X - Y = X + (neg(1) * Y).
-  Axiom 15 (cancel_div): ifeq(is_not_zero(X), true2, X / X, 1) = 1.
-  Axiom 16 (pow0): ifeq(is_not_zero(X), true2, pow(X, 0), 1) = 1.
-  Axiom 17 (distribute): X * (Y + Z) = (X * Y) + (X * Z).
-  Axiom 18 (factor): (X * Y) + (X * Z) = X * (Y + Z).
+  Axiom 15 (distribute): X * (Y + Z) = (X * Y) + (X * Z).
+  Axiom 16 (factor): (X * Y) + (X * Z) = X * (Y + Z).
+  Axiom 17 (cancel_div): ifeq(is_not_zero(X), true2, X / X, 1) = 1.
+  Axiom 18 (pow0): ifeq(is_not_zero(X), true2, pow(X, 0), 1) = 1.
   Axiom 19 (recip_mul_div): ifeq(is_not_zero(X), true2, X * (1 / X), 1) = 1.
   Axiom 20 (pow_recip): ifeq(is_not_zero(X), true2, pow(X, neg(1)), 1 / X) = 1 / X.
   Axiom 21 (div_canon): ifeq(is_not_zero(X), true2, Y * pow(X, neg(1)), Y / X) = Y / X.
@@ -35,9 +35,9 @@ Here is the input problem:
 10. (X + Y) + Z -> X + (Y + Z)
 11. (X * Y) * Z -> X * (Y * Z)
 12. X + (neg(1) * Y) -> X - Y
-13. ifeq(is_not_zero(X), true2, X / X, 1) -> 1
-14. ifeq(is_not_zero(X), true2, pow(X, 0), 1) -> 1
-15. (X * Y) + (X * Z) -> X * (Y + Z)
+13. (X * Y) + (X * Z) -> X * (Y + Z)
+14. ifeq(is_not_zero(X), true2, X / X, 1) -> 1
+15. ifeq(is_not_zero(X), true2, pow(X, 0), 1) -> 1
 16. ifeq(is_not_zero(X), true2, X * (1 / X), 1) -> 1
 17. ifeq(is_not_zero(X), true2, pow(X, neg(1)), 1 / X) -> 1 / X
 18. ifeq(is_not_zero(X), true2, Y * pow(X, neg(1)), Y / X) -> Y / X
