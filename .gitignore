@@ -1,0 +1,2 @@
+# Ignore all Rust build output
+**/target/
