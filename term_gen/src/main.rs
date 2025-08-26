@@ -1,8 +1,13 @@
 use rand;
-use std::io::Write;
 use std::collections::HashSet;
+use std::io::Write;
 
-fn gen_term(ops: &Vec<(&str, usize)>, rng: &mut impl rand::Rng, depth: usize) -> (String, usize) {
+fn gen_term(
+    var_count: &mut usize,
+    ops: &Vec<(&str, usize)>,
+    rng: &mut impl rand::Rng,
+    depth: usize,
+) -> (String, usize) {
     let vars = vec!["a", "b", "c", "d", "e"];
     let consts = vec!["0", "1", "-1"];
     let op;
@@ -16,25 +21,45 @@ fn gen_term(ops: &Vec<(&str, usize)>, rng: &mut impl rand::Rng, depth: usize) ->
     }
     if arity == 0 {
         if op == "var" {
-            (vars[rng.random_range(0..vars.len())].to_string(), 0)
+            if (rng.random() && *var_count < vars.len()) || *var_count == 0 {
+                *var_count += 1;
+            }
+            (vars[rng.random_range(0..*var_count)].to_string(), 0)
         } else {
             (consts[rng.random_range(0..consts.len())].to_string(), 0)
         }
-    } else { 
-        let arg1 = gen_term(ops, rng, depth+1);
+    } else {
+        let arg1 = gen_term(var_count, ops, rng, depth + 1);
         // Limit depth of second argument based on size of first argument to avoid explosion
-        let arg2 = gen_term(ops, rng, depth+(f32::log2(arg1.1 as f32 + 1.0) as usize + 1));
-        (format!("({} {} {})", op, arg1.0, arg2.0), 1 + arg1.1 + arg2.1)
+        let arg2 = gen_term(
+            var_count,
+            ops,
+            rng,
+            depth + (f32::log2(arg1.1 as f32 + 1.0) as usize + 1),
+        );
+        (
+            format!("({} {} {})", op, arg1.0, arg2.0),
+            1 + arg1.1 + arg2.1,
+        )
     }
 }
-            
 
 fn term_gen() {
     let mut rng = rand::rng();
     let mut terms = Vec::new();
-    let ops = vec![("+", 2), ("-", 2), ("*", 2), ("/", 2), ("pow", 2), ("var", 0), ("const", 0)];
+    let ops = vec![
+        ("+", 2),
+        ("-", 2),
+        ("*", 2),
+        ("/", 2),
+        ("pow", 2),
+        ("var", 0),
+        ("const", 0),
+    ];
+    let mut var_count;
     for _i in 1..=100000 {
-        let term = gen_term(&ops, &mut rng, 0);
+        var_count = 0;
+        let term = gen_term(&mut var_count, &ops, &mut rng, 0);
         while terms.len() < term.1 + 1 {
             terms.push(HashSet::new());
         }
@@ -84,5 +109,5 @@ fn term_gen() {
 }
 
 fn main() {
-    term_gen(); 
+    term_gen();
 }
