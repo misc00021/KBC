@@ -1,2 +1,9 @@
 # Ignore all Rust build output
 **/target/
+
+# By default, Cargo.lock should be committed for binaries, but not for libraries.
+# If this is a workspace with libraries, ignore all but the root one:
+Cargo.lock
+!/Cargo.lock
+
+.vscode/
