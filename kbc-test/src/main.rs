@@ -4,7 +4,7 @@ mod math;
 use std::fs::File;
 use std::io::Write;
 
-use egg::{EGraph, RecExpr, Runner};
+use egg::{EGraph, RecExpr, Runner, SimpleScheduler};
 use kbc_math::{ConstantFold, Math, rules};
 
 fn load_exprs_from_file(path: &str) -> std::io::Result<Vec<RecExpr<Math>>> {
@@ -133,6 +133,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 .with_explanations_enabled()
                 .with_expr(expr)
                 .with_iter_limit(100)
+                .with_scheduler(SimpleScheduler())
                 .run(&rules());
 
             // Extract the best expression from the final e-graph
