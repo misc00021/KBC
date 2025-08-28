@@ -30,7 +30,8 @@ fn load_exprs_from_file(path: &str) -> std::io::Result<Vec<RecExpr<Math>>> {
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut file = File::create("kbc_math2.txt")?;
     println!("Starting simplification tests...");
-    let exprs = load_exprs_from_file("/home/michi/Documents/Thesis/KBC/term_gen/terms_max_len4.txt")?;
+    let exprs =
+        load_exprs_from_file("/home/michi/Documents/thesis/KBC/term_gen/terms_max_len4.txt")?;
     // let mut exprs: std::vec::Vec<RecExpr<Math>> = std::vec![];
     // // Parse an expression to test
     // exprs.push("(* b (+ 0 (* x (+ (+ (+ (* x 1) (- (pow y 0) (/ (* 0 z) (pow a 1)))) (/ (pow (pow b 1) 1) (* 1 1))) (/ (* d 0) (pow e 1))))))"

@@ -1,13 +1,13 @@
 import sys
 
 def main():
-    with open('/home/michi/Documents/Thesis/KBC/kbc-test/kbc_math2.txt', 'r') as kbc:
+    with open('/home/michi/Documents/thesis/KBC/kbc-test/kbc_math2.txt', 'r') as kbc:
         kbc_lines = [line.strip() for line in kbc]
-    with open('/home/michi/Documents/Thesis/KBC/kbc-test/math2.txt', 'r') as egg:
+    with open('/home/michi/Documents/thesis/KBC/kbc-test/math2.txt', 'r') as egg:
         egg_lines = [line.strip() for line in egg]
     i = 0
     runs = []
-    with open('/home/michi/Documents/Thesis/KBC/kbc-test/kbc-egg_comp2.txt', 'w') as f:
+    with open('/home/michi/Documents/thesis/KBC/kbc-test/kbc-egg_comp2.txt', 'w') as f:
         kbcSum = 0
         eggSum = 0
         while i < len(kbc_lines):

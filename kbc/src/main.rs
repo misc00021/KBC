@@ -7,34 +7,34 @@ use std::process::Command;
 use translate::{egg_to_twee, twee_to_egg};
 
 fn main() -> io::Result<()> {
-    let args: Vec<String> = std::env::args().collect();
-    if args.len() < 3 {
-        eprintln!("Usage: {} <input_file> --num_rules=<num_rules>", args[0]);
-        std::process::exit(1);
-    }
-    let input_file = &args[1];
-    let rule_target: Option<i32> = if args[2].contains('=') {
-        let parts: Vec<&str> = args[2].split('=').collect();
-        if parts.len() == 2 && parts[1].chars().all(|c| c.is_ascii_digit()) {
-            parts[1].parse::<i32>().ok()
-        } else {
-            None
-        }
-    } else {
-        if args[2].chars().all(|c| c.is_ascii_digit()) {
-            args[2].parse::<i32>().ok()
-        } else {
-            None
-        }
-    };
+    // let args: Vec<String> = std::env::args().collect();
+    // if args.len() < 3 {
+    //     eprintln!("Usage: {} <input_file> --num_rules=<num_rules>", args[0]);
+    //     std::process::exit(1);
+    // }
+    // let input_file = &args[1];
+    // let rule_target: Option<i32> = if args[2].contains('=') {
+    //     let parts: Vec<&str> = args[2].split('=').collect();
+    //     if parts.len() == 2 && parts[1].chars().all(|c| c.is_ascii_digit()) {
+    //         parts[1].parse::<i32>().ok()
+    //     } else {
+    //         None
+    //     }
+    // } else {
+    //     if args[2].chars().all(|c| c.is_ascii_digit()) {
+    //         args[2].parse::<i32>().ok()
+    //     } else {
+    //         None
+    //     }
+    // };
 
-    if rule_target.is_none() {
-        eprintln!("Usage: {} <input_file> <num_rules>", args[0]);
-        eprintln!("Error: <num_rules> must be a valid integer (e.g. 100 or --max-rules=100).");
-        std::process::exit(1);
-    }
-    // let rule_target = Some(100);
-    // let input_file = "/home/michi/Documents/Thesis/KBC/kbc/base_rules/as_egg/test.txt";
+    // if rule_target.is_none() {
+    //     eprintln!("Usage: {} <input_file> <num_rules>", args[0]);
+    //     eprintln!("Error: <num_rules> must be a valid integer (e.g. 100 or --max-rules=100).");
+    //     std::process::exit(1);
+    // }
+    let rule_target = Some(1000);
+    let input_file = "/home/michi/Documents/thesis/KBC/kbc/base_rules/as_egg/math_no_diff_int.txt";
     let file = File::open(input_file).map_err(|e| {
         eprintln!("Failed to open input file '{}': {}", input_file, e);
         e
@@ -105,7 +105,6 @@ fn main() -> io::Result<()> {
     })?;
 
     lines = twee_to_egg(&lines);
-
 
     let output_file_name = Path::new(input_file)
         .file_stem()

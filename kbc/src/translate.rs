@@ -443,8 +443,11 @@ fn twee_out_to_flat(lines: &Vec<String>) -> Vec<Rule> {
             working = lines[i].split('=').collect::<Vec<&str>>();
         } else if lines[i].contains(" -> ") {
             working = lines[i].split("->").collect::<Vec<&str>>();
-        } else {
+        } else if lines[i].contains(" <-> ") {
             working = lines[i].split("<->").collect::<Vec<&str>>();
+        } else {
+            i += 1;
+            continue; // Skip malformed lines
         }
         let lhs_ret;
         let cond_ret;
@@ -494,11 +497,11 @@ fn egg_print(term: &mut Vec<Symbol>) -> String {
                     ret.push(' ');
                 } else {
                     while !paren_at.is_empty() && paren_at[paren_at.len() - 1] == i {
-                      ret.push(')');
-                    paren_at.pop();
-                    if !paren_at.is_empty() {
-                        ret.push(' ');
-                    }  
+                        ret.push(')');
+                        paren_at.pop();
+                        if !paren_at.is_empty() {
+                            ret.push(' ');
+                        }
                     }
                 }
             }
@@ -539,6 +542,7 @@ fn order_rule(rule: &mut Rule) {
     if rule.ordered {
         return;
     }
+    println!("Ordering rule: {}", rule_dump(&rule));
     let mut lhs_count = 0;
     let mut rhs_count = 0;
     for s in &rule.lhs {
@@ -551,7 +555,7 @@ fn order_rule(rule: &mut Rule) {
             rhs_count += 1;
         }
     }
-    if rhs_count < lhs_count {
+    if rhs_count > lhs_count {
         let temp = rule.lhs.clone();
         rule.lhs = rule.rhs.clone();
         rule.rhs = temp;
