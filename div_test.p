@@ -1,0 +1,12 @@
+cnf(comm_mul, axiom, '*'(A, B) = '*'(B, A)).
+cnf(assoc_mul, axiom, '*'(A, '*'(B, C)) = '*'('*'(A, B), C)).
+cnf(div_canon, axiom,  '/'(A, B) = '*'(A, pow(B, neg('1')))).
+cnf(one_mul, axiom, '*'(A, '1') = A).
+cnf(mul_one, axiom, A = '*'(A, '1')).
+cnf(cancel_div, axiom,  '/'(A, A) = '1').
+cnf(pow_mul, axiom,  '*'(pow(A, B), pow(A, C)) = pow(A, '+'(B, C))).
+cnf(pow1, axiom, pow(X, '1') = X).
+cnf(pow2, axiom, pow(X, '2') = '*'(X, X)).
+cnf(pow_recip, axiom,  pow(X, neg('1')) = '/'('1', X)).
+cnf(recip_mul_div, axiom,  '*'(X, '/'('1', X)) = '1').
+cnf(goal, conjecture, true = false).

@@ -1,0 +1,73 @@
+{
+  "totals": {
+    "EqSat_BaseRules_random_terms_small": {
+      "time": 161.06705180900036,
+      "weight_simple_diff": 7846.0,
+      "weight_complex_diff": 15220.0,
+      "depth_diff": 3212.0
+    },
+    "EqSat_math_no_diff_int_KBC_max_rules_40_extended_random_terms_small": {
+      "time": 223.41127548099993,
+      "weight_simple_diff": 7978.0,
+      "weight_complex_diff": 15550.0,
+      "depth_diff": 3308.0
+    },
+    "EqSat_math_no_diff_int_KBC_max_rules_60_extended_random_terms_small": {
+      "time": 240.2024660880005,
+      "weight_simple_diff": 8083.0,
+      "weight_complex_diff": 15669.0,
+      "depth_diff": 3373.0
+    },
+    "EqSat_math_no_diff_int_KBC_max_rules_80_extended_random_terms_small": {
+      "time": 203.63559326800004,
+      "weight_simple_diff": 8115.0,
+      "weight_complex_diff": 15695.0,
+      "depth_diff": 3382.0
+    },
+    "EqSat_math_no_diff_int_KBC_max_rules_100_extended_random_terms_small": {
+      "time": 254.3461286480001,
+      "weight_simple_diff": 8116.0,
+      "weight_complex_diff": 15678.0,
+      "depth_diff": 3381.0
+    }
+  },
+  "averages": {
+    "EqSat_BaseRules_random_terms_small": {
+      "time": 0.056594185456430204,
+      "weight_simple_diff": 2.7568517217146873,
+      "weight_complex_diff": 5.347856640899508,
+      "depth_diff": 1.1286015460295151
+    },
+    "EqSat_math_no_diff_int_KBC_max_rules_40_extended_random_terms_small": {
+      "time": 0.0785000967958538,
+      "weight_simple_diff": 2.803232607167955,
+      "weight_complex_diff": 5.463808854532678,
+      "depth_diff": 1.1623330990864371
+    },
+    "EqSat_math_no_diff_int_KBC_max_rules_60_extended_random_terms_small": {
+      "time": 0.0844000232213635,
+      "weight_simple_diff": 2.8401264933239636,
+      "weight_complex_diff": 5.505621925509487,
+      "depth_diff": 1.185172171468728
+    },
+    "EqSat_math_no_diff_int_KBC_max_rules_80_extended_random_terms_small": {
+      "time": 0.07155150852705552,
+      "weight_simple_diff": 2.8513703443429375,
+      "weight_complex_diff": 5.5147575544624035,
+      "depth_diff": 1.1883345045678144
+    },
+    "EqSat_math_no_diff_int_KBC_max_rules_100_extended_random_terms_small": {
+      "time": 0.08936968680534087,
+      "weight_simple_diff": 2.8517217146872804,
+      "weight_complex_diff": 5.508784258608573,
+      "depth_diff": 1.1879831342234715
+    }
+  },
+  "counts": {
+    "EqSat_BaseRules_random_terms_small": 2846,
+    "EqSat_math_no_diff_int_KBC_max_rules_40_extended_random_terms_small": 2846,
+    "EqSat_math_no_diff_int_KBC_max_rules_60_extended_random_terms_small": 2846,
+    "EqSat_math_no_diff_int_KBC_max_rules_80_extended_random_terms_small": 2846,
+    "EqSat_math_no_diff_int_KBC_max_rules_100_extended_random_terms_small": 2846
+  }
+}

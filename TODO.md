@@ -1,0 +1,15 @@
+- [x] Use jsonl to store data
+- [x] Turn inputs into args
+- [x] {method}_{ruleset}_{testset}.jsonl for naming convention
+- [x] neg 1 vs. -1
+- [x] put all rulesets in one file
+- [] test 
+    - [x] replacing rules
+    - [x] extending rules
+    - [x] without division
+    - [] with division speratly completed
+    - [] with filtered
+- [] test different egg schedulers
+- [x] check for unbound vars in rules
+- [x] rule set sizes (22 (base), 40, 60, 80, 100, 150, 200, 300, 400, 500, 750, 1000)
+- [x] Write comp per term and summary

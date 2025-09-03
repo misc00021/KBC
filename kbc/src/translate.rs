@@ -7,7 +7,8 @@ struct Symbol {
     length: usize,
 }
 
-struct Rule {
+#[derive(Clone)]
+pub struct Rule {
     ordered: bool,
     name: String,
     lhs: Vec<Symbol>,
@@ -130,7 +131,7 @@ fn get_cond(cond: Vec<&str>) -> Vec<Symbol> {
     return ret;
 }
 
-fn egg_to_flat(lines: Vec<String>) -> Vec<Rule> {
+pub fn egg_to_flat(lines: Vec<String>) -> Vec<Rule> {
     // Convert Egg format to flatterms
     let mut i = 0;
     let mut rules = Vec::new();
@@ -431,7 +432,7 @@ fn twee_out_to_flat(lines: &Vec<String>) -> Vec<Rule> {
     }
     i += 1; // Skip the "final rewrite system:" line
     while i < lines.len() && !lines[i].is_empty() {
-        println!("Processing line: {}", lines[i]);
+        // println!("Processing line: {}", lines[i]);
         if lines[i].trim() == "ifeq(X, X, Y, Z) -> Y" {
             i += 1;
             continue;
@@ -472,7 +473,7 @@ fn twee_out_to_flat(lines: &Vec<String>) -> Vec<Rule> {
             rhs,
             cond: cond_ret,
         };
-        println!("{}", rule_dump(&rule));
+        // println!("{}", rule_dump(&rule));
         rules.push(rule);
     }
     return rules;
@@ -539,10 +540,7 @@ fn egg_print_cond(cond: &mut Vec<Symbol>) -> String {
 }
 
 fn order_rule(rule: &mut Rule) {
-    if rule.ordered {
-        return;
-    }
-    println!("Ordering rule: {}", rule_dump(&rule));
+    // println!("Ordering rule: {}", rule_dump(&rule));
     let mut lhs_count = 0;
     let mut rhs_count = 0;
     for s in &rule.lhs {
@@ -555,6 +553,7 @@ fn order_rule(rule: &mut Rule) {
             rhs_count += 1;
         }
     }
+    // Leaves properly ordered rules as they are
     if rhs_count > lhs_count {
         let temp = rule.lhs.clone();
         rule.lhs = rule.rhs.clone();
@@ -563,11 +562,9 @@ fn order_rule(rule: &mut Rule) {
     rule.ordered = true;
 }
 
-fn flat_to_egg(rule: &mut Rule) -> String {
+pub fn flat_to_egg(rule: &mut Rule) -> String {
     let mut ret = String::new();
-    if !rule.ordered {
-        order_rule(rule);
-    }
+    order_rule(rule);
     ret.push_str(&format!(
         "rw!(\"{}\"; {} => {}",
         rule.name,
@@ -575,10 +572,14 @@ fn flat_to_egg(rule: &mut Rule) -> String {
         egg_print(&mut rule.rhs)
     ));
     if !rule.cond.is_empty() {
-        ret.push_str(&format!(" {}", egg_print_cond(&mut rule.cond)));
+        let cond = egg_print_cond(&mut rule.cond);
+        if !cond.contains('?') {
+            return String::new(); // Skip rules without variables in conditions
+        }
+        ret.push_str(&format!(" {}", cond));
     }
     ret.push_str("),");
-    return ret;
+    return ret.replace("(neg 1)", "-1");
 }
 
 pub fn twee_to_egg(lines: &Vec<String>) -> Vec<String> {

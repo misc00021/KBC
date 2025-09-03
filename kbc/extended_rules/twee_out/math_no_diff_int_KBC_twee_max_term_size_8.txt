@@ -1,0 +1,1427 @@
+Here is the input problem:
+  Axiom 1 (cancel_sub): X - X = 0.
+  Axiom 2 (pow1): pow(X, 1) = X.
+  Axiom 3 (comm_add): X + Y = Y + X.
+  Axiom 4 (zero_add): X + 0 = X.
+  Axiom 5 (add_zero): X = X + 0.
+  Axiom 6 (pow2): pow(X, 2) = X * X.
+  Axiom 7 (comm_mul): X * Y = Y * X.
+  Axiom 8 (zero_mul): X * 0 = 0.
+  Axiom 9 (one_mul): X * 1 = X.
+  Axiom 10 (mul_one): X = X * 1.
+  Axiom 11 (ifeq_axiom): ifeq(X, X, Y, Z) = Y.
+  Axiom 12 (assoc_add): X + (Y + Z) = (X + Y) + Z.
+  Axiom 13 (assoc_mul): X * (Y * Z) = (X * Y) * Z.
+  Axiom 14 (sub_canon): X - Y = X + (neg(1) * Y).
+  Axiom 15 (cancel_div): ifeq(is_not_zero(X), true2, X / X, 1) = 1.
+  Axiom 16 (pow0): ifeq(is_not_zero(X), true2, pow(X, 0), 1) = 1.
+  Axiom 17 (distribute): X * (Y + Z) = (X * Y) + (X * Z).
+  Axiom 18 (factor): (X * Y) + (X * Z) = X * (Y + Z).
+  Axiom 19 (recip_mul_div): ifeq(is_not_zero(X), true2, X * (1 / X), 1) = 1.
+  Axiom 20 (pow_recip): ifeq(is_not_zero(X), true2, pow(X, neg(1)), 1 / X) = 1 / X.
+  Axiom 21 (div_canon): ifeq(is_not_zero(X), true2, Y * pow(X, neg(1)), Y / X) = Y / X.
+  Axiom 22 (pow_mul): ifeq(is_not_zero(X), true2, pow(X, Y) * pow(X, Z), pow(X, Y + Z)) = pow(X, Y + Z).
+  Goal 1 (goal): true = false.
+
+1. X - X -> 0
+2. pow(X, 1) -> X
+3. X + Y <-> Y + X
+4. X + 0 -> X
+5. X * X -> pow(X, 2)
+6. X * Y <-> Y * X
+7. X * 0 -> 0
+8. X * 1 -> X
+9. ifeq(X, X, Y, Z) -> Y
+10. (X + Y) + Z -> X + (Y + Z)
+11. (X * Y) * Z -> X * (Y * Z)
+12. X + (neg(1) * Y) -> X - Y
+13. ifeq(is_not_zero(X), true2, X / X, 1) -> 1
+14. ifeq(is_not_zero(X), true2, pow(X, 0), 1) -> 1
+15. (X * Y) + (X * Z) -> X * (Y + Z)
+16. ifeq(is_not_zero(X), true2, X * (1 / X), 1) -> 1
+17. ifeq(is_not_zero(X), true2, pow(X, neg(1)), 1 / X) -> 1 / X
+18. ifeq(is_not_zero(X), true2, Y * pow(X, neg(1)), Y / X) -> Y / X
+19. ifeq(is_not_zero(X), true2, pow(X, Y) * pow(X, Z), pow(X, Y + Z)) -> pow(X, Y + Z)
+20. 0 + X -> X
+21. 1 * X -> X
+22. X - 0 -> X
+23. 0 * X -> 0
+24. pow(0, 2) -> 0
+25. pow(1, 2) -> 1
+26. X + neg(1) -> X - 1
+27. 0 - 1 -> neg(1)
+28. X * neg(1) -> 0 - X
+29. neg(1) + X -> X - 1
+30. X + (Y + Z) <-> Y + (X + Z)
+31. X * (Y * Z) <-> Y * (X * Z)
+32. X + (Y - Z) -> (X + Y) - Z
+33. (X + Y) - X -> Y
+34. neg(1) * X -> 0 - X
+35. X * (X * Y) = pow(X, 2) * Y
+36. X * (Y + 1) = X + (X * Y)
+37. (X + Y) - Y -> X
+38. X * (1 + 1) = X + X
+39. pow(neg(1), 2) -> 0 - neg(1)
+40. (X - Y) + Z -> (X + Z) - Y
+41. (X - 1) - X -> neg(1)
+42. 0 - (X + 1) -> neg(1) - X
+43. X * (Y * X) = Y * pow(X, 2)
+44. X * pow(Y, 2) = Y * (Y * X)
+45. X + (X * Y) = X * (1 + Y)
+46. X + (X * Y) = (Y + 1) * X
+47. X * (Y + 1) = X + (Y * X)
+48. X * (X + 1) -> X + pow(X, 2)
+49. (X - Y) - X -> 0 - Y
+50. X + X = (1 + 1) * X
+51. ifeq(is_not_zero(0), true2, 0, 1) -> 1
+52. (X - Y) - Z <-> (X - Z) - Y
+53. X - (X + 1) -> neg(1)
+54. 0 - (1 + X) -> neg(1) - X
+55. (0 - X) - 1 -> neg(1) - X
+56. (1 + X) * Y = Y + (Y * X)
+57. X * (1 + Y) = X + (Y * X)
+58. (X + 1) * Y = Y + (X * Y)
+59. X - (X + Y) -> 0 - Y
+60. X * (0 - Y) -> 0 - (X * Y)
+61. (X - Y) - 1 -> X - (Y + 1)
+62. X * (1 + X) -> X + pow(X, 2)
+  (hard) Y * (1 + X) = (X + 1) * Y
+63. (0 - X) - Y -> 0 - (X + Y)
+64. (X - Y) - Z -> X - (Y + Z)
+65. 1 - (X + 1) -> 0 - X
+66. 0 - neg(1) -> 1
+67. X - neg(1) -> X + 1
+68. X - (1 + X) -> neg(1)
+69. (X * Y) + (Y * Z) -> Y * (X + Z)
+70. X * (Y - 1) = (X * Y) - X
+71. 0 - (X - 1) -> 1 - X
+72. (X * Y) + (Z * X) -> X * (Y + Z)
+73. X * (Y + Y) = Y * (X + X)
+74. X * (Y + Y) = (X + X) * Y
+75. (1 + X) * Y = Y + (X * Y)
+76. X - (Y * X) = X * (1 - Y)
+77. X - (Y + X) -> 0 - Y
+78. (X * Y) - X = (Y - 1) * X
+79. X * (Y - 1) = (Y * X) - X
+80. X * (X * pow(Y, 2)) -> pow(X * Y, 2)
+  (hard) (1 + X) * Y = Y * (X + 1)
+81. (0 - X) * Y -> 0 - (X * Y)
+82. X * (X - 1) -> pow(X, 2) - X
+83. pow(X, 2) + (X * Y) -> X * (X + Y)
+84. X * (X + X) = pow(X, 2) + pow(X, 2)
+85. X - (X - 1) -> 1
+86. 0 - (0 - X) -> X
+87. (X * (1 + 1)) - X -> X
+88. (X * Y) + (Z * Y) -> Y * (X + Z)
+89. (1 - X) * Y = Y - (X * Y)
+90. X * (1 - Y) = X - (X * Y)
+91. (X - 1) * Y = (X * Y) - Y
+92. (X + 1) - Y -> X - (Y - 1)
+93. 0 - (X + X) = X * (neg(1) - 1)
+94. X * (1 - X) -> X - pow(X, 2)
+95. (X + (Y + Z)) - Y -> X + Z
+96. (X + Y) - (X + Z) -> Y - Z
+97. neg(1) - (X - 1) -> 0 - X
+98. X - (X - Y) -> Y
+99. 0 - (X - Y) -> Y - X
+100. X - (0 - Y) -> X + Y
+101. pow(X, 2) + (Y * X) -> X * (X + Y)
+102. X * (pow(Y, 2) * X) -> pow(X * Y, 2)
+103. pow(0 - X, 2) -> pow(X, 2)
+104. X * (X * pow(X, 2)) -> pow(pow(X, 2), 2)
+105. pow(X - 1, 2) = pow(1 - X, 2)
+106. (X * (Y + 1)) - X -> X * Y
+107. (X * (1 + Y)) - X -> X * Y
+108. ((X + 1) * Y) - Y -> X * Y
+109. pow(X, 2) * pow(Y, 2) -> pow(X * Y, 2)
+110. X * (pow(Y, 2) * Z) = Y * (Y * (X * Z))
+111. X + (Y + (X * Z)) = (X * (Z + 1)) + Y
+112. X + (X * (Y + Z)) = X * (Y + (Z + 1))
+113. X + (X * (Y - 1)) -> X * Y
+114. (X + (X * Y)) * Z -> X * ((Y + 1) * Z)
+115. X + (Y + (X * Z)) = Y + (X * (Z + 1))
+116. X * (Y * (Z + 1)) = Y * (X + (X * Z))
+117. X * (1 + (Y * Z)) = X + (Y * (X * Z))
+118. 0 - (X + X) = (neg(1) - 1) * X
+119. (1 + X) - Y -> X - (Y - 1)
+  (hard) pow(X * Y, 2) = X * (Y * (Y * X))
+120. X * (1 + (X * Y)) -> X + (pow(X, 2) * Y)
+121. pow(neg(1) - X, 2) -> pow(X + 1, 2)
+122. (X + Y) - (Y + Z) -> X - Z
+123. (X + (Y + Z)) - Z -> X + Y
+124. (X + Y) - (Z + X) -> Y - Z
+125. pow(X, 2) * (Y + 1) = X * (X + (X * Y))
+126. X * (Y + (1 + 1)) = X + (X + (X * Y))
+127. ((1 + X) * Y) - Y -> X * Y
+128. X + ((Y - 1) * X) -> X * Y
+129. ifeq(is_not_zero(X), true2, 0, 0 / X) -> 0 / X
+130. X + (X + Y) = (X * (1 + 1)) + Y
+131. (X + (X + Y)) - Y -> X * (1 + 1)
+132. X * ((1 + 1) * Y) = (X + X) * Y
+133. X + (Y + X) = Y + (X * (1 + 1))
+  (hard) X * (1 + 1) = (X + (Y + X)) - Y
+134. X * (Y * (1 + 1)) = Y * (X + X)
+135. (X + Y) - (X - 1) -> Y + 1
+136. X * (X * (1 + 1)) -> pow(X, 2) + pow(X, 2)
+137. pow(X, 2) * (1 + 1) = X * (X + X)
+138. X * (1 + (1 + 1)) = X + (X + X)
+139. (1 + (1 + 1)) * X = X + (X + X)
+140. (X + Y) - Z -> X - (Z - Y)
+141. X - (Y - Z) <-> Z - (Y - X)
+142. X - (Y - (Z + W)) <-> Z - (Y - (X + W))
+143. X - (neg(1) - Y) -> X + (Y + 1)
+144. X * ((Y + Y) * Z) = Y * ((X + X) * Z)
+145. X * (Y * (Z + Z)) = Y * (Z * (X + X))
+  (hard) X + (Y + (X * Z)) = X + ((Z * X) + Y)
+146. X * (Y + (Y * Z)) = Y * (X + (X * Z))
+147. X * (Y + (Y * Z)) = Y * (X + (Z * X))
+148. 0 - (X + (Y + 1)) -> neg(1) - (X + Y)
+149. 0 - ((X + 1) * Y) -> Y * (neg(1) - X)
+150. 0 - (X * (Y + 1)) -> X * (neg(1) - Y)
+151. X + (X * (Y - Z)) = X * (Y - (Z - 1))
+152. X * (Y * pow(Z, 2)) = Z * (Y * (X * Z))
+  (hard) X * (pow(Y, 2) * Z) = Y * (X * (Y * Z))
+153. X * (Y * pow(Z, 2)) = Z * (Y * (Z * X))
+154. X * (Y * (Z * X)) = Y * (Z * pow(X, 2))
+155. X * (Y * pow(Z, 2)) = Y * (Z * (X * Z))
+156. X * (Y * pow(Z, 2)) = Y * (Z * (Z * X))
+157. X * (Y * (X * Z)) = Y * (Z * pow(X, 2))
+158. X + (Y + (X * Z)) = (X * (1 + Z)) + Y
+159. X + (Y + (X * Z)) = Y + (X * (1 + Z))
+160. X + (X * (Y + Z)) = X * (Y + (1 + Z))
+161. X * (Y * (1 + Z)) = Y * (X + (X * Z))
+162. X + (Y + (X * Z)) = ((Z + 1) * X) + Y
+163. X + (X * (Y + Z)) = (Y + (Z + 1)) * X
+164. X + (Y + (X * Z)) = Y + ((Z + 1) * X)
+165. (1 + (X * Y)) * Z = Z + (X * (Z * Y))
+  (hard) Y - (Y * X) = (1 - X) * Y
+166. (X + 1) * (Y * Z) = Y * (Z + (Z * X))
+167. X + (X * (Y - Z)) = (Y - (Z - 1)) * X
+168. X + ((Y + Z) * X) = X * (Y + (Z + 1))
+169. (X + (Y * X)) * Z -> X * ((Y + 1) * Z)
+170. X + (Y + (Z * X)) = Y + (X * (Z + 1))
+171. X * (Y * (Z + 1)) = Y * (X + (Z * X))
+172. X + ((Y - Z) * X) = X * (Y - (Z - 1))
+173. pow(X, 2) * (Y + Y) = X * (Y * (X + X))
+174. X * (Y + (Y + 1)) = X + (Y * (X + X))
+  (hard) X + (X + 1) = 1 + (X + X)
+175. (X + X) * pow(Y, 2) = Y * (X * (Y + Y))
+176. X * (1 + (Y + Y)) = X + (Y * (X + X))
+177. (X + (X + 1)) * Y = Y + (X * (Y + Y))
+178. pow(X, 2) * (Y + Y) = Y * (X * (X + X))
+179. pow(X - Y, 2) <-> pow(Y - X, 2)
+  (hard) X * (X * (Y * Z)) = pow(X, 2) * (Z * Y)
+180. X * (X * (Y * Z)) = Y * (Z * pow(X, 2))
+181. X * (pow(Y, 2) * Z) = Y * (Y * (Z * X))
+182. (X * (Y + 1)) + Z = X + ((X * Y) + Z)
+183. (X * (Y + 1)) + Z = X + (Z + (Y * X))
+184. X * ((Y + 1) * Z) = Z * (X + (X * Y))
+185. X + (Y * (Z + 1)) = Y + ((Y * Z) + X)
+186. X + (X + Y) <-> Y + (X + X)
+187. X * (Y + (Y * X)) = Y * (X + pow(X, 2))
+  (hard) X * (1 + (Y * Z)) = X + (X * (Z * Y))
+188. X + (Y * (X * Z)) = X * (1 + (Z * Y))
+189. X * (1 + (Y * Z)) = X + (Y * (Z * X))
+  (hard) pow(X, 2) * (Y * X) = X * (Y * pow(X, 2))
+190. X * (1 + (Y * X)) -> X + (Y * pow(X, 2))
+191. X * (1 + (X * Y)) -> X + (Y * pow(X, 2))
+192. (X + pow(X, 2)) * Y -> X * ((X + 1) * Y)
+193. X * (Y * (X + 1)) = Y * (X + pow(X, 2))
+194. X + (Y * (X + 1)) <-> Y + (X * (Y + 1))
+  (hard) X * (1 + (Y + Z)) = X * (Y + (Z + 1))
+195. (X + (X * Y)) * Z -> X * (Z * (Y + 1))
+  (hard) X * (Y * (Z + 1)) = Y * (X * (1 + Z))
+196. X * (Y * (Z + 1)) = Y * ((Z + 1) * X)
+197. 1 + (1 + (1 + 1)) -> pow(1 + 1, 2)
+198. X + (X + (Y + Y)) = (X + Y) * (1 + 1)
+199. X - (Y - (X - Y)) = (X - Y) * (1 + 1)
+200. X * (1 + pow(Y, 2)) = X + (Y * (X * Y))
+201. X * (1 + pow(Y, 2)) = X + (Y * (Y * X))
+202. (X + 1) * pow(Y, 2) = Y * (Y + (Y * X))
+203. pow(X, 2) * (1 + Y) = X * (X + (X * Y))
+204. X * (1 + (Y + 1)) = X + (X + (X * Y))
+205. (1 + X) * pow(Y, 2) = Y * (Y + (Y * X))
+206. X * (1 + (1 + Y)) = X + (X + (X * Y))
+207. (X + (1 + 1)) * Y = Y + (Y + (Y * X))
+208. (1 + pow(X, 2)) * Y = Y + (X * (Y * X))
+209. (1 + pow(X, 2)) * Y = Y + (X * (X * Y))
+210. (1 + (X + 1)) * Y = Y + (Y + (Y * X))
+211. pow(X, 2) * (Y + 1) = X * (X + (Y * X))
+212. X * (Y + (1 + 1)) = X + (X + (Y * X))
+213. (X + 1) * pow(Y, 2) = Y * (Y + (X * Y))
+214. X * (1 + (Y + 1)) = X + (X + (Y * X))
+215. (X + (1 + 1)) * Y = Y + (Y + (X * Y))
+216. (X * (1 - Y)) - X -> 0 - (X * Y)
+217. X * (1 + (1 + Y)) = X + (X + (Y * X))
+218. pow(X, 2) * (X + 1) = X * (X + pow(X, 2))
+219. X * (X + (1 + 1)) = X + (X + pow(X, 2))
+220. X * (1 + (X + 1)) = X + (X + pow(X, 2))
+221. (X * (Y + 1)) - 1 = X - (1 - (X * Y))
+222. 0 - (X + (X * Y)) -> X * (neg(1) - Y)
+  (hard) pow(X, 2) * (Y + 1) = X * (X * (1 + Y))
+223. pow(X, 2) * (Y + 1) = X * ((Y + 1) * X)
+  (hard) X * (Y + (1 + 1)) = X + (X * (1 + Y))
+224. X + (X + Y) = ((1 + 1) * X) + Y
+225. (1 + 1) * (X * Y) = (X + X) * Y
+226. (X * Y) + (X * Y) -> (X + X) * Y
+227. X + (Y + X) = Y + ((1 + 1) * X)
+228. (1 + 1) * (X * Y) = X * (Y + Y)
+229. X * (Y + Y) = Y * ((1 + 1) * X)
+230. (X + X) * Y = X * (Y * (1 + 1))
+231. X + (Y * (1 + 1)) = Y + (Y + X)
+232. (X * (1 + 1)) - Y = X - (Y - X)
+233. (X + X) * Y = (1 + 1) * (Y * X)
+  (hard) (Y + Y) * X = (X + X) * Y
+234. 0 - (X * (Y - 1)) = X - (X * Y)
+235. X - (X * (1 - Y)) -> X * Y
+236. X - (Y * X) = 0 - ((Y - 1) * X)
+237. X - ((1 - Y) * X) -> X * Y
+  (hard) Y - (Y * X) = 0 - ((X - 1) * Y)
+238. 0 - (X * (Y - 1)) = X - (Y * X)
+239. X * ((1 + 1) * X) -> pow(X, 2) + pow(X, 2)
+240. X * pow(1 + 1, 2) = (1 + 1) * (X + X)
+241. (1 + 1) * (X + 1) = 1 + (1 + (X + X))
+242. X - (X * (1 + 1)) -> 0 - X
+243. X - ((1 + 1) * X) -> 0 - X
+244. (1 + 1) * pow(X, 2) = X * (X + X)
+245. 0 - (X + (Y * X)) -> X * (neg(1) - Y)
+246. X * ((Y + Y) * Z) = (X + X) * (Y * Z)
+247. X * ((Y + Y) * Z) = Z * (X * (Y + Y))
+248. X * (Y * (Z + Z)) = Y * ((X + X) * Z)
+249. X * ((Y + Y) * Z) = (X + X) * (Z * Y)
+250. X * ((Y + Y) * Z) = Y * (Z * (X + X))
+251. X * (Y * (Z + Z)) = Z * (Y * (X + X))
+252. (X + (Y * X)) * Z = X * (Z + (Z * Y))
+253. X * (Y + (Z * Y)) = Y * (X + (Z * X))
+  (hard) X + (Y + (Z * X)) = X + ((X * Z) + Y)
+  (hard) Z + (Z * (Y * X)) = Z + (X * (Z * Y))
+  (hard) Z + (Y * (X * Z)) = Z + (X * (Z * Y))
+  (hard) Z + (Y * (Z * X)) = Z + (X * (Z * Y))
+  (hard) Z + (Y * (X * Z)) = Z + (Z * (Y * X))
+254. 0 - (X + (1 + Y)) -> neg(1) - (X + Y)
+255. 0 - (X * (1 + Y)) -> X * (neg(1) - Y)
+256. 0 - ((1 + X) * Y) -> Y * (neg(1) - X)
+257. 0 - (X + pow(X, 2)) -> X * (neg(1) - X)
+258. X + (Y + (X * Z)) = ((1 + Z) * X) + Y
+259. X + (X * (Y + Z)) = (Y + (1 + Z)) * X
+260. X + (Y + (X * Z)) = Y + ((1 + Z) * X)
+261. (1 + X) * (Y * Z) = Y * (Z + (Z * X))
+262. X + ((Y + Z) * X) = X * (Y + (1 + Z))
+263. X + (Y + (Z * X)) = Y + (X * (1 + Z))
+264. X * (Y * (1 + Z)) = Y * (X + (Z * X))
+265. X + ((Y + Z) * X) = (Y + (Z + 1)) * X
+266. X + (Y + (Z * X)) = Y + ((Z + 1) * X)
+267. (X + 1) * (Y * Z) = Y * (Z + (X * Z))
+268. X + ((Y - Z) * X) = (Y - (Z - 1)) * X
+269. X - (Y + (X + Z)) -> 0 - (Z + Y)
+270. ((X * Y) - X) * Z -> X * ((Y - 1) * Z)
+271. X * ((Y * Z) - 1) = (Y * (X * Z)) - X
+272. X * (Y * (Z - 1)) = Y * ((X * Z) - X)
+273. X - (Y - (Y * Z)) = X + (Y * (Z - 1))
+274. X - (Y - (Y * Z)) = (Y * (Z - 1)) + X
+275. (X * Y) - (X + Z) = (X * (Y - 1)) - Z
+276. (X * (Y - Z)) - X = X * (Y - (Z + 1))
+277. (1 + (X + X)) * Y = Y + (X * (Y + Y))
+278. X * (Y - (1 - Y)) = (Y * (X + X)) - X
+279. pow(X, 2) * (Y + Y) = X * ((X + X) * Y)
+280. X * (Y + (Y + 1)) = X + ((X + X) * Y)
+281. X * (1 + (Y + Y)) = X + ((X + X) * Y)
+282. X * (Y - (1 - Y)) = ((X + X) * Y) - X
+283. (X + X) * pow(Y, 2) = X * (Y * (Y + Y))
+284. (X + (X * Y)) * Z = X * (Z + (Z * Y))
+285. X * (Y + (Y * Z)) = Y * ((1 + Z) * X)
+286. X * (Y + (X * Y)) = Y * (X + pow(X, 2))
+287. (X + (X * Y)) * Z = X * (Z + (Y * Z))
+  (hard) Z * (Y + (X * Y)) = Y * ((X + 1) * Z)
+288. X * (Y + (Z * Y)) = Y * ((1 + Z) * X)
+  (hard) Z * (Y * pow(X, 2)) = X * (X * (Y * Z))
+  (hard) X * (pow(Y, 2) * Z) = X * (Y * (Z * Y))
+289. (X * (1 + Y)) + Z = X + ((X * Y) + Z)
+290. (X * (1 + Y)) + Z = X + (Z + (Y * X))
+291. X + (Y * (1 + Z)) = Y + ((Y * Z) + X)
+  (hard) X + (X * (Y + Z)) = X * (1 + (Z + Y))
+  (hard) X * (Y + (1 + Y)) = X + (Y * (X + X))
+292. ((X + 1) * Y) + Z = Y + ((Y * X) + Z)
+293. ((X + 1) * Y) + Z = Y + (Z + (X * Y))
+294. X + ((Y + 1) * Z) = Z + ((Z * Y) + X)
+295. X + (Y * (X * Z)) = (1 + (Z * Y)) * X
+296. (1 + (X * Y)) * Z = Z + (X * (Y * Z))
+297. X * (Y + (Y * Z)) = (Z + 1) * (Y * X)
+298. X * (Y + (Z * Y)) = (Z + 1) * (Y * X)
+299. X + (Y * (Z + 1)) = Y + ((Z * Y) + X)
+300. pow(X, 2) * (Y + Y) = X * ((Y + Y) * X)
+301. (X * (Y + 1)) + Z = X + ((Y * X) + Z)
+302. X - (Y + (Y + X)) -> 0 - (Y + Y)
+303. (X + pow(X, 2)) * Y = X * (Y + (Y * X))
+  (hard) X + (pow(Y, 2) * X) = X + (Y * (X * Y))
+304. X * (Y * (1 + X)) = Y * (X + pow(X, 2))
+305. X * ((X * Y) - 1) -> (pow(X, 2) * Y) - X
+306. X * ((Y * X) - 1) -> (Y * pow(X, 2)) - X
+307. X * ((X * Y) - 1) -> (Y * pow(X, 2)) - X
+308. X + (Y * (X + 1)) = Y + (X * (1 + Y))
+  (hard) Y + (X * (Y + 1)) = X + ((X + 1) * Y)
+  (hard) Z * (Y + (X + 1)) = (1 + (Y + X)) * Z
+  (hard) X * ((Y + 1) * Z) = (1 + Y) * (X * Z)
+309. X * (Y * (Z + 1)) = Y * ((1 + Z) * X)
+310. X - (Y - (Z - 1)) <-> Z - (Y - (X - 1))
+311. 1 - (X - (Y - 1)) -> Y - X
+  (hard) pow(X, 2) * (Y * X) = Y * (X * pow(X, 2))
+  (hard) X * (pow(X, 2) * Y) = Y * (X * pow(X, 2))
+312. X * (Y * pow(Z, 2)) = Y * (pow(Z, 2) * X)
+  (hard) X + (Y * (1 + X)) = Y + (X * (1 + Y))
+  (hard) Y + (X * (1 + Y)) = X + ((X + 1) * Y)
+  (hard) Z + (Y * (X + 1)) = (Y * (1 + X)) + Z
+  (hard) Z + (Y * (1 + X)) = (Y * (X + 1)) + Z
+  (hard) Z * (Y + (1 + X)) = (Y + (X + 1)) * Z
+  (hard) Z * (Y + (1 + X)) = (1 + (Y + X)) * Z
+  (hard) Z * (Y * (1 + X)) = Y * ((X + 1) * Z)
+  (hard) Z * (Y * (1 + X)) = Y * ((1 + X) * Z)
+  (hard) Y + ((Y + 1) * X) = X + ((X + 1) * Y)
+313. X + (Y * (Z + 1)) = ((Z + 1) * Y) + X
+314. X + (Y * (1 + Z)) = ((Z + 1) * Y) + X
+  (hard) Z * (1 + (Y + X)) = (Y + (X + 1)) * Z
+  (hard) (X + (Y + 1)) * Z = (1 + (X + Y)) * Z
+315. X + ((Y + 1) * Z) = (Z * (Y + 1)) + X
+316. X + ((Y + 1) * Z) = (Z * (1 + Y)) + X
+  (hard) (X + 1) * (Y * X) = Y * (X + pow(X, 2))
+317. X * (Y * (Z + 1)) = (Z + 1) * (Y * X)
+318. (X + 1) * (Y * Z) = Y * (Z * (X + 1))
+319. (X + 1) * (Y * Z) = Y * (Z * (1 + X))
+  (hard) (X + 1) * (Y * Z) = Y * ((1 + X) * Z)
+320. X * (Y * (1 + Z)) = (Z + 1) * (Y * X)
+  (simplifying rules with respect to one another...)
+  (delete rule 12)
+  (delete rule 32)
+321. X + (Y - Z) -> X - (Z - Y)
+  (delete rule 33)
+  (delete rule 36)
+  (delete rule 37)
+  (delete rule 39)
+322. pow(neg(1), 2) -> 1
+  (delete rule 40)
+323. (X - Y) + Z -> X - (Y - Z)
+  (delete rule 41)
+  (delete rule 43)
+  (delete rule 46)
+  (delete rule 48)
+  (delete rule 49)
+  (delete rule 52)
+  (delete rule 53)
+  (delete rule 55)
+  (delete rule 56)
+  (delete rule 59)
+  (delete rule 61)
+  (delete rule 63)
+  (delete rule 65)
+  (delete rule 66)
+  (delete rule 68)
+  (delete rule 70)
+  (delete rule 71)
+  (delete rule 72)
+  (delete rule 78)
+  (delete rule 83)
+  (delete rule 85)
+  (delete rule 86)
+  (delete rule 87)
+  (delete rule 92)
+  (delete rule 95)
+  (delete rule 96)
+  (delete rule 97)
+  (delete rule 98)
+  (delete rule 99)
+  (delete rule 103)
+  (delete rule 105)
+  (delete rule 111)
+  (delete rule 114)
+  (delete rule 115)
+  (delete rule 119)
+  (delete rule 120)
+  (delete rule 121)
+  (delete rule 122)
+  (delete rule 123)
+  (delete rule 124)
+  (delete rule 125)
+  (delete rule 126)
+  (delete rule 131)
+  (delete rule 133)
+  (delete rule 135)
+  (delete rule 144)
+  (delete rule 152)
+  (delete rule 153)
+  (delete rule 154)
+  (delete rule 155)
+  (delete rule 156)
+  (delete rule 157)
+  (delete rule 165)
+  (delete rule 175)
+  (delete rule 182)
+  (delete rule 187)
+  (delete rule 188)
+  (delete rule 200)
+  (delete rule 204)
+  (delete rule 208)
+  (delete rule 214)
+  (delete rule 222)
+  (delete rule 247)
+  (delete rule 280)
+  (delete rule 284)
+  (delete rule 285)
+  (delete rule 288)
+  (delete rule 295)
+  (delete rule 305)
+324. X + (X * (Y - Z)) = X * (1 - (Z - Y))
+325. X + ((Y - Z) * X) = X * (1 - (Z - Y))
+326. (1 - (X - Y)) * Z = Z + (Z * (Y - X))
+327. (X + (Y * X)) * Z -> X * (Z * (Y + 1))
+328. X * (Y * pow(Z, 2)) = pow(Z, 2) * (X * Y)
+  (hard) pow(X, 2) * (Y * Z) = Z * (pow(X, 2) * Y)
+  (hard) Z * (pow(Y, 2) * X) = X * (pow(Y, 2) * Z)
+329. X * ((X + 1) * Y) = Y * (X + pow(X, 2))
+  (hard) Z * ((Y + 1) * X) = (Y + 1) * (X * Z)
+  (hard) Y + (X + pow(X, 2)) = X + (pow(X, 2) + Y)
+330. (X + pow(X, 2)) * Y -> X * (Y * (X + 1))
+  (hard) Z * (1 - (Y - X)) = (X - (Y - 1)) * Z
+331. X + (X + (Y + Y)) = (1 + 1) * (X + Y)
+332. pow(X, 2) * (1 + Y) = X * (X + (Y * X))
+333. (1 + X) * pow(Y, 2) = Y * (Y + (X * Y))
+334. (1 + (X + 1)) * Y = Y + (Y + (X * Y))
+335. (1 + 1) * (X - Y) = X - (Y - (X - Y))
+336. X + (X + (X * Y)) = (1 + (1 + Y)) * X
+337. X + (X + (Y * X)) = (1 + (1 + Y)) * X
+338. ((1 - X) * Y) - Y -> 0 - (X * Y)
+339. X - ((Y + 1) * X) -> 0 - (X * Y)
+340. pow(X, 2) * (1 + X) = X * (X + pow(X, 2))
+341. X * (1 + (1 + X)) = X + (X + pow(X, 2))
+342. (X * (1 + Y)) - 1 = X - (1 - (X * Y))
+343. ((X + 1) * Y) - 1 = Y - (1 - (Y * X))
+344. (X * (Y + 1)) - 1 = X - (1 - (Y * X))
+  (hard) (X + 1) * pow(Y, 2) = Y * (Y * (1 + X))
+  (hard) pow(X, 2) * (1 + Y) = X * (X * (Y + 1))
+345. pow(X, 2) * (1 + Y) = X * ((Y + 1) * X)
+  (hard) (1 + X) * pow(Y, 2) = Y * ((X + 1) * Y)
+  (hard) (1 + X) * pow(Y, 2) = Y * (Y * (X + 1))
+  (hard) X + ((Y + 1) * X) = X * (1 + (1 + Y))
+  (hard) (X + (1 + 1)) * Y = Y + (Y * (1 + X))
+346. pow(X, 2) * (Y + 1) = X * ((1 + Y) * X)
+  (hard) Y * (1 + (1 + X)) = (X + (1 + 1)) * Y
+  (hard) 1 + (1 + (X + X)) = X + (1 + (X + 1))
+347. X + (X + Y) = Y + ((1 + 1) * X)
+348. X * (Y + Y) = (1 + 1) * (Y * X)
+349. X - (Y - X) = ((1 + 1) * X) - Y
+  (hard) X * (Y * (1 + 1)) = (Y + Y) * X
+  (hard) X * ((1 + 1) * Y) = (Y + Y) * X
+350. 0 - ((X - 1) * Y) -> Y * (1 - X)
+351. 0 - (X * (Y - 1)) -> X * (1 - Y)
+352. X * pow(1 + 1, 2) = X + (X + (X + X))
+  (hard) (X + 1) * (1 + 1) = 1 + (1 + (X + X))
+  (hard) (X + X) * (1 + 1) = X * pow(1 + 1, 2)
+353. (1 + 1) * (X + X) = pow(1 + 1, 2) * X
+  (hard) X + (Y + (Z + Z)) = Z + (Z + (X + Y))
+354. (X + X) * (Y * Z) = X * (Y * (Z + Z))
+  (hard) Z * (Y * (X + X)) = X * ((Y + Y) * Z)
+355. (X + X) * (Y * Z) = X * (Z * (Y + Y))
+356. X * ((Y + Y) * Z) = Y * ((Z + Z) * X)
+357. X * (Y * (Z + Z)) = (Z + Z) * (X * Y)
+  (hard) (X + X) * (Y * Z) = Z * (Y * (X + X))
+358. X * ((Y * Z) - Y) = Y * ((Z * X) - X)
+  (hard) Z - (Y - (Y * X)) = (X * Y) - (Y - Z)
+359. X + (X * (Y - Z)) -> X - ((Z - Y) * X)
+360. X + ((Y - Z) * X) -> X - ((Z - Y) * X)
+361. (1 + X) * (Y * Z) = Y * (Z * (X + 1))
+362. X + ((Y + Z) * X) = (Y + (1 + Z)) * X
+363. X + (Y + (Z * X)) = Y + ((1 + Z) * X)
+364. (1 + X) * (Y * Z) = Y * (Z + (X * Z))
+365. (X - (Y * X)) * Z -> X * ((1 - Y) * Z)
+366. X * (1 - (Y * Z)) = X - (Y * (X * Z))
+367. X * (Y * (1 - Z)) = Y * (X - (Z * X))
+368. X - (Y + (X * Z)) = (X * (1 - Z)) - Y
+369. X * (1 - (Y + Y)) = X - (Y * (X + X))
+370. ((X * Y) - Y) * Z -> Y * ((X - 1) * Z)
+371. X * (Y * (Z - 1)) = Y * ((Z * X) - X)
+372. ((X - Y) * Z) - Z = Z * (X - (Y + 1))
+373. (X + (Y * X)) * Z = X * (Z + (Y * Z))
+374. ((1 + X) * Y) + Z = Y + ((Y * X) + Z)
+375. ((1 + X) * Y) + Z = Y + (Z + (X * Y))
+  (hard) Z + (Z * (Y + X)) = (1 + (X + Y)) * Z
+  (hard) (X + (1 + X)) * Y = Y + (X * (Y + Y))
+376. X + ((1 + Y) * Z) = Z + ((Z * Y) + X)
+  (hard) Z * (Y + (Y * X)) = (1 + X) * (Y * Z)
+  (hard) Z * (Y + (X * Y)) = (1 + X) * (Y * Z)
+  (hard) X + ((Y + Z) * X) = X * (1 + (Z + Y))
+377. X + (Y * (1 + Z)) = Y + ((Z * Y) + X)
+378. X + ((Y + 1) * Z) = Z + ((Y * Z) + X)
+379. X - (X * (Y - Z)) = (Z - (Y - 1)) * X
+380. X * (Y - (Z - 1)) = X - ((Z - Y) * X)
+381. X - (Y + (Z + X)) -> 0 - (Y + Z)
+382. X * ((Y * Z) - Y) = Y * ((Z - 1) * X)
+383. ((X * Y) - 1) * Z = (X * (Z * Y)) - Z
+  (hard) X * ((Y * Z) - 1) = (X * (Z * Y)) - X
+384. (X * (Y * Z)) - Y = Y * ((Z * X) - 1)
+385. X * ((Y * Z) - 1) = (Y * (Z * X)) - X
+386. X * ((Y * X) - Y) = Y * (pow(X, 2) - X)
+387. X - (Y - (Y * Z)) = X + ((Z - 1) * Y)
+388. X + (Y * (Z - 1)) = X - (Y - (Z * Y))
+389. X - (Y - (Y * Z)) = ((Z - 1) * Y) + X
+390. (X * (Y - 1)) + Z = Z - (X - (Y * X))
+391. (X * (Y - 1)) - Z = (X * Y) - (Z + X)
+392. (X * (Y - 1)) - Z = (Y * X) - (X + Z)
+393. (X * Y) - (X + Z) = ((Y - 1) * X) - Z
+394. (X * (Y - Z)) - X = X * (Y - (1 + Z))
+395. (X - (Y + 1)) * Z = (Z * (X - Y)) - Z
+396. (X * (Y + Y)) - Y = (X - (1 - X)) * Y
+397. X * (Y - (1 - Y)) = (X * (Y + Y)) - X
+398. X * (Y - (1 - Y)) = ((Y + Y) * X) - X
+399. ((X + X) * Y) - X = (Y - (1 - Y)) * X
+400. (X + pow(X, 2)) * Y = X * (Y + (X * Y))
+401. (X * (1 + Y)) + Z = X + ((Y * X) + Z)
+402. ((X + 1) * Y) + Z = Y + ((X * Y) + Z)
+403. X - ((Y * Z) - Z) = X + (Z * (1 - Y))
+404. X - ((X * Y) - Z) = (X * (1 - Y)) + Z
+405. (pow(X, 2) - X) * Y -> X * ((X - 1) * Y)
+406. X * (Y * (X - 1)) = Y * (pow(X, 2) - X)
+  (hard) Y + (X * (1 + Y)) = X + ((1 + X) * Y)
+  (hard) Y + ((Y + 1) * X) = X + ((1 + X) * Y)
+  (hard) X + ((1 + X) * Y) = Y + (X * (Y + 1))
+  (hard) Y + ((1 + Y) * X) = X + ((1 + X) * Y)
+407. X + (Y * (1 + Z)) = ((1 + Z) * Y) + X
+  (hard) Z + ((Y + 1) * X) = ((1 + Y) * X) + Z
+  (hard) Z * (1 + (Y + X)) = (Y + (1 + X)) * Z
+  (hard) (X + (1 + Y)) * Z = Z * (X + (Y + 1))
+408. X + ((1 + Y) * Z) = (Z * (1 + Y)) + X
+  (hard) Z + ((1 + Y) * X) = ((Y + 1) * X) + Z
+  (hard) (1 + X) * (Y * X) = Y * (X + pow(X, 2))
+  (hard) Z * ((Y + 1) * X) = (1 + Y) * (X * Z)
+409. (1 + X) * (Y * Z) = Y * (Z * (1 + X))
+  (hard) (1 + X) * (Y * Z) = Z * (Y * (X + 1))
+  (hard) (1 + X) * (Y * Z) = Z * (Y * (1 + X))
+410. ((X * Y) - X) * Z -> X * (Z * (Y - 1))
+411. X * (Y + pow(Y, 2)) = Y * ((1 + Y) * X)
+  (hard) (X + 1) * (Y * Z) = Z * ((1 + X) * Y)
+412. X + (Y + Y) = X - (Y * (neg(1) - 1))
+413. X - (Y + Y) = X + (Y * (neg(1) - 1))
+414. X - (Y + Y) = (Y * (neg(1) - 1)) + X
+415. X * (1 - pow(Y, 2)) = X - (Y * (Y * X))
+416. pow(X, 2) * (1 - Y) = X * (X - (Y * X))
+417. (1 - X) * pow(Y, 2) = Y * (Y - (X * Y))
+418. X * (1 - (Y - 1)) = X - ((Y * X) - X)
+419. X * (pow(Y, 2) - 1) = (Y * (Y * X)) - X
+420. pow(X, 2) * (Y - 1) = X * ((Y * X) - X)
+421. (X - 1) * pow(Y, 2) = Y * ((X * Y) - Y)
+422. X - (X * (Y + 1)) -> 0 - (X * Y)
+423. (1 - (X - 1)) * Y = Y - ((X * Y) - Y)
+  (hard) (Y * (X * Y)) - X = X * (pow(Y, 2) - 1)
+424. X * ((X * Y) - X) = pow(X, 2) * (Y - 1)
+425. X * ((X * Y) - X) = (Y - 1) * pow(X, 2)
+426. X * (Y - (1 + 1)) = (Y * X) - (X + X)
+427. X * (Y - (1 + 1)) = (X * Y) - (X + X)
+428. X - ((1 + Y) * X) -> 0 - (X * Y)
+429. X - (X * (1 + Y)) -> 0 - (X * Y)
+430. (X - 1) * pow(X, 2) = X * (pow(X, 2) - X)
+431. X - ((neg(1) - Y) * X) -> X * (Y + (1 + 1))
+  (hard) X * (Y + (1 + 1)) = X + ((1 + Y) * X)
+  (hard) (X + 1) * pow(Y, 2) = Y * ((1 + X) * Y)
+  (hard) (X + (1 + 1)) * Y = Y + ((1 + X) * Y)
+432. ((1 + X) * Y) - 1 = Y - (1 - (Y * X))
+433. (X * (1 + Y)) - 1 = X - (1 - (Y * X))
+434. ((X + 1) * Y) - 1 = Y - (1 - (X * Y))
+435. X * (X - (1 + 1)) = pow(X, 2) - (X + X)
+436. pow(X, 2) * (1 + Y) = X * ((1 + Y) * X)
+  (hard) (1 + (1 + X)) * Y = Y + ((X + 1) * Y)
+  (hard) Y * ((1 + 1) * X) = X * ((1 + 1) * Y)
+  (hard) (1 + (1 + X)) * Y = Y * (X + (1 + 1))
+437. (X * Y) - Y = 0 - (Y * (1 - X))
+438. X + (X + (X + X)) = pow(1 + 1, 2) * X
+439. 0 - ((1 - X) * Y) -> (X - 1) * Y
+440. 0 - (X * (1 - Y)) -> X * (Y - 1)
+  (hard) (1 + 1) * (1 + X) = X + (1 + (1 + X))
+  (hard) X + (X + (1 + 1)) = (1 + 1) * (1 + X)
+  (hard) X + (X + (1 + 1)) = (1 + X) * (1 + 1)
+  (hard) pow(1 + 1, 2) * X = (X + X) * (1 + 1)
+441. neg(1) - (X - Y) -> Y - (X + 1)
+442. X + (X * (Y - Z)) -> X - (X * (Z - Y))
+443. X + ((Y - Z) * X) -> X - (X * (Z - Y))
+  (hard) (X + X) * (Y * Z) = Z * ((X + X) * Y)
+444. ((X * Y) - Y) * Z = Y * ((Z * X) - Z)
+445. X * ((Y * Z) - Z) = Z * ((Y * X) - X)
+446. X * ((Y * Z) - Y) = Y * ((X * Z) - X)
+447. X * (Y - (Z * Y)) = Y * (X - (Z * X))
+448. X * (Y - (Z * Y)) = Y * (X - (X * Z))
+  (hard) X - (Y + (X * Z)) = X - ((Z * X) + Y)
+  (hard) (Z * (Y * X)) - X = (Y * (X * Z)) - X
+  (hard) (Z * (Y * X)) - Y = (X * (Y * Z)) - Y
+449. (1 - (X * Y)) * Z = Z - (X * (Y * Z))
+450. (1 - X) * (Y * Z) = Y * (Z - (X * Z))
+451. X - (Y + (X * Z)) = ((1 - Z) * X) - Y
+452. (1 - (X + X)) * Y = Y - (X * (Y + Y))
+453. (X - (X * Y)) * Z -> X * ((1 - Y) * Z)
+454. X * (Y * (1 - Z)) = Y * (X - (X * Z))
+455. X * (1 - (Y + Y)) = X - ((X + X) * Y)
+456. (X - 1) * (Y * Z) = Y * ((X * Z) - Z)
+457. ((X - Y) * Z) - Z = (X - (Y + 1)) * Z
+458. X - ((Y * Z) - Z) = X + ((1 - Y) * Z)
+459. X - ((X * Y) - Z) = ((1 - Y) * X) + Z
+460. X * ((X * Y) - Y) = Y * (pow(X, 2) - X)
+461. X * ((Y * Z) - Z) = ((X * Y) - X) * Z
+  (hard) Z + ((Y + X) * Z) = (1 + (X + Y)) * Z
+462. X + ((1 + Y) * Z) = Z + ((Y * Z) + X)
+463. X * (Y - (Z * Y)) = Y * ((1 - Z) * X)
+  (hard) X * (1 - (Y * Z)) = X - (X * (Z * Y))
+464. X - (Y * (X * Z)) = X * (1 - (Z * Y))
+465. X * (1 - (Y * Z)) = X - (Y * (Z * X))
+466. X * (Y - (X * Y)) = Y * (X - pow(X, 2))
+467. (X * (1 - Y)) - Z = X - ((X * Y) + Z)
+468. (X * (1 - Y)) - Z = X - (Z + (Y * X))
+  (simplifying rules with respect to one another...)
+  (delete rule 113)
+  (delete rule 128)
+  (delete rule 151)
+469. X - (X * (Y - Z)) = X * (Z - (Y - 1))
+  (delete rule 162)
+  (delete rule 164)
+  (delete rule 166)
+  (delete rule 167)
+  (delete rule 169)
+  (delete rule 172)
+  (delete rule 185)
+  (delete rule 192)
+  (delete rule 202)
+  (delete rule 205)
+  (delete rule 207)
+  (delete rule 210)
+  (delete rule 218)
+  (delete rule 219)
+  (delete rule 220)
+  (delete rule 221)
+  (delete rule 227)
+  (delete rule 233)
+  (delete rule 234)
+  (delete rule 236)
+  (delete rule 241)
+  (delete rule 242)
+  (delete rule 243)
+  (delete rule 246)
+  (delete rule 249)
+  (delete rule 252)
+  (delete rule 258)
+  (delete rule 260)
+  (delete rule 261)
+  (delete rule 268)
+  (delete rule 270)
+  (delete rule 273)
+  (delete rule 274)
+  (delete rule 275)
+  (delete rule 294)
+  (delete rule 297)
+  (delete rule 298)
+  (delete rule 302)
+  (delete rule 303)
+  (delete rule 314)
+  (delete rule 316)
+  (delete rule 317)
+  (delete rule 319)
+  (delete rule 320)
+  (delete rule 321)
+  (delete rule 323)
+  (delete rule 324)
+  (delete rule 325)
+  (delete rule 326)
+470. (1 - (X - Y)) * Z = Z - (Z * (X - Y))
+  (delete rule 334)
+  (delete rule 336)
+  (delete rule 345)
+  (delete rule 346)
+  (delete rule 359)
+  (delete rule 360)
+  (delete rule 361)
+  (delete rule 366)
+  (delete rule 368)
+  (delete rule 376)
+  (delete rule 384)
+  (delete rule 386)
+  (delete rule 420)
+  (delete rule 437)
+  (delete rule 464)
+  (hard) Z * (Y - (X - 1)) = (1 - (X - Y)) * Z
+471. X * (1 - (X - 1)) = X - (pow(X, 2) - X)
+472. X * ((Y - 1) * Z) = Z * ((Y * X) - X)
+473. ((X - Y) * Z) - Z = Z * (X - (1 + Y))
+474. ((1 + X) * Y) + Z = Y + ((X * Y) + Z)
+475. (X - (Y - 1)) * Z = Z - ((Y - X) * Z)
+476. (X * (Y * Z)) - Y = ((Z * X) - 1) * Y
+477. ((X * Y) - 1) * Z = (X * (Y * Z)) - Z
+478. X + ((Y - 1) * Z) = X - (Z - (Y * Z))
+479. ((X - 1) * Y) + Z = Z - (Y - (X * Y))
+480. (X * Y) - (Z + X) = ((Y - 1) * X) - Z
+481. (X * (Y - 1)) - Z = (Y * X) - (Z + X)
+482. (X * Y) - (Y + Z) = ((X - 1) * Y) - Z
+483. (X - (1 + Y)) * Z = (Z * (X - Y)) - Z
+484. (X - (1 - X)) * Y = (Y * (X + X)) - Y
+485. (X - (1 - X)) * Y = ((X + X) * Y) - Y
+486. (X * (1 - Y)) + Z = Z - ((Y * X) - X)
+487. X + (Y * (1 - Z)) = X - ((Y * Z) - Y)
+488. X + (Y * (1 - Z)) = Y - ((Y * Z) - X)
+489. (X * (1 - Y)) + Z = X - ((Y * X) - Z)
+490. X * (1 - (X * Y)) -> X - (pow(X, 2) * Y)
+491. X * (1 - (X * Y)) -> X - (Y * pow(X, 2))
+492. X * ((neg(1) - 1) * Y) = 0 - ((X + X) * Y)
+493. X * (Y * (neg(1) - 1)) = 0 - (Y * (X + X))
+494. 0 - (X * (Y + Y)) = X * (Y * (neg(1) - 1))
+495. 0 - (X + (X + Y)) = (X * (neg(1) - 1)) - Y
+496. (X - pow(X, 2)) * Y -> X * ((1 - X) * Y)
+497. X * (Y * (1 - X)) = Y * (X - pow(X, 2))
+  (hard) Z + ((1 + Y) * X) = (X * (Y + 1)) + Z
+498. (X - (Y * X)) * Z -> X * (Z * (1 - Y))
+499. X * (Y * (1 - Z)) = Y * ((1 - Z) * X)
+500. ((X * Y) - Y) * Z -> Y * (Z * (X - 1))
+501. X * (Y * (Z - 1)) = Y * ((Z - 1) * X)
+  (hard) Z * ((Y + 1) * X) = X * ((Y + 1) * Z)
+  (hard) Z + (Y * (X + 1)) = ((1 + X) * Y) + Z
+502. X * ((X - 1) * Y) = Y * (pow(X, 2) - X)
+503. X + ((Y - 1) * Z) -> X - (Z * (1 - Y))
+504. X + (Y * (Z - 1)) -> X - (Y * (1 - Z))
+505. ((X - 1) * Y) + Z -> Z - (Y * (1 - X))
+506. (X * (Y - 1)) + Z -> Z - (X * (1 - Y))
+507. (X * (Y - 1)) - Y = (Y * (X - 1)) - X
+  (hard) Z * (Y - (1 + X)) = (Y - (X + 1)) * Z
+508. X + (Y * (1 - Z)) -> X - (Y * (Z - 1))
+509. X - (Y * (X - 1)) <-> Y - (X * (Y - 1))
+  (hard) Y - (X * (Y - 1)) = X - ((X - 1) * Y)
+510. (pow(X, 2) - X) * Y -> X * (Y * (X - 1))
+511. X + (Y + Y) = X - ((neg(1) - 1) * Y)
+512. (X + 1) * (neg(1) - X) -> 0 - pow(X + 1, 2)
+513. X + (X + Y) = Y - (X * (neg(1) - 1))
+514. (1 - pow(X, 2)) * Y = Y - (X * (X * Y))
+515. pow(X, 2) * (1 - Y) = X * (X - (X * Y))
+516. (1 - X) * pow(Y, 2) = Y * (Y - (Y * X))
+517. X * (1 - (Y - 1)) = X - ((X * Y) - X)
+518. (pow(X, 2) - 1) * Y = (X * (X * Y)) - Y
+519. (X - (1 + 1)) * Y = (X * Y) - (Y + Y)
+520. 0 - (X * (neg(1) - Y)) -> X * (Y + 1)
+  (hard) (X * (Y * X)) - Y = (pow(X, 2) - 1) * Y
+  (hard) (X - (1 + 1)) * Y = (Y * X) - (Y + Y)
+521. pow(X, 2) * (neg(1) - 1) = 0 - (X * (X + X))
+522. (neg(1) - 1) * pow(X, 2) = 0 - (X * (X + X))
+523. (1 - X) * pow(X, 2) = X * (X - pow(X, 2))
+524. ((1 + X) * Y) - 1 = Y - (1 - (X * Y))
+  (hard) pow(X, 2) * (1 - Y) = X * ((1 - Y) * X)
+  (hard) X * ((Y - 1) * X) = pow(X, 2) * (Y - 1)
+525. (X - 1) * (1 - Y) <-> (Y - 1) * (1 - X)
+  (hard) (X * (1 + 1)) + Y = X + (Y + X)
+  (hard) ((1 + 1) * X) + Y = X + (Y + X)
+  (hard) Y + (X + X) = (X * (1 + 1)) + Y
+526. (X + 1) * (neg(1) - Y) <-> (Y + 1) * (neg(1) - X)
+527. 1 - pow(1 + 1, 2) -> neg(1) - (1 + 1)
+528. (X - 1) * (1 - X) -> 0 - pow(X - 1, 2)
+529. neg(1) - (1 + (1 + 1)) -> 0 - pow(1 + 1, 2)
+530. (X - (X * Y)) * Z = X * (Z - (Y * Z))
+531. X * (Y - (Y * Z)) = Y * (X - (X * Z))
+  (hard) Z - (Z * (Y * X)) = Z - (Y * (X * Z))
+  (hard) X - (Y + (Z * X)) = X - ((X * Z) + Y)
+  (hard) Z - ((Y * X) - X) = X - ((X * Y) - Z)
+532. (X + 1) * (neg(1) - 1) = neg(1) - (X + (X + 1))
+533. X - (X * (neg(1) - Y)) -> X * (Y + (1 + 1))
+534. (X * (neg(1) - 1)) - 1 = neg(1) - (X + X)
+535. ((X * Y) - Y) * Z = Y * ((X * Z) - Z)
+  (hard) Z * ((Y * X) - Y) = (X - 1) * (Z * Y)
+536. (X - (Y * X)) * Z = X * (Z - (Y * Z))
+537. X * (Y - (Y * X)) = Y * (X - pow(X, 2))
+  (hard) Z * (Y - (Y * X)) = Y * ((1 - X) * Z)
+538. X * (Y - (Z * Y)) = (1 - Z) * (Y * X)
+539. X * (Y - (Y * Z)) = (1 - Z) * (Y * X)
+540. ((1 - X) * Y) - Z = Y - ((Y * X) + Z)
+541. ((1 - X) * Y) - Z = Y - (Z + (X * Y))
+  (hard) X * ((X * Y) - Y) = (X - 1) * (Y * X)
+  (hard) (X - 1) * (Y * Z) = Z * ((Y * X) - Y)
+  (hard) Z * ((Y * X) - X) = (Y - 1) * (X * Z)
+542. ((X - Y) * Z) - Z = (X - (1 + Y)) * Z
+543. ((1 - X) * Y) + Z = Z - ((X * Y) - Y)
+544. X + ((1 - Y) * Z) = Z - ((Z * Y) - X)
+545. ((1 - X) * Y) + Z = Y - ((X * Y) - Z)
+546. (pow(X, 2) - X) * Y = X * ((X * Y) - Y)
+547. (X - pow(X, 2)) * Y = X * (Y - (X * Y))
+548. (X * (1 - Y)) - Z = X - ((Y * X) + Z)
+  (hard) ((X * Y) - 1) * Z = (Y * (X * Z)) - Z
+549. ((X - 1) * Y) - Z = (X * Y) - (Z + Y)
+550. X - (Y * (Z - 1)) = Y - ((Z * Y) - X)
+551. X - (Y * (1 - Z)) = (Z * Y) - (Y - X)
+552. X - ((X * Y) - Z) = Z - (X * (Y - 1))
+553. (neg(1) - 1) * (X * Y) = 0 - ((X + X) * Y)
+554. (neg(1) - 1) * (X * Y) = 0 - (X * (Y + Y))
+555. 0 - (X * (Y + Y)) = X * ((neg(1) - 1) * Y)
+556. 0 - (X + (X + Y)) = ((neg(1) - 1) * X) - Y
+557. X * (Y * (neg(1) - 1)) = 0 - ((X + X) * Y)
+558. 0 - (X * (Y + Y)) = Y * ((neg(1) - 1) * X)
+559. X + ((1 - Y) * Z) -> X - ((Y - 1) * Z)
+560. X * (1 - (Y * X)) -> X - (Y * pow(X, 2))
+  (hard) (1 - X) * (Y * X) = Y * (X - pow(X, 2))
+561. X * (Y * (1 - Z)) = (1 - Z) * (Y * X)
+562. (1 - X) * (Y * Z) = Y * (Z * (1 - X))
+563. ((1 - X) * Y) - X = Y - (X * (Y + 1))
+564. ((1 - X) * Y) - X = Y - (X * (1 + Y))
+  (hard) ((1 - X) * Y) - X = Y - ((Y + 1) * X)
+  (hard) ((1 - X) * Y) - X = Y - ((1 + Y) * X)
+565. (X - (X * Y)) * Z -> X * (Z * (1 - Y))
+  (hard) (X - 1) * (Y * X) = Y * (pow(X, 2) - X)
+566. X * (Y * (Z - 1)) = (Z - 1) * (Y * X)
+567. (X - 1) * (Y * Z) = Y * (Z * (X - 1))
+568. X + ((1 - Y) * Z) -> X - (Z * (Y - 1))
+569. X * ((1 - X) * Y) = Y * (X - pow(X, 2))
+  (hard) Z * ((1 - Y) * X) = X * ((1 - Y) * Z)
+  (hard) Z * ((1 - Y) * X) = (1 - Y) * (X * Z)
+570. (X * (1 - Y)) - Y = X - (Y * (1 + X))
+  (hard) Z * ((Y - 1) * X) = X * ((Y - 1) * Z)
+  (hard) Z * ((Y - 1) * X) = (Y - 1) * (X * Z)
+  (hard) ((X * Y) - 1) * Z = Z * ((Y * X) - 1)
+571. ((X - 1) * Y) - X = (X * (Y - 1)) - Y
+  (hard) ((Y - 1) * X) - Y = ((X - 1) * Y) - X
+  (hard) Z * (Y - (X + 1)) = (Y - (1 + X)) * Z
+572. (X * (1 - Y)) + Z -> Z - (X * (Y - 1))
+573. X + (Y * (1 - X)) = Y - (X * (Y - 1))
+  (hard) X + (Y * (1 - X)) = Y - ((Y - 1) * X)
+  (hard) Y + (X * (1 - Y)) = X + (Y * (1 - X))
+  (hard) X + ((1 - X) * Y) = Y - (X * (Y - 1))
+574. ((1 - X) * Y) + Z -> Z - (Y * (X - 1))
+575. 0 - ((X + X) * Y) = (neg(1) - 1) * (Y * X)
+576. (X * (neg(1) - 1)) - Y = 0 - (X + (Y + X))
+577. (X * (neg(1) - 1)) - Y = 0 - (Y + (X + X))
+578. (X - pow(X, 2)) * Y -> X * (Y * (1 - X))
+579. X - (Y * (neg(1) - 1)) -> X + (Y * (1 + 1))
+580. 0 - (X * (Y - Z)) -> X * (Z - Y)
+581. X + (X + Y) = Y - ((neg(1) - 1) * X)
+582. (1 + X) * (neg(1) - X) -> 0 - pow(X + 1, 2)
+583. 0 - ((neg(1) - X) * Y) -> Y * (X + 1)
+584. X * (neg(1) - (1 + 1)) = 0 - (X + (X + X))
+585. neg(1) - (X * (Y - 1)) = X - (1 + (X * Y))
+586. (X - 1) * (Y - 1) = (1 - X) * (1 - Y)
+587. (X - 1) * (1 - Y) = (1 - X) * (Y - 1)
+  (hard) Y + (X + X) = ((1 + 1) * X) + Y
+588. (X + 1) * (neg(1) - Y) = (1 + Y) * (neg(1) - X)
+589. (neg(1) - X) * (Y + 1) -> (X + 1) * (neg(1) - Y)
+590. (1 - X) * (X - 1) -> 0 - pow(X - 1, 2)
+591. X - (Y - (Z - W)) <-> Z - (Y - (X - W))
+592. X - (Y - (Z - X)) -> Z - Y
+593. neg(1) - (1 + (X + X)) = (X + 1) * (neg(1) - 1)
+594. neg(1) - (X + (X + 1)) = (1 + X) * (neg(1) - 1)
+595. (X + 1) * (neg(1) - 1) = neg(1) - (X + (1 + X))
+596. neg(1) - (X + (X + 1)) = (1 + 1) * (neg(1) - X)
+597. neg(1) - (X + X) = ((neg(1) - 1) * X) - 1
+598. X - (Y - (X * Z)) = (X * (1 + Z)) - Y
+599. X - (Y - (X * Z)) = (X * (Z + 1)) - Y
+600. X - (Y - (Z * X)) = ((Z + 1) * X) - Y
+601. X - (Y - (Z * X)) = ((1 + Z) * X) - Y
+602. ((X + Y) * Z) - Z = Z * (Y - (1 - X))
+603. ((X + Y) * Z) - Z = (X - (1 - Y)) * Z
+604. (X * Y) - (Y - Z) = Z - ((1 - X) * Y)
+605. (X * Y) - (X - Z) = Z - (X * (1 - Y))
+606. X - ((Y * X) - Z) = Z - ((Y - 1) * X)
+  (hard) Z * (Y - (Y * X)) = (1 - X) * (Z * Y)
+607. ((1 - X) * Y) - Z = Y - ((X * Y) + Z)
+  (hard) X + ((1 - Y) * Z) = X - ((Z * Y) - Z)
+  (hard) X - ((Y - 1) * Z) = Z - ((Z * Y) - X)
+608. pow(X - (Y - Z), 2) = pow(Y - (X + Z), 2)
+609. 0 - (X * (Y + Y)) = (neg(1) - 1) * (Y * X)
+  (hard) 0 - ((Y + Y) * X) = X * ((neg(1) - 1) * Y)
+  (hard) X + ((1 - X) * Y) = Y - ((Y - 1) * X)
+  (hard) Y + ((1 - Y) * X) = X + ((1 - X) * Y)
+610. ((neg(1) - 1) * X) - Y = 0 - (X + (Y + X))
+611. ((neg(1) - 1) * X) - Y = 0 - (Y + (X + X))
+  (hard) X - (Y * (X + 1)) = (X * (1 - Y)) - Y
+  (hard) X * (Y * (neg(1) - 1)) = 0 - ((Y + Y) * X)
+612. (X - 1) * (neg(1) - Y) -> (1 - X) * (Y + 1)
+613. X - ((neg(1) - 1) * Y) -> X + (Y * (1 + 1))
+614. (1 - X) * (neg(1) - Y) -> (X - 1) * (Y + 1)
+615. 0 - ((X - Y) * Z) -> Z * (Y - X)
+  (hard) Y - ((Y * X) - Y) = (1 - (X - 1)) * Y
+616. (neg(1) - (1 + 1)) * X = 0 - (X + (X + X))
+617. pow(X - (X * Y), 2) = pow(X * (Y - 1), 2)
+618. pow(X - (Y * X), 2) = pow((Y - 1) * X, 2)
+619. (1 - X) * (Y - 1) <-> (1 - Y) * (X - 1)
+620. (1 + X) * (neg(1) - Y) <-> (1 + Y) * (neg(1) - X)
+621. (neg(1) - X) * (1 + Y) -> (X + 1) * (neg(1) - Y)
+622. X + (Y + (Y * Z)) = X - (Y * (neg(1) - Z))
+623. X - (X * (neg(1) - Y)) -> X + ((Y + 1) * X)
+624. X - (X * (neg(1) - Y)) -> X + (X * (1 + Y))
+625. X - (X * (neg(1) - X)) -> X + (X + pow(X, 2))
+626. X + (Y * (Z - W)) -> X - (Y * (W - Z))
+  (hard) (X * Y) - (X - Z) = Z - (X - (Y * X))
+627. X - (Y * (neg(1) - Z)) -> X + ((Z + 1) * Y)
+  (hard) X + (Y + pow(X, 2)) = Y + ((X + 1) * X)
+628. neg(1) - (1 + (X + X)) = (1 + X) * (neg(1) - 1)
+629. (1 + 1) * (neg(1) - X) = neg(1) - (1 + (X + X))
+630. (X * (neg(1) - 1)) - 1 -> neg(1) - (X * (1 + 1))
+631. (X * (1 + Y)) - Z = X - (Z - (Y * X))
+632. (X * (Y + 1)) - Z = X - (Z - (Y * X))
+633. X * (Y - (1 - Z)) = ((Y + Z) * X) - X
+  (hard) (X - (1 - Y)) * Z = ((Y + X) * Z) - Z
+634. X * (Y - (1 - Z)) = (X * (Z + Y)) - X
+635. (X - (1 - Y)) * Z = (Z * (X + Y)) - Z
+636. (X - Y) * (Z - 1) = (Y - X) * (1 - Z)
+637. (X * (1 + Y)) - Y = X - (Y * (1 - X))
+  (hard) (X * (1 + Y)) - Y = X - ((1 - X) * Y)
+638. (X * (1 + Y)) - Y = X + (Y * (X - 1))
+  (hard) (X * (1 + Y)) - Y = X + ((X - 1) * Y)
+639. ((X + 1) * Y) - X = Y - (X * (1 - Y))
+  (hard) X + ((X - 1) * Y) = ((Y + 1) * X) - Y
+640. ((1 + X) * Y) - X = Y - (X * (1 - Y))
+  (hard) X + ((X - 1) * Y) = ((1 + Y) * X) - Y
+  (hard) Z * (Y - (1 - X)) = (X - (1 - Y)) * Z
+641. neg(1) - (X * (1 - Y)) -> ((Y - 1) * X) - 1
+642. neg(1) - (X * (Y - 1)) -> (X * (1 - Y)) - 1
+643. (neg(1) - X) * (Y - 1) -> (1 - Y) * (X + 1)
+644. (neg(1) - X) * (1 - Y) -> (Y - 1) * (X + 1)
+645. (X - Y) * (Y - X) -> 0 - pow(X - Y, 2)
+646. pow(X * (Y - 1), 2) = pow(X - (Y * X), 2)
+647. pow(X * (Y - 1), 2) = pow(X * (1 - Y), 2)
+648. pow((X - 1) * Y, 2) = pow(Y * (1 - X), 2)
+649. pow((X - 1) * Y, 2) = pow((1 - X) * Y, 2)
+650. (X - Y) * (Z - W) <-> (Y - X) * (W - Z)
+651. X + (Y + (Y * Z)) = X - ((neg(1) - Z) * Y)
+652. X - ((neg(1) - Y) * X) -> X + ((Y + 1) * X)
+653. X - ((neg(1) - Y) * X) -> X + (X * (1 + Y))
+654. X - (Y * (neg(1) - Z)) = X + (Y + (Z * Y))
+655. X - (Y * (neg(1) - Y)) -> X + (Y + pow(Y, 2))
+656. X - (Y * (neg(1) - Z)) -> X + (Y * (Z + 1))
+657. X + ((X + 1) * Y) = Y - (X * (neg(1) - Y))
+658. X - (Y * (neg(1) - X)) = Y + (X * (1 + Y))
+659. (X * (Y - Z)) + W -> W - (X * (Z - Y))
+660. X + ((Y - Z) * W) -> X - (W * (Z - Y))
+  (hard) ((X + Y) * Z) - Z = (Z * (Y + X)) - Z
+661. X - (Y * (neg(1) - X)) = Y + (X * (Y + 1))
+662. X - (Y * (neg(1) - X)) = Y + (X + (Y * X))
+663. X - (Y * (neg(1) - X)) -> X + (Y * (1 + X))
+  (hard) Y + (X + (Y * X)) = X + (Y + (X * Y))
+664. X - ((neg(1) - Y) * Z) -> X + ((Y + 1) * Z)
+665. ((neg(1) - 1) * X) - 1 -> neg(1) - (X * (1 + 1))
+666. X * (Y - (1 - Z)) = (X * (Y + Z)) - X
+  (hard) (Z * (Y + X)) - Z = (X - (1 - Y)) * Z
+667. X - (1 + (X * Y)) = neg(1) - ((Y - 1) * X)
+668. neg(1) - (X * (Y - 1)) = X - (1 + (Y * X))
+669. (X - Y) * (1 - Z) = (Z - 1) * (Y - X)
+670. (1 - X) * (Y - Z) = (Z - Y) * (X - 1)
+  (hard) X - (Y * (1 - X)) = (X * (Y + 1)) - Y
+671. neg(1) - ((X - 1) * Y) -> ((1 - X) * Y) - 1
+672. neg(1) - ((1 - X) * Y) -> ((X - 1) * Y) - 1
+673. pow(X * (Y - 1), 2) = pow((1 - Y) * X, 2)
+674. (X - Y) * (Z - W) = (W - Z) * (Y - X)
+675. X - ((neg(1) - Y) * Z) = X + (Z + (Y * Z))
+676. X - ((neg(1) - Y) * Z) -> X + (Z * (Y + 1))
+677. X + ((X + 1) * Y) = Y - ((neg(1) - Y) * X)
+678. X - ((neg(1) - X) * Y) = Y + (X * (1 + Y))
+679. ((X - Y) * Z) + W -> W - (Z * (Y - X))
+680. X - ((neg(1) - X) * Y) = Y + (X * (Y + 1))
+681. X - ((neg(1) - X) * Y) = Y + (X + (Y * X))
+682. X - ((neg(1) - X) * Y) -> X + (Y * (1 + X))
+683. neg(1) - ((X - 1) * Y) = Y - (1 + (X * Y))
+684. neg(1) - ((X - 1) * Y) -> (Y * (1 - X)) - 1
+685. neg(1) - (X * (Y - Z)) -> (X * (Z - Y)) - 1
+686. (X - Y) * (neg(1) - 1) -> (Y - X) * (1 + 1)
+687. (neg(1) - X) * (Y - Z) -> (Z - Y) * (X + 1)
+688. (X - Y) * (neg(1) - Z) -> (Y - X) * (Z + 1)
+689. neg(1) - ((X - Y) * Z) -> (Z * (Y - X)) - 1
+690. (X * (neg(1) - Y)) - 1 -> neg(1) - (X * (Y + 1))
+691. ((neg(1) - X) * Y) - 1 -> neg(1) - (Y * (X + 1))
+
+Gave up on reaching the given resource limit.
+Here is the final rewrite system:
+  X + X = (1 + 1) * X
+  X + Y <-> Y + X
+  X + 0 -> X
+  0 + X -> X
+  X * X -> pow(X, 2)
+  X * Y <-> Y * X
+  X * 1 -> X
+  X * 0 -> 0
+  1 * X -> X
+  0 * X -> 0
+  X - X -> 0
+  X - 0 -> X
+  0 - 1 -> neg(1)
+  pow(X, 1) -> X
+  pow(1, 2) -> 1
+  pow(0, 2) -> 0
+  X + neg(1) -> X - 1
+  neg(1) + X -> X - 1
+  X * neg(1) -> 0 - X
+  neg(1) * X -> 0 - X
+  X - neg(1) -> X + 1
+  pow(neg(1), 2) -> 1
+  ifeq(X, X, Y, Z) -> Y
+  X + (X + Y) = (X * (1 + 1)) + Y
+  X + (X + Y) = ((1 + 1) * X) + Y
+  X + (X * Y) = X * (1 + Y)
+  X + (X + Y) <-> Y + (X + X)
+  X + (X + Y) = Y + ((1 + 1) * X)
+  X + (Y + Z) <-> Y + (X + Z)
+  (X + Y) + Z -> X + (Y + Z)
+  X * (X + X) = pow(X, 2) + pow(X, 2)
+  X * (Y + Y) = (X + X) * Y
+  X * (Y + 1) = X + (Y * X)
+  X * (1 + X) -> X + pow(X, 2)
+  X * (1 + Y) = X + (Y * X)
+  X * (1 + 1) = X + X
+  X * (X * Y) = pow(X, 2) * Y
+  X * (Y * Z) <-> Y * (X * Z)
+  X * (X - 1) -> pow(X, 2) - X
+  X * (Y - 1) = (Y * X) - X
+  X * (1 - X) -> X - pow(X, 2)
+  X * (1 - Y) = X - (X * Y)
+  X * (0 - Y) -> 0 - (X * Y)
+  X * (Y + Y) = Y * (X + X)
+  X * (Y + Y) = Y * ((1 + 1) * X)
+  X * (Y + Y) = (1 + 1) * (Y * X)
+  X * pow(Y, 2) = Y * (Y * X)
+  (X + X) * Y = X * (Y * (1 + 1))
+  (X + 1) * Y = Y + (X * Y)
+  (1 + X) * Y = Y + (X * Y)
+  (X * Y) * Z -> X * (Y * Z)
+  (X - 1) * Y = (X * Y) - Y
+  (1 - X) * Y = Y - (X * Y)
+  (0 - X) * Y -> 0 - (X * Y)
+  X - (Y + X) -> 0 - Y
+  X - (Y * X) = X * (1 - Y)
+  X - (Y - X) = ((1 + 1) * X) - Y
+  X - (0 - Y) -> X + Y
+  X - (Y - Z) <-> Z - (Y - X)
+  0 - (X + X) = X * (neg(1) - 1)
+  0 - (X + X) = (neg(1) - 1) * X
+  0 - (X + 1) -> neg(1) - X
+  0 - (1 + X) -> neg(1) - X
+  (X + Y) - Z -> X - (Z - Y)
+  (X - Y) - Z -> X - (Y + Z)
+  pow(X - Y, 2) <-> pow(Y - X, 2)
+  ifeq(is_not_zero(0), true2, 0, 1) -> 1
+  X - (neg(1) - Y) -> X + (Y + 1)
+  neg(1) - (X - Y) -> Y - (X + 1)
+  X + (X + (X + X)) = pow(1 + 1, 2) * X
+  X + (X + (Y + Y)) = (X + Y) * (1 + 1)
+  X + (X + (Y + Y)) = (1 + 1) * (X + Y)
+  X + (Y + (X * Z)) = Y + (X * (1 + Z))
+  X + (Y + (Z * X)) = Y + (X * (Z + 1))
+  X + (Y + (Z * X)) = Y + (X * (1 + Z))
+  X + (Y + (X * Z)) = (X * (1 + Z)) + Y
+  X + (X * (Y + Z)) = X * (Y + (Z + 1))
+  X + (X * (Y + Z)) = X * (Y + (1 + Z))
+  X + (Y * (X + 1)) <-> Y + (X * (Y + 1))
+  X + (Y * (Z + 1)) = Y + ((Z * Y) + X)
+  X + (Y * (1 + Z)) = Y + ((Y * Z) + X)
+  X + (Y * (1 + Z)) = Y + ((Z * Y) + X)
+  X + (Y * (1 + 1)) = Y + (Y + X)
+  X + (Y * (Z - W)) -> X - (Y * (W - Z))
+  X + ((Y + Z) * X) = X * (Y + (Z + 1))
+  X + ((Y + Z) * X) = X * (Y + (1 + Z))
+  X + ((Y + 1) * Z) = Z + ((Y * Z) + X)
+  X + ((1 + Y) * Z) = Z + ((Y * Z) + X)
+  X + ((Y - Z) * W) -> X - (W * (Z - Y))
+  X + (X + (Y * X)) = (1 + (1 + Y)) * X
+  X + (Y * (X + 1)) = Y + (X * (1 + Y))
+  X + (Y + (Z * X)) = Y + ((Z + 1) * X)
+  X + (Y + (Z * X)) = Y + ((1 + Z) * X)
+  X + (Y * (Z + 1)) = ((Z + 1) * Y) + X
+  X + (Y * (1 + Z)) = ((1 + Z) * Y) + X
+  X + (X * (Y + Z)) = (Y + (Z + 1)) * X
+  X + (X * (Y + Z)) = (Y + (1 + Z)) * X
+  X + ((Y + Z) * X) = (Y + (Z + 1)) * X
+  X + ((Y + Z) * X) = (Y + (1 + Z)) * X
+  X + ((Y + 1) * Z) = (Z * (Y + 1)) + X
+  X + ((1 + Y) * Z) = (Z * (1 + Y)) + X
+  1 + (1 + (1 + 1)) -> pow(1 + 1, 2)
+  (X * Y) + (X * Y) -> (X + X) * Y
+  (X * Y) + (X * Z) -> X * (Y + Z)
+  (X * Y) + (Y * Z) -> Y * (X + Z)
+  (X * Y) + (Z * Y) -> Y * (X + Z)
+  pow(X, 2) + (Y * X) -> X * (X + Y)
+  (X * (Y + 1)) + Z = X + (Z + (Y * X))
+  (X * (Y + 1)) + Z = X + ((Y * X) + Z)
+  (X * (1 + Y)) + Z = X + (Z + (Y * X))
+  (X * (1 + Y)) + Z = X + ((X * Y) + Z)
+  (X * (1 + Y)) + Z = X + ((Y * X) + Z)
+  (X * (Y - Z)) + W -> W - (X * (Z - Y))
+  ((X + 1) * Y) + Z = Y + (Z + (X * Y))
+  ((X + 1) * Y) + Z = Y + ((X * Y) + Z)
+  ((1 + X) * Y) + Z = Y + (Z + (X * Y))
+  ((1 + X) * Y) + Z = Y + ((X * Y) + Z)
+  ((X - Y) * Z) + W -> W - (Z * (Y - X))
+  X * (Y + (Y + 1)) = X + (Y * (X + X))
+  X * (Y + (1 + 1)) = X + (X + (Y * X))
+  X * (Y + (X * Y)) = Y * (X + pow(X, 2))
+  X * (1 + (Y + Y)) = X + (Y * (X + X))
+  X * (1 + (Y + Y)) = X + ((X + X) * Y)
+  X * (1 + (1 + X)) = X + (X + pow(X, 2))
+  X * (1 + (1 + Y)) = X + (X + (X * Y))
+  X * (1 + (1 + Y)) = X + (X + (Y * X))
+  X * (1 + (1 + 1)) = X + (X + X)
+  X * (1 + (X * Y)) -> X + (Y * pow(X, 2))
+  X * (1 + (Y * X)) -> X + (Y * pow(X, 2))
+  X * (1 + (Y * Z)) = X + (Y * (X * Z))
+  X * (1 + (Y * Z)) = X + (Y * (Z * X))
+  X * (1 + pow(Y, 2)) = X + (Y * (Y * X))
+  X * (X * (1 + 1)) -> pow(X, 2) + pow(X, 2)
+  X * (X * (Y * Z)) = Y * (Z * pow(X, 2))
+  X * (X * pow(X, 2)) -> pow(pow(X, 2), 2)
+  X * (X * pow(Y, 2)) -> pow(X * Y, 2)
+  X * (Y * (X + 1)) = Y * (X + pow(X, 2))
+  X * (Y * (Z + Z)) = Y * ((X + X) * Z)
+  X * (Y * (Z + 1)) = Y * (X + (X * Z))
+  X * (Y * (Z + 1)) = Y * (X + (Z * X))
+  X * (Y * (1 + X)) = Y * (X + pow(X, 2))
+  X * (Y * (1 + Z)) = Y * (X + (X * Z))
+  X * (Y * (1 + Z)) = Y * (X + (Z * X))
+  X * (Y * (1 + 1)) = Y * (X + X)
+  X * (Y * (X - 1)) = Y * (pow(X, 2) - X)
+  X * (Y * (Z - 1)) = Y * ((X * Z) - X)
+  X * (Y * (Z - 1)) = Y * ((Z * X) - X)
+  X * (Y * (1 - X)) = Y * (X - pow(X, 2))
+  X * (Y * (1 - Z)) = Y * (X - (X * Z))
+  X * (Y * (1 - Z)) = Y * (X - (Z * X))
+  X * ((X + 1) * Y) = Y * (X + pow(X, 2))
+  X * ((Y + Y) * Z) = Y * (Z * (X + X))
+  X * ((Y + 1) * Z) = Z * (X + (X * Y))
+  X * ((1 + 1) * X) -> pow(X, 2) + pow(X, 2)
+  X * ((1 + 1) * Y) = (X + X) * Y
+  X * ((X - 1) * Y) = Y * (pow(X, 2) - X)
+  X * ((Y - 1) * Z) = Z * ((Y * X) - X)
+  X * ((1 - X) * Y) = Y * (X - pow(X, 2))
+  X * (pow(Y, 2) * X) -> pow(X * Y, 2)
+  X * (pow(Y, 2) * Z) = Y * (Y * (X * Z))
+  X * (pow(Y, 2) * Z) = Y * (Y * (Z * X))
+  X * (X - (1 + 1)) = pow(X, 2) - (X + X)
+  X * (Y - (1 + 1)) = (X * Y) - (X + X)
+  X * (Y - (1 + 1)) = (Y * X) - (X + X)
+  X * (Y - (X * Y)) = Y * (X - pow(X, 2))
+  X * (Y - (Y * X)) = Y * (X - pow(X, 2))
+  X * (Y - (Z - 1)) = X - ((Z - Y) * X)
+  X * (Y - (1 - Y)) = (Y * (X + X)) - X
+  X * (Y - (1 - Y)) = ((X + X) * Y) - X
+  X * (Y - (1 - Z)) = (X * (Y + Z)) - X
+  X * (Y - (1 - Z)) = ((Y + Z) * X) - X
+  X * (1 - (Y + Y)) = X - (Y * (X + X))
+  X * (1 - (Y + Y)) = X - ((X + X) * Y)
+  X * (1 - (X * Y)) -> X - (Y * pow(X, 2))
+  X * (1 - (Y * X)) -> X - (Y * pow(X, 2))
+  X * (1 - (Y * Z)) = X - (Y * (Z * X))
+  X * (1 - (X - 1)) = X - (pow(X, 2) - X)
+  X * (1 - (Y - 1)) = X - ((X * Y) - X)
+  X * (1 - (Y - 1)) = X - ((Y * X) - X)
+  X * (1 - pow(Y, 2)) = X - (Y * (Y * X))
+  X * ((X * Y) - X) = pow(X, 2) * (Y - 1)
+  X * ((X * Y) - Y) = Y * (pow(X, 2) - X)
+  X * ((X * Y) - 1) -> (Y * pow(X, 2)) - X
+  X * ((Y * X) - 1) -> (Y * pow(X, 2)) - X
+  X * ((Y * Z) - Z) = ((X * Y) - X) * Z
+  X * ((Y * Z) - 1) = (Y * (X * Z)) - X
+  X * ((Y * Z) - 1) = (Y * (Z * X)) - X
+  X * (pow(Y, 2) - 1) = (Y * (Y * X)) - X
+  X * pow(1 + 1, 2) = X + (X + (X + X))
+  X * pow(1 + 1, 2) = (1 + 1) * (X + X)
+  X * (Y + pow(Y, 2)) = Y * ((1 + Y) * X)
+  X * ((X * Y) - X) = (Y - 1) * pow(X, 2)
+  X * (Y + (Z * Y)) = Y * (X + (Z * X))
+  X * (Y + (Y * Z)) = Y * (X + (Z * X))
+  X * (Y + (Y * Z)) = Y * (X + (X * Z))
+  X * (Y * (Z + Z)) = Z * (Y * (X + X))
+  X * (Y * (Z + Z)) = Y * (Z * (X + X))
+  X * (Y * (Z + Z)) = (Z + Z) * (X * Y)
+  X * (Y * (Z + 1)) = Y * ((Z + 1) * X)
+  X * (Y * (Z + 1)) = Y * ((1 + Z) * X)
+  X * (Y * (Z - 1)) = Y * ((Z - 1) * X)
+  X * (Y * (1 - Z)) = Y * ((1 - Z) * X)
+  X * (Y * pow(Z, 2)) = Y * (pow(Z, 2) * X)
+  X * (Y * pow(Z, 2)) = pow(Z, 2) * (X * Y)
+  X * ((Y + Y) * Z) = Y * ((Z + Z) * X)
+  X * (Y - (Z * Y)) = Y * (X - (Z * X))
+  X * (Y - (Z * Y)) = Y * (X - (X * Z))
+  X * (Y - (Y * Z)) = Y * (X - (X * Z))
+  X * ((Y * Z) - Z) = Z * ((Y * X) - X)
+  X * ((Y * Z) - Y) = Y * ((Z * X) - X)
+  X * ((Y * Z) - Y) = Y * ((X * Z) - X)
+  (X + X) * (Y * Z) = X * (Y * (Z + Z))
+  (X + X) * (Y * Z) = X * (Z * (Y + Y))
+  (X + X) * pow(Y, 2) = X * (Y * (Y + Y))
+  (X + 1) * (Y * Z) = Y * (Z + (X * Z))
+  (X + 1) * (Y * Z) = Y * (Z * (X + 1))
+  (X + 1) * pow(Y, 2) = Y * (Y + (X * Y))
+  (1 + X) * (Y * Z) = Y * (Z + (X * Z))
+  (1 + X) * (Y * Z) = Y * (Z * (1 + X))
+  (1 + X) * pow(Y, 2) = Y * (Y + (X * Y))
+  (1 + 1) * (X + X) = pow(1 + 1, 2) * X
+  (1 + 1) * (X * Y) = X * (Y + Y)
+  (1 + 1) * (X * Y) = (X + X) * Y
+  (1 + 1) * (X - Y) = X - (Y - (X - Y))
+  (1 + 1) * pow(X, 2) = X * (X + X)
+  (X - Y) * (Y - X) -> 0 - pow(X - Y, 2)
+  (X - 1) * (Y * Z) = Y * (Z * (X - 1))
+  (X - 1) * (Y * Z) = Y * ((X * Z) - Z)
+  (X - 1) * pow(X, 2) = X * (pow(X, 2) - X)
+  (X - 1) * pow(Y, 2) = Y * ((X * Y) - Y)
+  (X - Y) * (Z - W) <-> (Y - X) * (W - Z)
+  (X - Y) * (Z - W) = (W - Z) * (Y - X)
+  (1 - X) * (Y * Z) = Y * (Z * (1 - X))
+  (1 - X) * (Y * Z) = Y * (Z - (X * Z))
+  (1 - X) * pow(X, 2) = X * (X - pow(X, 2))
+  (1 - X) * pow(Y, 2) = Y * (Y - (X * Y))
+  (1 - X) * pow(Y, 2) = Y * (Y - (Y * X))
+  pow(X, 2) * (Y + Y) = X * (Y * (X + X))
+  pow(X, 2) * (Y + Y) = X * ((X + X) * Y)
+  pow(X, 2) * (Y + Y) = X * ((Y + Y) * X)
+  pow(X, 2) * (Y + Y) = Y * (X * (X + X))
+  pow(X, 2) * (Y + 1) = X * (X + (Y * X))
+  pow(X, 2) * (Y + 1) = X * ((Y + 1) * X)
+  pow(X, 2) * (1 + X) = X * (X + pow(X, 2))
+  pow(X, 2) * (1 + Y) = X * (X + (X * Y))
+  pow(X, 2) * (1 + Y) = X * (X + (Y * X))
+  pow(X, 2) * (1 + Y) = X * ((1 + Y) * X)
+  pow(X, 2) * (1 + 1) = X * (X + X)
+  pow(X, 2) * (1 - Y) = X * (X - (X * Y))
+  pow(X, 2) * pow(Y, 2) -> pow(X * Y, 2)
+  (X + (X + 1)) * Y = Y + (X * (Y + Y))
+  (X + (1 + 1)) * Y = Y + (Y + (X * Y))
+  (X + (X * Y)) * Z = X * (Z + (Y * Z))
+  (X + (X * Y)) * Z -> X * (Z * (Y + 1))
+  (X + (Y * X)) * Z = X * (Z + (Y * Z))
+  (X + (Y * X)) * Z -> X * (Z * (Y + 1))
+  (X + pow(X, 2)) * Y = X * (Y + (X * Y))
+  (X + pow(X, 2)) * Y -> X * (Y * (X + 1))
+  (1 + (X + X)) * Y = Y + (X * (Y + Y))
+  (1 + (1 + 1)) * X = X + (X + X)
+  (1 + (X * Y)) * Z = Z + (X * (Y * Z))
+  (1 + pow(X, 2)) * Y = Y + (X * (X * Y))
+  (X - (Y + 1)) * Z = (Z * (X - Y)) - Z
+  (X - (1 + Y)) * Z = (Z * (X - Y)) - Z
+  (X - (1 + 1)) * Y = (X * Y) - (Y + Y)
+  (X - (X * Y)) * Z -> X * (Z * (1 - Y))
+  (X - (X * Y)) * Z = X * (Z - (Y * Z))
+  (X - (Y * X)) * Z -> X * (Z * (1 - Y))
+  (X - (Y * X)) * Z = X * (Z - (Y * Z))
+  (X - (Y - 1)) * Z = Z - ((Y - X) * Z)
+  (X - (1 - Y)) * Z = (Z * (X + Y)) - Z
+  (X - pow(X, 2)) * Y -> X * (Y * (1 - X))
+  (X - pow(X, 2)) * Y = X * (Y - (X * Y))
+  (1 - (X + X)) * Y = Y - (X * (Y + Y))
+  (1 - (X * Y)) * Z = Z - (X * (Y * Z))
+  (1 - (X - Y)) * Z = Z - (Z * (X - Y))
+  (1 - (X - 1)) * Y = Y - ((X * Y) - Y)
+  (1 - pow(X, 2)) * Y = Y - (X * (X * Y))
+  ((X * Y) - X) * Z -> X * (Z * (Y - 1))
+  ((X * Y) - Y) * Z -> Y * (Z * (X - 1))
+  ((X * Y) - Y) * Z = Y * ((X * Z) - Z)
+  ((X * Y) - 1) * Z = (X * (Y * Z)) - Z
+  (pow(X, 2) - X) * Y -> X * (Y * (X - 1))
+  (pow(X, 2) - X) * Y = X * ((X * Y) - Y)
+  (pow(X, 2) - 1) * Y = (X * (X * Y)) - Y
+  X - (Y + (Z + X)) -> 0 - (Y + Z)
+  X - (Y + (X + Z)) -> 0 - (Z + Y)
+  X - (X * (Y + 1)) -> 0 - (X * Y)
+  X - (X * (1 + Y)) -> 0 - (X * Y)
+  X - (X * (Y - Z)) = X * (Z - (Y - 1))
+  X - (X * (1 - Y)) -> X * Y
+  X - (Y * (X - 1)) <-> Y - (X * (Y - 1))
+  X - (Y * (Z - 1)) = Y - ((Z * Y) - X)
+  X - ((Y + 1) * X) -> 0 - (X * Y)
+  X - ((1 + Y) * X) -> 0 - (X * Y)
+  X - ((1 - Y) * X) -> X * Y
+  X - (Y - (X - Y)) = (X - Y) * (1 + 1)
+  X - (Y - (Z - X)) -> Z - Y
+  X - (Y - (Z - W)) <-> Z - (Y - (X - W))
+  X - (Y - (Z + W)) <-> Z - (Y - (X + W))
+  X - (Y - (Z * X)) = ((Z + 1) * X) - Y
+  X - (Y - (Z * X)) = ((1 + Z) * X) - Y
+  X - ((Y * X) - Z) = Z - ((Y - 1) * X)
+  X - ((X * Y) - Z) = Z - (X * (Y - 1))
+  1 - pow(1 + 1, 2) -> neg(1) - (1 + 1)
+  0 - (X + (Y + 1)) -> neg(1) - (X + Y)
+  0 - (X + (1 + Y)) -> neg(1) - (X + Y)
+  0 - (X + (Y * X)) -> X * (neg(1) - Y)
+  0 - (X + pow(X, 2)) -> X * (neg(1) - X)
+  0 - (X * (Y + Y)) = X * (Y * (neg(1) - 1))
+  0 - (X * (Y + Y)) = X * ((neg(1) - 1) * Y)
+  0 - (X * (Y + 1)) -> X * (neg(1) - Y)
+  0 - (X * (1 + Y)) -> X * (neg(1) - Y)
+  0 - (X * (Y - Z)) -> X * (Z - Y)
+  0 - (X * (Y + Y)) = Y * ((neg(1) - 1) * X)
+  0 - (X * (Y + Y)) = (neg(1) - 1) * (Y * X)
+  0 - ((X + 1) * Y) -> Y * (neg(1) - X)
+  0 - ((1 + X) * Y) -> Y * (neg(1) - X)
+  0 - ((X - Y) * Z) -> Z * (Y - X)
+  (X * Y) - (Y + Z) = ((X - 1) * Y) - Z
+  (X * Y) - (X - Z) = Z - (X * (1 - Y))
+  (X * Y) - (Y - Z) = Z - ((1 - X) * Y)
+  (X * (Y + Y)) - Y = (X - (1 - X)) * Y
+  (X * (Y + 1)) - Z = X - (Z - (Y * X))
+  (X * (1 + Y)) - Y = X + (Y * (X - 1))
+  (X * (1 + Y)) - Y = X - (Y * (1 - X))
+  (X * (1 + Y)) - Z = X - (Z - (Y * X))
+  (X * (1 + 1)) - Y = X - (Y - X)
+  (X * (Y - Z)) - X = X * (Y - (Z + 1))
+  (X * (Y - Z)) - X = X * (Y - (1 + Z))
+  (X * (Y - 1)) - Z = (X * Y) - (Z + X)
+  (X * (Y - 1)) - Z = (Y * X) - (X + Z)
+  (X * (Y - 1)) - Z = (Y * X) - (Z + X)
+  (X * (1 - Y)) - X -> 0 - (X * Y)
+  (X * (1 - Y)) - Y = X - (Y * (1 + X))
+  (X * (1 - Y)) - Z = X - (Z + (Y * X))
+  (X * (1 - Y)) - Z = X - ((X * Y) + Z)
+  (X * (1 - Y)) - Z = X - ((Y * X) + Z)
+  (X * (Y - 1)) - Y = (Y * (X - 1)) - X
+  ((X + Y) * Z) - Z = (X - (1 - Y)) * Z
+  ((1 + X) * Y) - X = Y - (X * (1 - Y))
+  ((X - Y) * Z) - Z = (X - (Y + 1)) * Z
+  ((X - Y) * Z) - Z = (X - (1 + Y)) * Z
+  ((X - 1) * Y) - X = (X * (Y - 1)) - Y
+  ((X - 1) * Y) - Z = (X * Y) - (Z + Y)
+  ((X - Y) * Z) - Z = Z * (X - (Y + 1))
+  ((X - Y) * Z) - Z = Z * (X - (1 + Y))
+  ((1 - X) * Y) - X = Y - (X * (1 + Y))
+  ((1 - X) * Y) - Y -> 0 - (X * Y)
+  ((1 - X) * Y) - Z = Y - (Z + (X * Y))
+  ((1 - X) * Y) - Z = Y - ((X * Y) + Z)
+  pow(X * (Y - 1), 2) = pow(X * (1 - Y), 2)
+  pow(X * (Y - 1), 2) = pow(X - (Y * X), 2)
+  pow(X * (Y - 1), 2) = pow((1 - Y) * X, 2)
+  pow((X - 1) * Y, 2) = pow(Y * (1 - X), 2)
+  pow((X - 1) * Y, 2) = pow((1 - X) * Y, 2)
+  pow(X - (Y - Z), 2) = pow(Y - (X + Z), 2)
+  pow(X - (Y * X), 2) = pow((Y - 1) * X, 2)
+  ifeq(is_not_zero(X), true2, 0, 0 / X) -> 0 / X
+  ifeq(is_not_zero(X), true2, pow(X, 0), 1) -> 1
+  ifeq(is_not_zero(X), true2, X / X, 1) -> 1
+  X * (Y * (neg(1) - 1)) = 0 - (Y * (X + X))
+  X * (Y * (neg(1) - 1)) = 0 - ((X + X) * Y)
+  X * ((neg(1) - 1) * Y) = 0 - ((X + X) * Y)
+  X * (neg(1) - (1 + 1)) = 0 - (X + (X + X))
+  (X + 1) * (neg(1) - X) -> 0 - pow(X + 1, 2)
+  (X + 1) * (neg(1) - 1) = neg(1) - (X + (X + 1))
+  (X + 1) * (neg(1) - Y) <-> (Y + 1) * (neg(1) - X)
+  (X + 1) * (neg(1) - Y) = (1 + Y) * (neg(1) - X)
+  (1 + X) * (neg(1) - X) -> 0 - pow(X + 1, 2)
+  (1 + X) * (neg(1) - Y) <-> (1 + Y) * (neg(1) - X)
+  (1 + 1) * (neg(1) - X) = neg(1) - (1 + (X + X))
+  (X - Y) * (neg(1) - Z) -> (Y - X) * (Z + 1)
+  pow(X, 2) * (neg(1) - 1) = 0 - (X * (X + X))
+  (neg(1) - X) * (1 + Y) -> (X + 1) * (neg(1) - Y)
+  (neg(1) - X) * (Y - Z) -> (Z - Y) * (X + 1)
+  (neg(1) - 1) * (X * Y) = 0 - (X * (Y + Y))
+  (neg(1) - 1) * (X * Y) = 0 - ((X + X) * Y)
+  (neg(1) - 1) * pow(X, 2) = 0 - (X * (X + X))
+  (neg(1) - (1 + 1)) * X = 0 - (X + (X + X))
+  X - (X * (neg(1) - Y)) -> X + (X * (1 + Y))
+  X - (Y * (neg(1) - X)) -> X + (Y * (1 + X))
+  X - (Y * (neg(1) - Y)) -> X + (Y + pow(Y, 2))
+  X - (Y * (neg(1) - Z)) = X + (Y + (Z * Y))
+  X - (Y * (neg(1) - Z)) -> X + (Y * (Z + 1))
+  X - ((neg(1) - X) * Y) -> X + (Y * (1 + X))
+  X - ((neg(1) - Y) * X) -> X + (X * (1 + Y))
+  X - ((neg(1) - Y) * Z) = X + (Z + (Y * Z))
+  X - ((neg(1) - Y) * Z) -> X + (Z * (Y + 1))
+  neg(1) - (1 + (1 + 1)) -> 0 - pow(1 + 1, 2)
+  neg(1) - (X * (Y - Z)) -> (X * (Z - Y)) - 1
+  neg(1) - ((X - Y) * Z) -> (Z * (Y - X)) - 1
+  (X * (neg(1) - Y)) - 1 -> neg(1) - (X * (Y + 1))
+  (X * (neg(1) - 1)) - Y = 0 - (Y + (X + X))
+  ((neg(1) - X) * Y) - 1 -> neg(1) - (Y * (X + 1))
+  ((neg(1) - 1) * X) - Y = 0 - (Y + (X + X))
+  ifeq(is_not_zero(X), true2, X * (1 / X), 1) -> 1
+  ifeq(is_not_zero(X), true2, pow(X, neg(1)), 1 / X) -> 1 / X
+  ifeq(is_not_zero(X), true2, Y * pow(X, neg(1)), Y / X) -> Y / X
+  ifeq(is_not_zero(X), true2, pow(X, Y) * pow(X, Z), pow(X, Y + Z)) -> pow(X, Y + Z)
+
+RESULT: GaveUp (couldn't solve the problem).

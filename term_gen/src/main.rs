@@ -51,7 +51,7 @@ fn term_gen() {
         ("+", 2),
         ("-", 2),
         ("*", 2),
-        ("/", 2),
+        /*("/", 2),*/
         ("pow", 2),
         ("var", 0),
         ("const", 0),
@@ -78,34 +78,41 @@ fn term_gen() {
     //         writeln!(out, "{}", t.0).unwrap();
     //     }
     // }
-    let out_file = std::fs::File::create("terms_max_len4.txt").unwrap();
+    let out_file = std::fs::File::create("no_div_random_terms_small.txt").unwrap();
     let mut out = std::io::BufWriter::new(out_file);
-    for ts in terms.iter().take(5) {
+    for ts in terms.iter().take(4) {
         for t in ts.iter() {
             writeln!(out, "{}", t.0).unwrap();
         }
     }
-    let out_file = std::fs::File::create("terms_max_len5.txt").unwrap();
+    let out_file = std::fs::File::create("no_div_random_terms_medium.txt").unwrap();
     let mut out = std::io::BufWriter::new(out_file);
-    for ts in terms.iter().take(6) {
+    for ts in terms.iter().skip(4).take(4) {
         for t in ts.iter() {
             writeln!(out, "{}", t.0).unwrap();
         }
     }
-    let out_file = std::fs::File::create("terms_len6_to_10.txt").unwrap();
+    let out_file = std::fs::File::create("no_div_random_terms_large.txt").unwrap();
     let mut out = std::io::BufWriter::new(out_file);
-    for ts in terms.iter().skip(6).take(5) {
+    for ts in terms.iter().skip(8).take(4) {
         for t in ts.iter() {
             writeln!(out, "{}", t.0).unwrap();
         }
     }
-    let out_file = std::fs::File::create("terms_len11_plus.txt").unwrap();
+    let out_file = std::fs::File::create("no_div_random_terms_huge.txt").unwrap();
     let mut out = std::io::BufWriter::new(out_file);
-    for ts in terms.iter().skip(11) {
+    for ts in terms.iter().skip(12).take(3) {
         for t in ts.iter() {
             writeln!(out, "{}", t.0).unwrap();
         }
     }
+    // let out_file = std::fs::File::create("random_terms_all.txt").unwrap();
+    // let mut out = std::io::BufWriter::new(out_file);
+    // for ts in terms.iter() {
+    //     for t in ts.iter() {
+    //         writeln!(out, "{}", t.0).unwrap();
+    //     }
+    // }
 }
 
 fn main() {
