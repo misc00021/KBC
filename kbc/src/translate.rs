@@ -1,7 +1,8 @@
-use std::collections::VecDeque;
+use std::collections::{HashSet, VecDeque};
+use std::slice;
 use std::vec::Vec;
 
-#[derive(Clone)]
+#[derive(PartialEq, Clone)]
 struct Symbol {
     name: String,
     length: usize,
@@ -524,6 +525,9 @@ fn egg_print_cond(cond: &mut Vec<Symbol>) -> String {
     let mut ret = String::new();
     let mut i = 0;
     while i < cond.len() {
+        if i != 0 {
+            ret.push_str(" ");
+        }
         let s = cond.get(i).unwrap();
         ret.push_str(&format!("if {}(", s.name));
         for j in 1..s.length {
@@ -578,6 +582,9 @@ pub fn flat_to_egg(rule: &mut Rule) -> String {
         }
         ret.push_str(&format!(" {}", cond));
     }
+    if rule.lhs == rule.rhs {
+        return String::new(); // Skip rules that are identical on both sides
+    }
     ret.push_str("),");
     return ret.replace("(neg 1)", "-1");
 }
@@ -589,4 +596,82 @@ pub fn twee_to_egg(lines: &Vec<String>) -> Vec<String> {
         lines.push(flat_to_egg(&mut rule));
     }
     return lines;
+}
+
+fn lockdown(slice: Vec<Symbol>) -> HashSet<String> {
+    let mut vars = HashSet::new();
+    if slice.is_empty() {
+        return vars;
+    }
+    for s in slice {
+        if s.length == 1 && s.name.chars().next().unwrap().is_uppercase() {
+            vars.insert(s.name);
+        }
+    }
+    return vars;
+}
+
+fn add_guard(slice: Vec<Symbol>) -> HashSet<String> {
+    let mut nonzero_vars = HashSet::new();
+    if slice.is_empty() {
+        return nonzero_vars;
+    }
+    if slice[0].name == "/" {
+        let arg1len = slice[1].length;
+        if arg1len != 1 {
+            nonzero_vars.extend(add_guard(slice[1..(1 + arg1len)].to_vec()));
+        }
+        let arg2len = slice[1 + arg1len].length;
+        if arg2len != 1 {
+            nonzero_vars.extend(lockdown(slice[(1 + arg1len)..].to_vec()));
+        } else if slice[1 + arg1len]
+            .name
+            .chars()
+            .next()
+            .unwrap()
+            .is_uppercase()
+        {
+            nonzero_vars.insert(slice[1 + arg1len].name.clone());
+        }
+    } else if slice[0].name == "pow" {
+        let arg1len = slice[1].length;
+        if arg1len != 1 {
+            nonzero_vars.extend(add_guard(slice[1..(1 + arg1len)].to_vec()));
+        } else if slice[1].name.chars().next().unwrap().is_uppercase()
+            && slice[2].name.chars().next().unwrap().is_uppercase()
+        {
+            nonzero_vars.insert(slice[1].name.clone());
+        }
+        let arg2len = slice[1 + arg1len].length;
+        if arg2len != 1 {
+            nonzero_vars.extend(add_guard(slice[(1 + arg1len)..].to_vec()));
+        }
+    } else if slice[0].length != 1 {
+        let arg1len = slice[1].length;
+        nonzero_vars.extend(add_guard(slice[1..(1 + arg1len)].to_vec()));
+        nonzero_vars.extend(add_guard(slice[(1 + arg1len)..].to_vec()));
+    }
+    return nonzero_vars;
+}
+
+pub fn add_guards(lines: Vec<String>) -> Vec<String> {
+    let rules = twee_out_to_flat(&lines);
+    let mut out = Vec::new();
+    for rule in rules {
+        let mut nonzero_vars = add_guard(rule.lhs.clone());
+        nonzero_vars.extend(add_guard(rule.rhs.clone()));
+        let mut new_rule = rule.clone();
+        for var in nonzero_vars {
+            new_rule.cond.push(Symbol {
+                name: "is_not_zero".to_string(),
+                length: 2,
+            });
+            new_rule.cond.push(Symbol {
+                name: var,
+                length: 1,
+            });
+        }
+        out.push(flat_to_egg(&mut new_rule));
+    }
+    return out;
 }

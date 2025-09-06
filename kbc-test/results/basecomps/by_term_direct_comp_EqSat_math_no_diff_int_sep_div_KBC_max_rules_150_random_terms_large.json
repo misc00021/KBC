@@ -1,0 +1,3278 @@
+[
+  {
+    "base_term": "(+ (* a 0) (* (* (pow 1 b) (* (pow (pow 1 b) 0) 1)) 1))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 33,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "(pow 1 b)",
+      "output_weight_simple": 3,
+      "output_weight_complex": 7,
+      "output_depth": 2,
+      "simplification_time": 7.3496e-05
+    },
+    "Extended": {
+      "iterations": 7,
+      "stop_reason": "TimeLimit(0.010976318)",
+      "output_term": "(pow 1 b)",
+      "output_weight_simple": 3,
+      "output_weight_complex": 7,
+      "output_depth": 2,
+      "simplification_time": 0.013101162
+    },
+    "speedup": 0.005609884069825257,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(* (+ 0 a) (pow -1 (* (* 0 (+ (* (/ -1 1) a) b)) 0)))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 31,
+    "input_depth": 8,
+    "Baseline": {
+      "iterations": 4,
+      "stop_reason": "Saturated",
+      "output_term": "a",
+      "output_weight_simple": 1,
+      "output_weight_complex": 2,
+      "output_depth": 1,
+      "simplification_time": 0.000157846
+    },
+    "Extended": {
+      "iterations": 12,
+      "stop_reason": "TimeLimit(0.021522291)",
+      "output_term": "a",
+      "output_weight_simple": 1,
+      "output_weight_complex": 2,
+      "output_depth": 1,
+      "simplification_time": 0.022208068
+    },
+    "speedup": 0.0071075971129050935,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(* (/ 1 (pow (* (* -1 a) 1) (/ b (* a -1)))) (+ 1 1))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 35,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "(* (/ 1 (pow (* -1 a) (/ b (* -1 a)))) 2)",
+      "output_weight_simple": 10,
+      "output_weight_complex": 25,
+      "output_depth": 6,
+      "simplification_time": 0.00021805999999999998
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.021555398)",
+      "output_term": "(/ 2 (pow (- 0 a) (/ b (- 0 a))))",
+      "output_weight_simple": 8,
+      "output_weight_complex": 21,
+      "output_depth": 5,
+      "simplification_time": 0.022127932
+    },
+    "speedup": 0.00985451329116521,
+    "weight_simple_diff": 2,
+    "weight_complex_diff": 4,
+    "depth_diff": 1
+  },
+  {
+    "base_term": "(/ (+ (* a 1) (/ 1 (pow (pow a -1) 0))) (- 1 (/ 0 a)))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 39,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(+ a 1)",
+      "output_weight_simple": 3,
+      "output_weight_complex": 4,
+      "output_depth": 2,
+      "simplification_time": 0.00022174500000000003
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.021023767)",
+      "output_term": "(/ (+ a 1) (- 1 (/ 0 a)))",
+      "output_weight_simple": 7,
+      "output_weight_complex": 16,
+      "output_depth": 4,
+      "simplification_time": 0.021595142
+    },
+    "speedup": 0.01026828163482324,
+    "weight_simple_diff": -4,
+    "weight_complex_diff": -12,
+    "depth_diff": -2
+  },
+  {
+    "base_term": "(/ (* (* -1 -1) (- (/ (pow a a) (- (/ a a) 1)) b)) 0)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 39,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "(/ (- (/ (pow a a) 0) b) 0)",
+      "output_weight_simple": 7,
+      "output_weight_complex": 20,
+      "output_depth": 5,
+      "simplification_time": 0.000235797
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.021661604)",
+      "output_term": "(/ (- (/ (pow a a) 0) b) 0)",
+      "output_weight_simple": 7,
+      "output_weight_complex": 20,
+      "output_depth": 5,
+      "simplification_time": 0.022315394
+    },
+    "speedup": 0.01056656225742642,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(+ (pow 1 1) (+ (/ 0 (/ a (+ (* (/ a 0) 1) 1))) 1))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 35,
+    "input_depth": 8,
+    "Baseline": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "2",
+      "output_weight_simple": 1,
+      "output_weight_complex": 1,
+      "output_depth": 1,
+      "simplification_time": 0.00023944800000000002
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.021177472)",
+      "output_term": "(+ (/ 0 (/ a (+ (/ a 0) 1))) 2)",
+      "output_weight_simple": 9,
+      "output_weight_complex": 22,
+      "output_depth": 6,
+      "simplification_time": 0.021764032
+    },
+    "speedup": 0.011002005510743599,
+    "weight_simple_diff": -8,
+    "weight_complex_diff": -21,
+    "depth_diff": -5
+  },
+  {
+    "base_term": "(+ (* (+ a 0) (pow a (+ (* (+ -1 0) (+ 0 1)) b))) 1)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 25,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 4,
+      "stop_reason": "Saturated",
+      "output_term": "(+ 1 (* a (pow a (+ -1 b))))",
+      "output_weight_simple": 8,
+      "output_weight_complex": 14,
+      "output_depth": 5,
+      "simplification_time": 0.00013214
+    },
+    "Extended": {
+      "iterations": 13,
+      "stop_reason": "TimeLimit(0.010682439)",
+      "output_term": "(+ (pow a b) 1)",
+      "output_weight_simple": 5,
+      "output_weight_complex": 10,
+      "output_depth": 3,
+      "simplification_time": 0.011359349
+    },
+    "speedup": 0.011632708881468471,
+    "weight_simple_diff": 3,
+    "weight_complex_diff": 4,
+    "depth_diff": 2
+  },
+  {
+    "base_term": "(pow a (* (pow a (pow (- 1 1) a)) (pow (- (- 0 b) b) 0)))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 35,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "(pow a (pow a (pow 0 a)))",
+      "output_weight_simple": 5,
+      "output_weight_complex": 15,
+      "output_depth": 4,
+      "simplification_time": 0.000306011
+    },
+    "Extended": {
+      "iterations": 11,
+      "stop_reason": "TimeLimit(0.022510451)",
+      "output_term": "(pow a (pow a (pow 0 a)))",
+      "output_weight_simple": 5,
+      "output_weight_complex": 15,
+      "output_depth": 4,
+      "simplification_time": 0.023284354
+    },
+    "speedup": 0.013142344425789095,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(/ (pow (+ a (pow b (* (* a c) (+ (* d 1) 0)))) 0) d)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 36,
+    "input_depth": 8,
+    "Baseline": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "(/ 1 d)",
+      "output_weight_simple": 3,
+      "output_weight_complex": 8,
+      "output_depth": 2,
+      "simplification_time": 0.000304911
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.021967891)",
+      "output_term": "(/ 1 d)",
+      "output_weight_simple": 3,
+      "output_weight_complex": 8,
+      "output_depth": 2,
+      "simplification_time": 0.022534894
+    },
+    "speedup": 0.013530616119161688,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(pow 0 (pow (/ -1 -1) (- 0 (/ (* (pow a a) 1) (* a b)))))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 40,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(pow 0 (pow 1 (- 0 (/ (pow a a) (* a b)))))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 26,
+      "output_depth": 6,
+      "simplification_time": 0.000347823
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.021167084)",
+      "output_term": "(pow 0 (pow 1 (- 0 (/ (pow a a) (* a b)))))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 26,
+      "output_depth": 6,
+      "simplification_time": 0.02173084
+    },
+    "speedup": 0.016005962033681164,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(pow -1 (/ 0 (* (+ a (* (pow a (/ (/ 0 a) 0)) 1)) b)))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 41,
+    "input_depth": 9,
+    "Baseline": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "1",
+      "output_weight_simple": 1,
+      "output_weight_complex": 1,
+      "output_depth": 1,
+      "simplification_time": 0.00036124299999999997
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.021638554)",
+      "output_term": "(pow -1 (/ 0 (* (+ a (pow a (/ (/ 0 a) 0))) b)))",
+      "output_weight_simple": 11,
+      "output_weight_complex": 32,
+      "output_depth": 8,
+      "simplification_time": 0.022256106
+    },
+    "speedup": 0.016231186174257076,
+    "weight_simple_diff": -10,
+    "weight_complex_diff": -31,
+    "depth_diff": -7
+  },
+  {
+    "base_term": "(+ (- (+ (pow 1 -1) a) (* a (* (+ (- -1 -1) 1) a))) 0)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 25,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "Saturated",
+      "output_term": "(- (+ 1 a) (* a a))",
+      "output_weight_simple": 5,
+      "output_weight_complex": 7,
+      "output_depth": 3,
+      "simplification_time": 0.00042584200000000006
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.023047333)",
+      "output_term": "(- a (- (* a a) 1))",
+      "output_weight_simple": 5,
+      "output_weight_complex": 7,
+      "output_depth": 4,
+      "simplification_time": 0.023796043
+    },
+    "speedup": 0.017895496322644908,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": -1
+  },
+  {
+    "base_term": "(- 1 (/ a (pow a (/ -1 (* (pow (- 0 (* 1 b)) b) 1)))))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 37,
+    "input_depth": 9,
+    "Baseline": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(- 1 (/ a (pow a (/ -1 (pow (- 0 b) b)))))",
+      "output_weight_simple": 11,
+      "output_weight_complex": 27,
+      "output_depth": 7,
+      "simplification_time": 0.00039650600000000003
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.021112492)",
+      "output_term": "(- 1 (/ a (pow a (/ -1 (pow (- 0 b) b)))))",
+      "output_weight_simple": 11,
+      "output_weight_complex": 27,
+      "output_depth": 7,
+      "simplification_time": 0.021675704
+    },
+    "speedup": 0.0182926469193342,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(pow (+ a 1) (* (/ (/ a a) (- 1 (pow a (+ -1 b)))) a))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 38,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 4,
+      "stop_reason": "Saturated",
+      "output_term": "(pow (+ a 1) (* a (/ 1 (- 1 (pow a (+ -1 b))))))",
+      "output_weight_simple": 11,
+      "output_weight_complex": 24,
+      "output_depth": 7,
+      "simplification_time": 0.000201085
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.01039058)",
+      "output_term": "(pow (+ a 1) (/ a (- 1 (pow a (+ -1 b)))))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 22,
+      "output_depth": 6,
+      "simplification_time": 0.010575797999999999
+    },
+    "speedup": 0.019013695231319662,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": 2,
+    "depth_diff": 1
+  },
+  {
+    "base_term": "(* (pow (pow (* (* (* (pow (- a 0) b) b) b) -1) 0) 1) c)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 35,
+    "input_depth": 9,
+    "Baseline": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "c",
+      "output_weight_simple": 1,
+      "output_weight_complex": 2,
+      "output_depth": 1,
+      "simplification_time": 0.000453048
+    },
+    "Extended": {
+      "iterations": 11,
+      "stop_reason": "TimeLimit(0.022574983)",
+      "output_term": "c",
+      "output_weight_simple": 1,
+      "output_weight_complex": 2,
+      "output_depth": 1,
+      "simplification_time": 0.023197996
+    },
+    "speedup": 0.019529617989415982,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(+ 1 (- (/ a a) (- -1 (pow -1 (* (* -1 b) (pow c -1))))))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 33,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (pow -1 (* b (* -1 (/ 1 c)))) 3)",
+      "output_weight_simple": 10,
+      "output_weight_complex": 21,
+      "output_depth": 6,
+      "simplification_time": 0.000493549
+    },
+    "Extended": {
+      "iterations": 12,
+      "stop_reason": "TimeLimit(0.022958125)",
+      "output_term": "(- 2 (- -1 (pow -1 (- 0 (/ b c)))))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 19,
+      "output_depth": 6,
+      "simplification_time": 0.02354844
+    },
+    "speedup": 0.020958883051276432,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 2,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- (* 1 a) (- (* (/ (* a 0) 0) (* b (pow d 0))) 1))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 32,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "(- a (+ (* (/ 0 0) b) -1))",
+      "output_weight_simple": 8,
+      "output_weight_complex": 15,
+      "output_depth": 5,
+      "simplification_time": 0.000488149
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.022072225)",
+      "output_term": "(- a (- (* (/ 0 0) b) 1))",
+      "output_weight_simple": 8,
+      "output_weight_complex": 15,
+      "output_depth": 5,
+      "simplification_time": 0.022721819
+    },
+    "speedup": 0.021483711317302544,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(/ (/ (- a a) a) (* -1 (pow (+ (* a 1) -1) (/ b c))))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 40,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "Saturated",
+      "output_term": "0",
+      "output_weight_simple": 1,
+      "output_weight_complex": 1,
+      "output_depth": 1,
+      "simplification_time": 0.0005620509999999999
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.022580818)",
+      "output_term": "(/ (/ 0 a) (- 0 (pow (+ a -1) (/ b c))))",
+      "output_weight_simple": 11,
+      "output_weight_complex": 29,
+      "output_depth": 5,
+      "simplification_time": 0.023643167
+    },
+    "speedup": 0.02377223829616396,
+    "weight_simple_diff": -10,
+    "weight_complex_diff": -28,
+    "depth_diff": -4
+  },
+  {
+    "base_term": "(* 1 (- (- (+ a a) (/ 1 b)) (/ (* (+ 0 1) 1) c)))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 31,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "(- (- (+ a a) (/ 1 b)) (/ 1 c))",
+      "output_weight_simple": 9,
+      "output_weight_complex": 20,
+      "output_depth": 4,
+      "simplification_time": 0.0005674289999999999
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.021437315)",
+      "output_term": "(- (+ a a) (+ (/ 1 b) (/ 1 c)))",
+      "output_weight_simple": 9,
+      "output_weight_complex": 20,
+      "output_depth": 4,
+      "simplification_time": 0.022064224
+    },
+    "speedup": 0.02571715189258412,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(* (+ (* a -1) 0) (pow a (+ c (* (* b (- c -1)) 1))))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 29,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "Saturated",
+      "output_term": "(* -1 (* a (pow a (+ b (* c (+ b 1))))))",
+      "output_weight_simple": 11,
+      "output_weight_complex": 20,
+      "output_depth": 7,
+      "simplification_time": 0.0006800210000000001
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.022233718)",
+      "output_term": "(- 0 (pow a (* (+ c 1) (+ b 1))))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 17,
+      "output_depth": 5,
+      "simplification_time": 0.022813408
+    },
+    "speedup": 0.029807953287820918,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": 3,
+    "depth_diff": 2
+  },
+  {
+    "base_term": "(+ (- (/ a 0) (* (+ (* 1 (/ a -1)) b) -1)) (pow a 0))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 34,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (/ a 0) (+ (* a -1) (+ 1 b)))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 17,
+      "output_depth": 4,
+      "simplification_time": 0.00070718
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.021716195)",
+      "output_term": "(+ (/ a 0) (+ (/ a -1) (+ b 1)))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 20,
+      "output_depth": 4,
+      "simplification_time": 0.022369134
+    },
+    "speedup": 0.031614098248059136,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": -3,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(+ (pow (* a (* a (pow (- a (+ (+ c c) 1)) -1))) -1) -1)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 30,
+    "input_depth": 9,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "(+ -1 (/ 1 (* (/ 1 (+ a (+ -1 (* c -2)))) (* a a))))",
+      "output_weight_simple": 13,
+      "output_weight_complex": 26,
+      "output_depth": 8,
+      "simplification_time": 0.000771746
+    },
+    "Extended": {
+      "iterations": 12,
+      "stop_reason": "TimeLimit(0.023667817)",
+      "output_term": "(+ (/ (- a (+ c (+ c 1))) (* a a)) -1)",
+      "output_weight_simple": 10,
+      "output_weight_complex": 17,
+      "output_depth": 6,
+      "simplification_time": 0.024269349000000003
+    },
+    "speedup": 0.03179920483239991,
+    "weight_simple_diff": 3,
+    "weight_complex_diff": 9,
+    "depth_diff": 2
+  },
+  {
+    "base_term": "(/ (* (/ a (* -1 a)) (pow b (* c a))) (/ (* c 1) b))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 43,
+    "input_depth": 5,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "(/ (* (/ a (* a -1)) (pow b (* a c))) (/ c b))",
+      "output_weight_simple": 11,
+      "output_weight_complex": 32,
+      "output_depth": 5,
+      "simplification_time": 0.000895248
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.022531546)",
+      "output_term": "(/ (- 0 (pow b (* a c))) (/ c b))",
+      "output_weight_simple": 9,
+      "output_weight_complex": 24,
+      "output_depth": 5,
+      "simplification_time": 0.023327825
+    },
+    "speedup": 0.0383768311019137,
+    "weight_simple_diff": 2,
+    "weight_complex_diff": 8,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(+ -1 (* 1 (* a (+ (- (+ 0 a) 1) (pow 0 (+ 1 b))))))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 25,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "Saturated",
+      "output_term": "(+ -1 (* a (+ a (+ -1 (pow 0 (+ 1 b))))))",
+      "output_weight_simple": 11,
+      "output_weight_complex": 17,
+      "output_depth": 7,
+      "simplification_time": 0.001080987
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.02230014)",
+      "output_term": "(+ -1 (* a (+ (- a 1) (pow 0 (+ 1 b)))))",
+      "output_weight_simple": 11,
+      "output_weight_complex": 17,
+      "output_depth": 6,
+      "simplification_time": 0.023146513
+    },
+    "speedup": 0.04670193735013131,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 1
+  },
+  {
+    "base_term": "(* (pow (+ (+ a (+ a (- (pow 0 a) -1))) c) b) (pow d -1))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 33,
+    "input_depth": 8,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "(* (pow (+ (pow 0 a) (+ c (+ (+ a a) 1))) b) (/ 1 d))",
+      "output_weight_simple": 14,
+      "output_weight_complex": 29,
+      "output_depth": 7,
+      "simplification_time": 0.001125673
+    },
+    "Extended": {
+      "iterations": 12,
+      "stop_reason": "TimeLimit(0.023121522)",
+      "output_term": "(/ (pow (+ a (+ a (+ (pow 0 a) (+ c 1)))) b) d)",
+      "output_weight_simple": 13,
+      "output_weight_complex": 27,
+      "output_depth": 7,
+      "simplification_time": 0.023856684000000003
+    },
+    "speedup": 0.04718480573410789,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": 2,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(* (pow (/ (- a (* (pow (- 0 a) 1) (/ 1 b))) 1) 1) a)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 37,
+    "input_depth": 8,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "Saturated",
+      "output_term": "(* (* a a) (+ 1 (/ 1 b)))",
+      "output_weight_simple": 7,
+      "output_weight_complex": 15,
+      "output_depth": 4,
+      "simplification_time": 0.0012039569999999999
+    },
+    "Extended": {
+      "iterations": 11,
+      "stop_reason": "TimeLimit(0.023715686)",
+      "output_term": "(* a (+ a (/ a b)))",
+      "output_weight_simple": 5,
+      "output_weight_complex": 12,
+      "output_depth": 4,
+      "simplification_time": 0.024367585
+    },
+    "speedup": 0.04940813790123231,
+    "weight_simple_diff": 2,
+    "weight_complex_diff": 3,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(* (/ (- a a) (pow (pow 1 b) (/ a a))) (+ (- 0 b) 1))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 38,
+    "input_depth": 5,
+    "Baseline": {
+      "iterations": 9,
+      "stop_reason": "Saturated",
+      "output_term": "0",
+      "output_weight_simple": 1,
+      "output_weight_complex": 1,
+      "output_depth": 1,
+      "simplification_time": 0.000597145
+    },
+    "Extended": {
+      "iterations": 9,
+      "stop_reason": "TimeLimit(0.01054408)",
+      "output_term": "(/ 0 (pow 1 b))",
+      "output_weight_simple": 5,
+      "output_weight_complex": 13,
+      "output_depth": 3,
+      "simplification_time": 0.010607244
+    },
+    "speedup": 0.05629596151460266,
+    "weight_simple_diff": -4,
+    "weight_complex_diff": -12,
+    "depth_diff": -2
+  },
+  {
+    "base_term": "(- (pow 1 a) (* (* (/ a a) (/ (pow d -1) (/ b a))) c))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 44,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(- (pow 1 a) (* (/ (/ 1 d) (/ b a)) c))",
+      "output_weight_simple": 11,
+      "output_weight_complex": 31,
+      "output_depth": 5,
+      "simplification_time": 0.0007295
+    },
+    "Extended": {
+      "iterations": 9,
+      "stop_reason": "TimeLimit(0.010066698)",
+      "output_term": "(- (pow 1 a) (* (/ (/ a d) b) c))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 26,
+      "output_depth": 5,
+      "simplification_time": 0.010141341
+    },
+    "speedup": 0.0719332877180641,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": 5,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(pow (- (+ a -1) (+ (* (+ 0 b) (/ c c)) (pow b e))) -1)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 34,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "Saturated",
+      "output_term": "(/ 1 (- (+ a -1) (+ b (pow b e))))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 20,
+      "output_depth": 5,
+      "simplification_time": 0.000806343
+    },
+    "Extended": {
+      "iterations": 11,
+      "stop_reason": "TimeLimit(0.010508729)",
+      "output_term": "(/ 1 (- a (+ b (+ (pow b e) 1))))",
+      "output_weight_simple": 9,
+      "output_weight_complex": 19,
+      "output_depth": 6,
+      "simplification_time": 0.010562364
+    },
+    "speedup": 0.07634114862922732,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": 1,
+    "depth_diff": -1
+  },
+  {
+    "base_term": "(pow (pow 1 (/ 1 (pow (/ (pow a 0) (/ (- b 1) 1)) 1))) 0)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 43,
+    "input_depth": 8,
+    "Baseline": {
+      "iterations": 4,
+      "stop_reason": "Saturated",
+      "output_term": "1",
+      "output_weight_simple": 1,
+      "output_weight_complex": 1,
+      "output_depth": 1,
+      "simplification_time": 0.000146503
+    },
+    "Extended": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "1",
+      "output_weight_simple": 1,
+      "output_weight_complex": 1,
+      "output_depth": 1,
+      "simplification_time": 0.00056
+    },
+    "speedup": 0.2616125,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(* (/ (+ a (- (pow 0 a) (+ 0 (- 1 1)))) -1) (* c -1))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 29,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "Saturated",
+      "output_term": "(* (+ a (pow 0 a)) c)",
+      "output_weight_simple": 6,
+      "output_weight_complex": 12,
+      "output_depth": 4,
+      "simplification_time": 0.00091114
+    },
+    "Extended": {
+      "iterations": 9,
+      "stop_reason": "Saturated",
+      "output_term": "(* (+ a (pow 0 a)) c)",
+      "output_weight_simple": 6,
+      "output_weight_complex": 12,
+      "output_depth": 4,
+      "simplification_time": 0.002239161
+    },
+    "speedup": 0.4069113386665809,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- (pow (+ -1 (- (/ a 0) b)) 0) (+ (+ 1 c) (* 1 d)))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 29,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 11,
+      "stop_reason": "TimeLimit(0.010022181)",
+      "output_term": "(* -1 (+ c d))",
+      "output_weight_simple": 5,
+      "output_weight_complex": 8,
+      "output_depth": 3,
+      "simplification_time": 0.010254777
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.022068751)",
+      "output_term": "(- 0 (+ c d))",
+      "output_weight_simple": 5,
+      "output_weight_complex": 7,
+      "output_depth": 3,
+      "simplification_time": 0.022664377
+    },
+    "speedup": 0.45246233770290706,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 1,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(* (/ (/ a (- a (/ 0 (/ b -1)))) (pow b (* b -1))) 1)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 43,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 11,
+      "stop_reason": "TimeLimit(0.011345958)",
+      "output_term": "(/ 1 (pow b (* b -1)))",
+      "output_weight_simple": 6,
+      "output_weight_complex": 15,
+      "output_depth": 4,
+      "simplification_time": 0.012128711
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.021334261)",
+      "output_term": "(/ (/ a (pow b (- 0 b))) (- a (/ 0 (/ b -1))))",
+      "output_weight_simple": 11,
+      "output_weight_complex": 32,
+      "output_depth": 5,
+      "simplification_time": 0.021897362
+    },
+    "speedup": 0.5538891397055042,
+    "weight_simple_diff": -5,
+    "weight_complex_diff": -17,
+    "depth_diff": -1
+  },
+  {
+    "base_term": "(- a (+ (pow (- 1 a) a) (* (- (+ a -1) b) (- 1 0))))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 26,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 11,
+      "stop_reason": "TimeLimit(0.011493945)",
+      "output_term": "(+ 1 (+ (* (pow (- 1 a) a) -1) b))",
+      "output_weight_simple": 9,
+      "output_weight_complex": 15,
+      "output_depth": 6,
+      "simplification_time": 0.012376819
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.021080561)",
+      "output_term": "(- a (+ (pow (- 1 a) a) (- a (+ 1 b))))",
+      "output_weight_simple": 9,
+      "output_weight_complex": 14,
+      "output_depth": 5,
+      "simplification_time": 0.021665141
+    },
+    "speedup": 0.5712780267619768,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 1,
+    "depth_diff": 1
+  },
+  {
+    "base_term": "(* (/ (+ (/ (- a 0) b) (/ a 1)) -1) (+ 0 (* c -1)))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 35,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "Saturated",
+      "output_term": "(* (+ a (/ a b)) c)",
+      "output_weight_simple": 6,
+      "output_weight_complex": 14,
+      "output_depth": 4,
+      "simplification_time": 0.0016526809999999998
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "Saturated",
+      "output_term": "(* (+ (/ a b) a) c)",
+      "output_weight_simple": 6,
+      "output_weight_complex": 14,
+      "output_depth": 4,
+      "simplification_time": 0.002429538
+    },
+    "speedup": 0.6802449683849356,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(+ (- -1 (pow a (+ 0 a))) (- 1 (pow 0 (* 1 (/ a 1)))))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 31,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 11,
+      "stop_reason": "TimeLimit(0.015107239)",
+      "output_term": "(* -1 (+ (pow a a) (pow 0 a)))",
+      "output_weight_simple": 7,
+      "output_weight_complex": 15,
+      "output_depth": 4,
+      "simplification_time": 0.016839363
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.021432122)",
+      "output_term": "(+ (- -1 (pow a a)) (- 1 (pow 0 a)))",
+      "output_weight_simple": 9,
+      "output_weight_complex": 16,
+      "output_depth": 4,
+      "simplification_time": 0.021994755
+    },
+    "speedup": 0.7656081188446973,
+    "weight_simple_diff": -2,
+    "weight_complex_diff": -1,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- (* -1 (pow (+ -1 (pow (+ -1 1) -1)) (+ (pow -1 1) 1))) -1)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 27,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "0",
+      "output_weight_simple": 1,
+      "output_weight_complex": 1,
+      "output_depth": 1,
+      "simplification_time": 8.290799999999999e-05
+    },
+    "Extended": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "0",
+      "output_weight_simple": 1,
+      "output_weight_complex": 1,
+      "output_depth": 1,
+      "simplification_time": 0.000100532
+    },
+    "speedup": 0.8246926351808378,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(* (* (* (- (- (/ (/ -1 a) (+ 1 a)) a) b) -1) -1) 0)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 32,
+    "input_depth": 8,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "0",
+      "output_weight_simple": 1,
+      "output_weight_complex": 1,
+      "output_depth": 1,
+      "simplification_time": 0.0008874760000000001
+    },
+    "Extended": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "0",
+      "output_weight_simple": 1,
+      "output_weight_complex": 1,
+      "output_depth": 1,
+      "simplification_time": 0.000967021
+    },
+    "speedup": 0.9177422206963449,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- (* (* (* (pow -1 (* 0 (/ -1 -1))) 0) -1) a) (pow a 0))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 33,
+    "input_depth": 8,
+    "Baseline": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "-1",
+      "output_weight_simple": 1,
+      "output_weight_complex": 1,
+      "output_depth": 1,
+      "simplification_time": 7.3744e-05
+    },
+    "Extended": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "-1",
+      "output_weight_simple": 1,
+      "output_weight_complex": 1,
+      "output_depth": 1,
+      "simplification_time": 7.859300000000001e-05
+    },
+    "speedup": 0.9383023933429185,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- 1 (+ (pow (/ 1 a) (pow a (/ (* a (/ 0 a)) a))) 1))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 41,
+    "input_depth": 8,
+    "Baseline": {
+      "iterations": 12,
+      "stop_reason": "TimeLimit(0.010067444)",
+      "output_term": "(* -1 (/ 1 a))",
+      "output_weight_simple": 5,
+      "output_weight_complex": 11,
+      "output_depth": 3,
+      "simplification_time": 0.010443981
+    },
+    "Extended": {
+      "iterations": 9,
+      "stop_reason": "TimeLimit(0.010036148)",
+      "output_term": "(- 0 (pow (/ 1 a) (pow a (/ 0 a))))",
+      "output_weight_simple": 8,
+      "output_weight_complex": 23,
+      "output_depth": 5,
+      "simplification_time": 0.010092085
+    },
+    "speedup": 1.03486851329532,
+    "weight_simple_diff": -3,
+    "weight_complex_diff": -12,
+    "depth_diff": -2
+  },
+  {
+    "base_term": "(- (* 0 (- -1 (+ (+ a (+ 1 (- a (pow b 0)))) b))) 0)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 25,
+    "input_depth": 9,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "TimeLimit(0.010516129)",
+      "output_term": "0",
+      "output_weight_simple": 1,
+      "output_weight_complex": 1,
+      "output_depth": 1,
+      "simplification_time": 0.010863731
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.010003732)",
+      "output_term": "0",
+      "output_weight_simple": 1,
+      "output_weight_complex": 1,
+      "output_depth": 1,
+      "simplification_time": 0.010101581000000002
+    },
+    "speedup": 1.0754485857213834,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- (- (+ (* 0 (/ a (* (* a (* a a)) a))) a) 1) 0)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 31,
+    "input_depth": 9,
+    "Baseline": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "(+ a -1)",
+      "output_weight_simple": 3,
+      "output_weight_complex": 4,
+      "output_depth": 2,
+      "simplification_time": 0.000235002
+    },
+    "Extended": {
+      "iterations": 4,
+      "stop_reason": "Saturated",
+      "output_term": "(- a 1)",
+      "output_weight_simple": 3,
+      "output_weight_complex": 4,
+      "output_depth": 2,
+      "simplification_time": 0.000214813
+    },
+    "speedup": 1.0939840698654177,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- (+ (/ -1 (- (+ a 1) (- b -1))) (pow (- a d) 1)) c)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 29,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 11,
+      "stop_reason": "TimeLimit(0.010816609)",
+      "output_term": "(- (+ (/ -1 (+ a (* -1 b))) (- a d)) c)",
+      "output_weight_simple": 11,
+      "output_weight_complex": 20,
+      "output_depth": 6,
+      "simplification_time": 0.011120504000000002
+    },
+    "Extended": {
+      "iterations": 22,
+      "stop_reason": "TimeLimit(0.010008522)",
+      "output_term": "(- (+ (/ -1 (- a b)) (- a d)) c)",
+      "output_weight_simple": 10,
+      "output_weight_complex": 18,
+      "output_depth": 5,
+      "simplification_time": 0.010004720000000002
+    },
+    "speedup": 1.1115257598413548,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": 2,
+    "depth_diff": 1
+  },
+  {
+    "base_term": "(+ (- (- a (+ a b)) (- (* a (pow b -1)) a)) (+ a a))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 29,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "TimeLimit(0.011127064)",
+      "output_term": "(* -1 (+ b (* a (+ (/ 1 b) -3))))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 18,
+      "output_depth": 6,
+      "simplification_time": 0.012577693
+    },
+    "Extended": {
+      "iterations": 12,
+      "stop_reason": "TimeLimit(0.010017497)",
+      "output_term": "(+ (- a (+ b (/ a b))) (+ a a))",
+      "output_weight_simple": 7,
+      "output_weight_complex": 13,
+      "output_depth": 5,
+      "simplification_time": 0.010038296
+    },
+    "speedup": 1.2529709225549832,
+    "weight_simple_diff": 3,
+    "weight_complex_diff": 5,
+    "depth_diff": 1
+  },
+  {
+    "base_term": "(- (+ (+ 0 a) (/ (+ 1 1) (- (pow a (+ 0 a)) a))) 0)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 28,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "(+ a (/ 2 (- (pow a a) a)))",
+      "output_weight_simple": 6,
+      "output_weight_complex": 14,
+      "output_depth": 5,
+      "simplification_time": 0.000188667
+    },
+    "Extended": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "(+ a (/ 2 (- (pow a a) a)))",
+      "output_weight_simple": 6,
+      "output_weight_complex": 14,
+      "output_depth": 5,
+      "simplification_time": 0.000143919
+    },
+    "speedup": 1.3109248952535801,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(pow (* a (+ -1 a)) (+ (+ (/ b (* 0 b)) (pow a a)) -1))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 35,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "(pow (* a (+ a -1)) (+ (/ b 0) (+ -1 (pow a a))))",
+      "output_weight_simple": 11,
+      "output_weight_complex": 24,
+      "output_depth": 5,
+      "simplification_time": 0.000364183
+    },
+    "Extended": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(pow (- (pow a 2) a) (+ (/ b 0) (+ (pow a a) -1)))",
+      "output_weight_simple": 12,
+      "output_weight_complex": 27,
+      "output_depth": 5,
+      "simplification_time": 0.000261658
+    },
+    "speedup": 1.3918282643756354,
+    "weight_simple_diff": -1,
+    "weight_complex_diff": -3,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(/ (pow (- 0 (- a (- (- (* (- -1 1) a) -1) 1))) a) -1)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 28,
+    "input_depth": 9,
+    "Baseline": {
+      "iterations": 9,
+      "stop_reason": "TimeLimit(0.012344004)",
+      "output_term": "(* -1 (pow (* a -3) a))",
+      "output_weight_simple": 6,
+      "output_weight_complex": 12,
+      "output_depth": 4,
+      "simplification_time": 0.014105053
+    },
+    "Extended": {
+      "iterations": 22,
+      "stop_reason": "TimeLimit(0.01004457)",
+      "output_term": "(/ (pow (- 0 (* a 3)) a) -1)",
+      "output_weight_simple": 8,
+      "output_weight_complex": 17,
+      "output_depth": 5,
+      "simplification_time": 0.010056312
+    },
+    "speedup": 1.402606939800595,
+    "weight_simple_diff": -2,
+    "weight_complex_diff": -5,
+    "depth_diff": -1
+  },
+  {
+    "base_term": "(pow (pow -1 (/ a (pow a (pow 0 (pow (- 0 (* -1 1)) -1))))) a)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 40,
+    "input_depth": 9,
+    "Baseline": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "(pow (pow -1 a) a)",
+      "output_weight_simple": 4,
+      "output_weight_complex": 11,
+      "output_depth": 3,
+      "simplification_time": 0.00013736100000000002
+    },
+    "Extended": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "(pow (pow -1 a) a)",
+      "output_weight_simple": 4,
+      "output_weight_complex": 11,
+      "output_depth": 3,
+      "simplification_time": 9.6033e-05
+    },
+    "speedup": 1.4303520664771487,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- -1 (- a (pow a (- (+ b (pow a c)) (* -1 (pow b 0))))))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 33,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "(- -1 (- a (pow a (+ (pow a c) (+ b 1)))))",
+      "output_weight_simple": 11,
+      "output_weight_complex": 20,
+      "output_depth": 6,
+      "simplification_time": 0.000537384
+    },
+    "Extended": {
+      "iterations": 11,
+      "stop_reason": "Saturated",
+      "output_term": "(- -1 (- a (pow a (+ b (+ (pow a c) 1)))))",
+      "output_weight_simple": 11,
+      "output_weight_complex": 20,
+      "output_depth": 7,
+      "simplification_time": 0.00035425400000000003
+    },
+    "speedup": 1.5169454685056485,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": -1
+  },
+  {
+    "base_term": "(+ (+ (+ (pow (- 1 0) a) 0) (/ a -1)) (pow (/ 1 b) 1))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 34,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (pow 1 a) (+ (* a -1) (/ 1 b)))",
+      "output_weight_simple": 9,
+      "output_weight_complex": 19,
+      "output_depth": 4,
+      "simplification_time": 0.000239478
+    },
+    "Extended": {
+      "iterations": 4,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (pow 1 a) (+ (/ a -1) (/ 1 b)))",
+      "output_weight_simple": 9,
+      "output_weight_complex": 22,
+      "output_depth": 4,
+      "simplification_time": 0.00013639999999999998
+    },
+    "speedup": 1.7557038123167157,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": -3,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(/ 1 (- (+ (+ (* a b) (pow (/ 1 0) a)) (/ 0 -1)) 0))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 36,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 4,
+      "stop_reason": "Saturated",
+      "output_term": "(/ 1 (+ (* a b) (pow (/ 1 0) a)))",
+      "output_weight_simple": 9,
+      "output_weight_complex": 23,
+      "output_depth": 5,
+      "simplification_time": 0.000147064
+    },
+    "Extended": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "(/ 1 (+ (* a b) (pow (/ 1 0) a)))",
+      "output_weight_simple": 9,
+      "output_weight_complex": 23,
+      "output_depth": 5,
+      "simplification_time": 8.1834e-05
+    },
+    "speedup": 1.7971014492753623,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(/ 1 (* (pow (/ a 1) b) (pow (/ (+ a -1) 0) (* -1 a))))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 41,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 4,
+      "stop_reason": "Saturated",
+      "output_term": "(/ 1 (* (pow a b) (pow (/ (+ a -1) 0) (* a -1))))",
+      "output_weight_simple": 12,
+      "output_weight_complex": 30,
+      "output_depth": 6,
+      "simplification_time": 0.00018409999999999998
+    },
+    "Extended": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "(/ 1 (* (pow a b) (pow (/ (+ a -1) 0) (- 0 a))))",
+      "output_weight_simple": 12,
+      "output_weight_complex": 29,
+      "output_depth": 6,
+      "simplification_time": 0.00010158899999999999
+    },
+    "speedup": 1.812204077213084,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 1,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(pow (- -1 (pow a a)) (/ (pow (+ 1 a) (- -1 (- 0 a))) -1))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 34,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 4,
+      "stop_reason": "Saturated",
+      "output_term": "(pow (- -1 (pow a a)) (* -1 (pow (+ a 1) (+ -1 a))))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 21,
+      "output_depth": 5,
+      "simplification_time": 0.000200089
+    },
+    "Extended": {
+      "iterations": 4,
+      "stop_reason": "Saturated",
+      "output_term": "(pow (- -1 (pow a a)) (/ (pow (+ a 1) (+ -1 a)) -1))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 24,
+      "output_depth": 5,
+      "simplification_time": 0.000106466
+    },
+    "speedup": 1.879369939699059,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": -3,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(pow (* a a) (+ (pow (+ (+ 1 -1) a) (/ (- 0 c) a)) a))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 34,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "(pow (* a a) (+ a (pow a (/ (- 0 c) a))))",
+      "output_weight_simple": 9,
+      "output_weight_complex": 22,
+      "output_depth": 6,
+      "simplification_time": 0.000429585
+    },
+    "Extended": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(pow (* a a) (+ (pow a (/ (- 0 c) a)) a))",
+      "output_weight_simple": 9,
+      "output_weight_complex": 22,
+      "output_depth": 6,
+      "simplification_time": 0.00021866400000000003
+    },
+    "speedup": 1.9645895071891117,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(+ 0 (pow (- 0 (pow (+ (- (* a a) -1) b) -1)) (+ 1 c)))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 28,
+    "input_depth": 8,
+    "Baseline": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(pow (- 0 (/ 1 (+ (* a a) (+ b 1)))) (+ 1 c))",
+      "output_weight_simple": 12,
+      "output_weight_complex": 23,
+      "output_depth": 6,
+      "simplification_time": 0.00034460700000000003
+    },
+    "Extended": {
+      "iterations": 4,
+      "stop_reason": "Saturated",
+      "output_term": "(pow (- 0 (/ 1 (+ (* a a) (+ b 1)))) (+ 1 c))",
+      "output_weight_simple": 12,
+      "output_weight_complex": 23,
+      "output_depth": 6,
+      "simplification_time": 0.000172994
+    },
+    "speedup": 1.9920170641756365,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(+ (- (+ a (/ (pow 1 b) (* 0 1))) a) (/ 0 (/ -1 1)))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 36,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 12,
+      "stop_reason": "TimeLimit(0.018170303)",
+      "output_term": "(/ (pow 1 b) 0)",
+      "output_weight_simple": 5,
+      "output_weight_complex": 13,
+      "output_depth": 3,
+      "simplification_time": 0.02055138
+    },
+    "Extended": {
+      "iterations": 17,
+      "stop_reason": "TimeLimit(0.01001256)",
+      "output_term": "(/ (pow 1 b) 0)",
+      "output_weight_simple": 5,
+      "output_weight_complex": 13,
+      "output_depth": 3,
+      "simplification_time": 0.010082243
+    },
+    "speedup": 2.0383738023374365,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(/ (pow a (+ (* (/ a (/ (+ a -1) (- 0 1))) a) a)) 1)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 38,
+    "input_depth": 8,
+    "Baseline": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(pow a (+ a (* a (/ a (+ 1 (* a -1))))))",
+      "output_weight_simple": 9,
+      "output_weight_complex": 19,
+      "output_depth": 7,
+      "simplification_time": 0.000387134
+    },
+    "Extended": {
+      "iterations": 4,
+      "stop_reason": "Saturated",
+      "output_term": "(pow a (+ a (* a (/ a (/ (+ a -1) -1)))))",
+      "output_weight_simple": 8,
+      "output_weight_complex": 21,
+      "output_depth": 7,
+      "simplification_time": 0.00018930799999999998
+    },
+    "speedup": 2.0449954571386315,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": -2,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- (/ (/ a a) (pow (+ -1 0) (- (* 1 0) 0))) (/ a 0))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 36,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "(- 1 (/ a 0))",
+      "output_weight_simple": 5,
+      "output_weight_complex": 10,
+      "output_depth": 3,
+      "simplification_time": 0.000141772
+    },
+    "Extended": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "(- 1 (/ a 0))",
+      "output_weight_simple": 5,
+      "output_weight_complex": 10,
+      "output_depth": 3,
+      "simplification_time": 6.3987e-05
+    },
+    "speedup": 2.2156375513776236,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(pow a (/ 1 (/ b (pow 1 (pow -1 (* 0 (/ c (/ 1 -1))))))))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 46,
+    "input_depth": 9,
+    "Baseline": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "(pow a (/ 1 b))",
+      "output_weight_simple": 5,
+      "output_weight_complex": 14,
+      "output_depth": 3,
+      "simplification_time": 0.000252111
+    },
+    "Extended": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "(pow a (/ 1 b))",
+      "output_weight_simple": 5,
+      "output_weight_complex": 14,
+      "output_depth": 3,
+      "simplification_time": 0.000108655
+    },
+    "speedup": 2.3202889880815425,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(pow (/ (/ (pow (pow a -1) (pow (pow 0 0) a)) (- a -1)) 1) -1)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 43,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "(/ 1 (/ (pow (/ 1 a) (pow (pow 0 0) a)) (+ a 1)))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 32,
+      "output_depth": 6,
+      "simplification_time": 0.000231852
+    },
+    "Extended": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "(/ (+ a 1) (pow (/ 1 a) (pow (pow 0 0) a)))",
+      "output_weight_simple": 9,
+      "output_weight_complex": 27,
+      "output_depth": 5,
+      "simplification_time": 9.4784e-05
+    },
+    "speedup": 2.4461090479405807,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": 5,
+    "depth_diff": 1
+  },
+  {
+    "base_term": "(* a (- (+ (/ b b) (* b (+ 1 (pow c (/ b 1))))) 1))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 36,
+    "input_depth": 8,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "TimeLimit(0.020206228)",
+      "output_term": "(* a (+ b (* b (pow c b))))",
+      "output_weight_simple": 7,
+      "output_weight_complex": 15,
+      "output_depth": 5,
+      "simplification_time": 0.024773763
+    },
+    "Extended": {
+      "iterations": 22,
+      "stop_reason": "TimeLimit(0.010000985)",
+      "output_term": "(* (+ 1 (pow c b)) (* a b))",
+      "output_weight_simple": 8,
+      "output_weight_complex": 16,
+      "output_depth": 4,
+      "simplification_time": 0.010008607
+    },
+    "speedup": 2.475245855891834,
+    "weight_simple_diff": -1,
+    "weight_complex_diff": -1,
+    "depth_diff": 1
+  },
+  {
+    "base_term": "(+ (- -1 1) (/ (/ a -1) (* (* a a) (/ a (/ -1 1)))))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 39,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(+ -2 (/ (* -1 a) (* a (* -1 (* a a)))))",
+      "output_weight_simple": 9,
+      "output_weight_complex": 18,
+      "output_depth": 6,
+      "simplification_time": 0.000757192
+    },
+    "Extended": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(+ -2 (/ 1 (* a a)))",
+      "output_weight_simple": 6,
+      "output_weight_complex": 12,
+      "output_depth": 4,
+      "simplification_time": 0.00030073999999999997
+    },
+    "speedup": 2.51776285163264,
+    "weight_simple_diff": 3,
+    "weight_complex_diff": 6,
+    "depth_diff": 2
+  },
+  {
+    "base_term": "(/ (pow (pow (pow a (+ -1 (+ 0 (* a 0)))) 1) (pow -1 a)) b)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 38,
+    "input_depth": 8,
+    "Baseline": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "(/ (pow (/ 1 a) (pow -1 a)) b)",
+      "output_weight_simple": 8,
+      "output_weight_complex": 24,
+      "output_depth": 4,
+      "simplification_time": 0.000205237
+    },
+    "Extended": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "(/ (pow (/ 1 a) (pow -1 a)) b)",
+      "output_weight_simple": 8,
+      "output_weight_complex": 24,
+      "output_depth": 4,
+      "simplification_time": 7.8072e-05
+    },
+    "speedup": 2.62881698944564,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(pow a (/ (pow (+ (/ 1 (- a (* 0 1))) (- -1 a)) a) d))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 37,
+    "input_depth": 8,
+    "Baseline": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(pow a (/ (pow (+ (/ 1 a) (- -1 a)) a) d))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 26,
+      "output_depth": 6,
+      "simplification_time": 0.00069801
+    },
+    "Extended": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "(pow a (/ (pow (+ (/ 1 a) (- -1 a)) a) d))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 26,
+      "output_depth": 6,
+      "simplification_time": 0.000229527
+    },
+    "speedup": 3.0410801343632774,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(/ a (* b (+ (pow a (pow (+ -1 -1) (- 0 (- c 0)))) -1)))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 32,
+    "input_depth": 8,
+    "Baseline": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "(/ a (* b (+ -1 (pow a (pow -2 (- 0 c))))))",
+      "output_weight_simple": 12,
+      "output_weight_complex": 26,
+      "output_depth": 7,
+      "simplification_time": 0.00032331099999999995
+    },
+    "Extended": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "(/ a (* b (+ (pow a (pow -2 (- 0 c))) -1)))",
+      "output_weight_simple": 12,
+      "output_weight_complex": 26,
+      "output_depth": 7,
+      "simplification_time": 0.000104166
+    },
+    "speedup": 3.1038054643549713,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(pow (pow 1 (/ 1 a)) (- (pow (- a b) (pow (pow b b) b)) 0))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 42,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "(pow (pow 1 (/ 1 a)) (pow (- a b) (pow (pow b b) b)))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 31,
+      "output_depth": 5,
+      "simplification_time": 0.000214317
+    },
+    "Extended": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "(pow (pow 1 (/ 1 a)) (pow (- a b) (pow (pow b b) b)))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 31,
+      "output_depth": 5,
+      "simplification_time": 6.8258e-05
+    },
+    "speedup": 3.1398077880980986,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- a (* a (pow (+ (pow a (- 1 (- 0 0))) a) (- 1 a))))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 29,
+    "input_depth": 8,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "Saturated",
+      "output_term": "(- a (* a (pow (+ a a) (- 1 a))))",
+      "output_weight_simple": 7,
+      "output_weight_complex": 12,
+      "output_depth": 5,
+      "simplification_time": 0.000495947
+    },
+    "Extended": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "(- a (* a (pow (+ a a) (- 1 a))))",
+      "output_weight_simple": 7,
+      "output_weight_complex": 12,
+      "output_depth": 5,
+      "simplification_time": 0.000143194
+    },
+    "speedup": 3.4634621562355963,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(+ a (+ (+ (* (+ (+ 1 -1) 0) a) (/ a 1)) (+ 1 a)))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 26,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "(+ 1 (* a 3))",
+      "output_weight_simple": 5,
+      "output_weight_complex": 7,
+      "output_depth": 3,
+      "simplification_time": 0.00032315500000000005
+    },
+    "Extended": {
+      "iterations": 4,
+      "stop_reason": "Saturated",
+      "output_term": "(+ a (+ a (+ a 1)))",
+      "output_weight_simple": 5,
+      "output_weight_complex": 6,
+      "output_depth": 4,
+      "simplification_time": 9.1955e-05
+    },
+    "speedup": 3.5142732858463384,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 1,
+    "depth_diff": -1
+  },
+  {
+    "base_term": "(pow (pow (/ (+ (* -1 a) (/ a -1)) -1) a) (pow 0 (* 1 1)))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 39,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "1",
+      "output_weight_simple": 1,
+      "output_weight_complex": 1,
+      "output_depth": 1,
+      "simplification_time": 0.000259012
+    },
+    "Extended": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "1",
+      "output_weight_simple": 1,
+      "output_weight_complex": 1,
+      "output_depth": 1,
+      "simplification_time": 7.202200000000001e-05
+    },
+    "speedup": 3.5962900224931262,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(+ (* (+ a 0) a) (/ b (/ (* 0 (/ (/ 0 a) a)) a)))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 41,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (* a a) (/ b 0))",
+      "output_weight_simple": 6,
+      "output_weight_complex": 13,
+      "output_depth": 3,
+      "simplification_time": 0.000314535
+    },
+    "Extended": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (* a a) (/ b 0))",
+      "output_weight_simple": 6,
+      "output_weight_complex": 13,
+      "output_depth": 3,
+      "simplification_time": 8.5569e-05
+    },
+    "speedup": 3.675805490306069,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(+ (- a (* b a)) (pow (* (* c (pow -1 1)) a) (/ 0 c)))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 36,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (- a (* a b)) 1)",
+      "output_weight_simple": 6,
+      "output_weight_complex": 9,
+      "output_depth": 4,
+      "simplification_time": 0.000783786
+    },
+    "Extended": {
+      "iterations": 4,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (- a (* a b)) (pow (- 0 (* a c)) (/ 0 c)))",
+      "output_weight_simple": 11,
+      "output_weight_complex": 23,
+      "output_depth": 5,
+      "simplification_time": 0.00020975800000000002
+    },
+    "speedup": 3.73662029576941,
+    "weight_simple_diff": -5,
+    "weight_complex_diff": -14,
+    "depth_diff": -1
+  },
+  {
+    "base_term": "(pow (* a 0) (pow (/ (+ (+ a (* (- a b) a)) 0) 1) b))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 35,
+    "input_depth": 8,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "Saturated",
+      "output_term": "(pow 0 (pow (+ a (* a (- a b))) b))",
+      "output_weight_simple": 8,
+      "output_weight_complex": 17,
+      "output_depth": 6,
+      "simplification_time": 0.0008265740000000001
+    },
+    "Extended": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "(pow 0 (pow (+ a (* a (- a b))) b))",
+      "output_weight_simple": 8,
+      "output_weight_complex": 17,
+      "output_depth": 6,
+      "simplification_time": 0.000190619
+    },
+    "speedup": 4.3362623872751405,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- (/ (* (pow a a) (+ c 0)) (/ d (- 0 a))) (* b 0))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 36,
+    "input_depth": 5,
+    "Baseline": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(/ (* (pow a a) c) (/ d (- 0 a)))",
+      "output_weight_simple": 9,
+      "output_weight_complex": 24,
+      "output_depth": 4,
+      "simplification_time": 0.00042394099999999994
+    },
+    "Extended": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "(/ (* (pow a a) c) (/ d (- 0 a)))",
+      "output_weight_simple": 9,
+      "output_weight_complex": 24,
+      "output_depth": 4,
+      "simplification_time": 9.428e-05
+    },
+    "speedup": 4.496616461603733,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- (+ a (- (- -1 (pow a a)) (- b (pow a (+ 1 b))))) 1)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 29,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 9,
+      "stop_reason": "Saturated",
+      "output_term": "(+ a (+ (pow a (+ b 1)) (+ -2 (* -1 (+ (pow a a) b)))))",
+      "output_weight_simple": 13,
+      "output_weight_complex": 22,
+      "output_depth": 7,
+      "simplification_time": 0.0033686880000000003
+    },
+    "Extended": {
+      "iterations": 11,
+      "stop_reason": "Saturated",
+      "output_term": "(- a (+ (pow a a) (- b (- (pow a (+ b 1)) 2))))",
+      "output_weight_simple": 11,
+      "output_weight_complex": 19,
+      "output_depth": 7,
+      "simplification_time": 0.000748893
+    },
+    "speedup": 4.498223377705494,
+    "weight_simple_diff": 2,
+    "weight_complex_diff": 3,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(+ (+ (/ a 1) 0) (/ 1 (/ (- (/ (+ 1 -1) 0) a) a)))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 36,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "Saturated",
+      "output_term": "(+ a (/ 1 (/ (- (/ 0 0) a) a)))",
+      "output_weight_simple": 8,
+      "output_weight_complex": 21,
+      "output_depth": 6,
+      "simplification_time": 0.0005329219999999999
+    },
+    "Extended": {
+      "iterations": 4,
+      "stop_reason": "Saturated",
+      "output_term": "(+ a (/ a (- (/ 0 0) a)))",
+      "output_weight_simple": 6,
+      "output_weight_complex": 15,
+      "output_depth": 5,
+      "simplification_time": 0.00010735399999999999
+    },
+    "speedup": 4.964155969968515,
+    "weight_simple_diff": 2,
+    "weight_complex_diff": 6,
+    "depth_diff": 1
+  },
+  {
+    "base_term": "(/ (/ (+ (* a b) (- -1 1)) (+ (* 0 1) (* a -1))) 1)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 31,
+    "input_depth": 5,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "(/ (+ (* a b) -2) (* a -1))",
+      "output_weight_simple": 8,
+      "output_weight_complex": 16,
+      "output_depth": 4,
+      "simplification_time": 0.000467221
+    },
+    "Extended": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "(/ (+ (* a b) -2) (* a -1))",
+      "output_weight_simple": 8,
+      "output_weight_complex": 16,
+      "output_depth": 4,
+      "simplification_time": 8.9032e-05
+    },
+    "speedup": 5.2477873124269925,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- (/ (- -1 (pow a 1)) (pow a (/ 0 (/ a a)))) (/ d a))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 45,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "(- (- -1 a) (/ d a))",
+      "output_weight_simple": 6,
+      "output_weight_complex": 12,
+      "output_depth": 3,
+      "simplification_time": 0.000520061
+    },
+    "Extended": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "(- (- -1 a) (/ d a))",
+      "output_weight_simple": 6,
+      "output_weight_complex": 12,
+      "output_depth": 3,
+      "simplification_time": 9.8353e-05
+    },
+    "speedup": 5.287698392524885,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- (- (- -1 (pow (pow 0 (* a (* a a))) (- c a))) c) b)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 32,
+    "input_depth": 8,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "Saturated",
+      "output_term": "(- (- (- -1 (pow (pow 0 (* a (* a a))) (- c a))) c) b)",
+      "output_weight_simple": 13,
+      "output_weight_complex": 24,
+      "output_depth": 8,
+      "simplification_time": 0.001021796
+    },
+    "Extended": {
+      "iterations": 4,
+      "stop_reason": "Saturated",
+      "output_term": "(- -1 (+ (pow (pow 0 (pow a 3)) (- c a)) (+ c b)))",
+      "output_weight_simple": 13,
+      "output_weight_complex": 25,
+      "output_depth": 6,
+      "simplification_time": 0.000177496
+    },
+    "speedup": 5.7567269121557665,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": -1,
+    "depth_diff": 2
+  },
+  {
+    "base_term": "(/ (- (* (- -1 (pow (/ -1 a) -1)) (+ 1 (/ -1 1))) b) b)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 36,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "-1",
+      "output_weight_simple": 1,
+      "output_weight_complex": 1,
+      "output_depth": 1,
+      "simplification_time": 0.000430317
+    },
+    "Extended": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "(/ (- 0 b) b)",
+      "output_weight_simple": 4,
+      "output_weight_complex": 9,
+      "output_depth": 3,
+      "simplification_time": 6.9453e-05
+    },
+    "speedup": 6.1958014772580015,
+    "weight_simple_diff": -3,
+    "weight_complex_diff": -8,
+    "depth_diff": -2
+  },
+  {
+    "base_term": "(* -1 (+ a (pow 0 (pow (+ b (pow b (pow 0 b))) (/ b d)))))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 40,
+    "input_depth": 8,
+    "Baseline": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "(* -1 (+ a (pow 0 (pow (+ b (pow b (pow 0 b))) (/ b d)))))",
+      "output_weight_simple": 13,
+      "output_weight_complex": 33,
+      "output_depth": 8,
+      "simplification_time": 0.00031979999999999997
+    },
+    "Extended": {
+      "iterations": 2,
+      "stop_reason": "Saturated",
+      "output_term": "(- 0 (+ a (pow 0 (pow (+ b (pow b (pow 0 b))) (/ b d)))))",
+      "output_weight_simple": 12,
+      "output_weight_complex": 31,
+      "output_depth": 8,
+      "simplification_time": 5.1591e-05
+    },
+    "speedup": 6.1987555969064365,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": 2,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- (/ a (+ a a)) (- a (+ (/ 1 1) (+ -1 (/ 1 1)))))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 33,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "Saturated",
+      "output_term": "(- (/ a (+ a a)) (- a 1))",
+      "output_weight_simple": 6,
+      "output_weight_complex": 11,
+      "output_depth": 4,
+      "simplification_time": 0.000506023
+    },
+    "Extended": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "(- 0.5 (- a 1))",
+      "output_weight_simple": 5,
+      "output_weight_complex": 6,
+      "output_depth": 3,
+      "simplification_time": 7.9598e-05
+    },
+    "speedup": 6.357232593783762,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": 5,
+    "depth_diff": 1
+  },
+  {
+    "base_term": "(* (/ a (+ b (/ b (* (+ -1 c) (* (* 0 0) a))))) b)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 35,
+    "input_depth": 8,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "(* b (/ a (+ b (/ b 0))))",
+      "output_weight_simple": 7,
+      "output_weight_complex": 18,
+      "output_depth": 5,
+      "simplification_time": 0.000623052
+    },
+    "Extended": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "(* b (/ a (+ b (/ b 0))))",
+      "output_weight_simple": 7,
+      "output_weight_complex": 18,
+      "output_depth": 5,
+      "simplification_time": 9.612e-05
+    },
+    "speedup": 6.482022471910113,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- a (+ b (- (pow (pow 0 b) 1) (* -1 (pow c (+ b c))))))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 33,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "(- a (+ (pow c (+ b c)) (+ b (pow 0 b))))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 19,
+      "output_depth": 5,
+      "simplification_time": 0.000855555
+    },
+    "Extended": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "(- a (+ b (+ (pow 0 b) (pow c (+ b c)))))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 19,
+      "output_depth": 6,
+      "simplification_time": 0.00013146999999999999
+    },
+    "speedup": 6.507606298014757,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": -1
+  },
+  {
+    "base_term": "(pow (* (/ (+ (/ (pow a a) 1) (pow 1 -1)) (+ a a)) b) 0)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 40,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "Saturated",
+      "output_term": "1",
+      "output_weight_simple": 1,
+      "output_weight_complex": 1,
+      "output_depth": 1,
+      "simplification_time": 0.000704116
+    },
+    "Extended": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "1",
+      "output_weight_simple": 1,
+      "output_weight_complex": 1,
+      "output_depth": 1,
+      "simplification_time": 0.000105253
+    },
+    "speedup": 6.689747560639601,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(/ 0 (+ (* a -1) (/ (/ (pow (+ a (* 1 1)) 1) -1) -1)))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 36,
+    "input_depth": 8,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "0",
+      "output_weight_simple": 1,
+      "output_weight_complex": 1,
+      "output_depth": 1,
+      "simplification_time": 0.000433758
+    },
+    "Extended": {
+      "iterations": 2,
+      "stop_reason": "Saturated",
+      "output_term": "(/ 0 (+ (- 0 a) (/ (/ (+ a 1) -1) -1)))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 23,
+      "output_depth": 6,
+      "simplification_time": 5.5978e-05
+    },
+    "speedup": 7.748722712494195,
+    "weight_simple_diff": -9,
+    "weight_complex_diff": -22,
+    "depth_diff": -5
+  },
+  {
+    "base_term": "(/ (- 0 (+ (pow (+ (+ (pow a -1) (pow 0 -1)) 0) -1) a)) a)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 33,
+    "input_depth": 8,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "Saturated",
+      "output_term": "(/ (- 0 (+ a (/ 1 (+ (/ 1 a) (pow 0 -1))))) a)",
+      "output_weight_simple": 11,
+      "output_weight_complex": 27,
+      "output_depth": 7,
+      "simplification_time": 0.000760477
+    },
+    "Extended": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "(/ (- 0 (+ (/ 1 (+ (/ 1 a) (pow 0 -1))) a)) a)",
+      "output_weight_simple": 11,
+      "output_weight_complex": 27,
+      "output_depth": 7,
+      "simplification_time": 8.929000000000001e-05
+    },
+    "speedup": 8.516933587187815,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- a (pow (/ (- (* a b) b) 1) (pow (/ -1 a) (- c d))))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 39,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "(- a (pow (- (* a b) b) (pow (/ -1 a) (- c d))))",
+      "output_weight_simple": 12,
+      "output_weight_complex": 27,
+      "output_depth": 5,
+      "simplification_time": 0.000532405
+    },
+    "Extended": {
+      "iterations": 2,
+      "stop_reason": "Saturated",
+      "output_term": "(- a (pow (- (* a b) b) (pow (/ -1 a) (- c d))))",
+      "output_weight_simple": 12,
+      "output_weight_complex": 27,
+      "output_depth": 5,
+      "simplification_time": 5.9566000000000005e-05
+    },
+    "speedup": 8.938068696907632,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(+ (* (+ a (/ a 0)) (- (pow (/ (/ a 1) a) a) -1)) 0)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 38,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "Saturated",
+      "output_term": "(* (+ a (/ a 0)) (+ 1 (pow 1 a)))",
+      "output_weight_simple": 8,
+      "output_weight_complex": 17,
+      "output_depth": 4,
+      "simplification_time": 0.000885794
+    },
+    "Extended": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "(* (+ a (/ a 0)) (+ (pow 1 a) 1))",
+      "output_weight_simple": 8,
+      "output_weight_complex": 17,
+      "output_depth": 4,
+      "simplification_time": 8.709899999999999e-05
+    },
+    "speedup": 10.169967508237754,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(* (+ (- a (/ 1 -1)) (/ (- 0 a) (- b (- -1 0)))) -1)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 29,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 9,
+      "stop_reason": "Saturated",
+      "output_term": "(+ -1 (* a (+ -1 (/ 1 (+ 1 b)))))",
+      "output_weight_simple": 9,
+      "output_weight_complex": 16,
+      "output_depth": 6,
+      "simplification_time": 0.0011673080000000001
+    },
+    "Extended": {
+      "iterations": 4,
+      "stop_reason": "Saturated",
+      "output_term": "(- 0 (+ a (+ 1 (/ (- 0 a) (- b -1)))))",
+      "output_weight_simple": 11,
+      "output_weight_complex": 17,
+      "output_depth": 6,
+      "simplification_time": 0.00011417400000000001
+    },
+    "speedup": 10.22393890027502,
+    "weight_simple_diff": -2,
+    "weight_complex_diff": -1,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(+ (+ (* a b) (- (+ a a) b)) (/ d (/ (* 0 d) -1)))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 34,
+    "input_depth": 5,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (* a b) (+ (- (+ a a) b) (/ d 0)))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 18,
+      "output_depth": 5,
+      "simplification_time": 0.001546571
+    },
+    "Extended": {
+      "iterations": 4,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (- (* a (+ b 2)) b) (/ d 0))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 18,
+      "output_depth": 5,
+      "simplification_time": 0.000151035
+    },
+    "speedup": 10.23981858509617,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(* (- (+ 1 (/ 1 (* a (pow 0 (* (+ a 1) 0))))) b) a)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 31,
+    "input_depth": 9,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "Saturated",
+      "output_term": "(* a (- (+ 1 (/ 1 (* a (pow 0 0)))) b))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 21,
+      "output_depth": 7,
+      "simplification_time": 0.0009072280000000002
+    },
+    "Extended": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "(* a (- (/ 1 (* a (pow 0 0))) (- b 1)))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 21,
+      "output_depth": 6,
+      "simplification_time": 8.8293e-05
+    },
+    "speedup": 10.275197354263646,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 1
+  },
+  {
+    "base_term": "(/ (+ (* a b) (* (+ c c) (/ b (/ (* a e) 1)))) -1)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 39,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 11,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (* b (* a -1)) (* c (* (/ b (* a e)) -2)))",
+      "output_weight_simple": 13,
+      "output_weight_complex": 26,
+      "output_depth": 6,
+      "simplification_time": 0.00373755
+    },
+    "Extended": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "(/ (+ (* a b) (* c (* (/ b (* a e)) 2))) -1)",
+      "output_weight_simple": 13,
+      "output_weight_complex": 29,
+      "output_depth": 7,
+      "simplification_time": 0.00034218400000000004
+    },
+    "speedup": 10.922632268019544,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": -3,
+    "depth_diff": -1
+  },
+  {
+    "base_term": "(* (- 1 (/ (pow a (- 0 -1)) (- (* 0 0) (+ 1 a)))) b)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 29,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "(* (- 1 (/ a (+ -1 (* a -1)))) b)",
+      "output_weight_simple": 9,
+      "output_weight_complex": 17,
+      "output_depth": 6,
+      "simplification_time": 0.000818741
+    },
+    "Extended": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "(* (- 1 (/ a (- -1 a))) b)",
+      "output_weight_simple": 8,
+      "output_weight_complex": 15,
+      "output_depth": 5,
+      "simplification_time": 7.1121e-05
+    },
+    "speedup": 11.511944432727324,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": 2,
+    "depth_diff": 1
+  },
+  {
+    "base_term": "(pow (pow a (pow (- 1 a) 0)) (pow 1 (* (- a 1) (- a 1))))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 34,
+    "input_depth": 5,
+    "Baseline": {
+      "iterations": 12,
+      "stop_reason": "Saturated",
+      "output_term": "(pow a (pow 1 (* (+ a -1) (+ a -1))))",
+      "output_weight_simple": 7,
+      "output_weight_complex": 15,
+      "output_depth": 5,
+      "simplification_time": 0.00115703
+    },
+    "Extended": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "(pow a (pow 1 (pow (- 1 a) 2)))",
+      "output_weight_simple": 7,
+      "output_weight_complex": 17,
+      "output_depth": 5,
+      "simplification_time": 9.9848e-05
+    },
+    "speedup": 11.587913628715649,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": -2,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(pow a (+ -1 (+ 0 (+ a (+ (* (+ 1 a) (/ c a)) b)))))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 31,
+    "input_depth": 8,
+    "Baseline": {
+      "iterations": 11,
+      "stop_reason": "TimeLimit(0.010101643)",
+      "output_term": "(pow a (+ -1 (+ (/ c a) (+ b (+ a c)))))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 20,
+      "output_depth": 6,
+      "simplification_time": 0.010260676
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "Saturated",
+      "output_term": "(pow a (+ a (+ (* (+ a 1) (/ c a)) (+ b -1))))",
+      "output_weight_simple": 12,
+      "output_weight_complex": 23,
+      "output_depth": 6,
+      "simplification_time": 0.0008118689999999999
+    },
+    "speedup": 12.638339436534713,
+    "weight_simple_diff": -2,
+    "weight_complex_diff": -3,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(/ (+ (/ 1 a) (/ a (pow (pow a 1) a))) (pow (- 1 -1) c))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 43,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "(/ (+ (/ 1 a) (/ a (pow a a))) (pow 2 c))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 30,
+      "output_depth": 5,
+      "simplification_time": 0.000548753
+    },
+    "Extended": {
+      "iterations": 2,
+      "stop_reason": "Saturated",
+      "output_term": "(/ (+ (/ 1 a) (/ a (pow a a))) (pow 2 c))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 30,
+      "output_depth": 5,
+      "simplification_time": 4.2399e-05
+    },
+    "speedup": 12.942592985683625,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(* (pow (/ a a) (- (+ -1 b) (* a b))) (- d (/ d b)))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 38,
+    "input_depth": 5,
+    "Baseline": {
+      "iterations": 10,
+      "stop_reason": "Saturated",
+      "output_term": "(* (pow 1 (- (+ -1 b) (* a b))) (- d (/ d b)))",
+      "output_weight_simple": 12,
+      "output_weight_complex": 24,
+      "output_depth": 5,
+      "simplification_time": 0.001880584
+    },
+    "Extended": {
+      "iterations": 4,
+      "stop_reason": "Saturated",
+      "output_term": "(* (pow 1 (- b (+ 1 (* a b)))) (- d (/ d b)))",
+      "output_weight_simple": 11,
+      "output_weight_complex": 23,
+      "output_depth": 6,
+      "simplification_time": 0.000130693
+    },
+    "speedup": 14.389324600399409,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": 1,
+    "depth_diff": -1
+  },
+  {
+    "base_term": "(+ (- 0 (- 1 (* a a))) (/ a (- b (* -1 (- -1 0)))))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 27,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 11,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (* a a) (+ -1 (/ a (+ b -1))))",
+      "output_weight_simple": 8,
+      "output_weight_complex": 15,
+      "output_depth": 5,
+      "simplification_time": 0.0013509799999999999
+    },
+    "Extended": {
+      "iterations": 2,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (- 0 (- 1 (* a a))) (/ a (- b 1)))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 17,
+      "output_depth": 5,
+      "simplification_time": 5.1691000000000004e-05
+    },
+    "speedup": 26.135690932657518,
+    "weight_simple_diff": -2,
+    "weight_complex_diff": -2,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(/ (/ 1 (- a (+ a a))) (/ -1 (pow (- -1 (- a -1)) -1)))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 36,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.010241875)",
+      "output_term": "(/ (/ 1 (* a -1)) (/ -1 (/ 1 (+ (* a -1) -2))))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 28,
+      "output_depth": 6,
+      "simplification_time": 0.010239973999999999
+    },
+    "Extended": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "(/ (/ 1 (- 0 a)) (+ a 2))",
+      "output_weight_simple": 8,
+      "output_weight_complex": 17,
+      "output_depth": 4,
+      "simplification_time": 0.000364974
+    },
+    "speedup": 28.05672184867963,
+    "weight_simple_diff": 2,
+    "weight_complex_diff": 11,
+    "depth_diff": 2
+  },
+  {
+    "base_term": "(+ (- (- (+ -1 (/ (/ -1 a) (- -1 -1))) a) (- a -1)) a)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 29,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.010027223)",
+      "output_term": "(+ (/ (/ -1 a) 0) (+ (* -1 a) -2))",
+      "output_weight_simple": 9,
+      "output_weight_complex": 19,
+      "output_depth": 4,
+      "simplification_time": 0.010256655
+    },
+    "Extended": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (- (/ (/ -1 a) 0) (+ a (+ a 2))) a)",
+      "output_weight_simple": 10,
+      "output_weight_complex": 19,
+      "output_depth": 5,
+      "simplification_time": 0.00036523199999999995
+    },
+    "speedup": 28.082574911289267,
+    "weight_simple_diff": -1,
+    "weight_complex_diff": 0,
+    "depth_diff": -1
+  },
+  {
+    "base_term": "(pow (pow 0 (* a (- (/ a (+ a (* (+ a a) -1))) 1))) -1)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 34,
+    "input_depth": 9,
+    "Baseline": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.013635587)",
+      "output_term": "(/ 1 (pow 0 (* a (+ -1 (/ a (* a -1))))))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 24,
+      "output_depth": 7,
+      "simplification_time": 0.01462165
+    },
+    "Extended": {
+      "iterations": 8,
+      "stop_reason": "Saturated",
+      "output_term": "(/ 1 (pow 0 (* a -2)))",
+      "output_weight_simple": 7,
+      "output_weight_complex": 16,
+      "output_depth": 4,
+      "simplification_time": 0.000503135
+    },
+    "speedup": 29.061086984606515,
+    "weight_simple_diff": 3,
+    "weight_complex_diff": 8,
+    "depth_diff": 3
+  },
+  {
+    "base_term": "(- (+ a b) (/ (+ (+ 1 b) (pow -1 (- -1 a))) (+ -1 e)))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 29,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 10,
+      "stop_reason": "Saturated",
+      "output_term": "(- (+ a b) (/ (+ b (+ 1 (pow -1 (- -1 a)))) (+ -1 e)))",
+      "output_weight_simple": 13,
+      "output_weight_complex": 23,
+      "output_depth": 7,
+      "simplification_time": 0.003572605
+    },
+    "Extended": {
+      "iterations": 4,
+      "stop_reason": "Saturated",
+      "output_term": "(- (+ a b) (/ (+ b (+ 1 (pow -1 (- -1 a)))) (- e 1)))",
+      "output_weight_simple": 13,
+      "output_weight_complex": 23,
+      "output_depth": 7,
+      "simplification_time": 0.000121531
+    },
+    "speedup": 29.396655997235275,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(/ (+ (* a b) (+ (/ (- (pow (/ c 1) a) d) 1) b)) d)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 40,
+    "input_depth": 8,
+    "Baseline": {
+      "iterations": 9,
+      "stop_reason": "Saturated",
+      "output_term": "(/ (+ b (+ (* a b) (- (pow c a) d))) d)",
+      "output_weight_simple": 10,
+      "output_weight_complex": 22,
+      "output_depth": 6,
+      "simplification_time": 0.002403529
+    },
+    "Extended": {
+      "iterations": 2,
+      "stop_reason": "Saturated",
+      "output_term": "(/ (+ (* a b) (+ (- (pow c a) d) b)) d)",
+      "output_weight_simple": 10,
+      "output_weight_complex": 22,
+      "output_depth": 6,
+      "simplification_time": 5.7755e-05
+    },
+    "speedup": 41.61594667128387,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(/ -1 (pow (/ a (+ (/ 1 (+ (- -1 (- a b)) b)) d)) c))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 38,
+    "input_depth": 9,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "Saturated",
+      "output_term": "(/ -1 (pow (/ a (+ (/ 1 (+ b (- -1 (- a b)))) d)) c))",
+      "output_weight_simple": 14,
+      "output_weight_complex": 33,
+      "output_depth": 9,
+      "simplification_time": 0.0010004249999999999
+    },
+    "Extended": {
+      "iterations": 1,
+      "stop_reason": "Saturated",
+      "output_term": "(/ -1 (pow (/ a (+ (/ 1 (+ (- -1 (- a b)) b)) d)) c))",
+      "output_weight_simple": 14,
+      "output_weight_complex": 33,
+      "output_depth": 9,
+      "simplification_time": 2.1441e-05
+    },
+    "speedup": 46.659437526234775,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(+ 1 (/ (- (+ a (* a -1)) (+ c (/ (+ c c) 0))) e))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 32,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.011637269)",
+      "output_term": "(+ 1 (/ (- 0 (+ c (/ (+ c c) 0))) e))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 20,
+      "output_depth": 7,
+      "simplification_time": 0.011880131000000002
+    },
+    "Extended": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(+ 1 (/ (- 0 (+ c (/ (+ c c) 0))) e))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 20,
+      "output_depth": 7,
+      "simplification_time": 0.000232137
+    },
+    "speedup": 51.17724016421339,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(+ 1 (* -1 (- a (/ (pow (- -1 (- 0 0)) (* a 0)) -1))))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 28,
+    "input_depth": 8,
+    "Baseline": {
+      "iterations": 12,
+      "stop_reason": "TimeLimit(0.010207059)",
+      "output_term": "(* -1 a)",
+      "output_weight_simple": 3,
+      "output_weight_complex": 5,
+      "output_depth": 2,
+      "simplification_time": 0.01105503
+    },
+    "Extended": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(- 0 a)",
+      "output_weight_simple": 3,
+      "output_weight_complex": 4,
+      "output_depth": 2,
+      "simplification_time": 0.00019142600000000002
+    },
+    "speedup": 57.75093247521235,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 1,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(+ (- -1 (+ (+ (+ a (+ -1 a)) (+ -1 1)) (- 0 0))) 1)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 19,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.013267321)",
+      "output_term": "(+ 1 (* a -2))",
+      "output_weight_simple": 5,
+      "output_weight_complex": 7,
+      "output_depth": 3,
+      "simplification_time": 0.014126342
+    },
+    "Extended": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (- -1 (- (+ a a) 1)) 1)",
+      "output_weight_simple": 7,
+      "output_weight_complex": 8,
+      "output_depth": 5,
+      "simplification_time": 0.000235681
+    },
+    "speedup": 59.93839978615162,
+    "weight_simple_diff": -2,
+    "weight_complex_diff": -1,
+    "depth_diff": -2
+  },
+  {
+    "base_term": "(pow (- (* (- 0 1) (- (/ -1 -1) a)) (+ 1 (- a b))) b)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 29,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 12,
+      "stop_reason": "TimeLimit(0.011378488)",
+      "output_term": "(pow (+ b -2) b)",
+      "output_weight_simple": 4,
+      "output_weight_complex": 8,
+      "output_depth": 3,
+      "simplification_time": 0.012575415999999999
+    },
+    "Extended": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "(pow (- 0 (+ (- 1 a) (+ 1 (- a b)))) b)",
+      "output_weight_simple": 10,
+      "output_weight_complex": 15,
+      "output_depth": 6,
+      "simplification_time": 0.000170484
+    },
+    "speedup": 73.7630276154947,
+    "weight_simple_diff": -6,
+    "weight_complex_diff": -7,
+    "depth_diff": -3
+  },
+  {
+    "base_term": "(- (+ (- -1 a) (pow b (pow c -1))) (+ (- (- a -1) d) 1))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 28,
+    "input_depth": 5,
+    "Baseline": {
+      "iterations": 11,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (pow b (/ 1 c)) (+ (+ d -3) (* a -2)))",
+      "output_weight_simple": 13,
+      "output_weight_complex": 25,
+      "output_depth": 4,
+      "simplification_time": 0.006565339
+    },
+    "Extended": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "(- (+ (- -1 a) (pow b (/ 1 c))) (+ (- a (+ -1 d)) 1))",
+      "output_weight_simple": 14,
+      "output_weight_complex": 25,
+      "output_depth": 5,
+      "simplification_time": 8.887899999999999e-05
+    },
+    "speedup": 73.8682815963276,
+    "weight_simple_diff": -1,
+    "weight_complex_diff": 0,
+    "depth_diff": -1
+  },
+  {
+    "base_term": "(/ (+ (- a (- (- a b) (pow (- 0 -1) (/ 0 0)))) 0) b)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 32,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.011511502)",
+      "output_term": "(/ (+ b (pow 1 (/ 0 0))) b)",
+      "output_weight_simple": 7,
+      "output_weight_complex": 19,
+      "output_depth": 5,
+      "simplification_time": 0.011890775999999999
+    },
+    "Extended": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "(/ (+ b (pow 1 (/ 0 0))) b)",
+      "output_weight_simple": 7,
+      "output_weight_complex": 19,
+      "output_depth": 5,
+      "simplification_time": 0.000130231
+    },
+    "speedup": 91.30526525942363,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(+ (/ 0 (- (* a -1) (- (+ (/ a (/ a 0)) b) b))) -1)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 35,
+    "input_depth": 8,
+    "Baseline": {
+      "iterations": 9,
+      "stop_reason": "TimeLimit(0.01000529)",
+      "output_term": "-1",
+      "output_weight_simple": 1,
+      "output_weight_complex": 1,
+      "output_depth": 1,
+      "simplification_time": 0.011780221
+    },
+    "Extended": {
+      "iterations": 4,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (/ 0 (- 0 (+ a (/ a (/ a 0))))) -1)",
+      "output_weight_simple": 9,
+      "output_weight_complex": 22,
+      "output_depth": 7,
+      "simplification_time": 0.000121261
+    },
+    "speedup": 97.1476484607582,
+    "weight_simple_diff": -8,
+    "weight_complex_diff": -21,
+    "depth_diff": -6
+  },
+  {
+    "base_term": "(pow (pow a 1) (/ 0 (pow (- b (+ (+ -1 b) (/ 1 b))) -1)))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 38,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 12,
+      "stop_reason": "TimeLimit(0.01652397)",
+      "output_term": "1",
+      "output_weight_simple": 1,
+      "output_weight_complex": 1,
+      "output_depth": 1,
+      "simplification_time": 0.018253962999999998
+    },
+    "Extended": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "1",
+      "output_weight_simple": 1,
+      "output_weight_complex": 1,
+      "output_depth": 1,
+      "simplification_time": 0.000161843
+    },
+    "speedup": 112.78809092762738,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- (pow a a) (* (/ (- (+ a -1) a) (+ (/ -1 0) b)) -1))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 34,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "TimeLimit(0.01243431)",
+      "output_term": "(+ (/ -1 (+ (/ -1 0) b)) (pow a a))",
+      "output_weight_simple": 9,
+      "output_weight_complex": 22,
+      "output_depth": 5,
+      "simplification_time": 0.012431886999999999
+    },
+    "Extended": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (pow a a) (/ -1 (+ (/ -1 0) b)))",
+      "output_weight_simple": 9,
+      "output_weight_complex": 22,
+      "output_depth": 5,
+      "simplification_time": 9.216500000000001e-05
+    },
+    "speedup": 134.88728910106872,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- (/ a (/ (pow (- 1 (- a (/ a (* a -1)))) a) a)) a)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 40,
+    "input_depth": 9,
+    "Baseline": {
+      "iterations": 9,
+      "stop_reason": "TimeLimit(0.015221025)",
+      "output_term": "(- (/ a (/ (pow (* a -1) a) a)) a)",
+      "output_weight_simple": 7,
+      "output_weight_complex": 20,
+      "output_depth": 6,
+      "simplification_time": 0.018592188
+    },
+    "Extended": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "(- (/ a (/ (pow (- 0 a) a) a)) a)",
+      "output_weight_simple": 7,
+      "output_weight_complex": 19,
+      "output_depth": 6,
+      "simplification_time": 0.00013203
+    },
+    "speedup": 140.817905021586,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 1,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(pow (pow (- a (+ (- -1 b) 1)) (/ (- 0 a) 1)) (+ b c))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 32,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.010344815)",
+      "output_term": "(pow (pow (+ b a) (- 0 a)) (+ c b))",
+      "output_weight_simple": 9,
+      "output_weight_complex": 18,
+      "output_depth": 4,
+      "simplification_time": 0.010557408
+    },
+    "Extended": {
+      "iterations": 2,
+      "stop_reason": "Saturated",
+      "output_term": "(pow (pow (- a (+ (- -1 b) 1)) (- 0 a)) (+ b c))",
+      "output_weight_simple": 13,
+      "output_weight_complex": 22,
+      "output_depth": 6,
+      "simplification_time": 5.3133e-05
+    },
+    "speedup": 198.69775845519735,
+    "weight_simple_diff": -4,
+    "weight_complex_diff": -4,
+    "depth_diff": -2
+  },
+  {
+    "base_term": "(/ a (pow (- a (+ a (/ a 0))) (/ (- -1 0) (* b a))))",
+    "input_weight_simple": 17,
+    "input_weight_complex": 39,
+    "input_depth": 6,
+    "Baseline": {
+      "iterations": 11,
+      "stop_reason": "TimeLimit(0.011179325)",
+      "output_term": "(/ a (pow (* (/ a 0) -1) (/ -1 (* a b))))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 29,
+      "output_depth": 5,
+      "simplification_time": 0.011508819
+    },
+    "Extended": {
+      "iterations": 2,
+      "stop_reason": "Saturated",
+      "output_term": "(/ a (pow (- 0 (/ a 0)) (/ -1 (* a b))))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 28,
+      "output_depth": 5,
+      "simplification_time": 4.977e-05
+    },
+    "speedup": 231.24008438818566,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 1,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(* (- (pow (* a (+ (- 0 b) b)) (- b (* 1 0))) -1) 0)",
+    "input_weight_simple": 17,
+    "input_weight_complex": 27,
+    "input_depth": 7,
+    "Baseline": {
+      "iterations": 11,
+      "stop_reason": "TimeLimit(0.016389328)",
+      "output_term": "0",
+      "output_weight_simple": 1,
+      "output_weight_complex": 1,
+      "output_depth": 1,
+      "simplification_time": 0.018951167999999997
+    },
+    "Extended": {
+      "iterations": 3,
+      "stop_reason": "Saturated",
+      "output_term": "0",
+      "output_weight_simple": 1,
+      "output_weight_complex": 1,
+      "output_depth": 1,
+      "simplification_time": 7.176099999999999e-05
+    },
+    "speedup": 264.08728975348725,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  }
+]

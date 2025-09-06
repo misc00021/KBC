@@ -7,7 +7,7 @@ use std::path::{Path, PathBuf};
 use std::process::Command;
 use translate::{egg_to_twee, twee_to_egg};
 
-use crate::translate::{Rule, egg_to_flat, flat_to_egg};
+use crate::translate::{Rule, add_guards, egg_to_flat, flat_to_egg};
 
 fn main() -> io::Result<()> {
     let args: Vec<String> = std::env::args().collect();
@@ -16,6 +16,24 @@ fn main() -> io::Result<()> {
     if args.len() < 3 {
         eprintln!("Usage: {} <input_file> --num_rules=<num_rules>", args[0]);
         std::process::exit(1);
+    }
+    if args[1] == "--add_guards" {
+        let input = &args[2];
+        let in_rules = File::open(input).map_err(|e| {
+            eprintln!("Couldn't open input {}", e);
+            e
+        })?;
+        let reader = BufReader::new(in_rules);
+        let lines: Vec<String> = reader.lines().filter_map(Result::ok).collect();
+        let rules = add_guards(lines);
+        let mut out = File::create("guarded_rules.txt").map_err(|e| {
+            eprintln!("Failed to open output file {}", e);
+            e
+        })?;
+        for rule in rules {
+            writeln!(out, "{}", rule);
+        }
+        return Ok(());
     }
     let input_file = &args[1];
     // println!("Input file: {}", input_file);

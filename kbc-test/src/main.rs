@@ -1,8 +1,11 @@
 mod kbc_by_num_replacing;
+use core::time;
 use std::io::{BufRead, BufReader};
+use std::time::Duration;
 mod kbc_by_num_extending;
-mod kbc_by_num_extending_manually_modified;
 mod kbc_by_num_replacing_no_div;
+mod kbc_by_num_replacing_sep_div;
+mod kbc_by_num_replacing_true_sep_div;
 mod kbc_by_term_size_replacing;
 mod math;
 use serde_derive::Serialize;
@@ -12,9 +15,10 @@ use std::io::Write;
 
 use egg::{EGraph, RecExpr, Runner, SimpleScheduler};
 use kbc_by_num_extending::rules as by_num_extending;
-use kbc_by_num_extending_manually_modified::rules as by_num_extending_manually_modified;
 use kbc_by_num_replacing::rules as by_num_replacing;
 use kbc_by_num_replacing_no_div::rules as by_num_replacing_no_div;
+use kbc_by_num_replacing_sep_div::rules as by_num_replacing_sep_div;
+use kbc_by_num_replacing_true_sep_div::rules as by_num_replacing_true_sep_div;
 use kbc_by_term_size_replacing::rules as by_term_size_replacing;
 use math::{ConstantFold, Math};
 
@@ -119,73 +123,87 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     // println!("Loading expressions from {}", input_file);
     let exprs = load_exprs_from_file(&input_file)?;
     // println!("Loaded {} expressions from {}", exprs.len(), input_file);
-    let rule_files = vec![("by_num_replacing_no_div", by_num_replacing_no_div())];
-    for (dir_name, rules) in rule_files {
-        let out_dir = std::path::Path::new("results").join(dir_name).join(
-            input_file
-                .split('/')
-                .last()
-                .unwrap()
-                .split('.')
-                .next()
-                .unwrap(),
-        );
-        std::fs::create_dir_all(&out_dir)?;
-        // println!("Writing results to {:?}", out_dir);
-        for (name, rules) in rules {
-            let file_path = out_dir.join(format!(
-                "EqSat_{}_{}.jsonl",
-                name,
+    let rule_files = vec![
+        ("by_num_replacing_sep_div", by_num_replacing_sep_div()),
+        (
+            "by_num_replacing_true_sep_div",
+            by_num_replacing_true_sep_div(),
+        ),
+    ];
+    for time_limit in vec![
+        0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1., 2., /* 3., 4., 5.*/
+    ] {
+        let parent_dir =
+            std::path::Path::new("with_timelimits").join(format!("timelimit{}", time_limit));
+        for (dir_name, rules) in &rule_files {
+            let out_dir = parent_dir.join(dir_name).join(
                 input_file
                     .split('/')
                     .last()
                     .unwrap()
                     .split('.')
                     .next()
-                    .unwrap()
-            ));
-            // println!("Writing results to {:?}", file_path);
-            let mut file = OpenOptions::new()
-                .create(true)
-                .append(true)
-                .open(file_path)?;
-            println!("Starting tests for rule set: {}", name);
-            for (i, expr) in exprs.iter().enumerate() {
-                // println!("Simplifying expression {}/{}", i + 1, exprs.len());
-                let runner = Runner::default()
-                    .with_explanations_enabled()
-                    .with_expr(expr)
-                    .with_scheduler(SimpleScheduler)
-                    .run(&rules);
-                let root = runner.roots[0];
-                let extractor = egg::Extractor::new(&runner.egraph, egg::AstSize);
-                let (_cost, best) = extractor.find_best(root);
-                // println!(
-                //     "expr={} simple={} complex={}",
-                //     expr.to_string(),
-                //     get_cost(&expr),
-                //     get_cost_complex(&expr)
-                // );
-                // println!("expr nodes: {:?}", expr.as_ref());
-                // println!("best nodes: {:?}", best.as_ref());
-                let result = TestResult {
-                    original_term: &expr.to_string(),
-                    simplified_term: &best.to_string(),
-                    input_weight_simple: get_cost(&expr),
-                    output_weight_simple: get_cost(&best),
-                    input_weight_complex: get_cost_complex(&expr),
-                    output_weight_complex: get_cost_complex(&best),
-                    input_depth: get_depth(&expr),
-                    output_depth: get_depth(&best),
-                    simplification_time: runner.report().total_time,
-                    apply_time: runner.report().apply_time,
-                    search_time: runner.report().search_time,
-                    rebuild_time: runner.report().rebuild_time,
-                    stop_reason: format!("{:?}", runner.report().stop_reason),
-                    iterations: runner.iterations.len(),
-                };
-                let line = serde_json::to_string(&result)?;
-                writeln!(file, "{}", line)?;
+                    .unwrap(),
+            );
+            std::fs::create_dir_all(&out_dir)?;
+            // println!("Writing results to {:?}", out_dir);
+            for (name, rules) in rules {
+                let file_path = out_dir.join(format!(
+                    "EqSat_{}_{}.jsonl",
+                    name,
+                    input_file
+                        .split('/')
+                        .last()
+                        .unwrap()
+                        .split('.')
+                        .next()
+                        .unwrap()
+                ));
+                // println!("Writing results to {:?}", file_path);
+                let mut file = OpenOptions::new()
+                    .create(true)
+                    .append(true)
+                    .open(file_path)?;
+                println!("Starting tests for rule set: {}", name);
+                for (i, expr) in exprs.iter().enumerate() {
+                    // println!("Simplifying expression {}/{}", i + 1, exprs.len());
+                    let runner = Runner::default()
+                        .with_expr(expr)
+                        .with_node_limit(1000000)
+                        .with_iter_limit(1000000)
+                        .with_scheduler(SimpleScheduler)
+                        .with_time_limit(Duration::from_secs_f32(time_limit))
+                        .run(rules);
+                    let root = runner.roots[0];
+                    let extractor = egg::Extractor::new(&runner.egraph, egg::AstSize);
+                    let (_cost, best) = extractor.find_best(root);
+                    // println!(
+                    //     "expr={} simple={} complex={}",
+                    //     expr.to_string(),
+                    //     get_cost(&expr),
+                    //     get_cost_complex(&expr)
+                    // );
+                    // println!("expr nodes: {:?}", expr.as_ref());
+                    // println!("best nodes: {:?}", best.as_ref());
+                    let result = TestResult {
+                        original_term: &expr.to_string(),
+                        simplified_term: &best.to_string(),
+                        input_weight_simple: get_cost(&expr),
+                        output_weight_simple: get_cost(&best),
+                        input_weight_complex: get_cost_complex(&expr),
+                        output_weight_complex: get_cost_complex(&best),
+                        input_depth: get_depth(&expr),
+                        output_depth: get_depth(&best),
+                        simplification_time: runner.report().total_time,
+                        apply_time: runner.report().apply_time,
+                        search_time: runner.report().search_time,
+                        rebuild_time: runner.report().rebuild_time,
+                        stop_reason: format!("{:?}", runner.report().stop_reason),
+                        iterations: runner.iterations.len(),
+                    };
+                    let line = serde_json::to_string(&result)?;
+                    writeln!(file, "{}", line)?;
+                }
             }
         }
     }
