@@ -1,0 +1,151 @@
+{
+  "totals": {
+    "EqSat_BaseRules_trandom_terms_large": {
+      "time": 1532.6522086320017,
+      "weight_simple_diff": 47532.0,
+      "weight_complex_diff": 89937.0,
+      "depth_diff": 13485.0
+    },
+    "EqSat_math_no_diff_int_KBC_max_rules_40_trandom_terms_large": {
+      "time": 1236.4743126019982,
+      "weight_simple_diff": 42077.0,
+      "weight_complex_diff": 75281.0,
+      "depth_diff": 10071.0
+    },
+    "EqSat_math_no_diff_int_KBC_max_rules_60_trandom_terms_large": {
+      "time": 1151.9492089649991,
+      "weight_simple_diff": 42522.0,
+      "weight_complex_diff": 75756.0,
+      "depth_diff": 10490.0
+    },
+    "EqSat_math_no_diff_int_KBC_max_rules_80_trandom_terms_large": {
+      "time": 662.1268974640008,
+      "weight_simple_diff": 42889.0,
+      "weight_complex_diff": 76121.0,
+      "depth_diff": 10623.0
+    },
+    "EqSat_math_no_diff_int_KBC_max_rules_100_trandom_terms_large": {
+      "time": 853.0236083619997,
+      "weight_simple_diff": 43057.0,
+      "weight_complex_diff": 76263.0,
+      "depth_diff": 10746.0
+    },
+    "EqSat_math_no_diff_int_KBC_max_rules_150_trandom_terms_large": {
+      "time": 1071.833141766001,
+      "weight_simple_diff": 46750.0,
+      "weight_complex_diff": 85382.0,
+      "depth_diff": 12918.0
+    },
+    "EqSat_math_no_diff_int_KBC_max_rules_200_trandom_terms_large": {
+      "time": 1136.2953378959987,
+      "weight_simple_diff": 46784.0,
+      "weight_complex_diff": 85426.0,
+      "depth_diff": 12917.0
+    },
+    "EqSat_math_no_diff_int_KBC_max_rules_250_trandom_terms_large": {
+      "time": 2457.583284723997,
+      "weight_simple_diff": 46416.0,
+      "weight_complex_diff": 85008.0,
+      "depth_diff": 12643.0
+    },
+    "EqSat_math_no_diff_int_KBC_max_rules_500_trandom_terms_large": {
+      "time": 2951.2581698430045,
+      "weight_simple_diff": 46398.0,
+      "weight_complex_diff": 84987.0,
+      "depth_diff": 12634.0
+    },
+    "EqSat_math_no_diff_int_KBC_max_rules_750_trandom_terms_large": {
+      "time": 6619.221125428998,
+      "weight_simple_diff": 46549.0,
+      "weight_complex_diff": 85129.0,
+      "depth_diff": 12779.0
+    },
+    "EqSat_math_no_diff_int_KBC_max_rules_1000_trandom_terms_large": {
+      "time": 7097.37029767801,
+      "weight_simple_diff": 46558.0,
+      "weight_complex_diff": 85146.0,
+      "depth_diff": 12762.0
+    }
+  },
+  "averages": {
+    "EqSat_BaseRules_trandom_terms_large": {
+      "time": 0.4153529020682931,
+      "weight_simple_diff": 12.88130081300813,
+      "weight_complex_diff": 24.37317073170732,
+      "depth_diff": 3.654471544715447
+    },
+    "EqSat_math_no_diff_int_KBC_max_rules_40_trandom_terms_large": {
+      "time": 0.33508788959403746,
+      "weight_simple_diff": 11.402981029810299,
+      "weight_complex_diff": 20.401355013550134,
+      "depth_diff": 2.729268292682927
+    },
+    "EqSat_math_no_diff_int_KBC_max_rules_60_trandom_terms_large": {
+      "time": 0.31218135744308917,
+      "weight_simple_diff": 11.523577235772358,
+      "weight_complex_diff": 20.53008130081301,
+      "depth_diff": 2.8428184281842817
+    },
+    "EqSat_math_no_diff_int_KBC_max_rules_80_trandom_terms_large": {
+      "time": 0.17943818359458016,
+      "weight_simple_diff": 11.623035230352304,
+      "weight_complex_diff": 20.6289972899729,
+      "depth_diff": 2.878861788617886
+    },
+    "EqSat_math_no_diff_int_KBC_max_rules_100_trandom_terms_large": {
+      "time": 0.23117170958319774,
+      "weight_simple_diff": 11.668563685636856,
+      "weight_complex_diff": 20.66747967479675,
+      "depth_diff": 2.9121951219512194
+    },
+    "EqSat_math_no_diff_int_KBC_max_rules_150_trandom_terms_large": {
+      "time": 0.29046968611544743,
+      "weight_simple_diff": 12.669376693766937,
+      "weight_complex_diff": 23.138753387533875,
+      "depth_diff": 3.5008130081300814
+    },
+    "EqSat_math_no_diff_int_KBC_max_rules_200_trandom_terms_large": {
+      "time": 0.3079391159609753,
+      "weight_simple_diff": 12.67859078590786,
+      "weight_complex_diff": 23.150677506775068,
+      "depth_diff": 3.500542005420054
+    },
+    "EqSat_math_no_diff_int_KBC_max_rules_250_trandom_terms_large": {
+      "time": 0.666011730277506,
+      "weight_simple_diff": 12.578861788617886,
+      "weight_complex_diff": 23.03739837398374,
+      "depth_diff": 3.426287262872629
+    },
+    "EqSat_math_no_diff_int_KBC_max_rules_500_trandom_terms_large": {
+      "time": 0.7997989620170743,
+      "weight_simple_diff": 12.573983739837399,
+      "weight_complex_diff": 23.03170731707317,
+      "depth_diff": 3.423848238482385
+    },
+    "EqSat_math_no_diff_int_KBC_max_rules_750_trandom_terms_large": {
+      "time": 1.793826863259891,
+      "weight_simple_diff": 12.61490514905149,
+      "weight_complex_diff": 23.070189701897018,
+      "depth_diff": 3.4631436314363144
+    },
+    "EqSat_math_no_diff_int_KBC_max_rules_1000_trandom_terms_large": {
+      "time": 1.923406584736588,
+      "weight_simple_diff": 12.617344173441735,
+      "weight_complex_diff": 23.07479674796748,
+      "depth_diff": 3.4585365853658536
+    }
+  },
+  "counts": {
+    "EqSat_BaseRules_trandom_terms_large": 3690,
+    "EqSat_math_no_diff_int_KBC_max_rules_40_trandom_terms_large": 3690,
+    "EqSat_math_no_diff_int_KBC_max_rules_60_trandom_terms_large": 3690,
+    "EqSat_math_no_diff_int_KBC_max_rules_80_trandom_terms_large": 3690,
+    "EqSat_math_no_diff_int_KBC_max_rules_100_trandom_terms_large": 3690,
+    "EqSat_math_no_diff_int_KBC_max_rules_150_trandom_terms_large": 3690,
+    "EqSat_math_no_diff_int_KBC_max_rules_200_trandom_terms_large": 3690,
+    "EqSat_math_no_diff_int_KBC_max_rules_250_trandom_terms_large": 3690,
+    "EqSat_math_no_diff_int_KBC_max_rules_500_trandom_terms_large": 3690,
+    "EqSat_math_no_diff_int_KBC_max_rules_750_trandom_terms_large": 3690,
+    "EqSat_math_no_diff_int_KBC_max_rules_1000_trandom_terms_large": 3690
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "totals": {
+    "EqSat_BaseRules_no_div_no_div_random_terms_small": {
+      "time": 22.555478794000056,
+      "weight_simple_diff": 10305.0,
+      "weight_complex_diff": 16104.0,
+      "depth_diff": 4160.0
+    },
+    "EqSat_math_no_diff_int_no_div_KBC_max_rules_40_no_div_random_terms_small": {
+      "time": 9.098861906999984,
+      "weight_simple_diff": 9993.0,
+      "weight_complex_diff": 16041.0,
+      "depth_diff": 4002.0
+    },
+    "EqSat_math_no_diff_int_no_div_KBC_max_rules_60_no_div_random_terms_small": {
+      "time": 10.296819214999987,
+      "weight_simple_diff": 10161.0,
+      "weight_complex_diff": 16222.0,
+      "depth_diff": 4121.0
+    },
+    "EqSat_math_no_diff_int_no_div_KBC_max_rules_80_no_div_random_terms_small": {
+      "time": 12.348162627999987,
+      "weight_simple_diff": 10254.0,
+      "weight_complex_diff": 16280.0,
+      "depth_diff": 4177.0
+    },
+    "EqSat_math_no_diff_int_no_div_KBC_max_rules_100_no_div_random_terms_small": {
+      "time": 10.841797441000017,
+      "weight_simple_diff": 10416.0,
+      "weight_complex_diff": 16420.0,
+      "depth_diff": 4269.0
+    },
+    "EqSat_math_no_diff_int_no_div_KBC_max_rules_150_no_div_random_terms_small": {
+      "time": 12.800929986999996,
+      "weight_simple_diff": 10420.0,
+      "weight_complex_diff": 16437.0,
+      "depth_diff": 4260.0
+    },
+    "EqSat_math_no_diff_int_no_div_KBC_max_rules_200_no_div_random_terms_small": {
+      "time": 12.271972524999983,
+      "weight_simple_diff": 10416.0,
+      "weight_complex_diff": 16430.0,
+      "depth_diff": 4259.0
+    }
+  },
+  "averages": {
+    "EqSat_BaseRules_no_div_no_div_random_terms_small": {
+      "time": 0.006509517689466106,
+      "weight_simple_diff": 2.9740259740259742,
+      "weight_complex_diff": 4.647619047619048,
+      "depth_diff": 1.2005772005772006
+    },
+    "EqSat_math_no_diff_int_no_div_KBC_max_rules_40_no_div_random_terms_small": {
+      "time": 0.0026259341722943675,
+      "weight_simple_diff": 2.883982683982684,
+      "weight_complex_diff": 4.6294372294372295,
+      "depth_diff": 1.154978354978355
+    },
+    "EqSat_math_no_diff_int_no_div_KBC_max_rules_60_no_div_random_terms_small": {
+      "time": 0.0029716649971139935,
+      "weight_simple_diff": 2.9324675324675327,
+      "weight_complex_diff": 4.681673881673881,
+      "depth_diff": 1.1893217893217893
+    },
+    "EqSat_math_no_diff_int_no_div_KBC_max_rules_80_no_div_random_terms_small": {
+      "time": 0.003563683298124094,
+      "weight_simple_diff": 2.9593073593073593,
+      "weight_complex_diff": 4.698412698412699,
+      "depth_diff": 1.2054834054834054
+    },
+    "EqSat_math_no_diff_int_no_div_KBC_max_rules_100_no_div_random_terms_small": {
+      "time": 0.0031289458704184753,
+      "weight_simple_diff": 3.006060606060606,
+      "weight_complex_diff": 4.738816738816739,
+      "depth_diff": 1.232034632034632
+    },
+    "EqSat_math_no_diff_int_no_div_KBC_max_rules_150_no_div_random_terms_small": {
+      "time": 0.0036943520886002874,
+      "weight_simple_diff": 3.0072150072150072,
+      "weight_complex_diff": 4.743722943722943,
+      "depth_diff": 1.2294372294372293
+    },
+    "EqSat_math_no_diff_int_no_div_KBC_max_rules_200_no_div_random_terms_small": {
+      "time": 0.0035416948124098076,
+      "weight_simple_diff": 3.006060606060606,
+      "weight_complex_diff": 4.741702741702742,
+      "depth_diff": 1.229148629148629
+    }
+  },
+  "counts": {
+    "EqSat_BaseRules_no_div_no_div_random_terms_small": 3465,
+    "EqSat_math_no_diff_int_no_div_KBC_max_rules_40_no_div_random_terms_small": 3465,
+    "EqSat_math_no_diff_int_no_div_KBC_max_rules_60_no_div_random_terms_small": 3465,
+    "EqSat_math_no_diff_int_no_div_KBC_max_rules_80_no_div_random_terms_small": 3465,
+    "EqSat_math_no_diff_int_no_div_KBC_max_rules_100_no_div_random_terms_small": 3465,
+    "EqSat_math_no_diff_int_no_div_KBC_max_rules_150_no_div_random_terms_small": 3465,
+    "EqSat_math_no_diff_int_no_div_KBC_max_rules_200_no_div_random_terms_small": 3465
+  }
+}
