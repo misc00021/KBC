@@ -12,6 +12,7 @@ use serde_derive::Serialize;
 use std::fs::File;
 use std::fs::OpenOptions;
 use std::io::Write;
+use std::path::Path;
 
 use egg::{EGraph, RecExpr, Runner, SimpleScheduler};
 use kbc_by_num_extending::rules as by_num_extending;
@@ -124,32 +125,38 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let exprs = load_exprs_from_file(&input_file)?;
     // println!("Loaded {} expressions from {}", exprs.len(), input_file);
     let rule_files = vec![
+        ("by_num_replacing_no_div", by_num_replacing_no_div()),
         ("by_num_replacing_sep_div", by_num_replacing_sep_div()),
         (
             "by_num_replacing_true_sep_div",
             by_num_replacing_true_sep_div(),
         ),
+        ("by_num_replacing", by_num_replacing()),
+        ("by_term_size_replacing", by_term_size_replacing()),
+        ("by_num_extending", by_num_extending()),
     ];
     for time_limit in vec![
         0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1., 2., /* 3., 4., 5.*/
     ] {
-        let parent_dir =
-            std::path::Path::new("with_timelimits").join(format!("timelimit{}", time_limit));
+        // let parent_dir =
+        //     std::path::Path::new("with_timelimits").join(format!("timelimit{}", time_limit));
+        let parent_dir = std::path::Path::new("all_results");
         for (dir_name, rules) in &rule_files {
-            let out_dir = parent_dir.join(dir_name).join(
-                input_file
-                    .split('/')
-                    .last()
-                    .unwrap()
-                    .split('.')
-                    .next()
-                    .unwrap(),
-            );
+            // let out_dir = parent_dir.join(dir_name).join(
+            //     input_file
+            //         .split('/')
+            //         .last()
+            //         .unwrap()
+            //         .split('.')
+            //         .next()
+            //         .unwrap(),
+            // );
+            let out_dir = parent_dir;
             std::fs::create_dir_all(&out_dir)?;
             // println!("Writing results to {:?}", out_dir);
             for (name, rules) in rules {
                 let file_path = out_dir.join(format!(
-                    "EqSat_{}_{}.jsonl",
+                    "EqSat-{}-{}-{}.jsonl",
                     name,
                     input_file
                         .split('/')
@@ -157,12 +164,18 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                         .unwrap()
                         .split('.')
                         .next()
-                        .unwrap()
+                        .unwrap(),
+                    time_limit
                 ));
+                if Path::new(&file_path).exists() {
+                    println!("File {:?} already exists, skipping...", file_path);
+                    continue;
+                }
                 // println!("Writing results to {:?}", file_path);
                 let mut file = OpenOptions::new()
                     .create(true)
-                    .append(true)
+                    .write(true)
+                    .truncate(true)
                     .open(file_path)?;
                 println!("Starting tests for rule set: {}", name);
                 for (i, expr) in exprs.iter().enumerate() {
