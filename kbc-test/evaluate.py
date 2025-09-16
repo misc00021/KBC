@@ -25,16 +25,28 @@ def main():
                 pathToFile = f"EqSat-{ruleSet}-{testSet}-{limit}.jsonl"
                 with open(path + pathToFile, "r") as f:
                     lines = f.readlines()
-                    if "small" in testSet and len(lines) < 2951:
+                    if "no_div" in testSet and "huge" in testSet and len(lines) < 63:
                         unavailable.append(pathToFile)
                         continue
-                    elif "medium" in testSet and len(lines) < 406:
+                    elif "no_div" in testSet and "large" in testSet and len(lines) < 280:
                         unavailable.append(pathToFile)
                         continue
-                    elif  "large" in testSet and len(lines) < 117:
+                    elif "no_div" in testSet and "medium" in testSet and len(lines) < 750:
                         unavailable.append(pathToFile)
                         continue
-                    elif "huge" in testSet and len(lines) < 248:
+                    elif "no_div" in testSet and "small" in testSet and len(lines) < 3417:
+                        unavailable.append(pathToFile)
+                        continue
+                    elif "no_div" not in testSet and "small" in testSet and len(lines) < 2951:
+                        unavailable.append(pathToFile)
+                        continue
+                    elif "no_div" not in testSet and "medium" in testSet and len(lines) < 406:
+                        unavailable.append(pathToFile)
+                        continue
+                    elif  "no_div" not in testSet and "large" in testSet and len(lines) < 117:
+                        unavailable.append(pathToFile)
+                        continue
+                    elif "no_div" not in testSet and "huge" in testSet and len(lines) < 248:
                         unavailable.append(pathToFile)
                         continue
                     sumDiff = 0.0
