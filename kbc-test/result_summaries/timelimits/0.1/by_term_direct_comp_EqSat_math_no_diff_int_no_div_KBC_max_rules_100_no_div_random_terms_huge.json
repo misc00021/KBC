@@ -1,0 +1,1934 @@
+[
+  {
+    "base_term": "(* (+ (pow (- (pow (- (- (pow (+ a 0) -1) (- 1 a)) (* -1 a)) (* (- 1 a) -1)) (- (+ a 0) 1)) (pow (- (pow c c) 0) a)) (pow (- (pow a b) c) (* 1 a))) (+ (* (* (* 1 b) 1) (pow c 0)) (- a a)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 104,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "Saturated",
+      "output_term": "(* (+ (pow (+ (- 1 a) (pow (+ a (+ (pow a -1) (+ a -1))) (+ a -1))) (pow (pow c c) a)) (pow (- (pow a b) c) a)) b)",
+      "output_weight_simple": 20,
+      "output_weight_complex": 45,
+      "output_depth": 9,
+      "simplification_time": 0.001307138
+    },
+    "Extended": {
+      "iterations": 13,
+      "stop_reason": "TimeLimit(0.104786216)",
+      "output_term": "(* (+ (pow (+ (- 1 a) (pow (+ a (+ (pow a -1) (+ a -1))) (+ a -1))) (pow (pow c c) a)) (pow (- (pow a b) c) a)) b)",
+      "output_weight_simple": 20,
+      "output_weight_complex": 45,
+      "output_depth": 9,
+      "simplification_time": 0.10671561000000002
+    },
+    "speedup": 0.01224879846537915,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(+ (pow (- (* (pow (pow (+ (- a (* -1 a)) (* 1 0)) 1) b) (- (pow 0 c) (+ c c))) (pow (+ -1 0) (+ -1 c))) (- (- (- (* b b) 1) (pow c 0)) (* d 1))) (+ (pow (- (* -1 d) d) (+ e b)) (- c c)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 101,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 9,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (pow (- (* (pow (+ a a) b) (+ (pow 0 c) (* c -2))) (pow -1 (+ -1 c))) (- (+ (* b b) -2) d)) (pow (* d -2) (+ b e)))",
+      "output_weight_simple": 25,
+      "output_weight_complex": 49,
+      "output_depth": 7,
+      "simplification_time": 0.002626092
+    },
+    "Extended": {
+      "iterations": 12,
+      "stop_reason": "TimeLimit(0.101746305)",
+      "output_term": "(+ (pow (- (* (pow (+ a a) b) (- (pow 0 c) (+ c c))) (pow -1 (+ -1 c))) (- (* b b) (+ d 2))) (pow (* d -2) (+ b e)))",
+      "output_weight_simple": 26,
+      "output_weight_complex": 49,
+      "output_depth": 7,
+      "simplification_time": 0.103523027
+    },
+    "speedup": 0.025367225786394363,
+    "weight_simple_diff": -1,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(* (pow (+ (* 0 (* (- (pow a (* (+ 1 b) 0)) (* a b)) (+ (pow c b) 0))) (+ (pow (pow 0 -1) c) (+ c c))) (* (* (* a (* -1 1)) (pow 0 0)) (- -1 0))) (pow (+ (+ (- 0 c) -1) (+ 0 a)) (* a 0)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 101,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 12,
+      "stop_reason": "Saturated",
+      "output_term": "(pow (+ c (+ c (pow (pow 0 -1) c))) (* a (pow 0 0)))",
+      "output_weight_simple": 11,
+      "output_weight_complex": 26,
+      "output_depth": 6,
+      "simplification_time": 0.003152591
+    },
+    "Extended": {
+      "iterations": 15,
+      "stop_reason": "Saturated",
+      "output_term": "(pow (+ c (+ c (pow (pow 0 -1) c))) (* a (pow 0 0)))",
+      "output_weight_simple": 11,
+      "output_weight_complex": 26,
+      "output_depth": 6,
+      "simplification_time": 0.007855916999999999
+    },
+    "speedup": 0.40130146487036467,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(+ (+ (- (+ (+ (pow (+ a (pow (pow a b) 0)) (+ b a)) (+ (pow 0 c) -1)) (+ (+ c -1) 0)) (* (- (+ 0 -1) -1) (+ c 0))) (- (+ -1 (+ 0 b)) (pow 1 0))) (* (+ (pow -1 (+ -1 e)) (+ 1 -1)) (pow a 0)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 91,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 10,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (pow (+ a 1) (+ a b)) (+ (pow 0 c) (+ c (+ (pow -1 (+ -1 e)) (+ b -4)))))",
+      "output_weight_simple": 19,
+      "output_weight_complex": 32,
+      "output_depth": 7,
+      "simplification_time": 0.02896514
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (pow (+ a 1) (+ a b)) (+ (pow 0 c) (+ (pow -1 (+ -1 e)) (+ b (+ c -4)))))",
+      "output_weight_simple": 19,
+      "output_weight_complex": 32,
+      "output_depth": 6,
+      "simplification_time": 0.06914399
+    },
+    "speedup": 0.41891045049613135,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 1
+  },
+  {
+    "base_term": "(+ (- (- (+ (+ (+ (* (* a (+ -1 0)) a) (pow a -1)) (- 1 (pow c b))) (pow (- 1 0) d)) (* (* (* 0 d) d) (pow c 0))) (* (+ (pow b 1) d) (+ -1 0))) (pow (+ (* e (* e c)) (- b b)) (pow a -1)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 103,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 10,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (* a (* a -1)) (+ (- 1 (pow c b)) (+ (pow (* e (* c e)) (pow a -1)) (+ (pow 1 d) (+ (pow a -1) (+ b d))))))",
+      "output_weight_simple": 22,
+      "output_weight_complex": 43,
+      "output_depth": 7,
+      "simplification_time": 0.048942114
+    },
+    "Extended": {
+      "iterations": 12,
+      "stop_reason": "TimeLimit(0.100062944)",
+      "output_term": "(+ (- (pow a -1) (* a a)) (+ d (+ (pow 1 d) (+ (pow (* c (* e e)) (pow a -1)) (- (+ 1 b) (pow c b))))))",
+      "output_weight_simple": 21,
+      "output_weight_complex": 41,
+      "output_depth": 8,
+      "simplification_time": 0.100845744
+    },
+    "speedup": 0.4853166039411639,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": 2,
+    "depth_diff": -1
+  },
+  {
+    "base_term": "(* (- (pow (- (* (- (pow 1 (* (* 1 a) -1)) (* 0 1)) (pow a 1)) (+ (* 1 a) 0)) (* -1 (* (* -1 b) a))) (+ (- (+ (- 1 -1) -1) (* 0 0)) (pow a a))) (pow (+ (- (pow 0 1) 1) (* a b)) (- 1 a)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 96,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 9,
+      "stop_reason": "Saturated",
+      "output_term": "(* (- (pow (* a (+ -1 (pow 1 (* a -1)))) (* a b)) (+ 1 (pow a a))) (pow (+ -1 (* a b)) (- 1 a)))",
+      "output_weight_simple": 17,
+      "output_weight_complex": 35,
+      "output_depth": 8,
+      "simplification_time": 0.002017513
+    },
+    "Extended": {
+      "iterations": 9,
+      "stop_reason": "Saturated",
+      "output_term": "(* (- (pow (- (* a (pow 1 (- 0 a))) a) (* a b)) (+ 1 (pow a a))) (pow (+ -1 (* a b)) (- 1 a)))",
+      "output_weight_simple": 18,
+      "output_weight_complex": 35,
+      "output_depth": 8,
+      "simplification_time": 0.0034955140000000003
+    },
+    "speedup": 0.5771720553829851,
+    "weight_simple_diff": -1,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(+ (- (+ (+ (pow (pow (- -1 (pow (+ a a) a)) (- b 1)) (pow (pow 0 0) b)) (+ (+ d d) c)) (pow (pow (pow 0 -1) -1) (* -1 e))) (- (+ (- -1 d) 0) (pow e e))) (- (* (* (* 0 b) 0) (pow d 0)) (* c -1)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 107,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 11,
+      "stop_reason": "Saturated",
+      "output_term": "(+ 1 (+ (pow (pow (- -1 (pow (+ a a) a)) (+ -1 b)) (pow (pow 0 0) b)) (+ (pow (pow (pow 0 -1) -1) (* -1 e)) (+ d (+ (pow e e) (* (+ d c) 2))))))",
+      "output_weight_simple": 29,
+      "output_weight_complex": 63,
+      "output_depth": 8,
+      "simplification_time": 0.051029992999999996
+    },
+    "Extended": {
+      "iterations": 14,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (pow (pow (- -1 (pow (+ a a) a)) (- b 1)) (pow (pow 0 0) b)) (+ (pow (pow (pow 0 -1) -1) (- 0 e)) (+ c (+ 1 (+ (pow e e) (+ c (* d 3)))))))",
+      "output_weight_simple": 29,
+      "output_weight_complex": 62,
+      "output_depth": 8,
+      "simplification_time": 0.077341577
+    },
+    "speedup": 0.6598002649984755,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 1,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(+ (* (- (pow (pow (* 1 (* (pow a a) (- a -1))) (- d d)) (- (- (* 0 a) c) (- -1 0))) (+ (+ (+ b 1) 0) (- a a))) (+ (* (pow b e) b) (- -1 1))) (+ (- (+ (- -1 -1) c) (* c 0)) (+ b -1)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 91,
+    "input_depth": 9,
+    "Baseline": {
+      "iterations": 9,
+      "stop_reason": "TimeLimit(0.100728029)",
+      "output_term": "(+ -1 (+ (* (- (pow 1 (+ 1 (- 0 c))) (+ 1 b)) (+ (* b (pow b e)) -2)) (+ c b)))",
+      "output_weight_simple": 19,
+      "output_weight_complex": 30,
+      "output_depth": 8,
+      "simplification_time": 0.100722906
+    },
+    "Extended": {
+      "iterations": 11,
+      "stop_reason": "TimeLimit(0.101203136)",
+      "output_term": "(+ (* (- (pow 1 (- 1 c)) (+ 1 b)) (+ (* b (pow b e)) -2)) (+ c (+ -1 b)))",
+      "output_weight_simple": 17,
+      "output_weight_complex": 28,
+      "output_depth": 6,
+      "simplification_time": 0.102727952
+    },
+    "speedup": 0.980481982158079,
+    "weight_simple_diff": 2,
+    "weight_complex_diff": 2,
+    "depth_diff": 2
+  },
+  {
+    "base_term": "(+ (* (+ (* (- (- (* (- (* a 0) 0) (pow a b)) c) (* d (- c 1))) (* (pow d d) 0)) (pow (+ (pow -1 0) d) (* 0 0))) (+ (* (pow 0 d) e) (pow b 1))) (- (- (pow (+ -1 -1) 0) (* -1 a)) (+ 1 c)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 101,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.101827118)",
+      "output_term": "(+ (- 0 c) (+ (* (pow 0 d) e) (+ a b)))",
+      "output_weight_simple": 12,
+      "output_weight_complex": 21,
+      "output_depth": 5,
+      "simplification_time": 0.101824367
+    },
+    "Extended": {
+      "iterations": 12,
+      "stop_reason": "TimeLimit(0.100008453)",
+      "output_term": "(+ (* (pow 0 d) e) (+ b (- a c)))",
+      "output_weight_simple": 11,
+      "output_weight_complex": 20,
+      "output_depth": 4,
+      "simplification_time": 0.102258137
+    },
+    "speedup": 0.9957580881803079,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": 1,
+    "depth_diff": 1
+  },
+  {
+    "base_term": "(+ (* (+ (- a (+ (* (- (* (* a 1) 1) (* b 0)) b) (+ (pow a 0) b))) (pow (- a (* b c)) (- c c))) (+ (- (+ (+ 1 1) -1) (+ a b)) (- -1 e))) (pow (* (pow (- b 0) c) (+ 0 c)) (- -1 1)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 93,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "TimeLimit(0.10470575)",
+      "output_term": "(+ (* (+ (* a b) (+ b (* a -1))) (+ a (+ b e))) (pow (* c (pow b c)) -2))",
+      "output_weight_simple": 17,
+      "output_weight_complex": 31,
+      "output_depth": 6,
+      "simplification_time": 0.11318461900000001
+    },
+    "Extended": {
+      "iterations": 12,
+      "stop_reason": "TimeLimit(0.106446279)",
+      "output_term": "(- (pow (* c (pow b c)) -2) (* (- a (* b (- a -1))) (+ a (+ b e))))",
+      "output_weight_simple": 16,
+      "output_weight_complex": 29,
+      "output_depth": 6,
+      "simplification_time": 0.111777164
+    },
+    "speedup": 1.0125916148668794,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": 2,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(pow (pow (pow (pow (- 0 (- (+ (+ (pow a b) b) (- 1 b)) (* 1 c))) (+ -1 (pow c -1))) (pow (+ (+ b e) 0) 0)) (* (* (* (- -1 -1) -1) (* -1 c)) (- b a))) (* (pow (- e (* e 0)) (+ a d)) (pow d c)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 108,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 11,
+      "stop_reason": "TimeLimit(0.105758973)",
+      "output_term": "(pow 1 (* (pow e (+ a d)) (pow d c)))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 24,
+      "output_depth": 5,
+      "simplification_time": 0.105756744
+    },
+    "Extended": {
+      "iterations": 12,
+      "stop_reason": "TimeLimit(0.101863049)",
+      "output_term": "(pow 1 (* (pow e (+ a d)) (pow d c)))",
+      "output_weight_simple": 10,
+      "output_weight_complex": 24,
+      "output_depth": 5,
+      "simplification_time": 0.10358705
+    },
+    "speedup": 1.0209456104793022,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(* (+ (+ (pow (pow (- a (* a 0)) (+ (- (- a a) a) (* a e))) (* c a)) (* (pow (* -1 0) -1) (* d -1))) (pow (- (* b (pow e c)) (* 1 1)) (pow -1 1))) (pow (+ (* (* d b) 1) (+ d e)) (pow b -1)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 110,
+    "input_depth": 9,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "Saturated",
+      "output_term": "(* (+ (pow (pow a (* a (+ e -1))) (* a c)) (+ (* -1 (* (pow 0 -1) d)) (pow (+ -1 (* b (pow e c))) -1))) (pow (+ e (* d (+ b 1))) (pow b -1)))",
+      "output_weight_simple": 28,
+      "output_weight_complex": 61,
+      "output_depth": 8,
+      "simplification_time": 0.0020913249999999998
+    },
+    "Extended": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "(* (+ (- (pow (pow a (* a (- e 1))) (* a c)) (* (pow 0 -1) d)) (pow (- (* b (pow e c)) 1) -1)) (pow (+ d (+ e (* d b))) (pow b -1)))",
+      "output_weight_simple": 27,
+      "output_weight_complex": 59,
+      "output_depth": 8,
+      "simplification_time": 0.0020237980000000003
+    },
+    "speedup": 1.03336647234556,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": 2,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- (pow (- (pow (+ (- (pow (* (pow a 1) b) (pow -1 1)) (* 0 0)) (- (- -1 a) a)) (- (+ a c) a)) (* 1 a)) (+ (* (+ (pow c e) d) (- 1 0)) (pow 0 0))) (* (pow (pow (pow 0 -1) e) (pow 1 0)) (* 0 a)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 109,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 12,
+      "stop_reason": "TimeLimit(0.103067242)",
+      "output_term": "(pow (- (pow (+ (pow (* a b) -1) (+ -1 (* a -2))) c) a) (+ (pow c e) (+ d (pow 0 0))))",
+      "output_weight_simple": 20,
+      "output_weight_complex": 42,
+      "output_depth": 7,
+      "simplification_time": 0.108952661
+    },
+    "Extended": {
+      "iterations": 13,
+      "stop_reason": "TimeLimit(0.100616582)",
+      "output_term": "(pow (- (pow (+ (pow (* a b) -1) (- -1 (+ a a))) c) a) (+ (pow c e) (+ d (pow 0 0))))",
+      "output_weight_simple": 19,
+      "output_weight_complex": 40,
+      "output_depth": 7,
+      "simplification_time": 0.10258932999999999
+    },
+    "speedup": 1.0620272205696246,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": 2,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(* (- (pow (- (+ (+ (* (+ (pow 1 0) 1) (* 1 0)) (* 1 a)) (- 1 (- b 0))) (* (pow 1 b) c)) (+ c c)) (- (- (+ (pow d -1) b) (pow d -1)) (+ c 1))) (+ (* (- 0 (+ 0 0)) (* b d)) (- 1 d)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 92,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "TimeLimit(0.114336928)",
+      "output_term": "(* (+ c (+ (pow (- (+ a (- 1 b)) (* c (pow 1 b))) (+ c c)) (- 1 b))) (- 1 d))",
+      "output_weight_simple": 16,
+      "output_weight_complex": 28,
+      "output_depth": 8,
+      "simplification_time": 0.11433535
+    },
+    "Extended": {
+      "iterations": 12,
+      "stop_reason": "TimeLimit(0.105300377)",
+      "output_term": "(* (- (pow (- (+ a (- 1 b)) (* (pow 1 b) c)) (+ c c)) (- b (+ 1 c))) (- 1 d))",
+      "output_weight_simple": 17,
+      "output_weight_complex": 29,
+      "output_depth": 7,
+      "simplification_time": 0.107265172
+    },
+    "speedup": 1.06591308127488,
+    "weight_simple_diff": -1,
+    "weight_complex_diff": -1,
+    "depth_diff": 1
+  },
+  {
+    "base_term": "(+ (pow (+ (+ (- (- (* a b) b) (* (+ (+ a 1) 1) (- 0 c))) (- (* -1 c) d)) (* c (- (+ c a) 0))) (* (pow (+ d (* b e)) (* a 0)) (pow 1 b))) (* (- (* 0 (pow d 1)) (pow 0 e)) (- 1 0)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 98,
+    "input_depth": 9,
+    "Baseline": {
+      "iterations": 9,
+      "stop_reason": "TimeLimit(0.107226835)",
+      "output_term": "(+ (pow (+ (* -1 d) (+ (+ (- (* a b) b) c) (* c (+ a (+ a c))))) (pow 1 b)) (- 0 (pow 0 e)))",
+      "output_weight_simple": 22,
+      "output_weight_complex": 39,
+      "output_depth": 8,
+      "simplification_time": 0.114314258
+    },
+    "Extended": {
+      "iterations": 12,
+      "stop_reason": "TimeLimit(0.102222144)",
+      "output_term": "(- (pow (+ (* b (+ a -1)) (- (* c (+ a (+ a (+ 1 c)))) d)) (pow 1 b)) (pow 0 e))",
+      "output_weight_simple": 20,
+      "output_weight_complex": 36,
+      "output_depth": 9,
+      "simplification_time": 0.10313090500000001
+    },
+    "speedup": 1.1084384259015276,
+    "weight_simple_diff": 2,
+    "weight_complex_diff": 3,
+    "depth_diff": -1
+  },
+  {
+    "base_term": "(+ (* (+ (pow (pow (+ (- (+ (+ a 1) a) (- -1 0)) (* a 1)) (* (pow a -1) b)) (- (- 1 b) 0)) (- 0 (* (* a b) c))) (pow (+ (* c d) a) (- c d))) (pow (pow (pow (+ -1 0) b) (+ d b)) (+ 0 -1)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 101,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (* (+ (pow (pow (+ (* a 3) 2) (* (pow a -1) b)) (- 1 b)) (* a (* -1 (* b c)))) (pow (+ a (* c d)) (- c d))) (pow (pow (pow -1 b) (+ b d)) -1))",
+      "output_weight_simple": 29,
+      "output_weight_complex": 61,
+      "output_depth": 8,
+      "simplification_time": 0.002650043
+    },
+    "Extended": {
+      "iterations": 9,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (* (- (pow (pow (+ 2 (* a 3)) (* (pow a -1) b)) (- 1 b)) (* b (* a c))) (pow (+ a (* c d)) (- c d))) (pow (pow (pow -1 b) (+ b d)) -1))",
+      "output_weight_simple": 28,
+      "output_weight_complex": 59,
+      "output_depth": 8,
+      "simplification_time": 0.002333961
+    },
+    "speedup": 1.1354272843462252,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": 2,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- (* (+ (+ (pow (+ 0 (pow (* (- 1 0) -1) (* a a))) (- (pow 1 -1) a)) (- (- 1 -1) -1)) (* (- (- a -1) 1) (+ b c))) (- (* (+ c 0) d) (pow a c))) (+ (- (pow (- d c) d) (+ -1 0)) (+ 1 c)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 91,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "TimeLimit(0.10538892)",
+      "output_term": "(- (* (+ (pow (pow -1 (* a a)) (- (pow 1 -1) a)) (+ 3 (* a (+ b c)))) (- (* c d) (pow a c))) (+ (pow (- d c) d) (+ 2 c)))",
+      "output_weight_simple": 26,
+      "output_weight_complex": 49,
+      "output_depth": 7,
+      "simplification_time": 0.14055354
+    },
+    "Extended": {
+      "iterations": 13,
+      "stop_reason": "TimeLimit(0.115812242)",
+      "output_term": "(- (* (+ (pow (pow -1 (* a a)) (- (pow 1 -1) a)) (+ 3 (* a (+ b c)))) (- (* c d) (pow a c))) (+ 2 (+ c (pow (- d c) d))))",
+      "output_weight_simple": 26,
+      "output_weight_complex": 49,
+      "output_depth": 7,
+      "simplification_time": 0.12348383399999999
+    },
+    "speedup": 1.1382343376218786,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- (* (pow (- a (* (- (* 1 (- (* 1 a) 1)) (- -1 a)) (* (+ -1 b) -1))) (pow (+ (pow -1 a) d) (- a c))) (- (* (pow (* a d) b) (pow c d)) (- -1 a))) (pow (- (- (pow -1 -1) 0) (+ 1 -1)) (- e a)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 101,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "TimeLimit(0.120880905)",
+      "output_term": "(- (* (pow (* a (+ -1 (+ b b))) (pow (+ (pow -1 a) d) (- a c))) (+ a (+ 1 (* (pow (* a d) b) (pow c d))))) (pow (pow -1 -1) (- e a)))",
+      "output_weight_simple": 26,
+      "output_weight_complex": 56,
+      "output_depth": 8,
+      "simplification_time": 0.120879526
+    },
+    "Extended": {
+      "iterations": 15,
+      "stop_reason": "TimeLimit(0.10305356)",
+      "output_term": "(- (* (pow (* a (+ -1 (+ b b))) (pow (+ (pow -1 a) d) (- a c))) (+ (* (pow (* a d) b) (pow c d)) (+ a 1))) (pow (pow -1 -1) (- e a)))",
+      "output_weight_simple": 26,
+      "output_weight_complex": 56,
+      "output_depth": 7,
+      "simplification_time": 0.10509478
+    },
+    "speedup": 1.1501953379606484,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 1
+  },
+  {
+    "base_term": "(- (* (+ (pow (- (- (+ (- (- a -1) 0) (* -1 -1)) (pow 1 -1)) (* (pow a 1) -1)) (- (pow -1 b) b)) (pow (* (pow 1 -1) 1) (- 1 b))) (pow 1 (pow (- -1 a) c))) (* (+ (- (pow b c) d) (+ -1 d)) (* -1 b)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 102,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 9,
+      "stop_reason": "TimeLimit(0.111427891)",
+      "output_term": "(+ (* b (+ -1 (pow b c))) (* (+ (pow (+ a (- (+ a 2) (pow 1 -1))) (- (pow -1 b) b)) (pow (pow 1 -1) (- 1 b))) (pow 1 (pow (- -1 a) c))))",
+      "output_weight_simple": 24,
+      "output_weight_complex": 50,
+      "output_depth": 8,
+      "simplification_time": 0.12061211799999999
+    },
+    "Extended": {
+      "iterations": 11,
+      "stop_reason": "TimeLimit(0.100244426)",
+      "output_term": "(+ (* (+ (pow (+ a (- a -1)) (- (pow -1 b) b)) (pow 1 (- 1 b))) (pow 1 (pow (- -1 a) c))) (* b (+ -1 (pow b c))))",
+      "output_weight_simple": 21,
+      "output_weight_complex": 44,
+      "output_depth": 7,
+      "simplification_time": 0.10193611799999999
+    },
+    "speedup": 1.1832127843047742,
+    "weight_simple_diff": 3,
+    "weight_complex_diff": 6,
+    "depth_diff": 1
+  },
+  {
+    "base_term": "(- (* (+ (- (+ (pow (pow -1 (+ (pow a b) 0)) (pow a 0)) (pow d (pow a a))) (* (pow e d) c)) (pow (pow -1 (pow d e)) (- b e))) (- (* c (+ -1 c)) (+ c c))) (pow (+ (+ (pow 1 1) -1) (pow 1 d)) (pow b a)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 122,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "TimeLimit(0.108429383)",
+      "output_term": "(- (* (+ (- (+ (pow -1 (pow a b)) (pow d (pow a a))) (* (pow e d) c)) (pow (pow -1 (pow d e)) (- b e))) (* c (+ c -3))) (pow (pow 1 d) (pow b a)))",
+      "output_weight_simple": 28,
+      "output_weight_complex": 69,
+      "output_depth": 8,
+      "simplification_time": 0.137607937
+    },
+    "Extended": {
+      "iterations": 11,
+      "stop_reason": "TimeLimit(0.108799198)",
+      "output_term": "(- (* (+ (- (+ (pow -1 (pow a b)) (pow d (pow a a))) (* (pow e d) c)) (pow (pow -1 (pow d e)) (- b e))) (- (pow c 2) (* c 3))) (pow (pow 1 d) (pow b a)))",
+      "output_weight_simple": 30,
+      "output_weight_complex": 74,
+      "output_depth": 8,
+      "simplification_time": 0.11476391
+    },
+    "speedup": 1.1990523588818125,
+    "weight_simple_diff": -2,
+    "weight_complex_diff": -5,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(* (+ (- (pow (pow (* a (* a 1)) (- (- (pow 0 -1) -1) (* -1 a))) (pow (- a a) 0)) (+ 0 (pow (pow b b) d))) (pow (- (pow (+ c c) a) (+ a d)) (pow -1 -1))) (pow (+ (+ (+ d -1) -1) (+ b 1)) (pow 0 0)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 109,
+    "input_depth": 9,
+    "Baseline": {
+      "iterations": 11,
+      "stop_reason": "TimeLimit(0.117630589)",
+      "output_term": "(* (+ (- (pow (pow (* a a) (+ (pow 0 -1) (+ a 1))) (pow 0 0)) (pow (pow b b) d)) (pow (- (pow (+ c c) a) (+ a d)) (pow -1 -1))) (pow (+ b (+ -1 d)) (pow 0 0)))",
+      "output_weight_simple": 28,
+      "output_weight_complex": 64,
+      "output_depth": 8,
+      "simplification_time": 0.14252526399999998
+    },
+    "Extended": {
+      "iterations": 9,
+      "stop_reason": "TimeLimit(0.110626511)",
+      "output_term": "(* (+ (- (pow (pow (* a a) (+ (pow 0 -1) (+ a 1))) (pow 0 0)) (pow (pow b b) d)) (pow (- (pow (+ c c) a) (+ a d)) (pow -1 -1))) (pow (+ -1 (+ b d)) (pow 0 0)))",
+      "output_weight_simple": 28,
+      "output_weight_complex": 64,
+      "output_depth": 8,
+      "simplification_time": 0.118083044
+    },
+    "speedup": 1.2069917845275058,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(+ (* (* (pow (pow (pow (+ 1 (- (+ a -1) b)) (+ b c)) d) (pow (+ (* -1 -1) a) (pow e b))) (pow (+ (pow a a) -1) (* c 0))) (- (* 0 (- 0 0)) (+ a b))) (+ (* (* (* a -1) e) (- 1 b)) (pow a e)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 107,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "TimeLimit(0.104248503)",
+      "output_term": "(+ (* (pow (pow (pow (+ a (* -1 b)) (+ b c)) d) (pow (+ 1 a) (pow e b))) (- 0 (+ a b))) (+ (* (* a e) (+ -1 b)) (pow a e)))",
+      "output_weight_simple": 26,
+      "output_weight_complex": 53,
+      "output_depth": 8,
+      "simplification_time": 0.15135182800000002
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.116397623)",
+      "output_term": "(+ (* a (* e (- b 1))) (- (pow a e) (* (pow (pow (pow (- a b) (+ b c)) d) (pow (+ 1 a) (pow e b))) (+ a b))))",
+      "output_weight_simple": 22,
+      "output_weight_complex": 48,
+      "output_depth": 8,
+      "simplification_time": 0.118753499
+    },
+    "speedup": 1.2745041558733359,
+    "weight_simple_diff": 4,
+    "weight_complex_diff": 5,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(pow (* (- (pow (- (+ (- (+ (+ -1 a) 0) a) (* 0 a)) (pow a (- -1 0))) a) (* (+ 1 (+ a 0)) (pow b -1))) (+ (+ (* (- b 1) 1) (pow a 0)) (pow 0 0))) (pow (- (pow b (+ a e)) (pow d 0)) (- 1 e)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 102,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "TimeLimit(0.131030239)",
+      "output_term": "(pow (* (- (pow (- -1 (pow a -1)) a) (* (+ a 1) (pow b -1))) (+ b (pow 0 0))) (pow (+ -1 (pow b (+ a e))) (- 1 e)))",
+      "output_weight_simple": 22,
+      "output_weight_complex": 48,
+      "output_depth": 7,
+      "simplification_time": 0.14190853
+    },
+    "Extended": {
+      "iterations": 12,
+      "stop_reason": "TimeLimit(0.100356243)",
+      "output_term": "(pow (* (- (pow (- -1 (pow a -1)) a) (* (+ a 1) (pow b -1))) (+ b (pow 0 0))) (pow (- (pow b (+ a e)) 1) (- 1 e)))",
+      "output_weight_simple": 22,
+      "output_weight_complex": 48,
+      "output_depth": 7,
+      "simplification_time": 0.1070915
+    },
+    "speedup": 1.3251147850202865,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- (+ (+ (* (* (pow (* (* (+ a a) -1) a) (* b b)) (* (* c 0) 1)) (- -1 (pow d d))) (* (* (pow -1 0) c) (- d e))) (pow (* (* 1 e) 0) (- e 0))) (* (* (* (pow 0 1) b) (* c d)) (+ d c)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 105,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 15,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (* c (- d e)) (pow 0 e))",
+      "output_weight_simple": 8,
+      "output_weight_complex": 15,
+      "output_depth": 4,
+      "simplification_time": 0.010653879
+    },
+    "Extended": {
+      "iterations": 8,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (* c (- d e)) (pow 0 e))",
+      "output_weight_simple": 8,
+      "output_weight_complex": 15,
+      "output_depth": 4,
+      "simplification_time": 0.0077304570000000005
+    },
+    "speedup": 1.378169363079052,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(+ (* (pow (+ (- (- (+ (pow a (* b -1)) (- -1 b)) (- -1 c)) (+ (pow 0 c) b)) (- a (+ 0 -1))) (* (- (+ -1 b) 1) (- a c))) (* (pow 0 (pow a c)) (pow -1 c))) (pow (pow (pow d (- -1 e)) e) (+ c 0)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 105,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 9,
+      "stop_reason": "TimeLimit(0.146249457)",
+      "output_term": "(+ (* (pow (+ (pow a (* b -1)) (+ (+ a 1) (+ (* -1 (pow 0 c)) (+ c (* b -2))))) (* (+ b -2) (- a c))) (* (pow 0 (pow a c)) (pow -1 c))) (pow (pow (pow d (- -1 e)) e) c))",
+      "output_weight_simple": 33,
+      "output_weight_complex": 71,
+      "output_depth": 9,
+      "simplification_time": 0.16664567200000002
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.106831258)",
+      "output_term": "(+ (* (pow (- (+ a (- (pow a (- 0 b)) (+ b (- -1 c)))) (+ b (pow 0 c))) (* (- a c) (+ b -2))) (* (pow 0 (pow a c)) (pow -1 c))) (pow (pow (pow d (- -1 e)) e) c))",
+      "output_weight_simple": 31,
+      "output_weight_complex": 66,
+      "output_depth": 9,
+      "simplification_time": 0.108691598
+    },
+    "speedup": 1.5331973682087185,
+    "weight_simple_diff": 2,
+    "weight_complex_diff": 5,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(pow (* (- (* (* (+ a a) (- (+ (- a 1) -1) (+ a a))) (* (+ a (* a b)) (- -1 0))) (* (pow a (* b 1)) (+ 1 b))) (* (pow (* b 1) b) (+ d 1))) (+ (* (+ (+ -1 -1) 0) (* a c)) (pow b -1)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 97,
+    "input_depth": 9,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "TimeLimit(0.135921543)",
+      "output_term": "(pow (* (* (+ 1 b) (+ (* -1 (pow a b)) (* (+ a 2) (* a (+ a a))))) (* (pow b b) (+ 1 d))) (+ (* a (* -2 c)) (pow b -1)))",
+      "output_weight_simple": 26,
+      "output_weight_complex": 50,
+      "output_depth": 8,
+      "simplification_time": 0.159311876
+    },
+    "Extended": {
+      "iterations": 12,
+      "stop_reason": "TimeLimit(0.102333542)",
+      "output_term": "(pow (* (pow b b) (* (- -1 b) (* (+ 1 d) (+ (pow a b) (* a (* (- a -2) (* a -2))))))) (+ (* a (* -2 c)) (pow b -1)))",
+      "output_weight_simple": 24,
+      "output_weight_complex": 48,
+      "output_depth": 9,
+      "simplification_time": 0.103740545
+    },
+    "speedup": 1.5356761042656946,
+    "weight_simple_diff": 2,
+    "weight_complex_diff": 2,
+    "depth_diff": -1
+  },
+  {
+    "base_term": "(- (- (* (* (+ (- (+ (- (pow a 0) a) (+ a 1)) (+ 0 1)) (pow (pow b -1) a)) (pow -1 (+ b b))) (- (* (* a 1) a) c)) (- (- (* 1 d) 0) (pow d -1))) (+ (pow (* (pow e 1) d) (pow e c)) (- 0 1)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 103,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "TimeLimit(0.127365571)",
+      "output_term": "(- (- (* (+ 1 (pow (pow b -1) a)) (* (pow -1 (+ b b)) (- (* a a) c))) (- d (pow d -1))) (+ -1 (pow (* d e) (pow e c))))",
+      "output_weight_simple": 24,
+      "output_weight_complex": 51,
+      "output_depth": 7,
+      "simplification_time": 0.17234684
+    },
+    "Extended": {
+      "iterations": 9,
+      "stop_reason": "TimeLimit(0.10934751)",
+      "output_term": "(- (* (+ 1 (pow (pow b -1) a)) (* (pow -1 (+ b b)) (- (* a a) c))) (+ (pow (* d e) (pow e c)) (+ -1 (- d (pow d -1)))))",
+      "output_weight_simple": 24,
+      "output_weight_complex": 51,
+      "output_depth": 6,
+      "simplification_time": 0.11151707
+    },
+    "speedup": 1.5454749662988816,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 1
+  },
+  {
+    "base_term": "(pow (pow (* (- (pow (* (- 1 (- a a)) (pow (pow a -1) a)) (+ a (- b a))) (+ (- -1 a) a)) (- 1 (* 0 0))) (pow (- (pow 1 (+ 1 -1)) (- 0 0)) (+ b c))) (* (+ (- e (+ -1 -1)) (pow 0 b)) (+ e -1)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 99,
+    "input_depth": 9,
+    "Baseline": {
+      "iterations": 11,
+      "stop_reason": "TimeLimit(0.151186747)",
+      "output_term": "(pow (pow (+ 1 (pow (pow (pow a -1) a) b)) (pow 1 (+ b c))) (* (+ e (+ (pow 0 b) 2)) (+ -1 e)))",
+      "output_weight_simple": 21,
+      "output_weight_complex": 47,
+      "output_depth": 7,
+      "simplification_time": 0.162176343
+    },
+    "Extended": {
+      "iterations": 12,
+      "stop_reason": "TimeLimit(0.10224284)",
+      "output_term": "(pow (pow (+ 1 (pow (pow (pow a -1) a) b)) (pow 1 (+ b c))) (* (+ (- e -2) (pow 0 b)) (+ -1 e)))",
+      "output_weight_simple": 21,
+      "output_weight_complex": 47,
+      "output_depth": 7,
+      "simplification_time": 0.103835525
+    },
+    "speedup": 1.5618579768340364,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(+ (pow (+ (- (+ (pow 1 (+ (+ a (- a 1)) 1)) (+ (* a d) c)) (- (pow a -1) 1)) (pow -1 (- (+ b d) d))) (* (- (pow (* c -1) a) (pow e 1)) (* a 1))) (- (pow (pow (pow 0 e) a) (* 1 c)) (+ -1 -1)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 105,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 9,
+      "stop_reason": "TimeLimit(0.16328091)",
+      "output_term": "(+ (pow (+ (- (+ (pow 1 (+ a a)) (+ (* a d) c)) (+ -1 (pow a -1))) (pow -1 b)) (* a (- (pow (* c -1) a) e))) (+ (pow (pow (pow 0 e) a) c) 2))",
+      "output_weight_simple": 29,
+      "output_weight_complex": 61,
+      "output_depth": 8,
+      "simplification_time": 0.201104008
+    },
+    "Extended": {
+      "iterations": 11,
+      "stop_reason": "TimeLimit(0.108707035)",
+      "output_term": "(+ (pow (- (+ (pow 1 (+ a a)) (+ c (+ (* a d) (pow -1 b)))) (- (pow a -1) 1)) (* a (- (pow (- 0 c) a) e))) (+ (pow (pow (pow 0 e) a) c) 2))",
+      "output_weight_simple": 29,
+      "output_weight_complex": 60,
+      "output_depth": 8,
+      "simplification_time": 0.114778293
+    },
+    "speedup": 1.7521083712231196,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 1,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(+ (+ (+ (pow (* (pow (- (pow (* a b) c) (- 0 -1)) (* a d)) (pow (+ 1 1) -1)) (pow 1 (pow -1 c))) (- (- (- b 1) e) (- -1 -1))) (- (- (* 1 -1) b) (pow c e))) (+ (pow 0 (+ (- e -1) 0)) (* e a)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 100,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 9,
+      "stop_reason": "TimeLimit(0.163780866)",
+      "output_term": "(+ (pow (* (pow (+ (pow (* a b) c) -1) (* a d)) (pow 2 -1)) (pow 1 (pow -1 c))) (+ (pow 0 (+ 1 e)) (+ (* -1 (+ e (pow c e))) (+ (* a e) -2))))",
+      "output_weight_simple": 30,
+      "output_weight_complex": 64,
+      "output_depth": 8,
+      "simplification_time": 0.18420573699999998
+    },
+    "Extended": {
+      "iterations": 9,
+      "stop_reason": "TimeLimit(0.100480935)",
+      "output_term": "(+ (pow (* (pow (- (pow (* a b) c) 1) (* a d)) (pow 2 -1)) (pow 1 (pow -1 c))) (+ (+ (pow 0 (+ 1 e)) (* a e)) (- (- -2 e) (pow c e))))",
+      "output_weight_simple": 29,
+      "output_weight_complex": 62,
+      "output_depth": 8,
+      "simplification_time": 0.104562867
+    },
+    "speedup": 1.7616745053480598,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": 2,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(pow (* (- (+ (- (* (* (* 1 1) a) (- (* 1 1) 1)) (- b (- -1 0))) (+ (+ b a) a)) (+ (+ (- 0 1) -1) (* a 1))) (pow (pow (pow 1 b) b) (- 0 d))) (* (pow (pow (* 0 a) -1) (* -1 d)) (* 0 1)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 96,
+    "input_depth": 9,
+    "Baseline": {
+      "iterations": 9,
+      "stop_reason": "TimeLimit(0.207745786)",
+      "output_term": "1",
+      "output_weight_simple": 1,
+      "output_weight_complex": 1,
+      "output_depth": 1,
+      "simplification_time": 0.227441754
+    },
+    "Extended": {
+      "iterations": 9,
+      "stop_reason": "TimeLimit(0.103690743)",
+      "output_term": "1",
+      "output_weight_simple": 1,
+      "output_weight_complex": 1,
+      "output_depth": 1,
+      "simplification_time": 0.117805318
+    },
+    "speedup": 1.9306577823591968,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(* (+ (- (+ (pow (* (pow (pow (* a a) a) (+ a a)) (* -1 -1)) (+ (+ 1 -1) -1)) (- (- a 1) -1)) (pow (+ (- c -1) -1) (- -1 -1))) (* (* (* c 0) -1) (- e a))) (- (* (- (pow -1 e) d) c) (- 1 0)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 93,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "TimeLimit(0.195175564)",
+      "output_term": "(* (+ -1 (+ a (pow (pow (pow (* a a) a) (+ a a)) -1))) (+ -1 (* c (- (pow -1 e) d))))",
+      "output_weight_simple": 17,
+      "output_weight_complex": 36,
+      "output_depth": 8,
+      "simplification_time": 0.212119477
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.103756613)",
+      "output_term": "(* (- (* c (- (pow -1 e) d)) 1) (+ (pow (pow (pow (* a a) a) (+ a a)) -1) (+ a -1)))",
+      "output_weight_simple": 18,
+      "output_weight_complex": 37,
+      "output_depth": 7,
+      "simplification_time": 0.106208176
+    },
+    "speedup": 1.9972047820499244,
+    "weight_simple_diff": -1,
+    "weight_complex_diff": -1,
+    "depth_diff": 1
+  },
+  {
+    "base_term": "(pow (+ (* (pow (+ (+ 1 0) (+ (- (- -1 1) a) (* 1 a))) (+ (pow -1 (+ a 1)) (- c a))) (pow (* (+ 0 d) 0) (- 0 d))) (pow (- (+ b e) c) (pow 1 -1))) (pow (+ (* (pow -1 -1) d) (+ b e)) (pow 0 e)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 102,
+    "input_depth": 9,
+    "Baseline": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(pow (+ (* (pow -1 (+ (pow -1 (+ 1 a)) (- c a))) (pow 0 (* -1 d))) (pow (- (+ b e) c) (pow 1 -1))) (pow (+ b (+ e (* d (pow -1 -1)))) (pow 0 e)))",
+      "output_weight_simple": 28,
+      "output_weight_complex": 63,
+      "output_depth": 8,
+      "simplification_time": 0.001087968
+    },
+    "Extended": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(pow (+ (* (pow -1 (+ (pow -1 (+ 1 a)) (- c a))) (pow 0 (- 0 d))) (pow (- (+ b e) c) (pow 1 -1))) (pow (+ b (+ e (* d (pow -1 -1)))) (pow 0 e)))",
+      "output_weight_simple": 28,
+      "output_weight_complex": 62,
+      "output_depth": 8,
+      "simplification_time": 0.000530639
+    },
+    "speedup": 2.0502978484431034,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 1,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(* (* (pow (* (+ (* a (pow (- (* b a) 1) (+ a 1))) (pow 1 (pow a c))) -1) (+ (+ 0 (+ -1 1)) (+ -1 a))) (pow (pow (pow (* b a) -1) (pow d e)) (* c d))) (pow (pow (- (pow e e) a) (+ 1 -1)) (+ 1 d)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 114,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(* (pow (* (+ (* a (pow (+ (* a b) -1) (+ a 1))) (pow 1 (pow a c))) -1) (+ a -1)) (* (pow (pow (pow (* a b) -1) (pow d e)) (* c d)) (pow 1 (+ 1 d))))",
+      "output_weight_simple": 27,
+      "output_weight_complex": 65,
+      "output_depth": 9,
+      "simplification_time": 0.0009077829999999999
+    },
+    "Extended": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "(* (pow (- 0 (+ (* a (pow (- (* a b) 1) (+ a 1))) (pow 1 (pow a c)))) (+ a -1)) (* (pow (pow (pow (* a b) -1) (pow d e)) (* c d)) (pow 1 (+ 1 d))))",
+      "output_weight_simple": 28,
+      "output_weight_complex": 65,
+      "output_depth": 9,
+      "simplification_time": 0.00032651399999999997
+    },
+    "speedup": 2.7802268815425983,
+    "weight_simple_diff": -1,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- (* (pow (* (- (* a (+ (+ a (* 0 a)) (+ 0 1))) a) (- (- (* a -1) 0) (* a c))) (* (pow (+ c b) b) (- c -1))) (- (* 1 (pow d 1)) (* c 1))) (pow (+ (+ -1 (- 0 e)) (* 1 1)) (+ 1 a)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 94,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "TimeLimit(0.24326696)",
+      "output_term": "(- (* (pow (* (* a (* a a)) (+ -1 (* -1 c))) (* (pow (+ b c) b) (+ 1 c))) (- d c)) (pow (- 0 e) (+ a 1)))",
+      "output_weight_simple": 24,
+      "output_weight_complex": 44,
+      "output_depth": 7,
+      "simplification_time": 0.362127068
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.100433753)",
+      "output_term": "(- (* (pow (- 0 (* a (* a (+ a (* a c))))) (* (pow (+ c b) b) (+ 1 c))) (- d c)) (pow (- 0 e) (+ a 1)))",
+      "output_weight_simple": 23,
+      "output_weight_complex": 42,
+      "output_depth": 9,
+      "simplification_time": 0.10381643800000001
+    },
+    "speedup": 3.4881476862074576,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": 2,
+    "depth_diff": -2
+  },
+  {
+    "base_term": "(- (+ (+ (pow (+ (pow (pow (- (pow 0 -1) 1) (pow a a)) (- 0 a)) (* (pow a -1) -1)) (* (+ 0 a) b)) (- b 0)) (* (pow (* (+ b a) -1) (+ b a)) (- -1 b))) (- (pow (- 0 (pow e c)) (* 0 b)) (pow 0 1)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 107,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 9,
+      "stop_reason": "Saturated",
+      "output_term": "(+ -1 (+ (pow (+ (pow (pow (+ -1 (pow 0 -1)) (pow a a)) (- 0 a)) (* -1 (pow a -1))) (* a b)) (+ b (* (pow (* -1 (+ a b)) (+ a b)) (- -1 b)))))",
+      "output_weight_simple": 23,
+      "output_weight_complex": 50,
+      "output_depth": 9,
+      "simplification_time": 0.002904695
+    },
+    "Extended": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(- (+ b (+ (pow (- (pow (pow (- (pow 0 -1) 1) (pow a a)) (- 0 a)) (pow a -1)) (* a b)) (* (pow (- 0 (+ a b)) (+ a b)) (- -1 b)))) 1)",
+      "output_weight_simple": 23,
+      "output_weight_complex": 48,
+      "output_depth": 10,
+      "simplification_time": 0.000673955
+    },
+    "speedup": 4.3099242531029525,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 2,
+    "depth_diff": -1
+  },
+  {
+    "base_term": "(* (pow (* (* (pow (- (+ (+ (- 1 0) -1) (* a -1)) (* -1 a)) (pow a (+ b b))) (* (+ a b) 0)) (pow (* (+ -1 -1) b) (+ -1 1))) (+ (+ (- 0 c) c) 0)) (- (- (+ 0 (+ 1 d)) (pow -1 e)) (- c 0)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 92,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 14,
+      "stop_reason": "Saturated",
+      "output_term": "(* (pow 0 0) (- (- (+ 1 d) (pow -1 e)) c))",
+      "output_weight_simple": 12,
+      "output_weight_complex": 22,
+      "output_depth": 5,
+      "simplification_time": 0.005359928999999999
+    },
+    "Extended": {
+      "iterations": 9,
+      "stop_reason": "Saturated",
+      "output_term": "(* (pow 0 0) (- d (+ c (- (pow -1 e) 1))))",
+      "output_weight_simple": 12,
+      "output_weight_complex": 22,
+      "output_depth": 6,
+      "simplification_time": 0.001119361
+    },
+    "speedup": 4.788382836278912,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": -1
+  },
+  {
+    "base_term": "(* (* (- (* (* (* (pow -1 (+ (- a -1) 0)) (* a 0)) (+ (+ 0 b) c)) -1) (- (* (* b -1) b) (+ -1 a))) (pow (- (* (* c c) a) (+ a -1)) (* c 1))) (pow (- (* 0 (- d b)) (+ 0 c)) (* 1 b)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 95,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 11,
+      "stop_reason": "Saturated",
+      "output_term": "(* (pow (+ 1 (* a (+ -1 (* c c)))) c) (* (+ -1 (+ a (* b b))) (pow (- 0 c) b)))",
+      "output_weight_simple": 18,
+      "output_weight_complex": 32,
+      "output_depth": 7,
+      "simplification_time": 0.017651683
+    },
+    "Extended": {
+      "iterations": 9,
+      "stop_reason": "Saturated",
+      "output_term": "(* (pow (- (* a (* c c)) (+ -1 a)) c) (* (pow (- 0 c) b) (+ a (+ -1 (* b b)))))",
+      "output_weight_simple": 17,
+      "output_weight_complex": 31,
+      "output_depth": 6,
+      "simplification_time": 0.003354754
+    },
+    "speedup": 5.261692213497621,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": 1,
+    "depth_diff": 1
+  },
+  {
+    "base_term": "(pow (* (pow (pow (+ (pow 1 (+ (pow (- 0 a) 0) (pow 0 0))) (pow (pow 0 1) 1)) (pow -1 0)) (pow a (pow 1 (* 1 0)))) (* (+ (+ (* b b) a) (* 1 a)) (pow b -1))) (pow (pow (+ -1 (+ a -1)) (+ b b)) (pow a b)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 119,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "Saturated",
+      "output_term": "(pow (* (pow (pow 1 (+ 1 (pow 0 0))) a) (* (+ (* b b) (+ a a)) (pow b -1))) (pow (pow (+ a -2) (+ b b)) (pow a b)))",
+      "output_weight_simple": 22,
+      "output_weight_complex": 51,
+      "output_depth": 7,
+      "simplification_time": 0.002219757
+    },
+    "Extended": {
+      "iterations": 4,
+      "stop_reason": "Saturated",
+      "output_term": "(pow (* (pow (pow 1 (+ 1 (pow 0 0))) a) (* (+ (* b b) (+ a a)) (pow b -1))) (pow (pow (+ a -2) (+ b b)) (pow a b)))",
+      "output_weight_simple": 22,
+      "output_weight_complex": 51,
+      "output_depth": 7,
+      "simplification_time": 0.00038823700000000004
+    },
+    "speedup": 5.717530786607149,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- (pow (+ (* (pow (pow (+ a (pow 0 a)) (- (* -1 0) -1)) (- a 0)) (- (* a a) b)) (+ -1 (+ (+ a c) 1))) (pow (- (* (- c 1) 0) (+ -1 -1)) (+ 0 1))) (- (- (* (* 1 b) 1) (+ -1 e)) (+ c 0)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 90,
+    "input_depth": 9,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "TimeLimit(0.464100573)",
+      "output_term": "(- (pow (+ (* (pow (+ a (pow 0 a)) a) (- (* a a) b)) (+ a c)) 2) (- (- b (+ -1 e)) c))",
+      "output_weight_simple": 20,
+      "output_weight_complex": 35,
+      "output_depth": 8,
+      "simplification_time": 0.670338909
+    },
+    "Extended": {
+      "iterations": 9,
+      "stop_reason": "TimeLimit(0.100178271)",
+      "output_term": "(- (pow (+ a (+ (* (pow (+ a (pow 0 a)) a) (- (* a a) b)) c)) 2) (- b (+ (- c 1) e)))",
+      "output_weight_simple": 20,
+      "output_weight_complex": 35,
+      "output_depth": 9,
+      "simplification_time": 0.10294467
+    },
+    "speedup": 6.511642700879997,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": -1
+  },
+  {
+    "base_term": "(pow (pow (- (* (pow (* (* (* (- a 1) 1) (pow -1 b)) (+ c a)) (+ c -1)) (* (- d d) 0)) (* (+ a (+ 1 e)) (pow 0 c))) (* (* 0 (- 0 -1)) (pow -1 -1))) (+ (* (* (+ b b) -1) (+ 0 1)) (pow 0 b)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 101,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 11,
+      "stop_reason": "Saturated",
+      "output_term": "(pow 1 (+ (* b -2) (pow 0 b)))",
+      "output_weight_simple": 8,
+      "output_weight_complex": 16,
+      "output_depth": 4,
+      "simplification_time": 0.009370383999999999
+    },
+    "Extended": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(pow 1 (- (pow 0 b) (+ b b)))",
+      "output_weight_simple": 7,
+      "output_weight_complex": 14,
+      "output_depth": 4,
+      "simplification_time": 0.0010128309999999998
+    },
+    "speedup": 9.251675748471364,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": 2,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(+ (+ (* (- (* -1 (* a 0)) (- (pow (+ (- -1 b) 0) (+ b b)) (- 1 a))) (pow (- c (pow d d)) (* a -1))) (- (+ (* (* 1 c) 0) (* -1 a)) (pow e b))) (* (+ (pow (+ d c) d) (+ 0 e)) (* a 0)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 99,
+    "input_depth": 9,
+    "Baseline": {
+      "iterations": 12,
+      "stop_reason": "Saturated",
+      "output_term": "(* -1 (+ a (+ (pow e b) (* (+ -1 (+ a (pow (- -1 b) (+ b b)))) (pow (- c (pow d d)) (* -1 a))))))",
+      "output_weight_simple": 20,
+      "output_weight_complex": 40,
+      "output_depth": 9,
+      "simplification_time": 0.009187766
+    },
+    "Extended": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "(- (* (- 1 (+ a (pow (- -1 b) (+ b b)))) (pow (- c (pow d d)) (- 0 a))) (+ a (pow e b)))",
+      "output_weight_simple": 21,
+      "output_weight_complex": 39,
+      "output_depth": 7,
+      "simplification_time": 0.0009206300000000001
+    },
+    "speedup": 9.979868133777956,
+    "weight_simple_diff": -1,
+    "weight_complex_diff": 1,
+    "depth_diff": 2
+  },
+  {
+    "base_term": "(* (pow (- (- (+ (+ (pow (+ a (+ 1 b)) b) (* c a)) (* (* e 1) d)) (pow (+ d c) -1)) (pow (- (+ 1 1) c) (pow -1 0))) (pow (+ 0 (pow a 1)) (pow 1 0))) (- (* (* (* 1 1) 1) (- a 0)) (+ -1 1)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 100,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 13,
+      "stop_reason": "Saturated",
+      "output_term": "(* a (pow (+ c (+ (- (+ (pow (+ 1 (+ a b)) b) (+ (* a c) (* e d))) (pow (+ c d) -1)) -2)) a))",
+      "output_weight_simple": 22,
+      "output_weight_complex": 39,
+      "output_depth": 10,
+      "simplification_time": 0.010008355
+    },
+    "Extended": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(* a (pow (- (+ (pow (+ b (- a -1)) b) (+ (* a c) (* e d))) (+ (pow (+ c d) -1) (- 2 c))) a))",
+      "output_weight_simple": 21,
+      "output_weight_complex": 38,
+      "output_depth": 8,
+      "simplification_time": 0.000959531
+    },
+    "speedup": 10.430465508670382,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": 1,
+    "depth_diff": 2
+  },
+  {
+    "base_term": "(- (* (pow (pow (* (+ (pow (* (- a -1) a) (pow a 1)) (+ 0 a)) (+ c (+ 1 b))) (pow 1 b)) (pow (* (- 1 c) b) (- e -1))) (- (+ (+ -1 1) 0) (pow 1 a))) (pow (- (- (- c d) a) (pow 0 0)) (* -1 a)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 104,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 10,
+      "stop_reason": "Saturated",
+      "output_term": "(- (* (pow (pow (* (+ a (pow (+ a (* a a)) a)) (+ 1 (+ c b))) (pow 1 b)) (pow (* b (- 1 c)) (+ 1 e))) (- 0 (pow 1 a))) (pow (- (- (- c d) a) (pow 0 0)) (* a -1)))",
+      "output_weight_simple": 32,
+      "output_weight_complex": 66,
+      "output_depth": 10,
+      "simplification_time": 0.0077719469999999995
+    },
+    "Extended": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(- 0 (+ (pow (- (- c (+ a d)) (pow 0 0)) (- 0 a)) (* (pow (pow (* (+ a (pow (+ a (pow a 2)) a)) (+ 1 (+ c b))) (pow 1 b)) (pow (* b (- 1 c)) (+ 1 e))) (pow 1 a))))",
+      "output_weight_simple": 32,
+      "output_weight_complex": 67,
+      "output_depth": 11,
+      "simplification_time": 0.000702402
+    },
+    "speedup": 11.064813312034989,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": -1,
+    "depth_diff": -1
+  },
+  {
+    "base_term": "(* (pow (pow (pow (- (- (+ (- (- 1 -1) a) (- b -1)) (pow 0 1)) (+ a (+ c d))) (* b (* e 1))) (- (- (+ 1 0) c) (pow e a))) (* (pow (- a 0) e) (- b d))) (+ (* (- 0 (- a e)) (pow 0 a)) 0))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 100,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 17,
+      "stop_reason": "Saturated",
+      "output_term": "(* -1 (* (pow (pow (pow (+ (+ b 3) (* -1 (+ a (+ c (+ a d))))) (* b e)) (- (- 1 c) (pow e a))) (* (pow a e) (- b d))) (* (- a e) (pow 0 a))))",
+      "output_weight_simple": 30,
+      "output_weight_complex": 59,
+      "output_depth": 11,
+      "simplification_time": 0.033802031
+    },
+    "Extended": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "(* (pow (pow (pow (- (+ b (- 3 a)) (+ c (+ a d))) (* b e)) (- 1 (+ c (pow e a)))) (* (pow a e) (- b d))) (* (- e a) (pow 0 a)))",
+      "output_weight_simple": 27,
+      "output_weight_complex": 54,
+      "output_depth": 8,
+      "simplification_time": 0.002564908
+    },
+    "speedup": 13.178652411704437,
+    "weight_simple_diff": 3,
+    "weight_complex_diff": 5,
+    "depth_diff": 3
+  },
+  {
+    "base_term": "(pow (* (pow (pow (+ -1 (+ a (pow 0 (+ (+ -1 1) a)))) (- (pow (+ a a) -1) a)) (+ (+ (pow -1 -1) a) (+ a a))) (* (+ (pow (* a 0) a) (- c -1)) (+ 1 b))) (pow (- (- (+ d 0) d) (+ c e)) (- b 1)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 101,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 11,
+      "stop_reason": "Saturated",
+      "output_term": "(pow (* (pow (pow (+ -1 (+ a (pow 0 a))) (- (pow (+ a a) -1) a)) (+ (pow -1 -1) (* a 3))) (* (+ 1 (+ (pow 0 a) c)) (+ 1 b))) (pow (- 0 (+ c e)) (+ -1 b)))",
+      "output_weight_simple": 29,
+      "output_weight_complex": 57,
+      "output_depth": 8,
+      "simplification_time": 0.017771358
+    },
+    "Extended": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(pow (* (pow (pow (+ -1 (+ a (pow 0 a))) (- (pow (+ a a) -1) a)) (+ (pow -1 -1) (* a 3))) (* (+ c (+ 1 (pow 0 a))) (+ 1 b))) (pow (- 0 (+ c e)) (- b 1)))",
+      "output_weight_simple": 29,
+      "output_weight_complex": 57,
+      "output_depth": 8,
+      "simplification_time": 0.001058279
+    },
+    "speedup": 16.79269644394342,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- (+ (- (- (- (+ (* (pow (pow 0 0) a) (* 0 a)) (* b d)) (* (pow b d) 1)) (* (- d -1) d)) (- (pow (- b 1) 1) (pow 0 e))) (pow (- 0 (- e 1)) (pow a e))) (pow (* (pow (+ 1 0) b) (- 1 b)) -1))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 105,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.100366105)",
+      "output_term": "(- (+ (- (- (* b d) (pow b d)) (+ d (* d d))) (+ (pow 0 e) (+ (pow (+ 1 (* -1 e)) (pow a e)) (- 1 b)))) (pow (* (pow 1 b) (- 1 b)) -1))",
+      "output_weight_simple": 26,
+      "output_weight_complex": 52,
+      "output_depth": 8,
+      "simplification_time": 0.101670785
+    },
+    "Extended": {
+      "iterations": 9,
+      "stop_reason": "Saturated",
+      "output_term": "(- (+ (- (* b d) (- (+ (pow b d) (+ (pow d 2) (+ d (- b 1)))) (pow 0 e))) (pow (- 1 e) (pow a e))) (pow (* (pow 1 b) (- 1 b)) -1))",
+      "output_weight_simple": 27,
+      "output_weight_complex": 54,
+      "output_depth": 9,
+      "simplification_time": 0.0044522120000000005
+    },
+    "speedup": 22.836016119627725,
+    "weight_simple_diff": -1,
+    "weight_complex_diff": -2,
+    "depth_diff": -1
+  },
+  {
+    "base_term": "(+ (* (+ (+ 1 (pow (* (* (- (* 1 -1) a) (- a -1)) (+ 1 1)) (- a (* a 1)))) (- 1 (pow (+ 1 a) -1))) (pow (pow (+ -1 (* b -1)) (* a 0)) (+ b 1))) (pow (- (+ -1 (* b 1)) (+ b 0)) (- b -1)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 91,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 15,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (* (+ (* -1 (pow (+ 1 a) -1)) 3) (pow 1 (+ 1 b))) (pow -1 (+ 1 b)))",
+      "output_weight_simple": 14,
+      "output_weight_complex": 27,
+      "output_depth": 7,
+      "simplification_time": 0.018529475
+    },
+    "Extended": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (* (- 3 (pow (+ 1 a) -1)) (pow 1 (+ 1 b))) (pow -1 (+ 1 b)))",
+      "output_weight_simple": 13,
+      "output_weight_complex": 25,
+      "output_depth": 6,
+      "simplification_time": 0.0007879219999999999
+    },
+    "speedup": 23.516889996725567,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": 2,
+    "depth_diff": 1
+  },
+  {
+    "base_term": "(* (- (+ (pow (pow (+ a (pow (- 0 (* b -1)) (- a b))) (pow (* c -1) -1)) c) (* (- (- b a) 0) (+ b c))) (+ (* (+ (- c d) -1) (pow -1 0)) (* -1 b))) (pow (pow (* (pow -1 1) 1) (* d e)) (- -1 -1)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 104,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.106493075)",
+      "output_term": "(+ b (+ (pow (pow (+ a (pow b (- a b))) (pow (* -1 c) -1)) c) (+ (* (- b a) (+ b c)) (+ (* -1 c) (+ d 1)))))",
+      "output_weight_simple": 21,
+      "output_weight_complex": 39,
+      "output_depth": 8,
+      "simplification_time": 0.10855381
+    },
+    "Extended": {
+      "iterations": 10,
+      "stop_reason": "Saturated",
+      "output_term": "(- (pow (pow (+ a (pow b (- a b))) (pow (- 0 c) -1)) c) (+ -1 (+ (- (- c b) d) (* (+ b c) (- a b)))))",
+      "output_weight_simple": 20,
+      "output_weight_complex": 37,
+      "output_depth": 7,
+      "simplification_time": 0.003851915
+    },
+    "speedup": 28.181777116057855,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": 2,
+    "depth_diff": 1
+  },
+  {
+    "base_term": "(pow (* (* (* (pow (+ a (* (+ (pow 0 1) b) (pow 1 1))) (+ (pow a -1) b)) (pow (+ b 0) 1)) (- (+ (* b b) -1) (* d a))) (* (+ (- -1 d) a) (pow a d))) (+ (- (pow (* c 0) d) (- b b)) (- 0 b)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 107,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "TimeLimit(0.102112023)",
+      "output_term": "(pow (* (pow (+ a b) (+ b (pow a -1))) (* b (* (- (+ -1 (* b b)) (* a d)) (* (+ a (- -1 d)) (pow a d))))) (+ (pow 0 d) (- 0 b)))",
+      "output_weight_simple": 24,
+      "output_weight_complex": 48,
+      "output_depth": 8,
+      "simplification_time": 0.111326209
+    },
+    "Extended": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "(pow (* b (* (pow (+ a b) (+ b (pow a -1))) (* (- (* b b) (+ 1 (* a d))) (* (- a (+ 1 d)) (pow a d))))) (- (pow 0 d) b))",
+      "output_weight_simple": 24,
+      "output_weight_complex": 48,
+      "output_depth": 8,
+      "simplification_time": 0.002959119
+    },
+    "speedup": 37.62140319466706,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(* (* (+ (* 1 (pow (+ (+ 0 (+ (+ -1 1) a)) (pow a a)) (+ (* 1 -1) a))) (* (- (* -1 a) -1) (* b b))) (* (- (pow (* 0 -1) 1) (pow 1 b)) (* c 1))) (- (+ (pow (* b -1) 0) (* b c)) (pow b b)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 101,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "TimeLimit(0.11469463)",
+      "output_term": "(* c (* (+ (* b (* b (+ -1 a))) (* -1 (pow (+ a (pow a a)) (+ -1 a)))) (* (pow 1 b) (- (+ 1 (* b c)) (pow b b)))))",
+      "output_weight_simple": 21,
+      "output_weight_complex": 43,
+      "output_depth": 8,
+      "simplification_time": 0.125152336
+    },
+    "Extended": {
+      "iterations": 8,
+      "stop_reason": "Saturated",
+      "output_term": "(- 0 (* c (* (+ (pow (+ a (pow a a)) (- a 1)) (* (- 1 a) (* b b))) (* (pow 1 b) (- (* b c) (- (pow b b) 1))))))",
+      "output_weight_simple": 22,
+      "output_weight_complex": 43,
+      "output_depth": 8,
+      "simplification_time": 0.003273861
+    },
+    "speedup": 38.227748826233004,
+    "weight_simple_diff": -1,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(* (+ (* (+ (+ (pow (+ a a) a) (+ (* (* a -1) a) a)) (pow (+ (- b 0) 1) (pow -1 a))) (* (- d (pow b -1)) (* c c))) (pow (* (* 1 0) 0) (- -1 -1))) (+ (pow (* (+ 1 e) 0) (+ e a)) (* a 0)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 101,
+    "input_depth": 9,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "TimeLimit(0.101387145)",
+      "output_term": "(* (+ (* (+ (pow (+ a a) a) (+ (* a (* a -1)) (+ a (pow (+ b 1) (pow -1 a))))) (* (- d (pow b -1)) (* c c))) (pow 0 0)) (pow 0 (+ a e)))",
+      "output_weight_simple": 28,
+      "output_weight_complex": 57,
+      "output_depth": 9,
+      "simplification_time": 0.10565491299999999
+    },
+    "Extended": {
+      "iterations": 9,
+      "stop_reason": "Saturated",
+      "output_term": "(* (+ (* (+ (pow (+ a a) a) (+ (- a (* a a)) (pow (+ b 1) (pow -1 a)))) (* (- d (pow b -1)) (* c c))) (pow 0 0)) (pow 0 (+ a e)))",
+      "output_weight_simple": 27,
+      "output_weight_complex": 55,
+      "output_depth": 8,
+      "simplification_time": 0.0023047329999999998
+    },
+    "speedup": 45.84258263321608,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": 2,
+    "depth_diff": 1
+  },
+  {
+    "base_term": "(+ (pow (* (- (* (+ (- (- (pow 1 0) -1) (+ a b)) (- 0 b)) (* (* 0 b) 1)) (pow (pow c a) b)) (+ a a)) (+ (pow (pow (+ -1 a) 1) (pow 0 -1)) (- d -1))) (- (pow (- (* d e) d) (pow 1 a)) (- c b)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 106,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 11,
+      "stop_reason": "TimeLimit(0.112407484)",
+      "output_term": "(+ (pow (* (pow (pow c a) b) (* a -2)) (+ (pow (+ -1 a) (pow 0 -1)) (+ 1 d))) (- (pow (- (* d e) d) (pow 1 a)) (- c b)))",
+      "output_weight_simple": 26,
+      "output_weight_complex": 55,
+      "output_depth": 6,
+      "simplification_time": 0.117608861
+    },
+    "Extended": {
+      "iterations": 9,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (pow (* a (* (pow (pow c a) b) -2)) (+ (pow (+ -1 a) (pow 0 -1)) (+ 1 d))) (- (pow (- (* d e) d) (pow 1 a)) (- c b)))",
+      "output_weight_simple": 26,
+      "output_weight_complex": 55,
+      "output_depth": 7,
+      "simplification_time": 0.002273702
+    },
+    "speedup": 51.72571471547283,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": -1
+  },
+  {
+    "base_term": "(+ (pow (- (+ (- (* (+ (* (+ a 0) a) (- a b)) (- c a)) (- (* 1 c) c)) (- e (pow c 0))) (pow (- (* 0 0) -1) (pow c d))) (- (* -1 (* c e)) (+ 0 -1))) (- -1 (- (* e (+ b 0)) (+ b 0))))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 93,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 9,
+      "stop_reason": "TimeLimit(0.100194204)",
+      "output_term": "(+ (pow (- (+ (* (+ (* a a) (- a b)) (- c a)) (+ e -1)) (pow 1 (pow c d))) (+ 1 (* c (* e -1)))) (- -1 (- (* b e) b)))",
+      "output_weight_simple": 25,
+      "output_weight_complex": 44,
+      "output_depth": 8,
+      "simplification_time": 0.105406951
+    },
+    "Extended": {
+      "iterations": 8,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (pow (- (+ (* (- (+ a (* a a)) b) (- c a)) (- e 1)) (pow 1 (pow c d))) (- 1 (* c e))) (- -1 (- (* b e) b)))",
+      "output_weight_simple": 24,
+      "output_weight_complex": 42,
+      "output_depth": 9,
+      "simplification_time": 0.001814094
+    },
+    "speedup": 58.104459305857354,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": 2,
+    "depth_diff": -1
+  },
+  {
+    "base_term": "(pow (* (- (* (* (pow (* (- (pow a a) b) (* 0 a)) -1) (* (- d e) -1)) (* (- -1 1) -1)) (- (pow (- 1 0) c) (+ c 0))) (* (- (pow 0 -1) b) (- a d))) (+ (* (+ (* a e) e) (- 0 1)) (- c e)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 98,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "TimeLimit(0.101883217)",
+      "output_term": "(pow (* (- (* (pow 0 -1) (* (- d e) -2)) (- (pow 1 c) c)) (* (- (pow 0 -1) b) (- a d))) (+ c (* -1 (* e (+ a 2)))))",
+      "output_weight_simple": 26,
+      "output_weight_complex": 46,
+      "output_depth": 7,
+      "simplification_time": 0.104589017
+    },
+    "Extended": {
+      "iterations": 8,
+      "stop_reason": "Saturated",
+      "output_term": "(pow (* (- a d) (* (- (* (pow 0 -1) (* (- d e) -2)) (- (pow 1 c) c)) (- (pow 0 -1) b))) (- c (* e (+ a 2))))",
+      "output_weight_simple": 25,
+      "output_weight_complex": 44,
+      "output_depth": 8,
+      "simplification_time": 0.0017876810000000002
+    },
+    "speedup": 58.50541399724,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": 2,
+    "depth_diff": -1
+  },
+  {
+    "base_term": "(pow (* (- (- (+ (* a (+ (pow (- a a) b) b)) c) (+ (+ (- 0 a) 0) (* d 0))) (- (pow (+ e d) 0) 0)) (+ (- (- (- -1 1) b) (* d d)) (- e 0))) (+ (pow (* (+ c 0) b) (+ e c)) (pow a -1)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 96,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "TimeLimit(0.114859427)",
+      "output_term": "(pow (* (+ a (+ (* a (+ (pow 0 b) b)) (+ c -1))) (+ e (- (- -2 b) (* d d)))) (+ (pow (* c b) (+ c e)) (pow a -1)))",
+      "output_weight_simple": 25,
+      "output_weight_complex": 46,
+      "output_depth": 8,
+      "simplification_time": 0.120740915
+    },
+    "Extended": {
+      "iterations": 9,
+      "stop_reason": "Saturated",
+      "output_term": "(pow (* (- (+ (* a (+ b (pow 0 b))) c) (- 1 a)) (- (+ e (- -2 b)) (* d d))) (+ (pow (* b c) (+ c e)) (pow a -1)))",
+      "output_weight_simple": 26,
+      "output_weight_complex": 47,
+      "output_depth": 8,
+      "simplification_time": 0.0016211580000000001
+    },
+    "speedup": 74.4781908981111,
+    "weight_simple_diff": -1,
+    "weight_complex_diff": -1,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(* (- (+ (- (+ (pow (* (* (+ 0 1) a) (* -1 a)) (* b -1)) (pow (* c a) a)) (pow (* a d) c)) (+ 1 (- 0 (* 0 b)))) (* (+ (- a d) 1) (pow e -1))) (* (+ (- (* d c) -1) (+ e 0)) (- a 0)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 97,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "TimeLimit(0.139119621)",
+      "output_term": "(* (- (+ 1 (- (+ (pow (* a (* a -1)) (* -1 b)) (pow (* a c) a)) (pow (* a d) c))) (* (+ 1 (- a d)) (pow e -1))) (* a (+ (* c d) (+ 1 e))))",
+      "output_weight_simple": 28,
+      "output_weight_complex": 54,
+      "output_depth": 9,
+      "simplification_time": 0.14894133599999998
+    },
+    "Extended": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "(* a (* (- (+ (pow (- 0 (* a a)) (- 0 b)) (pow (* a c) a)) (+ (pow (* a d) c) (- (* (+ 1 (- a d)) (pow e -1)) 1))) (+ 1 (+ e (* c d)))))",
+      "output_weight_simple": 29,
+      "output_weight_complex": 53,
+      "output_depth": 9,
+      "simplification_time": 0.001979227
+    },
+    "speedup": 75.25227576220412,
+    "weight_simple_diff": -1,
+    "weight_complex_diff": 1,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- (- (* (pow a (* (pow (+ a (pow (pow b 0) 0)) (+ c d)) (* (- 1 c) a))) (- (+ (pow -1 1) d) (+ b 0))) (- (pow (* (* 0 a) 1) (- a 0)) (* a d))) (+ (pow (pow (pow e -1) a) (+ a 0)) (+ 1 d)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 107,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 11,
+      "stop_reason": "TimeLimit(0.101395103)",
+      "output_term": "(- (- (* (pow a (* (pow (+ a 1) (+ c d)) (* a (- 1 c)))) (- (+ d -1) b)) (- (pow 0 a) (* a d))) (+ d (+ 1 (pow (pow (pow e -1) a) a))))",
+      "output_weight_simple": 28,
+      "output_weight_complex": 55,
+      "output_depth": 8,
+      "simplification_time": 0.10272787600000001
+    },
+    "Extended": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(- (* (pow a (* a (* (pow (+ a 1) (+ c d)) (- 1 c)))) (- d (+ b 1))) (+ (pow (pow (pow e -1) a) a) (+ d (+ 1 (- (pow 0 a) (* a d))))))",
+      "output_weight_simple": 28,
+      "output_weight_complex": 55,
+      "output_depth": 8,
+      "simplification_time": 0.001225113
+    },
+    "speedup": 83.85175571559523,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- (* (+ (- (pow (* (+ a (+ (+ b 1) a)) (- a b)) (* (+ d -1) 1)) (* (* b c) -1)) (pow (- (- -1 -1) b) (pow a 1))) (pow (+ (+ b c) 0) (- d 0))) (* (+ (+ (pow 1 c) 0) (- c d)) (+ e d)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 96,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 10,
+      "stop_reason": "TimeLimit(0.106291914)",
+      "output_term": "(- (* (+ (pow (* (+ 1 (+ b (+ a a))) (- a b)) (+ d -1)) (+ (* b c) (pow (- 0 b) a))) (pow (+ b c) d)) (* (+ (pow 1 c) (- c d)) (+ d e)))",
+      "output_weight_simple": 29,
+      "output_weight_complex": 50,
+      "output_depth": 9,
+      "simplification_time": 0.108013229
+    },
+    "Extended": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(- (* (+ (pow (* (+ b (+ 1 (+ a a))) (- a b)) (+ d -1)) (+ (* b c) (pow (- 0 b) a))) (pow (+ b c) d)) (* (+ (pow 1 c) (- c d)) (+ d e)))",
+      "output_weight_simple": 29,
+      "output_weight_complex": 50,
+      "output_depth": 9,
+      "simplification_time": 0.001080783
+    },
+    "speedup": 99.93979272434892,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(pow (- (* (+ (- (+ (+ (- (pow 1 a) 1) (* 0 a)) (pow 1 -1)) (pow 1 (- 1 b))) (* (+ b b) d)) (+ (- (+ 1 1) 0) 0)) (+ (+ (* 1 -1) 0) (- d d))) (+ (* (pow (- a c) 1) (- 0 -1)) (pow 1 0)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 90,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 14,
+      "stop_reason": "TimeLimit(0.108404274)",
+      "output_term": "(pow (+ 1 (+ (* 2 (- (+ (pow 1 a) (+ -1 (pow 1 -1))) (pow 1 (- 1 b)))) (* b (* d 4)))) (+ 1 (- a c)))",
+      "output_weight_simple": 23,
+      "output_weight_complex": 42,
+      "output_depth": 9,
+      "simplification_time": 0.11286841
+    },
+    "Extended": {
+      "iterations": 7,
+      "stop_reason": "Saturated",
+      "output_term": "(pow (+ 1 (* (- (+ (- (pow 1 a) 1) (+ (pow 1 -1) (* b (+ d d)))) (pow 1 (- 1 b))) 2)) (- a (- c 1)))",
+      "output_weight_simple": 22,
+      "output_weight_complex": 40,
+      "output_depth": 9,
+      "simplification_time": 0.001120404
+    },
+    "speedup": 100.7390280648766,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": 2,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(+ (* (* (+ (* (pow (pow (pow (* 0 a) a) (* a -1)) (+ -1 0)) (- (pow -1 0) a)) (pow (* 1 b) -1)) (- (- (* c a) 0) (+ d c))) (* (- (pow 0 c) a) (+ 1 b))) (+ (* (pow (+ -1 b) a) 0) (* -1 0)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 102,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "TimeLimit(0.100155026)",
+      "output_term": "(* (+ (* (pow (pow (pow 0 a) (* a -1)) -1) (- 1 a)) (pow b -1)) (* (- (* a c) (+ c d)) (* (- (pow 0 c) a) (+ 1 b))))",
+      "output_weight_simple": 24,
+      "output_weight_complex": 49,
+      "output_depth": 7,
+      "simplification_time": 0.134586972
+    },
+    "Extended": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(* (+ (* (pow (pow (pow 0 a) (- 0 a)) -1) (- 1 a)) (pow b -1)) (* (- (* a c) (+ c d)) (* (- (pow 0 c) a) (+ 1 b))))",
+      "output_weight_simple": 24,
+      "output_weight_complex": 48,
+      "output_depth": 7,
+      "simplification_time": 0.001084551
+    },
+    "speedup": 124.094645618325,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 1,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(pow (* (- (+ (- (- a (pow (+ a (+ 1 0)) (* b c))) (- (+ 1 0) 1)) 1) (- (pow (* 1 d) a) (- -1 c))) (pow (pow (* (+ a d) d) (+ e d)) (+ -1 e))) (pow (* (pow (pow 0 a) 0) (* 0 c)) (+ b 0)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 103,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 11,
+      "stop_reason": "TimeLimit(0.148090305)",
+      "output_term": "(pow (* (+ a (* -1 (+ c (+ (pow (+ a 1) (* c b)) (pow d a))))) (pow (pow (* d (+ a d)) (+ d e)) (+ -1 e))) (pow 0 b))",
+      "output_weight_simple": 25,
+      "output_weight_complex": 52,
+      "output_depth": 9,
+      "simplification_time": 0.168881472
+    },
+    "Extended": {
+      "iterations": 8,
+      "stop_reason": "Saturated",
+      "output_term": "(pow (* (- a (+ (pow (+ a 1) (* b c)) (+ c (pow d a)))) (pow (pow (* d (+ a d)) (+ d e)) (+ -1 e))) (pow 0 b))",
+      "output_weight_simple": 24,
+      "output_weight_complex": 50,
+      "output_depth": 7,
+      "simplification_time": 0.001347001
+    },
+    "speedup": 125.3759069221181,
+    "weight_simple_diff": 1,
+    "weight_complex_diff": 2,
+    "depth_diff": 2
+  },
+  {
+    "base_term": "(+ (* (* (+ (pow (- (* (* (- a b) 1) (pow a -1)) (- -1 b)) (* a (- -1 1))) (- (* a 0) 1)) (* (- (+ b 0) -1) (- 1 1))) (* (+ (+ -1 -1) b) (pow a b))) (* (* (- 0 (* c 0)) (- a 1)) 0))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 89,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 9,
+      "stop_reason": "TimeLimit(0.101900138)",
+      "output_term": "0",
+      "output_weight_simple": 1,
+      "output_weight_complex": 1,
+      "output_depth": 1,
+      "simplification_time": 0.10643828799999999
+    },
+    "Extended": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "0",
+      "output_weight_simple": 1,
+      "output_weight_complex": 1,
+      "output_depth": 1,
+      "simplification_time": 0.000722193
+    },
+    "speedup": 147.38205438158496,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- (* (* (- (* (+ -1 (+ (- 0 (* 0 -1)) (* -1 0))) (- (pow a a) 0)) (- (* b b) c)) (- (+ (- 0 0) c) (* e a))) (pow (+ (+ -1 -1) d) (* 0 1))) (* (pow (+ (- b -1) 0) (- e 1)) (- e -1)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 87,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 11,
+      "stop_reason": "TimeLimit(0.101194403)",
+      "output_term": "(- (* (+ c (* -1 (+ (pow a a) (* b b)))) (- c (* a e))) (* (pow (+ b 1) (+ -1 e)) (+ e 1)))",
+      "output_weight_simple": 20,
+      "output_weight_complex": 35,
+      "output_depth": 7,
+      "simplification_time": 0.102943829
+    },
+    "Extended": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(- (* (- c (+ (pow a a) (* b b))) (- c (* a e))) (* (pow (+ b 1) (- e 1)) (+ e 1)))",
+      "output_weight_simple": 18,
+      "output_weight_complex": 32,
+      "output_depth": 6,
+      "simplification_time": 0.0006740769999999999
+    },
+    "speedup": 152.71820430010223,
+    "weight_simple_diff": 2,
+    "weight_complex_diff": 3,
+    "depth_diff": 1
+  },
+  {
+    "base_term": "(* (+ (* (- (+ (* (+ (* (- -1 a) b) (pow 1 1)) (+ 1 b)) (* (- c -1) d)) (- (* d 1) 0)) (+ (* (- 1 c) -1) (pow c 1))) (+ (pow e (* -1 0)) e)) (pow (- (pow e (* c e)) (+ 1 1)) (* b a)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 97,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "TimeLimit(0.112097757)",
+      "output_term": "(* (+ (* (+ (* (+ (* (- -1 a) b) 1) (+ b 1)) (* c d)) (+ -1 (+ c c))) (+ 1 e)) (pow (+ (pow e (* c e)) -2) (* a b)))",
+      "output_weight_simple": 26,
+      "output_weight_complex": 44,
+      "output_depth": 9,
+      "simplification_time": 0.120477703
+    },
+    "Extended": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(* (+ 1 (+ (* (- (+ (* (+ (* (- -1 a) b) 1) (+ b 1)) (* (+ 1 c) d)) d) (- c (- 1 c))) e)) (pow (- (pow e (* c e)) 2) (* a b)))",
+      "output_weight_simple": 28,
+      "output_weight_complex": 46,
+      "output_depth": 11,
+      "simplification_time": 0.00070752
+    },
+    "speedup": 170.28169239032113,
+    "weight_simple_diff": -2,
+    "weight_complex_diff": -2,
+    "depth_diff": -2
+  },
+  {
+    "base_term": "(* (- (* (- (+ (* a (+ (* (pow -1 0) 1) (+ b b))) b) (* (- (+ -1 -1) a) (- 1 1))) (- (- (+ -1 1) b) (+ -1 b))) (- (* (pow 1 a) 1) (- 0 b))) (+ (* (+ (pow c 1) 1) (- e -1)) (- 1 -1)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 84,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "TimeLimit(0.100218241)",
+      "output_term": "(* (- (* (+ a (+ b (* a (+ b b)))) (+ 1 (* b -2))) (+ b (pow 1 a))) (+ c (+ (+ 3 (* c e)) e)))",
+      "output_weight_simple": 22,
+      "output_weight_complex": 34,
+      "output_depth": 8,
+      "simplification_time": 0.109039053
+    },
+    "Extended": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(* (- (* (+ b (* a (+ 1 (+ b b)))) (- 1 (+ b b))) (+ b (pow 1 a))) (+ (* (+ 1 c) (+ 1 e)) 2))",
+      "output_weight_simple": 20,
+      "output_weight_complex": 31,
+      "output_depth": 8,
+      "simplification_time": 0.0006381420000000001
+    },
+    "speedup": 170.8695760504715,
+    "weight_simple_diff": 2,
+    "weight_complex_diff": 3,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(* (pow (+ (* (* (pow (* (* (* -1 a) 0) (pow 1 1)) (+ 1 a)) (+ (- 1 a) a)) (+ (- a 1) b)) (* (+ (* a b) b) (+ 1 -1))) (* (- (- -1 a) 0) (+ b 0))) (pow (+ (+ (- b 1) b) c) (- c d)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 94,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "TimeLimit(0.118848302)",
+      "output_term": "(* (pow (* (pow 0 (+ a 1)) (+ (+ -1 a) b)) (* b (- -1 a))) (pow (+ b (+ b (+ -1 c))) (- c d)))",
+      "output_weight_simple": 21,
+      "output_weight_complex": 37,
+      "output_depth": 6,
+      "simplification_time": 0.189518036
+    },
+    "Extended": {
+      "iterations": 6,
+      "stop_reason": "Saturated",
+      "output_term": "(* (pow (* (pow 0 (+ a 1)) (+ (- a 1) b)) (* b (- -1 a))) (pow (+ (- b 1) (+ b c)) (- c d)))",
+      "output_weight_simple": 21,
+      "output_weight_complex": 37,
+      "output_depth": 6,
+      "simplification_time": 0.00099795
+    },
+    "speedup": 189.9073460594218,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(+ (+ (- (pow (- a (+ 0 (- 1 (+ a (pow a 0))))) (- b (* 0 (+ a a)))) (+ (pow (+ 0 0) b) (+ b a))) (pow (pow (* (+ -1 1) b) (pow c -1)) (pow -1 c))) (pow (pow (pow (* 1 b) d) (+ c 1)) (* -1 1)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 106,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 8,
+      "stop_reason": "TimeLimit(0.132497733)",
+      "output_term": "(+ (- (pow (+ a a) b) (+ b (+ a (pow 0 b)))) (+ (pow (pow 0 (pow c -1)) (pow -1 c)) (pow (pow (pow b d) (+ 1 c)) -1)))",
+      "output_weight_simple": 23,
+      "output_weight_complex": 54,
+      "output_depth": 6,
+      "simplification_time": 0.132496141
+    },
+    "Extended": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "(+ (- (pow (+ a a) b) (+ (pow 0 b) (+ a b))) (+ (pow (pow 0 (pow c -1)) (pow -1 c)) (pow (pow (pow b d) (+ 1 c)) -1)))",
+      "output_weight_simple": 23,
+      "output_weight_complex": 54,
+      "output_depth": 6,
+      "simplification_time": 0.00048338700000000005
+    },
+    "speedup": 274.0995123989681,
+    "weight_simple_diff": 0,
+    "weight_complex_diff": 0,
+    "depth_diff": 0
+  },
+  {
+    "base_term": "(- (* (+ (+ (* (- (+ a (- (* 0 a) 1)) (* a a)) (- (+ 1 a) 0)) (+ (pow 1 a) -1)) (* (- (* 1 1) b) (+ 1 d))) (+ (pow (* c 0) 1) (* -1 0))) (- (+ (* (- 1 0) 0) (pow d e)) (* a b)))",
+    "input_weight_simple": 57,
+    "input_weight_complex": 89,
+    "input_depth": 10,
+    "Baseline": {
+      "iterations": 7,
+      "stop_reason": "TimeLimit(0.38614687)",
+      "output_term": "(- 0 (- (pow d e) (* a b)))",
+      "output_weight_simple": 9,
+      "output_weight_complex": 17,
+      "output_depth": 4,
+      "simplification_time": 0.565342317
+    },
+    "Extended": {
+      "iterations": 5,
+      "stop_reason": "Saturated",
+      "output_term": "(- (* a b) (pow d e))",
+      "output_weight_simple": 7,
+      "output_weight_complex": 15,
+      "output_depth": 3,
+      "simplification_time": 0.00065079
+    },
+    "speedup": 868.7016042041212,
+    "weight_simple_diff": 2,
+    "weight_complex_diff": 2,
+    "depth_diff": 1
+  }
+]
