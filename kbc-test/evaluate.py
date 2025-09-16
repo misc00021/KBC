@@ -1,6 +1,10 @@
 import os
 import json
 
+def symCount(term: str):
+    clean = term.replace('(', ' ').replace('"', ' ').replace(')', ' ')
+    return len(term.split())
+
 def main():
     path = "all_results/"
     ruleTestDict = {}
@@ -23,13 +27,17 @@ def main():
                     lines = f.readlines()
                     if "small" in testSet and len(lines) < 2951:
                         unavailable.append(pathToFile)
+                        continue
                     elif "medium" in testSet and len(lines) < 406:
                         unavailable.append(pathToFile)
+                        continue
                     elif  "large" in testSet and len(lines) < 117:
                         unavailable.append(pathToFile)
+                        continue
                     elif "huge" in testSet and len(lines) < 248:
                         unavailable.append(pathToFile)
-                    simpleSumDiff = 0.0
+                        continue
+                    sumDiff = 0.0
                     complexSumDiff = 0.0
                     count = 0
                     id = 0
@@ -47,16 +55,17 @@ def main():
                         out_simple = obj["output_weight_simple"]
                         out_complex = obj["output_weight_complex"]
                         out_depth = obj["output_depth"]
-                        simpleSumDiff += input_weight_simple - out_simple
-                        if name == "summary_results" and simpleSumDiff > 1:
+                        inputTerm = obj["original_term"]
+                        outputTerm = obj["simplified_term"]
+                        sumDiff += symCount(inputTerm) - symCount(outputTerm)
+                        if name == "summary_results" and sumDiff > 0:
                             if testSet not in simplifiable:
                                 simplifiable[testSet] = set()
                             simplifiable[testSet].add(count)
                         count += 1
                         id += 1
-                    averageResults[limit] = simpleSumDiff / count if count > 0 else 0.0
+                    averageResults[limit] = sumDiff / count if count > 0 else 0.0
                     results[(ruleSet, testSet)] = averageResults
-                    print(count)
         # Dump results to JSON file
         with open(f"results/eval/{name}.jsonl", "w") as out_file:
             for (ruleSet, testSet), averages in results.items():
