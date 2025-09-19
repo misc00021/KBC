@@ -10,6 +10,7 @@ use std::{
 #[derive(Clone, Debug, PartialEq)]
 struct Symbol {
     name: String,
+    is_var: bool,
     length: usize,
 }
 
@@ -21,10 +22,10 @@ pub struct Rule {
     cond: Vec<Symbol>,
 }
 
-fn merge_subst(
-    mut s1: HashMap<String, Vec<Symbol>>,
-    s2: HashMap<String, Vec<Symbol>>,
-) -> Option<HashMap<String, Vec<Symbol>>> {
+fn merge_subst<'a>(
+    mut s1: HashMap<&'a str, Vec<Symbol>>,
+    s2: HashMap<&'a str, Vec<Symbol>>,
+) -> Option<HashMap<&'a str, Vec<Symbol>>> {
     for (var, val2) in s2 {
         if let Some(val1) = s1.get(&var) {
             // Already bound: must check consistency
@@ -39,14 +40,17 @@ fn merge_subst(
     Some(s1)
 }
 
-fn unify(lhs: &Vec<Symbol>, term: &Vec<Symbol>) -> Option<(HashMap<String, Vec<Symbol>>, usize)> {
+fn unify<'a>(
+    lhs: &'a [Symbol],
+    term: &'a [Symbol],
+) -> Option<(HashMap<&'a str, Vec<Symbol>>, usize)> {
     if lhs[0].length == 1 {
-        if lhs[0].name.chars().next().unwrap().is_uppercase() {
-            let mut map = HashMap::new();
-            map.insert(lhs[0].name.clone(), term.clone());
+        if lhs[0].is_var {
+            let mut map = HashMap::with_capacity(lhs.len());
+            map.insert(lhs[0].name.as_str(), term.to_vec());
             return Some((map, 0));
         } else if lhs[0].name == term[0].name {
-            return Some((HashMap::new(), 0));
+            return Some((Default::default(), 0));
         } else {
             return None;
         }
@@ -58,10 +62,10 @@ fn unify(lhs: &Vec<Symbol>, term: &Vec<Symbol>) -> Option<(HashMap<String, Vec<S
             let term_idx = term[1].length;
             let rest_lhs = &lhs[1..lhs_idx + 1];
             let term_lhs = &term[1..term_idx + 1];
-            if let Some(map) = unify(&rest_lhs.to_vec(), &term_lhs.to_vec()) {
+            if let Some(map) = unify(&rest_lhs, &term_lhs) {
                 let rest_rhs = &lhs[lhs_idx + 1..];
                 let term_rhs = &term[term_idx + 1..];
-                if let Some(rest_map) = unify(&rest_rhs.to_vec(), &term_rhs.to_vec()) {
+                if let Some(rest_map) = unify(&rest_rhs, &term_rhs) {
                     if let Some(merged) = merge_subst(map.0, rest_map.0) {
                         return Some((merged, 0));
                     } else {
@@ -70,10 +74,10 @@ fn unify(lhs: &Vec<Symbol>, term: &Vec<Symbol>) -> Option<(HashMap<String, Vec<S
                 }
             }
         }
-        if let Some(map) = unify(lhs, &term[1..(term[1].length + 1)].to_vec()) {
+        if let Some(map) = unify(lhs, &term[1..(term[1].length + 1)]) {
             return Some((map.0, 1 + map.1));
         } else {
-            if let Some(map) = unify(lhs, &term[(term[1].length + 1)..].to_vec()) {
+            if let Some(map) = unify(lhs, &term[(term[1].length + 1)..]) {
                 return Some((map.0, term[1].length + 1 + map.1));
             } else {
                 return None;
@@ -82,10 +86,10 @@ fn unify(lhs: &Vec<Symbol>, term: &Vec<Symbol>) -> Option<(HashMap<String, Vec<S
     }
 }
 
-fn check_conditions(cond: &Vec<Symbol>, subst: &HashMap<String, Vec<Symbol>>) -> bool {
+fn check_conditions(cond: &Vec<Symbol>, subst: &HashMap<&str, Vec<Symbol>>) -> bool {
     for var in cond {
         // println!("Checking condition on variable: {}", var.name);
-        if let Some(sym) = subst.get(&var.name) {
+        if let Some(sym) = subst.get(var.name.as_str()) {
             if sym.len() == 1 && sym[0].name == "0" {
                 return false;
             }
@@ -96,9 +100,10 @@ fn check_conditions(cond: &Vec<Symbol>, subst: &HashMap<String, Vec<Symbol>>) ->
 
 fn insert(new_term: Vec<Symbol>, old_term: &mut Vec<Symbol>, idx: usize) -> Vec<Symbol> {
     let mut i = 0;
+    let diff = old_term[idx].length - new_term.len();
     while i < idx {
         if old_term[i].length != 1 {
-            old_term[i].length -= old_term[idx].length - new_term.len();
+            old_term[i].length -= diff;
         }
         i += 1;
         if old_term[i].length < idx - i + 1 {
@@ -111,12 +116,12 @@ fn insert(new_term: Vec<Symbol>, old_term: &mut Vec<Symbol>, idx: usize) -> Vec<
     result
 }
 
-fn apply_subst(term: &Vec<Symbol>, subst: &HashMap<String, Vec<Symbol>>) -> Vec<Symbol> {
-    fn apply_rec(term: &Vec<Symbol>, subst: &HashMap<String, Vec<Symbol>>) -> (Vec<Symbol>, usize) {
+fn apply_subst(term: &[Symbol], subst: &HashMap<&str, Vec<Symbol>>) -> Vec<Symbol> {
+    fn apply_rec(term: &[Symbol], subst: &HashMap<&str, Vec<Symbol>>) -> (Vec<Symbol>, usize) {
         let first = &term[0];
         if first.length == 1 {
-            if first.name.chars().next().unwrap().is_uppercase() {
-                if let Some(repl) = subst.get(&first.name) {
+            if first.is_var {
+                if let Some(repl) = subst.get(first.name.as_str()) {
                     let result = repl.clone();
                     return (result, repl.len());
                 } else {
@@ -127,11 +132,11 @@ fn apply_subst(term: &Vec<Symbol>, subst: &HashMap<String, Vec<Symbol>>) -> Vec<
             }
         } else {
             let mut result = vec![first.clone()];
-            let left = &term[1..&term[1].length + 1];
-            let (mut sub_result, len_first) = apply_rec(&left.to_vec(), subst);
+            let left = &term[1..term[1].length + 1];
+            let (mut sub_result, len_first) = apply_rec(&left, subst);
             result.append(&mut sub_result);
-            let rest = &term[&term[1].length + 1..];
-            let (mut rest_result, len_rest) = apply_rec(&rest.to_vec(), subst);
+            let rest = &term[term[1].length + 1..];
+            let (mut rest_result, len_rest) = apply_rec(&rest, subst);
             result.append(&mut rest_result);
             result[0].length = len_first + len_rest + 1;
             let length = result[0].length;
@@ -141,7 +146,10 @@ fn apply_subst(term: &Vec<Symbol>, subst: &HashMap<String, Vec<Symbol>>) -> Vec<
     apply_rec(term, subst).0
 }
 
-fn rewrite_one_step(rules: &Vec<Rule>, term: &mut Vec<Symbol>) -> Option<(Vec<Symbol>, String)> {
+fn rewrite_one_step<'a>(
+    rules: &'a [Rule],
+    term: &mut Vec<Symbol>,
+) -> Option<(Vec<Symbol>, &'a str)> {
     for rule in rules {
         // println!("Trying rule: {}", rule.name);
         // println!("On term: {:?}", term);
@@ -152,21 +160,22 @@ fn rewrite_one_step(rules: &Vec<Rule>, term: &mut Vec<Symbol>) -> Option<(Vec<Sy
             let new_term = apply_subst(&rule.rhs, &subst.0);
             let rewritten = insert(new_term, term, subst.1);
             // println!("Rewritten term: {:?}", &rewritten);
-            return Some((rewritten, rule.name.clone()));
+            return Some((rewritten, rule.name.as_str()));
         }
     }
     None
 }
 
-fn rewrite(rules: &Vec<Rule>, term: &Vec<Symbol>) -> (Vec<Symbol>, Vec<String>) {
-    // println!("Rewriting term: {:?}", term);
-    let mut applied_rules = vec![];
-    let mut term = term.clone();
-    while let Some((new_term, rule_name)) = rewrite_one_step(rules, &mut term) {
+fn rewrite<'a>(rules: &'a [Rule], term: &[Symbol]) -> (Vec<Symbol>, Vec<&'a str>) {
+    let mut applied_rules = Vec::new();
+    let mut current_term = term.to_vec(); // clone once, we’ll mutate this
+
+    while let Some((new_term, rule_name)) = rewrite_one_step(rules, &mut current_term) {
         applied_rules.push(rule_name);
-        term = new_term;
+        current_term = new_term;
     }
-    (term, applied_rules)
+
+    (current_term, applied_rules)
 }
 
 fn parse_term(term_str: &str) -> Vec<Symbol> {
@@ -187,11 +196,13 @@ fn parse_term(term_str: &str) -> Vec<Symbol> {
             if part.chars().next().unwrap() == '?' {
                 symbols.push(Symbol {
                     name: part[1..].to_ascii_uppercase().to_string(),
+                    is_var: true,
                     length: 1,
                 });
             } else {
                 symbols.push(Symbol {
                     name: part.to_string(),
+                    is_var: false,
                     length: 1,
                 });
             }
@@ -214,6 +225,7 @@ fn parse_conditions(cond_str: &str) -> Vec<Symbol> {
         let var = part.chars().nth(var_pos).unwrap();
         conditions.push(Symbol {
             name: var.to_ascii_uppercase().to_string(),
+            is_var: true,
             length: 1,
         });
     }
@@ -233,17 +245,17 @@ fn check_canonicalizer(rule: &Rule) -> bool {
         let lhs_sym = &rule.lhs[i];
         let rhs_sym = &rule.rhs[i];
         if lhs_sym.length == 1 {
-            if !lhs_vars.contains_key(&lhs_sym.name) {
-                lhs_vars.insert(lhs_sym.name.clone(), 1);
+            if !lhs_vars.contains_key(lhs_sym.name.as_str()) {
+                lhs_vars.insert(lhs_sym.name.as_str(), 1);
             } else {
-                lhs_vars.insert(lhs_sym.name.clone(), lhs_vars[&lhs_sym.name] + 1);
+                lhs_vars.insert(lhs_sym.name.as_str(), lhs_vars[lhs_sym.name.as_str()] + 1);
             }
         }
         if rhs_sym.length == 1 {
-            if !rhs_vars.contains_key(&rhs_sym.name) {
-                rhs_vars.insert(rhs_sym.name.clone(), 1);
+            if !rhs_vars.contains_key(rhs_sym.name.as_str()) {
+                rhs_vars.insert(rhs_sym.name.as_str(), 1);
             } else {
-                rhs_vars.insert(rhs_sym.name.clone(), rhs_vars[&rhs_sym.name] + 1);
+                rhs_vars.insert(rhs_sym.name.as_str(), rhs_vars[rhs_sym.name.as_str()] + 1);
             }
         }
     }
@@ -284,7 +296,7 @@ fn parse_rules(egg_rules: &Vec<String>) -> (Vec<Rule>, Vec<Rule>) {
             cond,
         };
         if check_canonicalizer(&rule) {
-            canonicalizers.push(rule.clone());
+            canonicalizers.push(rule);
         } else {
             rules.push(rule);
         }
@@ -349,16 +361,19 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let start = Instant::now();
     for (i, term) in terms.iter().enumerate() {
         let (rewritten_term, applied_rules) = rewrite(&rules, term);
-        rewritten_terms.push((rewritten_term.clone(), applied_rules.clone()));
+        rewritten_terms.push((
+            rewritten_term.clone(),
+            applied_rules.iter().map(|s| s.to_string()).collect(),
+        ));
         // println!("Rewrote {} terms...", i);
         // println!("Original: {}", pretty(term));
     }
-    let duration = start.elapsed().as_secs_f32();
+    let duration = start.elapsed();
     println!("Rewriting completed in: {:?}", duration);
     println!("Rewrote {} terms.", rewritten_terms.len());
     println!(
         "Average time per term: {:?}",
-        duration / rewritten_terms.len() as f32
+        duration / rewritten_terms.len() as u32
     );
     // println!("Rewriting completed.");
 
