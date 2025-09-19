@@ -11,6 +11,7 @@ use std::{
 struct Symbol {
     name: String,
     is_var: bool,
+    is_num: bool,
     length: usize,
 }
 
@@ -166,6 +167,45 @@ fn rewrite_one_step<'a>(
     None
 }
 
+fn fold_constants(term: &mut Vec<Symbol>) {
+    let mut i = term.len();
+    while i > 0 {
+        i -= 1;
+        let sym = &term[i];
+        if sym.length != 3 {
+            continue;
+        }
+        let lhs = &term[i + 1];
+        let rhs = &term[i + 2];
+        if lhs.is_num && rhs.is_num {
+            println!("Folding constants: {} {} {}", lhs.name, sym.name, rhs.name);
+            let folded = match sym.name.as_str() {
+                "+" => lhs.name.parse::<f64>().unwrap() + rhs.name.parse::<f64>().unwrap(),
+                "-" => lhs.name.parse::<f64>().unwrap() - rhs.name.parse::<f64>().unwrap(),
+                "*" => lhs.name.parse::<f64>().unwrap() * rhs.name.parse::<f64>().unwrap(),
+                "/" => lhs.name.parse::<f64>().unwrap() / rhs.name.parse::<f64>().unwrap(),
+                _ => continue,
+            };
+            term.splice(
+                i..i + 3,
+                [Symbol {
+                    name: folded.to_string(),
+                    length: 1,
+                    is_var: false,
+                    is_num: true,
+                }],
+            );
+            let mut j = 0;
+            while j < i {
+                if term[j].length > 1 && j + term[j].length > i {
+                    term[j].length -= 2;
+                }
+                j += 1;
+            }
+        }
+    }
+}
+
 fn rewrite<'a>(rules: &'a [Rule], term: &[Symbol]) -> (Vec<Symbol>, Vec<&'a str>) {
     let mut applied_rules = Vec::new();
     let mut current_term = term.to_vec(); // clone once, we’ll mutate this
@@ -173,6 +213,7 @@ fn rewrite<'a>(rules: &'a [Rule], term: &[Symbol]) -> (Vec<Symbol>, Vec<&'a str>
     while let Some((new_term, rule_name)) = rewrite_one_step(rules, &mut current_term) {
         applied_rules.push(rule_name);
         current_term = new_term;
+        fold_constants(&mut current_term);
     }
 
     (current_term, applied_rules)
@@ -193,16 +234,25 @@ fn parse_term(term_str: &str) -> Vec<Symbol> {
         } else if part == ")" {
             stack.pop();
         } else {
-            if part.chars().next().unwrap() == '?' {
+            if part.parse::<f64>().is_ok() {
+                symbols.push(Symbol {
+                    name: part.to_string(),
+                    is_var: false,
+                    is_num: true,
+                    length: 1,
+                });
+            } else if part.chars().next().unwrap() == '?' {
                 symbols.push(Symbol {
                     name: part[1..].to_ascii_uppercase().to_string(),
                     is_var: true,
+                    is_num: false,
                     length: 1,
                 });
             } else {
                 symbols.push(Symbol {
                     name: part.to_string(),
                     is_var: false,
+                    is_num: false,
                     length: 1,
                 });
             }
@@ -226,6 +276,7 @@ fn parse_conditions(cond_str: &str) -> Vec<Symbol> {
         conditions.push(Symbol {
             name: var.to_ascii_uppercase().to_string(),
             is_var: true,
+            is_num: false,
             length: 1,
         });
     }
@@ -327,6 +378,15 @@ struct OutputEntry {
     applied_rules: Vec<String>,
 }
 
+fn sym_count(term: String) -> usize {
+    let clean = term.replace('(', " ").replace('"', " ").replace(')', " ");
+    return clean
+        .split(' ')
+        .filter(|s| !s.is_empty())
+        .collect::<Vec<&str>>()
+        .len();
+}
+
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let args = std::env::args().collect::<Vec<String>>();
     if args.len() != 3 {
@@ -384,9 +444,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .truncate(true)
         .open(out_file)?;
 
+    let mut total_diff = 0;
+
     for (i, (rewritten_term, applied_rules)) in rewritten_terms.iter().enumerate() {
         let original_term_str = term_lines[i].clone();
         let rewritten_term_str = pretty(&rewritten_term);
+        total_diff += sym_count(original_term_str.clone()) as isize
+            - sym_count(rewritten_term_str.clone()) as isize;
         let entry = OutputEntry {
             original_term: original_term_str,
             rewritten_term: rewritten_term_str,
@@ -401,6 +465,14 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             e
         })?;
     }
+    println!(
+        "Total symbol count difference (original - rewritten): {}",
+        total_diff
+    );
+    println!(
+        "Average symbol count difference per term: {}",
+        total_diff as f64 / rewritten_terms.len() as f64
+    );
     // println!("Rewritten terms written to {}", out_file);
 
     Ok(())

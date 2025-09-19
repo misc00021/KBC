@@ -3,7 +3,7 @@ import json
 
 def symCount(term: str):
     clean = term.replace('(', ' ').replace('"', ' ').replace(')', ' ')
-    return len(term.split())
+    return len(clean.split())
 
 def main():
     path = "all_results/"
