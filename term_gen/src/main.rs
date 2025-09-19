@@ -51,7 +51,7 @@ fn term_gen() {
         ("+", 2),
         ("-", 2),
         ("*", 2),
-        /*("/", 2),*/
+        ("/", 2),
         ("pow", 2),
         ("var", 0),
         ("const", 0),
@@ -78,41 +78,41 @@ fn term_gen() {
     //         writeln!(out, "{}", t.0).unwrap();
     //     }
     // }
-    let out_file = std::fs::File::create("no_div_random_terms_small.txt").unwrap();
+    let out_file = std::fs::File::create("random_terms_small.txt").unwrap();
     let mut out = std::io::BufWriter::new(out_file);
     for ts in terms.iter().take(4) {
         for t in ts.iter() {
             writeln!(out, "{}", t.0).unwrap();
         }
     }
-    let out_file = std::fs::File::create("no_div_random_terms_medium.txt").unwrap();
+    let out_file = std::fs::File::create("random_terms_medium.txt").unwrap();
     let mut out = std::io::BufWriter::new(out_file);
     for ts in terms.iter().skip(5).take(1) {
         for t in ts.iter() {
             writeln!(out, "{}", t.0).unwrap();
         }
     }
-    let out_file = std::fs::File::create("no_div_random_terms_large.txt").unwrap();
+    let out_file = std::fs::File::create("random_terms_large.txt").unwrap();
     let mut out = std::io::BufWriter::new(out_file);
     for ts in terms.iter().skip(8).take(1) {
         for t in ts.iter() {
             writeln!(out, "{}", t.0).unwrap();
         }
     }
-    let out_file = std::fs::File::create("no_div_random_terms_huge.txt").unwrap();
+    let out_file = std::fs::File::create("random_terms_huge.txt").unwrap();
     let mut out = std::io::BufWriter::new(out_file);
     for ts in terms.iter().skip(28).take(1) {
         for t in ts.iter() {
             writeln!(out, "{}", t.0).unwrap();
         }
     }
-    // let out_file = std::fs::File::create("no_div_random_terms_all.txt").unwrap();
-    // let mut out = std::io::BufWriter::new(out_file);
-    // for ts in terms.iter() {
-    //     for t in ts.iter() {
-    //         writeln!(out, "{}", t.0).unwrap();
-    //     }
-    // }
+    let out_file = std::fs::File::create("random_terms_all.txt").unwrap();
+    let mut out = std::io::BufWriter::new(out_file);
+    for ts in terms.iter() {
+        for t in ts.iter() {
+            writeln!(out, "{}", t.0).unwrap();
+        }
+    }
 }
 
 fn main() {

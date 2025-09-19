@@ -22,11 +22,9 @@ rw!("comm-add";  "(+ ?x ?y)"        => "(+ ?y ?x)"),
     rw!("factor"    ; "(+ (* ?x ?y) (* ?x ?z))" => "(* ?x (+ ?y ?z))"),
 
     rw!("pow-mul"; "(* (pow ?x ?y) (pow ?x ?z))" => "(pow ?x (+ ?y ?z))") if is_not_zero("?x"),
-    rw!("pow0"; "(pow ?x 0)" => "1"
-        if is_not_zero("?x")),
+    rw!("pow0"; "(pow ?x 0)" => "1" if is_not_zero("?x")),
     rw!("pow1"; "(pow ?x 1)" => "?x"),
     rw!("pow2"; "(pow ?x 2)" => "(* ?x ?x)"),
-    rw!("pow-recip"; "(pow ?x (neg 1))" => "(/ 1 ?x)"
-        if is_not_zero("?x")),
+    rw!("pow-recip"; "(pow ?x (neg 1))" => "(/ 1 ?x)" if is_not_zero("?x")),
     rw!("recip-mul-div"; "(* ?x (/ 1 ?x))" => "1" if is_not_zero("?x")),
 
