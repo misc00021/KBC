@@ -568,7 +568,10 @@ fn order_rule(rule: &mut Rule) {
 
 pub fn flat_to_egg(rule: &mut Rule) -> String {
     let mut ret = String::new();
-    order_rule(rule);
+    // order_rule(rule);
+    if rule.ordered == false {
+        return String::new(); // Skip unordered rules
+    }
     ret.push_str(&format!(
         "rw!(\"{}\"; {} => {}",
         rule.name,
@@ -576,6 +579,14 @@ pub fn flat_to_egg(rule: &mut Rule) -> String {
         egg_print(&mut rule.rhs)
     ));
     if !rule.cond.is_empty() {
+        // Skip rules which have wrong ordering due to conditions, i.e. X!= 0 => 0 => 0/X
+        let lhs_vars = lockdown(rule.lhs.clone());
+        let rhs_vars = lockdown(rule.rhs.clone());
+        for var in rhs_vars {
+            if !lhs_vars.contains(&var) {
+                return String::new();
+            }
+        }
         let cond = egg_print_cond(&mut rule.cond);
         if !cond.contains('?') {
             return String::new(); // Skip rules without variables in conditions
