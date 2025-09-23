@@ -44,7 +44,13 @@ fn merge_subst<'a>(
 fn unify<'a>(
     lhs: &'a [Symbol],
     term: &'a [Symbol],
+    parent_match: bool,
 ) -> Option<(HashMap<&'a str, Vec<Symbol>>, usize)> {
+    // println!(
+    //     "Trying to match {} on {}",
+    //     debug_print(&lhs.to_vec()),
+    //     debug_print(&term.to_vec())
+    // );
     if lhs[0].length == 1 {
         if lhs[0].is_var {
             let mut map = HashMap::with_capacity(lhs.len());
@@ -63,28 +69,34 @@ fn unify<'a>(
             let term_idx = term[1].length;
             let rest_lhs = &lhs[1..lhs_idx + 1];
             let term_lhs = &term[1..term_idx + 1];
-            if let Some(map) = unify(&rest_lhs, &term_lhs) {
+            if let Some(map) = unify(&rest_lhs, &term_lhs, true) {
+                // println!("Map1: {:?}", map);
                 let rest_rhs = &lhs[lhs_idx + 1..];
                 let term_rhs = &term[term_idx + 1..];
-                if let Some(rest_map) = unify(&rest_rhs, &term_rhs) {
+                if let Some(rest_map) = unify(&rest_rhs, &term_rhs, true) {
+                    // println!("Map2: {:?}", rest_map);
                     if let Some(merged) = merge_subst(map.0, rest_map.0) {
+                        // println!("Merged: {:?}", merged);
                         return Some((merged, 0));
-                    } else {
-                        return None;
                     }
                 }
             }
         }
-        if let Some(map) = unify(lhs, &term[1..(term[1].length + 1)]) {
-            return Some((map.0, 1 + map.1));
-        } else {
-            if let Some(map) = unify(lhs, &term[(term[1].length + 1)..]) {
-                return Some((map.0, term[1].length + 1 + map.1));
+        if !parent_match {
+            if let Some(map) = unify(lhs, &term[1..(term[1].length + 1)], parent_match) {
+                // println!("Map 3: {:?}", map);
+                return Some((map.0, 1 + map.1));
             } else {
-                return None;
+                if let Some(map) = unify(lhs, &term[(term[1].length + 1)..], parent_match) {
+                    // println!("Map 4: {:?}", map);
+                    return Some((map.0, term[1].length + 1 + map.1));
+                } else {
+                    return None;
+                }
             }
         }
     }
+    return None;
 }
 
 fn check_conditions(cond: &Vec<Symbol>, subst: &HashMap<&str, Vec<Symbol>>) -> bool {
@@ -100,6 +112,8 @@ fn check_conditions(cond: &Vec<Symbol>, subst: &HashMap<&str, Vec<Symbol>>) -> b
 }
 
 fn insert(new_term: Vec<Symbol>, old_term: &mut Vec<Symbol>, idx: usize) -> Vec<Symbol> {
+    // println!("Old term: {:?}", pretty(old_term));
+    // println!("New term: {:?}", pretty(&new_term));
     let mut i = 0;
     let diff = old_term[idx].length - new_term.len();
     while i < idx {
@@ -113,6 +127,7 @@ fn insert(new_term: Vec<Symbol>, old_term: &mut Vec<Symbol>, idx: usize) -> Vec<
     }
     let mut result = old_term[..idx].to_vec();
     result.extend(new_term);
+    // println!("Inserted at index {}: {:?}", idx, pretty(&result));
     result.extend(old_term[idx + old_term[idx].length..].to_vec());
     result
 }
@@ -153,14 +168,14 @@ fn rewrite_one_step<'a>(
 ) -> Option<(Vec<Symbol>, &'a str)> {
     for rule in rules {
         // println!("Trying rule: {}", rule.name);
-        // println!("On term: {:?}", term);
-        if let Some(subst) = unify(&rule.lhs, term) {
+        // println!("On term: {:?}", debug_print(term));
+        if let Some(subst) = unify(&rule.lhs, term, false) {
             if !check_conditions(&rule.cond, &subst.0) {
                 continue;
             }
             let new_term = apply_subst(&rule.rhs, &subst.0);
             let rewritten = insert(new_term, term, subst.1);
-            // println!("Rewritten term: {:?}", &rewritten);
+            // println!("Rewritten term: {:?}", debug_print(&rewritten));
             return Some((rewritten, rule.name.as_str()));
         }
     }
@@ -178,12 +193,18 @@ fn fold_constants(term: &mut Vec<Symbol>) {
         let lhs = &term[i + 1];
         let rhs = &term[i + 2];
         if lhs.is_num && rhs.is_num {
-            println!("Folding constants: {} {} {}", lhs.name, sym.name, rhs.name);
+            // println!("Folding constants: {} {} {}", lhs.name, sym.name, rhs.name);
             let folded = match sym.name.as_str() {
                 "+" => lhs.name.parse::<f64>().unwrap() + rhs.name.parse::<f64>().unwrap(),
                 "-" => lhs.name.parse::<f64>().unwrap() - rhs.name.parse::<f64>().unwrap(),
                 "*" => lhs.name.parse::<f64>().unwrap() * rhs.name.parse::<f64>().unwrap(),
-                "/" => lhs.name.parse::<f64>().unwrap() / rhs.name.parse::<f64>().unwrap(),
+                "/" => {
+                    let denom = rhs.name.parse::<f64>().unwrap();
+                    if denom == 0.0 {
+                        continue;
+                    }
+                    lhs.name.parse::<f64>().unwrap() / denom
+                }
                 _ => continue,
             };
             term.splice(
@@ -206,16 +227,101 @@ fn fold_constants(term: &mut Vec<Symbol>) {
     }
 }
 
-fn rewrite<'a>(rules: &'a [Rule], term: &[Symbol]) -> (Vec<Symbol>, Vec<&'a str>) {
-    let mut applied_rules = Vec::new();
-    let mut current_term = term.to_vec(); // clone once, we’ll mutate this
+// Implements lexicographic ordering with w(var) = 1, w(const) = 2
+// Pushes constants to the right for constant folding
+fn smaller(a: &Vec<Symbol>, b: &Vec<Symbol>) -> bool {
+    let weight = |sym: &Symbol| if sym.is_num { 2 } else { 1 };
+    let mut a_weight = 0;
+    let mut b_weight = 0;
+    for sym in a {
+        a_weight += weight(sym);
+    }
+    for sym in b {
+        b_weight += weight(sym);
+    }
+    // println!(
+    //     "Comparing weights: w({:?}) = {}, w({:?}) = {}",
+    //     pretty(a),
+    //     a_weight,
+    //     pretty(b),
+    //     b_weight
+    // );
+    if a_weight < b_weight {
+        return true;
+    } else if a_weight > b_weight {
+        return false;
+    } else {
+        for (sym_a, sym_b) in a.iter().zip(b.iter()) {
+            let w_a = weight(sym_a);
+            let w_b = weight(sym_b);
+            // println!(
+            //     "Comparing symbols: w({}) = {}, w({}) = {}",
+            //     sym_a.name, w_a, sym_b.name, w_b
+            // );
+            if w_a < w_b {
+                // println!("Smaller: {:?} < {:?}", pretty(a), pretty(b));
+                return true;
+            } else if w_a > w_b {
+                // println!("Not smaller: {:?} > {:?}", pretty(a), pretty(b));
+                return false;
+            }
+        }
+        return false;
+    }
+}
 
-    while let Some((new_term, rule_name)) = rewrite_one_step(rules, &mut current_term) {
-        applied_rules.push(rule_name);
-        current_term = new_term;
+fn canonicalize(old: &mut Vec<Symbol>, canonicalizers: &[Rule]) -> bool {
+    // println!("Canonicalizing: {}", debug_print(old));
+    let mut canonicalized = false;
+    for rule in canonicalizers {
+        let mut i = old.len();
+        while i > 0 {
+            i -= 1;
+            if let Some(subst) = unify(&rule.lhs, &old[i..i + old[i].length], false) {
+                if !check_conditions(&rule.cond, &subst.0) {
+                    continue;
+                }
+                let new_term = apply_subst(&rule.rhs, &subst.0);
+                let rewritten = insert(new_term, old, i + subst.1);
+
+                if smaller(&rewritten, old) {
+                    *old = rewritten;
+                    canonicalized = true;
+                }
+            }
+        }
+    }
+    // println!("Became {}", debug_print(old));
+    canonicalized
+}
+
+fn debug_print(syms: &Vec<Symbol>) -> String {
+    let mut ret = String::new();
+    for sym in syms {
+        ret.push_str(format!("[{}:{}]", sym.name, sym.length).as_str());
+    }
+    return ret;
+}
+
+fn rewrite<'a>(
+    rules: &'a [Rule],
+    canonicalizers: &[Rule],
+    term: &[Symbol],
+) -> (Vec<Symbol>, Vec<&'a str>) {
+    let mut applied_rules = Vec::new();
+    let mut current_term = term.to_vec();
+    let mut canonicalizable = true;
+    while canonicalizable {
+        while let Some((new_term, rule_name)) = rewrite_one_step(rules, &mut current_term) {
+            applied_rules.push(rule_name);
+            current_term = new_term;
+            fold_constants(&mut current_term);
+        }
+        // println!("After rewriting: {}", debug_print(&current_term));
+        canonicalizable = canonicalize(&mut current_term, canonicalizers);
         fold_constants(&mut current_term);
     }
-
+    // println!("rewritten: {}", debug_print(&current_term));
     (current_term, applied_rules)
 }
 
@@ -347,6 +453,9 @@ fn parse_rules(egg_rules: &Vec<String>) -> (Vec<Rule>, Vec<Rule>) {
             cond,
         };
         if check_canonicalizer(&rule) {
+            if rule.lhs.len() < rule.rhs.len() {
+                continue;
+            }
             canonicalizers.push(rule);
         } else {
             rules.push(rule);
@@ -395,6 +504,16 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     }
     let rules_file = &args[1];
     let term_file = &args[2];
+    let out_dir = std::path::Path::new("results/all");
+    let name = std::path::Path::new(rules_file)
+        .file_stem()
+        .unwrap()
+        .to_string_lossy();
+    let input_file = std::path::Path::new(term_file)
+        .file_stem()
+        .unwrap()
+        .to_string_lossy();
+    let out_path = out_dir.join(format!("Greedy-{}-{}.jsonl", name, input_file));
     let file = File::open(rules_file).map_err(|e| {
         eprintln!("Failed to open input file '{}': {}", rules_file, e);
         e
@@ -420,7 +539,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut rewritten_terms: Vec<(Vec<Symbol>, Vec<String>)> = Vec::new();
     let start = Instant::now();
     for (i, term) in terms.iter().enumerate() {
-        let (rewritten_term, applied_rules) = rewrite(&rules, term);
+        let (rewritten_term, applied_rules) = rewrite(&rules, &canonicalizers, term);
         rewritten_terms.push((
             rewritten_term.clone(),
             applied_rules.iter().map(|s| s.to_string()).collect(),
@@ -428,21 +547,21 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         // println!("Rewrote {} terms...", i);
         // println!("Original: {}", pretty(term));
     }
-    let duration = start.elapsed();
-    println!("Rewriting completed in: {:?}", duration);
-    println!("Rewrote {} terms.", rewritten_terms.len());
-    println!(
-        "Average time per term: {:?}",
-        duration / rewritten_terms.len() as u32
-    );
+    let duration = start.elapsed().as_secs_f64();
+    // println!("Rewriting completed in: {:?}", duration);
+    // println!("Rewrote {} terms.", rewritten_terms.len());
+    // println!(
+    //     "Average time per term: {:?}",
+    //     duration / rewritten_terms.len() as f64
+    // );
+    // println!("Test: {}", (-0.0));
     // println!("Rewriting completed.");
 
-    let out_file = "rewritten_terms.jsonl";
     let mut out = OpenOptions::new()
         .create(true)
         .write(true)
         .truncate(true)
-        .open(out_file)?;
+        .open(&out_path)?;
 
     let mut total_diff = 0;
 
@@ -461,18 +580,27 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             e
         })?;
         writeln!(out, "{}", json).map_err(|e| {
-            eprintln!("Failed to write to output file '{}': {}", out_file, e);
+            eprintln!(
+                "Failed to write to output file '{}': {}",
+                out_path.to_string_lossy(),
+                e
+            );
             e
         })?;
     }
     println!(
-        "Total symbol count difference (original - rewritten): {}",
-        total_diff
+        "{},{:.10}",
+        total_diff as f64 / rewritten_terms.len() as f64,
+        duration / rewritten_terms.len() as f64
     );
-    println!(
-        "Average symbol count difference per term: {}",
-        total_diff as f64 / rewritten_terms.len() as f64
-    );
+    // println!(
+    //     "Total symbol count difference (original - rewritten): {}",
+    //     total_diff
+    // );
+    // println!(
+    //     "Average symbol count difference per term: {}",
+    //     total_diff as f64 / rewritten_terms.len() as f64
+    // );
     // println!("Rewritten terms written to {}", out_file);
 
     Ok(())
