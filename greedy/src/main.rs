@@ -277,6 +277,7 @@ fn canonicalize(old: &mut Vec<Symbol>, canonicalizers: &[Rule]) -> bool {
         let mut i = old.len();
         while i > 0 {
             i -= 1;
+            println!("rule {} on {}", rule.name, debug_print(old));
             if let Some(subst) = unify(&rule.lhs, &old[i..i + old[i].length], false) {
                 if !check_conditions(&rule.cond, &subst.0) {
                     continue;
