@@ -566,10 +566,10 @@ fn order_rule(rule: &mut Rule) {
     rule.ordered = true;
 }
 
-pub fn flat_to_egg(rule: &mut Rule) -> String {
+pub fn flat_to_egg(rule: &mut Rule, delete_unorderable: bool) -> String {
     let mut ret = String::new();
     // order_rule(rule);
-    if rule.ordered == false {
+    if rule.ordered == false && delete_unorderable {
         return String::new(); // Skip unordered rules
     }
     ret.push_str(&format!(
@@ -578,6 +578,15 @@ pub fn flat_to_egg(rule: &mut Rule) -> String {
         egg_print(&mut rule.lhs),
         egg_print(&mut rule.rhs)
     ));
+    if rule.ordered == false && !delete_unorderable {
+        ret.push_str(&format!(
+        "rw!(\"{}\"; {} => {}",
+        format!("{}_rev", rule.name),
+        egg_print(&mut rule.rhs),
+        egg_print(&mut rule.lhs)
+    ));
+    }
+        
     if !rule.cond.is_empty() {
         // Skip rules which have wrong ordering due to conditions, i.e. X!= 0 => 0 => 0/X
         let lhs_vars = lockdown(rule.lhs.clone());
@@ -600,11 +609,11 @@ pub fn flat_to_egg(rule: &mut Rule) -> String {
     return ret.replace("(neg 1)", "-1");
 }
 
-pub fn twee_to_egg(lines: &Vec<String>) -> Vec<String> {
+pub fn twee_to_egg(lines: &Vec<String>, delete_unorderable: bool) -> Vec<String> {
     let rules = twee_out_to_flat(&lines);
     let mut lines = Vec::new();
     for mut rule in rules {
-        lines.push(flat_to_egg(&mut rule));
+        lines.push(flat_to_egg(&mut rule, delete_unorderable));
     }
     return lines;
 }
@@ -622,6 +631,7 @@ fn lockdown(slice: Vec<Symbol>) -> HashSet<String> {
     return vars;
 }
 
+// Traverse the term and add guards for variables that could lead to division by zero
 fn add_guard(slice: Vec<Symbol>) -> HashSet<String> {
     let mut nonzero_vars = HashSet::new();
     if slice.is_empty() {
@@ -665,7 +675,7 @@ fn add_guard(slice: Vec<Symbol>) -> HashSet<String> {
     return nonzero_vars;
 }
 
-pub fn add_guards(lines: Vec<String>) -> Vec<String> {
+pub fn add_guards(lines: Vec<String>, delete_unorderable: bool) -> Vec<String> {
     let rules = twee_out_to_flat(&lines);
     let mut out = Vec::new();
     for rule in rules {
@@ -682,7 +692,7 @@ pub fn add_guards(lines: Vec<String>) -> Vec<String> {
                 length: 1,
             });
         }
-        out.push(flat_to_egg(&mut new_rule));
+        out.push(flat_to_egg(&mut new_rule, delete_unorderable));
     }
     return out;
 }

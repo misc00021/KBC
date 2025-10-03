@@ -5,6 +5,7 @@ def symCount(term: str):
     clean = term.replace('(', ' ').replace('"', ' ').replace(')', ' ')
     return len(clean.split())
 
+# Output average simplification results for each (ruleSet, testSet) combination across different time limits
 def main():
     path = "all_results/"
     ruleTestDict = {}

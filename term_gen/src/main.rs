@@ -2,6 +2,7 @@ use rand;
 use std::collections::HashSet;
 use std::io::Write;
 
+// Generate a random term and return it along with its size (number of operators)
 fn gen_term(
     var_count: &mut usize,
     ops: &Vec<(&str, usize)>,
@@ -44,6 +45,8 @@ fn gen_term(
     }
 }
 
+// Generate random terms and write them to files based on their sizes
+// To exclude certain operators, simply remove them from the `ops` vector
 fn term_gen() {
     let mut rng = rand::rng();
     let mut terms = Vec::new();

@@ -1,3 +1,5 @@
+/* https://github.com/egraphs-good/egg/blob/main/tests/math.rs is the basis of all files in kbc-test/src */
+
 mod kbc_by_num_replacing;
 use core::time;
 use std::io::{BufRead, BufReader};

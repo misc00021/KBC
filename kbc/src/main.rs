@@ -11,21 +11,29 @@ use crate::translate::{Rule, add_guards, egg_to_flat, flat_to_egg};
 
 fn main() -> io::Result<()> {
     let args: Vec<String> = std::env::args().collect();
+
+    // Extend true -> append original rules to the output and remove duplicates
+    // Extend false -> only output the rules from twee
     let extend = false;
+
+    // Delete rules that twee cannot order
+    // If false, make a rule for each direction
+    let delete_unorderable = false;
     let mut size_target = false;
     if args.len() < 3 {
         eprintln!("Usage: {} <input_file> --num_rules=<num_rules>", args[0]);
         std::process::exit(1);
     }
-    if args[1] == "--add_guards" {
-        let input = &args[2];
+    if args[2] == "--add_guards" {
+        // Add guards to the rules in the input file and write to guarded_rules.txt
+        let input = &args[1];
         let in_rules = File::open(input).map_err(|e| {
             eprintln!("Couldn't open input {}", e);
             e
         })?;
         let reader = BufReader::new(in_rules);
         let lines: Vec<String> = reader.lines().filter_map(Result::ok).collect();
-        let rules = add_guards(lines);
+        let rules = add_guards(lines, delete_unorderable);
         let mut out = File::create("guarded_rules.txt").map_err(|e| {
             eprintln!("Failed to open output file {}", e);
             e
@@ -77,7 +85,7 @@ fn main() -> io::Result<()> {
         .iter()
         .map(|r| {
             let mut rule = r.clone();
-            flat_to_egg(&mut rule)
+            flat_to_egg(&mut rule, delete_unorderable)
         })
         .collect::<Vec<String>>();
 
@@ -157,7 +165,7 @@ fn main() -> io::Result<()> {
         e
     })?;
 
-    lines = twee_to_egg(&lines);
+    lines = twee_to_egg(&lines, delete_unorderable);
 
     if extend {
         lines.append(&mut original_lines.clone());

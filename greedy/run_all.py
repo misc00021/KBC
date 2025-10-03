@@ -1,6 +1,10 @@
 import subprocess
 from pathlib import Path
 
+# This script runs greedy on all combinations of rules and term files,
+# and appends the results to results.csv
+# This script was written using ChatGPT
+
 # Paths
 binary = Path("target/release/greedy")
 rules_root = Path("../kbc/extended_rules/as_egg/")

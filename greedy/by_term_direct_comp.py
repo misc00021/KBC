@@ -7,6 +7,7 @@ def size(term):
     clean = term.replace('(', ' ').replace('"', ' ').replace(')', ' ')
     return len(clean.split())
 
+# Compare results of two rulesets/methods by term
 def main():
     parser = argparse.ArgumentParser(description="Compare results of two rulesets by term, sorted with ascending speedup.")
     parser.add_argument("Baseline", type=str, help="Results when using base rules.")

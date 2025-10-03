@@ -5,6 +5,7 @@ import os
 import glob
 from collections import defaultdict
 
+# Summarize results of different rulesets across all terms
 def main():
     parser = argparse.ArgumentParser(description="Compare results of different rulesets by term.")
     parser.add_argument("dir", type=str, help="Directory containing JSON result files.")

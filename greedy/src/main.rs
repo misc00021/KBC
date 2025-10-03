@@ -23,24 +23,30 @@ pub struct Rule {
     cond: Vec<Symbol>,
 }
 
+/* Merges two sets of variable substitutions.
+ If a variable is bound in both, the bindings must be identical.
+ Returns None if there is a conflict.
+ */
 fn merge_subst<'a>(
     mut s1: HashMap<&'a str, Vec<Symbol>>,
     s2: HashMap<&'a str, Vec<Symbol>>,
 ) -> Option<HashMap<&'a str, Vec<Symbol>>> {
     for (var, val2) in s2 {
         if let Some(val1) = s1.get(&var) {
-            // Already bound: must check consistency
             if val1 != &val2 {
-                return None; // conflict -> unification fails
+                return None;
             }
         } else {
-            // New binding, insert
             s1.insert(var, val2);
         }
     }
     Some(s1)
 }
 
+/* Unifies two terms, e.g.LHS of a rule and the term to rewrite.
+ Works recursively top-down and left-right on expression tree.
+ Returns None if not unifiable, or a mapping from variables to subterms.
+ Only works on binary operators, constants, and variables.*/
 fn unify<'a>(
     lhs: &'a [Symbol],
     term: &'a [Symbol],
@@ -51,7 +57,9 @@ fn unify<'a>(
     //     debug_print(&lhs.to_vec()),
     //     debug_print(&term.to_vec())
     // );
+
     if lhs[0].length == 1 {
+        // Base cases variable or constant
         if lhs[0].is_var {
             let mut map = HashMap::with_capacity(lhs.len());
             map.insert(lhs[0].name.as_str(), term.to_vec());
@@ -62,20 +70,25 @@ fn unify<'a>(
             return None;
         }
     } else if lhs[0].length > term.len() {
+        // Pattern longer than term
         return None;
     } else {
+        // Same root symbol, try to match children
         if lhs[0].name == term[0].name {
             let lhs_idx = lhs[1].length;
             let term_idx = term[1].length;
             let rest_lhs = &lhs[1..lhs_idx + 1];
             let term_lhs = &term[1..term_idx + 1];
             if let Some(map) = unify(&rest_lhs, &term_lhs, true) {
+                // LHS matched
                 // println!("Map1: {:?}", map);
                 let rest_rhs = &lhs[lhs_idx + 1..];
                 let term_rhs = &term[term_idx + 1..];
                 if let Some(rest_map) = unify(&rest_rhs, &term_rhs, true) {
+                    // RHS matched
                     // println!("Map2: {:?}", rest_map);
                     if let Some(merged) = merge_subst(map.0, rest_map.0) {
+                        // Merged successfully
                         // println!("Merged: {:?}", merged);
                         return Some((merged, 0));
                     }
@@ -83,6 +96,7 @@ fn unify<'a>(
             }
         }
         if !parent_match {
+            // Descend into term to match rule on subterms.
             if let Some(map) = unify(lhs, &term[1..(term[1].length + 1)], parent_match) {
                 // println!("Map 3: {:?}", map);
                 return Some((map.0, 1 + map.1));
@@ -99,6 +113,8 @@ fn unify<'a>(
     return None;
 }
 
+// Makes sure that all conditions on variables are satisfied.
+// Currently only checks division by 0.
 fn check_conditions(cond: &Vec<Symbol>, subst: &HashMap<&str, Vec<Symbol>>) -> bool {
     for var in cond {
         // println!("Checking condition on variable: {}", var.name);
@@ -111,6 +127,7 @@ fn check_conditions(cond: &Vec<Symbol>, subst: &HashMap<&str, Vec<Symbol>>) -> b
     true
 }
 
+// Inserts new_term into old_term at index idx, adjusting lengths of parent terms.
 fn insert(new_term: Vec<Symbol>, old_term: &mut Vec<Symbol>, idx: usize) -> Vec<Symbol> {
     // println!("Old term: {:?}", pretty(old_term));
     // println!("New term: {:?}", pretty(&new_term));
@@ -132,6 +149,7 @@ fn insert(new_term: Vec<Symbol>, old_term: &mut Vec<Symbol>, idx: usize) -> Vec<
     result
 }
 
+// Applies a substitution to a term, replacing variables with their bindings.
 fn apply_subst(term: &[Symbol], subst: &HashMap<&str, Vec<Symbol>>) -> Vec<Symbol> {
     fn apply_rec(term: &[Symbol], subst: &HashMap<&str, Vec<Symbol>>) -> (Vec<Symbol>, usize) {
         let first = &term[0];
@@ -162,6 +180,7 @@ fn apply_subst(term: &[Symbol], subst: &HashMap<&str, Vec<Symbol>>) -> Vec<Symbo
     apply_rec(term, subst).0
 }
 
+// Tries to apply each rule in order to the term, returning the first successful rewrite.
 fn rewrite_one_step<'a>(
     rules: &'a [Rule],
     term: &mut Vec<Symbol>,
@@ -182,6 +201,7 @@ fn rewrite_one_step<'a>(
     None
 }
 
+// Folds constant expressions in the term, e.g. (+ 2 3) -> 5
 fn fold_constants(term: &mut Vec<Symbol>) {
     let mut i = term.len();
     while i > 0 {
@@ -270,6 +290,8 @@ fn smaller(a: &Vec<Symbol>, b: &Vec<Symbol>) -> bool {
     }
 }
 
+// Applies all canonicalization rules to the term until no more apply.
+// Only accepts rewrites that make the term lexicographically smaller.
 fn canonicalize(old: &mut Vec<Symbol>, canonicalizers: &[Rule]) -> bool {
     // println!("Canonicalizing: {}", debug_print(old));
     let mut canonicalized = false;
@@ -304,6 +326,7 @@ fn debug_print(syms: &Vec<Symbol>) -> String {
     return ret;
 }
 
+// Repeatedly applies rewriting and canonicalization until no more changes occur.
 fn rewrite<'a>(
     rules: &'a [Rule],
     canonicalizers: &[Rule],
@@ -390,34 +413,32 @@ fn parse_conditions(cond_str: &str) -> Vec<Symbol> {
     conditions
 }
 
+/* Checks if a rule is a canonicalizer:
+    - LHS should be at least as long as RHS
+    - LHS must contain all variables in RHS with at least same multiplicity
+*/
 fn check_canonicalizer(rule: &Rule) -> bool {
     if rule.lhs.len() <= rule.rhs.len() {
         return true;
     }
-    if rule.lhs.len() != rule.rhs.len() {
-        return false;
-    }
-    let mut lhs_vars = HashMap::new();
-    let mut rhs_vars = HashMap::new();
-    for i in 0..rule.lhs.len() {
-        let lhs_sym = &rule.lhs[i];
-        let rhs_sym = &rule.rhs[i];
-        if lhs_sym.length == 1 {
-            if !lhs_vars.contains_key(lhs_sym.name.as_str()) {
-                lhs_vars.insert(lhs_sym.name.as_str(), 1);
-            } else {
-                lhs_vars.insert(lhs_sym.name.as_str(), lhs_vars[lhs_sym.name.as_str()] + 1);
-            }
-        }
-        if rhs_sym.length == 1 {
-            if !rhs_vars.contains_key(rhs_sym.name.as_str()) {
-                rhs_vars.insert(rhs_sym.name.as_str(), 1);
-            } else {
-                rhs_vars.insert(rhs_sym.name.as_str(), rhs_vars[rhs_sym.name.as_str()] + 1);
-            }
-        }
-    }
-    lhs_vars == rhs_vars
+    return false;
+    // if rule.lhs.len() != rule.rhs.len() {
+    //     return false;
+    // }
+    // let mut lhs_vars = HashMap::new();
+    // let mut rhs_vars = HashMap::new();
+    // for i in 0..rule.lhs.len() {
+    //     let lhs_sym = &rule.lhs[i];
+    //     let rhs_sym = &rule.rhs[i];
+
+    //     if lhs_sym.length == 1 {
+    //         *lhs_vars.entry(lhs_sym.name.as_str()).or_insert(0) += 1;
+    //     }
+    //     if rhs_sym.length == 1 {
+    //         *rhs_vars.entry(rhs_sym.name.as_str()).or_insert(0) += 1;
+    //     }
+    // }
+    // lhs_vars == rhs_vars
 }
 
 fn parse_rules(egg_rules: &Vec<String>) -> (Vec<Rule>, Vec<Rule>) {
