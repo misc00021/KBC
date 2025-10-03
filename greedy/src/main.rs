@@ -249,7 +249,7 @@ fn fold_constants(term: &mut Vec<Symbol>) {
 
 // Implements lexicographic ordering with w(var) = 1, w(const) = 2
 // Pushes constants to the right for constant folding
-fn smaller(a: &Vec<Symbol>, b: &Vec<Symbol>) -> bool {
+fn smaller(a: &[Symbol], b: &[Symbol]) -> bool {
     let weight = |sym: &Symbol| if sym.is_num { 2 } else { 1 };
     let mut a_weight = 0;
     let mut b_weight = 0;
@@ -305,10 +305,8 @@ fn canonicalize(old: &mut Vec<Symbol>, canonicalizers: &[Rule]) -> bool {
                     continue;
                 }
                 let new_term = apply_subst(&rule.rhs, &subst.0);
-                let rewritten = insert(new_term, old, i + subst.1);
-
-                if smaller(&rewritten, old) {
-                    *old = rewritten;
+                if smaller(&new_term, &old[subst.1..subst.1 + old[subst.1].length]) {
+                    *old = insert(new_term, old, i + subst.1);
                     canonicalized = true;
                 }
             }
