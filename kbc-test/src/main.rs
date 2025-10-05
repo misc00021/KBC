@@ -209,7 +209,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                     .write(true)
                     .truncate(true)
                     .open(file_path)?;
-                println!("Starting tests for rule set: {}", name);
+                println!(
+                    "Starting tests for rule set {} with time limit {}",
+                    name, time_limit
+                );
                 for (i, expr) in exprs.iter().enumerate() {
                     // println!("Simplifying expression {}/{}", i + 1, exprs.len());
                     let runner = Runner::default()
