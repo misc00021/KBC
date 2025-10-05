@@ -1,7 +1,7 @@
 #!/bin/bash
 
-for file in base_rules/as_egg/seperate_division/*; do
-    for i in 2500; do
+for file in base_rules/as_egg/*; do
+    for i in 1000 2500; do
         echo "Running with $i rules on $file"
         /home/michi/Documents/thesis/KBC/kbc/target/debug/kbc "$file" --num_rules="$i"
     done

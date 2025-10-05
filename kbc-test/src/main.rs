@@ -1,14 +1,20 @@
 /* https://github.com/egraphs-good/egg/blob/main/tests/math.rs is the basis of all files in kbc-test/src */
 
-mod kbc_by_num_replacing;
-use core::time;
+mod kbc_base_rules;
+mod kbc_extending;
+mod kbc_extending_no_div_no_pow;
+mod kbc_extending_no_div_no_pow_no_unorderable;
+mod kbc_extending_no_unorderable;
+mod kbc_extending_sep_div;
+mod kbc_extending_sep_div_no_unorderable;
+mod kbc_replacing;
+mod kbc_replacing_no_div_no_pow;
+mod kbc_replacing_no_div_no_pow_no_unorderable;
+mod kbc_replacing_no_unorderable;
+mod kbc_replacing_sep_div;
+mod kbc_replacing_sep_div_no_unorderable;
 use std::io::{BufRead, BufReader};
 use std::time::Duration;
-mod kbc_by_num_extending;
-mod kbc_by_num_replacing_no_div;
-mod kbc_by_num_replacing_sep_div;
-mod kbc_by_num_replacing_true_sep_div;
-mod kbc_by_term_size_replacing;
 mod math;
 use serde_derive::Serialize;
 use std::fs::File;
@@ -17,12 +23,20 @@ use std::io::Write;
 use std::path::Path;
 
 use egg::{EGraph, RecExpr, Runner, SimpleScheduler};
-use kbc_by_num_extending::rules as by_num_extending;
-use kbc_by_num_replacing::rules as by_num_replacing;
-use kbc_by_num_replacing_no_div::rules as by_num_replacing_no_div;
-use kbc_by_num_replacing_sep_div::rules as by_num_replacing_sep_div;
-use kbc_by_num_replacing_true_sep_div::rules as by_num_replacing_true_sep_div;
-use kbc_by_term_size_replacing::rules as by_term_size_replacing;
+use kbc_base_rules::rules as kbc_base_rules;
+use kbc_extending::rules as kbc_extending;
+use kbc_extending_no_div_no_pow::rules as kbc_extending_no_div_no_pow;
+use kbc_extending_no_div_no_pow_no_unorderable::rules as kbc_extending_no_div_no_pow_no_unorderable;
+use kbc_extending_no_unorderable::rules as kbc_extending_no_unorderable;
+use kbc_extending_sep_div::rules as kbc_extending_sep_div;
+use kbc_extending_sep_div_no_unorderable::rules as kbc_extending_sep_div_no_unorderable;
+use kbc_replacing::rules as kbc_replacing;
+use kbc_replacing_no_div_no_pow::rules as kbc_replacing_no_div_no_pow;
+use kbc_replacing_no_div_no_pow_no_unorderable::rules as kbc_replacing_no_div_no_pow_no_unorderable;
+use kbc_replacing_no_unorderable::rules as kbc_replacing_no_unorderable;
+use kbc_replacing_sep_div::rules as kbc_replacing_sep_div;
+use kbc_replacing_sep_div_no_unorderable::rules as kbc_replacing_sep_div_no_unorderable;
+
 use math::{ConstantFold, Math};
 
 fn load_exprs_from_file(path: &str) -> std::io::Result<Vec<RecExpr<Math>>> {
@@ -127,18 +141,34 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let exprs = load_exprs_from_file(&input_file)?;
     // println!("Loaded {} expressions from {}", exprs.len(), input_file);
     let rule_files = vec![
-        ("by_num_replacing_no_div", by_num_replacing_no_div()),
-        ("by_num_replacing_sep_div", by_num_replacing_sep_div()),
+        ("base_rules", kbc_base_rules()),
+        ("extending", kbc_extending()),
+        ("extending_no_div_no_pow", kbc_extending_no_div_no_pow()),
         (
-            "by_num_replacing_true_sep_div",
-            by_num_replacing_true_sep_div(),
+            "extending_no_div_no_pow_no_unorderable",
+            kbc_extending_no_div_no_pow_no_unorderable(),
         ),
-        ("by_num_replacing", by_num_replacing()),
-        ("by_term_size_replacing", by_term_size_replacing()),
-        ("by_num_extending", by_num_extending()),
+        ("extending_no_unorderable", kbc_extending_no_unorderable()),
+        ("extending_sep_div", kbc_extending_sep_div()),
+        (
+            "extending_sep_div_no_unorderable",
+            kbc_extending_sep_div_no_unorderable(),
+        ),
+        ("replacing", kbc_replacing()),
+        ("replacing_no_div_no_pow", kbc_replacing_no_div_no_pow()),
+        (
+            "replacing_no_div_no_pow_no_unorderable",
+            kbc_replacing_no_div_no_pow_no_unorderable(),
+        ),
+        ("replacing_no_unorderable", kbc_replacing_no_unorderable()),
+        ("replacing_sep_div", kbc_replacing_sep_div()),
+        (
+            "replacing_sep_div_no_unorderable",
+            kbc_replacing_sep_div_no_unorderable(),
+        ),
     ];
     for time_limit in vec![
-        0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1., 2., /* 3., 4., 5.*/
+        0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1., /*, 2., 3., 4., 5.*/
     ] {
         // let parent_dir =
         //     std::path::Path::new("with_timelimits").join(format!("timelimit{}", time_limit));

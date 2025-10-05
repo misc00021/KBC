@@ -1,13 +1,13 @@
 Here is the input problem:
   Axiom 1 (cancel_sub): X - X = 0.
-  Axiom 2 (zero_add): X + 0 = X.
-  Axiom 3 (add_zero): X = X + 0.
-  Axiom 4 (rule_5): X / 1 = X.
-  Axiom 5 (pow1): pow(X, 1) = X.
-  Axiom 6 (rule_6): pow(X, 1) = X.
-  Axiom 7 (rule_7): pow(1, 2) = 1.
-  Axiom 8 (pow2): pow(X, 2) = X * X.
-  Axiom 9 (rule_0): X * X = pow(X, 2).
+  Axiom 2 (comm_add): X + Y = Y + X.
+  Axiom 3 (zero_add): X + 0 = X.
+  Axiom 4 (add_zero): X = X + 0.
+  Axiom 5 (rule_5): X / 1 = X.
+  Axiom 6 (pow1): pow(X, 1) = X.
+  Axiom 7 (rule_6): pow(X, 1) = X.
+  Axiom 8 (rule_7): pow(1, 2) = 1.
+  Axiom 9 (pow2): pow(X, 2) = X * X.
   Axiom 10 (rule_0): X * X = pow(X, 2).
   Axiom 11 (comm_mul): X * Y = Y * X.
   Axiom 12 (rule_1): X * Y = Y * X.
@@ -16,8 +16,8 @@ Here is the input problem:
   Axiom 15 (mul_one): X = X * 1.
   Axiom 16 (rule_2): X * 1 = X.
   Axiom 17 (rule_3): 1 * X = X.
-  Axiom 18 (assoc_add): X + (Y + Z) = (X + Y) + Z.
-  Axiom 19 (ifeq_axiom): ifeq(X, X, Y, Z) = Y.
+  Axiom 18 (ifeq_axiom): ifeq(X, X, Y, Z) = Y.
+  Axiom 19 (assoc_add): X + (Y + Z) = (X + Y) + Z.
   Axiom 20 (rule_24): pow(X, Y + Z) = pow(X, Z + Y).
   Axiom 21 (rule_23): pow(X, 1 + 1) = pow(X, 2).
   Axiom 22 (rule_26): pow(1, X + 2) = pow(1, X).
@@ -28,11 +28,11 @@ Here is the input problem:
   Axiom 27 (assoc_mul): X * (Y * Z) = (X * Y) * Z.
   Axiom 28 (rule_14): (X * Y) * Z = X * (Y * Z).
   Axiom 29 (sub_canon): X - Y = X + (neg(1) * Y).
-  Axiom 30 (distribute): X * (Y + Z) = (X * Y) + (X * Z).
-  Axiom 31 (factor): (X * Y) + (X * Z) = X * (Y + Z).
-  Axiom 32 (cancel_div): ifeq(is_not_zero(X), true2, X / X, 1) = 1.
-  Axiom 33 (rule_4): ifeq(is_not_zero(X), true2, X / X, 1) = 1.
-  Axiom 34 (pow0): ifeq(is_not_zero(X), true2, pow(X, 0), 1) = 1.
+  Axiom 30 (cancel_div): ifeq(is_not_zero(X), true2, X / X, 1) = 1.
+  Axiom 31 (rule_4): ifeq(is_not_zero(X), true2, X / X, 1) = 1.
+  Axiom 32 (pow0): ifeq(is_not_zero(X), true2, pow(X, 0), 1) = 1.
+  Axiom 33 (distribute): X * (Y + Z) = (X * Y) + (X * Z).
+  Axiom 34 (factor): (X * Y) + (X * Z) = X * (Y + Z).
   Axiom 35 (rule_8): ifeq(is_not_zero(X), true2, pow(X, -1), 1 / X) = 1 / X.
   Axiom 36 (rule_21): ifeq(is_not_zero(X), true2, pow(X, 2) / X, X) = X.
   Axiom 37 (rule_17): ifeq(is_not_zero(X), true2, (Y * X) / X, Y) = Y.
@@ -52,18 +52,18 @@ Here is the input problem:
   Goal 1 (goal): true = false.
 
 1. X - X -> 0
-2. X + 0 -> X
-3. X / 1 -> X
-4. pow(X, 1) -> X
-5. pow(1, 2) -> 1
-6. X * X -> pow(X, 2)
-7. X * Y <-> Y * X
-8. X * 0 -> 0
-9. X * 1 -> X
-10. 1 * X -> X
-11. (X + Y) + Z -> X + (Y + Z)
+2. X + Y <-> Y + X
+3. X + 0 -> X
+4. X / 1 -> X
+5. pow(X, 1) -> X
+6. pow(1, 2) -> 1
+7. X * X -> pow(X, 2)
+8. X * Y <-> Y * X
+9. X * 0 -> 0
+10. X * 1 -> X
+11. 1 * X -> X
 12. ifeq(X, X, Y, Z) -> Y
-13. pow(X, Y + Z) <-> pow(X, Z + Y)
+13. (X + Y) + Z -> X + (Y + Z)
 14. pow(X, 1 + 1) -> pow(X, 2)
 15. pow(1, X + 2) -> pow(1, X)
 16. pow(1, X + 1) -> pow(1, X)
@@ -72,9 +72,9 @@ Here is the input problem:
 19. X * (X * Y) = pow(X, 2) * Y
 20. (X * Y) * Z -> X * (Y * Z)
 21. X + (neg(1) * Y) -> X - Y
-22. (X * Y) + (X * Z) -> X * (Y + Z)
-23. ifeq(is_not_zero(X), true2, X / X, 1) -> 1
-24. ifeq(is_not_zero(X), true2, pow(X, 0), 1) -> 1
+22. ifeq(is_not_zero(X), true2, X / X, 1) -> 1
+23. ifeq(is_not_zero(X), true2, pow(X, 0), 1) -> 1
+24. (X * Y) + (X * Z) -> X * (Y + Z)
 25. ifeq(is_not_zero(X), true2, pow(X, -1), 1 / X) -> 1 / X
 26. ifeq(is_not_zero(X), true2, pow(X, 2) / X, X) -> X
 27. ifeq(is_not_zero(X), true2, (Y * X) / X, Y) -> Y
@@ -90,38 +90,52 @@ Here is the input problem:
 37. ifeq(is_not_zero(X), true2, pow(X, Y) * pow(X, Z), pow(X, Y + Z)) -> pow(X, Y + Z)
 38. ifeq(is_not_zero(X), true2, ifeq(is_not_zero(Y), true2, (Y / X) / Y, 1 / X), 1 / X) -> 1 / X
 39. ifeq(is_not_zero(X), true2, ifeq(is_not_zero(Y), true2, (Z / X) / Y, (Z / Y) / X), (Z / Y) / X) -> (Z / Y) / X
-40. X - 0 -> X
-41. 0 * X -> 0
-42. pow(0, 2) -> 0
-43. X + neg(1) -> X - 1
+40. 0 + X -> X
+41. X - 0 -> X
+42. 0 * X -> 0
+43. pow(0, 2) -> 0
+44. pow(1, 0) -> 1
+45. X + neg(1) -> X - 1
+46. 0 - 1 -> neg(1)
+47. X * neg(1) -> 0 - X
+48. neg(1) + X -> X - 1
+49. neg(1) * X -> 0 - X
+50. pow(neg(1), 2) -> 0 - neg(1)
 
 Gave up on reaching the given resource limit.
 Here is the final rewrite system:
+  X + Y <-> Y + X
+  X + 0 -> X
+  0 + X -> X
   X * X -> pow(X, 2)
   X * Y <-> Y * X
   X * 1 -> X
   X * 0 -> 0
   1 * X -> X
   0 * X -> 0
-  X + 0 -> X
   X - X -> 0
   X - 0 -> X
+  0 - 1 -> neg(1)
   pow(X, 1) -> X
+  pow(1, 0) -> 1
   pow(1, 2) -> 1
   pow(0, 2) -> 0
   X / 1 -> X
   X + neg(1) -> X - 1
+  neg(1) + X -> X - 1
+  X * neg(1) -> 0 - X
+  neg(1) * X -> 0 - X
+  pow(neg(1), 2) -> 0 - neg(1)
   ifeq(X, X, Y, Z) -> Y
+  X + (0 - Y) -> X - Y
+  (X + Y) + Z -> X + (Y + Z)
   X * (X * Y) = Y * pow(X, 2)
   X * (X * Y) = pow(X, 2) * Y
   X * (Y * Z) <-> Y * (X * Z)
   (X * Y) * Z -> X * (Y * Z)
-  (X + Y) + Z -> X + (Y + Z)
-  pow(X, Y + Z) <-> pow(X, Z + Y)
   pow(X, 1 + 1) -> pow(X, 2)
   pow(1, X + 1) -> pow(1, X)
   pow(1, X + 2) -> pow(1, X)
-  X + (neg(1) * Y) -> X - Y
   (X * Y) + (X * Z) -> X * (Y + Z)
   ifeq(is_not_zero(X), true2, pow(X, 0), 1) -> 1
   ifeq(is_not_zero(X), true2, X / X, 1) -> 1

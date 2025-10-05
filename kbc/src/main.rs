@@ -19,6 +19,7 @@ fn main() -> io::Result<()> {
     // Delete rules that twee cannot order
     // If false, make a rule for each direction
     let delete_unorderable = false;
+
     let mut size_target = false;
     if args.len() < 3 {
         eprintln!("Usage: {} <input_file> --num_rules=<num_rules>", args[0]);
@@ -130,6 +131,9 @@ fn main() -> io::Result<()> {
     if extend {
         target_string.push_str("_extended");
     }
+    if delete_unorderable {
+        target_string.push_str("_no_unorderable");
+    }
 
     // Convert stdout (Vec<u8>) to a String
     let stdout = String::from_utf8(out.stdout)
@@ -170,11 +174,11 @@ fn main() -> io::Result<()> {
     if extend {
         lines.append(&mut original_lines.clone());
 
+        // Deduplicate rules, ignoring rule name
         lines = lines
-            .into_iter() // take ownership of strings
+            .into_iter()
             .unique_by(|rule| {
                 if let Some(idx) = rule.find(';') {
-                    // everything after the first semicolon
                     rule[idx + 1..].trim().to_string()
                 } else {
                     rule.trim().to_string()

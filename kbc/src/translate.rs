@@ -578,15 +578,7 @@ pub fn flat_to_egg(rule: &mut Rule, delete_unorderable: bool) -> String {
         egg_print(&mut rule.lhs),
         egg_print(&mut rule.rhs)
     ));
-    if rule.ordered == false && !delete_unorderable {
-        ret.push_str(&format!(
-        "rw!(\"{}\"; {} => {}",
-        format!("{}_rev", rule.name),
-        egg_print(&mut rule.rhs),
-        egg_print(&mut rule.lhs)
-    ));
-    }
-        
+
     if !rule.cond.is_empty() {
         // Skip rules which have wrong ordering due to conditions, i.e. X!= 0 => 0 => 0/X
         let lhs_vars = lockdown(rule.lhs.clone());
@@ -606,6 +598,30 @@ pub fn flat_to_egg(rule: &mut Rule, delete_unorderable: bool) -> String {
         return String::new(); // Skip rules that are identical on both sides
     }
     ret.push_str("),");
+    if rule.ordered == false && !delete_unorderable {
+        ret.push_str(&format!(
+            "\nrw!(\"{}\"; {} => {}",
+            format!("{}_rev", rule.name),
+            egg_print(&mut rule.rhs),
+            egg_print(&mut rule.lhs)
+        ));
+        if !rule.cond.is_empty() {
+            // Skip rules which have wrong ordering due to conditions, i.e. X!= 0 => 0 => 0/X
+            let lhs_vars = lockdown(rule.lhs.clone());
+            let rhs_vars = lockdown(rule.rhs.clone());
+            for var in rhs_vars {
+                if !lhs_vars.contains(&var) {
+                    return String::new();
+                }
+            }
+            let cond = egg_print_cond(&mut rule.cond);
+            if !cond.contains('?') {
+                return String::new(); // Skip rules without variables in conditions
+            }
+            ret.push_str(&format!(" {}", cond));
+        }
+        ret.push_str("),");
+    }
     return ret.replace("(neg 1)", "-1");
 }
 

@@ -1,0 +1,212 @@
+Here is the input problem:
+  Axiom 1 (cancel_sub): X - X = 0.
+  Axiom 2 (pow1): pow(X, 1) = X.
+  Axiom 3 (comm_add): X + Y = Y + X.
+  Axiom 4 (zero_add): X + 0 = X.
+  Axiom 5 (add_zero): X = X + 0.
+  Axiom 6 (pow2): pow(X, 2) = X * X.
+  Axiom 7 (comm_mul): X * Y = Y * X.
+  Axiom 8 (zero_mul): X * 0 = 0.
+  Axiom 9 (one_mul): X * 1 = X.
+  Axiom 10 (mul_one): X = X * 1.
+  Axiom 11 (ifeq_axiom): ifeq(X, X, Y, Z) = Y.
+  Axiom 12 (assoc_add): X + (Y + Z) = (X + Y) + Z.
+  Axiom 13 (assoc_mul): X * (Y * Z) = (X * Y) * Z.
+  Axiom 14 (sub_canon): X - Y = X + (neg(1) * Y).
+  Axiom 15 (cancel_div): ifeq(is_not_zero(X), true2, X / X, 1) = 1.
+  Axiom 16 (pow0): ifeq(is_not_zero(X), true2, pow(X, 0), 1) = 1.
+  Axiom 17 (distribute): X * (Y + Z) = (X * Y) + (X * Z).
+  Axiom 18 (factor): (X * Y) + (X * Z) = X * (Y + Z).
+  Axiom 19 (recip_mul_div): ifeq(is_not_zero(X), true2, X * (1 / X), 1) = 1.
+  Axiom 20 (pow_recip): ifeq(is_not_zero(X), true2, pow(X, neg(1)), 1 / X) = 1 / X.
+  Axiom 21 (div_canon): ifeq(is_not_zero(X), true2, Y * pow(X, neg(1)), Y / X) = Y / X.
+  Axiom 22 (pow_mul): ifeq(is_not_zero(X), true2, pow(X, Y) * pow(X, Z), pow(X, Y + Z)) = pow(X, Y + Z).
+  Goal 1 (goal): true = false.
+
+1. X - X -> 0
+2. pow(X, 1) -> X
+3. X + Y <-> Y + X
+4. X + 0 -> X
+5. X * X -> pow(X, 2)
+6. X * Y <-> Y * X
+7. X * 0 -> 0
+8. X * 1 -> X
+9. ifeq(X, X, Y, Z) -> Y
+10. (X + Y) + Z -> X + (Y + Z)
+11. (X * Y) * Z -> X * (Y * Z)
+12. X + (neg(1) * Y) -> X - Y
+13. ifeq(is_not_zero(X), true2, X / X, 1) -> 1
+14. ifeq(is_not_zero(X), true2, pow(X, 0), 1) -> 1
+15. (X * Y) + (X * Z) -> X * (Y + Z)
+16. ifeq(is_not_zero(X), true2, X * (1 / X), 1) -> 1
+17. ifeq(is_not_zero(X), true2, pow(X, neg(1)), 1 / X) -> 1 / X
+18. ifeq(is_not_zero(X), true2, Y * pow(X, neg(1)), Y / X) -> Y / X
+19. ifeq(is_not_zero(X), true2, pow(X, Y) * pow(X, Z), pow(X, Y + Z)) -> pow(X, Y + Z)
+20. 0 + X -> X
+21. 1 * X -> X
+22. X - 0 -> X
+23. 0 * X -> 0
+24. pow(0, 2) -> 0
+25. pow(1, 2) -> 1
+26. X + neg(1) -> X - 1
+27. 0 - 1 -> neg(1)
+28. X * neg(1) -> 0 - X
+29. neg(1) + X -> X - 1
+30. X + (Y + Z) <-> Y + (X + Z)
+31. X * (Y * Z) <-> Y * (X * Z)
+32. X + (Y - Z) -> (X + Y) - Z
+33. (X + Y) - X -> Y
+34. neg(1) * X -> 0 - X
+35. X * (X * Y) = pow(X, 2) * Y
+36. X * (Y + 1) = X + (X * Y)
+37. (X + Y) - Y -> X
+38. X * (1 + 1) = X + X
+39. pow(neg(1), 2) -> 0 - neg(1)
+40. (X - Y) + Z -> (X + Z) - Y
+41. (X - 1) - X -> neg(1)
+42. 0 - (X + 1) -> neg(1) - X
+43. X * (Y * X) = Y * pow(X, 2)
+44. X * pow(Y, 2) = Y * (Y * X)
+45. X + (X * Y) = X * (1 + Y)
+46. X + (X * Y) = (Y + 1) * X
+47. X * (Y + 1) = X + (Y * X)
+48. X * (X + 1) -> X + pow(X, 2)
+49. (X - Y) - 1 -> X - (Y + 1)
+50. X - (X + 1) -> neg(1)
+51. (X - Y) - X -> 0 - Y
+52. X + X = (1 + 1) * X
+53. ifeq(is_not_zero(0), true2, 0, 1) -> 1
+54. (X - Y) - Z <-> (X - Z) - Y
+55. X - (1 + X) -> neg(1)
+56. 0 - (1 + X) -> neg(1) - X
+57. (1 + X) * Y = Y + (Y * X)
+58. X * (1 + Y) = X + (Y * X)
+59. (X + 1) * Y = Y + (X * Y)
+60. X - (X + Y) -> 0 - Y
+61. X * (0 - Y) -> 0 - (X * Y)
+62. X * (1 + X) -> X + pow(X, 2)
+  (hard) Y * (1 + X) = (X + 1) * Y
+63. (0 - X) - Y -> 0 - (X + Y)
+64. (X - Y) - Z -> X - (Y + Z)
+65. 1 - (X + 1) -> 0 - X
+66. 0 - neg(1) -> 1
+67. X - neg(1) -> X + 1
+68. (X * Y) + (Y * Z) -> Y * (X + Z)
+69. X * (Y - 1) = (X * Y) - X
+70. 0 - (X - 1) -> 1 - X
+71. (X * Y) + (Z * X) -> X * (Y + Z)
+72. X * (Y + Y) = Y * (X + X)
+73. X * (Y + Y) = (X + X) * Y
+74. (1 + X) * Y = Y + (X * Y)
+75. X - (Y * X) = X * (1 - Y)
+76. X - (Y + X) -> 0 - Y
+77. (X * Y) - X = (Y - 1) * X
+78. X * (Y - 1) = (Y * X) - X
+79. X * (X * pow(Y, 2)) -> pow(X * Y, 2)
+  (hard) (1 + X) * Y = Y * (X + 1)
+80. (0 - X) * Y -> 0 - (X * Y)
+81. X * (X - 1) -> pow(X, 2) - X
+82. (X + 1) - Y -> X - (Y - 1)
+83. X - (X - 1) -> 1
+84. pow(X, 2) + (X * Y) -> X * (X + Y)
+85. X * (X + X) = pow(X, 2) + pow(X, 2)
+86. 0 - (0 - X) -> X
+87. (X * (1 + 1)) - X -> X
+88. (X * Y) + (Z * Y) -> Y * (X + Z)
+89. (1 - X) * Y = Y - (X * Y)
+90. X * (1 - Y) = X - (X * Y)
+91. (X - 1) * Y = (X * Y) - Y
+92. 0 - ((X * Y) - X) -> X - (X * Y)
+93. 0 - (X + X) = X * (neg(1) - 1)
+94. X * (1 - X) -> X - pow(X, 2)
+95. (1 + X) - Y -> X - (Y - 1)
+96. X - (neg(1) - 1) -> X + (1 + 1)
+97. (X + (Y + Z)) - Y -> X + Z
+98. (X + Y) - (X + Z) -> Y - Z
+99. X - (0 - X) -> X + X
+100. neg(1) - (X - 1) -> 0 - X
+
+Gave up on reaching the given resource limit.
+Here is the final rewrite system:
+  X + X = (1 + 1) * X
+  X + Y <-> Y + X
+  X + 0 -> X
+  0 + X -> X
+  X * X -> pow(X, 2)
+  X * Y <-> Y * X
+  X * 1 -> X
+  X * 0 -> 0
+  1 * X -> X
+  0 * X -> 0
+  X - X -> 0
+  X - 0 -> X
+  0 - 1 -> neg(1)
+  pow(X, 1) -> X
+  pow(1, 2) -> 1
+  pow(0, 2) -> 0
+  X + neg(1) -> X - 1
+  neg(1) + X -> X - 1
+  X * neg(1) -> 0 - X
+  neg(1) * X -> 0 - X
+  X - neg(1) -> X + 1
+  pow(neg(1), 2) -> 1
+  ifeq(X, X, Y, Z) -> Y
+  X + (X * Y) = X * (1 + Y)
+  X + (Y - Z) -> (X + Y) - Z
+  X + (Y + Z) <-> Y + (X + Z)
+  (X + Y) + Z -> X + (Y + Z)
+  (X - Y) + Z -> (X + Z) - Y
+  X * (X + X) = pow(X, 2) + pow(X, 2)
+  X * (Y + Y) = (X + X) * Y
+  X * (Y + 1) = X + (Y * X)
+  X * (1 + X) -> X + pow(X, 2)
+  X * (1 + Y) = X + (Y * X)
+  X * (1 + 1) = X + X
+  X * (X * Y) = pow(X, 2) * Y
+  X * (Y * Z) <-> Y * (X * Z)
+  X * (X - 1) -> pow(X, 2) - X
+  X * (Y - 1) = (Y * X) - X
+  X * (1 - X) -> X - pow(X, 2)
+  X * (1 - Y) = X - (X * Y)
+  X * (0 - Y) -> 0 - (X * Y)
+  X * (Y + Y) = Y * (X + X)
+  X * pow(Y, 2) = Y * (Y * X)
+  (X + 1) * Y = Y + (X * Y)
+  (1 + X) * Y = Y + (X * Y)
+  (X * Y) * Z -> X * (Y * Z)
+  (X - 1) * Y = (X * Y) - Y
+  (1 - X) * Y = Y - (X * Y)
+  (0 - X) * Y -> 0 - (X * Y)
+  X - (Y + X) -> 0 - Y
+  X - (Y * X) = X * (1 - Y)
+  X - (X - 1) -> 1
+  X - (0 - X) -> X + X
+  0 - (X + X) = X * (neg(1) - 1)
+  0 - (X + 1) -> neg(1) - X
+  0 - (1 + X) -> neg(1) - X
+  0 - (X - 1) -> 1 - X
+  0 - (0 - X) -> X
+  (X + Y) - Y -> X
+  (X + 1) - Y -> X - (Y - 1)
+  (1 + X) - Y -> X - (Y - 1)
+  (X - Y) - Z -> X - (Y + Z)
+  ifeq(is_not_zero(0), true2, 0, 1) -> 1
+  X - (neg(1) - 1) -> X + (1 + 1)
+  neg(1) - (X - 1) -> 0 - X
+  (X * Y) + (X * Z) -> X * (Y + Z)
+  (X * Y) + (Y * Z) -> Y * (X + Z)
+  (X * Y) + (Z * Y) -> Y * (X + Z)
+  pow(X, 2) + (X * Y) -> X * (X + Y)
+  X * (X * pow(Y, 2)) -> pow(X * Y, 2)
+  0 - ((X * Y) - X) -> X - (X * Y)
+  (X + Y) - (X + Z) -> Y - Z
+  (X + (Y + Z)) - Y -> X + Z
+  (X * (1 + 1)) - X -> X
+  ifeq(is_not_zero(X), true2, pow(X, 0), 1) -> 1
+  ifeq(is_not_zero(X), true2, X / X, 1) -> 1
+  ifeq(is_not_zero(X), true2, X * (1 / X), 1) -> 1
+  ifeq(is_not_zero(X), true2, pow(X, neg(1)), 1 / X) -> 1 / X
+  ifeq(is_not_zero(X), true2, Y * pow(X, neg(1)), Y / X) -> Y / X
+  ifeq(is_not_zero(X), true2, pow(X, Y) * pow(X, Z), pow(X, Y + Z)) -> pow(X, Y + Z)
+
+RESULT: GaveUp (couldn't solve the problem).

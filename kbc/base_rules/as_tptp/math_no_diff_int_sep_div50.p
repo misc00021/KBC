@@ -1,3 +1,4 @@
+cnf(comm_add, axiom, '+'(X, Y) = '+'(Y, X)).
 cnf(comm_mul, axiom, '*'(X, Y) = '*'(Y, X)).
 cnf(assoc_add, axiom, '+'(X, '+'(Y, Z)) = '+'('+'(X, Y), Z)).
 cnf(assoc_mul, axiom, '*'(X, '*'(Y, Z)) = '*'('*'(X, Y), Z)).
@@ -18,7 +19,6 @@ cnf(pow1, axiom, pow(X, '1') = X).
 cnf(pow2, axiom, pow(X, '2') = '*'(X, X)).
 cnf(pow_recip, axiom, (is_not_zero(X)) => pow(X, neg('1')) = '/'('1', X)).
 cnf(recip_mul_div, axiom, (is_not_zero(X)) => '*'(X, '/'('1', X)) = '1').
-cnf(rule_0, axiom, '*'(X, X) = pow(X, '2')).
 cnf(rule_0, axiom, '*'(X, X) = pow(X, '2')).
 cnf(rule_1, axiom, '*'(X, Y) = '*'(Y, X)).
 cnf(rule_2, axiom, '*'(X, '1') = X).

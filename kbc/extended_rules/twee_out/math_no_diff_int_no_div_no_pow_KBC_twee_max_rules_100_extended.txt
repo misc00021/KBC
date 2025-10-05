@@ -1,0 +1,185 @@
+Here is the input problem:
+  Axiom 1 (cancel_sub): X - X = 0.
+  Axiom 2 (comm_add): X + Y = Y + X.
+  Axiom 3 (zero_add): X + 0 = X.
+  Axiom 4 (add_zero): X = X + 0.
+  Axiom 5 (comm_mul): X * Y = Y * X.
+  Axiom 6 (one_mul): X * 1 = X.
+  Axiom 7 (mul_one): X = X * 1.
+  Axiom 8 (zero_mul): X * 0 = 0.
+  Axiom 9 (sub_canon): X - Y = X + (neg(1) * Y).
+  Axiom 10 (assoc_add): X + (Y + Z) = (X + Y) + Z.
+  Axiom 11 (assoc_mul): X * (Y * Z) = (X * Y) * Z.
+  Axiom 12 (distribute): X * (Y + Z) = (X * Y) + (X * Z).
+  Axiom 13 (factor): (X * Y) + (X * Z) = X * (Y + Z).
+  Goal 1 (goal): true = false.
+
+1. X - X -> 0
+2. X + Y <-> Y + X
+3. X + 0 -> X
+4. X * Y <-> Y * X
+5. X * 1 -> X
+6. X * 0 -> 0
+7. X + (neg(1) * Y) -> X - Y
+8. (X + Y) + Z -> X + (Y + Z)
+9. (X * Y) * Z -> X * (Y * Z)
+10. (X * Y) + (X * Z) -> X * (Y + Z)
+11. 0 + X -> X
+12. 1 * X -> X
+13. X - 0 -> X
+14. 0 * X -> 0
+15. X + neg(1) -> X - 1
+16. 0 - 1 -> neg(1)
+17. X * neg(1) -> 0 - X
+18. neg(1) + X -> X - 1
+19. X + (Y + Z) <-> Y + (X + Z)
+20. X + (Y - Z) -> (X + Y) - Z
+21. (X + Y) - X -> Y
+22. X * (Y * Z) <-> Y * (X * Z)
+23. neg(1) * X -> 0 - X
+24. X * (Y + 1) = X + (X * Y)
+25. (X + Y) - Y -> X
+26. X * (1 + 1) = X + X
+27. (X - Y) + Z -> (X + Z) - Y
+28. (X - 1) - X -> neg(1)
+29. 0 - (X + 1) -> neg(1) - X
+30. X + (X * Y) = X * (1 + Y)
+31. X + (X * Y) = (Y + 1) * X
+32. X * (Y + 1) = X + (Y * X)
+33. (X - Y) - 1 -> X - (Y + 1)
+34. X - (X + 1) -> neg(1)
+35. (X - Y) - X -> 0 - Y
+36. X + X = (1 + 1) * X
+37. (X - Y) - Z <-> (X - Z) - Y
+38. X - (1 + X) -> neg(1)
+39. 0 - (1 + X) -> neg(1) - X
+40. (1 + X) * Y = Y + (Y * X)
+41. X * (1 + Y) = X + (Y * X)
+42. (X + 1) * Y = Y + (X * Y)
+43. X - (X + Y) -> 0 - Y
+44. X * (0 - Y) -> 0 - (X * Y)
+  (hard) Y * (1 + X) = (X + 1) * Y
+45. (0 - X) - Y -> 0 - (X + Y)
+46. (X - Y) - Z -> X - (Y + Z)
+47. 1 - (X + 1) -> 0 - X
+48. 0 - neg(1) -> 1
+49. X + 1 -> X - neg(1)
+50. (X * Y) + (Y * Z) -> Y * (X + Z)
+51. X * (Y - 1) = (X * Y) - X
+52. X * (Y - neg(1)) = X + (X * Y)
+53. 0 - (0 - X) -> X
+54. X - (0 - Y) -> X + Y
+55. 0 - (X - Y) -> Y - X
+56. X - (X - Y) -> Y
+57. (X * Y) + (Z * X) -> X * (Y + Z)
+58. X * (Y + Y) = Y * (X + X)
+59. X * (Y + Y) = (X + X) * Y
+60. X + (X * Y) = (Y - neg(1)) * X
+61. (1 + X) * Y = Y + (X * Y)
+62. X + (Y * X) = X * (Y - neg(1))
+63. X - (Y * X) = X * (1 - Y)
+64. X - (Y + X) -> 0 - Y
+65. (X * Y) - X = (Y - 1) * X
+66. X * (Y - 1) = (Y * X) - X
+67. (0 - X) * Y -> 0 - (X * Y)
+68. (1 + X) * Y = Y * (X - neg(1))
+69. (1 + X) * Y -> (X - neg(1)) * Y
+70. X * (1 + X) -> X * (X - neg(1))
+71. X * (1 + Y) -> X * (Y - neg(1))
+72. 1 + X -> X - neg(1)
+73. (X + Y) - Z -> X - (Z - Y)
+74. X - (Y - Z) <-> Z - (Y - X)
+75. (X * (1 - neg(1))) - X -> X
+76. (X * Y) + (Z * Y) -> Y * (X + Z)
+77. X - (X * Y) = 0 - ((Y - 1) * X)
+78. (1 - X) * Y = Y - (X * Y)
+79. X * (1 - Y) = X - (X * Y)
+80. (X - 1) * Y = (X * Y) - Y
+81. (X - neg(1)) * Y = Y + (X * Y)
+82. 0 - (X + X) = X * (neg(1) - 1)
+83. 1 - (X - neg(1)) -> 0 - X
+84. (X * (Y - neg(1))) - X -> X * Y
+85. (1 - neg(1)) * X = X + X
+86. ((X - neg(1)) * Y) - Y -> X * Y
+87. X * (1 - neg(1)) = X + X
+88. X + (X * (Y - 1)) -> X * Y
+89. X - (Y - (Z + W)) <-> Z - (Y - (X + W))
+90. X + (Y + (X * Z)) = (X * (Z - neg(1))) + Y
+91. X + (X * (Y + Z)) = X * (Y - (neg(1) - Z))
+92. (X + (X * Y)) * Z -> X * ((Y - neg(1)) * Z)
+93. X + (Y + (X * Z)) = Y + (X * (Z - neg(1)))
+94. X * ((Y * Z) - neg(1)) = X + (Y * (X * Z))
+95. 0 - (X + X) = (neg(1) - 1) * X
+96. X * (Y - (neg(1) - 1)) = X + (X + (X * Y))
+97. X + ((Y - 1) * X) -> X * Y
+98. X + (X + Y) = (X * (1 - neg(1))) + Y
+99. X * ((1 - neg(1)) * Y) = (X + X) * Y
+100. X + (Y + X) = Y + (X * (1 - neg(1)))
+
+Gave up on reaching the given resource limit.
+Here is the final rewrite system:
+  X + Y <-> Y + X
+  X + 1 -> X - neg(1)
+  X + 0 -> X
+  1 + X -> X - neg(1)
+  0 + X -> X
+  X * Y <-> Y * X
+  X * 1 -> X
+  X * 0 -> 0
+  1 * X -> X
+  0 * X -> 0
+  X - X -> 0
+  X - 0 -> X
+  0 - 1 -> neg(1)
+  X + neg(1) -> X - 1
+  neg(1) + X -> X - 1
+  X * neg(1) -> 0 - X
+  neg(1) * X -> 0 - X
+  0 - neg(1) -> 1
+  X + (X + Y) = (X * (1 - neg(1))) + Y
+  X + (Y * X) = X * (Y - neg(1))
+  X + (Y - Z) -> X - (Z - Y)
+  X + (Y + X) = Y + (X * (1 - neg(1)))
+  X + (Y + Z) <-> Y + (X + Z)
+  (X + Y) + Z -> X + (Y + Z)
+  (X - Y) + Z -> X - (Y - Z)
+  X * (Y + Y) = (X + X) * Y
+  X * (Y * Z) <-> Y * (X * Z)
+  X * (Y - 1) = (Y * X) - X
+  X * (1 - Y) = X - (X * Y)
+  X * (0 - Y) -> 0 - (X * Y)
+  X * (Y + Y) = Y * (X + X)
+  (X * Y) * Z -> X * (Y * Z)
+  (X - 1) * Y = (X * Y) - Y
+  (1 - X) * Y = Y - (X * Y)
+  (0 - X) * Y -> 0 - (X * Y)
+  X - (Y + X) -> 0 - Y
+  X - (Y * X) = X * (1 - Y)
+  X - (0 - Y) -> X + Y
+  X - (X * Y) = 0 - ((Y - 1) * X)
+  X - (Y - Z) <-> Z - (Y - X)
+  0 - (X + X) = X * (neg(1) - 1)
+  0 - (X + X) = (neg(1) - 1) * X
+  (X + Y) - Z -> X - (Z - Y)
+  (X - Y) - Z -> X - (Y + Z)
+  X * (1 - neg(1)) = X + X
+  (X - neg(1)) * Y = Y + (X * Y)
+  (1 - neg(1)) * X = X + X
+  1 - (X - neg(1)) -> 0 - X
+  X + (Y + (X * Z)) = Y + (X * (Z - neg(1)))
+  X + (Y + (X * Z)) = (X * (Z - neg(1))) + Y
+  X + (X * (Y + Z)) = X * (Y - (neg(1) - Z))
+  X + (X * (Y - 1)) -> X * Y
+  X + ((Y - 1) * X) -> X * Y
+  (X * Y) + (X * Z) -> X * (Y + Z)
+  (X * Y) + (Y * Z) -> Y * (X + Z)
+  (X * Y) + (Z * Y) -> Y * (X + Z)
+  (X + (X * Y)) * Z -> X * ((Y - neg(1)) * Z)
+  X - (Y - (Z + W)) <-> Z - (Y - (X + W))
+  X * ((1 - neg(1)) * Y) = (X + X) * Y
+  X * (Y - (neg(1) - 1)) = X + (X + (X * Y))
+  X * ((Y * Z) - neg(1)) = X + (Y * (X * Z))
+  (X * (Y - neg(1))) - X -> X * Y
+  ((X - neg(1)) * Y) - Y -> X * Y
+
+RESULT: GaveUp (couldn't solve the problem).

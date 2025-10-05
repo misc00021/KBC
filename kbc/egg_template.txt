@@ -1,0 +1,19 @@
+use crate::math::{ConstantFold, Math};
+use egg::{rewrite as rw, *};
+
+pub type EGraph = egg::EGraph<Math, ConstantFold>;
+pub type Rewrite = egg::Rewrite<Math, ConstantFold>;
+
+fn is_not_zero(var: &str) -> impl Fn(&mut EGraph, Id, &Subst) -> bool {
+    let var = var.parse().unwrap();
+    move |egraph, _, subst| {
+        if let Some(n) = &egraph[subst[var]].data {
+            *(n.0) != 0.0
+        } else {
+            true
+        }
+    }
+}
+
+#[rustfmt::skip]
+pub fn rules() -> Vec<(String, Vec<Rewrite>)> { vec![
