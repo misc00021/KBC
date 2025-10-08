@@ -160,9 +160,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             "replacing_no_div_no_pow_no_unorderable",
             kbc_replacing_no_div_no_pow_no_unorderable(),
         ),
-        ("replacing_no_unorderable", kbc_replacing_no_unorderable()),
+        /*("replacing_no_unorderable", kbc_replacing_no_unorderable()),
         ("replacing_sep_div", kbc_replacing_sep_div()),
-        /*(
+        (
             "replacing_sep_div_no_unorderable",
             kbc_replacing_sep_div_no_unorderable(),
         ),*/
