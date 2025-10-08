@@ -8,4 +8,3 @@ cd ..
 git add .
 git commit -m "Test run"
 git push
-shutdown -h

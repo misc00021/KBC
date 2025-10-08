@@ -1,1 +1,0 @@
-{"original_term":"(* (/ 1 2) a)","simplified_term":"(* 0.5 a)","input_weight_simple":5,"output_weight_simple":3,"input_weight_complex":11,"output_weight_complex":5,"input_depth":3,"output_depth":2,"simplification_time":0.000239375,"apply_time":0.000048262999999999995,"search_time":0.000068659,"rebuild_time":0.000120841,"stop_reason":"Saturated","iterations":2}

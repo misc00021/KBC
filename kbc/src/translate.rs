@@ -708,6 +708,7 @@ pub fn add_guards(lines: Vec<String>, delete_unorderable: bool) -> Vec<String> {
                 length: 1,
             });
         }
+        new_rule.name = format!("guarded_{}", new_rule.name);
         out.push(flat_to_egg(&mut new_rule, delete_unorderable));
     }
     return out;

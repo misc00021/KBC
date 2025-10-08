@@ -1,4 +1,5 @@
 use rand;
+use rand::seq::IteratorRandom;
 use std::collections::HashSet;
 use std::io::Write;
 
@@ -54,13 +55,13 @@ fn term_gen() {
         ("+", 2),
         ("-", 2),
         ("*", 2),
-        /* ("/", 2),
-        ("pow", 2),*/
+        ("/", 2),
+        ("pow", 2),
         ("var", 0),
         ("const", 0),
     ];
     let mut var_count;
-    for _i in 1..=500000 {
+    for _i in 1..=1000000 {
         var_count = 0;
         let term = gen_term(&mut var_count, &ops, &mut rng, 0);
         while terms.len() < term.1 + 1 {
@@ -81,69 +82,38 @@ fn term_gen() {
     //         writeln!(out, "{}", t.0).unwrap();
     //     }
     // }
-    // let out_file = std::fs::File::create("random_terms_small.txt").unwrap();
-    // let mut out = std::io::BufWriter::new(out_file);
-    // for ts in terms.iter().skip(1).take(3) {
-    //     for t in ts.iter() {
-    //         writeln!(out, "{}", t.0).unwrap();
-    //     }
-    // }
-    // let out_file = std::fs::File::create("random_terms_medium.txt").unwrap();
-    // let mut out = std::io::BufWriter::new(out_file);
-    // for ts in terms.iter().skip(5).take(3) {
-    //     for t in ts.iter() {
-    //         writeln!(out, "{}", t.0).unwrap();
-    //     }
-    // }
-    // let out_file = std::fs::File::create("random_terms_large.txt").unwrap();
-    // let mut out = std::io::BufWriter::new(out_file);
-    // for ts in terms.iter().skip(10).take(1) {
-    //     for t in ts.iter() {
-    //         writeln!(out, "{}", t.0).unwrap();
-    //     }
-    // }
-    // let out_file = std::fs::File::create("random_terms_huge.txt").unwrap();
-    // let mut out = std::io::BufWriter::new(out_file);
-    // for ts in terms.iter().skip(28).take(1) {
-    //     for t in ts.iter() {
-    //         writeln!(out, "{}", t.0).unwrap();
-    //     }
-    // }
-    // let out_file = std::fs::File::create("random_terms_all.txt").unwrap();
-    // let mut out = std::io::BufWriter::new(out_file);
-    // for ts in terms.iter() {
-    //     for t in ts.iter() {
-    //         writeln!(out, "{}", t.0).unwrap();
-    //     }
-    // }
-
-    let out_file = std::fs::File::create("no_div_no_pow_random_terms_small.txt").unwrap();
+    let out_file = std::fs::File::create("random_terms_small.txt").unwrap();
     let mut out = std::io::BufWriter::new(out_file);
-    for ts in terms.iter().skip(1).take(3) {
-        for t in ts.iter() {
-            writeln!(out, "{}", t.0).unwrap();
-        }
+    let small = terms
+        .iter()
+        .skip(1)
+        .take(3)
+        .flatten()
+        .choose_multiple(&mut rng, 1000);
+    for t in small {
+        writeln!(out, "{}", t.0).unwrap();
     }
-    let out_file = std::fs::File::create("no_div_no_pow_random_terms_medium.txt").unwrap();
+    let out_file = std::fs::File::create("random_terms_large.txt").unwrap();
     let mut out = std::io::BufWriter::new(out_file);
-    for ts in terms.iter().skip(5).take(1) {
-        for t in ts.iter() {
-            writeln!(out, "{}", t.0).unwrap();
-        }
+    for t in terms
+        .iter()
+        .skip(10)
+        .take(1)
+        .flatten()
+        .choose_multiple(&mut rng, 500)
+    {
+        writeln!(out, "{}", t.0).unwrap();
     }
-    let out_file = std::fs::File::create("no_div_no_pow_random_terms_large.txt").unwrap();
+    let out_file = std::fs::File::create("random_terms_huge.txt").unwrap();
     let mut out = std::io::BufWriter::new(out_file);
-    for ts in terms.iter().skip(10).take(1) {
-        for t in ts.iter() {
-            writeln!(out, "{}", t.0).unwrap();
-        }
-    }
-    let out_file = std::fs::File::create("no_div_no_pow_random_terms_huge.txt").unwrap();
-    let mut out = std::io::BufWriter::new(out_file);
-    for ts in terms.iter().skip(25).take(1) {
-        for t in ts.iter() {
-            writeln!(out, "{}", t.0).unwrap();
-        }
+    for t in terms
+        .iter()
+        .skip(25)
+        .take(1)
+        .flatten()
+        .choose_multiple(&mut rng, 250)
+    {
+        writeln!(out, "{}", t.0).unwrap();
     }
     // let out_file = std::fs::File::create("no_div_no_pow_random_terms_all.txt").unwrap();
     // let mut out = std::io::BufWriter::new(out_file);

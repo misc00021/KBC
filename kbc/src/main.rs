@@ -14,11 +14,11 @@ fn main() -> io::Result<()> {
 
     // Extend true -> append original rules to the output and remove duplicates
     // Extend false -> only output the rules from twee
-    let extend = false;
+    let extend = true;
 
     // Delete rules that twee cannot order
     // If false, make a rule for each direction
-    let delete_unorderable = false;
+    let delete_unorderable = true;
 
     let mut size_target = false;
     if args.len() < 3 {

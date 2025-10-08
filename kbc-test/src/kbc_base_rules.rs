@@ -25,10 +25,10 @@ pub fn rules() -> Vec<(String, Vec<Rewrite>)> { vec![
     rw!("assoc-add"; "(+ ?x (+ ?y ?z))" => "(+ (+ ?x ?y) ?z)"),
     rw!("assoc-mul"; "(* ?x (* ?y ?z))" => "(* (* ?x ?y) ?z)"),
 
-    rw!("sub-canon"; "(- ?x ?y)" => "(+ ?x (* (neg 1) ?y))"),
-    rw!("div-canon"; "(/ ?x ?y)" => "(* ?x (pow ?y (neg 1)))" if is_not_zero("?y")),
-    // rw!("canon-sub"; "(+ ?x (* (neg 1) ?y))"   => "(- ?x ?y)"),
-    // rw!("canon-div"; "(* ?x (pow ?y (neg 1)))" => "(/ ?x ?y)" if is_not_zero("?y")),
+    rw!("sub-canon"; "(- ?x ?y)" => "(+ ?x (* -1 ?y))"),
+    rw!("div-canon"; "(/ ?x ?y)" => "(* ?x (pow ?y -1))" if is_not_zero("?y")),
+    // rw!("canon-sub"; "(+ ?x (* -1 ?y))"   => "(- ?x ?y)"),
+    // rw!("canon-div"; "(* ?x (pow ?y -1))" => "(/ ?x ?y)" if is_not_zero("?y")),
 
     rw!("zero-add"; "(+ ?x 0)" => "?x"),
     rw!("zero-mul"; "(* ?x 0)" => "0"),
@@ -47,7 +47,7 @@ pub fn rules() -> Vec<(String, Vec<Rewrite>)> { vec![
     rw!("pow0"; "(pow ?x 0)" => "1" if is_not_zero("?x")),
     rw!("pow1"; "(pow ?x 1)" => "?x"),
     rw!("pow2"; "(pow ?x 2)" => "(* ?x ?x)"),
-    rw!("pow-recip"; "(pow ?x (neg 1))" => "(/ 1 ?x)" if is_not_zero("?x")),
+    rw!("pow-recip"; "(pow ?x -1)" => "(/ 1 ?x)" if is_not_zero("?x")),
     rw!("recip-mul-div"; "(* ?x (/ 1 ?x))" => "1" if is_not_zero("?x")),
 
 ]),
