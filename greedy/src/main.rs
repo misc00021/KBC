@@ -4,8 +4,11 @@ use std::{
     fs::{File, OpenOptions},
     hash::Hash,
     io::{BufRead, BufReader, Write},
+    os::linux::raw::stat,
     time::Instant,
 };
+
+static OP_PRECEDENCE: [&str; 5] = ["+", "-", "*", "/", "pow"];
 
 #[derive(Clone, Debug, PartialEq)]
 struct Symbol {
@@ -24,9 +27,9 @@ pub struct Rule {
 }
 
 /* Merges two sets of variable substitutions.
- If a variable is bound in both, the bindings must be identical.
- Returns None if there is a conflict.
- */
+If a variable is bound in both, the bindings must be identical.
+Returns None if there is a conflict.
+*/
 fn merge_subst<'a>(
     mut s1: HashMap<&'a str, Vec<Symbol>>,
     s2: HashMap<&'a str, Vec<Symbol>>,
@@ -44,9 +47,9 @@ fn merge_subst<'a>(
 }
 
 /* Unifies two terms, e.g.LHS of a rule and the term to rewrite.
- Works recursively top-down and left-right on expression tree.
- Returns None if not unifiable, or a mapping from variables to subterms.
- Only works on binary operators, constants, and variables.*/
+Works recursively top-down and left-right on expression tree.
+Returns None if not unifiable, or a mapping from variables to subterms.
+Only works on binary operators, constants, and variables.*/
 fn unify<'a>(
     lhs: &'a [Symbol],
     term: &'a [Symbol],
@@ -278,10 +281,28 @@ fn smaller(a: &[Symbol], b: &[Symbol]) -> bool {
             //     "Comparing symbols: w({}) = {}, w({}) = {}",
             //     sym_a.name, w_a, sym_b.name, w_b
             // );
-            if w_a < w_b {
+            if w_a < w_b
+                || OP_PRECEDENCE
+                    .iter()
+                    .position(|&op| op == sym_a.name)
+                    .unwrap_or(usize::MAX)
+                    < OP_PRECEDENCE
+                        .iter()
+                        .position(|&op| op == sym_b.name)
+                        .unwrap_or(usize::MAX)
+            {
                 // println!("Smaller: {:?} < {:?}", pretty(a), pretty(b));
                 return true;
-            } else if w_a > w_b {
+            } else if w_a > w_b
+                || OP_PRECEDENCE
+                    .iter()
+                    .position(|&op| op == sym_a.name)
+                    .unwrap_or(usize::MAX)
+                    > OP_PRECEDENCE
+                        .iter()
+                        .position(|&op| op == sym_b.name)
+                        .unwrap_or(usize::MAX)
+            {
                 // println!("Not smaller: {:?} > {:?}", pretty(a), pretty(b));
                 return false;
             }
@@ -299,13 +320,16 @@ fn canonicalize(old: &mut Vec<Symbol>, canonicalizers: &[Rule]) -> bool {
         let mut i = old.len();
         while i > 0 {
             i -= 1;
-            println!("rule {} on {}", rule.name, debug_print(old));
+            // println!("rule {} on {}", rule.name, debug_print(old));
             if let Some(subst) = unify(&rule.lhs, &old[i..i + old[i].length], false) {
                 if !check_conditions(&rule.cond, &subst.0) {
                     continue;
                 }
                 let new_term = apply_subst(&rule.rhs, &subst.0);
-                if smaller(&new_term, &old[subst.1..subst.1 + old[subst.1].length]) {
+                let abs_start = i + subst.1;
+                let abs_end = abs_start + old[abs_start].length;
+
+                if smaller(&new_term, &old[abs_start..abs_end]) {
                     *old = insert(new_term, old, i + subst.1);
                     canonicalized = true;
                 }
@@ -459,8 +483,10 @@ fn parse_rules(egg_rules: &Vec<String>) -> (Vec<Rule>, Vec<Rule>) {
             ""
         };
 
-        let lhs = parse_term(&lhs_str);
-        let rhs = parse_term(&rhs_str);
+        let mut lhs = parse_term(&lhs_str);
+        let mut rhs = parse_term(&rhs_str);
+        fold_constants(&mut lhs);
+        fold_constants(&mut rhs);
         let cond = if cond_str.is_empty() {
             vec![]
         } else {
@@ -559,6 +585,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut rewritten_terms: Vec<(Vec<Symbol>, Vec<String>)> = Vec::new();
     let start = Instant::now();
     for (i, term) in terms.iter().enumerate() {
+        // println!("Rewriting term {}/{}", i + 1, terms.len());
         let (rewritten_term, applied_rules) = rewrite(&rules, &canonicalizers, term);
         rewritten_terms.push((
             rewritten_term.clone(),

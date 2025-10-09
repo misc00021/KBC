@@ -7,7 +7,7 @@ from pathlib import Path
 
 # Paths
 binary = Path("target/release/greedy")
-rules_root = Path("../kbc/extended_rules/as_egg/")
+rules_root = Path("../kbc/rule_collections/")
 terms_root = Path("../term_gen/sets/")
 results_file = Path("results.csv")
 
@@ -21,6 +21,8 @@ with results_file.open("a") as out:
         for term_file in terms_root.iterdir():
             if not term_file.is_file():
                 continue
+
+            print(f"Running greedy with {rule_file} and {term_file}")
 
             # Run greedy with (rule_file, term_file)
             result = subprocess.run(
@@ -39,5 +41,6 @@ with results_file.open("a") as out:
 
             # Append one line
             out.write(f"{rule_stem},{term_stem},{output}\n")
+
 
 print(f"Done. Results appended to {results_file}")

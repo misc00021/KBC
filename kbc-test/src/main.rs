@@ -141,31 +141,31 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let exprs = load_exprs_from_file(&input_file)?;
     // println!("Loaded {} expressions from {}", exprs.len(), input_file);
     let rule_files = vec![
-        ("base_rules", kbc_base_rules()),
-        ("extending", kbc_extending()),
-        ("extending_no_div_no_pow", kbc_extending_no_div_no_pow()),
-        (
-            "extending_no_div_no_pow_no_unorderable",
-            kbc_extending_no_div_no_pow_no_unorderable(),
-        ),
-        ("extending_no_unorderable", kbc_extending_no_unorderable()),
-        ("extending_sep_div", kbc_extending_sep_div()),
-        (
-            "extending_sep_div_no_unorderable",
-            kbc_extending_sep_div_no_unorderable(),
-        ),
-        ("replacing", kbc_replacing()),
-        ("replacing_no_div_no_pow", kbc_replacing_no_div_no_pow()),
-        (
-            "replacing_no_div_no_pow_no_unorderable",
-            kbc_replacing_no_div_no_pow_no_unorderable(),
-        ),
-        /*("replacing_no_unorderable", kbc_replacing_no_unorderable()),
+        // ("base_rules", kbc_base_rules()),
+        // ("extending", kbc_extending()),
+        // ("extending_no_div_no_pow", kbc_extending_no_div_no_pow()),
+        // (
+        //     "extending_no_div_no_pow_no_unorderable",
+        //     kbc_extending_no_div_no_pow_no_unorderable(),
+        // ),
+        // ("extending_no_unorderable", kbc_extending_no_unorderable()),
+        // ("extending_sep_div", kbc_extending_sep_div()),
+        // (
+        //     "extending_sep_div_no_unorderable",
+        //     kbc_extending_sep_div_no_unorderable(),
+        // ),
+        // ("replacing", kbc_replacing()),
+        // ("replacing_no_div_no_pow", kbc_replacing_no_div_no_pow()),
+        // (
+        //     "replacing_no_div_no_pow_no_unorderable",
+        //     kbc_replacing_no_div_no_pow_no_unorderable(),
+        // ),
+        // ("replacing_no_unorderable", kbc_replacing_no_unorderable()),
         ("replacing_sep_div", kbc_replacing_sep_div()),
         (
             "replacing_sep_div_no_unorderable",
             kbc_replacing_sep_div_no_unorderable(),
-        ),*/
+        ),
     ];
     for time_limit in vec![
         0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1., /*, 2., 3., 4., 5.*/

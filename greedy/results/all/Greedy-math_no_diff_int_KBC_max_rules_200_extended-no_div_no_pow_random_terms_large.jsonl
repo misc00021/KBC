@@ -1,0 +1,500 @@
+{"original_term":"(+ -1 (- (+ (- (+ (* 0 0) (* -1 -1)) (- a (+ (+ a a) -1))) -1) 1))","rewritten_term":"(+ (- (+ (- (+ (+ a a) -1) (- a 1)) -1) 1) -1)","applied_rules":["rule_7"]}
+{"original_term":"(- (* (+ 1 0) a) (* a (+ a (- b (+ c (+ 0 (- (* d 1) 0)))))))","rewritten_term":"(- a (* (+ (- b (+ c d)) a) a))","applied_rules":["rule_2","rule_3","rule_6","rule_8","rule_11"]}
+{"original_term":"(- (+ (+ 1 -1) (* a a)) (+ (+ 0 0) (+ (+ b (* (* 0 1) b)) 0)))","rewritten_term":"(- (* a a) b)","applied_rules":["rule_2","rule_2","rule_3","rule_3","rule_9","rule_2"]}
+{"original_term":"(+ (- a (* 1 (* b (- (+ 0 b) (* (+ (+ 0 b) 1) (+ 1 1)))))) c)","rewritten_term":"(+ (- a (* (- b (+ (* b 2) 2)) b)) c)","applied_rules":["rule_3","rule_3","rule_8"]}
+{"original_term":"(* -1 (* 1 (* (+ (- (- (* 1 (+ (- 0 a) 0)) (- 0 b)) 0) a) c)))","rewritten_term":"(- 0 (* (+ (+ (- 0 a) b) a) c))","applied_rules":["rule_2","rule_8","rule_8","rule_11","rule_53"]}
+{"original_term":"(* -1 (- (- a -1) (+ (- 0 (- (+ 1 (+ 0 (- 0 a))) 0)) (- -1 b))))","rewritten_term":"(- (+ (+ a -1) (- -1 b)) (+ a 1))","applied_rules":["rule_3","rule_11","rule_58","rule_53","rule_11"]}
+{"original_term":"(* (* (+ a 0) (* a (* (* (+ (- (* a c) d) (+ 1 b)) d) d))) d)","rewritten_term":"(* (+ (+ b 1) (- (* a c) d)) (* (* (* (* d d) a) a) d))","applied_rules":["rule_2"]}
+{"original_term":"(* (+ (* (+ (+ 0 (+ a (+ (- (- 1 b) -1) c))) 1) d) (* 1 c)) b)","rewritten_term":"(* (+ (+ (* (+ (+ (+ (- 1 b) 1) c) a) d) d) c) b)","applied_rules":["rule_3","rule_8"]}
+{"original_term":"(- (+ -1 a) (+ (- a a) (* (+ a c) (+ (+ (- 1 b) d) (* c -1)))))","rewritten_term":"(- (+ a -1) (* (+ (+ (- 1 b) d) (- 0 c)) (+ a c)))","applied_rules":["rule_10","rule_3"]}
+{"original_term":"(* (* (* a -1) (* -1 (* (* (* (- (* a 0) -1) a) (* b a)) b))) d)","rewritten_term":"(* (* (* (* (* b a) a) b) a) d)","applied_rules":["rule_7","rule_8","rule_11"]}
+{"original_term":"(+ (- a 1) (* (- (+ 0 -1) (* (- (* 1 (- 0 1)) 0) (* 0 -1))) a))","rewritten_term":"(+ (- a 1) (- 0 a))","applied_rules":["rule_3"]}
+{"original_term":"(- -1 (- (- (* a (* (+ (* (- b (+ -1 a)) b) (- 0 a)) 1)) a) 0))","rewritten_term":"(- a (+ (* (+ (- 0 a) (* (- b (+ a -1)) b)) a) 1))","applied_rules":["rule_6","rule_11"]}
+{"original_term":"(+ (- -1 -1) (* (* 0 (- a (- 1 (- (+ (* a 0) a) (* 0 1))))) b))","rewritten_term":"0","applied_rules":["rule_6","rule_3","rule_7","rule_3","rule_9","rule_9"]}
+{"original_term":"(+ 1 (+ (- (+ 0 (* 0 (* (+ (* (- -1 0) a) b) (* b c)))) -1) 0))","rewritten_term":"2","applied_rules":["rule_2","rule_3","rule_9"]}
+{"original_term":"(+ 1 (* (* a -1) (- (+ a b) (+ (+ (* 1 (- a -1)) a) (* -1 1)))))","rewritten_term":"(+ (- 0 (* (- (+ a b) (+ (+ (+ a 1) a) -1)) a)) 1)","applied_rules":["rule_6","rule_8"]}
+{"original_term":"(- a (* (+ (- a (+ (* (+ b c) -1) (- (* c a) (* -1 1)))) 0) 0))","rewritten_term":"a","applied_rules":["rule_2","rule_7","rule_11"]}
+{"original_term":"(* a (- a (- (+ (- (- -1 a) a) a) (+ (* a (- (+ b 0) 1)) b))))","rewritten_term":"(* (- (+ (- (* b a) a) b) (- (+ (- (- -1 a) a) a) a)) a)","applied_rules":["rule_2"]}
+{"original_term":"(- (+ (- (- 0 (+ a b)) (* (+ b (* d (- (+ b b) 0))) 0)) d) a)","rewritten_term":"(- (+ (- 0 (+ a b)) d) a)","applied_rules":["rule_7","rule_11"]}
+{"original_term":"(- (* -1 (+ (+ (+ (+ (- -1 1) a) (* a a)) 1) (* b 1))) (+ c c))","rewritten_term":"(- (- 0 (+ (+ (+ (+ a -2) (* a a)) 1) b)) (+ c c))","applied_rules":["rule_6"]}
+{"original_term":"(+ (+ a (+ b (- (- 0 a) (+ (* (- (+ 0 0) -1) c) (* 0 a))))) 0)","rewritten_term":"(+ (+ (- (- 0 a) c) b) a)","applied_rules":["rule_2","rule_8","rule_9","rule_2"]}
+{"original_term":"(* (- (- (- (+ (+ a 0) (* 0 0)) 0) (- 1 b)) (+ 1 (- b a))) a)","rewritten_term":"(* (- (- a (- 1 b)) (+ (- b a) 1)) a)","applied_rules":["rule_2","rule_2","rule_11"]}
+{"original_term":"(+ 1 (+ a (+ 0 (- (* (* (* a 0) (+ 0 b)) (- (- 1 -1) 1)) b))))","rewritten_term":"(+ (+ (- 0 b) a) 1)","applied_rules":["rule_3","rule_3","rule_6","rule_7","rule_9"]}
+{"original_term":"(+ (+ (* 1 (- 0 1)) a) (* (* (- -1 (- (+ (+ -1 a) a) 1)) a) 0))","rewritten_term":"(+ a -1)","applied_rules":["rule_7","rule_2"]}
+{"original_term":"(* 1 (* (+ (+ a a) a) (- 0 (- b (+ (- 0 (* (* a d) 1)) a)))))","rewritten_term":"(* (+ (+ a a) a) (- (+ (- 0 (* a d)) a) b))","applied_rules":["rule_6","rule_8","rule_127"]}
+{"original_term":"(+ (+ 0 a) (* 0 (* (- 1 (+ (- (+ 1 (- 0 a)) a) (- 0 b))) a)))","rewritten_term":"a","applied_rules":["rule_3","rule_9","rule_2"]}
+{"original_term":"(+ 1 (- (- 0 (+ a (* (- (+ (* (* 0 a) -1) a) b) (+ c 0)))) b))","rewritten_term":"(+ (- (- 0 (+ (* (- (+ a -0) b) c) a)) b) 1)","applied_rules":["rule_2","rule_9"]}
+{"original_term":"(+ (+ (- (+ (+ 1 (+ (+ 0 (- (+ a a) 1)) 1)) 1) (- a b)) c) d)","rewritten_term":"(+ (+ (- (+ (+ (+ (- (+ a a) 1) 1) 1) 1) (- a b)) c) d)","applied_rules":["rule_3"]}
+{"original_term":"(+ (- (- (* -1 0) -1) (+ (- -1 1) (- (* -1 (* (- 1 -1) a)) 1))) -1)","rewritten_term":"(+ (- 1 (+ (- (- 0 (* a 2)) 1) -2)) -1)","applied_rules":["rule_7"]}
+{"original_term":"(* (* (* (- a 1) b) c) (+ 1 (* a (* -1 (* 1 (+ (+ b b) 0))))))","rewritten_term":"(* (+ (- 0 (* (+ b b) a)) 1) (* (- a 1) (* b c)))","applied_rules":["rule_2","rule_8"]}
+{"original_term":"(* a (- a (+ a (* (+ c c) (- b (- (* (+ 0 d) a) (- d -1)))))))","rewritten_term":"(* (+ c c) (* (- (- (* d a) b) (+ d 1)) a))","applied_rules":["rule_3","rule_51","rule_127"]}
+{"original_term":"(- (- (* -1 a) (- 0 (* 0 (* (* (+ -1 b) (- -1 1)) (- c 0))))) 0)","rewritten_term":"(- 0 a)","applied_rules":["rule_9","rule_11","rule_11"]}
+{"original_term":"(- (+ (+ (* a (* a (- a (+ b a)))) a) 1) (+ (- d d) (+ 0 e)))","rewritten_term":"(- (+ (+ (- 0 (* (* b a) a)) a) 1) e)","applied_rules":["rule_3","rule_10","rule_3","rule_51"]}
+{"original_term":"(+ (- a a) (- a (- (* (+ 0 (- b 0)) (* (- (* 0 b) 0) a)) 0)))","rewritten_term":"a","applied_rules":["rule_3","rule_9","rule_9","rule_7","rule_10","rule_3","rule_11"]}
+{"original_term":"(+ (+ (* (* -1 (+ (* a a) a)) 0) a) (- -1 (- (+ 0 (- c a)) 1)))","rewritten_term":"(+ (- -1 (- (- c a) 1)) a)","applied_rules":["rule_3","rule_7","rule_3"]}
+{"original_term":"(- (+ (* 0 a) (+ (+ a b) (- (+ (- (- a b) c) 0) (- 1 1)))) b)","rewritten_term":"(- (+ (+ a b) (- (- a b) c)) b)","applied_rules":["rule_2","rule_9","rule_3","rule_11"]}
+{"original_term":"(* (+ -1 (- 0 (+ (- a (+ (- (* -1 0) 1) (+ (+ -1 b) b))) b))) 0)","rewritten_term":"0","applied_rules":["rule_7"]}
+{"original_term":"(* (+ (- -1 (+ 1 (- (+ a (* (- b c) d)) (* (* 0 1) 0)))) e) 1)","rewritten_term":"(+ (- -1 (+ (+ (* (- b c) d) a) 1)) e)","applied_rules":["rule_6","rule_11"]}
+{"original_term":"(- 1 (* (+ -1 a) (* a (* (* 0 (* 0 0)) (* (* (+ b c) 0) c)))))","rewritten_term":"1","applied_rules":["rule_7","rule_7","rule_9","rule_7","rule_7"]}
+{"original_term":"(* (- (+ a (- (+ a a) (* (+ (+ (+ 0 0) c) (- c c)) 0))) 0) b)","rewritten_term":"(* (+ (+ a a) a) b)","applied_rules":["rule_2","rule_3","rule_7","rule_11","rule_11"]}
+{"original_term":"(* (+ a (+ 1 a)) (+ -1 (* b (+ (- 1 (- 1 (* (+ a -1) 1))) 1))))","rewritten_term":"(* (+ (+ (* (+ a -1) b) b) -1) (+ (+ a 1) a))","applied_rules":["rule_6","rule_10","rule_11"]}
+{"original_term":"(- (- (- a (* 1 (* a (- 1 (- (+ (+ 0 0) 1) (+ 0 1)))))) 0) 0)","rewritten_term":"0","applied_rules":["rule_2","rule_6","rule_8","rule_10"]}
+{"original_term":"(* (* -1 (* (+ -1 (- a 1)) (- -1 (* (* 1 (+ -1 (* b a))) a)))) 1)","rewritten_term":"(* (+ (- a 1) -1) (+ (* (+ (* b a) -1) a) 1))","applied_rules":["rule_6","rule_8","rule_127"]}
+{"original_term":"(+ (- 1 a) (- (- a a) (- b (- (* (* b (+ d c)) 0) (- 0 1)))))","rewritten_term":"(+ (- 0 (- b 1)) (- 1 a))","applied_rules":["rule_7","rule_10"]}
+{"original_term":"(* a (* (- 0 -1) (- (* 1 (+ (- (* (- a a) a) (+ a 1)) a)) -1)))","rewritten_term":"(+ (* (+ (- -1 a) a) a) a)","applied_rules":["rule_8","rule_8","rule_10","rule_9","rule_57"]}
+{"original_term":"(+ (* (* (+ (- -1 a) 0) -1) (+ b (+ -1 (+ a (* (* -1 c) b))))) c)","rewritten_term":"(+ (* (+ (+ (+ (- 0 (* c b)) a) -1) b) (+ a 1)) c)","applied_rules":["rule_2","rule_127"]}
+{"original_term":"(- -1 (* (* (- (* -1 1) (- (- (* a (- 0 a)) -1) (- 0 1))) 1) -1))","rewritten_term":"(- -1 (+ (+ (+ (- 0 (* a a)) 1) 1) 1))","applied_rules":["rule_6"]}
+{"original_term":"(* (* a (- a (* (* (* b 0) -1) (- (- 0 (* b 1)) (* c -1))))) c)","rewritten_term":"(* (- a (* (+ (- 0 b) c) -0)) (* a c))","applied_rules":["rule_6","rule_7","rule_53"]}
+{"original_term":"(* (- (- a (* b b)) (+ (- (+ a c) (* (- (- a -1) 0) a)) -1)) -1)","rewritten_term":"(- (+ (- (+ a c) (+ (* a a) a)) -1) (- a (* b b)))","applied_rules":["rule_11","rule_11"]}
+{"original_term":"(- (+ 1 a) (- (- (* (* a (- (+ (* 1 a) b) (* b -1))) c) b) -1))","rewritten_term":"(- (+ a 1) (+ (- (* (+ (+ a b) b) (* a c)) b) 1))","applied_rules":["rule_8","rule_53"]}
+{"original_term":"(* a (+ a (- (* 1 (+ b -1)) (* (- (* (- (* 0 c) c) a) c) a))))","rewritten_term":"(* (+ (- (+ b -1) (* (- (- 0 (* c a)) c) a)) a) a)","applied_rules":["rule_8","rule_9"]}
+{"original_term":"(- 1 (- (- (- a (- (+ (- -1 0) a) (+ (* (- a 1) a) a))) a) a))","rewritten_term":"(- (+ (- (+ a -1) a) a) (- (+ (- (* a a) a) a) (+ a 1)))","applied_rules":["rule_11"]}
+{"original_term":"(- a (- b (- (+ (- b -1) (- (+ 0 (* (+ b a) c)) (- b 0))) -1)))","rewritten_term":"(- (+ (+ (+ (- (* (+ b a) c) b) b) 1) 1) (- b a))","applied_rules":["rule_3","rule_11"]}
+{"original_term":"(* -1 (* (+ 0 a) (* 1 (- (- (+ -1 (* -1 (* a 0))) (+ 0 a)) 1))))","rewritten_term":"(- a (* (- -1 a) a))","applied_rules":["rule_3","rule_3","rule_7","rule_8","rule_11"]}
+{"original_term":"(- (* -1 -1) (+ (* (* (* (+ a a) 1) a) (+ (+ b (- b b)) d)) c))","rewritten_term":"(- 1 (+ (* (+ b d) (* (+ a a) a)) c))","applied_rules":["rule_6","rule_10","rule_2"]}
+{"original_term":"(- (+ a (- (+ (- a 0) (* (+ (* a c) (* 0 b)) (- c -1))) 0)) d)","rewritten_term":"(- (+ (+ (* (+ (* c c) c) a) a) a) d)","applied_rules":["rule_9","rule_2","rule_11","rule_11"]}
+{"original_term":"(- (+ 1 0) (- (+ 1 -1) (- (+ a (* (- (* a 0) -1) (* 0 0))) -1)))","rewritten_term":"(+ (+ a 1) 1)","applied_rules":["rule_2","rule_7","rule_2","rule_53"]}
+{"original_term":"(- (+ (+ (- a 1) a) (- a (+ 0 (* (+ 0 0) 1)))) (+ 0 (+ a 1)))","rewritten_term":"(- (+ (+ (- a 1) a) a) (+ a 1))","applied_rules":["rule_2","rule_3","rule_11"]}
+{"original_term":"(- (- 0 -1) (* (* a 0) (- (* a (* (- a -1) b)) (+ 1 (* 1 1)))))","rewritten_term":"1","applied_rules":["rule_6","rule_7","rule_9"]}
+{"original_term":"(- 1 (+ (- 0 (- (* (* (- (- 1 (* a 0)) 1) (- a b)) -1) -1)) a))","rewritten_term":"(- 1 (+ a -1))","applied_rules":["rule_7","rule_9"]}
+{"original_term":"(- a (- b (* (+ (* (- (* (+ a (* 1 0)) (* b -1)) c) 0) c) d)))","rewritten_term":"(- (* c d) (- b a))","applied_rules":["rule_7","rule_3"]}
+{"original_term":"(* (- (* (* a (- -1 (* (+ (+ (* a 0) -1) (+ 0 -1)) 1))) 1) 0) 1)","rewritten_term":"a","applied_rules":["rule_3","rule_6","rule_6","rule_6","rule_7","rule_6","rule_11"]}
+{"original_term":"(* a (* (* (- (* -1 (- -1 (* b 1))) b) (* 0 (- 0 (- b 0)))) 0))","rewritten_term":"0","applied_rules":["rule_6","rule_7","rule_7"]}
+{"original_term":"(- a (- a (+ 0 (+ (- a (- (+ (* 0 (+ b a)) (* a c)) b)) a))))","rewritten_term":"(+ (- a (- (* a c) b)) a)","applied_rules":["rule_3","rule_9","rule_3","rule_51","rule_53"]}
+{"original_term":"(- (* a -1) (+ (- -1 1) (- a (- (+ -1 (* (* 0 a) -1)) (+ a a)))))","rewritten_term":"(- (- 0 a) (+ (+ (+ (+ a a) a) 1) -2))","applied_rules":["rule_9"]}
+{"original_term":"(* (+ (- (* 0 (+ (* a (* 1 -1)) (* 0 b))) -1) (+ b (+ 1 -1))) 0)","rewritten_term":"0","applied_rules":["rule_7"]}
+{"original_term":"(- 1 (- (- a b) (- (* a (- 0 (* -1 1))) (* 1 (+ b (- d -1))))))","rewritten_term":"(- (- a (- a b)) (- (+ (+ d 1) b) 1))","applied_rules":["rule_6","rule_6","rule_8"]}
+{"original_term":"(* (+ (- 1 a) a) (- (+ 1 (+ (* (+ 0 (+ (* a 1) b)) -1) a)) 0))","rewritten_term":"(* (+ (+ (- 0 (+ a b)) a) 1) (+ (- 1 a) a))","applied_rules":["rule_3","rule_6","rule_11"]}
+{"original_term":"(* (- 0 1) (* a (+ 1 (+ (- (+ (* (- 1 b) c) 0) (- 1 0)) a))))","rewritten_term":"(- 0 (+ (* (+ (- (- c (* b c)) 1) a) a) a))","applied_rules":["rule_2"]}
+{"original_term":"(- (+ (* 0 -1) (+ a b)) (* a (- (- (+ a (- -1 (- b 0))) a) 0)))","rewritten_term":"(- (+ a b) (* (- (+ (- -1 b) a) a) a))","applied_rules":["rule_9","rule_3","rule_11","rule_11"]}
+{"original_term":"(- -1 (* a (* (* 1 (* (- (+ -1 (- (* 0 a) a)) (- a -1)) a)) -1)))","rewritten_term":"(- (* (- (+ (- 0 a) -1) (+ a 1)) (* a a)) 1)","applied_rules":["rule_8","rule_9"]}
+{"original_term":"(- (+ a a) (- -1 (* -1 (+ a (+ (+ 0 (- (+ a 0) a)) (+ a a))))))","rewritten_term":"(- (+ a a) (- (+ (+ a a) a) 1))","applied_rules":["rule_2","rule_3","rule_10","rule_3"]}
+{"original_term":"(+ (* (* a b) (- a (+ (* 0 (* (- 0 -1) (* -1 0))) (+ a 0)))) b)","rewritten_term":"b","applied_rules":["rule_2","rule_51","rule_7","rule_3"]}
+{"original_term":"(+ (+ (- (+ a (- (* (* a (* -1 (- a 1))) (- 1 b)) 0)) b) 0) 0)","rewritten_term":"(- (+ (* (- (* b a) a) (- a 1)) a) b)","applied_rules":["rule_2","rule_2","rule_11","rule_127"]}
+{"original_term":"(- (+ (- -1 0) (* (* a -1) (* -1 (+ (- (- a b) -1) (- 1 a))))) d)","rewritten_term":"(- (+ (* (+ (+ (- a b) 1) (- 1 a)) a) -1) d)","applied_rules":["rule_11","rule_11"]}
+{"original_term":"(+ 0 (- (* a (+ (- (* a (* a 0)) (- (+ (+ c a) d) b)) c)) b))","rewritten_term":"(- (* (+ (- b (+ (+ c a) d)) c) a) b)","applied_rules":["rule_3","rule_7","rule_7","rule_11"]}
+{"original_term":"(* (- (+ a (- b a)) (- (- c (+ a (+ 0 (* (* a 0) b)))) d)) 0)","rewritten_term":"0","applied_rules":["rule_3","rule_7"]}
+{"original_term":"(* 1 (- a (* (+ a (* (+ (- -1 c) d) (* (+ (- 1 a) 0) e))) e)))","rewritten_term":"(- a (* (+ (* (+ (- -1 c) d) (- e (* a e))) a) e))","applied_rules":["rule_2","rule_8"]}
+{"original_term":"(+ (- 0 0) (* (* a (* (+ a b) (* 0 (- (* 0 1) b)))) (+ -1 c)))","rewritten_term":"0","applied_rules":["rule_6","rule_3","rule_9","rule_7","rule_7","rule_9"]}
+{"original_term":"(* (* (+ 1 (- (- a (* (- 1 a) (+ -1 (- 0 b)))) (- -1 a))) b) b)","rewritten_term":"(* (+ (+ b b) (* (+ (- a (* (+ (- 0 b) -1) (- 1 a))) a) b)) b)","applied_rules":[]}
+{"original_term":"(+ (- a (+ (* a (+ (+ (* (* -1 b) 1) 1) (* b 0))) b)) (* b 1))","rewritten_term":"(+ (- a (+ (+ (- 0 (* b a)) a) b)) b)","applied_rules":["rule_6","rule_6","rule_7","rule_2"]}
+{"original_term":"(* (+ a (+ a (- (* c 1) (* b (+ (* (- a c) 1) c))))) (- d e))","rewritten_term":"(* (+ (+ (- c (* (+ (- a c) c) b)) a) a) (- d e))","applied_rules":["rule_6","rule_6"]}
+{"original_term":"(+ (+ (- 1 a) (+ (+ b a) (* (+ (* 1 0) 0) (- -1 (+ 1 a))))) 0)","rewritten_term":"(+ (+ b a) (- 1 a))","applied_rules":["rule_2","rule_9","rule_2"]}
+{"original_term":"(- -1 (- a (- (- 1 (* (- (+ (+ (+ 0 1) b) b) (+ b -1)) 1)) 1)))","rewritten_term":"(- (+ b -1) (+ (+ (+ (- (+ (+ b 1) b) 1) 1) a) 1))","applied_rules":["rule_3","rule_6"]}
+{"original_term":"(- 0 (- (* (+ 0 1) (- 0 1)) (+ a (* (* (+ a (- a b)) b) -1))))","rewritten_term":"(+ (+ (- 0 (* (+ (- a b) a) b)) a) 1)","applied_rules":["rule_3","rule_2"]}
+{"original_term":"(- (* (- (+ (* (+ (+ (+ a (- a 1)) (+ 0 -1)) 0) a) 0) a) a) 0)","rewritten_term":"(* (- (* (+ (+ (- a 1) a) -1) a) a) a)","applied_rules":["rule_2","rule_2","rule_11"]}
+{"original_term":"(+ a (* b (- a (+ (+ (+ (* a (* (- 0 1) 1)) 0) (* -1 -1)) c))))","rewritten_term":"(+ (* (- a (+ (+ (- 0 a) 1) c)) b) a)","applied_rules":["rule_2"]}
+{"original_term":"(+ 0 (* a (- (+ (- 0 -1) (- (+ (- (* -1 -1) -1) (* a 1)) b)) c)))","rewritten_term":"(* (- (+ (- (+ a 2) b) 1) c) a)","applied_rules":["rule_3","rule_6"]}
+{"original_term":"(* 0 (- a (+ (+ (* 1 (+ -1 0)) 0) (* (+ (+ (- -1 a) -1) a) 0))))","rewritten_term":"0","applied_rules":["rule_2","rule_7","rule_9"]}
+{"original_term":"(* (- (- (* 1 -1) 0) a) (* (- b (* 0 (* (- (* -1 c) d) -1))) d))","rewritten_term":"(* (- -1 a) (* b d))","applied_rules":["rule_8","rule_9","rule_11"]}
+{"original_term":"(* (* (* a (* (* 1 (+ a (+ a (- b (* a c))))) 0)) (+ d e)) c)","rewritten_term":"0","applied_rules":["rule_7","rule_7","rule_9","rule_9"]}
+{"original_term":"(* (- (- (- a -1) 1) b) (* (- b a) (+ (+ (- -1 a) a) (- d e))))","rewritten_term":"(* (+ (+ (- -1 a) a) (- d e)) (* (- (+ a 1) (+ b 1)) (- b a)))","applied_rules":[]}
+{"original_term":"(- -1 (- (+ (+ -1 (* a 0)) (* a (- (+ 0 0) (- (+ 0 1) 1)))) a))","rewritten_term":"(+ (+ a -1) 1)","applied_rules":["rule_2","rule_7","rule_7"]}
+{"original_term":"(* (+ (- a (* 0 (+ -1 (+ (+ a (+ (+ a a) 1)) (+ a c))))) a) 0)","rewritten_term":"0","applied_rules":["rule_7"]}
+{"original_term":"(* (* (- 0 (- (* -1 0) (+ 0 (+ (- (+ a b) 0) (+ 0 c))))) a) b)","rewritten_term":"(- 0 (* (- -0 (+ (+ a b) c)) (* a b)))","applied_rules":["rule_3","rule_3","rule_11"]}
+{"original_term":"(+ (+ a -1) (- (+ a (* c b)) (- (- (+ 1 1) (- (* a 1) 0)) b)))","rewritten_term":"(+ (+ a -1) (- (+ (* c b) a) (- (- 2 a) b)))","applied_rules":["rule_6","rule_11"]}
+{"original_term":"(+ (- -1 (* (* 1 (+ 0 (* a 0))) -1)) (- 0 (* a (+ (+ 1 a) b))))","rewritten_term":"(+ (- 0 (* (+ (+ a 1) b) a)) -1)","applied_rules":["rule_3","rule_7"]}
+{"original_term":"(* (* 1 (* (- (* (- a a) (* (- (- 1 -1) a) (+ 0 0))) b) b)) 1)","rewritten_term":"(- 0 (* b b))","applied_rules":["rule_2","rule_6","rule_7","rule_7","rule_8"]}
+{"original_term":"(- a (- (+ a (* (- 0 (+ (+ a (+ (+ b -1) -1)) (* 1 b))) a)) -1))","rewritten_term":"(- a (+ (+ (- 0 (* (+ (+ (+ (+ b -1) -1) a) b) a)) a) 1))","applied_rules":["rule_8"]}
+{"original_term":"(- (+ (+ a (+ (+ a (- a -1)) (- b (* 1 (+ 0 (- 0 0)))))) a) -1)","rewritten_term":"(+ (+ (+ (+ (+ (+ a 1) a) b) a) a) 1)","applied_rules":["rule_3","rule_11"]}
+{"original_term":"(+ (- 0 (- (- -1 (* a (+ (- (- (- a 1) 1) a) (+ 1 1)))) 1)) b)","rewritten_term":"(+ (- 0 (- (- -1 (* (+ (- (- (- a 1) 1) a) 2) a)) 1)) b)","applied_rules":[]}
+{"original_term":"(- 0 (- -1 (* (- (- a 1) b) (* (+ (* b -1) (+ b (* 0 0))) c))))","rewritten_term":"(+ (* (+ (- 0 b) b) (* (- (- a 1) b) c)) 1)","applied_rules":["rule_7","rule_2","rule_2"]}
+{"original_term":"(+ (- (* (* (+ (- 1 0) a) (+ a b)) a) c) (* (+ (* a b) e) a))","rewritten_term":"(+ (- (* (+ (* a a) a) (+ a b)) c) (* (+ (* a b) e) a))","applied_rules":["rule_11"]}
+{"original_term":"(- (+ a (+ (+ -1 (* (* (* -1 -1) -1) (- (* -1 -1) -1))) (+ a a))) b)","rewritten_term":"(- (+ (+ (+ a -3) a) a) b)","applied_rules":[]}
+{"original_term":"(* 0 (+ (* (+ -1 a) (+ a (- (- (+ (+ a 1) -1) (+ a a)) b))) a))","rewritten_term":"0","applied_rules":["rule_9"]}
+{"original_term":"(* a (- (* (+ (- (+ (+ 0 (* -1 (- 0 a))) (* -1 0)) a) c) 1) c))","rewritten_term":"(* (- (+ (- (+ a -0) a) c) c) a)","applied_rules":["rule_3","rule_6","rule_11"]}
+{"original_term":"(* 1 (+ (+ a (* (+ 0 a) (* 1 (- (* (- b 1) b) (+ d b))))) a))","rewritten_term":"(+ (+ (* (- (- (* b b) b) (+ d b)) a) a) a)","applied_rules":["rule_3","rule_8","rule_8"]}
+{"original_term":"(* 1 (+ (* -1 a) (* (* -1 (+ (* (+ (+ -1 1) -1) -1) (* a -1))) a)))","rewritten_term":"(* (+ (+ a -1) -1) a)","applied_rules":["rule_8","rule_82","rule_57","rule_53"]}
+{"original_term":"(- 1 (+ (+ (* -1 (* (+ -1 a) a)) a) (- (* (- -1 -1) 0) (+ 1 0))))","rewritten_term":"(- 1 (+ (+ (- 0 (* (+ a -1) a)) a) -1))","applied_rules":["rule_2"]}
+{"original_term":"(- (- (* a b) (* (+ 0 c) (+ b (+ (- 0 (+ -1 d)) (+ 1 1))))) 0)","rewritten_term":"(- (* a b) (* (+ (+ (- 0 (+ d -1)) 2) b) c))","applied_rules":["rule_3","rule_11"]}
+{"original_term":"(- (- (- 1 (* (- a -1) (- (+ (* a (- -1 1)) (- a 1)) 0))) c) 0)","rewritten_term":"(- (- 1 (* (+ (- a 1) (* a -2)) (+ a 1))) c)","applied_rules":["rule_11","rule_11"]}
+{"original_term":"(* (- a (- a (+ a (* 0 (- (* 1 (- (* 0 b) 0)) (* -1 c)))))) 0)","rewritten_term":"0","applied_rules":["rule_7"]}
+{"original_term":"(- a (* -1 (- a (* (+ b (* c b)) (+ a (- 1 (+ 0 (+ 1 -1))))))))","rewritten_term":"(- a (- (* (+ (* c b) b) (+ a 1)) a))","applied_rules":["rule_3","rule_11"]}
+{"original_term":"(+ 1 (- (+ (- a b) (+ (+ a c) (* (+ (* c 1) d) (+ -1 0)))) d))","rewritten_term":"(+ (- (+ (+ (+ a c) (- 0 (+ c d))) (- a b)) d) 1)","applied_rules":["rule_2","rule_6"]}
+{"original_term":"(* 1 (* (- (+ 0 -1) (+ (+ (+ (- (- a -1) a) a) -1) (- b b))) -1))","rewritten_term":"(+ (- (+ a 1) a) a)","applied_rules":["rule_3","rule_8","rule_10","rule_2","rule_51","rule_11"]}
+{"original_term":"(* (* a (+ (* a b) (* (+ 1 1) (* (* b (- d -1)) (+ d 0))))) 0)","rewritten_term":"0","applied_rules":["rule_0_rev","rule_2","rule_2","rule_7"]}
+{"original_term":"(- a (+ (- (- (* (+ 1 0) a) (- (* (+ -1 b) (* b 1)) 0)) b) b))","rewritten_term":"(- a (+ (- (- a (* (+ b -1) b)) b) b))","applied_rules":["rule_2","rule_6","rule_8","rule_11"]}
+{"original_term":"(+ (- 0 (* (* (- (+ 0 0) (+ (- (* 1 a) -1) -1)) (+ 1 b)) a)) a)","rewritten_term":"(+ (* (+ (+ a 1) -1) (+ (* b a) a)) a)","applied_rules":["rule_2","rule_8","rule_11"]}
+{"original_term":"(- (+ (* (- a 1) 1) (- (+ (* a b) (+ c (* 1 (* c b)))) d)) b)","rewritten_term":"(- (+ (- (+ (+ (* c b) c) (* a b)) d) (- a 1)) b)","applied_rules":["rule_6","rule_8"]}
+{"original_term":"(* (- -1 a) (* (- a (+ (- (- 1 c) (* a 0)) (+ -1 (* -1 -1)))) -1))","rewritten_term":"(* (- (- 1 c) a) (- -1 a))","applied_rules":["rule_7","rule_2","rule_11","rule_127"]}
+{"original_term":"(+ (+ (+ (* (- 0 -1) (- (- (* (- 0 1) -1) (- -1 1)) a)) b) -1) 0)","rewritten_term":"(+ (+ (- 3 a) b) -1)","applied_rules":["rule_2","rule_8"]}
+{"original_term":"(+ (- a -1) (+ (+ (* b b) (+ (+ 1 (- (* -1 a) c)) (- -1 c))) b))","rewritten_term":"(+ (+ (+ (+ (+ (+ (- (- 0 a) c) 1) (- -1 c)) (* b b)) b) a) 1)","applied_rules":[]}
+{"original_term":"(+ (* (- (* (* a a) (- 0 (+ (- 0 -1) (+ a a)))) -1) 0) (+ 0 -1))","rewritten_term":"-1","applied_rules":["rule_3","rule_7"]}
+{"original_term":"(+ (- -1 a) (+ (* (+ b (+ -1 -1)) (* (- 0 b) (- (- 0 0) b))) b))","rewritten_term":"(+ (+ (* (+ b -2) (* b b)) b) (- -1 a))","applied_rules":["rule_10","rule_11"]}
+{"original_term":"(- a (* -1 (* (- a (* 1 (* (- (* -1 a) 1) (* (+ 1 b) -1)))) 1)))","rewritten_term":"(- (* (+ b 1) (- (- 0 a) 1)) (- (- 0 a) a))","applied_rules":["rule_6","rule_8","rule_11"]}
+{"original_term":"(* (- a (- (- (+ -1 (* 0 -1)) (* 0 (* (* (* a 0) 0) a))) a)) 1)","rewritten_term":"(+ (+ a a) 1)","applied_rules":["rule_6","rule_7","rule_9"]}
+{"original_term":"(+ a (+ -1 (- 1 (* (+ a (+ (* (+ (- a a) -1) -1) (- a c))) 0))))","rewritten_term":"a","applied_rules":["rule_7","rule_2"]}
+{"original_term":"(+ (* a (+ a (* -1 (- (* a (+ (- 0 (* a a)) (- a c))) b)))) -1)","rewritten_term":"(+ (* (+ (- b (* (+ (- a c) (- 0 (* a a))) a)) a) a) -1)","applied_rules":["rule_11"]}
+{"original_term":"(- (+ -1 (+ (- 1 (- a (* (+ (+ (* a 1) 1) (+ a 0)) a))) a)) -1)","rewritten_term":"(+ (+ (+ (- (* (+ (+ a 1) a) a) (- a 1)) a) -1) 1)","applied_rules":["rule_2","rule_6"]}
+{"original_term":"(* (* a 0) (+ 0 (+ (- 0 a) (+ (- (* b (- -1 1)) (* a a)) b))))","rewritten_term":"0","applied_rules":["rule_3","rule_7","rule_9"]}
+{"original_term":"(+ a (* (* a (- (- 1 1) (* (- a (- (- a 0) 0)) (+ a b)))) 1))","rewritten_term":"a","applied_rules":["rule_6","rule_11","rule_11","rule_10","rule_9","rule_7","rule_2"]}
+{"original_term":"(+ (- (+ a -1) (+ a (- a (- (+ a (- (+ d -1) c)) (- e c))))) 0)","rewritten_term":"(- (+ a -1) (+ (- (- e c) (- (+ (- (+ d -1) c) a) a)) a))","applied_rules":["rule_2"]}
+{"original_term":"(* -1 (* 0 (+ (+ 1 a) (+ (- 0 (- a a)) (+ 0 (- (- c 0) c))))))","rewritten_term":"-0","applied_rules":["rule_3","rule_9"]}
+{"original_term":"(* (- (+ (- a -1) 0) (+ a (+ (+ 1 (* 0 (* b (* -1 a)))) 0))) -1)","rewritten_term":"0","applied_rules":["rule_2","rule_2","rule_9","rule_11","rule_10"]}
+{"original_term":"(- -1 (* a (+ (+ 1 a) (+ (* 0 (- (* (+ a -1) -1) (- c 0))) 0))))","rewritten_term":"(- -1 (+ (* a a) a))","applied_rules":["rule_2","rule_9","rule_2"]}
+{"original_term":"(- (- (* 1 (- (+ (* a (- -1 (* 0 (+ 0 b)))) (- b 0)) -1)) b) a)","rewritten_term":"(- (+ (+ (- 0 a) b) 1) (+ b a))","applied_rules":["rule_3","rule_8","rule_9","rule_11"]}
+{"original_term":"(* (* (- a a) 0) (+ 0 (+ (- (- (- 1 1) (- a (- 1 1))) a) a)))","rewritten_term":"0","applied_rules":["rule_3","rule_7","rule_9"]}
+{"original_term":"(- (+ a (- a (* c (+ 0 (- (- (- 1 a) c) (+ d (- b 1))))))) a)","rewritten_term":"(- (+ (- a (* (- (- (- 1 a) c) (+ (- b 1) d)) c)) a) a)","applied_rules":["rule_3"]}
+{"original_term":"(* (+ (+ 1 (+ (+ 1 1) (- a (* 0 (* (+ a a) a))))) (+ 1 b)) b)","rewritten_term":"(+ (* (+ (+ (+ a 2) 1) b) b) b)","applied_rules":["rule_9","rule_11"]}
+{"original_term":"(- (- a 0) (- 1 (- (- (+ (+ a (* 1 b)) (* c 0)) b) (+ a d))))","rewritten_term":"(- (+ a b) (+ (+ b 1) (- (+ a d) a)))","applied_rules":["rule_7","rule_2","rule_8","rule_11"]}
+{"original_term":"(+ (+ -1 (- 1 (- (* 1 a) 1))) (- (- (+ -1 (+ 0 0)) (+ -1 -1)) a))","rewritten_term":"(+ (+ (- 1 (- a 1)) -1) (- 1 a))","applied_rules":["rule_2","rule_8"]}
+{"original_term":"(* (+ (- 0 (- (+ a a) (+ (- 0 (+ (+ 0 a) 0)) (* a 0)))) 0) a)","rewritten_term":"(- 0 (* (+ (+ a a) a) a))","applied_rules":["rule_2","rule_2","rule_3","rule_7","rule_2","rule_53"]}
+{"original_term":"(+ -1 (- (- a (+ (+ 0 (- (+ (+ 0 (+ a 0)) b) (* b a))) 0)) 1))","rewritten_term":"(+ (- (- (* b a) (- (+ a b) a)) 1) -1)","applied_rules":["rule_2","rule_2","rule_3","rule_3"]}
+{"original_term":"(+ a (+ (* 0 -1) (+ (+ (- a (+ (- c a) 1)) (- (* a 0) -1)) 0)))","rewritten_term":"(+ (+ (+ (- a (+ (- c a) 1)) 1) -0) a)","applied_rules":["rule_2","rule_7"]}
+{"original_term":"(- (+ a (+ (+ (- (+ (- (* (- -1 a) 1) (* 0 a)) -1) -1) a) b)) 1)","rewritten_term":"(- (+ (+ (+ (+ (+ (- -1 a) -1) 1) a) b) a) 1)","applied_rules":["rule_6","rule_9","rule_11"]}
+{"original_term":"(+ (+ (- (- (- 0 a) (* (* a (+ (+ a -1) 0)) (* -1 b))) a) 0) a)","rewritten_term":"(+ (- (+ (- 0 a) (* (+ a -1) (* a b))) a) a)","applied_rules":["rule_2","rule_2","rule_53"]}
+{"original_term":"(- (- 0 a) (- a (+ (+ (- (* b a) d) a) (* (* e 0) (- -1 1)))))","rewritten_term":"(- (+ (+ (- (* b a) d) a) -0) (+ a a))","applied_rules":["rule_7","rule_53"]}
+{"original_term":"(- (* a (+ -1 (- (+ (+ -1 a) (* (+ (+ a 0) 0) (+ b -1))) a))) 0)","rewritten_term":"(* (+ (- (+ (+ a -1) (* (+ b -1) a)) a) -1) a)","applied_rules":["rule_2","rule_2","rule_11"]}
+{"original_term":"(+ (- 0 (+ (* a a) -1)) (+ b (* a (+ (- -1 (- (+ b d) c)) -1))))","rewritten_term":"(+ (+ (* (+ (- c (+ (+ b d) 1)) -1) a) b) (- 0 (+ (* a a) -1)))","applied_rules":[]}
+{"original_term":"(* (* a (* 1 (* 1 (* (+ b (- (* 1 (+ a 1)) (+ 1 a))) 0)))) a)","rewritten_term":"0","applied_rules":["rule_7","rule_7","rule_9"]}
+{"original_term":"(+ (* (- -1 -1) (* (+ (* (+ a a) (- 1 a)) (+ (* b b) 1)) 0)) d)","rewritten_term":"d","applied_rules":["rule_7","rule_3"]}
+{"original_term":"(+ -1 (- (+ (* a (* (* (+ -1 (- (+ a -1) -1)) (+ 0 a)) a)) 1) 0))","rewritten_term":"(+ (+ (* (+ (+ (+ a -1) 1) -1) (* (* a a) a)) 1) -1)","applied_rules":["rule_3","rule_11"]}
+{"original_term":"(- a (* 0 (- (- a a) (- (- (+ (- -1 a) (* -1 a)) (- 1 1)) 0))))","rewritten_term":"a","applied_rules":["rule_9","rule_11"]}
+{"original_term":"(- (- (+ (- (+ (- (- 0 (+ (* -1 a) 0)) (* a a)) a) -1) -1) 1) -1)","rewritten_term":"(+ (- (+ (+ (+ (- a (* a a)) a) 1) -1) 1) 1)","applied_rules":["rule_2","rule_11"]}
+{"original_term":"(- (* (- (+ 1 (- a b)) (+ (* (+ a b) (+ 1 (- -1 b))) c)) 1) 1)","rewritten_term":"(- (+ (- a b) 1) (+ (+ (* (+ (- -1 b) 1) (+ a b)) c) 1))","applied_rules":["rule_6"]}
+{"original_term":"(+ (* (* a b) (* 0 (- (* (- (+ (+ 1 a) 1) a) 0) (+ b c)))) 1)","rewritten_term":"1","applied_rules":["rule_7","rule_9","rule_7"]}
+{"original_term":"(+ (- (- a (+ (- (+ (+ (* (+ b 1) -1) a) 1) 1) 1)) -1) (+ b 1))","rewritten_term":"(+ (+ (+ b 1) (- a (+ (- (+ (+ (- -1 b) a) 1) 1) 1))) 1)","applied_rules":["rule_57"]}
+{"original_term":"(* 0 (+ (- (* (- 1 a) a) (- (* b a) (- 1 (+ -1 d)))) (- b a)))","rewritten_term":"0","applied_rules":["rule_9"]}
+{"original_term":"(* (* (+ (+ (* 0 -1) a) (* (+ a 1) (- 1 (+ (+ 0 b) b)))) a) c)","rewritten_term":"(* (+ (+ a -0) (* (+ a 1) (- 1 (+ b b)))) (* a c))","applied_rules":["rule_3"]}
+{"original_term":"(* (+ (- (+ a b) (* (+ (+ (- b b) 0) -1) 0)) 1) (* (+ a c) 0))","rewritten_term":"0","applied_rules":["rule_2","rule_7","rule_7","rule_7"]}
+{"original_term":"(+ -1 (- (- 1 (- (+ 0 (+ (- -1 (+ (* 1 1) a)) 0)) -1)) (+ a b)))","rewritten_term":"(+ (- (+ a 1) (+ (+ a -1) b)) -1)","applied_rules":["rule_2","rule_3","rule_51"]}
+{"original_term":"(* 1 (* (* (- (- -1 (* (+ a (* (+ -1 0) -1)) (+ a -1))) -1) a) -1))","rewritten_term":"(- 0 (+ (* (- -1 (* (+ a 1) (+ a -1))) a) a))","applied_rules":["rule_2","rule_8"]}
+{"original_term":"(+ (+ (* 1 (+ a -1)) (* 0 0)) (- 0 (* (+ a (- (+ a 0) -1)) b)))","rewritten_term":"(+ (+ a -1) (- 0 (* (+ (+ a 1) a) b)))","applied_rules":["rule_2","rule_2","rule_8"]}
+{"original_term":"(- (- 1 (* a (* (* (* (- (- -1 (- b a)) (- 1 -1)) b) -1) -1))) 1)","rewritten_term":"(- (- 0 (- (* (- (- a (+ b 1)) 2) (* b a)) 1)) 1)","applied_rules":[]}
+{"original_term":"(- (+ 0 (+ a (- 1 (+ (* (* 1 (+ (* b 0) 0)) -1) b)))) (+ -1 -1))","rewritten_term":"(- (+ (- 1 (+ b -0)) a) -2)","applied_rules":["rule_2","rule_3","rule_7"]}
+{"original_term":"(* (* (+ (* a (- a (- (- 0 (* (* a a) -1)) a))) (* a -1)) c) d)","rewritten_term":"(* (+ (- a (- (* a a) a)) -1) (* (* a c) d))","applied_rules":["rule_80","rule_11"]}
+{"original_term":"(* (+ (+ (+ (+ 0 0) a) 0) (+ (- (- b (* -1 (- b b))) b) 0)) 0)","rewritten_term":"0","applied_rules":["rule_2","rule_2","rule_3","rule_7"]}
+{"original_term":"(* a (+ (- a (+ b (* (* (* (+ (* a a) c) (- c b)) e) b))) -1))","rewritten_term":"(* (+ (- a (+ (* (+ (* a a) c) (* (- c b) (* e b))) b)) -1) a)","applied_rules":[]}
+{"original_term":"(- (- 1 (- a b)) (- (+ (+ (* (* (- 1 (+ a -1)) a) b) b) 0) 1))","rewritten_term":"(- (- b (- a 1)) (- (+ (* (- 1 (+ a -1)) (* a b)) b) 1))","applied_rules":["rule_2"]}
+{"original_term":"(+ (* 0 a) (* (* b 0) (* (- (* (+ (- 0 -1) c) c) (- b 1)) e)))","rewritten_term":"0","applied_rules":["rule_7","rule_9","rule_3","rule_9"]}
+{"original_term":"(+ (* (+ (* (+ a (- (+ (+ 0 (- 0 a)) a) a)) b) 1) (* -1 c)) 1)","rewritten_term":"(+ (- 0 (+ (* (+ (- (+ (- 0 a) a) a) a) (* b c)) c)) 1)","applied_rules":["rule_3"]}
+{"original_term":"(+ (* (- (- -1 (- (* 0 (* (* (* a a) -1) (- a 1))) 0)) -1) b) -1)","rewritten_term":"-1","applied_rules":["rule_9","rule_9"]}
+{"original_term":"(+ -1 (+ (- (- 1 a) (* (* (- (* (- 1 0) 0) a) (+ a 1)) 0)) -1))","rewritten_term":"(+ (+ (- 1 a) -1) -1)","applied_rules":["rule_7","rule_11"]}
+{"original_term":"(* (- a (* (- (+ a (+ (+ (* (* a b) 1) (+ -1 a)) 1)) b) 1)) 1)","rewritten_term":"(- a (- (+ (+ (+ (+ a -1) (* a b)) 1) a) b))","applied_rules":["rule_6","rule_6","rule_6"]}
+{"original_term":"(* a (- (- (- (* a (* (* -1 (+ b (- c 0))) b)) 0) -1) (* a b)))","rewritten_term":"(* (- (+ (- 0 (* (+ b c) (* b a))) 1) (* a b)) a)","applied_rules":["rule_11","rule_11"]}
+{"original_term":"(- a (+ a (* (+ (- (- (- (+ 0 b) (* a 0)) 1) 1) (- 1 a)) 1)))","rewritten_term":"(- 0 (+ (- (- b 1) 1) (- 1 a)))","applied_rules":["rule_3","rule_6","rule_7","rule_11","rule_51"]}
+{"original_term":"(+ 1 (* (- -1 (* a (* (* (* -1 (* a (+ a -1))) (- a a)) a))) c))","rewritten_term":"(+ (- 0 c) 1)","applied_rules":["rule_10","rule_7","rule_9","rule_7"]}
+{"original_term":"(* a (+ 0 (* b (+ (- b (- (- (+ -1 1) 1) (- (* a -1) -1))) 1))))","rewritten_term":"(* (+ (+ b b) (* (+ (+ (- 0 a) 1) b) b)) a)","applied_rules":["rule_3"]}
+{"original_term":"(* a (* (* a 0) (- (- (* (* (* (- 1 -1) a) 1) (+ a a)) a) -1)))","rewritten_term":"0","applied_rules":["rule_6","rule_7","rule_9","rule_7"]}
+{"original_term":"(* (- (- (- (- 0 0) (+ (* (+ -1 1) (* a -1)) (- b a))) 1) 1) 1)","rewritten_term":"(- (- (- a b) 1) 1)","applied_rules":["rule_6","rule_9","rule_3","rule_11"]}
+{"original_term":"(- a (- 0 (* 1 (+ a (- 0 (- (* (- 0 (* a a)) (- a b)) c))))))","rewritten_term":"(+ (+ (+ (* (- a b) (* a a)) c) a) a)","applied_rules":["rule_8","rule_53","rule_11","rule_53"]}
+{"original_term":"(+ (* a (* (* (* (+ a (+ (- (+ 0 a) 1) -1)) 1) -1) (- b -1))) b)","rewritten_term":"(+ (- 0 (* (+ (+ (- a 1) -1) a) (+ (* b a) a))) b)","applied_rules":["rule_3","rule_6"]}
+{"original_term":"(* (+ (+ -1 a) 1) (- (+ 1 (- -1 b)) (- b (- 0 (- d (+ c b))))))","rewritten_term":"(* (+ (+ a -1) 1) (- (+ (- -1 b) 1) (+ (- d (+ c b)) b)))","applied_rules":["rule_53"]}
+{"original_term":"(+ (+ (* (- (+ (+ a (+ (- a a) b)) (- (- 0 a) -1)) 0) 1) 1) -1)","rewritten_term":"(+ (+ (+ (+ (+ a b) (- 0 a)) 1) 1) -1)","applied_rules":["rule_6","rule_10","rule_3","rule_11"]}
+{"original_term":"(* (+ a b) (* a (- (- b (* (+ 1 (+ (+ a a) 0)) (* -1 a))) 0)))","rewritten_term":"(* (+ (+ (* (+ a a) a) a) b) (* (+ a b) a))","applied_rules":["rule_2","rule_11","rule_53"]}
+{"original_term":"(+ a (+ (* a b) (* (- (- b (+ (+ (+ a 0) 0) (* 0 0))) b) 1)))","rewritten_term":"(+ (+ (- (- b a) b) (* a b)) a)","applied_rules":["rule_2","rule_2","rule_2","rule_6"]}
+{"original_term":"(- (- (* 0 a) -1) (- -1 (- (- (- -1 (+ (* (* a 1) a) b)) b) a)))","rewritten_term":"(- (+ (- (- -1 (+ (* a a) b)) b) 1) (- a 1))","applied_rules":["rule_6","rule_9"]}
+{"original_term":"(+ 0 (- (- -1 -1) (- (- 1 (* a 1)) (+ (- (+ (- a 0) 0) 0) 0))))","rewritten_term":"(- a (- 1 a))","applied_rules":["rule_2","rule_2","rule_3","rule_6","rule_11","rule_11","rule_11"]}
+{"original_term":"(- 0 (* 0 (+ (+ -1 (+ 1 (* (* (+ (- 1 1) 1) a) (* -1 1)))) -1)))","rewritten_term":"0","applied_rules":["rule_6","rule_8","rule_9"]}
+{"original_term":"(+ (+ a (+ (* -1 (- (+ (* (* (+ a 0) 1) b) a) (* 0 0))) 1)) 1)","rewritten_term":"(+ (+ (+ (- 0 (+ (* a b) a)) 1) a) 1)","applied_rules":["rule_2","rule_6","rule_11"]}
+{"original_term":"(* (* a (- 1 (+ (- a (* (* (+ (* -1 -1) b) a) -1)) b))) (+ b 1))","rewritten_term":"(* (+ b 1) (- a (* (+ (+ (+ (* b a) a) a) b) a)))","applied_rules":["rule_53"]}
+{"original_term":"(* (* (* -1 (+ (+ (+ -1 (- 1 a)) (+ a (* (- b b) b))) 0)) c) c)","rewritten_term":"(- 0 (* (+ (+ (- 1 a) -1) a) (* c c)))","applied_rules":["rule_2","rule_10","rule_9","rule_2"]}
+{"original_term":"(* (- -1 (- (- (- a 1) (- (* (* a (+ b -1)) (- -1 b)) -1)) a)) -1)","rewritten_term":"(- (+ (- (- a 1) (+ (* (+ b -1) (* (- -1 b) a)) 1)) 1) a)","applied_rules":["rule_11"]}
+{"original_term":"(* a (* 1 (- a (+ a (+ (+ a (- (+ (* a 0) c) a)) (- 1 c))))))","rewritten_term":"(- 0 (* (+ (+ (- c a) a) (- 1 c)) a))","applied_rules":["rule_7","rule_3","rule_8","rule_51"]}
+{"original_term":"(+ 1 (* (* (+ (- -1 a) (* (+ (+ 1 (- -1 -1)) -1) (* a b))) b) b))","rewritten_term":"(+ (* (- -1 a) (* b b)) 1)","applied_rules":["rule_10","rule_9","rule_2"]}
+{"original_term":"(+ (+ (- (* (+ a (- 0 0)) a) (* (+ 1 (- (* -1 a) a)) -1)) 0) a)","rewritten_term":"(+ (+ (+ (- (- 0 a) a) 1) (* a a)) a)","applied_rules":["rule_2","rule_2","rule_53"]}
+{"original_term":"(+ a (- (- (+ 1 a) (+ (- (- (- (+ a a) b) a) (- 1 b)) d)) e))","rewritten_term":"(+ (- (+ a 1) (+ (+ (- (+ a a) (+ (+ b a) (- 1 b))) d) e)) a)","applied_rules":[]}
+{"original_term":"(- (+ -1 a) (+ a (- 1 (* (* (+ (- (- b 1) -1) (* b c)) a) c))))","rewritten_term":"(- (+ a -1) (+ (- 1 (* (+ (+ (- b 1) 1) (* b c)) (* a c))) a))","applied_rules":[]}
+{"original_term":"(* a (+ 0 (+ (* b 1) (+ 0 (* -1 (+ (- (+ b -1) a) (+ 0 a)))))))","rewritten_term":"(* (+ (- 0 (+ (- (+ b -1) a) a)) b) a)","applied_rules":["rule_3","rule_3","rule_3","rule_6"]}
+{"original_term":"(- (+ a (+ -1 (+ (+ (- (- (- (- a -1) -1) 0) b) b) a))) (+ b 0))","rewritten_term":"(- (+ (+ (+ (+ (- (+ (+ a 1) 1) b) b) a) -1) a) b)","applied_rules":["rule_2","rule_11"]}
+{"original_term":"(+ (- (- (- a (+ b 1)) (+ (- (- a c) b) a)) a) (- d (- c b)))","rewritten_term":"(+ (- (- (- a (+ b 1)) (+ (- (- a c) b) a)) a) (- d (- c b)))","applied_rules":[]}
+{"original_term":"(+ (- 1 (* (- a (- a (- (* (- (- 0 a) 0) a) (+ b 0)))) c)) 0)","rewritten_term":"(- 1 (* (- (- 0 (* a a)) b) c))","applied_rules":["rule_2","rule_2","rule_11","rule_10","rule_11"]}
+{"original_term":"(+ (* a (- a a)) (+ (* (- c 0) (+ (- (- (+ a d) d) c) c)) d))","rewritten_term":"(+ (* (+ (- (+ a d) (+ d c)) c) c) d)","applied_rules":["rule_10","rule_7","rule_3","rule_11"]}
+{"original_term":"(+ a (* (+ (- b (+ -1 a)) (- (* (+ 1 (- d (* -1 b))) c) 0)) c))","rewritten_term":"(+ (* (+ (+ (- b (+ a -1)) c) (* (+ d b) c)) c) a)","applied_rules":["rule_11","rule_53"]}
+{"original_term":"(- a (* (+ (- b a) (* 1 0)) (* (- (* c a) (* (- 0 0) 1)) 1)))","rewritten_term":"(- a (* (- b a) (* c a)))","applied_rules":["rule_6","rule_2","rule_11"]}
+{"original_term":"(+ 0 (- (* -1 a) (+ (* a 0) (+ (+ (- (+ 1 -1) -1) a) (+ -1 0)))))","rewritten_term":"(- (- 0 a) (+ (+ a 1) -1))","applied_rules":["rule_2","rule_3","rule_7","rule_3"]}
+{"original_term":"(+ (- 0 (* (- (* -1 -1) (- a a)) (* (* a -1) (+ (- a a) d)))) 0)","rewritten_term":"(* a d)","applied_rules":["rule_2","rule_10","rule_8","rule_10","rule_3","rule_11"]}
+{"original_term":"(+ (+ a a) (+ (* a 0) (- (+ b b) (- (+ -1 (- d a)) (- -1 1)))))","rewritten_term":"(+ (+ a a) (- (+ b b) (- (+ (- d a) -1) -2)))","applied_rules":["rule_7","rule_3"]}
+{"original_term":"(+ a (* a (- (+ (* 0 -1) (- 1 (+ (- a (* a a)) (- 1 c)))) 0)))","rewritten_term":"(+ (- a (* (+ (- a (* a a)) (- 1 c)) a)) a)","applied_rules":["rule_9","rule_3","rule_11"]}
+{"original_term":"(- (+ (- a a) (+ a (* (+ (+ (+ (+ -1 1) a) (- b c)) a) b))) 0)","rewritten_term":"(+ (* (+ (+ (- b c) a) a) b) a)","applied_rules":["rule_10","rule_3","rule_3","rule_11"]}
+{"original_term":"(+ (- 1 a) (+ (+ (- -1 (- 0 1)) (+ (+ 1 (+ a (* 0 a))) 0)) -1))","rewritten_term":"(+ (+ (+ a 1) -1) (- 1 a))","applied_rules":["rule_2","rule_3","rule_9","rule_2"]}
+{"original_term":"(* (* (+ a (* (- 0 a) (- (* (- 1 1) a) (* (+ 1 1) -1)))) c) d)","rewritten_term":"(* (+ (- 0 (* a 2)) a) (* c d))","applied_rules":["rule_0_rev","rule_9"]}
+{"original_term":"(- a (* (+ a (* (+ 0 (* (* (+ (* 0 a) 1) 0) (* c 0))) b)) b))","rewritten_term":"(- a (* a b))","applied_rules":["rule_3","rule_7","rule_7","rule_9","rule_2"]}
+{"original_term":"(* (- (+ (- a (- (- 0 (+ (- (+ b -1) 1) -1)) 0)) (+ 0 1)) b) 1)","rewritten_term":"(- (+ (+ (+ (- (+ b -1) 1) -1) a) 1) b)","applied_rules":["rule_3","rule_6","rule_11","rule_53"]}
+{"original_term":"(+ (- a -1) (- (* -1 (* -1 (- a (* (+ (+ a -1) a) (- 1 a))))) 1))","rewritten_term":"(+ (+ (- (- a (* (+ (+ a -1) a) (- 1 a))) 1) a) 1)","applied_rules":["rule_11","rule_11"]}
+{"original_term":"(- a (* (* -1 -1) (* (+ 1 a) (+ (- 0 (+ (- 1 0) a)) (+ 0 -1)))))","rewritten_term":"(- a (* (+ (- -1 a) -1) (+ a 1)))","applied_rules":["rule_3","rule_8","rule_58"]}
+{"original_term":"(- (- 1 1) (- a (- (+ a (+ (* (+ (* -1 b) 1) (* b 1)) 0)) 0)))","rewritten_term":"(- (+ (+ (- 0 (* b b)) b) a) a)","applied_rules":["rule_2","rule_6","rule_11","rule_11"]}
+{"original_term":"(- (+ (- a (+ a (+ a (- (+ (- -1 -1) (- b 1)) (+ 0 1))))) b) -1)","rewritten_term":"(+ (+ (- 0 (+ (- (- b 1) 1) a)) b) 1)","applied_rules":["rule_3","rule_3","rule_51"]}
+{"original_term":"(- 1 (* (+ (- (* a 1) a) (- (* a (* 0 (+ (* b -1) -1))) b)) c))","rewritten_term":"(+ (* b c) 1)","applied_rules":["rule_6","rule_9","rule_7","rule_10","rule_3"]}
+{"original_term":"(* (+ (* a (* 0 (- 1 (- (* (* a (+ -1 b)) c) (+ 1 a))))) -1) 0)","rewritten_term":"0","applied_rules":["rule_7"]}
+{"original_term":"(* (+ (* a a) (- (- 1 1) (- a a))) (+ (* c (* 1 1)) (- b b)))","rewritten_term":"(* (* a a) c)","applied_rules":["rule_6","rule_6","rule_10","rule_2","rule_10","rule_2"]}
+{"original_term":"(+ (+ (* a -1) (+ a b)) (- (- (+ 0 a) (* (* (* b 0) 0) 0)) a))","rewritten_term":"(+ (+ a b) (- 0 a))","applied_rules":["rule_3","rule_7","rule_11","rule_10","rule_2"]}
+{"original_term":"(- a (* a (* a (+ 0 (* (+ b (* (- -1 (* 1 a)) (+ -1 1))) a)))))","rewritten_term":"(- a (* (* (* b a) a) a))","applied_rules":["rule_3","rule_7","rule_2"]}
+{"original_term":"(* a (- (+ (+ b b) 1) (* a (+ (* 0 a) (* (- (+ a -1) c) 0)))))","rewritten_term":"(+ (* (+ b b) a) a)","applied_rules":["rule_7","rule_2","rule_9","rule_7","rule_11"]}
+{"original_term":"(+ (* a b) (* (* (- 0 a) (- (+ -1 (- (- a a) 1)) (* c -1))) 1))","rewritten_term":"(+ (- 0 (* (- c 2) a)) (* a b))","applied_rules":["rule_6","rule_10"]}
+{"original_term":"(* (- a (- (* (- (- 1 (* (+ (* -1 0) 0) (+ 1 a))) a) 0) b)) 1)","rewritten_term":"(+ a b)","applied_rules":["rule_2","rule_6","rule_7","rule_53"]}
+{"original_term":"(- 0 (* (- 1 (- a (* (- a (- (* (- 1 a) -1) a)) (- a -1)))) 1))","rewritten_term":"(- (- a 1) (* (+ a 1) (- a (- (- a 1) a))))","applied_rules":["rule_6","rule_11"]}
+{"original_term":"(- (- -1 (+ a (+ (+ (+ a 1) (- (* (* a c) -1) (- b 0))) d))) -1)","rewritten_term":"(+ (- -1 (+ (+ (+ (+ a 1) (- (- 0 (* a c)) b)) d) a)) 1)","applied_rules":["rule_11"]}
+{"original_term":"(+ a (+ (+ (+ 0 (+ a (- 1 (- a (+ a b))))) d) (+ a (* 1 a))))","rewritten_term":"(+ (+ (+ (+ (+ (- (+ a b) (- a 1)) a) d) a) a) a)","applied_rules":["rule_3","rule_8"]}
+{"original_term":"(+ 0 (* (+ (- (- a -1) (* -1 (- (* b (* a -1)) (- -1 0)))) b) b))","rewritten_term":"(* (+ (+ (+ (+ (- 0 (* a b)) 1) a) 1) b) b)","applied_rules":["rule_3","rule_53"]}
+{"original_term":"(* (* 1 (* -1 a)) (+ (+ (+ 1 -1) (- 0 (+ (- (* b 1) -1) b))) 0))","rewritten_term":"(* (+ (+ b 1) b) a)","applied_rules":["rule_2","rule_3","rule_6","rule_8","rule_11"]}
+{"original_term":"(- -1 (+ (- a 1) (+ (+ (- 0 0) (+ (+ 0 b) (+ c b))) (- c a))))","rewritten_term":"(- -1 (+ (+ (+ (+ c b) b) (- c a)) (- a 1)))","applied_rules":["rule_3","rule_3"]}
+{"original_term":"(- (- a (* (- (+ (* 1 0) 1) 0) (- (- a (- (+ b a) 0)) 0))) a)","rewritten_term":"(- (+ a b) a)","applied_rules":["rule_7","rule_8","rule_11","rule_11","rule_51","rule_53"]}
+{"original_term":"(- (* (- 1 a) a) (* (- a c) (- 1 (- (- c -1) (- (+ c 1) 1)))))","rewritten_term":"(- (- a (* a a)) (* (- (+ c 1) (+ (- (+ c 1) 1) 1)) (- a c)))","applied_rules":[]}
+{"original_term":"(- (- a (* 0 0)) (* (- (+ 1 (* (+ a (+ (- a b) -1)) 1)) 1) a))","rewritten_term":"(- a (* (+ (+ (- a b) -1) a) a))","applied_rules":["rule_6","rule_11","rule_132"]}
+{"original_term":"(+ (- (+ -1 1) (+ (* -1 (* (- a (+ 0 -1)) (+ a (+ -1 0)))) a)) b)","rewritten_term":"(+ (- 0 (+ (* (+ a -1) (- -1 a)) a)) b)","applied_rules":["rule_2","rule_126"]}
+{"original_term":"(- (+ (* a 1) (* (- a b) (- b (* (* c (* 1 c)) (+ a b))))) -1)","rewritten_term":"(+ (+ (* (- b (* (+ a b) (* c c))) (- a b)) a) 1)","applied_rules":["rule_6","rule_8"]}
+{"original_term":"(+ (* 1 0) (- a (* (+ (* (+ (* (* b a) c) (+ 1 0)) a) c) 1)))","rewritten_term":"(- a (+ (+ (* (* (* b a) c) a) a) c))","applied_rules":["rule_2","rule_3","rule_6"]}
+{"original_term":"(* 1 (- (+ 0 (- (+ (* (* (+ a -1) a) (+ (+ -1 a) b)) -1) a)) -1))","rewritten_term":"(+ (- (+ (* (+ (+ a -1) b) (* (+ a -1) a)) -1) a) 1)","applied_rules":["rule_3","rule_8"]}
+{"original_term":"(- (+ (* 1 (+ (- (- 0 (* 1 (- (* 0 -1) 0))) a) 1)) 0) (+ a b))","rewritten_term":"(- (+ (- 0 a) 1) (+ a b))","applied_rules":["rule_2","rule_8"]}
+{"original_term":"(+ (+ 0 1) (- (+ (+ (+ -1 (* (* (* 0 1) a) a)) 1) (* 1 -1)) -1))","rewritten_term":"1","applied_rules":["rule_3","rule_9","rule_9"]}
+{"original_term":"(+ a (+ (- 1 (- (+ a -1) (* (* (+ a (* 1 0)) 1) (- a -1)))) b))","rewritten_term":"(+ (+ (- (+ (* a a) a) (- (+ a -1) 1)) b) a)","applied_rules":["rule_6","rule_2"]}
+{"original_term":"(- (* 1 (+ (* a (+ a (+ (* (- (+ a 0) -1) (+ a a)) a))) b)) a)","rewritten_term":"(- (+ (* (+ (+ (* (+ a a) (+ a 1)) a) a) a) b) a)","applied_rules":["rule_2","rule_8"]}
+{"original_term":"(- (+ a a) (- (+ (- (* -1 b) b) c) (+ (+ (+ (+ b -1) d) c) 0)))","rewritten_term":"(- (+ (+ (+ b -1) d) c) (- (+ (- (- 0 b) b) c) (+ a a)))","applied_rules":["rule_2"]}
+{"original_term":"(* 0 (+ -1 (+ (* (- a -1) (* (* 1 1) (- 1 (+ a b)))) (+ a d))))","rewritten_term":"0","applied_rules":["rule_6","rule_8","rule_9"]}
+{"original_term":"(+ (* -1 (+ -1 (- (+ a (* (+ -1 (+ (+ 0 a) 0)) (- a -1))) 0))) -1)","rewritten_term":"(+ (- 0 (+ (+ (* (+ a -1) (+ a 1)) a) -1)) -1)","applied_rules":["rule_2","rule_3","rule_11"]}
+{"original_term":"(+ (* (* 0 1) (- (- 1 (+ -1 a)) (- a (* a (- a (+ 1 0)))))) -1)","rewritten_term":"-1","applied_rules":["rule_2","rule_9"]}
+{"original_term":"(* (* (- 0 a) 0) (- (* 1 a) (+ 0 (* (- -1 1) (+ 0 (- -1 1))))))","rewritten_term":"0","applied_rules":["rule_3","rule_7","rule_8","rule_9"]}
+{"original_term":"(- (* 0 -1) (* (+ a -1) (* (+ (* (+ a (* a a)) (+ b 1)) c) 0)))","rewritten_term":"-0","applied_rules":["rule_7","rule_7"]}
+{"original_term":"(+ -1 (+ (+ (+ (- 0 a) (- (* (- -1 0) (- a a)) (+ a 1))) b) 0))","rewritten_term":"(+ (+ (+ (- -0 (+ a 1)) (- 0 a)) b) -1)","applied_rules":["rule_2","rule_10"]}
+{"original_term":"(- (- (- -1 -1) (- a (+ (* (* (+ (- 0 -1) 1) (- b b)) a) 0))) c)","rewritten_term":"(- (- 0 a) c)","applied_rules":["rule_2","rule_10","rule_9","rule_11"]}
+{"original_term":"(- a (- a (- c (* a (- (+ (- (* (+ c 0) 0) a) (+ 1 b)) 1)))))","rewritten_term":"(- (- c a) (- (- (* (+ (+ b 1) (- 0 a)) a) a) a))","applied_rules":["rule_2","rule_7"]}
+{"original_term":"(+ a (* (- (+ (- a (- (* (+ (* 0 1) -1) (+ b 0)) a)) 0) 1) a))","rewritten_term":"(* (- a (- (- 0 b) a)) a)","applied_rules":["rule_2","rule_2","rule_76"]}
+{"original_term":"(+ a (- (* -1 a) (* (* a a) (- 1 (* (* a (- a -1)) (- a a))))))","rewritten_term":"(+ (- (- 0 a) (* a a)) a)","applied_rules":["rule_10","rule_7","rule_6"]}
+{"original_term":"(+ (- (+ a b) (+ (+ (- 1 1) (* (- (* 1 -1) -1) 1)) -1)) (+ a a))","rewritten_term":"(+ (+ (+ (+ a a) a) b) 1)","applied_rules":["rule_6"]}
+{"original_term":"(+ (+ -1 1) (* (* a (* (- (- a (* (- c c) 0)) 0) (+ -1 b))) a))","rewritten_term":"(* (+ b -1) (* (* a a) a))","applied_rules":["rule_7","rule_3","rule_11","rule_11"]}
+{"original_term":"(+ (* -1 (+ (* (+ -1 a) (* (* (+ (+ a 0) -1) 1) (* 1 -1))) -1)) a)","rewritten_term":"(+ (- 0 (+ (- 0 (pow (+ a -1) 2)) -1)) a)","applied_rules":["rule_2","rule_6"]}
+{"original_term":"(* a (+ (* 1 (* (+ (- (+ (* (* a b) 1) (* -1 a)) a) 0) 0)) d))","rewritten_term":"(* a d)","applied_rules":["rule_2","rule_6","rule_7","rule_3"]}
+{"original_term":"(- (- a (- 1 (* a (+ 0 (+ (* (+ a 1) (+ a -1)) (+ -1 a)))))) 1)","rewritten_term":"(- (- (* (+ (+ (* a a) a) a) (+ a -1)) (- 1 a)) 1)","applied_rules":["rule_3"]}
+{"original_term":"(- a (* a (* (* 0 (* c (- (+ (- 0 (- a 1)) 0) (+ c 0)))) d)))","rewritten_term":"a","applied_rules":["rule_2","rule_2","rule_9","rule_9","rule_7","rule_11"]}
+{"original_term":"(* (+ a (- (* 0 (* 1 a)) (+ b (+ (- -1 c) 1)))) (* (* 0 -1) b))","rewritten_term":"(* (+ (- -1 (+ (- -1 c) b)) a) (* b -0))","applied_rules":["rule_8","rule_9","rule_125"]}
+{"original_term":"(+ (+ -1 -1) (* (* (* 0 0) (+ (* a 0) (+ (* -1 a) 1))) (* 0 a)))","rewritten_term":"-2","applied_rules":["rule_7","rule_7","rule_3","rule_9","rule_9"]}
+{"original_term":"(+ a (* 1 (+ (- 0 (- (+ a (* (+ c b) (* 0 0))) 1)) (* a a))))","rewritten_term":"(+ (+ (- 0 (- a 1)) (* a a)) a)","applied_rules":["rule_7","rule_7","rule_2","rule_8"]}
+{"original_term":"(+ (+ a (- (* b (+ (+ -1 b) 0)) (+ (+ (- (+ 0 1) 1) a) c))) a)","rewritten_term":"(+ (+ (- (* (+ b -1) b) (+ a c)) a) a)","applied_rules":["rule_2","rule_3"]}
+{"original_term":"(+ a (- (- a (- 1 a)) (- a (* 0 (* (* b 1) (+ (* c c) 0))))))","rewritten_term":"(+ (- (- a (- 1 a)) a) a)","applied_rules":["rule_2","rule_6","rule_9","rule_11"]}
+{"original_term":"(- -1 (+ a (+ (+ (+ (* 1 a) 1) (+ (- -1 a) (- (* 0 a) 1))) 0)))","rewritten_term":"(- -1 (+ (+ (+ (+ (- -1 a) -1) a) 1) a))","applied_rules":["rule_2","rule_8","rule_9"]}
+{"original_term":"(* (- a 0) (+ (* a a) (* -1 (* (- a (* b (- a 1))) (- 0 -1)))))","rewritten_term":"(* (+ (- (- (* a b) b) a) (* a a)) a)","applied_rules":["rule_11","rule_6","rule_11"]}
+{"original_term":"(* (* (- (- (+ (- (- 0 a) 0) -1) a) (+ -1 a)) (* (- 1 b) 0)) -1)","rewritten_term":"-0","applied_rules":["rule_7","rule_7"]}
+{"original_term":"(* a (+ 1 (* (+ (- a (- a 0)) -1) (+ (+ (- (+ 0 0) a) b) b))))","rewritten_term":"(+ (- 0 (* (+ (+ (- 0 a) b) b) a)) a)","applied_rules":["rule_2","rule_11","rule_10"]}
+{"original_term":"(* (+ (- (* -1 (+ (+ (* a (* 1 a)) a) 0)) 1) (- (- 0 b) 0)) d)","rewritten_term":"(* (+ (- (- 0 (+ (* a a) a)) 1) (- 0 b)) d)","applied_rules":["rule_2","rule_8","rule_11"]}
+{"original_term":"(* (- a (+ a (+ 1 (* (* (- (+ a b) d) (* (+ -1 a) 1)) 0)))) 0)","rewritten_term":"0","applied_rules":["rule_6","rule_7"]}
+{"original_term":"(* (- (+ a (* (+ a (- (* 0 (+ (+ a 1) -1)) (- 1 1))) 0)) -1) b)","rewritten_term":"(+ (* a b) b)","applied_rules":["rule_7","rule_2"]}
+{"original_term":"(* a (+ (* (+ (* b (* (+ (+ 0 -1) (* a -1)) (+ -1 1))) a) c) 0))","rewritten_term":"(* (* a c) a)","applied_rules":["rule_2","rule_7","rule_7","rule_3"]}
+{"original_term":"(* (+ (- (- a a) (- a (+ (+ -1 (+ (+ a a) d)) (- 0 0)))) d) -1)","rewritten_term":"(- 0 (+ (- (+ (+ (+ a a) d) -1) a) d))","applied_rules":["rule_10","rule_2","rule_11"]}
+{"original_term":"(* (- (+ 0 (- (+ a (* (* a (- b (- c b))) (+ d e))) -1)) e) 1)","rewritten_term":"(- (+ (+ (* (+ d e) (* (- b (- c b)) a)) a) 1) e)","applied_rules":["rule_3","rule_6"]}
+{"original_term":"(* (- 1 -1) (* (* (+ 0 a) (- (* (* -1 (- a 0)) 0) (* -1 1))) 1))","rewritten_term":"(* a 2)","applied_rules":["rule_3","rule_6","rule_7","rule_6"]}
+{"original_term":"(* (+ a b) (+ (+ 1 (* (* a a) 0)) (- b (* 1 (* a (* 1 a))))))","rewritten_term":"(* (+ (- b (* a a)) 1) (+ a b))","applied_rules":["rule_7","rule_8","rule_8"]}
+{"original_term":"(+ (* 1 1) (* 1 (+ a (- b (- a (* (+ (* -1 1) a) (* c d)))))))","rewritten_term":"(+ (+ (- (* (+ a -1) (* c d)) (- a b)) a) 1)","applied_rules":["rule_6","rule_8"]}
+{"original_term":"(+ (- a (- (+ (- -1 (- -1 (+ (* (- a -1) a) a))) a) (- b 0))) d)","rewritten_term":"(+ (- a (- (+ (+ (+ (+ (+ (* a a) a) a) -1) 1) a) b)) d)","applied_rules":["rule_11"]}
+{"original_term":"(+ (- a (- b (- 0 (* b (- (- (* 1 0) (* 0 0)) (+ b a)))))) -1)","rewritten_term":"(+ (- a (+ (- 0 (* (+ b a) b)) b)) -1)","applied_rules":["rule_7","rule_53"]}
+{"original_term":"(- 0 (- 1 (* 1 (+ (- 0 (* (- (+ a (- -1 0)) a) b)) (+ 0 b)))))","rewritten_term":"(- (+ (- 0 (* (- (+ a -1) a) b)) b) 1)","applied_rules":["rule_3","rule_8"]}
+{"original_term":"(+ (* a 1) (- (* a b) (+ 0 (* (* b (+ c (+ c c))) (+ e d)))))","rewritten_term":"(+ (- (* a b) (* (+ (+ c c) c) (* (+ e d) b))) a)","applied_rules":["rule_3","rule_6"]}
+{"original_term":"(- a (* -1 (- (+ (* a (- 1 (+ (* (- 0 -1) -1) (* a a)))) a) c)))","rewritten_term":"(- (+ (- a (* (+ (* a a) -1) a)) a) (- c a))","applied_rules":["rule_3"]}
+{"original_term":"(- (+ (* (+ a 1) 1) (+ -1 (* b (* (+ a (+ (* 0 -1) 1)) 0)))) 1)","rewritten_term":"(- (+ (+ a 1) -1) 1)","applied_rules":["rule_6","rule_7","rule_7"]}
+{"original_term":"(* (- (* (* (+ a (- (- (+ a -1) (- b -1)) 0)) -1) (- b 0)) b) 0)","rewritten_term":"0","applied_rules":["rule_7"]}
+{"original_term":"(* (* a a) (- a (+ (+ -1 (+ (- 1 (- (* 0 a) a)) (+ b 1))) -1)))","rewritten_term":"(* (- a (+ (+ (+ (+ (+ a 1) b) 1) -1) -1)) (* a a))","applied_rules":["rule_9","rule_53"]}
+{"original_term":"(+ (* (* a (- (- a 0) (* (+ (- a (+ 1 0)) -1) a))) (+ c -1)) b)","rewritten_term":"(+ (* (+ c -1) (* (- a (* (+ (- a 1) -1) a)) a)) b)","applied_rules":["rule_2","rule_11"]}
+{"original_term":"(+ (* (- -1 (+ (- -1 (+ (* 1 (+ (+ -1 a) 0)) -1)) a)) (* a 1)) a)","rewritten_term":"(+ (* (- -1 (+ (- 0 (+ a -1)) a)) a) a)","applied_rules":["rule_2","rule_6","rule_8","rule_51"]}
+{"original_term":"(+ (+ 0 (- (+ 1 (- (+ (+ a (+ b (- b b))) (- a e)) e)) -1)) -1)","rewritten_term":"(+ (+ (+ (- (+ (+ a b) (- a e)) e) 1) 1) -1)","applied_rules":["rule_3","rule_10","rule_2"]}
+{"original_term":"(- 1 (* a (+ (- 1 (- (- a (- c (+ c (+ -1 b)))) (- d 0))) b)))","rewritten_term":"(- 1 (* (+ (- (+ d 1) (- (+ (+ b -1) c) (- c a))) b) a))","applied_rules":["rule_11"]}
+{"original_term":"(- (+ 1 1) (* (* (- (- (+ (- (- a a) 0) 1) (+ 0 b)) a) c) b))","rewritten_term":"(- 2 (* (- (- 1 b) a) (* c b)))","applied_rules":["rule_3","rule_10"]}
+{"original_term":"(- a (- (* (- a a) (- (- b a) (* (- (+ a c) a) (+ b e)))) e))","rewritten_term":"(+ a e)","applied_rules":["rule_10","rule_9","rule_53"]}
+{"original_term":"(* (+ a (+ a (* a (* (* -1 a) (+ (- (- a a) a) b))))) (+ 0 d))","rewritten_term":"(* (+ (+ (- 0 (* (+ (- 0 a) b) (* a a))) a) a) d)","applied_rules":["rule_3","rule_10"]}
+{"original_term":"(+ (- (+ 0 (- a (- b (- (* (* (+ 0 0) 1) a) (- a -1))))) 1) b)","rewritten_term":"(+ (- (- a (+ (+ a 1) b)) 1) b)","applied_rules":["rule_2","rule_3","rule_9","rule_53"]}
+{"original_term":"(+ -1 (+ (- (+ (* (- (* (- -1 (- 1 a)) 1) a) a) (- -1 -1)) b) 1))","rewritten_term":"(+ (+ (- (* (- (- a 2) a) a) b) 1) -1)","applied_rules":["rule_6","rule_2"]}
+{"original_term":"(* a (* (* -1 a) (+ (+ (- 0 -1) 0) (+ (+ (- (+ 0 0) 1) b) b))))","rewritten_term":"(- 0 (* (+ (* (+ (+ b -1) b) a) a) a))","applied_rules":["rule_2"]}
+{"original_term":"(+ (+ a -1) (- (+ (* (* 1 -1) a) (* a (+ a (+ (* a b) 1)))) -1))","rewritten_term":"(+ (+ (+ a -1) (* (+ (+ (+ (* a b) 1) a) -1) a)) 1)","applied_rules":["rule_8","rule_81"]}
+{"original_term":"(* (* (+ 1 1) (* 1 (+ 1 (* 1 (- (- (- 0 a) a) b))))) (- -1 c))","rewritten_term":"(* (+ (- (- (- 0 a) a) b) 1) (+ (- -1 c) (- -1 c)))","applied_rules":["rule_0_rev","rule_8","rule_8","rule_8","rule_8"]}
+{"original_term":"(+ (* -1 (- 1 (- a a))) (+ (* (* 1 0) (* (+ b a) (* 0 0))) 1))","rewritten_term":"0","applied_rules":["rule_7","rule_7","rule_10"]}
+{"original_term":"(+ (+ 1 (+ -1 -1)) (* (- 1 a) (- (* b c) (+ b (* (* 0 0) d)))))","rewritten_term":"(+ (* (- (* b c) b) (- 1 a)) -1)","applied_rules":["rule_7","rule_9","rule_2"]}
+{"original_term":"(- (- (+ a b) (* (- (- (- b (* (- c 0) d)) (+ -1 -1)) e) 0)) a)","rewritten_term":"(- (+ a b) a)","applied_rules":["rule_7","rule_11"]}
+{"original_term":"(+ 1 (- (- (* (- a (- (* 1 1) a)) -1) a) (+ (* a a) (* a a))))","rewritten_term":"(+ (- (- (- (- 1 a) a) a) (* (+ a a) a)) 1)","applied_rules":["rule_6","rule_80","rule_11"]}
+{"original_term":"(- a (- b (* (+ (* (+ b 0) (* (- a (- a b)) (- d e))) c) 0)))","rewritten_term":"(- a b)","applied_rules":["rule_2","rule_7","rule_11"]}
+{"original_term":"(- (- 1 a) (+ (* (- (- a 1) (- a (+ (* a b) 0))) (- b -1)) -1))","rewritten_term":"(- (- 1 a) (+ (* (+ b 1) (- (- a 1) (- a (* a b)))) -1))","applied_rules":["rule_2"]}
+{"original_term":"(+ (+ a -1) (- (* (+ 0 (* -1 (+ (- a 1) 0))) (* a -1)) (+ a 1)))","rewritten_term":"(+ (+ a -1) (- (- (* a a) a) (+ a 1)))","applied_rules":["rule_2","rule_3","rule_11"]}
+{"original_term":"(- (+ (- a (- a b)) (+ 1 a)) (* a (- (- e (* d (+ -1 -1))) c)))","rewritten_term":"(- (+ (+ a 1) (- a (- a b))) (* (- (+ d d) (+ (- 0 e) c)) a))","applied_rules":[]}
+{"original_term":"(* a (* b (- (+ c b) (+ c (- (+ (* (+ a 0) 0) -1) (- 1 d))))))","rewritten_term":"(* (- (+ c b) (+ (- d 2) c)) (* b a))","applied_rules":["rule_2","rule_7"]}
+{"original_term":"(* (- a (* (- (- a a) (+ (- (+ (- 1 -1) 0) 0) (+ a -1))) 1)) 0)","rewritten_term":"0","applied_rules":["rule_2","rule_6","rule_7"]}
+{"original_term":"(* a (- (+ (- a a) (+ c (+ (+ -1 (+ (- -1 1) 1)) (- b -1)))) 0))","rewritten_term":"(* (+ (+ (+ b 1) -2) c) a)","applied_rules":["rule_10","rule_3","rule_11"]}
+{"original_term":"(+ (- (- a a) (* -1 a)) (+ 0 (+ (- (- 1 (- (* a a) b)) b) 1)))","rewritten_term":"(+ (+ (- (- b (- (* a a) 1)) b) 1) a)","applied_rules":["rule_3","rule_10","rule_11"]}
+{"original_term":"(* (- (+ (- (- -1 0) (+ a (* (* (- 0 1) 0) (- a 0)))) a) -1) -1)","rewritten_term":"(- -1 (+ (- -1 a) a))","applied_rules":["rule_7","rule_9","rule_2","rule_57"]}
+{"original_term":"(+ 1 (+ (- a a) (- -1 (+ (* (- (+ (- -1 -1) c) c) (* 0 1)) c))))","rewritten_term":"(+ (- -1 c) 1)","applied_rules":["rule_6","rule_3","rule_7","rule_3","rule_10","rule_3"]}
+{"original_term":"(- (+ a 1) (+ a (* (- (- b (+ b b)) (- b (- (- 0 1) c))) -1)))","rewritten_term":"(- (+ a 1) (+ (+ (+ (+ b c) 1) b) a))","applied_rules":["rule_12","rule_51","rule_11","rule_53"]}
+{"original_term":"(- 0 (- 0 (+ (+ 0 a) (* -1 (- b (- (* (* 1 1) a) (+ -1 c)))))))","rewritten_term":"(+ (- (- a b) (+ c -1)) a)","applied_rules":["rule_3","rule_8","rule_53","rule_3","rule_11"]}
+{"original_term":"(+ (- (* (+ 0 1) 1) a) (+ a (+ (+ 0 (+ (- -1 a) (+ 1 a))) 1)))","rewritten_term":"(+ (+ (+ (+ (+ a 1) (- -1 a)) 1) a) (- 1 a))","applied_rules":["rule_3","rule_3"]}
+{"original_term":"(* (- a (+ (+ (* 1 (+ -1 (- (+ (- -1 -1) 0) (- 1 a)))) a) c)) 0)","rewritten_term":"0","applied_rules":["rule_2","rule_7"]}
+{"original_term":"(* (+ (- (- (- (+ (+ a -1) -1) b) c) (* 0 1)) (* -1 1)) (* b c))","rewritten_term":"(* (+ (- (+ (+ a -1) -1) (+ b c)) -1) (* b c))","applied_rules":["rule_6","rule_11"]}
+{"original_term":"(+ 0 (+ a (- a (+ (+ a (* (* 0 (* a (- 0 b))) (- 0 0))) b))))","rewritten_term":"(+ (- a (+ a b)) a)","applied_rules":["rule_3","rule_7","rule_2"]}
+{"original_term":"(- a (+ a (+ (+ (- b b) (* (+ (+ (+ -1 c) -1) (- e 0)) -1)) -1)))","rewritten_term":"(- 0 (+ (- 0 (+ (+ (+ c -1) -1) e)) -1))","applied_rules":["rule_10","rule_3","rule_11","rule_51"]}
+{"original_term":"(- 0 (* (+ a 1) (+ (+ -1 (- (- a (+ (- -1 a) 0)) (* 0 a))) 1)))","rewritten_term":"(* (+ a 1) (- -1 (+ a a)))","applied_rules":["rule_2","rule_9","rule_11","rule_126","rule_51","rule_57"]}
+{"original_term":"(- 1 (- (+ (+ (* a b) (- (* (- (+ b 1) a) c) (- 0 d))) e) 0))","rewritten_term":"(- 1 (+ (+ (+ (* (- (+ b 1) a) c) d) (* a b)) e))","applied_rules":["rule_11","rule_53"]}
+{"original_term":"(- (* (+ a (* -1 (+ a (+ (* (- b (* c 0)) (+ c -1)) a)))) 0) b)","rewritten_term":"(- 0 b)","applied_rules":["rule_7"]}
+{"original_term":"(+ (* 1 1) (+ (* (* 1 -1) (- (+ a (* (- a 0) b)) (- a 0))) b))","rewritten_term":"(+ (+ (- 0 (* a b)) b) 1)","applied_rules":["rule_6","rule_11","rule_11","rule_11","rule_51"]}
+{"original_term":"(- (* (+ 0 (- (- 1 a) (* (* (- a a) (* b a)) (+ -1 c)))) 0) 0)","rewritten_term":"0","applied_rules":["rule_3","rule_7"]}
+{"original_term":"(- a (* -1 (* (- a (- (* (- (- a (- b c)) (* 1 1)) c) c)) d)))","rewritten_term":"(+ (* (- a (- (- (* (- a (- b c)) c) c) c)) d) a)","applied_rules":["rule_6","rule_53"]}
+{"original_term":"(- 0 (* (* (+ (* -1 a) (* (* 1 0) (+ a b))) (* a (- 0 b))) c))","rewritten_term":"(- 0 (* (* (* b a) a) c))","applied_rules":["rule_7","rule_9","rule_2","rule_11"]}
+{"original_term":"(+ a (+ (* (+ (+ 0 -1) (* (* (* (- 1 1) a) a) (- a -1))) 1) 1))","rewritten_term":"a","applied_rules":["rule_3","rule_6","rule_9","rule_9","rule_9","rule_2"]}
+{"original_term":"(- (- (+ a a) (- (- 1 (* (- (* (+ b -1) 1) b) (+ 0 c))) 0)) c)","rewritten_term":"(- (+ a a) (+ (- 1 (* (- (+ b -1) b) c)) c))","applied_rules":["rule_3","rule_6","rule_11"]}
+{"original_term":"(- 1 (* (* (+ (* -1 a) 0) a) (- (* (+ (* a a) (* b -1)) 0) b)))","rewritten_term":"(+ (- 0 (* (* a a) b)) 1)","applied_rules":["rule_2","rule_7"]}
+{"original_term":"(- (* (* 0 (+ (* -1 (* (- -1 1) (- (* 0 1) a))) (+ 1 -1))) a) b)","rewritten_term":"(- 0 b)","applied_rules":["rule_6","rule_2","rule_9","rule_9"]}
+{"original_term":"(+ (- (* (- 0 (- a (* (- (- a (- -1 1)) b) c))) (+ 1 -1)) 0) 0)","rewritten_term":"0","applied_rules":["rule_2","rule_7"]}
+{"original_term":"(- (+ (+ -1 (+ (* (+ a -1) (+ (- (+ 1 -1) 0) (- a 1))) 0)) b) -1)","rewritten_term":"(+ (+ (+ (* (+ a -1) (- a 1)) -1) b) 1)","applied_rules":["rule_2","rule_3"]}
+{"original_term":"(- (- -1 (- (* (+ a (- a 0)) a) (- (- 0 a) (* (+ b a) 1)))) 0)","rewritten_term":"(- (- (- 0 a) (* (+ a a) a)) (+ (+ b a) 1))","applied_rules":["rule_6","rule_11","rule_11"]}
+{"original_term":"(+ a (* 0 (* (- (+ (- (+ 0 -1) a) (- a (- 1 (* b 0)))) 0) b)))","rewritten_term":"a","applied_rules":["rule_3","rule_7","rule_9","rule_2"]}
+{"original_term":"(* (- (- (+ -1 (- (* a (- (+ (+ -1 a) 1) (- 1 1))) 0)) a) 0) 0)","rewritten_term":"0","applied_rules":["rule_7"]}
+{"original_term":"(+ (+ -1 a) (- (+ b 0) (+ (* -1 (- (+ (- 1 c) -1) (* 0 1))) -1)))","rewritten_term":"(+ (+ a -1) (- b (+ (- 0 (+ (- 1 c) -1)) -1)))","applied_rules":["rule_2","rule_11"]}
+{"original_term":"(+ (- 1 (- (* 0 a) a)) (- a (- 1 (* (* (* (- -1 b) a) d) c))))","rewritten_term":"(+ (+ a 1) (- (* (- -1 b) (* (* a d) c)) (- 1 a)))","applied_rules":["rule_9","rule_53"]}
+{"original_term":"(- (+ (- a (- (* (* (- 1 a) (+ (- 0 1) a)) a) c)) (- a c)) b)","rewritten_term":"(- (+ (- a (- (* (+ a -1) (- a (* a a))) c)) (- a c)) b)","applied_rules":["rule_12"]}
+{"original_term":"(* (+ -1 (- (- a (+ (* (- (- a 0) b) c) (- 1 0))) 0)) (+ b -1))","rewritten_term":"(* (+ (- a (+ (* (- a b) c) 1)) -1) (+ b -1))","applied_rules":["rule_11","rule_11"]}
+{"original_term":"(* 0 (- (+ a (* (- (- (* (* (- a -1) -1) a) 1) (+ a -1)) 0)) -1))","rewritten_term":"0","applied_rules":["rule_7","rule_2","rule_9"]}
+{"original_term":"(- 0 (- (* (* -1 a) (* (- a (* (* (- -1 a) b) (* b a))) c)) a))","rewritten_term":"(+ (* (- a (* (- -1 a) (* (* b b) a))) (* c a)) a)","applied_rules":["rule_11","rule_53"]}
+{"original_term":"(- (- a a) (* (+ (- 1 a) 0) (* (+ (+ (+ -1 a) 1) c) (+ 1 b))))","rewritten_term":"(- 0 (* (+ (+ (+ a -1) 1) c) (* (+ b 1) (- 1 a))))","applied_rules":["rule_2","rule_10"]}
+{"original_term":"(- (+ (+ -1 0) (- (- (- 1 0) (* (+ a a) (* 0 a))) a)) (* b d))","rewritten_term":"(- (+ (- 1 a) -1) (* b d))","applied_rules":["rule_2","rule_9","rule_7"]}
+{"original_term":"(* a (+ (* (- (* (+ (+ (* (+ a -1) -1) b) (* -1 1)) 1) c) -1) c))","rewritten_term":"(* (+ (- c (+ (+ (- 0 (+ a -1)) b) -1)) c) a)","applied_rules":["rule_6","rule_11"]}
+{"original_term":"(- a (* -1 (+ (* (+ a 1) (+ a (- (+ (+ 1 0) b) (* 0 c)))) c)))","rewritten_term":"(+ (+ (* (+ (+ b 1) a) (+ a 1)) c) a)","applied_rules":["rule_2","rule_9","rule_11","rule_53"]}
+{"original_term":"(+ (- 0 (+ 0 -1)) (- (- (* -1 -1) (- (- (+ 0 (+ 0 a)) 0) a)) -1))","rewritten_term":"3","applied_rules":["rule_3","rule_3","rule_3","rule_11","rule_10"]}
+{"original_term":"(* (+ (* a -1) (+ -1 (* a 1))) (+ (+ (- (- (+ 0 b) b) b) 0) -1))","rewritten_term":"(* (+ (+ a -1) (- 0 a)) (+ (- 0 b) -1))","applied_rules":["rule_2","rule_3","rule_6","rule_10"]}
+{"original_term":"(- (- (* (- (+ 1 -1) (+ (+ 0 a) (+ -1 1))) (* 1 0)) b) (+ 1 b))","rewritten_term":"(- (- 0 b) (+ b 1))","applied_rules":["rule_3","rule_2","rule_7"]}
+{"original_term":"(* -1 (* a (* (- 0 1) (- (+ 1 a) (+ (- 1 (+ a c)) (* c -1))))))","rewritten_term":"(* (- (+ a 1) (+ (- 1 (+ a c)) (- 0 c))) a)","applied_rules":["rule_12","rule_11"]}
+{"original_term":"(* (- (- 0 (+ a (+ (* (* a 1) (- b -1)) (* b a)))) (+ 1 -1)) -1)","rewritten_term":"(+ (+ (+ (* b a) a) (* b a)) a)","applied_rules":["rule_6","rule_11","rule_11"]}
+{"original_term":"(+ (* 0 (+ (+ a (* a (+ (+ (- (* -1 b) 1) -1) c))) (- a 1))) 0)","rewritten_term":"0","applied_rules":["rule_2","rule_9"]}
+{"original_term":"(+ (+ 1 (- a (* 1 0))) (+ a (+ (- a a) (* (* a (- a -1)) 1))))","rewritten_term":"(+ (+ (+ (+ (* a a) a) a) a) 1)","applied_rules":["rule_6","rule_10","rule_3","rule_11"]}
+{"original_term":"(* 1 (* (- 0 1) (- (* 1 0) (+ (- a (- (* -1 1) a)) (* a -1)))))","rewritten_term":"(+ (+ (+ a a) 1) (- 0 a))","applied_rules":["rule_6","rule_8","rule_11"]}
+{"original_term":"(+ (* (* (* 0 (* a 0)) a) (* b (- 0 (* (- -1 (* c d)) b)))) d)","rewritten_term":"d","applied_rules":["rule_7","rule_9","rule_9","rule_3"]}
+{"original_term":"(+ (- (- a (* (+ (- (* (* (- a 1) 1) a) 1) 1) (+ 1 -1))) 0) b)","rewritten_term":"(+ a b)","applied_rules":["rule_6","rule_7","rule_11","rule_11"]}
+{"original_term":"(- -1 (* a (- (- (* (- -1 (- 0 b)) a) (+ (* 0 c) (* c -1))) b)))","rewritten_term":"(- -1 (* (- (+ (* (+ b -1) a) c) b) a))","applied_rules":["rule_9","rule_3","rule_53","rule_53"]}
+{"original_term":"(+ (- (* a a) (* b (* b (+ (+ (+ (+ -1 b) a) (+ 1 b)) b)))) 1)","rewritten_term":"(+ (- (* a a) (* (+ (+ (+ (+ (+ b -1) a) b) 1) b) (* b b))) 1)","applied_rules":[]}
+{"original_term":"(- a (+ (+ (+ 1 (+ (+ (- (- (+ 1 0) b) a) a) 1)) (+ -1 1)) -1))","rewritten_term":"(- a (+ (+ (+ (+ (- (- 1 b) a) a) 1) 1) -1))","applied_rules":["rule_2","rule_2"]}
+{"original_term":"(+ (* (* (- a a) (- a (+ (* (+ a 1) (- 0 a)) 1))) (- a 1)) 1)","rewritten_term":"1","applied_rules":["rule_10","rule_9","rule_9"]}
+{"original_term":"(+ -1 (* (* 0 1) (* -1 (* (- (* (- a (- a a)) b) (+ a -1)) a))))","rewritten_term":"-1","applied_rules":["rule_6","rule_9"]}
+{"original_term":"(* (* a (+ a a)) (- 1 (- a (+ 1 (* (* a a) (* 0 (+ a b)))))))","rewritten_term":"(* (+ a a) (- a (- (* a a) a)))","applied_rules":["rule_9","rule_7"]}
+{"original_term":"(* (* (* (* (* a b) (+ (+ (* (+ b 0) 0) (* 0 b)) 1)) 0) c) 1)","rewritten_term":"0","applied_rules":["rule_2","rule_6","rule_7","rule_9"]}
+{"original_term":"(+ a (* 0 (- (+ (+ (- (- 1 (* (+ 0 b) a)) (* d 0)) 0) -1) 0)))","rewritten_term":"a","applied_rules":["rule_2","rule_3","rule_7","rule_9","rule_2"]}
+{"original_term":"(- a (- (* (+ (+ (- a a) 0) 0) a) (- (* 1 (* -1 (+ b b))) 0)))","rewritten_term":"(+ (- 0 (+ b b)) a)","applied_rules":["rule_2","rule_2","rule_8","rule_10","rule_9","rule_11","rule_53"]}
+{"original_term":"(* (- a 0) (+ (- a (+ -1 a)) (+ (+ (- -1 (- (+ b a) a)) c) c)))","rewritten_term":"(+ (* (+ (+ (- a (+ (+ b a) 1)) c) c) a) a)","applied_rules":["rule_11","rule_51"]}
+{"original_term":"(* (* a (* (- -1 (+ b (+ b b))) (+ (* 1 1) (* (- b -1) c)))) d)","rewritten_term":"(* (+ (* (+ (* b c) c) d) d) (* (- -1 (+ (+ b b) b)) a))","applied_rules":["rule_6"]}
+{"original_term":"(* (* (* (- (* 0 a) a) (+ b (+ (- 0 a) (* (+ a 0) 0)))) b) b)","rewritten_term":"(- 0 (* (+ (- 0 a) b) (* (* a b) b)))","applied_rules":["rule_2","rule_7","rule_2","rule_9"]}
+{"original_term":"(- 1 (- 1 (- a (* b (* (+ a c) (- (* (+ 0 1) 1) (* c d)))))))","rewritten_term":"(- (- a 1) (- (* (+ a c) (- b (* (* c d) b))) 1))","applied_rules":["rule_3"]}
+{"original_term":"(* 0 (* (* -1 (* (+ (+ 1 a) (- a (+ (* 0 b) b))) (+ c c))) a))","rewritten_term":"0","applied_rules":["rule_9"]}
+{"original_term":"(- (* (- a a) 1) (+ (+ a b) (* -1 (+ d (* (- (- -1 0) a) d)))))","rewritten_term":"(- 0 (+ (+ a b) (- 0 (+ (* (- -1 a) d) d))))","applied_rules":["rule_6","rule_10"]}
+{"original_term":"(* (* -1 a) (* a (- (+ b (+ (* -1 0) b)) (+ (+ a (- -1 a)) b))))","rewritten_term":"(- 0 (* (- (+ b b) (+ (+ (- -1 a) a) b)) (* a a)))","applied_rules":["rule_7","rule_3"]}
+{"original_term":"(+ (* (+ (- (- (* -1 a) (* (+ b (+ a 1)) b)) b) -1) a) (- -1 0))","rewritten_term":"(+ (* (+ (- (- (- 0 a) (* (+ (+ a 1) b) b)) b) -1) a) -1)","applied_rules":["rule_11"]}
+{"original_term":"(* (* -1 (+ (- (+ 1 (- a -1)) 1) (* (+ 1 (+ (* a 0) -1)) c))) d)","rewritten_term":"(- d (+ (+ d d) (* a d)))","applied_rules":["rule_7","rule_9","rule_2","rule_11"]}
+{"original_term":"(- (* (* (* a -1) (+ (- (+ a 1) (+ a (+ b 0))) a)) (* c 0)) a)","rewritten_term":"(- 0 a)","applied_rules":["rule_2","rule_7","rule_7"]}
+{"original_term":"(- -1 (- a (+ (- 0 (* a 1)) (- -1 (+ (+ (+ a (+ 0 0)) d) -1)))))","rewritten_term":"(- (+ (- 0 (+ a d)) (- 0 a)) (+ a 1))","applied_rules":["rule_2","rule_2","rule_6","rule_51"]}
+{"original_term":"(- (* (* (* (+ 1 (+ 0 (- a 1))) 1) a) b) (- (- 0 (+ -1 1)) b))","rewritten_term":"(+ (* (+ (- (* a a) a) a) b) b)","applied_rules":["rule_3","rule_6","rule_53"]}
+{"original_term":"(* (- a (+ 1 (+ (+ 0 (+ 1 (+ 1 (+ (- a b) 1)))) (* b 1)))) d)","rewritten_term":"(* (- a (+ (+ (+ (+ (+ (- a b) 1) 1) 1) b) 1)) d)","applied_rules":["rule_3","rule_6"]}
+{"original_term":"(* 0 (+ (* 0 (- 0 (- (+ (+ 0 (- 0 1)) (* (+ 1 1) a)) 1))) a))","rewritten_term":"0","applied_rules":["rule_0_rev","rule_9"]}
+{"original_term":"(+ a (- (- (- a (* (* (+ b (+ -1 (* 1 a))) a) (* a b))) 0) d))","rewritten_term":"(+ (- (- a (* (+ (+ a -1) b) (* (* a a) b))) d) a)","applied_rules":["rule_8","rule_11"]}
+{"original_term":"(- (+ -1 (+ a (- (* (+ (- (* a -1) a) (+ (+ a 1) b)) 0) a))) -1)","rewritten_term":"(+ (+ (+ (- 0 a) a) -1) 1)","applied_rules":["rule_7"]}
+{"original_term":"(- a (- (* a (+ (* 0 (+ a (- (* 1 (* 0 a)) (- -1 0)))) b)) 1))","rewritten_term":"(- a (- (* a b) 1))","applied_rules":["rule_8","rule_9","rule_3"]}
+{"original_term":"(* (+ a (- (* (* b (- (* a 0) (+ 1 1))) b) (* 0 (+ -1 -1)))) c)","rewritten_term":"(* (+ (- (* (* b -2) b) -0) a) c)","applied_rules":["rule_7"]}
+{"original_term":"(* a (- a (- (+ (- b c) (+ (+ (- (* 0 c) -1) (+ b -1)) c)) 0)))","rewritten_term":"(* (- a (+ (+ (+ (+ b -1) 1) c) (- b c))) a)","applied_rules":["rule_9","rule_11"]}
+{"original_term":"(+ (- a (- 1 (+ (- 0 (- a (* (- (- 1 -1) a) a))) (+ 1 1)))) 0)","rewritten_term":"(- (+ (- (* (- 2 a) a) a) 2) (- 1 a))","applied_rules":["rule_2","rule_11"]}
+{"original_term":"(+ (- (- (- -1 (- (* a 1) (+ a (- c (* c d))))) 1) c) (+ e -1))","rewritten_term":"(+ (+ e -1) (- (+ (- c (* c d)) a) (+ (+ (+ a 1) 1) c)))","applied_rules":["rule_6"]}
+{"original_term":"(- (+ a a) (+ a (+ (* (- 0 a) (- (+ a (+ 1 -1)) -1)) (+ 1 a))))","rewritten_term":"(- (+ a a) (+ (+ (+ a 1) (- 0 (+ (* a a) a))) a))","applied_rules":["rule_3"]}
+{"original_term":"(+ 1 (* (+ a b) (- -1 (- (- a (- 0 c)) (* (+ (- -1 1) a) 1)))))","rewritten_term":"(+ (* (+ a b) (- (+ a -2) (+ (+ a c) 1))) 1)","applied_rules":["rule_6","rule_53"]}
+{"original_term":"(- (- (+ a (* (+ a (- (- (* (- 0 b) a) 1) (* 0 c))) 0)) -1) a)","rewritten_term":"(- (+ a 1) a)","applied_rules":["rule_7","rule_2"]}
+{"original_term":"(+ a (+ (+ (- 0 -1) (* 0 a)) (- (- (+ 0 (- (- b a) 1)) -1) 0)))","rewritten_term":"(+ (+ (+ (- (- b a) 1) 1) 1) a)","applied_rules":["rule_3","rule_9","rule_11"]}
+{"original_term":"(* (- (- a (+ b (+ -1 (* -1 (* (- (+ a -1) 1) (- 1 b)))))) -1) -1)","rewritten_term":"(- (+ (+ (* (- (+ a -1) 1) (- b 1)) -1) b) (+ a 1))","applied_rules":["rule_57","rule_127"]}
+{"original_term":"(* a (- (+ (+ a (+ (* 1 0) (+ (* (- 0 a) 1) (+ 1 -1)))) a) -1))","rewritten_term":"(+ (* (+ (+ (- 0 a) a) a) a) a)","applied_rules":["rule_6","rule_2","rule_3"]}
+{"original_term":"(+ 0 (- (* (* (+ a a) b) (* 1 (* (- 1 b) (+ (* c 0) 0)))) 1))","rewritten_term":"-1","applied_rules":["rule_2","rule_3","rule_7","rule_7","rule_7"]}
+{"original_term":"(- 1 (* (+ -1 (+ a 0)) (- a (- (+ (- (* (* b a) 0) -1) a) b))))","rewritten_term":"(- 1 (* (+ a -1) (- a (- (+ a 1) b))))","applied_rules":["rule_2","rule_7"]}
+{"original_term":"(* (- -1 (- a (+ (- (* (+ 1 1) 1) a) (+ a (+ (* b -1) 1))))) -1)","rewritten_term":"(- (+ a 1) (+ (+ (+ (- 0 b) 1) a) (- 2 a)))","applied_rules":["rule_0_rev","rule_11"]}
+{"original_term":"(- (+ (* (+ 0 -1) (* 0 a)) (+ (* -1 (* (+ b a) (- 0 a))) -1)) c)","rewritten_term":"(- (+ (+ (* (+ b a) a) -1) -0) c)","applied_rules":["rule_3","rule_9","rule_11"]}
+{"original_term":"(* (* (- -1 (- (- 1 (- (* -1 (+ (- 0 1) a)) 1)) a)) 0) (* 0 -1))","rewritten_term":"-0","applied_rules":["rule_7"]}
+{"original_term":"(- a (+ b (+ (- (+ 0 (* b (- (* -1 (- -1 -1)) (+ 0 a)))) 1) 1)))","rewritten_term":"(- a (+ (+ (- (* (- -0 a) b) 1) 1) b))","applied_rules":["rule_3","rule_3"]}
+{"original_term":"(- 1 (- a (* a (+ (* a (- 0 b)) (* -1 (* (+ (- 0 -1) b) 1))))))","rewritten_term":"(- (* (+ (- 0 (* b a)) (- -1 b)) a) (- a 1))","applied_rules":["rule_6","rule_57"]}
+{"original_term":"(+ (- 1 (+ (- 1 0) a)) (* b (* -1 (- 1 (* a (* (- 1 0) 0))))))","rewritten_term":"(+ (- 0 a) (- 0 b))","applied_rules":["rule_7","rule_7","rule_51"]}
+{"original_term":"(* (* a (- (* -1 -1) (* (* (+ 1 a) a) (* a a)))) (- (- 0 -1) 0))","rewritten_term":"(- a (* (+ (* a a) a) (* (* a a) a)))","applied_rules":["rule_11","rule_6"]}
+{"original_term":"(* (- (- (* (* a (+ (+ -1 (- b (* 1 1))) (- 1 1))) -1) -1) a) a)","rewritten_term":"(* (- (+ (- 0 (* (+ (- b 1) -1) a)) 1) a) a)","applied_rules":["rule_6","rule_2"]}
+{"original_term":"(* (- 0 (+ (- a (+ a -1)) (* a (+ (+ 0 (* (- a b) -1)) b)))) b)","rewritten_term":"(- 0 (* (+ (- a (+ a -1)) (* (+ (- b a) b) a)) b))","applied_rules":["rule_3","rule_11"]}
+{"original_term":"(* 0 (- (- (- (- 0 a) (- (* -1 (* 0 1)) (+ (+ a 1) a))) 0) 1))","rewritten_term":"0","applied_rules":["rule_6","rule_9"]}
+{"original_term":"(- (+ (* a a) (- a (* (- (+ a a) (* (+ a d) a)) 0))) (+ e b))","rewritten_term":"(- (+ (* a a) a) (+ e b))","applied_rules":["rule_7","rule_11"]}
+{"original_term":"(+ (- (- a a) (* a (+ (+ b (* (* (- 0 1) a) (* b a))) 1))) a)","rewritten_term":"(+ (* (- -1 (+ (- 0 (* (* b a) a)) b)) a) a)","applied_rules":["rule_10","rule_126"]}
+{"original_term":"(- (* 0 1) (- 0 (* (* a (+ (+ (+ (+ 0 a) a) (+ a -1)) 0)) b)))","rewritten_term":"(* (+ (+ (+ a a) a) -1) (* a b))","applied_rules":["rule_2","rule_3","rule_53","rule_3"]}
+{"original_term":"(+ (* (- (+ (- (* (* -1 (- a (* a c))) (* a d)) b) 1) d) 0) a)","rewritten_term":"a","applied_rules":["rule_7","rule_3"]}
+{"original_term":"(+ (* (+ 1 (+ (- 1 0) (* (+ 0 (* (+ a a) a)) c))) (* c 0)) 1)","rewritten_term":"1","applied_rules":["rule_3","rule_7","rule_7"]}
+{"original_term":"(+ a (+ 1 (+ 1 (+ b (* (+ (- (+ (* 1 b) a) (- b -1)) -1) d)))))","rewritten_term":"(+ (+ (+ (+ (* (+ (- (+ b a) (+ b 1)) -1) d) b) 1) 1) a)","applied_rules":["rule_8"]}
+{"original_term":"(* 1 (+ -1 (- (* 0 (+ 1 (- (+ a b) (+ (- a b) 1)))) (* b 0))))","rewritten_term":"-1","applied_rules":["rule_7","rule_8","rule_9"]}
+{"original_term":"(+ (* 1 1) (+ (* (+ a 1) a) (* (* (+ a a) a) (- (* b -1) b))))","rewritten_term":"(+ (+ (+ (* a a) a) (* (+ a a) (* (- (- 0 b) b) a))) 1)","applied_rules":["rule_6"]}
+{"original_term":"(- (+ 0 (+ (- (+ (* a 1) -1) (+ (- (* (- 1 a) -1) a) 0)) a)) c)","rewritten_term":"(- (+ (- (+ a -1) (- (- a 1) a)) a) c)","applied_rules":["rule_2","rule_3","rule_6"]}
+{"original_term":"(- (* 1 (* (- (+ (+ (+ (* a (* a 0)) (* 0 a)) 1) a) 1) 1)) 1)","rewritten_term":"(- (+ a 1) 2)","applied_rules":["rule_6","rule_7","rule_7","rule_3","rule_8","rule_9"]}
+{"original_term":"(* (- a a) (+ (* (+ 1 (- (* (* a 1) -1) (* (* a 0) 0))) 0) 1))","rewritten_term":"0","applied_rules":["rule_6","rule_7","rule_6","rule_10"]}
+{"original_term":"(- (* -1 (* (+ a (+ b (- (* 1 (* 1 (* 1 a))) (+ a 1)))) c)) e)","rewritten_term":"(- (- 0 (* (+ (+ (- a (+ a 1)) b) a) c)) e)","applied_rules":["rule_8","rule_8","rule_8"]}
+{"original_term":"(- (- (* (+ a (- (* 1 a) (- b (- (+ a 1) a)))) (- -1 a)) b) a)","rewritten_term":"(- (- (* (+ (- (+ a 1) (+ (- b a) a)) a) (- -1 a)) b) a)","applied_rules":["rule_8"]}
+{"original_term":"(+ -1 (- a (- b (+ (- 1 (- (+ -1 (* a (* 1 -1))) (* -1 -1))) c))))","rewritten_term":"(+ (- (+ (- 1 (- (+ (- 0 a) -1) 1)) c) (- b a)) -1)","applied_rules":["rule_8"]}
+{"original_term":"(- (- 1 a) (+ (+ -1 a) (* -1 (+ (- (+ (+ b b) b) a) (+ c b)))))","rewritten_term":"(- (- 1 a) (+ (+ a -1) (- 0 (+ (+ c b) (- (+ (+ b b) b) a)))))","applied_rules":[]}
+{"original_term":"(+ a (+ (* a (+ 0 (- b a))) (* -1 (- 1 (+ (- -1 a) (- c -1))))))","rewritten_term":"(+ (+ (- (+ (+ c 1) (- -1 a)) 1) (* (- b a) a)) a)","applied_rules":["rule_3"]}
+{"original_term":"(+ a (* (+ -1 (+ (- (* (+ (- (* -1 -1) -1) (+ a 0)) b) c) a)) -1))","rewritten_term":"(+ (- 0 (+ (+ (- (* (+ a 2) b) c) a) -1)) a)","applied_rules":["rule_2"]}
+{"original_term":"(- a (- (- (- -1 (* (+ a (* (+ -1 (* -1 -1)) a)) a)) (- 0 -1)) 0))","rewritten_term":"(- a (- (- -1 (* a a)) 1))","applied_rules":["rule_11","rule_9","rule_2"]}
+{"original_term":"(- (* 1 (+ a (+ 1 (+ (- (* a b) (- -1 b)) (* -1 (- a 0)))))) a)","rewritten_term":"(- (+ (+ (+ (+ (+ (* a b) b) 1) (- 0 a)) 1) a) a)","applied_rules":["rule_8","rule_11"]}
+{"original_term":"(* (+ (- (+ (* (* (* (- (+ 1 -1) -1) a) a) a) 0) a) (* -1 -1)) -1)","rewritten_term":"(- a (+ (* (* a a) a) 1))","applied_rules":["rule_2","rule_8","rule_57"]}
+{"original_term":"(* a (- 1 (- -1 (+ a (- a (+ (- (* (- b 1) c) 0) (* 1 c)))))))","rewritten_term":"(- a (* (- -1 (+ (- a (+ (- (* b c) c) c)) a)) a))","applied_rules":["rule_8","rule_11"]}
+{"original_term":"(- (- (- (- a (* a (+ (* (- b (+ -1 1)) c) (* -1 0)))) a) a) -1)","rewritten_term":"(+ (- (- (- a (* (* b c) a)) a) a) 1)","applied_rules":["rule_7","rule_2","rule_11"]}
+{"original_term":"(* (- 1 (- (- a a) (+ a 0))) (- (+ 1 c) (+ b (* (+ -1 a) d))))","rewritten_term":"(* (+ a 1) (- (+ c 1) (+ (* (+ a -1) d) b)))","applied_rules":["rule_2","rule_10","rule_53"]}
+{"original_term":"(* (* a b) (* (* 1 1) (+ (+ b 1) (- (* (* d c) -1) (+ 0 a)))))","rewritten_term":"(* (+ (+ b 1) (- (- 0 (* d c)) a)) (* a b))","applied_rules":["rule_3","rule_8"]}
+{"original_term":"(+ (* (- 1 a) (* (* b c) (+ (* 0 (* (* -1 a) c)) (* a -1)))) c)","rewritten_term":"(+ (- 0 (* (- 1 a) (* (* b c) a))) c)","applied_rules":["rule_9","rule_3"]}
+{"original_term":"(+ (+ 1 a) (+ (* b (* (+ 0 a) (* (* (- c b) 1) (* 1 d)))) 0))","rewritten_term":"(+ (+ a 1) (* (- c b) (* (* d a) b)))","applied_rules":["rule_2","rule_3","rule_6","rule_8"]}
+{"original_term":"(- (* (* (+ a 0) a) (+ b (- (- (- a b) (+ (+ b d) c)) d))) -1)","rewritten_term":"(+ (* (+ (- (- (- a b) (+ (+ b d) c)) d) b) (* a a)) 1)","applied_rules":["rule_2"]}
+{"original_term":"(- (+ (+ (* a a) (* a -1)) (- (+ (+ 0 (- a a)) (- a a)) -1)) 1)","rewritten_term":"(- (+ (* (+ a -1) a) 1) 1)","applied_rules":["rule_3","rule_10","rule_3","rule_10","rule_80"]}
+{"original_term":"(* (- 0 (* a (* 1 (+ a (* (+ (* (- b 1) 0) b) (- c 1)))))) c)","rewritten_term":"(- 0 (* (+ (- (* c b) b) a) (* a c)))","applied_rules":["rule_7","rule_3","rule_8"]}
+{"original_term":"(- (+ a (- (* a (* (* (+ 0 (* 0 (* b b))) (* c a)) a)) -1)) 1)","rewritten_term":"(- (+ a 1) 1)","applied_rules":["rule_3","rule_9","rule_9","rule_9","rule_7"]}
+{"original_term":"(- 0 (+ (+ (+ a (- (+ (* a (* (* a 0) 1)) (+ 0 0)) a)) c) 1))","rewritten_term":"(- -1 (+ (+ (- 0 a) a) c))","applied_rules":["rule_2","rule_2","rule_6","rule_7","rule_7","rule_57"]}
+{"original_term":"(- a (+ (- (- -1 (- 1 (* (- a (* 0 (* a c))) c))) 1) (* 1 0)))","rewritten_term":"(- a (- (- (* a c) 2) 1))","applied_rules":["rule_7","rule_2","rule_9","rule_11"]}
+{"original_term":"(- a (- (* (+ (- b 0) 0) b) (+ (- 1 (+ 1 (- (* a -1) 1))) d)))","rewritten_term":"(- (+ (- 0 (- (- 0 a) 1)) d) (- (* b b) a))","applied_rules":["rule_2","rule_11","rule_51"]}
+{"original_term":"(- 1 (- a (+ (* -1 -1) (* (* (+ b (- (+ b b) a)) 0) (* a a)))))","rewritten_term":"(- 1 (- a 1))","applied_rules":["rule_7","rule_9"]}
+{"original_term":"(* -1 (+ (+ (* (+ (- a b) a) 1) (* a (* -1 (+ 0 (- -1 1))))) b))","rewritten_term":"(- 0 (+ (+ (+ (- a b) a) (* a 2)) b))","applied_rules":["rule_3","rule_6"]}
+{"original_term":"(* 1 (- (- a (- (+ (+ a b) (+ (+ a (- -1 1)) a)) (+ 1 0))) -1))","rewritten_term":"(+ (- a (- (+ (+ (+ (+ a -2) a) a) b) 1)) 1)","applied_rules":["rule_2","rule_8"]}
+{"original_term":"(+ 0 (+ (+ (* (* (* a (* (- (+ b 0) a) 1)) (* 1 0)) b) a) b))","rewritten_term":"(+ a b)","applied_rules":["rule_2","rule_3","rule_6","rule_7","rule_9","rule_3"]}
+{"original_term":"(+ (- a (* a (+ 0 (+ (+ (+ -1 (* a (- a b))) (+ a 1)) b)))) -1)","rewritten_term":"(+ (- a (* (+ (+ (+ (+ (* (- a b) a) -1) a) 1) b) a)) -1)","applied_rules":["rule_3"]}
+{"original_term":"(+ a (* a (- 1 (- (* 0 (- a 1)) (+ 0 (* a (- (- -1 0) 1)))))))","rewritten_term":"(+ (+ (* (* a -2) a) a) a)","applied_rules":["rule_3","rule_9","rule_53"]}
+{"original_term":"(- a (+ a (+ b (- 1 (- 0 (- (+ -1 (* (- a -1) b)) (+ 0 -1)))))))","rewritten_term":"(- 0 (+ (+ (+ (+ (+ (* a b) b) -1) 1) 1) b))","applied_rules":["rule_3","rule_53","rule_51"]}
+{"original_term":"(* (* a (* (- (* (* -1 (+ 1 a)) a) (- 1 (- (+ b 1) b))) b)) d)","rewritten_term":"(* (- (+ b 1) (+ (+ (+ (* a a) a) b) 1)) (* (* b a) d))","applied_rules":["rule_53"]}
+{"original_term":"(- -1 (- (- -1 a) (* (+ (- 0 (* (- 1 (+ a 0)) 1)) (* 1 -1)) -1)))","rewritten_term":"(- (+ a 1) (+ (+ (- a 1) -1) 1))","applied_rules":["rule_2","rule_6","rule_3"]}
+{"original_term":"(* 0 (+ (+ a a) (* (* (+ 0 -1) a) (+ (+ 0 c) (+ (* -1 a) b)))))","rewritten_term":"0","applied_rules":["rule_3","rule_3","rule_9"]}
+{"original_term":"(* (* (* 0 (+ (* a (* a (+ (- -1 b) -1))) 1)) (+ b (* -1 1))) d)","rewritten_term":"0","applied_rules":["rule_6","rule_9","rule_9","rule_9"]}
+{"original_term":"(+ (* 1 (* a (- (- (- (* 1 -1) (* (* b -1) 0)) b) a))) (* 0 0))","rewritten_term":"(* (- (- -1 b) a) a)","applied_rules":["rule_7","rule_2","rule_8"]}
+{"original_term":"(- (+ (+ (+ 1 (* -1 (* -1 a))) (- a (* 0 (+ a (* b -1))))) a) b)","rewritten_term":"(- (+ (+ (+ a 1) a) a) b)","applied_rules":["rule_9","rule_11","rule_11"]}
+{"original_term":"(+ 0 (* (* (* -1 a) (* (- 1 (- (- (+ 1 1) a) 1)) (* a a))) a))","rewritten_term":"(- 0 (* (- 1 (- (- 2 a) 1)) (* (* (* a a) a) a)))","applied_rules":["rule_3"]}
+{"original_term":"(+ (- a (+ 0 a)) (- (+ 0 (* b (- (- (- (* 1 -1) 1) 0) 1))) 0))","rewritten_term":"(* b -3)","applied_rules":["rule_3","rule_3","rule_10","rule_3","rule_11"]}
+{"original_term":"(* (+ (* a a) (+ a (+ (+ (- -1 (+ 0 b)) (- (* -1 b) c)) -1))) c)","rewritten_term":"(* (+ (+ (+ (+ (- (- 0 b) c) (- -1 b)) -1) a) (* a a)) c)","applied_rules":["rule_3"]}
+{"original_term":"(* (* a (+ (- b 1) (- (* (* 0 c) 1) (* a (* (+ a c) -1))))) 1)","rewritten_term":"(* (+ (- b 1) (* (+ a c) a)) a)","applied_rules":["rule_6","rule_6","rule_9","rule_11"]}
+{"original_term":"(+ a (- (* a (* (- b (* a (- b (+ b 1)))) d)) (- (* d e) d)))","rewritten_term":"(+ (- (* (- b (* (- b (+ b 1)) a)) (* d a)) (- (* d e) d)) a)","applied_rules":[]}
+{"original_term":"(* 1 (- -1 (* 0 (* (+ (* (* (- (* -1 a) a) (+ a a)) 0) b) d))))","rewritten_term":"-1","applied_rules":["rule_7","rule_3","rule_8","rule_9"]}
+{"original_term":"(* (* a (- b (* b (* (+ a (* (+ c (- b 1)) (- 1 b))) 0)))) -1)","rewritten_term":"(- 0 (* a b))","applied_rules":["rule_7","rule_7","rule_11"]}
+{"original_term":"(* a (+ (+ 0 (* a (+ (- (* a (- (* 0 a) b)) (* -1 1)) 1))) 0))","rewritten_term":"(* (+ (+ a a) (- 0 (* (* b a) a))) a)","applied_rules":["rule_2","rule_3","rule_9"]}
+{"original_term":"(+ a (- (* (* -1 -1) (* -1 a)) (+ (+ 1 (+ (+ a (+ 1 c)) 1)) e)))","rewritten_term":"(+ (- (- 0 a) (+ (+ (+ (+ (+ c 1) a) 1) 1) e)) a)","applied_rules":["rule_6"]}
+{"original_term":"(- (+ (- (+ a (- (* (* b (- (* 1 0) a)) (- c 0)) -1)) 1) 0) 0)","rewritten_term":"(- (+ (+ (- 0 (* (* a b) c)) 1) a) 1)","applied_rules":["rule_2","rule_11","rule_11"]}
+{"original_term":"(+ (+ a a) (+ (- (+ a -1) (- (- a (- -1 (* -1 -1))) (* c 0))) 1))","rewritten_term":"(+ (+ (+ (- (+ a -1) (- a -2)) 1) a) a)","applied_rules":["rule_7","rule_11"]}
+{"original_term":"(+ 0 (- (* a b) (+ (+ b b) (+ (- -1 (* (* 0 1) a)) (+ 1 -1)))))","rewritten_term":"(- (* a b) (+ (+ b b) -1))","applied_rules":["rule_3","rule_2","rule_9"]}
+{"original_term":"(+ 1 (- 0 (- (- (- a (- 1 a)) -1) (- (+ 0 (* 0 (* b 1))) -1))))","rewritten_term":"(+ (- 0 (- (+ (- a (- 1 a)) 1) 1)) 1)","applied_rules":["rule_3","rule_6","rule_9"]}
+{"original_term":"(* (- (+ 1 -1) a) (* (+ (- (+ b (* (- a -1) (* 0 b))) b) -1) d))","rewritten_term":"(* a d)","applied_rules":["rule_9","rule_7","rule_2","rule_10","rule_11"]}
+{"original_term":"(- (* (+ 1 -1) a) (* (- (- 0 (- 0 (- a (- (- 0 a) b)))) -1) 0))","rewritten_term":"0","applied_rules":["rule_7","rule_9"]}
+{"original_term":"(- (+ (* (- 1 (- (- (+ (+ (- a 0) -1) 1) (+ a a)) -1)) -1) -1) a)","rewritten_term":"(- (+ (- (+ (- (+ (+ a -1) 1) (+ a a)) 1) 1) -1) a)","applied_rules":["rule_11"]}
+{"original_term":"(- (- a (+ (+ 0 (* (* a (+ (* (- 1 a) 1) (* b b))) 0)) 1)) 0)","rewritten_term":"(- a 1)","applied_rules":["rule_3","rule_6","rule_7","rule_11"]}
+{"original_term":"(+ a (- (+ (+ -1 (- b (- -1 (- (+ b (+ a -1)) (- b 1))))) 1) -1))","rewritten_term":"(+ (+ (+ (+ (- (+ (+ a -1) b) (+ (- (- b 1) b) -1)) -1) 1) 1) a)","applied_rules":[]}
+{"original_term":"(+ a (- -1 (+ (+ (+ a b) (+ 1 (* (* (* -1 c) c) (- 1 a)))) c)))","rewritten_term":"(+ (- -1 (+ (+ (+ (+ (* (- a 1) (* c c)) 1) a) b) c)) a)","applied_rules":["rule_127"]}
+{"original_term":"(+ (- (+ -1 (+ a 0)) (+ (+ (* (* a (+ -1 (* 1 0))) a) 0) a)) a)","rewritten_term":"(+ (- (+ a -1) (+ (- 0 (* a a)) a)) a)","applied_rules":["rule_2","rule_2"]}
+{"original_term":"(* (- (* (+ a a) (* a (- (+ a (* (* 0 0) a)) (- a c)))) -1) 1)","rewritten_term":"(+ (* (+ a a) (* (- a (- a c)) a)) 1)","applied_rules":["rule_6","rule_9","rule_2"]}
+{"original_term":"(+ -1 (- a (+ (+ -1 b) (* a (* (+ 0 (* (+ -1 c) 0)) (+ -1 1))))))","rewritten_term":"(+ (- a (+ b -1)) -1)","applied_rules":["rule_3","rule_7","rule_7","rule_2"]}
+{"original_term":"(* a (+ (+ 0 a) (* c (+ (+ (* -1 1) 0) (* b (+ (- 0 c) -1))))))","rewritten_term":"(* (+ (* (+ (* (+ (- 0 c) -1) b) -1) c) a) a)","applied_rules":["rule_2","rule_3"]}
+{"original_term":"(+ (+ (+ 0 a) (* (+ 1 b) (+ (* (- (+ 0 -1) a) (+ 1 c)) -1))) 1)","rewritten_term":"(+ (+ (* (+ (* (+ c 1) (- -1 a)) -1) (+ b 1)) a) 1)","applied_rules":["rule_3"]}
+{"original_term":"(- (+ -1 (* (- (* 1 a) (+ (- (* (+ a -1) b) (* -1 -1)) 1)) 0)) 0)","rewritten_term":"-1","applied_rules":["rule_7"]}
+{"original_term":"(+ a (+ (+ a (+ (* (+ (* (- (+ 1 a) 1) a) a) -1) (* a a))) c))","rewritten_term":"(+ (+ (+ (+ (- 0 (+ (* a a) a)) (* a a)) a) c) a)","applied_rules":["rule_132"]}
+{"original_term":"(* 1 (- a (+ (+ (+ -1 (- (+ a (+ (* a 0) 1)) b)) b) (+ a -1))))","rewritten_term":"(- a (+ (+ (+ (+ (- (+ a 1) b) -1) b) a) -1))","applied_rules":["rule_7","rule_8"]}
+{"original_term":"(* (+ (* a 1) (- (+ (* -1 b) (- (* -1 (* -1 c)) (* a 1))) d)) a)","rewritten_term":"(* (+ (- (+ (- c a) (- 0 b)) d) a) a)","applied_rules":["rule_6","rule_6","rule_11"]}
+{"original_term":"(* (* (+ (+ a (* a (+ 0 (* (+ a b) 1)))) (* a -1)) 0) (* 0 -1))","rewritten_term":"-0","applied_rules":["rule_3","rule_6","rule_7"]}
+{"original_term":"(+ 0 (* (- (* a (- 1 (- 1 1))) (+ (* 1 a) (* 1 (+ 1 c)))) 0))","rewritten_term":"0","applied_rules":["rule_3","rule_6","rule_7"]}
+{"original_term":"(* a (- (* 1 1) (- (+ (* a a) 1) (- a (* (* a (+ a a)) 1)))))","rewritten_term":"(- a (* (- (+ (* a a) 1) (- a (* (+ a a) a))) a))","applied_rules":["rule_6","rule_6"]}
+{"original_term":"(+ (+ a (* a (* (+ (* (- (+ -1 (* 1 a)) a) (- a 0)) c) 1))) e)","rewritten_term":"(+ (+ (* (+ (* (- (+ a -1) a) a) c) a) a) e)","applied_rules":["rule_6","rule_8","rule_11"]}
+{"original_term":"(- (- (+ a (- a (* -1 (* -1 (+ (- b (+ b 0)) (* -1 b)))))) b) 0)","rewritten_term":"(- (+ (+ b a) a) b)","applied_rules":["rule_2","rule_10","rule_3","rule_11","rule_11","rule_53"]}
+{"original_term":"(* (- (- (+ a b) b) (* 1 (- (- -1 b) (+ a (- c (- c 0)))))) 1)","rewritten_term":"(- (+ a b) (+ (- (- -1 b) a) b))","applied_rules":["rule_6","rule_8","rule_11","rule_10","rule_2"]}
+{"original_term":"(- (* (+ (- 1 a) a) b) (- (* 0 (+ (- b a) (- 0 (* 0 a)))) d))","rewritten_term":"(+ (* (+ (- 1 a) a) b) d)","applied_rules":["rule_9","rule_53"]}
+{"original_term":"(+ (+ (+ (+ (* a (- b (- 0 (- a (- c 1))))) 0) 1) (* b 1)) d)","rewritten_term":"(+ (+ (+ (* (+ (- a (- c 1)) b) a) 1) b) d)","applied_rules":["rule_2","rule_6","rule_53"]}
+{"original_term":"(+ a (+ (- (* (- (+ (+ 1 (* (+ 0 -1) 0)) (* 1 a)) b) 1) 0) 1))","rewritten_term":"(+ (+ (- (+ a 1) b) 1) a)","applied_rules":["rule_3","rule_6","rule_8","rule_11"]}
+{"original_term":"(* a (- (* -1 (+ (* a (+ (+ (+ (* 0 a) 1) (- a -1)) b)) -1)) -1))","rewritten_term":"(+ (- 0 (* (+ (* (+ (+ (+ a 1) 1) b) a) -1) a)) a)","applied_rules":["rule_9"]}
+{"original_term":"(* (- (* (+ (- (- a a) 0) -1) -1) (* -1 (+ b (* (* a b) 0)))) a)","rewritten_term":"(+ (* b a) a)","applied_rules":["rule_7","rule_2","rule_10","rule_53"]}
+{"original_term":"(- (+ a (- (+ 0 (* b (* (- (* (* -1 a) c) a) (+ 1 d)))) 1)) b)","rewritten_term":"(- (+ (- (* (+ (* b d) b) (- (- 0 (* a c)) a)) 1) a) b)","applied_rules":["rule_3"]}
+{"original_term":"(* a (* (- 0 a) (* (- (+ a (* (* (- 1 a) -1) (- 0 a))) 0) a)))","rewritten_term":"(- 0 (* (+ (- a (* a a)) a) (* (* a a) a)))","applied_rules":["rule_11","rule_11","rule_11"]}
+{"original_term":"(+ 0 (* (- (- (+ (* (* (+ (+ -1 a) a) b) c) -1) a) (+ c a)) -1))","rewritten_term":"(- (+ c a) (- (+ (* (+ (+ a -1) a) (* b c)) -1) a))","applied_rules":["rule_3","rule_2"]}
+{"original_term":"(* (* (- (+ (+ (* a a) (* 1 a)) (+ a (+ (- -1 c) c))) 1) -1) a)","rewritten_term":"(- a (* (+ (+ (+ (+ (- -1 c) c) a) (* a a)) a) a))","applied_rules":["rule_8","rule_11"]}
+{"original_term":"(- (+ (* -1 (+ -1 (+ (+ (* 0 (- (+ a 1) a)) (- a a)) a))) c) b)","rewritten_term":"(- (+ (- 0 (+ a -1)) c) b)","applied_rules":["rule_9","rule_3","rule_10","rule_3"]}
+{"original_term":"(* (+ (+ (+ 1 (* a (- (- (+ (* b b) c) b) a))) 1) -1) (+ a 1))","rewritten_term":"(* (+ (+ (+ (* (- (+ (* b b) c) (+ b a)) a) 1) 1) -1) (+ a 1))","applied_rules":[]}
+{"original_term":"(- a (- (+ b a) (* (* -1 (+ -1 (- 0 (+ a a)))) (+ 0 (- c 1)))))","rewritten_term":"(- (* (+ (- 0 (+ a a)) -1) (- 1 c)) (- (+ b a) a))","applied_rules":["rule_3","rule_127"]}
+{"original_term":"(- a (- (+ (- (- 0 (+ (+ a (- (- a 0) 0)) -1)) (* a 0)) a) 1))","rewritten_term":"(- a (- (+ (- 0 (+ (+ a a) -1)) a) 1))","applied_rules":["rule_7","rule_11","rule_11","rule_11"]}
+{"original_term":"(- (- -1 (* a (- (- (- a (- a -1)) b) (+ (+ (- b 0) a) d)))) -1)","rewritten_term":"(+ (- -1 (* (- (- (- a (+ a 1)) b) (+ (+ b a) d)) a)) 1)","applied_rules":["rule_11"]}
+{"original_term":"(- 0 (* (* (* a (* b (+ 1 c))) (* (* (- (* a 0) d) 1) b)) -1))","rewritten_term":"(- 0 (* (+ (* c b) b) (* (* d b) a)))","applied_rules":["rule_6","rule_7","rule_11"]}
+{"original_term":"(+ a (+ a (+ a (- (+ (* (* (- 1 (* a b)) (- 1 c)) -1) -1) 0))))","rewritten_term":"(+ (+ (+ (+ (* (- c 1) (- 1 (* a b))) -1) a) a) a)","applied_rules":["rule_11","rule_127"]}
+{"original_term":"(* a (* a (* (+ 1 (+ a (- 1 (- (* a 1) a)))) (+ a (* a 1)))))","rewritten_term":"(* (+ (+ (* a a) a) a) (* (+ a a) a))","applied_rules":["rule_6","rule_6","rule_10"]}
+{"original_term":"(* a (* a (- (+ (- -1 (- (+ (- c 0) (* c b)) (- 0 -1))) a) -1)))","rewritten_term":"(* (+ (* (+ (- -1 (- (+ (* c b) c) 1)) a) a) a) a)","applied_rules":["rule_11"]}
