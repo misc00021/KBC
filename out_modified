@@ -1,0 +1,91 @@
+Here is the input problem:
+  Axiom 1 (cancel_div): X / X = 1.
+  Axiom 2 (pow1): pow(X, 1) = X.
+  Axiom 3 (pow_recip): pow(X, neg(1)) = 1 / X.
+  Axiom 4 (pow2): pow(X, 2) = X * X.
+  Axiom 5 (comm_mul): X * Y = Y * X.
+  Axiom 6 (one_mul): X * 1 = X.
+  Axiom 7 (mul_one): X = X * 1.
+  Axiom 8 (recip_mul_div): X * (1 / X) = 1.
+  Axiom 9 (div_canon): X / Y = X * pow(Y, neg(1)).
+  Axiom 10 (assoc_mul): X * (Y * Z) = (X * Y) * Z.
+  Axiom 11 (pow_mul): pow(X, Y) * pow(X, Z) = pow(X, Y + Z).
+  Goal 1 (goal): true = false.
+
+1. X / X -> 1
+2. pow(X, 1) -> X
+3. pow(X, neg(1)) -> 1 / X
+4. X * X -> pow(X, 2)
+5. X * Y <-> Y * X
+6. X * 1 -> X
+7. X * (1 / X) -> 1
+8. X * (1 / Y) -> X / Y
+9. (X * Y) * Z -> X * (Y * Z)
+10. pow(X, Y) * pow(X, Z) -> pow(X, Y + Z)
+11. 1 * X -> X
+12. X / 1 -> X
+13. pow(1, 2) -> 1
+14. (1 / X) * Y -> Y / X
+15. X * (Y * Z) <-> Y * (X * Z)
+16. X * (Y / X) -> Y
+17. X * (Y / Z) -> (X * Y) / Z
+18. (X * Y) / X -> Y
+19. pow(X, Y + Z) <-> pow(X, Z + Y)
+20. X * (X * Y) = pow(X, 2) * Y
+21. pow(X, 2) / X -> X
+22. X * pow(X, Y) -> pow(X, Y + 1)
+23. pow(1, 2 + 1) -> 1
+24. pow(X, Y + Y) = pow(pow(X, Y), 2)
+25. pow(1, 2 + 2) -> 1
+26. (X * Y) / Y -> X
+27. (1 / X) / X = pow(1 / X, 2)
+28. pow(1, X + 2) -> pow(1, X)
+29. pow(X, 1 + 1) -> pow(X, 2)
+30. pow(1, X + 1) -> pow(1, X)
+31. (X / Y) * Z -> (X * Z) / Y
+32. (X / Y) / Z <-> (X / Z) / Y
+33. X * (Y * X) = Y * pow(X, 2)
+34. (X / Y) / X -> 1 / Y
+35. X * pow(Y, 2) = Y * (Y * X)
+36. X / (X / Y) -> Y
+
+Gave up on reaching the given resource limit.
+Here is the final rewrite system:
+ X / X -> 1
+ pow(X, 1) -> X
+ pow(X, neg(1)) -> 1 / X
+ X * X -> pow(X, 2)
+ X * Y <-> Y * X
+ X * 1 -> X
+ X * (1 / X) -> 1
+ X * (1 / Y) -> X / Y
+ (X * Y) * Z -> X * (Y * Z)
+ pow(X, Y) * pow(X, Z) -> pow(X, Y + Z)
+ 1 * X -> X
+ X / 1 -> X
+ pow(1, 2) -> 1
+ (1 / X) * Y -> Y / X
+ X * (Y * Z) <-> Y * (X * Z)
+ X * (Y / X) -> Y
+ X * (Y / Z) -> (X * Y) / Z
+ (X * Y) / X -> Y
+ pow(X, Y + Z) <-> pow(X, Z + Y)
+ X * (X * Y) = pow(X, 2) * Y
+ pow(X, 2) / X -> X
+ X * pow(X, Y) -> pow(X, Y + 1)
+ pow(1, 2 + 1) -> 1
+ pow(X, Y + Y) = pow(pow(X, Y), 2)
+ pow(1, 2 + 2) -> 1
+ (X * Y) / Y -> X
+ (1 / X) / X = pow(1 / X, 2)
+ pow(1, X + 2) -> pow(1, X)
+ pow(X, 1 + 1) -> pow(X, 2)
+ pow(1, X + 1) -> pow(1, X)
+ (X / Y) * Z -> (X * Z) / Y
+ (X / Y) / Z <-> (X / Z) / Y
+ X * (Y * X) = Y * pow(X, 2)
+ (X / Y) / X -> 1 / Y
+ X * pow(Y, 2) = Y * (Y * X)
+ X / (X / Y) -> Y
+
+RESULT: GaveUp (couldn't solve the problem).

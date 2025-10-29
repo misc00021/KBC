@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Hardcoded parent folder containing subfolders
-PARENT_DIR="rule_collections/collections_for_EqSat/replacing_sets"
+PARENT_DIR="rule_collections/collections_for_EqSat/extending_sets"
 
 # Path to your Python script
 PY_SCRIPT="make_egg_file.py"

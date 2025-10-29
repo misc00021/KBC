@@ -1,0 +1,8 @@
+EqSat_KBC_150_extended,random_terms_huge,14.344,15.776,21.12,24.04,24.4,24.728,24.744,24.832,24.832
+EqSat_KBC_150_extended_no_unorderable,random_terms_huge,14.864,21.088,22.04,24.376,24.608,24.736,24.768,24.816,24.832
+EqSat_KBC_150,random_terms_huge,14.192,19.232,19.888,20.152,20.168,20.192,20.192,20.2,20.2
+EqSat_KBC_150_no_unorderable,random_terms_huge,15.928,19.824,19.968,20.072,20.088,20.088,20.112,20.12,20.12
+EqSat_no_div_no_pow_KBC_100_extended,no_div_no_pow_random_terms_huge,18.664,21.232,26.768,30.472,30.84,32.536,32.632,33.064,33.208
+EqSat_no_div_no_pow_KBC_100_extended_no_unorderable,no_div_no_pow_random_terms_huge,18.952,26.448,26.88,30.584,31.6,32.488,32.72,33.056,33.248
+EqSat_no_div_no_pow_KBC_100,no_div_no_pow_random_terms_huge,18.024,26.032,28.752,31.152,31.688,32.608,32.84,33.128,33.184
+EqSat_no_div_no_pow_KBC_100_no_unorderable,no_div_no_pow_random_terms_huge,18.536,28.192,29.368,31.168,31.488,32.064,32.128,32.288,32.352

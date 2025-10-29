@@ -7,12 +7,16 @@ mod kbc_extending_no_div_no_pow_no_unorderable;
 mod kbc_extending_no_unorderable;
 mod kbc_extending_sep_div;
 mod kbc_extending_sep_div_no_unorderable;
+mod kbc_extending_sep_div_plus;
+mod kbc_extending_sep_div_plus_no_unorderable;
 mod kbc_replacing;
 mod kbc_replacing_no_div_no_pow;
 mod kbc_replacing_no_div_no_pow_no_unorderable;
 mod kbc_replacing_no_unorderable;
 mod kbc_replacing_sep_div;
 mod kbc_replacing_sep_div_no_unorderable;
+mod kbc_replacing_sep_div_plus;
+mod kbc_replacing_sep_div_plus_no_unorderable;
 use std::io::{BufRead, BufReader};
 use std::time::Duration;
 mod math;
@@ -30,12 +34,16 @@ use kbc_extending_no_div_no_pow_no_unorderable::rules as kbc_extending_no_div_no
 use kbc_extending_no_unorderable::rules as kbc_extending_no_unorderable;
 use kbc_extending_sep_div::rules as kbc_extending_sep_div;
 use kbc_extending_sep_div_no_unorderable::rules as kbc_extending_sep_div_no_unorderable;
+use kbc_extending_sep_div_plus::rules as kbc_extending_sep_div_plus;
+use kbc_extending_sep_div_plus_no_unorderable::rules as kbc_extending_sep_div_plus_no_unorderable;
 use kbc_replacing::rules as kbc_replacing;
 use kbc_replacing_no_div_no_pow::rules as kbc_replacing_no_div_no_pow;
 use kbc_replacing_no_div_no_pow_no_unorderable::rules as kbc_replacing_no_div_no_pow_no_unorderable;
 use kbc_replacing_no_unorderable::rules as kbc_replacing_no_unorderable;
 use kbc_replacing_sep_div::rules as kbc_replacing_sep_div;
 use kbc_replacing_sep_div_no_unorderable::rules as kbc_replacing_sep_div_no_unorderable;
+use kbc_replacing_sep_div_plus::rules as kbc_replacing_sep_div_plus;
+use kbc_replacing_sep_div_plus_no_unorderable::rules as kbc_replacing_sep_div_plus_no_unorderable;
 
 use math::{ConstantFold, Math};
 
@@ -161,10 +169,20 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         //     kbc_replacing_no_div_no_pow_no_unorderable(),
         // ),
         // ("replacing_no_unorderable", kbc_replacing_no_unorderable()),
-        ("replacing_sep_div", kbc_replacing_sep_div()),
+        // ("replacing_sep_div", kbc_replacing_sep_div()),
+        // (
+        //     "replacing_sep_div_no_unorderable",
+        //     kbc_replacing_sep_div_no_unorderable(),
+        // ),
+        ("extending_sep_div_plus", kbc_extending_sep_div_plus()),
         (
-            "replacing_sep_div_no_unorderable",
-            kbc_replacing_sep_div_no_unorderable(),
+            "extending_sep_div_plus_no_unorderable",
+            kbc_extending_sep_div_plus_no_unorderable(),
+        ),
+        ("replacing_sep_div_plus", kbc_replacing_sep_div_plus()),
+        (
+            "replacing_sep_div_plus_no_unorderable",
+            kbc_replacing_sep_div_plus_no_unorderable(),
         ),
     ];
     for time_limit in vec![

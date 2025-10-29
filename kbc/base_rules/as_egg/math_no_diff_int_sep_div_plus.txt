@@ -1,0 +1,66 @@
+rw!("comm-add";  "(+ ?x ?y)"        => "(+ ?y ?x)"),
+    rw!("comm-mul";  "(* ?x ?y)"        => "(* ?y ?x)"),
+    rw!("assoc-add"; "(+ ?x (+ ?y ?z))" => "(+ (+ ?x ?y) ?z)"),
+    rw!("assoc-mul"; "(* ?x (* ?y ?z))" => "(* (* ?x ?y) ?z)"),
+
+    rw!("sub-canon"; "(- ?x ?y)" => "(+ ?x (* (neg 1) ?y))"),
+    rw!("div-canon"; "(/ ?x ?y)" => "(* ?x (pow ?y (neg 1)))" if is_not_zero("?y")),
+    // rw!("canon-sub"; "(+ ?x (* (neg 1) ?y))"   => "(- ?x ?y)"),
+    // rw!("canon-div"; "(* ?x (pow ?y (neg 1)))" => "(/ ?x ?y)" if is_not_zero("?y")),
+
+    rw!("zero-add"; "(+ ?x 0)" => "?x"),
+    rw!("zero-mul"; "(* ?x 0)" => "0"),
+    rw!("one-mul";  "(* ?x 1)" => "?x"),
+
+    rw!("add-zero"; "?x" => "(+ ?x 0)"),
+    rw!("mul-one";  "?x" => "(* ?x 1)"),
+
+    rw!("cancel-sub"; "(- ?x ?x)" => "0"),
+    rw!("cancel-div"; "(/ ?x ?x)" => "1" if is_not_zero("?x")),
+
+    rw!("distribute"; "(* ?x (+ ?y ?z))"        => "(+ (* ?x ?y) (* ?x ?z))"),
+    rw!("factor"    ; "(+ (* ?x ?y) (* ?x ?z))" => "(* ?x (+ ?y ?z))"),
+
+    rw!("pow-mul"; "(* (pow ?x ?y) (pow ?x ?z))" => "(pow ?x (+ ?y ?z))") if is_not_zero("?x"),
+    rw!("pow0"; "(pow ?x 0)" => "1" if is_not_zero("?x")),
+    rw!("pow1"; "(pow ?x 1)" => "?x"),
+    rw!("pow2"; "(pow ?x 2)" => "(* ?x ?x)"),
+    rw!("pow-recip"; "(pow ?x (neg 1))" => "(/ 1 ?x)" if is_not_zero("?x")),
+    rw!("recip-mul-div"; "(* ?x (/ 1 ?x))" => "1" if is_not_zero("?x")),
+
+    rw!("guarded_rule_0"; "(/ ?x ?x)" => "1" if is_not_zero("?x")),
+rw!("guarded_rule_1"; "(pow ?x 1)" => "?x"),
+rw!("guarded_rule_2"; "(pow ?x -1 )" => "(/ 1 ?x)" if is_not_zero("?x")),
+rw!("guarded_rule_3"; "(* ?x ?x)" => "(pow ?x 2)"),
+rw!("guarded_rule_4"; "(* ?x ?y)" => "(* ?y ?x)"),
+rw!("guarded_rule_5"; "(* ?x 1)" => "?x"),
+rw!("guarded_rule_6"; "(* ?x (/ 1 ?x) )" => "1" if is_not_zero("?x")),
+rw!("guarded_rule_7"; "(* ?x (/ 1 ?y) )" => "(/ ?x ?y)" if is_not_zero("?y")),
+rw!("guarded_rule_8"; "(* (* ?x ?y) ?z)" => "(* ?x (* ?y ?z) )"),
+rw!("guarded_rule_9"; "(* (pow ?x ?y) (pow ?x ?z) )" => "(pow ?x (+ ?y ?z) )" if is_not_zero("?x")),
+rw!("guarded_rule_10"; "(* 1 ?x)" => "?x"),
+rw!("guarded_rule_11"; "(/ ?x 1)" => "?x"),
+rw!("guarded_rule_12"; "(pow 1 2)" => "1"),
+rw!("guarded_rule_13"; "(* (/ 1 ?x) ?y)" => "(/ ?y ?x)" if is_not_zero("?x")),
+rw!("guarded_rule_14"; "(* ?x (* ?y ?z) )" => "(* ?y (* ?x ?z) )"),
+rw!("guarded_rule_15"; "(* ?x (/ ?y ?x) )" => "?y" if is_not_zero("?x")),
+rw!("guarded_rule_16"; "(* ?x (/ ?y ?z) )" => "(/ (* ?x ?y) ?z)" if is_not_zero("?z")),
+rw!("guarded_rule_17"; "(/ (* ?x ?y) ?x)" => "?y" if is_not_zero("?x")),
+rw!("guarded_rule_18"; "(pow ?x (+ ?y ?z) )" => "(pow ?x (+ ?z ?y) )"),
+
+rw!("guarded_rule_20"; "(/ (pow ?x 2) ?x)" => "?x" if is_not_zero("?x")),
+rw!("guarded_rule_21"; "(* ?x (pow ?x ?y) )" => "(pow ?x (+ ?y 1) )" if is_not_zero("?x")),
+rw!("guarded_rule_22"; "(pow 1 (+ 2 1) )" => "1"),
+
+rw!("guarded_rule_24"; "(pow 1 (+ 2 2) )" => "1"),
+rw!("guarded_rule_25"; "(/ (* ?x ?y) ?y)" => "?x" if is_not_zero("?y")),
+
+rw!("guarded_rule_27"; "(pow 1 (+ ?x 2) )" => "(pow 1 ?x)"),
+rw!("guarded_rule_28"; "(pow ?x (+ 1 1) )" => "(pow ?x 2)"),
+rw!("guarded_rule_29"; "(pow 1 (+ ?x 1) )" => "(pow 1 ?x)"),
+rw!("guarded_rule_30"; "(* (/ ?x ?y) ?z)" => "(/ (* ?x ?z) ?y)" if is_not_zero("?y")),
+rw!("guarded_rule_31"; "(/ (/ ?x ?y) ?z)" => "(/ (/ ?x ?z) ?y)" if is_not_zero("?y") if is_not_zero("?z")),
+
+rw!("guarded_rule_33"; "(/ (/ ?x ?y) ?x)" => "(/ 1 ?y)" if is_not_zero("?y") if is_not_zero("?x")),
+
+rw!("guarded_rule_35"; "(/ ?x (/ ?x ?y) )" => "?y" if is_not_zero("?x") if is_not_zero("?y")),

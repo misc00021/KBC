@@ -1,0 +1,232 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                           Term Rewriting                           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@book{BaaderNipkow1998,
+	author    = {Franz Baader and Tobias Nipkow},
+	title     = {Term Rewriting and All That},
+	year      = {1998},
+	publisher = {Cambridge University Press}
+}
+
+%                           EqSat                           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@misc{Hong_2024,
+	author       = {Charles Hong},
+	title        = {A Survey of Rewrite Rule Synthesis},
+	year         = {2024},
+	howpublished = {\url{https://inst.eecs.berkeley.edu/~cs294-260/sp24/projects/charleshong/}},
+	note         = {Course project report, University of California, Berkeley}
+}
+
+
+@inproceedings{Felix,
+	author = {Zhao, Yifan and Sharif, Hashim and Adve, Vikram and Misailovic, Sasa},
+	title = {Felix: Optimizing Tensor Programs with Gradient Descent},
+	year = {2024},
+	isbn = {9798400703867},
+	publisher = {Association for Computing Machinery},
+	address = {New York, NY, USA},
+	url = {https://doi.org/10.1145/3620666.3651348},
+	doi = {10.1145/3620666.3651348},
+	abstract = {Obtaining high-performance implementations of tensor programs such as deep neural networks on a wide range of hardware remains a challenging task. Search-based tensor program optimizers can automatically find high-performance programs on a given hardware platform, but the search process in existing tools suffer from low efficiency, requiring hours or days of time to discover good programs due to the size of the search space.We present Felix, a novel gradient-based compiler optimization framework for tensor-based programs. Felix creates a differentiable space of tensor programs that is amenable to search by gradient descent. Felix applies continuous relaxation on the space of programs and creates differentiable estimator of program latency, allowing efficient search of program candidates using gradient descent, in contrast to conventional approaches that search over a non-differentiable objective function over a discrete search space.We perform an extensive evaluation on six deep neural networks for vision and natural language processing tasks on three GPU-based platforms. Our experiments show that Felix surpasses the performance of off-the-shelf inference frameworks - PyTorch, Tensorflow, and TensorRT - within 7 minutes of search time on average. Felix also finds optimized programs significantly faster than TVM Ansor, a state-of-the-art search-based optimizer for tensor programs.},
+	booktitle = {Proceedings of the 29th ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 3},
+	pages = {367–381},
+	numpages = {15},
+	location = {La Jolla, CA, USA},
+	series = {ASPLOS '24}
+}
+
+@article{herbie,
+	author = {Panchekha, Pavel and Sanchez-Stern, Alex and Wilcox, James R. and Tatlock, Zachary},
+	title = {Automatically improving accuracy for floating point expressions},
+	year = {2015},
+	issue_date = {June 2015},
+	publisher = {Association for Computing Machinery},
+	address = {New York, NY, USA},
+	volume = {50},
+	number = {6},
+	issn = {0362-1340},
+	url = {https://doi.org/10.1145/2813885.2737959},
+	doi = {10.1145/2813885.2737959},
+	abstract = {Scientific and engineering applications depend on floating point arithmetic to approximate real arithmetic. This approximation introduces rounding error, which can accumulate to produce unacceptable results. While the numerical methods literature provides techniques to mitigate rounding error, applying these techniques requires manually rearranging expressions and understanding the finer details of floating point arithmetic. We introduce Herbie, a tool which automatically discovers the rewrites experts perform to improve accuracy. Herbie's heuristic search estimates and localizes rounding error using sampled points (rather than static error analysis), applies a database of rules to generate improvements, takes series expansions, and combines improvements for different input regions. We evaluated Herbie on examples from a classic numerical methods textbook, and found that Herbie was able to improve accuracy on each example, some by up to 60 bits, while imposing a median performance overhead of 40\%. Colleagues in machine learning have used Herbie to significantly improve the results of a clustering algorithm, and a mathematical library has accepted two patches generated using Herbie.},
+	journal = {SIGPLAN Not.},
+	month = jun,
+	pages = {1–11},
+	numpages = {11},
+	keywords = {program rewriting, numerical accuracy, Floating point}
+}
+
+@article{Tate_2011,
+	title={Equality Saturation: A New Approach to Optimization},
+	volume={Volume 7, Issue 1},
+	ISSN={1860-5974},
+	url={http://dx.doi.org/10.2168/LMCS-7(1:10)2011},
+	DOI={10.2168/lmcs-7(1:10)2011},
+	journal={Logical Methods in Computer Science},
+	publisher={Centre pour la Communication Scientifique Directe (CCSD)},
+	author={Tate, Ross and Stepp, Michael and Tatlock, Zachary and Lerner, Sorin},
+	year={2011},
+	month=mar }
+
+@misc{zhang2023bettertogetherunifyingdatalog,
+	title={Better Together: Unifying Datalog and Equality Saturation}, 
+	author={Yihong Zhang and Yisu Remy Wang and Oliver Flatt and David Cao and Philip Zucker and Eli Rosenthal and Zachary Tatlock and Max Willsey},
+	year={2023},
+	eprint={2304.04332},
+	archivePrefix={arXiv},
+	primaryClass={cs.PL},
+	url={https://arxiv.org/abs/2304.04332}, 
+}
+
+@article{Willsey_2021,
+	title={egg: Fast and extensible equality saturation},
+	volume={5},
+	ISSN={2475-1421},
+	url={http://dx.doi.org/10.1145/3434304},
+	DOI={10.1145/3434304},
+	number={POPL},
+	journal={Proceedings of the ACM on Programming Languages},
+	publisher={Association for Computing Machinery (ACM)},
+	author={Willsey, Max and Nandi, Chandrakana and Wang, Yisu Remy and Flatt, Oliver and Tatlock, Zachary and Panchekha, Pavel},
+	year={2021},
+	month=jan, pages={1–29} }
+	
+@misc{zhang2023,
+	author       = {Yihong Zhang and Oliver Flatt},
+	title        = {Ensuring the termination of equality saturation for terminating term rewriting systems},
+	year         = 2023,
+	url          = {https://effect.systems/doc/egraphs-2023-theory/paper.pdf},
+	note         = {Accessed: 2025-10-17}
+}
+
+@article{Willsey_2022,
+	author = {Zhang, Yihong and Wang, Yisu Remy and Willsey, Max and Tatlock, Zachary},
+	title = {Relational e-matching},
+	year = {2022},
+	issue_date = {January 2022},
+	publisher = {Association for Computing Machinery},
+	address = {New York, NY, USA},
+	volume = {6},
+	number = {POPL},
+	url = {https://doi.org/10.1145/3498696},
+	doi = {10.1145/3498696},
+	abstract = {We present a new approach to e-matching based on relational join; in particular, we apply recent database query execution techniques to guarantee worst-case optimal run time. Compared to the conventional backtracking approach that always searches the e-graph "top down", our new relational e-matching approach can better exploit pattern structure by searching the e-graph according to an optimized query plan. We also establish the first data complexity result for e-matching, bounding run time as a function of the e-graph size and output size. We prototyped and evaluated our technique in the state-of-the-art egg e-graph framework. Compared to a conventional baseline, relational e-matching is simpler to implement and orders of magnitude faster in practice.},
+	journal = {Proc. ACM Program. Lang.},
+	month = jan,
+	articleno = {35},
+	numpages = {22},
+	keywords = {Relational Join Algorithms, E-matching}
+}
+
+@misc{yin2025eboostboostedegraphextraction,
+	title={e-boost: Boosted E-Graph Extraction with Adaptive Heuristics and Exact Solving}, 
+	author={Jiaqi Yin and Zhan Song and Chen Chen and Yaohui Cai and Zhiru Zhang and Cunxi Yu},
+	year={2025},
+	eprint={2508.13020},
+	archivePrefix={arXiv},
+	primaryClass={cs.AI},
+	url={https://arxiv.org/abs/2508.13020}, 
+}
+
+@inproceedings{SmoothE,
+	author = {Cai, Yaohui and Yang, Kaixin and Deng, Chenhui and Yu, Cunxi and Zhang, Zhiru},
+	title = {SmoothE: Differentiable E-Graph Extraction},
+	year = {2025},
+	isbn = {9798400706981},
+	publisher = {Association for Computing Machinery},
+	address = {New York, NY, USA},
+	url = {https://doi.org/10.1145/3669940.3707262},
+	doi = {10.1145/3669940.3707262},
+	abstract = {E-graphs have gained increasing popularity in compiler optimization, program synthesis, and theorem proving tasks. They enable compact representation of many equivalent expressions and facilitate transformations via rewrite rules without phase ordering limitations. A major benefit of using e-graphs is the ability to explore a large space of equivalent expressions, allowing the extraction of an expression that best meets certain optimization objectives (or cost models). However, current e-graph extraction methods often face unfavorable scalability-quality trade-offs and only support simple linear cost functions, limiting their applicability to more realistic optimization problems.In this work, we propose SmoothE, a differentiable e-graph extraction algorithm designed to handle complex cost models and optimized for GPU acceleration. More specifically, we approach the e-graph extraction problem from a probabilistic perspective, where the original discrete optimization is relaxed to a continuous differentiable form. This formulation supports any differentiable cost functions and enables efficient searching for solutions using gradient descent. We implement SmoothE in PyTorch to leverage the advancements of the modern machine learning ecosystem. Additionally, we introduce performance optimization techniques to exploit sparsity and data parallelism. We evaluate SmoothE on a variety of realistic e-graphs from five different applications using three distinct cost models, including both linear and non-linear ones. Our experiments demonstrate that SmoothE consistently achieves a favorable trade-off between scalability and solution quality.},
+	booktitle = {Proceedings of the 30th ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 1},
+	pages = {1020–1034},
+	numpages = {15},
+	keywords = {compilers, equivalence graph, machine learning for systems, programming languages},
+	location = {Rotterdam, Netherlands},
+	series = {ASPLOS '25}
+}
+
+@misc{egg_math_rules,
+	author       = {Willsey, Max and Nandi, Chandrakana and Wang, Yisu Remy and Flatt, Oliver and Tatlock, Zachary and Panchekha, Pavel},
+	title        = {{egg: e-graphs good!} --- Math Rewrite Rules},
+	year         = {2021},
+	howpublished = {\url{https://github.com/egraphs-good/egg/blob/main/tests/math.rs}},
+	note         = {Accessed: 2025-10-22},
+}
+
+@misc{Fallin2023_aEGraphs,
+	author       = {Fallin, Chris},
+	title        = {ægraphs: Acyclic E-graphs for Efficient Optimization in a Production Compiler},
+	year         = {2023},
+	howpublished = {\url{https://cfallin.org/pubs/egraphs2023_aegraphs_slides.pdf}},
+	note         = {Presentation slides, November 2023}
+}
+
+
+%                           KBC                           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@article{10.1093/comjnl/34.1.2,
+	author = {Dick, A. J. J.},
+	title = {An introduction to Knuth-Bendix completion},
+	year = {1991},
+	issue_date = {Feb. 1991},
+	publisher = {Oxford University Press, Inc.},
+	address = {USA},
+	volume = {34},
+	number = {1},
+	issn = {0010-4620},
+	url = {https://doi.org/10.1093/comjnl/34.1.2},
+	doi = {10.1093/comjnl/34.1.2},
+	journal = {Comput. J.},
+	month = feb,
+	pages = {2–15},
+	numpages = {14}
+}
+
+@inproceedings{twee,
+	author = {Smallbone, Nicholas},
+	title = {Twee: An Equational Theorem Prover},
+	year = {2021},
+	isbn = {978-3-030-79875-8},
+	publisher = {Springer-Verlag},
+	address = {Berlin, Heidelberg},
+	url = {https://doi.org/10.1007/978-3-030-79876-5_35},
+	doi = {10.1007/978-3-030-79876-5_35},
+	abstract = {Twee is an automated theorem prover for equational logic. It implements unfailing Knuth-Bendix completion with ground joinability testing and a connectedness-based redundancy criterion. It came second in the UEQ division of CASC-J10, solving some problems that no other system solved. This paper describes Twee’s design and implementation.},
+	booktitle = {Automated Deduction – CADE 28: 28th International Conference on Automated Deduction, Virtual Event, July 12–15, 2021, Proceedings},
+	pages = {602–613},
+	numpages = {12},
+	keywords = {Automated theorem proving, unit equality, completion}
+}
+
+@inproceedings{ClaessenSmallbone2021,
+	author    = {Koen Claessen and Nicholas Smallbone},
+	title     = {Efficient encodings of first-order Horn formulas in equational logic},
+	booktitle = {Proceedings of the Twenty-Fourth International Conference on Automated Reasoning (CADE-24)},
+	year      = {2021},
+	url       = {https://smallbone.se/papers/horn.pdf},
+	note      = {Accessed: 2025-10-21}
+}
+
+@article{Ruler,
+	author = {Nandi, Chandrakana and Willsey, Max and Zhu, Amy and Wang, Yisu Remy and Saiki, Brett and Anderson, Adam and Schulz, Adriana and Grossman, Dan and Tatlock, Zachary},
+	title = {Rewrite rule inference using equality saturation},
+	year = {2021},
+	issue_date = {October 2021},
+	publisher = {Association for Computing Machinery},
+	address = {New York, NY, USA},
+	volume = {5},
+	number = {OOPSLA},
+	url = {https://doi.org/10.1145/3485496},
+	doi = {10.1145/3485496},
+	abstract = {Many compilers, synthesizers, and theorem provers rely on rewrite rules to simplify expressions or prove equivalences. Developing rewrite rules can be difficult: rules may be subtly incorrect, profitable rules are easy to miss, and rulesets must be rechecked or extended whenever semantics are tweaked. Large rulesets can also be challenging to apply: redundant rules slow down rule-based search and frustrate debugging. This paper explores how equality saturation, a promising technique that uses e-graphs to apply rewrite rules, can also be used to infer rewrite rules. E-graphs can compactly represent the exponentially large sets of enumerated terms and potential rewrite rules. We show that equality saturation efficiently shrinks both sets, leading to faster synthesis of smaller, more general rulesets. We prototyped these strategies in a tool dubbed Ruler. Compared to a similar tool built on CVC4, Ruler synthesizes 5.8\texttimes{} smaller rulesets 25\texttimes{} faster without compromising on proving power. In an end-to-end case study, we show Ruler-synthesized rules which perform as well as those crafted by domain experts, and addressed a longstanding issue in a popular open source tool.},
+	journal = {Proc. ACM Program. Lang.},
+	month = oct,
+	articleno = {119},
+	numpages = {28},
+	keywords = {Rewrite Rules, Program Synthesis, Equality Saturation}
+}
+
+	

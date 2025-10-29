@@ -1,0 +1,79 @@
+\documentclass[
+    a4paper,                % seems like a good size
+    fontsize=12,            % a readable font size
+    twoside=true,           % treat left and right pages differently
+    titlepage=firstiscover, % use title margins for frontpage
+    toc=listof,             % Add entry for lists of figs and tables into toc
+    toc=bibliography,       % Add entry for bibliography into toc
+    headings=appendixprefix,% Add prefix in front of appendix title
+    BCOR=2mm                % Binding correction to make up for space used by binding
+]{scrbook}
+
+\newif\ifdraft
+%\drafttrue
+ \draftfalse % uncomment for final version!
+
+\newcommand{\mypdfauthor}{Michael Schifferer}
+\newcommand{\mypdftitle}{Knuth-Bendix Completion for Program Optimization}
+\newcommand{\mypdfsubject}{consectetur adipiscing elit}
+\newcommand{\mypdfkeywords}{sed;do;eiusmod;tempor;incididunt}
+\newcommand{\mythesistype}{Bachelor's Thesis}
+\newcommand{\myformattedtitle}{Knuth-Bendix Completion\\for Program Optimization}
+\newcommand{\myextreviewer}{Prof.\ Dr.\ Jan Reineke}
+\newcommand{\myadvisor}{Prof.\ Dr.\ Sebastian Hack}
+\newcommand{\mysubdate}{October 30, 2025}
+
+\usepackage{mythesis}
+
+\input{tex/title_info}
+
+\begin{document}
+\bibliographystyle{apalike}
+
+\ifdraft
+\AddToHook{shipout/foreground}{
+       \begin{tikzpicture}[overlay, remember picture]
+            \node[fill=yellow, draw, text=red, rotate=45, scale=5,anchor=east] at (current page) {DRAFT};
+        \end{tikzpicture}    
+    }
+\fi
+
+\frontmatter
+
+\maketitle
+
+\cleardoublepage
+\include{tex/declaration}
+
+\include{tex/abstract}
+
+\tableofcontents
+
+\listoffigures
+
+\listoftables
+
+\mainmatter
+
+\include{tex/introduction}
+
+\include{tex/background}
+
+\include{tex/methodology}
+
+\include{tex/results}
+
+\include{tex/discussion}
+
+\include{tex/related_work}
+
+\include{tex/conclusion}
+
+\backmatter
+\appendix
+
+\include{tex/appendix}
+
+\bibliography{resources}
+
+\end{document}

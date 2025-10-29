@@ -1,0 +1,24 @@
+\chapter{Methodology}
+\label{chap:methods}
+
+This chapter describes the experimental methodology used to evaluate the effectiveness of \textit{Knuth–Bendix Completion} (KBC) for generating rewrite systems for rewrite-based program optimization techniques. The evaluation is conducted using two frameworks: one based on \textit{equality saturation} (EqSat) using the \texttt{egg} library\citep{Willsey_2021}, and one based on a custom \textit{greedy rewriting engine}.
+
+The following sections describe the complete process in detail. Section~\ref{sec:rule-generation} explains how the rewrite rules were generated using KBC, starting from an initial, handwritten rule set. Section~\ref{sec:term-generation} outlines the procedure for generating random test terms from arithmetic. Section~\ref{sec:test-environment} introduces the test environment and the implementation of both evaluation frameworks. Finally, section~\ref{sec:test-setup} summarizes the experimental setup, detailing which combinations of rule sets, rewriting techniques, and test sets were used in the experiments.
+
+\section{Rule Generation}
+\label{sec:rule-generation}
+This section explains the steps taken to generate different rule sets from one initial handwritten rule set using KBC. The first step is the translation of rules from the format used by \texttt{egg} to \texttt{TPTP}\footnote{\url{https://www.tptp.org/}} format. The translated rules are then completed using the \texttt{twee} theorem prover~\citep{twee}. After some postprocessing the resulting rule set is translated back to the original format. 
+
+Subsection~\ref{sec:rulegen-twee} explains the rationale for choosing \texttt{twee} and how it was used to complete the rule set, including its handling of conditional rewrites. Subsection~\ref{sec:rulegen-postprocess} discusses postprocessing steps applied to the raw output to make it compatible with \texttt{egg}. Finally, subsection~\ref{sec:rulegen-ruletypes} provides an overview of the different rule sets generated for experimentation.
+
+\section{Rule Generation}
+
+\section{Term Generation}
+
+\section{Test Environment (Implementation Details)}
+
+\subsection{Equality Saturation}
+
+\subsection{Greedy Rewriting}
+
+\section{Test Setup (Combinations of Rewrite Tools, Rule Sets, and Test Sets)}

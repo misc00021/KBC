@@ -1,0 +1,10 @@
+\addchap*{Abstract}
+\label{chap:abstract}
+
+Rewrite-based optimization techniques are important tools for program transformation in optimizing compilers. Equality saturation (EqSat) is one such technique that has recently attracted significant research interest. While EqSat has proven to be an effective tool in practice, its feasibility and performance rely heavily on the rule sets used. 
+
+Such rule sets are typically handcrafted, which requires in-depth domain knowledge and may miss valuable transformations.
+ 
+To address this, we evaluate Knuth–Bendix completion (KBC) as a method for automatically generating rewrite rules. The evaluation focuses on the performance of KBC-generated rule sets in EqSat and in a custom greedy rewriting engine.
+ 
+The evaluation shows that KBC-generated rewrite rules can complement, but not fully replace, handwritten rules in EqSat. When used with greedy rewriting, they enable highly resource-efficient but considerably less effective simplification.

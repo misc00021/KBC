@@ -1,0 +1,407 @@
+\chapter{Appendix}
+\label{chap:appendix}
+
+\section{Input Rule Sets}
+\label{app:rule_sets}
+
+\subsection{Original Rule Set from the \texttt{egg} Library’s Test Suite~\citep{egg_math_rules}}
+\label{app:base_rules}
+\begin{lstlisting}[language=Rust, caption={Base arithmetic rule set from \texttt{egg}'s \texttt{math.rs}.}, label={lst:base-rules}]
+rw!("comm-add";  "(+ ?a ?b)"        => "(+ ?b ?a)"),
+rw!("comm-mul";  "(* ?a ?b)"        => "(* ?b ?a)"),
+rw!("assoc-add"; "(+ ?a (+ ?b ?c))" => "(+ (+ ?a ?b) ?c)"),
+rw!("assoc-mul"; "(* ?a (* ?b ?c))" => "(* (* ?a ?b) ?c)"),	
+rw!("sub-canon"; "(- ?a ?b)" => "(+ ?a (* -1 ?b))"),
+rw!("div-canon"; "(/ ?a ?b)" => "(* ?a (pow ?b -1))" if is_not_zero("?b")),
+// rw!("canon-sub"; "(+ ?a (* -1 ?b))"   => "(- ?a ?b)"),
+// rw!("canon-div"; "(* ?a (pow ?b -1))" => "(/ ?a ?b)" if is_not_zero("?b")),	
+rw!("zero-add"; "(+ ?a 0)" => "?a"),
+rw!("zero-mul"; "(* ?a 0)" => "0"),
+rw!("one-mul";  "(* ?a 1)" => "?a"),	
+rw!("add-zero"; "?a" => "(+ ?a 0)"),
+rw!("mul-one";  "?a" => "(* ?a 1)"),	
+rw!("cancel-sub"; "(- ?a ?a)" => "0"),
+rw!("cancel-div"; "(/ ?a ?a)" => "1" if is_not_zero("?a")),	
+rw!("distribute"; "(* ?a (+ ?b ?c))"        => "(+ (* ?a ?b) (* ?a ?c))"),
+rw!("factor"    ; "(+ (* ?a ?b) (* ?a ?c))" => "(* ?a (+ ?b ?c))"),	
+rw!("pow-mul"; "(* (pow ?a ?b) (pow ?a ?c))" => "(pow ?a (+ ?b ?c))"),
+rw!("pow0"; "(pow ?x 0)" => "1"
+	if is_not_zero("?x")),
+rw!("pow1"; "(pow ?x 1)" => "?x"),
+rw!("pow2"; "(pow ?x 2)" => "(* ?x ?x)"),
+rw!("pow-recip"; "(pow ?x -1)" => "(/ 1 ?x)"
+	if is_not_zero("?x")),
+rw!("recip-mul-div"; "(* ?x (/ 1 ?x))" => "1" if is_not_zero("?x")),	
+rw!("d-variable"; "(d ?x ?x)" => "1" if is_sym("?x")),
+rw!("d-constant"; "(d ?x ?c)" => "0" if is_sym("?x") if is_const_or_distinct_var("?c", "?x")),	
+rw!("d-add"; "(d ?x (+ ?a ?b))" => "(+ (d ?x ?a) (d ?x ?b))"),
+rw!("d-mul"; "(d ?x (* ?a ?b))" => "(+ (* ?a (d ?x ?b)) (* ?b (d ?x ?a)))"),	
+rw!("d-sin"; "(d ?x (sin ?x))" => "(cos ?x)"),
+rw!("d-cos"; "(d ?x (cos ?x))" => "(* -1 (sin ?x))"),	
+rw!("d-ln"; "(d ?x (ln ?x))" => "(/ 1 ?x)" if is_not_zero("?x")),	
+rw!("d-power";
+	"(d ?x (pow ?f ?g))" =>
+	"(* (pow ?f ?g)
+	(+ (* (d ?x ?f)
+	(/ ?g ?f))
+	(* (d ?x ?g)
+	(ln ?f))))"
+	if is_not_zero("?f")
+	if is_not_zero("?g")
+	),	
+rw!("i-one"; "(i 1 ?x)" => "?x"),
+rw!("i-power-const"; "(i (pow ?x ?c) ?x)" =>
+	"(/ (pow ?x (+ ?c 1)) (+ ?c 1))" if is_const("?c")),
+rw!("i-cos"; "(i (cos ?x) ?x)" => "(sin ?x)"),
+rw!("i-sin"; "(i (sin ?x) ?x)" => "(* -1 (cos ?x))"),
+rw!("i-sum"; "(i (+ ?f ?g) ?x)" => "(+ (i ?f ?x) (i ?g ?x))"),
+rw!("i-dif"; "(i (- ?f ?g) ?x)" => "(- (i ?f ?x) (i ?g ?x))"),
+rw!("i-parts"; "(i (* ?a ?b) ?x)" =>
+	"(- (* ?a (i ?b ?x)) (i (* (d ?x ?a) (i ?b ?x)) ?x))"),
+\end{lstlisting}
+
+\newpage
+\subsection{Modified Rule Set math\_no\_diff\_int}
+\label{app:no_diff_int}
+\begin{lstlisting}[language=Rust, caption={Rule set \ref{app:base_rules} without differentiation and integration rules and $-1$ replaced with $\text{neg}(1)$.}, label={lst:no_diff_int}]
+rw!("comm-add";  "(+ ?x ?y)"        => "(+ ?y ?x)"),
+rw!("comm-mul";  "(* ?x ?y)"        => "(* ?y ?x)"),
+rw!("assoc-add"; "(+ ?x (+ ?y ?z))" => "(+ (+ ?x ?y) ?z)"),
+rw!("assoc-mul"; "(* ?x (* ?y ?z))" => "(* (* ?x ?y) ?z)"),	
+rw!("sub-canon"; "(- ?x ?y)" => "(+ ?x (* (neg 1) ?y))"),
+rw!("div-canon"; "(/ ?x ?y)" => "(* ?x (pow ?y (neg 1)))" if is_not_zero("?y")),
+// rw!("canon-sub"; "(+ ?x (* (neg 1) ?y))"   => "(- ?x ?y)"),
+// rw!("canon-div"; "(* ?x (pow ?y (neg 1)))" => "(/ ?x ?y)" if is_not_zero("?y")),	
+rw!("zero-add"; "(+ ?x 0)" => "?x"),
+rw!("zero-mul"; "(* ?x 0)" => "0"),
+rw!("one-mul";  "(* ?x 1)" => "?x"),	
+rw!("add-zero"; "?x" => "(+ ?x 0)"),
+rw!("mul-one";  "?x" => "(* ?x 1)"),	
+rw!("cancel-sub"; "(- ?x ?x)" => "0"),
+rw!("cancel-div"; "(/ ?x ?x)" => "1" if is_not_zero("?x")),	
+rw!("distribute"; "(* ?x (+ ?y ?z))"        => "(+ (* ?x ?y) (* ?x ?z))"),
+rw!("factor"    ; "(+ (* ?x ?y) (* ?x ?z))" => "(* ?x (+ ?y ?z))"),
+rw!("pow-mul"; "(* (pow ?x ?y) (pow ?x ?z))" => "(pow ?x (+ ?y ?z))" if is_not_zero("?x")),
+rw!("pow0"; "(pow ?x 0)" => "1" if is_not_zero("?x")),
+rw!("pow1"; "(pow ?x 1)" => "?x"),
+rw!("pow2"; "(pow ?x 2)" => "(* ?x ?x)"),
+rw!("pow-recip"; "(pow ?x (neg 1))" => "(/ 1 ?x)" if is_not_zero("?x")),
+rw!("recip-mul-div"; "(* ?x (/ 1 ?x))" => "1" if is_not_zero("?x")),
+\end{lstlisting}
+
+\newpage
+\subsection{Modified Rule Set math\_no\_diff\_int\_no\_div\_no\_pow}
+\label{app:no_diff_int_no_pow}
+\begin{lstlisting}[language=Rust, caption={Rule set \ref{app:no_diff_int} without rules containing division and power operators.}, label={lst:no_diff_int_no_div_no_pow}]
+rw!("comm-add";  "(+ ?x ?y)"        => "(+ ?y ?x)"),
+rw!("comm-mul";  "(* ?x ?y)"        => "(* ?y ?x)"),
+rw!("assoc-add"; "(+ ?x (+ ?y ?z))" => "(+ (+ ?x ?y) ?z)"),
+rw!("assoc-mul"; "(* ?x (* ?y ?z))" => "(* (* ?x ?y) ?z)"),
+rw!("sub-canon"; "(- ?x ?y)" => "(+ ?x (* (neg 1) ?y))"),
+// rw!("canon-sub"; "(+ ?x (* (neg 1) ?y))"   => "(- ?x ?y)"),
+// rw!("canon-div"; "(* ?x (pow ?y (neg 1)))" => "(/ ?x ?y)" if is_not_zero("?y")),
+rw!("zero-add"; "(+ ?x 0)" => "?x"),
+rw!("zero-mul"; "(* ?x 0)" => "0"),
+rw!("one-mul";  "(* ?x 1)" => "?x"),
+rw!("add-zero"; "?x" => "(+ ?x 0)"),
+rw!("mul-one";  "?x" => "(* ?x 1)"),
+rw!("cancel-sub"; "(- ?x ?x)" => "0"),
+rw!("distribute"; "(* ?x (+ ?y ?z))"        => "(+ (* ?x ?y) (* ?x ?z))"),
+rw!("factor"    ; "(+ (* ?x ?y) (* ?x ?z))" => "(* ?x (+ ?y ?z))"),
+\end{lstlisting}
+
+\newpage
+\subsection{Modified Rule Set math\_no\_diff\_int\_sep\_div}
+\label{app:no_diff_int_sep_div}
+\begin{lstlisting}[language=Rust, caption={Rule set \ref{app:no_diff_int} with seperately completed rules for division.}, label={lst:no_diff_int_sep_div}]
+rw!("comm-add";  "(+ ?x ?y)"        => "(+ ?y ?x)"),
+rw!("comm-mul";  "(* ?x ?y)"        => "(* ?y ?x)"),
+rw!("assoc-add"; "(+ ?x (+ ?y ?z))" => "(+ (+ ?x ?y) ?z)"),
+rw!("assoc-mul"; "(* ?x (* ?y ?z))" => "(* (* ?x ?y) ?z)"),
+rw!("sub-canon"; "(- ?x ?y)" => "(+ ?x (* (neg 1) ?y))"),
+rw!("div-canon"; "(/ ?x ?y)" => "(* ?x (pow ?y (neg 1)))" if is_not_zero("?y")),
+// rw!("canon-sub"; "(+ ?x (* (neg 1) ?y))"   => "(- ?x ?y)"),
+// rw!("canon-div"; "(* ?x (pow ?y (neg 1)))" => "(/ ?x ?y)" if is_not_zero("?y")),
+rw!("zero-add"; "(+ ?x 0)" => "?x"),
+rw!("zero-mul"; "(* ?x 0)" => "0"),
+rw!("one-mul";  "(* ?x 1)" => "?x"),
+rw!("add-zero"; "?x" => "(+ ?x 0)"),
+rw!("mul-one";  "?x" => "(* ?x 1)"),
+rw!("cancel-sub"; "(- ?x ?x)" => "0"),
+rw!("cancel-div"; "(/ ?x ?x)" => "1" if is_not_zero("?x")),
+rw!("distribute"; "(* ?x (+ ?y ?z))"        => "(+ (* ?x ?y) (* ?x ?z))"),
+rw!("factor"    ; "(+ (* ?x ?y) (* ?x ?z))" => "(* ?x (+ ?y ?z))"),
+rw!("pow-mul"; "(* (pow ?x ?y) (pow ?x ?z))" => "(pow ?x (+ ?y ?z))") if is_not_zero("?x"),
+rw!("pow0"; "(pow ?x 0)" => "1" if is_not_zero("?x")),
+rw!("pow1"; "(pow ?x 1)" => "?x"),
+rw!("pow2"; "(pow ?x 2)" => "(* ?x ?x)"),
+rw!("pow-recip"; "(pow ?x (neg 1))" => "(/ 1 ?x)" if is_not_zero("?x")),
+rw!("recip-mul-div"; "(* ?x (/ 1 ?x))" => "1" if is_not_zero("?x")),
+rw!("guarded_rule_0"; "(* ?x ?x)" => "(pow ?x 2)"),
+rw!("guarded_rule_1"; "(* ?x ?y)" => "(* ?y ?x)"),
+rw!("guarded_rule_2"; "(* ?x 1)" => "?x"),
+rw!("guarded_rule_3"; "(* 1 ?x)" => "?x"),
+rw!("guarded_rule_4"; "(/ ?x ?x)" => "1" if is_not_zero("?x")),
+rw!("guarded_rule_5"; "(/ ?x 1)" => "?x"),
+rw!("guarded_rule_6"; "(pow ?x 1)" => "?x"),
+rw!("guarded_rule_7"; "(pow 1 2)" => "1"),
+rw!("guarded_rule_8"; "(pow ?x (neg 1) )" => "(/ 1 ?x)" if is_not_zero("?x")),
+rw!("guarded_rule_9"; "(* ?x (* ?x ?y) )" => "(* (pow ?x 2) ?y)"),
+rw!("guarded_rule_10"; "(* ?x (/ ?y ?z) )" => "(/ (* ?x ?y) ?z)" if is_not_zero("?z")),
+rw!("guarded_rule_11"; "(* ?x (pow ?x ?y) )" => "(pow ?x (+ ?y 1) )" if is_not_zero("?x")),
+rw!("guarded_rule_12"; "(* ?y (* ?y ?x) )" => "(* ?x (pow ?y 2) )"),
+rw!("guarded_rule_13"; "(* ?x (* ?y ?z) )" => "(* ?y (* ?x ?z) )"),
+rw!("guarded_rule_14"; "(* (* ?x ?y) ?z)" => "(* ?x (* ?y ?z) )"),
+rw!("guarded_rule_15"; "(* (/ ?x ?y) ?z)" => "(/ (* ?x ?z) ?y)" if is_not_zero("?y")),
+rw!("guarded_rule_16"; "(/ ?x (/ ?x ?y) )" => "?y" if is_not_zero("?y") if is_not_zero("?x")),
+rw!("guarded_rule_17"; "(/ (* ?x ?y) ?y)" => "?x" if is_not_zero("?y")),
+rw!("guarded_rule_18"; "(/ (/ ?x ?y) ?x)" => "(/ 1 ?y)" if is_not_zero("?x") if is_not_zero("?y")),
+rw!("guarded_rule_19"; "(/ (/ ?x ?y) ?z)" => "(/ (/ ?x ?z) ?y)" if is_not_zero("?z") if is_not_zero("?y")),
+rw!("guarded_rule_20"; "(/ (/ 1 ?x) ?x)" => "(pow (/ 1 ?x) 2)" if is_not_zero("?x")),
+rw!("guarded_rule_21"; "(/ (pow ?x 2) ?x)" => "?x" if is_not_zero("?x")),
+rw!("guarded_rule_22"; "(pow ?x (+ ?y ?y) )" => "(pow (pow ?x ?y) 2)" if is_not_zero("?x")),
+rw!("guarded_rule_23"; "(pow ?x (+ 1 1) )" => "(pow ?x 2)"),
+rw!("guarded_rule_24"; "(pow ?x (+ ?y ?z) )" => "(pow ?x (+ ?z ?y) )"),
+rw!("guarded_rule_25"; "(pow 1 (+ ?x 1) )" => "(pow 1 ?x)"),
+rw!("guarded_rule_26"; "(pow 1 (+ ?x 2) )" => "(pow 1 ?x)"),
+rw!("guarded_rule_27"; "(* (pow ?x ?y) (pow ?x ?z) )" => "(pow ?x (+ ?y ?z) )" if is_not_zero("?x")),
+\end{lstlisting}
+
+\newpage
+\subsection{Modified Rule Set math\_no\_diff\_int\_sep\_div\_plus}
+\label{app:no_diff_int_sep_div_plus}
+\begin{lstlisting}[language=Rust, caption={Rule set \ref{app:no_diff_int_sep_div} with seperately completed rules for division, including intermediate rules deleted during completion.}, label={lst:no_diff_int_sep_div_plus}]
+rw!("comm-add";  "(+ ?x ?y)"        => "(+ ?y ?x)"),
+rw!("comm-mul";  "(* ?x ?y)"        => "(* ?y ?x)"),
+rw!("assoc-add"; "(+ ?x (+ ?y ?z))" => "(+ (+ ?x ?y) ?z)"),
+rw!("assoc-mul"; "(* ?x (* ?y ?z))" => "(* (* ?x ?y) ?z)"),
+rw!("sub-canon"; "(- ?x ?y)" => "(+ ?x (* (neg 1) ?y))"),
+rw!("div-canon"; "(/ ?x ?y)" => "(* ?x (pow ?y (neg 1)))" if is_not_zero("?y")),
+// rw!("canon-sub"; "(+ ?x (* (neg 1) ?y))"   => "(- ?x ?y)"),
+// rw!("canon-div"; "(* ?x (pow ?y (neg 1)))" => "(/ ?x ?y)" if is_not_zero("?y")),
+rw!("zero-add"; "(+ ?x 0)" => "?x"),
+rw!("zero-mul"; "(* ?x 0)" => "0"),
+rw!("one-mul";  "(* ?x 1)" => "?x"),
+rw!("add-zero"; "?x" => "(+ ?x 0)"),
+rw!("mul-one";  "?x" => "(* ?x 1)"),
+rw!("cancel-sub"; "(- ?x ?x)" => "0"),
+rw!("cancel-div"; "(/ ?x ?x)" => "1" if is_not_zero("?x")),
+rw!("distribute"; "(* ?x (+ ?y ?z))"        => "(+ (* ?x ?y) (* ?x ?z))"),
+rw!("factor"    ; "(+ (* ?x ?y) (* ?x ?z))" => "(* ?x (+ ?y ?z))"),
+rw!("pow-mul"; "(* (pow ?x ?y) (pow ?x ?z))" => "(pow ?x (+ ?y ?z))") if is_not_zero("?x"),
+rw!("pow0"; "(pow ?x 0)" => "1" if is_not_zero("?x")),
+rw!("pow1"; "(pow ?x 1)" => "?x"),
+rw!("pow2"; "(pow ?x 2)" => "(* ?x ?x)"),
+rw!("pow-recip"; "(pow ?x (neg 1))" => "(/ 1 ?x)" if is_not_zero("?x")),
+rw!("recip-mul-div"; "(* ?x (/ 1 ?x))" => "1" if is_not_zero("?x")),
+rw!("guarded_rule_0"; "(/ ?x ?x)" => "1" if is_not_zero("?x")),
+rw!("guarded_rule_1"; "(pow ?x 1)" => "?x"),
+rw!("guarded_rule_2"; "(pow ?x (neg 1))" => "(/ 1 ?x)" if is_not_zero("?x")),
+rw!("guarded_rule_3"; "(* ?x ?x)" => "(pow ?x 2)"),
+rw!("guarded_rule_4"; "(* ?x ?y)" => "(* ?y ?x)"),
+rw!("guarded_rule_5"; "(* ?x 1)" => "?x"),
+rw!("guarded_rule_6"; "(* ?x (/ 1 ?x) )" => "1" if is_not_zero("?x")),
+rw!("guarded_rule_7"; "(* ?x (/ 1 ?y) )" => "(/ ?x ?y)" if is_not_zero("?y")),
+rw!("guarded_rule_8"; "(* (* ?x ?y) ?z)" => "(* ?x (* ?y ?z) )"),
+rw!("guarded_rule_9"; "(* (pow ?x ?y) (pow ?x ?z) )" => "(pow ?x (+ ?y ?z) )" if is_not_zero("?x")),
+rw!("guarded_rule_10"; "(* 1 ?x)" => "?x"),
+rw!("guarded_rule_11"; "(/ ?x 1)" => "?x"),
+rw!("guarded_rule_12"; "(pow 1 2)" => "1"),
+rw!("guarded_rule_13"; "(* (/ 1 ?x) ?y)" => "(/ ?y ?x)" if is_not_zero("?x")),
+rw!("guarded_rule_14"; "(* ?x (* ?y ?z) )" => "(* ?y (* ?x ?z) )"),
+rw!("guarded_rule_15"; "(* ?x (/ ?y ?x) )" => "?y" if is_not_zero("?x")),
+rw!("guarded_rule_16"; "(* ?x (/ ?y ?z) )" => "(/ (* ?x ?y) ?z)" if is_not_zero("?z")),
+rw!("guarded_rule_17"; "(/ (* ?x ?y) ?x)" => "?y" if is_not_zero("?x")),
+rw!("guarded_rule_18"; "(pow ?x (+ ?y ?z) )" => "(pow ?x (+ ?z ?y) )"),
+rw!("guarded_rule_20"; "(/ (pow ?x 2) ?x)" => "?x" if is_not_zero("?x")),
+rw!("guarded_rule_21"; "(* ?x (pow ?x ?y) )" => "(pow ?x (+ ?y 1) )" if is_not_zero("?x")),
+rw!("guarded_rule_22"; "(pow 1 (+ 2 1) )" => "1"),
+rw!("guarded_rule_24"; "(pow 1 (+ 2 2) )" => "1"),
+rw!("guarded_rule_25"; "(/ (* ?x ?y) ?y)" => "?x" if is_not_zero("?y")),
+rw!("guarded_rule_27"; "(pow 1 (+ ?x 2) )" => "(pow 1 ?x)"),
+rw!("guarded_rule_28"; "(pow ?x (+ 1 1) )" => "(pow ?x 2)"),
+rw!("guarded_rule_29"; "(pow 1 (+ ?x 1) )" => "(pow 1 ?x)"),
+rw!("guarded_rule_30"; "(* (/ ?x ?y) ?z)" => "(/ (* ?x ?z) ?y)" if is_not_zero("?y")),
+rw!("guarded_rule_31"; "(/ (/ ?x ?y) ?z)" => "(/ (/ ?x ?z) ?y)" if is_not_zero("?y") if is_not_zero("?z")),
+rw!("guarded_rule_33"; "(/ (/ ?x ?y) ?x)" => "(/ 1 ?y)" if is_not_zero("?y") if is_not_zero("?x")),
+rw!("guarded_rule_35"; "(/ ?x (/ ?x ?y) )" => "?y" if is_not_zero("?x") if is_not_zero("?y")),
+\end{lstlisting}
+
+\newpage
+\section{Test Data Tables}
+\label{app:data}
+
+\begin{table}[h!]
+	\centering
+	\caption{EqSat simplification effectiveness by postprocessing on test sets with 25 binary operators. Higher values indicate more effective simplification. Data for Fig.~\ref{fig:eqsat_postprocess_comparison}.}
+	\label{tab:eqsat_postprocessing}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{l l r r r r r r r r r}
+			\toprule
+			\textbf{Configuration} & \textbf{Test Set} & \textbf{0.0001 s} & \textbf{0.0005 s} & \textbf{0.001 s} & \textbf{0.005 s} & \textbf{0.01 s} & \textbf{0.05 s} & \textbf{0.1 s} & \textbf{0.5 s} & \textbf{1 s} \\
+			\midrule
+			EqSat\_KBC\_150\_extended & random\_terms\_huge & 14.344 & 15.776 & 21.120 & 24.040 & 24.400 & 24.728 & 24.744 & 24.832 & 24.832 \\
+			EqSat\_KBC\_150\_extended\_no\_unorderable & random\_terms\_huge & 14.864 & 21.088 & 22.040 & 24.376 & 24.608 & 24.736 & 24.768 & 24.816 & 24.832 \\
+			EqSat\_KBC\_150 & random\_terms\_huge & 14.192 & 19.232 & 19.888 & 20.152 & 20.168 & 20.192 & 20.192 & 20.200 & 20.200 \\
+			EqSat\_KBC\_150\_no\_unorderable & random\_terms\_huge & 15.928 & 19.824 & 19.968 & 20.072 & 20.088 & 20.088 & 20.112 & 20.120 & 20.120 \\
+			EqSat\_no\_div\_no\_pow\_KBC\_100\_extended & no\_div\_no\_pow\_random\_terms\_huge & 18.664 & 21.232 & 26.768 & 30.472 & 30.840 & 32.536 & 32.632 & 33.064 & 33.208 \\
+			EqSat\_no\_div\_no\_pow\_KBC\_100\_extended\_no\_unorderable & no\_div\_no\_pow\_random\_terms\_huge & 18.952 & 26.448 & 26.880 & 30.584 & 31.600 & 32.488 & 32.720 & 33.056 & 33.248 \\
+			EqSat\_no\_div\_no\_pow\_KBC\_100 & no\_div\_no\_pow\_random\_terms\_huge & 18.024 & 26.032 & 28.752 & 31.152 & 31.688 & 32.608 & 32.840 & 33.128 & 33.184 \\
+			EqSat\_no\_div\_no\_pow\_KBC\_100\_no\_unorderable & no\_div\_no\_pow\_random\_terms\_huge & 18.536 & 28.192 & 29.368 & 31.168 & 31.488 & 32.064 & 32.128 & 32.288 & 32.352 \\
+			\bottomrule
+	\end{tabular}}
+\end{table}
+
+\begin{table}[h!]
+	\centering
+	\caption{EqSat simplification effectiveness by rule set size on test sets with 25 binary operators. Higher values indicate more effective simplification. Data for Fig.~\ref{fig:eqsat_by_rule_num}.}
+	\label{tab:eqsat_rule_number}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{l l r r r r r r r r r}
+			\toprule
+			\textbf{Configuration} & \textbf{Test Set} & \textbf{0.0001 s} & \textbf{0.0005 s} & \textbf{0.001 s} & \textbf{0.005 s} & \textbf{0.01 s} & \textbf{0.05 s} & \textbf{0.1 s} & \textbf{0.5 s} & \textbf{1 s} \\
+			\midrule
+			EqSat\_KBC\_100 & random\_terms\_huge & 14.520 & 19.592 & 19.840 & 19.936 & 19.936 & 19.944 & 19.944 & 19.944 & 19.944 \\
+			EqSat\_KBC\_150 & random\_terms\_huge & 14.192 & 19.232 & 19.888 & 20.152 & 20.168 & 20.192 & 20.192 & 20.200 & 20.200 \\
+			EqSat\_KBC\_200 & random\_terms\_huge & 11.000 & 18.800 & 19.608 & 20.104 & 20.176 & 20.200 & 20.216 & 20.216 & 20.216 \\
+			EqSat\_KBC\_40 & random\_terms\_huge & 18.032 & 18.920 & 18.952 & 18.952 & 18.952 & 18.952 & 18.952 & 18.952 & 18.952 \\
+			EqSat\_KBC\_100\_extended & random\_terms\_huge & 14.888 & 21.016 & 21.744 & 24.360 & 24.600 & 24.752 & 24.784 & 24.808 & 24.816 \\
+			EqSat\_KBC\_150\_extended & random\_terms\_huge & 14.344 & 15.776 & 21.120 & 24.040 & 24.400 & 24.728 & 24.744 & 24.832 & 24.832 \\
+			EqSat\_KBC\_200\_extended & random\_terms\_huge & 8.928 & 14.904 & 20.480 & 23.320 & 24.112 & 24.624 & 24.696 & 24.800 & 24.832 \\
+			EqSat\_KBC\_40\_extended & random\_terms\_huge & 14.832 & 21.272 & 23.184 & 24.464 & 24.592 & 24.744 & 24.784 & 24.816 & 24.816 \\
+			\bottomrule
+	\end{tabular}}
+\end{table}
+
+\begin{table}[h!]
+	\centering
+	\caption{EqSat simplification effectiveness for small terms (1–3 binary operators).  
+		Higher values indicate more effective simplification.
+		Data for Figure~\ref{fig:eqsat_small_comparison}.}
+	\label{tab:eqsat_small_comparison}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{l l r r r r r r r r r}
+			\toprule
+			\textbf{Configuration} & \textbf{Test Set} & \textbf{0.0001 s} & \textbf{0.0005 s} & \textbf{0.001 s} & \textbf{0.005 s} & \textbf{0.01 s} & \textbf{0.05 s} & \textbf{0.1 s} & \textbf{0.5 s} & \textbf{1 s} \\
+			\midrule
+			EqSat\_no\_div\_no\_pow & no\_div\_no\_pow\_random\_terms\_small & 3.322 & 3.664 & 3.668 & 3.668 & 3.668 & 3.668 & 3.668 & 3.668 & 3.668 \\
+			EqSat\_no\_div\_no\_pow\_KBC\_100\_extended & no\_div\_no\_pow\_random\_terms\_small & 3.256 & 3.772 & 3.828 & 3.856 & 3.856 & 3.856 & 3.856 & 3.856 & 3.856 \\
+			EqSat\_no\_div\_no\_pow\_KBC\_100\_extended\_no\_unorderable & no\_div\_no\_pow\_random\_terms\_small & 3.464 & 3.826 & 3.854 & 3.856 & 3.856 & 3.856 & 3.856 & 3.856 & 3.856 \\
+			EqSat\_no\_div\_no\_pow\_KBC\_100 & no\_div\_no\_pow\_random\_terms\_small & 3.650 & 3.814 & 3.816 & 3.816 & 3.816 & 3.816 & 3.816 & 3.816 & 3.816 \\
+			EqSat\_no\_div\_no\_pow\_KBC\_100\_no\_unorderable & no\_div\_no\_pow\_random\_terms\_small & 3.738 & 3.762 & 3.762 & 3.762 & 3.762 & 3.762 & 3.762 & 3.762 & 3.762 \\
+			\midrule
+			EqSat\_base & random\_terms\_small & 2.632 & 2.810 & 2.810 & 2.810 & 2.810 & 2.810 & 2.810 & 2.810 & 2.810 \\
+			EqSat\_KBC\_150\_extended\_no\_unorderable & random\_terms\_small & 2.636 & 2.870 & 2.902 & 2.908 & 2.908 & 2.908 & 2.908 & 2.908 & 2.908 \\
+			EqSat\_sep\_div\_KBC\_150\_extended\_no\_unorderable & random\_terms\_small & 2.756 & 2.926 & 2.936 & 2.940 & 2.940 & 2.940 & 2.940 & 2.940 & 2.940 \\
+			EqSat\_sep\_div\_plus\_KBC\_150\_extended\_no\_unorderable & random\_terms\_small & 2.776 & 2.932 & 2.938 & 2.940 & 2.940 & 2.940 & 2.940 & 2.940 & 2.940 \\
+			\bottomrule
+	\end{tabular}}
+\end{table}
+
+\begin{table}[h!]
+	\centering
+	\caption{EqSat simplification effectiveness for large terms (10 binary operators).  
+		Higher values indicate more effective simplification.
+		Data for Figure~\ref{fig:eqsat_large_comparison}.}
+	\label{tab:eqsat_large_comparison}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{l l r r r r r r r r r}
+			\toprule
+			\textbf{Configuration} & \textbf{Test Set} & \textbf{0.0001 s} & \textbf{0.0005 s} & \textbf{0.001 s} & \textbf{0.005 s} & \textbf{0.01 s} & \textbf{0.05 s} & \textbf{0.1 s} & \textbf{0.5 s} & \textbf{1 s} \\
+			\midrule
+			EqSat\_no\_div\_no\_pow & no\_div\_no\_pow\_random\_terms\_large & 9.536 & 11.772 & 12.456 & 13.376 & 13.508 & 13.572 & 13.588 & 13.608 & 13.608 \\
+			EqSat\_no\_div\_no\_pow\_KBC\_100\_extended & no\_div\_no\_pow\_random\_terms\_large & 8.824 & 11.428 & 12.160 & 13.688 & 13.972 & 14.100 & 14.108 & 14.132 & 14.132 \\
+			EqSat\_no\_div\_no\_pow\_KBC\_100\_extended\_no\_unorderable & no\_div\_no\_pow\_random\_terms\_large & 8.816 & 11.856 & 13.128 & 13.860 & 13.996 & 14.092 & 14.104 & 14.128 & 14.132 \\
+			EqSat\_no\_div\_no\_pow\_KBC\_100 & no\_div\_no\_pow\_random\_terms\_large & 9.308 & 12.644 & 13.392 & 13.960 & 14.032 & 14.104 & 14.108 & 14.120 & 14.124 \\
+			EqSat\_no\_div\_no\_pow\_KBC\_100\_no\_unorderable & no\_div\_no\_pow\_random\_terms\_large & 10.872 & 13.028 & 13.392 & 13.680 & 13.720 & 13.744 & 13.752 & 13.764 & 13.764 \\
+			\midrule
+			EqSat\_base & random\_terms\_large & 7.332 & 9.372 & 9.584 & 9.728 & 9.728 & 9.728 & 9.728 & 9.728 & 9.728 \\
+			EqSat\_KBC\_150\_extended\_no\_unorderable & random\_terms\_large & 6.852 & 9.464 & 9.940 & 10.284 & 10.300 & 10.324 & 10.324 & 10.324 & 10.324 \\
+			EqSat\_sep\_div\_KBC\_150\_extended\_no\_unorderable & random\_terms\_large & 7.280 & 9.756 & 10.196 & 10.448 & 10.452 & 10.460 & 10.460 & 10.460 & 10.460 \\
+			EqSat\_sep\_div\_plus\_KBC\_150\_extended\_no\_unorderable & random\_terms\_large & 8.144 & 9.816 & 10.224 & 10.448 & 10.452 & 10.460 & 10.460 & 10.460 & 10.460 \\
+			\bottomrule
+	\end{tabular}}
+\end{table}
+
+\begin{table}[h!]
+	\centering
+	\caption{EqSat simplification effectiveness for huge terms (25 binary operators). 
+		Higher values indicate more effective simplification.
+		Data underlying Figure~\ref{fig:eqsat_huge_comparison}. }
+	\label{tab:eqsat_huge_comparison}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{l l r r r r r r r r r}
+			\toprule
+			\textbf{Configuration} & \textbf{Test Set} & \textbf{0.0001 s} & \textbf{0.0005 s} & \textbf{0.001 s} & \textbf{0.005 s} & \textbf{0.01 s} & \textbf{0.05 s} & \textbf{0.1 s} & \textbf{0.5 s} & \textbf{1 s} \\
+			\midrule
+			EqSat\_no\_div\_no\_pow & no\_div\_no\_pow\_random\_terms\_huge & 16.008 & 25.888 & 26.984 & 29.488 & 30.224 & 31.184 & 31.416 & 31.800 & 31.824 \\
+			EqSat\_no\_div\_no\_pow\_KBC\_100\_extended & no\_div\_no\_pow\_random\_terms\_huge & 18.664 & 21.232 & 26.768 & 30.472 & 30.840 & 32.536 & 32.632 & 33.064 & 33.208 \\
+			EqSat\_no\_div\_no\_pow\_KBC\_100\_extended\_no\_unorderable & no\_div\_no\_pow\_random\_terms\_huge & 18.952 & 26.448 & 26.880 & 30.584 & 31.600 & 32.488 & 32.720 & 33.056 & 33.248 \\
+			EqSat\_no\_div\_no\_pow\_KBC\_100 & no\_div\_no\_pow\_random\_terms\_huge & 18.024 & 26.032 & 28.752 & 31.152 & 31.688 & 32.608 & 32.840 & 33.128 & 33.184 \\
+			EqSat\_no\_div\_no\_pow\_KBC\_100\_no\_unorderable & no\_div\_no\_pow\_random\_terms\_huge & 18.536 & 28.192 & 29.368 & 31.168 & 31.488 & 32.064 & 32.128 & 32.288 & 32.352 \\
+			\midrule
+			EqSat\_base & random\_terms\_huge & 13.560 & 21.416 & 22.512 & 23.240 & 23.376 & 23.408 & 23.424 & 23.448 & 23.448 \\
+			EqSat\_KBC\_150\_extended\_no\_unorderable & random\_terms\_huge & 14.864 & 21.088 & 22.040 & 24.376 & 24.608 & 24.736 & 24.768 & 24.816 & 24.832 \\
+			EqSat\_sep\_div\_KBC\_150\_extended\_no\_unorderable & random\_terms\_huge & 15.752 & 22.256 & 22.784 & 24.784 & 24.936 & 25.080 & 25.080 & 25.088 & 25.104 \\
+			EqSat\_sep\_div\_plus\_KBC\_150\_extended\_no\_unorderable & random\_terms\_huge & 17.056 & 22.728 & 23.232 & 24.808 & 24.912 & 25.056 & 25.056 & 25.064 & -- \\
+			\bottomrule
+	\end{tabular}}
+\end{table}
+
+\begin{table}[h!]
+	\centering
+	\caption{Greedy rewriting simplification effectiveness for huge terms (25 binary operators).  
+		Higher values indicate more effective simplification.
+		Data for Figure~\ref{fig:greedy_comparison}.}
+	\label{tab:greedy_comparison}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{l l r r r r r r r r}
+			\toprule
+			\textbf{Configuration} & \textbf{Test Set} & \textbf{0.0001 s} & \textbf{0.0005 s} & \textbf{0.001 s} & \textbf{0.005 s} & \textbf{0.01 s} & \textbf{0.05 s} & \textbf{0.1 s} & \textbf{0.5 s} \\
+			\midrule
+			greedy\_no\_div\_no\_pow\_KBC & no\_div\_no\_pow\_random\_terms\_huge & 22.712 & 24.240 & 24.360 & 24.448 & 24.840 & 25.000 & 25.376 & 25.432 \\
+			greedy\_no\_div\_no\_pow\_KBC\_no\_unorderable & no\_div\_no\_pow\_random\_terms\_huge & 22.696 & 24.264 & 24.440 & 24.496 & 24.880 & 25.104 & 25.360 & 25.408 \\
+			greedy\_no\_div\_no\_pow & no\_div\_no\_pow\_random\_terms\_huge & 17.472 & 17.472 & 17.472 & 17.472 & 17.472 & 17.472 & 17.472 & 17.472 \\
+			\midrule
+			greedy\_KBC & random\_terms\_huge & 17.136 & 17.304 & 17.272 & 17.496 & 17.752 & 17.768 & 17.816 & 17.808 \\
+			greedy\_KBC\_no\_unorderable & random\_terms\_huge & 17.136 & 17.304 & 17.272 & 17.456 & 17.456 & 17.720 & 17.784 & 17.816 \\
+			greedy\_base & random\_terms\_huge & 14.472 & 14.472 & 14.472 & 14.472 & 14.472 & 14.472 & 14.472 & 14.472 \\
+			\bottomrule
+	\end{tabular}}
+\end{table}
+
+
+\FloatBarrier
+\section{EqSat Output Examples}
+\label{app:eqsat_examples}
+\begin{table}[h]
+	\centering
+	\caption{Example EqSat simplification results for individual terms. Simplification time was provided directly by \texttt{egg} \citep{Willsey_2021}.}
+	\label{tab:eqsat_example_terms}
+	\begin{tabular}{l l l r r r}
+		\toprule
+		\textbf{Configuration} & \textbf{Input} & \textbf{Simplified} & \textbf{L} & \textbf{S} & \textbf{I} \\
+		\midrule
+		EqSat\_base & \texttt{(- a (+ (pow a 1) a))} & \texttt{(* a -1)} & 0.01 & 0.0281 & 11 \\
+		EqSat\_base & \texttt{(* a (+ (- -1 a) a))} & \texttt{(* a -1)} & 0.10 & 0.3803 & 9 \\
+		EqSat\_base & \texttt{(+ a (- (pow a -1) a))} & \texttt{(/ 1 a)} & 1.00 & 3.2423 & 14 \\
+		\bottomrule
+	\end{tabular}
+	
+	\vspace{2mm}
+	\raggedright
+	\footnotesize
+	\textbf{Legend:}
+	L = Time limit [s]; 
+	S = Simplification time [s]; 
+	I = Number of iterations performed by EqSat. 
+	The \texttt{Input} and \texttt{Simplified} columns show terms in \texttt{egg}-compatible syntax.
+\end{table}
+
+\newpage
+\section{Declaration of the Usage of Generative AI}
+
+Generative AI, namely ChatGPT and Github Copilot were used during the writing of this thesis. Both tools were used in the conventional manner and scope to develop and edit source code and written text. 
+
+Source code in which generative AI produced any logic is marked accordingly with code comments.
+\newpage

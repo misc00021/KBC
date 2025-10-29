@@ -1,0 +1,30 @@
+\chapter{Introduction}
+\label{chap:introduction}
+
+The effectiveness of program optimization depends not only on the type of optimizations applied, but also on the order in which they are applied. This is generally known as the \emph{phase ordering problem} and represents a major challenge when designing optimizing compilers. 
+
+To solve this problem, \emph{equality saturation} (EqSat)~\cite{Tate_2011, Willsey_2021} was introduced. By transforming programs within e-graphs, a special data structure that maintains equivalence classes of programs, EqSat explores the search space of candidate programs systematically, rather than applying transformations sequentially.
+
+While EqSat has proven to be an effective optimization framework in specific applications, its feasibility and performance rely heavily on the rewrite rules used to derive equivalent programs. The rule sets are typically handcrafted to balance the trade-off between enabling a deep search space to include as many promising candidate programs as possible and limiting the growth of the e-graph from unproductive rules. Designing such rule sets, therefore, requires strong domain knowledge and intuition, or extensive testing.
+
+Automatically generating rewrite rules that fit the requirements of EqSat could therefore improve the effectiveness of the technique and also enable its use on complex domains. Currently, little is known about the properties of effective rule sets for EqSat, and the available tools and techniques for this purpose are limited.
+
+This work evaluates \emph{Knuth-Bendix completion} (KBC)~\citep{10.1093/comjnl/34.1.2}, a technique which has been used successfully in automated theorem proving, as a tool for generating rewrite rules used in program optimization. 
+
+To this end, we develop different ways to generate rule sets using KBC based on an initial set, obtained from the test suite of \texttt{egg}~\cite{Willsey_2021}, a popular implementation of EqSat. We also provide a prototype of a rewriting engine specialized for greedy rewriting with KBC-generated rule sets.
+
+We then conduct a series of tests, applying EqSat and greedy rewriting to randomly generated test terms from arithmetic.
+
+The evaluation shows that incorporating KBC-generated rules can improve the effectiveness of EqSat in terms of running time and overall simplification of input terms, compared to the purely handwritten rules. It also reveals that greedy rewriting does not achieve the same level of simplification effectiveness as EqSat under the given conditions, but is much more resource-efficient.
+
+\needspace{10\baselineskip}
+In summary, the contributions of this work are:
+\begin{itemize}
+	\item Development of different ways to generate rule sets for optimization using KBC (section~\ref{sec:rule-generation}).
+	\item Development of a prototype for greedy rewriting using KBC-generated rule sets (section~\ref{sec:greedy}).
+	\item Experimental evaluation of KBC-generated rule sets to answer the following research questions (chapter \ref{chap:results}):
+	\begin{enumerate}
+		\item Do KBC-generated rule sets improve equality saturation in terms of simplification effectiveness and running time, compared to handwritten rules?
+		\item Do KBC-generated rule sets enable greedy rewriting as a viable alternative to equality saturation in scenarios where minimizing running time and memory usage is essential?
+	\end{enumerate}
+\end{itemize}

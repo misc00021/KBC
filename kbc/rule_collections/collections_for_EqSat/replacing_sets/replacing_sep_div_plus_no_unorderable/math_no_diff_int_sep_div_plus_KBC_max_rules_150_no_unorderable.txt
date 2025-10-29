@@ -1,0 +1,120 @@
+
+rw!("rule_1"; "(+ ?x ?y)" => "(+ ?y ?x)"),
+rw!("rule_2"; "(+ ?x 0)" => "?x"),
+rw!("rule_3"; "(+ 0 ?x)" => "?x"),
+rw!("rule_4"; "(* ?x ?x)" => "(pow ?x 2)"),
+rw!("rule_5"; "(* ?x ?y)" => "(* ?y ?x)"),
+rw!("rule_6"; "(* ?x 1)" => "?x"),
+rw!("rule_7"; "(* ?x 0)" => "0"),
+rw!("rule_8"; "(* 1 ?x)" => "?x"),
+rw!("rule_9"; "(* 0 ?x)" => "0"),
+rw!("rule_10"; "(- ?x ?x)" => "0"),
+rw!("rule_11"; "(- ?x 0)" => "?x"),
+rw!("rule_12"; "(- 0 1)" => "-1"),
+rw!("rule_13"; "(pow ?x 1)" => "?x"),
+rw!("rule_14"; "(pow 1 0)" => "1"),
+rw!("rule_15"; "(pow 1 2)" => "1"),
+rw!("rule_16"; "(pow 0 2)" => "0"),
+rw!("rule_17"; "(/ ?x 1)" => "?x"),
+rw!("rule_18"; "(+ ?x -1 )" => "(- ?x 1)"),
+rw!("rule_19"; "(+ -1 ?x)" => "(- ?x 1)"),
+rw!("rule_20"; "(* ?x -1 )" => "(- 0 ?x)"),
+rw!("rule_21"; "(* -1 ?x)" => "(- 0 ?x)"),
+rw!("rule_22"; "(- ?x -1 )" => "(+ ?x 1)"),
+rw!("rule_23"; "(pow 1 -1 )" => "1"),
+rw!("rule_24"; "(pow -1 2)" => "1"),
+rw!("rule_25"; "(+ ?x (+ ?y ?z) )" => "(+ ?y (+ ?x ?z) )"),
+
+rw!("rule_27"; "(+ ?x (- ?y ?z) )" => "(- (+ ?x ?y) ?z)"),
+rw!("rule_28"; "(+ (+ ?x ?y) ?z)" => "(+ ?x (+ ?y ?z) )"),
+rw!("rule_29"; "(+ (- ?x ?y) ?z)" => "(- (+ ?x ?z) ?y)"),
+
+
+
+rw!("rule_33"; "(* ?x (+ 1 ?x) )" => "(+ ?x (pow ?x 2) )"),
+
+
+
+rw!("rule_37"; "(* ?x (* ?y ?z) )" => "(* ?y (* ?x ?z) )"),
+rw!("rule_38"; "(* ?x (- ?x 1) )" => "(- (pow ?x 2) ?x)"),
+
+rw!("rule_40"; "(* ?x (- 1 ?x) )" => "(- ?x (pow ?x 2) )"),
+
+rw!("rule_42"; "(* ?x (- 0 ?y) )" => "(- 0 (* ?x ?y) )"),
+
+
+
+
+rw!("rule_47"; "(* (* ?x ?y) ?z)" => "(* ?x (* ?y ?z) )"),
+
+
+rw!("rule_50"; "(* (- 0 ?x) ?y)" => "(- 0 (* ?x ?y) )"),
+rw!("rule_51"; "(- ?x (+ ?y ?x) )" => "(- 0 ?y)"),
+
+rw!("rule_53"; "(- ?x (- ?x ?y) )" => "?y"),
+rw!("rule_54"; "(- ?x (- 0 ?y) )" => "(+ ?x ?y)"),
+
+rw!("rule_56"; "(- 0 (+ ?x 1) )" => "(- -1 ?x)"),
+rw!("rule_57"; "(- 0 (+ 1 ?x) )" => "(- -1 ?x)"),
+rw!("rule_58"; "(- 0 (- ?x ?y) )" => "(- ?y ?x)"),
+rw!("rule_59"; "(- (+ ?x ?y) ?y)" => "?x"),
+rw!("rule_60"; "(- (+ ?x 1) ?y)" => "(- ?x (- ?y 1) )"),
+rw!("rule_61"; "(- (+ 1 ?x) ?y)" => "(- ?x (- ?y 1) )"),
+rw!("rule_62"; "(- (- ?x ?y) ?z)" => "(- ?x (+ ?y ?z) )"),
+rw!("rule_63"; "(pow ?x (+ 1 1) )" => "(pow ?x 2)"),
+rw!("rule_64"; "(pow 1 (+ ?x 1) )" => "(pow 1 ?x)"),
+rw!("rule_65"; "(pow 1 (+ ?x 2) )" => "(pow 1 ?x)"),
+rw!("rule_66"; "(pow 1 (+ 1 ?x) )" => "(pow 1 ?x)"),
+rw!("rule_67"; "(pow 1 (+ 2 ?x) )" => "(pow 1 ?x)"),
+rw!("rule_68"; "(pow 1 (- ?x 1) )" => "(pow 1 ?x)"),
+rw!("rule_69"; "(pow 1 (- 1 ?x) )" => "(pow 1 (- 0 ?x) )"),
+rw!("rule_70"; "(pow 1 (- 0 2) )" => "1"),
+rw!("rule_71"; "(pow 1 (- 2 ?x) )" => "(pow 1 (- 0 ?x) )"),
+
+rw!("rule_73"; "(pow (- 0 ?x) 2)" => "(pow ?x 2)"),
+
+
+rw!("rule_76"; "(- ?x (- -1 1) )" => "(+ ?x (+ 1 1) )"),
+rw!("rule_77"; "(- -1 (- ?x 1) )" => "(- 0 ?x)"),
+rw!("rule_78"; "(pow 1 (- -1 2) )" => "1"),
+rw!("rule_79"; "(+ (* ?x ?y) (* ?x ?z) )" => "(* ?x (+ ?y ?z) )"),
+rw!("rule_80"; "(+ (* ?x ?y) (* ?y ?z) )" => "(* ?y (+ ?x ?z) )"),
+rw!("rule_81"; "(+ (* ?x ?y) (* ?z ?y) )" => "(* ?y (+ ?x ?z) )"),
+rw!("rule_82"; "(+ (pow ?x 2) (* ?y ?x) )" => "(* ?x (+ ?x ?y) )"),
+rw!("rule_83"; "(* ?x (* ?x (pow ?x 2) ) )" => "(pow (pow ?x 2) 2)"),
+rw!("rule_84"; "(* ?x (* ?x (pow ?y 2) ) )" => "(pow (* ?x ?y) 2)"),
+rw!("rule_85"; "(* ?x (* (pow ?y 2) ?x) )" => "(pow (* ?x ?y) 2)"),
+rw!("rule_86"; "(- (+ ?x ?y) (+ ?x ?z) )" => "(- ?y ?z)"),
+rw!("rule_87"; "(- (+ ?x (+ ?y ?z) ) ?y)" => "(+ ?x ?z)"),
+rw!("rule_88"; "(- (* ?x (+ ?y 1) ) ?x)" => "(* ?x ?y)"),
+rw!("rule_89"; "(- (* ?x (+ 1 ?y) ) ?x)" => "(* ?x ?y)"),
+rw!("rule_90"; "(- (* (+ ?x 1) ?y) ?y)" => "(* ?x ?y)"),
+rw!("rule_91"; "(pow 1 (+ ?x (+ ?y 1) ) )" => "(pow 1 (+ ?x ?y) )"),
+rw!("rule_92"; "(pow 1 (+ ?x (+ ?y 2) ) )" => "(pow 1 (+ ?x ?y) )"),
+rw!("rule_93"; "(pow 1 (+ ?x (+ 1 ?y) ) )" => "(pow 1 (+ ?x ?y) )"),
+rw!("rule_94"; "(pow 1 (+ ?x (+ 2 ?y) ) )" => "(pow 1 (+ ?x ?y) )"),
+rw!("rule_95"; "(pow 1 (- (+ ?x 2) ?y) )" => "(pow 1 (- ?x ?y) )"),
+
+rw!("rule_97"; "(pow ?x 0)" => "1" if is_not_zero("?x")),
+rw!("rule_98"; "(/ ?x ?x)" => "1" if is_not_zero("?x")),
+rw!("rule_99"; "(/ 0 ?x)" => "0" if is_not_zero("?x")),
+
+
+
+rw!("rule_103"; "(pow ?x -1)" => "(/ 1 ?x)" if is_not_zero("?x")),
+
+rw!("rule_105"; "(* ?x (/ ?y ?x) )" => "?y" if is_not_zero("?x")),
+rw!("rule_106"; "(/ (* ?x ?y) ?x)" => "?y" if is_not_zero("?x")),
+rw!("rule_107"; "(/ (* ?y ?x) ?x)" => "?y" if is_not_zero("?x")),
+rw!("rule_108"; "(/ (pow ?x 2) ?x)" => "?x" if is_not_zero("?x")),
+rw!("rule_109"; "(pow ?x -1 )" => "(/ 1 ?x)" if is_not_zero("?x")),
+rw!("rule_110"; "(* ?y (/ 1 ?x) )" => "(/ ?y ?x)" if is_not_zero("?x")),
+rw!("rule_111"; "(* (/ 1 ?x) ?y)" => "(/ ?y ?x)" if is_not_zero("?x")),
+rw!("rule_112"; "(* ?y (pow ?x -1 ) )" => "(/ ?y ?x)" if is_not_zero("?x")),
+rw!("rule_113"; "(* ?x (pow ?x ?y) )" => "(pow ?x (+ ?y 1) )" if is_not_zero("?x")),
+rw!("rule_114"; "(* ?y (/ ?z ?x) )" => "(/ (* ?y ?z) ?x)" if is_not_zero("?x")),
+rw!("rule_115"; "(* (/ ?y ?x) ?z)" => "(/ (* ?y ?z) ?x)" if is_not_zero("?x")),
+rw!("rule_116"; "(/ ?y (/ ?y ?x) )" => "?x" if is_not_zero("?x") if is_not_zero("?y")),
+rw!("rule_117"; "(* (pow ?x ?y) (pow ?x ?z) )" => "(pow ?x (+ ?y ?z) )" if is_not_zero("?x")),
+rw!("rule_118"; "(/ (/ ?x ?y) ?x)" => "(/ 1 ?y)" if is_not_zero("?x") if is_not_zero("?y")),
+rw!("rule_119"; "(/ (/ ?z ?y) ?x)" => "(/ (/ ?z ?x) ?y)" if is_not_zero("?x") if is_not_zero("?y")),

@@ -2,44 +2,44 @@
 {"original_term":"(- 0 a)","rewritten_term":"(- 0 a)","applied_rules":[]}
 {"original_term":"(/ (+ a (* 0 0)) 0)","rewritten_term":"(/ a 0)","applied_rules":["rule_7","rule_2"]}
 {"original_term":"(* a (/ (pow 1 0) a))","rewritten_term":"1","applied_rules":["rule_14","rule_142"]}
-{"original_term":"(+ (- a (+ 1 -1)) a)","rewritten_term":"(+ (- a 0) a)","applied_rules":[]}
+{"original_term":"(+ (- a (+ 1 -1)) a)","rewritten_term":"(+ a a)","applied_rules":["rule_11"]}
 {"original_term":"(pow 1 (- (- 1 -1) 1))","rewritten_term":"1","applied_rules":["rule_75","rule_15"]}
-{"original_term":"(pow 1 (+ (/ a 0) a))","rewritten_term":"(pow 1 (+ (/ a 0) a))","applied_rules":[]}
-{"original_term":"(+ (/ a b) (/ b b))","rewritten_term":"(+ (/ a b) 1)","applied_rules":["rule_135"]}
+{"original_term":"(pow 1 (+ (/ a 0) a))","rewritten_term":"(pow 1 (+ a (/ a 0)))","applied_rules":[]}
+{"original_term":"(+ (/ a b) (/ b b))","rewritten_term":"(+ 1 (/ a b))","applied_rules":["rule_135"]}
 {"original_term":"(/ 0 (pow -1 (pow a b)))","rewritten_term":"0","applied_rules":["rule_136"]}
 {"original_term":"(- a (+ (pow a 1) a))","rewritten_term":"(- 0 a)","applied_rules":["rule_13","rule_54"]}
 {"original_term":"(/ a (/ b b))","rewritten_term":"a","applied_rules":["rule_135","rule_17"]}
 {"original_term":"(- (/ a (- a -1)) a)","rewritten_term":"(- (/ a (+ a 1)) a)","applied_rules":[]}
-{"original_term":"(+ (- a b) (pow a 1))","rewritten_term":"(+ (- a b) a)","applied_rules":["rule_13"]}
-{"original_term":"(* (* -1 a) b)","rewritten_term":"(- 0 (* a b))","applied_rules":[]}
+{"original_term":"(+ (- a b) (pow a 1))","rewritten_term":"(+ a (- a b))","applied_rules":["rule_13"]}
+{"original_term":"(* (* -1 a) b)","rewritten_term":"(- 0 (* b a))","applied_rules":[]}
 {"original_term":"(+ -1 0)","rewritten_term":"-1","applied_rules":["rule_2"]}
 {"original_term":"(- a (/ 0 (pow -1 0)))","rewritten_term":"a","applied_rules":["rule_134","rule_11"]}
-{"original_term":"(- (- (- a 1) 0) a)","rewritten_term":"(- (- a 1) a)","applied_rules":["rule_11"]}
-{"original_term":"(+ -1 (/ -1 a))","rewritten_term":"(+ (/ -1 a) -1)","applied_rules":[]}
+{"original_term":"(- (- (- a 1) 0) a)","rewritten_term":"-1","applied_rules":["rule_11","rule_54"]}
+{"original_term":"(+ -1 (/ -1 a))","rewritten_term":"(+ -1 (/ -1 a))","applied_rules":[]}
 {"original_term":"(pow (* (- -1 -1) a) a)","rewritten_term":"(pow 0 a)","applied_rules":["rule_10","rule_9"]}
 {"original_term":"(pow 0 (/ -1 (/ -1 a)))","rewritten_term":"(pow 0 a)","applied_rules":["rule_152"]}
 {"original_term":"(/ (pow 1 -1) (- -1 a))","rewritten_term":"(/ 1 (- -1 a))","applied_rules":["rule_23"]}
 {"original_term":"(pow (pow a (- 1 a)) a)","rewritten_term":"(pow (pow a (- 1 a)) a)","applied_rules":[]}
 {"original_term":"(/ a (* (- a a) 1))","rewritten_term":"(/ a 0)","applied_rules":["rule_6","rule_10"]}
 {"original_term":"(pow (- -1 a) (- -1 a))","rewritten_term":"(pow (- -1 a) (- -1 a))","applied_rules":[]}
-{"original_term":"(+ 0 (+ a (/ 1 a)))","rewritten_term":"(+ (/ 1 a) a)","applied_rules":["rule_3"]}
-{"original_term":"(- 0 (+ (- -1 a) b))","rewritten_term":"(- 0 (+ (- -1 a) b))","applied_rules":[]}
+{"original_term":"(+ 0 (+ a (/ 1 a)))","rewritten_term":"(+ a (/ 1 a))","applied_rules":["rule_3"]}
+{"original_term":"(- 0 (+ (- -1 a) b))","rewritten_term":"(- 0 (+ b (- -1 a)))","applied_rules":[]}
 {"original_term":"(- (+ (+ 1 0) 0) a)","rewritten_term":"(- 1 a)","applied_rules":["rule_2"]}
 {"original_term":"(* -1 (- a (+ 0 1)))","rewritten_term":"(- 1 a)","applied_rules":["rule_3","rule_64"]}
-{"original_term":"(/ (* a (+ a b)) c)","rewritten_term":"(/ (* (+ a b) a) c)","applied_rules":[]}
+{"original_term":"(/ (* a (+ a b)) c)","rewritten_term":"(/ (* a (+ a b)) c)","applied_rules":[]}
 {"original_term":"(/ a (+ (* a a) 0))","rewritten_term":"(/ a (* a a))","applied_rules":["rule_2"]}
 {"original_term":"(- (* 1 1) (- a b))","rewritten_term":"(- 1 (- a b))","applied_rules":["rule_6"]}
 {"original_term":"(/ a (pow a (+ 1 -1)))","rewritten_term":"(/ a (pow a 0))","applied_rules":[]}
-{"original_term":"(* a (* b b))","rewritten_term":"(* (* b b) a)","applied_rules":[]}
-{"original_term":"(+ (- a (+ a a)) a)","rewritten_term":"(+ (- 0 a) a)","applied_rules":["rule_54"]}
+{"original_term":"(* a (* b b))","rewritten_term":"(* a (* b b))","applied_rules":[]}
+{"original_term":"(+ (- a (+ a a)) a)","rewritten_term":"(+ a (- 0 a))","applied_rules":["rule_54"]}
 {"original_term":"(* (/ a a) (- -1 -1))","rewritten_term":"0","applied_rules":["rule_10","rule_7"]}
-{"original_term":"(/ a (/ a (pow -1 1)))","rewritten_term":"-1","applied_rules":["rule_13","rule_152"]}
+{"original_term":"(/ a (/ a (pow -1 1)))","rewritten_term":"-1","applied_rules":["rule_152","rule_13"]}
 {"original_term":"(pow (pow (pow -1 a) a) 1)","rewritten_term":"(pow (pow -1 a) a)","applied_rules":["rule_13"]}
 {"original_term":"(pow (/ 1 0) (+ a b))","rewritten_term":"(pow (/ 1 0) (+ a b))","applied_rules":[]}
 {"original_term":"(pow 1 1)","rewritten_term":"1","applied_rules":["rule_13"]}
 {"original_term":"(- 0 (+ (* a 1) 1))","rewritten_term":"(- -1 a)","applied_rules":["rule_6","rule_62"]}
 {"original_term":"(pow 0 (+ 1 a))","rewritten_term":"(pow 0 (+ a 1))","applied_rules":[]}
-{"original_term":"(- (+ (- -1 -1) a) a)","rewritten_term":"0","applied_rules":["rule_10","rule_3","rule_10"]}
+{"original_term":"(- (+ (- -1 -1) a) a)","rewritten_term":"0","applied_rules":["rule_65"]}
 {"original_term":"(pow a -1)","rewritten_term":"(/ 1 a)","applied_rules":[]}
 {"original_term":"(/ (- a 0) (/ -1 0))","rewritten_term":"(/ a (/ -1 0))","applied_rules":["rule_11"]}
 {"original_term":"(+ a (- (+ -1 1) 1))","rewritten_term":"(+ a -1)","applied_rules":["rule_65"]}
@@ -47,20 +47,20 @@
 {"original_term":"(+ (* a (- b b)) 0)","rewritten_term":"0","applied_rules":["rule_2","rule_10","rule_7"]}
 {"original_term":"(/ (* (- 1 1) a) 0)","rewritten_term":"(/ 0 0)","applied_rules":["rule_10","rule_9"]}
 {"original_term":"(+ 1 (* 0 (/ a 1)))","rewritten_term":"1","applied_rules":["rule_9"]}
-{"original_term":"(- (/ (- 0 1) a) a)","rewritten_term":"(- (/ -1 a) a)","applied_rules":["rule_12"]}
-{"original_term":"(/ (* a (/ -1 b)) 1)","rewritten_term":"(* (/ -1 b) a)","applied_rules":["rule_17"]}
+{"original_term":"(- (/ (- 0 1) a) a)","rewritten_term":"(- (/ -1 a) a)","applied_rules":[]}
+{"original_term":"(/ (* a (/ -1 b)) 1)","rewritten_term":"(* a (/ -1 b))","applied_rules":["rule_17"]}
 {"original_term":"(pow (+ 0 (- 1 a)) b)","rewritten_term":"(pow (- 1 a) b)","applied_rules":["rule_3"]}
 {"original_term":"(* a (/ 1 1))","rewritten_term":"a","applied_rules":["rule_17","rule_6"]}
 {"original_term":"(- a (+ (* 0 0) a))","rewritten_term":"0","applied_rules":["rule_7","rule_3","rule_10"]}
 {"original_term":"(- (+ 0 0) 1)","rewritten_term":"-1","applied_rules":["rule_2"]}
 {"original_term":"(* (pow a a) 0)","rewritten_term":"0","applied_rules":["rule_7"]}
 {"original_term":"(* 0 (* (pow -1 a) a))","rewritten_term":"0","applied_rules":["rule_9"]}
-{"original_term":"(+ 1 (/ (* a a) 0))","rewritten_term":"(+ (/ (* a a) 0) 1)","applied_rules":[]}
+{"original_term":"(+ 1 (/ (* a a) 0))","rewritten_term":"(+ 1 (/ (* a a) 0))","applied_rules":[]}
 {"original_term":"(pow (- a -1) 1)","rewritten_term":"(+ a 1)","applied_rules":["rule_13"]}
 {"original_term":"(pow a (- (* -1 1) 0))","rewritten_term":"(/ 1 a)","applied_rules":["rule_6"]}
-{"original_term":"(* a (+ (* 1 a) a))","rewritten_term":"(* (+ a a) a)","applied_rules":["rule_8"]}
+{"original_term":"(* a (+ (* 1 a) a))","rewritten_term":"(* a (+ a a))","applied_rules":["rule_8"]}
 {"original_term":"(/ (pow a (+ 0 a)) b)","rewritten_term":"(/ (pow a a) b)","applied_rules":["rule_3"]}
-{"original_term":"(* (/ (* -1 a) -1) b)","rewritten_term":"(* (/ (- 0 a) -1) b)","applied_rules":[]}
+{"original_term":"(* (/ (* -1 a) -1) b)","rewritten_term":"(* b (/ (- 0 a) -1))","applied_rules":[]}
 {"original_term":"(pow 1 (/ a a))","rewritten_term":"1","applied_rules":["rule_135","rule_13"]}
 {"original_term":"(/ (pow (* a a) 1) -1)","rewritten_term":"(/ (* a a) -1)","applied_rules":["rule_13"]}
 {"original_term":"(- -1 (* a (pow 1 0)))","rewritten_term":"(- -1 a)","applied_rules":["rule_14","rule_6"]}
@@ -73,51 +73,51 @@
 {"original_term":"(pow (* a -1) a)","rewritten_term":"(pow (- 0 a) a)","applied_rules":[]}
 {"original_term":"(- a (- (+ a a) a))","rewritten_term":"0","applied_rules":["rule_65","rule_10"]}
 {"original_term":"(- (* 1 (- 1 0)) 1)","rewritten_term":"0","applied_rules":["rule_8"]}
-{"original_term":"(+ (/ 1 (- a 0)) 1)","rewritten_term":"(+ (/ 1 a) 1)","applied_rules":["rule_11"]}
+{"original_term":"(+ (/ 1 (- a 0)) 1)","rewritten_term":"(+ 1 (/ 1 a))","applied_rules":["rule_11"]}
 {"original_term":"(/ a (- (+ 0 b) 1))","rewritten_term":"(/ a (- b 1))","applied_rules":["rule_3"]}
-{"original_term":"(- -1 (+ a (pow a -1)))","rewritten_term":"(- -1 (+ (/ 1 a) a))","applied_rules":[]}
-{"original_term":"(- (* (/ a 0) 1) -1)","rewritten_term":"(+ (/ a 0) 1)","applied_rules":["rule_6"]}
+{"original_term":"(- -1 (+ a (pow a -1)))","rewritten_term":"(- -1 (+ a (/ 1 a)))","applied_rules":[]}
+{"original_term":"(- (* (/ a 0) 1) -1)","rewritten_term":"(+ 1 (/ a 0))","applied_rules":["rule_6"]}
 {"original_term":"(/ a (* 0 (+ 0 a)))","rewritten_term":"(/ a 0)","applied_rules":["rule_3","rule_9"]}
 {"original_term":"(- (- a (* -1 -1)) 0)","rewritten_term":"(- a 1)","applied_rules":["rule_11"]}
 {"original_term":"(pow (pow -1 1) 1)","rewritten_term":"-1","applied_rules":["rule_13","rule_13"]}
 {"original_term":"(pow (- 0 (pow 1 0)) -1)","rewritten_term":"-1","applied_rules":["rule_14"]}
-{"original_term":"(+ (+ a 1) b)","rewritten_term":"(+ (+ a 1) b)","applied_rules":[]}
+{"original_term":"(+ (+ a 1) b)","rewritten_term":"(+ b (+ a 1))","applied_rules":[]}
 {"original_term":"(/ -1 (/ a (+ -1 1)))","rewritten_term":"(/ -1 (/ a 0))","applied_rules":[]}
-{"original_term":"(* (+ a 1) (+ 1 1))","rewritten_term":"(+ (+ a 1) (+ a 1))","applied_rules":["rule_37"]}
+{"original_term":"(* (+ a 1) (+ 1 1))","rewritten_term":"(+ a (+ a 2))","applied_rules":["rule_8"]}
 {"original_term":"(+ (pow (- a 0) 1) 0)","rewritten_term":"a","applied_rules":["rule_2","rule_11","rule_13"]}
 {"original_term":"(- a (pow -1 (+ 1 0)))","rewritten_term":"(+ a 1)","applied_rules":["rule_2","rule_13"]}
 {"original_term":"(+ a (* (- 1 0) -1))","rewritten_term":"(+ a -1)","applied_rules":["rule_11"]}
 {"original_term":"(/ 1 (/ (+ -1 a) -1))","rewritten_term":"(/ 1 (/ (+ a -1) -1))","applied_rules":[]}
 {"original_term":"(- 0 (+ (+ 0 1) a))","rewritten_term":"(- -1 a)","applied_rules":["rule_3","rule_63"]}
 {"original_term":"(- a (pow a (/ 0 a)))","rewritten_term":"(- a 1)","applied_rules":["rule_136","rule_134"]}
-{"original_term":"(+ 1 (pow (pow a a) a))","rewritten_term":"(+ (pow (pow a a) a) 1)","applied_rules":[]}
+{"original_term":"(+ 1 (pow (pow a a) a))","rewritten_term":"(+ 1 (pow (pow a a) a))","applied_rules":[]}
 {"original_term":"(+ a (- (* 0 a) 0))","rewritten_term":"a","applied_rules":["rule_9","rule_2"]}
-{"original_term":"(* (pow 0 a) (+ 0 b))","rewritten_term":"(* (pow 0 a) b)","applied_rules":["rule_3"]}
-{"original_term":"(* a (- -1 (* b 1)))","rewritten_term":"(* (- -1 b) a)","applied_rules":["rule_6"]}
-{"original_term":"(- a (+ (* a b) 1))","rewritten_term":"(- a (+ (* a b) 1))","applied_rules":[]}
+{"original_term":"(* (pow 0 a) (+ 0 b))","rewritten_term":"(* b (pow 0 a))","applied_rules":["rule_3"]}
+{"original_term":"(* a (- -1 (* b 1)))","rewritten_term":"(* a (- -1 b))","applied_rules":["rule_6"]}
+{"original_term":"(- a (+ (* a b) 1))","rewritten_term":"(- a (+ 1 (* a b)))","applied_rules":[]}
 {"original_term":"(pow (+ (- a 0) -1) -1)","rewritten_term":"(/ 1 (+ a -1))","applied_rules":["rule_11"]}
-{"original_term":"(pow a (- (+ 0 a) a))","rewritten_term":"1","applied_rules":["rule_3","rule_10","rule_134"]}
+{"original_term":"(pow a (- (+ 0 a) a))","rewritten_term":"1","applied_rules":["rule_65","rule_134"]}
 {"original_term":"(/ 1 (pow 0 a))","rewritten_term":"(/ 1 (pow 0 a))","applied_rules":[]}
 {"original_term":"(* (+ 0 -1) a)","rewritten_term":"(- 0 a)","applied_rules":["rule_3"]}
 {"original_term":"(* (* 0 a) (/ a 0))","rewritten_term":"0","applied_rules":["rule_9","rule_9"]}
-{"original_term":"(- (* a (/ -1 b)) b)","rewritten_term":"(- (* (/ -1 b) a) b)","applied_rules":[]}
+{"original_term":"(- (* a (/ -1 b)) b)","rewritten_term":"(- (* a (/ -1 b)) b)","applied_rules":[]}
 {"original_term":"(/ (* 1 a) (pow b a))","rewritten_term":"(/ a (pow b a))","applied_rules":["rule_8"]}
 {"original_term":"(* (/ a (- 0 a)) 0)","rewritten_term":"0","applied_rules":["rule_7"]}
-{"original_term":"(+ (+ (+ a a) a) a)","rewritten_term":"(+ (+ (+ a a) a) a)","applied_rules":[]}
+{"original_term":"(+ (+ (+ a a) a) a)","rewritten_term":"(+ a (+ a (+ a a)))","applied_rules":[]}
 {"original_term":"(/ a (/ (+ -1 -1) b))","rewritten_term":"(/ a (/ -2 b))","applied_rules":[]}
 {"original_term":"(pow (- 0 (- a 1)) b)","rewritten_term":"(pow (- 1 a) b)","applied_rules":["rule_64"]}
 {"original_term":"(/ a (- a (pow -1 b)))","rewritten_term":"(/ a (- a (pow -1 b)))","applied_rules":[]}
-{"original_term":"(* a (+ 0 (/ b -1)))","rewritten_term":"(* (/ b -1) a)","applied_rules":["rule_3"]}
+{"original_term":"(* a (+ 0 (/ b -1)))","rewritten_term":"(* a (/ b -1))","applied_rules":["rule_3"]}
 {"original_term":"(- 0 (+ -1 (pow a 1)))","rewritten_term":"(- 0 (+ a -1))","applied_rules":["rule_13"]}
 {"original_term":"(- -1 (- a (- 1 a)))","rewritten_term":"(- -1 (- a (- 1 a)))","applied_rules":[]}
 {"original_term":"(pow (+ a -1) (/ a b))","rewritten_term":"(pow (+ a -1) (/ a b))","applied_rules":[]}
 {"original_term":"(/ (/ (+ a a) a) 0)","rewritten_term":"(/ (/ (+ a a) a) 0)","applied_rules":[]}
 {"original_term":"(/ 0 (- 0 (/ a -1)))","rewritten_term":"0","applied_rules":["rule_136"]}
 {"original_term":"(/ (pow -1 (/ -1 a)) 0)","rewritten_term":"(/ (pow -1 (/ -1 a)) 0)","applied_rules":[]}
-{"original_term":"(/ -1 (* (+ a 1) a))","rewritten_term":"(/ -1 (+ (* a a) a))","applied_rules":[]}
+{"original_term":"(/ -1 (* (+ a 1) a))","rewritten_term":"(/ -1 (+ a (* a a)))","applied_rules":[]}
 {"original_term":"(- -1 (/ (- a 1) a))","rewritten_term":"(- -1 (/ (- a 1) a))","applied_rules":[]}
 {"original_term":"(+ -1 (- -1 1))","rewritten_term":"-3","applied_rules":[]}
-{"original_term":"(* a (/ (/ a 0) 1))","rewritten_term":"(* (/ a 0) a)","applied_rules":["rule_17"]}
+{"original_term":"(* a (/ (/ a 0) 1))","rewritten_term":"(* a (/ a 0))","applied_rules":["rule_17"]}
 {"original_term":"(pow 1 (pow a -1))","rewritten_term":"(pow 1 (/ 1 a))","applied_rules":[]}
 {"original_term":"(pow a (/ -1 (+ 0 -1)))","rewritten_term":"a","applied_rules":["rule_3","rule_13"]}
 {"original_term":"(/ (/ (- a b) a) a)","rewritten_term":"(/ (/ (- a b) a) a)","applied_rules":[]}
@@ -129,7 +129,7 @@
 {"original_term":"(- 1 (+ a a))","rewritten_term":"(- 1 (+ a a))","applied_rules":[]}
 {"original_term":"(pow a (- -1 (* a c)))","rewritten_term":"(pow a (- -1 (* a c)))","applied_rules":[]}
 {"original_term":"(- 1 (* 0 a))","rewritten_term":"1","applied_rules":["rule_9"]}
-{"original_term":"(+ -1 (* (pow a -1) -1))","rewritten_term":"(+ (- 0 (/ 1 a)) -1)","applied_rules":[]}
+{"original_term":"(+ -1 (* (pow a -1) -1))","rewritten_term":"(+ -1 (- 0 (/ 1 a)))","applied_rules":[]}
 {"original_term":"(pow (/ -1 (+ 1 1)) -1)","rewritten_term":"-2","applied_rules":[]}
 {"original_term":"(pow a (- b (/ b 0)))","rewritten_term":"(pow a (- b (/ b 0)))","applied_rules":[]}
 {"original_term":"(+ 0 (* 1 a))","rewritten_term":"a","applied_rules":["rule_3","rule_8"]}
@@ -143,53 +143,53 @@
 {"original_term":"(* (+ a 0) 0)","rewritten_term":"0","applied_rules":["rule_2","rule_7"]}
 {"original_term":"(* (pow -1 (+ 0 a)) 1)","rewritten_term":"(pow -1 a)","applied_rules":["rule_3","rule_6"]}
 {"original_term":"(* 1 (+ (/ a a) a))","rewritten_term":"(+ a 1)","applied_rules":["rule_8","rule_135"]}
-{"original_term":"(+ (/ -1 (pow a -1)) -1)","rewritten_term":"(+ (/ -1 (/ 1 a)) -1)","applied_rules":[]}
+{"original_term":"(+ (/ -1 (pow a -1)) -1)","rewritten_term":"(+ -1 (/ -1 (/ 1 a)))","applied_rules":[]}
 {"original_term":"(- (* 0 (* a a)) -1)","rewritten_term":"1","applied_rules":["rule_9"]}
 {"original_term":"(/ (pow a 1) (- -1 b))","rewritten_term":"(/ a (- -1 b))","applied_rules":["rule_13"]}
-{"original_term":"(/ (pow a (- 1 -1)) -1)","rewritten_term":"(/ (pow a 2) -1)","applied_rules":["rule_13"]}
+{"original_term":"(/ (pow a (- 1 -1)) -1)","rewritten_term":"(/ (pow a 2) -1)","applied_rules":[]}
 {"original_term":"(* (pow (/ 1 -1) 1) 1)","rewritten_term":"-1","applied_rules":["rule_6","rule_13"]}
 {"original_term":"(pow (* (* 0 a) -1) a)","rewritten_term":"(pow -0 a)","applied_rules":["rule_9"]}
 {"original_term":"(* -1 (/ a 1))","rewritten_term":"(- 0 a)","applied_rules":["rule_17"]}
-{"original_term":"(* a (pow (+ -1 1) a))","rewritten_term":"(* (pow 0 a) a)","applied_rules":[]}
-{"original_term":"(/ (+ (/ -1 0) a) a)","rewritten_term":"(/ (+ (/ -1 0) a) a)","applied_rules":[]}
-{"original_term":"(- (- 1 (pow -1 a)) a)","rewritten_term":"(- (- 1 (pow -1 a)) a)","applied_rules":[]}
+{"original_term":"(* a (pow (+ -1 1) a))","rewritten_term":"(* a (pow 0 a))","applied_rules":[]}
+{"original_term":"(/ (+ (/ -1 0) a) a)","rewritten_term":"(/ (+ a (/ -1 0)) a)","applied_rules":[]}
+{"original_term":"(- (- 1 (pow -1 a)) a)","rewritten_term":"(- 1 (+ a (pow -1 a)))","applied_rules":[]}
 {"original_term":"(pow 0 (- a (+ 0 -1)))","rewritten_term":"(pow 0 (+ a 1))","applied_rules":["rule_3"]}
-{"original_term":"(* (pow a (+ -1 a)) a)","rewritten_term":"(* (pow a (+ a -1)) a)","applied_rules":[]}
-{"original_term":"(+ (- a 0) (pow 1 a))","rewritten_term":"(+ (pow 1 a) a)","applied_rules":["rule_11"]}
+{"original_term":"(* (pow a (+ -1 a)) a)","rewritten_term":"(* a (pow a (+ a -1)))","applied_rules":[]}
+{"original_term":"(+ (- a 0) (pow 1 a))","rewritten_term":"(+ a (pow 1 a))","applied_rules":["rule_11"]}
 {"original_term":"(pow 1 (- 0 (* a -1)))","rewritten_term":"(pow 1 a)","applied_rules":["rule_57"]}
 {"original_term":"(- -1 (pow (/ 0 a) a))","rewritten_term":"(- -1 (pow 0 a))","applied_rules":["rule_136"]}
 {"original_term":"(+ (* 1 1) 0)","rewritten_term":"1","applied_rules":["rule_2"]}
 {"original_term":"(+ (/ a (pow -1 0)) b)","rewritten_term":"(+ a b)","applied_rules":["rule_134","rule_17"]}
-{"original_term":"(- a (- (pow 0 -1) -1))","rewritten_term":"(- a (+ (pow 0 -1) 1))","applied_rules":[]}
+{"original_term":"(- a (- (pow 0 -1) -1))","rewritten_term":"(- a (+ 1 (pow 0 -1)))","applied_rules":[]}
 {"original_term":"(* (/ 0 -1) 0)","rewritten_term":"0","applied_rules":["rule_7"]}
 {"original_term":"(pow 0 (+ 0 -1))","rewritten_term":"(pow 0 -1)","applied_rules":["rule_3"]}
 {"original_term":"(+ (pow 1 a) (/ b -1))","rewritten_term":"(+ (/ b -1) (pow 1 a))","applied_rules":[]}
-{"original_term":"(- (+ -1 (/ a 0)) a)","rewritten_term":"(- (+ (/ a 0) -1) a)","applied_rules":[]}
+{"original_term":"(- (+ -1 (/ a 0)) a)","rewritten_term":"(- (+ -1 (/ a 0)) a)","applied_rules":[]}
 {"original_term":"(* (- 1 (* a a)) 1)","rewritten_term":"(- 1 (* a a))","applied_rules":["rule_6"]}
 {"original_term":"(- (- 1 1) 1)","rewritten_term":"-1","applied_rules":["rule_10"]}
-{"original_term":"(* (pow a a) a)","rewritten_term":"(* (pow a a) a)","applied_rules":[]}
+{"original_term":"(* (pow a a) a)","rewritten_term":"(* a (pow a a))","applied_rules":[]}
 {"original_term":"(pow a (- a 1))","rewritten_term":"(pow a (- a 1))","applied_rules":[]}
 {"original_term":"(- 0 (* (pow 1 a) 0))","rewritten_term":"0","applied_rules":["rule_7"]}
 {"original_term":"(/ 1 (pow 0 -1))","rewritten_term":"(/ 1 (pow 0 -1))","applied_rules":[]}
 {"original_term":"(/ a (pow 0 (/ -1 1)))","rewritten_term":"(/ a (pow 0 -1))","applied_rules":["rule_17"]}
-{"original_term":"(+ (* -1 1) (pow a -1))","rewritten_term":"(+ (/ 1 a) -1)","applied_rules":["rule_6"]}
-{"original_term":"(* (+ 1 (- a 0)) b)","rewritten_term":"(+ (* a b) b)","applied_rules":["rule_11"]}
-{"original_term":"(+ (* a (- -1 a)) a)","rewritten_term":"(+ (* (- -1 a) a) a)","applied_rules":[]}
+{"original_term":"(+ (* -1 1) (pow a -1))","rewritten_term":"(+ -1 (/ 1 a))","applied_rules":["rule_6"]}
+{"original_term":"(* (+ 1 (- a 0)) b)","rewritten_term":"(+ b (* a b))","applied_rules":["rule_11"]}
+{"original_term":"(+ (* a (- -1 a)) a)","rewritten_term":"(+ a (* a (- -1 a)))","applied_rules":[]}
 {"original_term":"(- a (/ a (* 0 a)))","rewritten_term":"(- a (/ a 0))","applied_rules":["rule_9"]}
 {"original_term":"(- (/ (- a -1) a) a)","rewritten_term":"(- (/ (+ a 1) a) a)","applied_rules":[]}
 {"original_term":"(* (+ a (+ 0 -1)) 0)","rewritten_term":"0","applied_rules":["rule_3","rule_7"]}
 {"original_term":"(* (- 0 0) 1)","rewritten_term":"0","applied_rules":["rule_6"]}
-{"original_term":"(* (/ -1 (pow 0 -1)) a)","rewritten_term":"(* (/ -1 (pow 0 -1)) a)","applied_rules":[]}
+{"original_term":"(* (/ -1 (pow 0 -1)) a)","rewritten_term":"(* a (/ -1 (pow 0 -1)))","applied_rules":[]}
 {"original_term":"(- (/ -1 -1) (* 0 a))","rewritten_term":"1","applied_rules":["rule_9"]}
-{"original_term":"(* a (* (pow 0 0) -1))","rewritten_term":"(- 0 (* (pow 0 0) a))","applied_rules":[]}
+{"original_term":"(* a (* (pow 0 0) -1))","rewritten_term":"(- 0 (* a (pow 0 0)))","applied_rules":[]}
 {"original_term":"(/ (* -1 -1) (/ a b))","rewritten_term":"(/ 1 (/ a b))","applied_rules":[]}
 {"original_term":"(pow a (- (/ 0 -1) a))","rewritten_term":"(pow a (- 0 a))","applied_rules":["rule_136"]}
 {"original_term":"(/ -1 (pow (/ a 0) a))","rewritten_term":"(/ -1 (pow (/ a 0) a))","applied_rules":[]}
-{"original_term":"(* a (- 0 b))","rewritten_term":"(- 0 (* b a))","applied_rules":[]}
+{"original_term":"(* a (- 0 b))","rewritten_term":"(- 0 (* a b))","applied_rules":[]}
 {"original_term":"(/ (+ (pow a 1) 1) a)","rewritten_term":"(/ (+ a 1) a)","applied_rules":["rule_13"]}
 {"original_term":"(- a (pow (pow a -1) b))","rewritten_term":"(- a (pow (/ 1 a) b))","applied_rules":[]}
 {"original_term":"(* a (+ 0 1))","rewritten_term":"a","applied_rules":["rule_3","rule_6"]}
-{"original_term":"(+ a (pow a c))","rewritten_term":"(+ (pow a c) a)","applied_rules":[]}
+{"original_term":"(+ a (pow a c))","rewritten_term":"(+ a (pow a c))","applied_rules":[]}
 {"original_term":"(/ (* -1 (- a 1)) a)","rewritten_term":"(/ (- 1 a) a)","applied_rules":["rule_64"]}
 {"original_term":"(pow a (pow 1 0))","rewritten_term":"a","applied_rules":["rule_14","rule_13"]}
 {"original_term":"(* 0 (- a (/ 1 -1)))","rewritten_term":"0","applied_rules":["rule_9"]}
@@ -199,43 +199,43 @@
 {"original_term":"(* -1 (- (- a 1) 0))","rewritten_term":"(- 1 a)","applied_rules":["rule_11","rule_64"]}
 {"original_term":"(/ (pow a 1) (- a b))","rewritten_term":"(/ a (- a b))","applied_rules":["rule_13"]}
 {"original_term":"(+ (+ -1 a) 0)","rewritten_term":"(+ a -1)","applied_rules":["rule_2"]}
-{"original_term":"(* a (* (/ b 1) a))","rewritten_term":"(* (* b a) a)","applied_rules":["rule_17"]}
-{"original_term":"(/ (+ a (+ a -1)) 1)","rewritten_term":"(+ (+ a -1) a)","applied_rules":["rule_17"]}
+{"original_term":"(* a (* (/ b 1) a))","rewritten_term":"(* a (* b a))","applied_rules":["rule_17"]}
+{"original_term":"(/ (+ a (+ a -1)) 1)","rewritten_term":"(+ a (+ a -1))","applied_rules":["rule_17"]}
 {"original_term":"(+ (+ 0 (/ a a)) 1)","rewritten_term":"2","applied_rules":["rule_3","rule_135"]}
 {"original_term":"(- (pow 1 a) (/ 0 0))","rewritten_term":"(- (pow 1 a) (/ 0 0))","applied_rules":[]}
-{"original_term":"(+ (+ -1 (- a -1)) 1)","rewritten_term":"(+ (+ (+ a 1) -1) 1)","applied_rules":[]}
-{"original_term":"(+ (+ (pow 1 a) -1) 1)","rewritten_term":"(+ (+ (pow 1 a) -1) 1)","applied_rules":[]}
+{"original_term":"(+ (+ -1 (- a -1)) 1)","rewritten_term":"(+ a 1)","applied_rules":[]}
+{"original_term":"(+ (+ (pow 1 a) -1) 1)","rewritten_term":"(+ 1 (+ -1 (pow 1 a)))","applied_rules":[]}
 {"original_term":"(* (- a a) (pow 0 a))","rewritten_term":"0","applied_rules":["rule_10","rule_9"]}
 {"original_term":"(/ (/ 1 a) (pow 1 1))","rewritten_term":"(/ 1 a)","applied_rules":["rule_13","rule_17"]}
 {"original_term":"(/ -1 (+ a (pow b 1)))","rewritten_term":"(/ -1 (+ a b))","applied_rules":["rule_13"]}
 {"original_term":"(pow (pow 1 0) 1)","rewritten_term":"1","applied_rules":["rule_13","rule_14"]}
-{"original_term":"(* (* a (pow 0 b)) 1)","rewritten_term":"(* (pow 0 b) a)","applied_rules":["rule_6"]}
+{"original_term":"(* (* a (pow 0 b)) 1)","rewritten_term":"(* a (pow 0 b))","applied_rules":["rule_6"]}
 {"original_term":"(/ a (* b (/ 1 b)))","rewritten_term":"a","applied_rules":["rule_142","rule_17"]}
 {"original_term":"(* (* 1 -1) (pow a a))","rewritten_term":"(- 0 (pow a a))","applied_rules":["rule_8"]}
 {"original_term":"(pow a (pow 1 (- a a)))","rewritten_term":"a","applied_rules":["rule_10","rule_14","rule_13"]}
 {"original_term":"(/ a (pow 0 (pow a b)))","rewritten_term":"(/ a (pow 0 (pow a b)))","applied_rules":[]}
 {"original_term":"(/ (* a -1) (pow -1 a))","rewritten_term":"(/ (- 0 a) (pow -1 a))","applied_rules":[]}
-{"original_term":"(/ -1 (/ (* 1 a) a))","rewritten_term":"-1","applied_rules":["rule_8","rule_135"]}
+{"original_term":"(/ -1 (/ (* 1 a) a))","rewritten_term":"-1","applied_rules":["rule_143"]}
 {"original_term":"(/ (- 1 1) -1)","rewritten_term":"-0","applied_rules":["rule_10"]}
 {"original_term":"(+ 0 (pow -1 (/ a a)))","rewritten_term":"-1","applied_rules":["rule_3","rule_135","rule_13"]}
 {"original_term":"(/ (pow 1 a) (+ 1 a))","rewritten_term":"(/ (pow 1 a) (+ a 1))","applied_rules":[]}
-{"original_term":"(pow a (+ -1 (+ a b)))","rewritten_term":"(pow a (+ (+ a b) -1))","applied_rules":[]}
+{"original_term":"(pow a (+ -1 (+ a b)))","rewritten_term":"(pow a (+ a (+ b -1)))","applied_rules":[]}
 {"original_term":"(* (* 0 1) (pow a -1))","rewritten_term":"0","applied_rules":["rule_6","rule_9"]}
 {"original_term":"(+ (* -1 -1) a)","rewritten_term":"(+ a 1)","applied_rules":[]}
 {"original_term":"(- 1 (+ a 1))","rewritten_term":"(- 0 a)","applied_rules":["rule_54"]}
-{"original_term":"(+ 1 (pow (- 0 a) -1))","rewritten_term":"(+ (/ 1 (- 0 a)) 1)","applied_rules":[]}
+{"original_term":"(+ 1 (pow (- 0 a) -1))","rewritten_term":"(+ 1 (/ 1 (- 0 a)))","applied_rules":[]}
 {"original_term":"(/ (/ (- -1 0) a) 1)","rewritten_term":"(/ -1 a)","applied_rules":["rule_11","rule_17"]}
 {"original_term":"(/ (* 1 a) (* -1 b))","rewritten_term":"(/ a (- 0 b))","applied_rules":["rule_8"]}
 {"original_term":"(+ a (+ 1 1))","rewritten_term":"(+ a 2)","applied_rules":[]}
 {"original_term":"(* (- -1 (/ 0 -1)) 0)","rewritten_term":"0","applied_rules":["rule_7"]}
 {"original_term":"(+ (* a b) (- 0 b))","rewritten_term":"(+ (- 0 b) (* a b))","applied_rules":[]}
 {"original_term":"(* a (+ (- a a) 0))","rewritten_term":"0","applied_rules":["rule_2","rule_10","rule_7"]}
-{"original_term":"(- 1 (* a (* a a)))","rewritten_term":"(- 1 (* (* a a) a))","applied_rules":[]}
+{"original_term":"(- 1 (* a (* a a)))","rewritten_term":"(- 1 (* a (* a a)))","applied_rules":[]}
 {"original_term":"(pow (- a 1) (- a -1))","rewritten_term":"(pow (- a 1) (+ a 1))","applied_rules":[]}
 {"original_term":"(- -1 (* 1 a))","rewritten_term":"(- -1 a)","applied_rules":["rule_8"]}
 {"original_term":"(* (pow 1 0) a)","rewritten_term":"a","applied_rules":["rule_14","rule_8"]}
-{"original_term":"(+ (- (- a 1) a) -1)","rewritten_term":"(+ (- (- a 1) a) -1)","applied_rules":[]}
-{"original_term":"(+ a (+ 1 b))","rewritten_term":"(+ (+ b 1) a)","applied_rules":[]}
+{"original_term":"(+ (- (- a 1) a) -1)","rewritten_term":"-2","applied_rules":["rule_54"]}
+{"original_term":"(+ a (+ 1 b))","rewritten_term":"(+ a (+ b 1))","applied_rules":[]}
 {"original_term":"(pow (+ 1 1) -1)","rewritten_term":"0.5","applied_rules":[]}
 {"original_term":"(+ 0 (/ (/ a 0) b))","rewritten_term":"(/ (/ a 0) b)","applied_rules":["rule_3"]}
 {"original_term":"(/ -1 (/ (/ a -1) a))","rewritten_term":"1","applied_rules":["rule_154"]}
@@ -244,77 +244,77 @@
 {"original_term":"(pow a (/ 0 1))","rewritten_term":"1","applied_rules":["rule_17","rule_134"]}
 {"original_term":"(pow (+ a 0) 1)","rewritten_term":"a","applied_rules":["rule_2","rule_13"]}
 {"original_term":"(/ (pow a -1) b)","rewritten_term":"(/ (/ 1 a) b)","applied_rules":[]}
-{"original_term":"(* a (* b (* c -1)))","rewritten_term":"(- 0 (* (* b a) c))","applied_rules":[]}
-{"original_term":"(+ (/ a (- -1 a)) a)","rewritten_term":"(+ (/ a (- -1 a)) a)","applied_rules":[]}
+{"original_term":"(* a (* b (* c -1)))","rewritten_term":"(- 0 (* a (* b c)))","applied_rules":[]}
+{"original_term":"(+ (/ a (- -1 a)) a)","rewritten_term":"(+ a (/ a (- -1 a)))","applied_rules":[]}
 {"original_term":"(/ 0 (+ a (* a 0)))","rewritten_term":"0","applied_rules":["rule_7","rule_2","rule_136"]}
 {"original_term":"(/ 1 (/ (pow 1 0) -1))","rewritten_term":"-1","applied_rules":["rule_14"]}
 {"original_term":"(+ (/ 1 0) 0)","rewritten_term":"(/ 1 0)","applied_rules":["rule_2"]}
 {"original_term":"(pow (* -1 (pow a a)) 0)","rewritten_term":"1","applied_rules":["rule_134"]}
-{"original_term":"(/ (- (pow -1 a) -1) 1)","rewritten_term":"(+ (pow -1 a) 1)","applied_rules":["rule_17"]}
+{"original_term":"(/ (- (pow -1 a) -1) 1)","rewritten_term":"(+ 1 (pow -1 a))","applied_rules":["rule_17"]}
 {"original_term":"(/ (+ 1 a) (/ b a))","rewritten_term":"(/ (+ a 1) (/ b a))","applied_rules":[]}
 {"original_term":"(- (+ a -1) (+ a a))","rewritten_term":"(- -1 a)","applied_rules":["rule_119"]}
-{"original_term":"(+ (+ a -1) -1)","rewritten_term":"(+ (+ a -1) -1)","applied_rules":[]}
-{"original_term":"(/ a (+ (- a -1) -1))","rewritten_term":"(/ a (+ (+ a 1) -1))","applied_rules":[]}
-{"original_term":"(* a (- (pow -1 a) b))","rewritten_term":"(* (- (pow -1 a) b) a)","applied_rules":[]}
+{"original_term":"(+ (+ a -1) -1)","rewritten_term":"(+ a -2)","applied_rules":[]}
+{"original_term":"(/ a (+ (- a -1) -1))","rewritten_term":"1","applied_rules":["rule_2","rule_135"]}
+{"original_term":"(* a (- (pow -1 a) b))","rewritten_term":"(* a (- (pow -1 a) b))","applied_rules":[]}
 {"original_term":"(- a (/ (* -1 a) a))","rewritten_term":"(+ a 1)","applied_rules":["rule_143"]}
-{"original_term":"(+ (+ 1 -1) (+ -1 a))","rewritten_term":"(+ a -1)","applied_rules":["rule_2"]}
+{"original_term":"(+ (+ 1 -1) (+ -1 a))","rewritten_term":"(+ a -1)","applied_rules":[]}
 {"original_term":"(pow (pow (/ a 1) a) 0)","rewritten_term":"1","applied_rules":["rule_17","rule_134"]}
 {"original_term":"(- a (/ 1 1))","rewritten_term":"(- a 1)","applied_rules":["rule_17"]}
 {"original_term":"(/ a (pow -1 1))","rewritten_term":"(/ a -1)","applied_rules":["rule_13"]}
 {"original_term":"(+ a (+ (+ -1 -1) 1))","rewritten_term":"(+ a -1)","applied_rules":[]}
 {"original_term":"(/ (/ (* 1 a) b) -1)","rewritten_term":"(/ (/ a b) -1)","applied_rules":["rule_8"]}
-{"original_term":"(pow (+ (pow a a) -1) -1)","rewritten_term":"(/ 1 (+ (pow a a) -1))","applied_rules":[]}
-{"original_term":"(* (- (- 0 1) a) a)","rewritten_term":"(* (- -1 a) a)","applied_rules":["rule_12"]}
+{"original_term":"(pow (+ (pow a a) -1) -1)","rewritten_term":"(/ 1 (+ -1 (pow a a)))","applied_rules":[]}
+{"original_term":"(* (- (- 0 1) a) a)","rewritten_term":"(* a (- -1 a))","applied_rules":["rule_63"]}
 {"original_term":"(- (- a a) (pow 0 1))","rewritten_term":"0","applied_rules":["rule_10","rule_13"]}
-{"original_term":"(+ (* a -1) a)","rewritten_term":"(+ (- 0 a) a)","applied_rules":[]}
+{"original_term":"(+ (* a -1) a)","rewritten_term":"(+ a (- 0 a))","applied_rules":[]}
 {"original_term":"(- (+ 1 (/ a a)) -1)","rewritten_term":"3","applied_rules":["rule_135"]}
 {"original_term":"(/ (- a (pow -1 a)) b)","rewritten_term":"(/ (- a (pow -1 a)) b)","applied_rules":[]}
 {"original_term":"(- (pow a (- a a)) -1)","rewritten_term":"2","applied_rules":["rule_10","rule_134"]}
 {"original_term":"(/ (pow a (/ -1 a)) -1)","rewritten_term":"(/ (pow a (/ -1 a)) -1)","applied_rules":[]}
 {"original_term":"(* (* (* 0 1) 1) 1)","rewritten_term":"0","applied_rules":["rule_6"]}
-{"original_term":"(- 1 (+ a (* a b)))","rewritten_term":"(- 1 (+ (* a b) a))","applied_rules":[]}
+{"original_term":"(- 1 (+ a (* a b)))","rewritten_term":"(- 1 (+ a (* a b)))","applied_rules":[]}
 {"original_term":"(+ (/ a (pow a 1)) 0)","rewritten_term":"1","applied_rules":["rule_2","rule_13","rule_135"]}
 {"original_term":"(+ (+ a -1) 0)","rewritten_term":"(+ a -1)","applied_rules":["rule_2"]}
 {"original_term":"(pow -1 (pow a (pow a a)))","rewritten_term":"(pow -1 (pow a (pow a a)))","applied_rules":[]}
 {"original_term":"(- 0 (* (* 0 a) -1))","rewritten_term":"0","applied_rules":["rule_9"]}
-{"original_term":"(- 0 (+ (+ a a) b))","rewritten_term":"(- 0 (+ (+ a a) b))","applied_rules":[]}
+{"original_term":"(- 0 (+ (+ a a) b))","rewritten_term":"(- 0 (+ b (+ a a)))","applied_rules":[]}
 {"original_term":"(pow (- a a) (+ -1 b))","rewritten_term":"(pow 0 (+ b -1))","applied_rules":["rule_10"]}
 {"original_term":"(- -1 (pow a (- a c)))","rewritten_term":"(- -1 (pow a (- a c)))","applied_rules":[]}
-{"original_term":"(- (* a (- -1 a)) -1)","rewritten_term":"(+ (* (- -1 a) a) 1)","applied_rules":[]}
+{"original_term":"(- (* a (- -1 a)) -1)","rewritten_term":"(+ 1 (* a (- -1 a)))","applied_rules":[]}
 {"original_term":"(/ a (pow (+ -1 b) a))","rewritten_term":"(/ a (pow (+ b -1) a))","applied_rules":[]}
-{"original_term":"(* a (pow b (+ b 0)))","rewritten_term":"(* (pow b b) a)","applied_rules":["rule_2"]}
+{"original_term":"(* a (pow b (+ b 0)))","rewritten_term":"(* a (pow b b))","applied_rules":["rule_2"]}
 {"original_term":"(/ (/ 1 (- -1 -1)) -1)","rewritten_term":"(/ (/ 1 0) -1)","applied_rules":["rule_10"]}
 {"original_term":"(* a (* 1 b))","rewritten_term":"(* a b)","applied_rules":["rule_8"]}
-{"original_term":"(/ a (- (- 0 a) a))","rewritten_term":"(/ a (- (- 0 a) a))","applied_rules":[]}
-{"original_term":"(* (+ a (+ a b)) b)","rewritten_term":"(* (+ (+ a b) a) b)","applied_rules":[]}
+{"original_term":"(/ a (- (- 0 a) a))","rewritten_term":"(/ a (* a -2))","applied_rules":["rule_60"]}
+{"original_term":"(* (+ a (+ a b)) b)","rewritten_term":"(* b (+ a (+ a b)))","applied_rules":[]}
 {"original_term":"(+ (* (pow 0 a) 0) 1)","rewritten_term":"1","applied_rules":["rule_7"]}
 {"original_term":"(* -1 (pow a (+ b 0)))","rewritten_term":"(- 0 (pow a b))","applied_rules":["rule_2"]}
 {"original_term":"(pow (/ (pow a 1) a) a)","rewritten_term":"(pow 1 a)","applied_rules":["rule_13","rule_135"]}
-{"original_term":"(/ -1 (* a (+ a b)))","rewritten_term":"(/ -1 (* (+ a b) a))","applied_rules":[]}
+{"original_term":"(/ -1 (* a (+ a b)))","rewritten_term":"(/ -1 (* a (+ a b)))","applied_rules":[]}
 {"original_term":"(/ (pow a a) c)","rewritten_term":"(/ (pow a a) c)","applied_rules":[]}
 {"original_term":"(pow -1 (- (pow -1 a) b))","rewritten_term":"(pow -1 (- (pow -1 a) b))","applied_rules":[]}
 {"original_term":"(+ (+ a a) 0)","rewritten_term":"(+ a a)","applied_rules":["rule_2"]}
-{"original_term":"(+ (+ a (pow a a)) 0)","rewritten_term":"(+ (pow a a) a)","applied_rules":["rule_2"]}
+{"original_term":"(+ (+ a (pow a a)) 0)","rewritten_term":"(+ a (pow a a))","applied_rules":["rule_2"]}
 {"original_term":"(/ (/ (* 1 1) 0) 0)","rewritten_term":"(/ (/ 1 0) 0)","applied_rules":["rule_6"]}
-{"original_term":"(+ a (- (pow a -1) a))","rewritten_term":"(+ (- (/ 1 a) a) a)","applied_rules":[]}
-{"original_term":"(* (pow (* 0 1) a) a)","rewritten_term":"(* (pow 0 a) a)","applied_rules":["rule_6"]}
-{"original_term":"(/ 1 (- (/ a 0) -1))","rewritten_term":"(/ 1 (+ (/ a 0) 1))","applied_rules":[]}
+{"original_term":"(+ a (- (pow a -1) a))","rewritten_term":"(+ a (- (/ 1 a) a))","applied_rules":[]}
+{"original_term":"(* (pow (* 0 1) a) a)","rewritten_term":"(* a (pow 0 a))","applied_rules":["rule_6"]}
+{"original_term":"(/ 1 (- (/ a 0) -1))","rewritten_term":"(/ 1 (+ 1 (/ a 0)))","applied_rules":[]}
 {"original_term":"(* 0 (- (pow -1 -1) 0))","rewritten_term":"0","applied_rules":["rule_9"]}
 {"original_term":"(pow -1 (/ a b))","rewritten_term":"(pow -1 (/ a b))","applied_rules":[]}
-{"original_term":"(pow -1 (/ a (/ a a)))","rewritten_term":"(pow -1 a)","applied_rules":["rule_135","rule_17"]}
+{"original_term":"(pow -1 (/ a (/ a a)))","rewritten_term":"(pow -1 a)","applied_rules":["rule_152"]}
 {"original_term":"(pow -1 (pow (* a a) -1))","rewritten_term":"(pow -1 (/ 1 (* a a)))","applied_rules":[]}
 {"original_term":"(+ (- -1 a) (- a a))","rewritten_term":"(- -1 a)","applied_rules":["rule_10","rule_2"]}
-{"original_term":"(- a (* b (/ a b)))","rewritten_term":"(- a (* (/ a b) b))","applied_rules":[]}
+{"original_term":"(- a (* b (/ a b)))","rewritten_term":"(- a (* b (/ a b)))","applied_rules":[]}
 {"original_term":"(- a (/ a c))","rewritten_term":"(- a (/ a c))","applied_rules":[]}
 {"original_term":"(/ (/ 0 a) (* 0 -1))","rewritten_term":"(/ 0 0)","applied_rules":["rule_9","rule_136"]}
 {"original_term":"(/ a (/ (* -1 a) a))","rewritten_term":"(/ a -1)","applied_rules":["rule_143"]}
 {"original_term":"(/ (* a b) (pow b 1))","rewritten_term":"a","applied_rules":["rule_13","rule_143"]}
-{"original_term":"(- (* a -1) (/ 1 a))","rewritten_term":"(- (- 0 a) (/ 1 a))","applied_rules":[]}
+{"original_term":"(- (* a -1) (/ 1 a))","rewritten_term":"(- 0 (+ a (/ 1 a)))","applied_rules":[]}
 {"original_term":"(- 0 (/ a a))","rewritten_term":"-1","applied_rules":["rule_135"]}
 {"original_term":"(/ a (- b b))","rewritten_term":"(/ a 0)","applied_rules":["rule_10"]}
 {"original_term":"(+ (* 0 -1) (* 0 a))","rewritten_term":"0","applied_rules":["rule_9","rule_3","rule_9"]}
-{"original_term":"(+ a (- b c))","rewritten_term":"(+ (- b c) a)","applied_rules":[]}
-{"original_term":"(- a (* (+ a a) b))","rewritten_term":"(- a (* (+ a a) b))","applied_rules":[]}
+{"original_term":"(+ a (- b c))","rewritten_term":"(+ a (- b c))","applied_rules":[]}
+{"original_term":"(- a (* (+ a a) b))","rewritten_term":"(- a (* b (+ a a)))","applied_rules":[]}
 {"original_term":"(pow (+ (/ 1 -1) -1) -1)","rewritten_term":"-0.5","applied_rules":[]}
 {"original_term":"(- (/ (- 0 a) 0) a)","rewritten_term":"(- (/ (- 0 a) 0) a)","applied_rules":[]}
 {"original_term":"(/ (* a 0) (/ -1 0))","rewritten_term":"0","applied_rules":["rule_7","rule_136"]}
@@ -328,14 +328,14 @@
 {"original_term":"(- (* (+ 0 0) a) -1)","rewritten_term":"1","applied_rules":["rule_2","rule_9"]}
 {"original_term":"(- -1 (- -1 (/ 1 a)))","rewritten_term":"(/ 1 a)","applied_rules":["rule_57"]}
 {"original_term":"(* (- a (- 0 -1)) 1)","rewritten_term":"(- a 1)","applied_rules":["rule_6"]}
-{"original_term":"(* (- (+ -1 1) a) a)","rewritten_term":"(* (- 0 a) a)","applied_rules":[]}
-{"original_term":"(+ a (+ a (* a 1)))","rewritten_term":"(+ (+ a a) a)","applied_rules":["rule_6"]}
+{"original_term":"(* (- (+ -1 1) a) a)","rewritten_term":"(- 0 (* a a))","applied_rules":["rule_85"]}
+{"original_term":"(+ a (+ a (* a 1)))","rewritten_term":"(+ a (+ a a))","applied_rules":["rule_6"]}
 {"original_term":"(pow 1 (+ -1 0))","rewritten_term":"1","applied_rules":["rule_2","rule_23"]}
 {"original_term":"(* (- -1 1) -1)","rewritten_term":"2","applied_rules":[]}
 {"original_term":"(- (/ (- -1 a) a) a)","rewritten_term":"(- (/ (- -1 a) a) a)","applied_rules":[]}
 {"original_term":"(* 1 (pow (/ 0 1) 0))","rewritten_term":"(pow 0 0)","applied_rules":["rule_8"]}
-{"original_term":"(+ (+ a (* a -1)) b)","rewritten_term":"(+ (+ (- 0 a) a) b)","applied_rules":[]}
-{"original_term":"(+ 1 (pow (+ a a) a))","rewritten_term":"(+ (pow (+ a a) a) 1)","applied_rules":[]}
+{"original_term":"(+ (+ a (* a -1)) b)","rewritten_term":"(+ b (+ a (- 0 a)))","applied_rules":[]}
+{"original_term":"(+ 1 (pow (+ a a) a))","rewritten_term":"(+ 1 (pow (+ a a) a))","applied_rules":[]}
 {"original_term":"(* a (* (pow 1 1) 1))","rewritten_term":"a","applied_rules":["rule_6","rule_13","rule_6"]}
 {"original_term":"(pow 0 (+ (- a a) b))","rewritten_term":"(pow 0 b)","applied_rules":["rule_10","rule_3"]}
 {"original_term":"(- (/ (/ -1 a) -1) 1)","rewritten_term":"(- (/ 1 a) 1)","applied_rules":["rule_154"]}
@@ -349,42 +349,42 @@
 {"original_term":"(- -1 (pow 1 (+ 1 a)))","rewritten_term":"(- -1 (pow 1 a))","applied_rules":["rule_73"]}
 {"original_term":"(/ (- 0 -1) (/ a 1))","rewritten_term":"(/ 1 a)","applied_rules":["rule_17"]}
 {"original_term":"(* -1 (/ a (* a b)))","rewritten_term":"(- 0 (/ a (* a b)))","applied_rules":[]}
-{"original_term":"(+ (/ 0 0) a)","rewritten_term":"(+ (/ 0 0) a)","applied_rules":[]}
+{"original_term":"(+ (/ 0 0) a)","rewritten_term":"(+ a (/ 0 0))","applied_rules":[]}
 {"original_term":"(* a (- a (- -1 -1)))","rewritten_term":"(* a a)","applied_rules":["rule_10","rule_11"]}
-{"original_term":"(/ (+ -1 (+ a a)) -1)","rewritten_term":"(/ (+ (+ a a) -1) -1)","applied_rules":[]}
+{"original_term":"(/ (+ -1 (+ a a)) -1)","rewritten_term":"(/ (+ a (+ a -1)) -1)","applied_rules":[]}
 {"original_term":"(pow (* 0 -1) (- a a))","rewritten_term":"(pow 0 0)","applied_rules":["rule_9","rule_10"]}
 {"original_term":"(/ (+ a (pow 1 0)) a)","rewritten_term":"(/ (+ a 1) a)","applied_rules":["rule_14"]}
-{"original_term":"(+ (/ (- a 1) 1) a)","rewritten_term":"(+ (- a 1) a)","applied_rules":["rule_17"]}
+{"original_term":"(+ (/ (- a 1) 1) a)","rewritten_term":"(+ a (- a 1))","applied_rules":["rule_17"]}
 {"original_term":"(* (+ a -1) (+ b -1))","rewritten_term":"(* (+ a -1) (+ b -1))","applied_rules":[]}
-{"original_term":"(- (+ a a) (* b -1))","rewritten_term":"(+ (+ a a) b)","applied_rules":["rule_58"]}
+{"original_term":"(- (+ a a) (* b -1))","rewritten_term":"(+ b (+ a a))","applied_rules":["rule_58"]}
 {"original_term":"(* (- a (pow 1 -1)) b)","rewritten_term":"(- (* a b) b)","applied_rules":["rule_23"]}
 {"original_term":"(- (pow 1 0) (/ a 0))","rewritten_term":"(- 1 (/ a 0))","applied_rules":["rule_14"]}
 {"original_term":"(* a (pow b (pow a 0)))","rewritten_term":"(* a b)","applied_rules":["rule_134","rule_13"]}
 {"original_term":"(/ 0 (- 1 a))","rewritten_term":"0","applied_rules":["rule_136"]}
-{"original_term":"(* -1 (- (+ a 1) a))","rewritten_term":"(- a (+ a 1))","applied_rules":["rule_64"]}
+{"original_term":"(* -1 (- (+ a 1) a))","rewritten_term":"-1","applied_rules":["rule_57"]}
 {"original_term":"(pow (- (/ -1 0) a) a)","rewritten_term":"(pow (- (/ -1 0) a) a)","applied_rules":[]}
 {"original_term":"(/ (/ 0 0) (pow a a))","rewritten_term":"(/ (/ 0 0) (pow a a))","applied_rules":[]}
-{"original_term":"(+ a (* (- 0 a) 1))","rewritten_term":"(+ (- 0 a) a)","applied_rules":["rule_6"]}
+{"original_term":"(+ a (* (- 0 a) 1))","rewritten_term":"(+ a (- 0 a))","applied_rules":["rule_6"]}
 {"original_term":"(/ a (pow -1 (pow a a)))","rewritten_term":"(/ a (pow -1 (pow a a)))","applied_rules":[]}
 {"original_term":"(pow 1 (pow 1 (/ -1 -1)))","rewritten_term":"1","applied_rules":["rule_135","rule_13","rule_13"]}
 {"original_term":"(+ a (+ (/ 0 b) b))","rewritten_term":"(+ a b)","applied_rules":["rule_136","rule_3"]}
 {"original_term":"(/ (- 0 0) (- 0 -1))","rewritten_term":"0","applied_rules":["rule_10"]}
-{"original_term":"(* a (/ (/ 1 0) 0))","rewritten_term":"(* (/ (/ 1 0) 0) a)","applied_rules":[]}
+{"original_term":"(* a (/ (/ 1 0) 0))","rewritten_term":"(* a (/ (/ 1 0) 0))","applied_rules":[]}
 {"original_term":"(pow (- a 0) -1)","rewritten_term":"(/ 1 a)","applied_rules":["rule_11"]}
-{"original_term":"(- a (- (- -1 a) a))","rewritten_term":"(- a (- (- -1 a) a))","applied_rules":[]}
+{"original_term":"(- a (- (- -1 a) a))","rewritten_term":"(- a (- -1 (+ a a)))","applied_rules":[]}
 {"original_term":"(/ (pow (/ -1 a) a) a)","rewritten_term":"(/ (pow (/ -1 a) a) a)","applied_rules":[]}
 {"original_term":"(- a (* 0 (/ 1 a)))","rewritten_term":"a","applied_rules":["rule_9","rule_11"]}
 {"original_term":"(+ (/ -1 -1) (+ 0 1))","rewritten_term":"2","applied_rules":["rule_3"]}
 {"original_term":"(pow (- a 1) -1)","rewritten_term":"(/ 1 (- a 1))","applied_rules":[]}
 {"original_term":"(pow 1 (/ a b))","rewritten_term":"(pow 1 (/ a b))","applied_rules":[]}
 {"original_term":"(/ (+ a 0) (- a a))","rewritten_term":"(/ a 0)","applied_rules":["rule_2","rule_10"]}
-{"original_term":"(- (- 1 (- a 1)) a)","rewritten_term":"(- (- 1 (- a 1)) a)","applied_rules":[]}
+{"original_term":"(- (- 1 (- a 1)) a)","rewritten_term":"(- 1 (+ a (- a 1)))","applied_rules":[]}
 {"original_term":"(pow (pow 1 0) (+ -1 a))","rewritten_term":"(pow 1 (+ a -1))","applied_rules":["rule_14"]}
 {"original_term":"(+ a (- 1 (- -1 0)))","rewritten_term":"(+ a 2)","applied_rules":["rule_11"]}
-{"original_term":"(+ (- a b) -1)","rewritten_term":"(+ (- a b) -1)","applied_rules":[]}
+{"original_term":"(+ (- a b) -1)","rewritten_term":"(+ -1 (- a b))","applied_rules":[]}
 {"original_term":"(/ (* -1 (+ a -1)) 0)","rewritten_term":"(/ (- 0 (+ a -1)) 0)","applied_rules":[]}
 {"original_term":"(* (pow a (/ 0 1)) 1)","rewritten_term":"1","applied_rules":["rule_6","rule_134"]}
-{"original_term":"(* (pow 1 (pow -1 a)) a)","rewritten_term":"(* (pow 1 (pow -1 a)) a)","applied_rules":[]}
+{"original_term":"(* (pow 1 (pow -1 a)) a)","rewritten_term":"(* a (pow 1 (pow -1 a)))","applied_rules":[]}
 {"original_term":"(/ (* a (- a a)) a)","rewritten_term":"0","applied_rules":["rule_10","rule_7","rule_136"]}
 {"original_term":"(pow (+ (* 0 a) -1) a)","rewritten_term":"(pow -1 a)","applied_rules":["rule_9"]}
 {"original_term":"(pow (pow -1 a) -1)","rewritten_term":"(/ 1 (pow -1 a))","applied_rules":[]}
@@ -393,52 +393,52 @@
 {"original_term":"(pow a (- (pow 0 b) b))","rewritten_term":"(pow a (- (pow 0 b) b))","applied_rules":[]}
 {"original_term":"(- a (pow (+ a b) b))","rewritten_term":"(- a (pow (+ a b) b))","applied_rules":[]}
 {"original_term":"(pow (- (- 0 -1) 1) a)","rewritten_term":"(pow 0 a)","applied_rules":[]}
-{"original_term":"(+ (+ a 1) (/ b b))","rewritten_term":"(+ (+ a 1) 1)","applied_rules":["rule_135"]}
+{"original_term":"(+ (+ a 1) (/ b b))","rewritten_term":"(+ a 2)","applied_rules":["rule_135"]}
 {"original_term":"(pow (+ 1 (/ a a)) 1)","rewritten_term":"2","applied_rules":["rule_13","rule_135"]}
-{"original_term":"(+ (pow a (+ 1 a)) a)","rewritten_term":"(+ (pow a (+ a 1)) a)","applied_rules":[]}
+{"original_term":"(+ (pow a (+ 1 a)) a)","rewritten_term":"(+ a (pow a (+ a 1)))","applied_rules":[]}
 {"original_term":"(/ a (pow -1 (* -1 b)))","rewritten_term":"(/ a (pow -1 (- 0 b)))","applied_rules":[]}
-{"original_term":"(/ a (- (- a -1) 1))","rewritten_term":"1","applied_rules":["rule_65","rule_135"]}
+{"original_term":"(/ a (- (- a -1) 1))","rewritten_term":"1","applied_rules":["rule_11","rule_135"]}
 {"original_term":"(- (* (- -1 -1) a) a)","rewritten_term":"(- 0 a)","applied_rules":["rule_10","rule_9"]}
 {"original_term":"(/ (- a -1) (- b 1))","rewritten_term":"(/ (+ a 1) (- b 1))","applied_rules":[]}
 {"original_term":"(pow (/ a (pow -1 0)) 0)","rewritten_term":"1","applied_rules":["rule_134"]}
-{"original_term":"(/ (* 1 a) a)","rewritten_term":"1","applied_rules":["rule_8","rule_135"]}
+{"original_term":"(/ (* 1 a) a)","rewritten_term":"1","applied_rules":["rule_143"]}
 {"original_term":"(/ (pow 1 a) a)","rewritten_term":"(/ (pow 1 a) a)","applied_rules":[]}
-{"original_term":"(- a (- (+ a 0) a))","rewritten_term":"a","applied_rules":["rule_2","rule_10","rule_11"]}
+{"original_term":"(- a (- (+ a 0) a))","rewritten_term":"a","applied_rules":["rule_2","rule_57"]}
 {"original_term":"(/ 0 (* 0 (pow 1 1)))","rewritten_term":"(/ 0 0)","applied_rules":["rule_9"]}
 {"original_term":"(- (pow 1 (- a a)) a)","rewritten_term":"(- 1 a)","applied_rules":["rule_10","rule_14"]}
 {"original_term":"(/ 0 (/ (* -1 a) -1))","rewritten_term":"0","applied_rules":["rule_136"]}
 {"original_term":"(/ 0 (- 1 (+ a a)))","rewritten_term":"0","applied_rules":["rule_136"]}
 {"original_term":"(/ a (+ -1 (pow a 0)))","rewritten_term":"(/ a 0)","applied_rules":["rule_134"]}
-{"original_term":"(+ a (+ (/ 0 0) 0))","rewritten_term":"(+ (/ 0 0) a)","applied_rules":["rule_2"]}
+{"original_term":"(+ a (+ (/ 0 0) 0))","rewritten_term":"(+ a (/ 0 0))","applied_rules":["rule_2"]}
 {"original_term":"(/ a (pow (+ a 1) 0))","rewritten_term":"a","applied_rules":["rule_134","rule_17"]}
-{"original_term":"(- (+ 1 (/ a -1)) b)","rewritten_term":"(- (+ (/ a -1) 1) b)","applied_rules":[]}
+{"original_term":"(- (+ 1 (/ a -1)) b)","rewritten_term":"(- (+ 1 (/ a -1)) b)","applied_rules":[]}
 {"original_term":"(pow (pow a 1) 0)","rewritten_term":"1","applied_rules":["rule_13","rule_134"]}
 {"original_term":"(pow (- 1 a) a)","rewritten_term":"(pow (- 1 a) a)","applied_rules":[]}
-{"original_term":"(- (+ a (- 0 a)) c)","rewritten_term":"(- (+ (- 0 a) a) c)","applied_rules":[]}
-{"original_term":"(* a (- a (/ a 0)))","rewritten_term":"(* (- a (/ a 0)) a)","applied_rules":[]}
+{"original_term":"(- (+ a (- 0 a)) c)","rewritten_term":"(- (+ a (- 0 a)) c)","applied_rules":[]}
+{"original_term":"(* a (- a (/ a 0)))","rewritten_term":"(* a (- a (/ a 0)))","applied_rules":[]}
 {"original_term":"(pow (pow 1 (+ a -1)) -1)","rewritten_term":"(/ 1 (pow 1 (+ a -1)))","applied_rules":[]}
 {"original_term":"(pow (pow -1 -1) 1)","rewritten_term":"-1","applied_rules":["rule_13"]}
 {"original_term":"(/ (* -1 (* a -1)) a)","rewritten_term":"1","applied_rules":["rule_57","rule_135"]}
 {"original_term":"(- (* a a) (* 0 0))","rewritten_term":"(* a a)","applied_rules":["rule_7","rule_11"]}
-{"original_term":"(+ (+ 0 (+ a 1)) a)","rewritten_term":"(+ (+ a 1) a)","applied_rules":["rule_3"]}
+{"original_term":"(+ (+ 0 (+ a 1)) a)","rewritten_term":"(+ a (+ a 1))","applied_rules":["rule_3"]}
 {"original_term":"(+ (- a 0) a)","rewritten_term":"(+ a a)","applied_rules":["rule_11"]}
 {"original_term":"(- 1 (* 0 (- 1 a)))","rewritten_term":"1","applied_rules":["rule_9"]}
-{"original_term":"(* (- a (- -1 a)) a)","rewritten_term":"(* (- a (- -1 a)) a)","applied_rules":[]}
-{"original_term":"(- (- 1 (/ a 0)) a)","rewritten_term":"(- (- 1 (/ a 0)) a)","applied_rules":[]}
+{"original_term":"(* (- a (- -1 a)) a)","rewritten_term":"(* a (- a (- -1 a)))","applied_rules":[]}
+{"original_term":"(- (- 1 (/ a 0)) a)","rewritten_term":"(- 1 (+ a (/ a 0)))","applied_rules":[]}
 {"original_term":"(- (+ 1 0) (+ -1 a))","rewritten_term":"(- 1 (+ a -1))","applied_rules":["rule_2"]}
-{"original_term":"(+ -1 (- (/ -1 a) 1))","rewritten_term":"(+ (- (/ -1 a) 1) -1)","applied_rules":[]}
+{"original_term":"(+ -1 (- (/ -1 a) 1))","rewritten_term":"(+ -1 (- (/ -1 a) 1))","applied_rules":[]}
 {"original_term":"(* (/ 0 (+ a -1)) a)","rewritten_term":"0","applied_rules":["rule_136","rule_9"]}
-{"original_term":"(+ (* a a) c)","rewritten_term":"(+ (* a a) c)","applied_rules":[]}
-{"original_term":"(/ (* (/ a a) a) a)","rewritten_term":"1","applied_rules":["rule_135","rule_8","rule_135"]}
+{"original_term":"(+ (* a a) c)","rewritten_term":"(+ c (* a a))","applied_rules":[]}
+{"original_term":"(/ (* (/ a a) a) a)","rewritten_term":"1","applied_rules":["rule_143","rule_135"]}
 {"original_term":"(/ 0 (* (- a -1) a))","rewritten_term":"0","applied_rules":["rule_136"]}
 {"original_term":"(pow (+ 0 -1) (+ a a))","rewritten_term":"(pow -1 (+ a a))","applied_rules":["rule_3"]}
-{"original_term":"(+ (+ -1 a) (+ a 1))","rewritten_term":"(+ (+ a -1) (+ a 1))","applied_rules":[]}
+{"original_term":"(+ (+ -1 a) (+ a 1))","rewritten_term":"(+ a a)","applied_rules":["rule_2"]}
 {"original_term":"(pow (/ 0 a) (+ a c))","rewritten_term":"(pow 0 (+ a c))","applied_rules":["rule_136"]}
 {"original_term":"(/ (+ 0 (- a a)) 0)","rewritten_term":"(/ 0 0)","applied_rules":["rule_3","rule_10"]}
 {"original_term":"(- a (- (+ a 1) 1))","rewritten_term":"0","applied_rules":["rule_65","rule_10"]}
 {"original_term":"(pow 1 (/ (pow a 0) b))","rewritten_term":"(pow 1 (/ 1 b))","applied_rules":["rule_134"]}
-{"original_term":"(* (- a 0) (+ 1 a))","rewritten_term":"(+ (* a a) a)","applied_rules":["rule_11"]}
-{"original_term":"(* a (+ a (pow a -1)))","rewritten_term":"(* (+ (/ 1 a) a) a)","applied_rules":[]}
+{"original_term":"(* (- a 0) (+ 1 a))","rewritten_term":"(+ a (* a a))","applied_rules":["rule_11"]}
+{"original_term":"(* a (+ a (pow a -1)))","rewritten_term":"(* a (+ a (/ 1 a)))","applied_rules":[]}
 {"original_term":"(/ a (* (+ a b) -1))","rewritten_term":"(/ a (- 0 (+ a b)))","applied_rules":[]}
 {"original_term":"(- (pow 1 (+ 1 a)) 1)","rewritten_term":"(- (pow 1 a) 1)","applied_rules":["rule_73"]}
 {"original_term":"(/ (- (* a a) a) b)","rewritten_term":"(/ (- (* a a) a) b)","applied_rules":[]}
@@ -449,7 +449,7 @@
 {"original_term":"(+ (* -1 -1) -1)","rewritten_term":"0","applied_rules":[]}
 {"original_term":"(pow -1 (pow a (pow a -1)))","rewritten_term":"(pow -1 (pow a (/ 1 a)))","applied_rules":[]}
 {"original_term":"(pow (/ (/ 0 a) -1) a)","rewritten_term":"(pow -0 a)","applied_rules":["rule_136"]}
-{"original_term":"(/ (+ 1 (+ a a)) c)","rewritten_term":"(/ (+ (+ a a) 1) c)","applied_rules":[]}
+{"original_term":"(/ (+ 1 (+ a a)) c)","rewritten_term":"(/ (+ a (+ a 1)) c)","applied_rules":[]}
 {"original_term":"(* (- 0 a) (* 0 1))","rewritten_term":"0","applied_rules":["rule_6","rule_7"]}
 {"original_term":"(+ a (/ -1 -1))","rewritten_term":"(+ a 1)","applied_rules":["rule_135"]}
 {"original_term":"(pow -1 (* 0 (+ -1 -1)))","rewritten_term":"1","applied_rules":["rule_9","rule_134"]}
@@ -458,72 +458,72 @@
 {"original_term":"(+ (* -1 0) -1)","rewritten_term":"-1","applied_rules":["rule_7"]}
 {"original_term":"(- (pow (* a -1) a) c)","rewritten_term":"(- (pow (- 0 a) a) c)","applied_rules":[]}
 {"original_term":"(pow -1 (* -1 0))","rewritten_term":"1","applied_rules":["rule_7","rule_134"]}
-{"original_term":"(+ a (- b (/ 1 b)))","rewritten_term":"(+ (- b (/ 1 b)) a)","applied_rules":[]}
+{"original_term":"(+ a (- b (/ 1 b)))","rewritten_term":"(+ a (- b (/ 1 b)))","applied_rules":[]}
 {"original_term":"(/ (+ a 0) b)","rewritten_term":"(/ a b)","applied_rules":["rule_2"]}
 {"original_term":"(* (pow a 0) (/ b 1))","rewritten_term":"b","applied_rules":["rule_17","rule_134","rule_8"]}
 {"original_term":"(/ (/ a a) (* 0 0))","rewritten_term":"(/ 1 0)","applied_rules":["rule_7","rule_135"]}
-{"original_term":"(* (+ -1 (* 1 a)) a)","rewritten_term":"(* (+ a -1) a)","applied_rules":["rule_8"]}
+{"original_term":"(* (+ -1 (* 1 a)) a)","rewritten_term":"(* a (+ a -1))","applied_rules":["rule_8"]}
 {"original_term":"(* (* a b) (- 0 0))","rewritten_term":"0","applied_rules":["rule_10","rule_7"]}
 {"original_term":"(/ a (pow 0 (* a 0)))","rewritten_term":"(/ a (pow 0 0))","applied_rules":["rule_7"]}
 {"original_term":"(+ (* (+ a 0) 0) a)","rewritten_term":"a","applied_rules":["rule_2","rule_7","rule_3"]}
 {"original_term":"(- -1 (* 0 0))","rewritten_term":"-1","applied_rules":["rule_7"]}
 {"original_term":"(- (- a a) (pow 0 a))","rewritten_term":"(- 0 (pow 0 a))","applied_rules":["rule_10"]}
-{"original_term":"(pow 1 (+ -1 -1))","rewritten_term":"1","applied_rules":["rule_23","rule_15"]}
-{"original_term":"(* a (- (pow 0 0) b))","rewritten_term":"(* (- (pow 0 0) b) a)","applied_rules":[]}
+{"original_term":"(pow 1 (+ -1 -1))","rewritten_term":"(pow 1 -2)","applied_rules":[]}
+{"original_term":"(* a (- (pow 0 0) b))","rewritten_term":"(* a (- (pow 0 0) b))","applied_rules":[]}
 {"original_term":"(pow (/ 0 -1) 0)","rewritten_term":"1","applied_rules":["rule_134"]}
 {"original_term":"(* (+ a a) (/ 0 -1))","rewritten_term":"0","applied_rules":["rule_136","rule_7"]}
-{"original_term":"(- (- a 1) (/ a a))","rewritten_term":"(- (- a 1) 1)","applied_rules":["rule_135"]}
-{"original_term":"(* a (pow b (pow a 1)))","rewritten_term":"(* (pow b a) a)","applied_rules":["rule_13"]}
-{"original_term":"(/ 1 (* (pow 0 -1) a))","rewritten_term":"(/ 1 (* (pow 0 -1) a))","applied_rules":[]}
+{"original_term":"(- (- a 1) (/ a a))","rewritten_term":"(- a 2)","applied_rules":["rule_135"]}
+{"original_term":"(* a (pow b (pow a 1)))","rewritten_term":"(* a (pow b a))","applied_rules":["rule_13"]}
+{"original_term":"(/ 1 (* (pow 0 -1) a))","rewritten_term":"(/ 1 (* a (pow 0 -1)))","applied_rules":[]}
 {"original_term":"(/ (- (+ 0 1) a) -1)","rewritten_term":"(/ (- 1 a) -1)","applied_rules":["rule_3"]}
 {"original_term":"(/ (+ -1 a) 1)","rewritten_term":"(+ a -1)","applied_rules":["rule_17"]}
 {"original_term":"(+ a (pow a (pow 0 1)))","rewritten_term":"(+ a 1)","applied_rules":["rule_13","rule_134"]}
 {"original_term":"(* (- a a) c)","rewritten_term":"0","applied_rules":["rule_10","rule_9"]}
 {"original_term":"(/ -1 (* a (* 0 0)))","rewritten_term":"(/ -1 0)","applied_rules":["rule_7","rule_7"]}
-{"original_term":"(+ (+ (+ a -1) b) 0)","rewritten_term":"(+ (+ a -1) b)","applied_rules":["rule_2"]}
-{"original_term":"(- (- a (* a a)) a)","rewritten_term":"(- (- a (* a a)) a)","applied_rules":[]}
-{"original_term":"(+ (* a 1) (* a a))","rewritten_term":"(+ (* a a) a)","applied_rules":["rule_6"]}
+{"original_term":"(+ (+ (+ a -1) b) 0)","rewritten_term":"(+ b (+ a -1))","applied_rules":["rule_2"]}
+{"original_term":"(- (- a (* a a)) a)","rewritten_term":"(- 0 (* a a))","applied_rules":["rule_54"]}
+{"original_term":"(+ (* a 1) (* a a))","rewritten_term":"(+ a (* a a))","applied_rules":["rule_6"]}
 {"original_term":"(- a (+ 0 1))","rewritten_term":"(- a 1)","applied_rules":["rule_3"]}
 {"original_term":"(pow (+ 1 a) 1)","rewritten_term":"(+ a 1)","applied_rules":["rule_13"]}
 {"original_term":"(- 1 (/ (* 1 a) b))","rewritten_term":"(- 1 (/ a b))","applied_rules":["rule_8"]}
 {"original_term":"(+ (/ 0 a) (* 0 a))","rewritten_term":"0","applied_rules":["rule_9","rule_2","rule_136"]}
 {"original_term":"(+ -1 (+ a 0))","rewritten_term":"(+ a -1)","applied_rules":["rule_2"]}
 {"original_term":"(pow (* a a) (- c -1))","rewritten_term":"(pow (* a a) (+ c 1))","applied_rules":[]}
-{"original_term":"(+ (/ a (- -1 b)) -1)","rewritten_term":"(+ (/ a (- -1 b)) -1)","applied_rules":[]}
-{"original_term":"(* a (* (+ a -1) a))","rewritten_term":"(* (+ a -1) (* a a))","applied_rules":[]}
+{"original_term":"(+ (/ a (- -1 b)) -1)","rewritten_term":"(+ -1 (/ a (- -1 b)))","applied_rules":[]}
+{"original_term":"(* a (* (+ a -1) a))","rewritten_term":"(* a (* a (+ a -1)))","applied_rules":[]}
 {"original_term":"(pow (pow (+ a a) -1) a)","rewritten_term":"(pow (/ 1 (+ a a)) a)","applied_rules":[]}
 {"original_term":"(* -1 (* a -1))","rewritten_term":"a","applied_rules":["rule_57"]}
 {"original_term":"(* (+ a (/ b b)) 1)","rewritten_term":"(+ a 1)","applied_rules":["rule_6","rule_135"]}
 {"original_term":"(+ (+ (/ a 1) 0) 1)","rewritten_term":"(+ a 1)","applied_rules":["rule_2","rule_17"]}
 {"original_term":"(* a (- 1 1))","rewritten_term":"0","applied_rules":["rule_10","rule_7"]}
-{"original_term":"(* a (pow (* 1 b) b))","rewritten_term":"(* (pow b b) a)","applied_rules":["rule_8"]}
-{"original_term":"(+ 1 (+ (/ a a) a))","rewritten_term":"(+ (+ a 1) 1)","applied_rules":["rule_135"]}
-{"original_term":"(* (+ a 1) a)","rewritten_term":"(+ (* a a) a)","applied_rules":[]}
+{"original_term":"(* a (pow (* 1 b) b))","rewritten_term":"(* a (pow b b))","applied_rules":["rule_8"]}
+{"original_term":"(+ 1 (+ (/ a a) a))","rewritten_term":"(+ a 2)","applied_rules":["rule_135"]}
+{"original_term":"(* (+ a 1) a)","rewritten_term":"(+ a (* a a))","applied_rules":[]}
 {"original_term":"(* (pow a (/ a a)) -1)","rewritten_term":"(- 0 a)","applied_rules":["rule_135","rule_13"]}
 {"original_term":"(pow a (pow (* 1 1) 1))","rewritten_term":"a","applied_rules":["rule_6","rule_13","rule_13"]}
 {"original_term":"(+ -1 (pow (- 1 a) 0))","rewritten_term":"0","applied_rules":["rule_134"]}
 {"original_term":"(/ -1 (/ 1 -1))","rewritten_term":"1","applied_rules":[]}
-{"original_term":"(+ a (/ -1 (/ b 0)))","rewritten_term":"(+ (/ -1 (/ b 0)) a)","applied_rules":[]}
+{"original_term":"(+ a (/ -1 (/ b 0)))","rewritten_term":"(+ a (/ -1 (/ b 0)))","applied_rules":[]}
 {"original_term":"(pow 1 (/ a -1))","rewritten_term":"(pow 1 (/ a -1))","applied_rules":[]}
 {"original_term":"(* -1 (pow 0 0))","rewritten_term":"(- 0 (pow 0 0))","applied_rules":[]}
-{"original_term":"(+ 1 (+ (/ a 0) b))","rewritten_term":"(+ (+ (/ a 0) b) 1)","applied_rules":[]}
-{"original_term":"(* (- -1 a) (- 1 -1))","rewritten_term":"(* (- -1 a) 2)","applied_rules":[]}
-{"original_term":"(* (- 1 (/ 1 a)) -1)","rewritten_term":"(- (/ 1 a) 1)","applied_rules":[]}
+{"original_term":"(+ 1 (+ (/ a 0) b))","rewritten_term":"(+ b (+ 1 (/ a 0)))","applied_rules":[]}
+{"original_term":"(* (- -1 a) (- 1 -1))","rewritten_term":"(* 2 (- -1 a))","applied_rules":["rule_8"]}
+{"original_term":"(* (- 1 (/ 1 a)) -1)","rewritten_term":"(- (/ 1 a) 1)","applied_rules":["rule_64"]}
 {"original_term":"(/ (+ -1 0) a)","rewritten_term":"(/ -1 a)","applied_rules":["rule_2"]}
 {"original_term":"(* a (/ -1 (/ a a)))","rewritten_term":"(- 0 a)","applied_rules":["rule_135"]}
 {"original_term":"(* (+ (pow a 0) 0) a)","rewritten_term":"a","applied_rules":["rule_2","rule_134","rule_8"]}
-{"original_term":"(* a (+ (- -1 a) a))","rewritten_term":"(* (+ (- -1 a) a) a)","applied_rules":[]}
+{"original_term":"(* a (+ (- -1 a) a))","rewritten_term":"(* a (+ a (- -1 a)))","applied_rules":[]}
 {"original_term":"(- a (+ a (* 0 a)))","rewritten_term":"0","applied_rules":["rule_9","rule_2","rule_10"]}
-{"original_term":"(+ -1 (- (- 0 a) b))","rewritten_term":"(+ (- (- 0 a) b) -1)","applied_rules":[]}
+{"original_term":"(+ -1 (- (- 0 a) b))","rewritten_term":"(+ -1 (- 0 (+ a b)))","applied_rules":[]}
 {"original_term":"(pow a (* (- a a) b))","rewritten_term":"1","applied_rules":["rule_10","rule_9","rule_134"]}
-{"original_term":"(- a (+ (/ a -1) b))","rewritten_term":"(- a (+ (/ a -1) b))","applied_rules":[]}
+{"original_term":"(- a (+ (/ a -1) b))","rewritten_term":"(- a (+ b (/ a -1)))","applied_rules":[]}
 {"original_term":"(pow (+ -1 (pow 1 -1)) a)","rewritten_term":"(pow 0 a)","applied_rules":["rule_23"]}
-{"original_term":"(- (- a 1) a)","rewritten_term":"(- (- a 1) a)","applied_rules":[]}
-{"original_term":"(- (+ (- 1 a) b) 0)","rewritten_term":"(+ (- 1 a) b)","applied_rules":["rule_11"]}
-{"original_term":"(- (+ (* a a) -1) a)","rewritten_term":"(- (+ (* a a) -1) a)","applied_rules":[]}
+{"original_term":"(- (- a 1) a)","rewritten_term":"-1","applied_rules":["rule_54"]}
+{"original_term":"(- (+ (- 1 a) b) 0)","rewritten_term":"(+ b (- 1 a))","applied_rules":["rule_11"]}
+{"original_term":"(- (+ (* a a) -1) a)","rewritten_term":"(- (+ -1 (* a a)) a)","applied_rules":[]}
 {"original_term":"(/ (/ (+ a 1) 0) 1)","rewritten_term":"(/ (+ a 1) 0)","applied_rules":["rule_17"]}
 {"original_term":"(+ 0 (/ -1 (pow a b)))","rewritten_term":"(/ -1 (pow a b))","applied_rules":["rule_3"]}
-{"original_term":"(* (+ (- 1 -1) a) a)","rewritten_term":"(* (+ a 2) a)","applied_rules":[]}
+{"original_term":"(* (+ (- 1 -1) a) a)","rewritten_term":"(* a (+ a 2))","applied_rules":["rule_98_rev"]}
 {"original_term":"(+ a (/ (/ 0 a) a))","rewritten_term":"a","applied_rules":["rule_136","rule_136","rule_2"]}
 {"original_term":"(- (* (* -1 -1) a) -1)","rewritten_term":"(+ a 1)","applied_rules":["rule_9","rule_2"]}
 {"original_term":"(pow (- (/ a b) b) b)","rewritten_term":"(pow (- (/ a b) b) b)","applied_rules":[]}
@@ -533,7 +533,7 @@
 {"original_term":"(/ -1 (* -1 1))","rewritten_term":"1","applied_rules":["rule_6"]}
 {"original_term":"(/ (pow (/ a 1) a) a)","rewritten_term":"(/ (pow a a) a)","applied_rules":["rule_17"]}
 {"original_term":"(/ (/ 0 -1) (+ a 1))","rewritten_term":"0","applied_rules":["rule_136","rule_136"]}
-{"original_term":"(+ (pow (pow a a) -1) -1)","rewritten_term":"(+ (/ 1 (pow a a)) -1)","applied_rules":[]}
+{"original_term":"(+ (pow (pow a a) -1) -1)","rewritten_term":"(+ -1 (/ 1 (pow a a)))","applied_rules":[]}
 {"original_term":"(pow -1 (/ 0 (- a -1)))","rewritten_term":"1","applied_rules":["rule_136","rule_134"]}
 {"original_term":"(- (/ 1 (/ a -1)) 0)","rewritten_term":"(/ 1 (/ a -1))","applied_rules":["rule_11"]}
 {"original_term":"(pow a (- 0 (/ a a)))","rewritten_term":"(/ 1 a)","applied_rules":["rule_135"]}
@@ -541,51 +541,51 @@
 {"original_term":"(* a (+ 0 0))","rewritten_term":"0","applied_rules":["rule_2","rule_7"]}
 {"original_term":"(- (/ (pow 0 a) -1) 1)","rewritten_term":"(- (/ (pow 0 a) -1) 1)","applied_rules":[]}
 {"original_term":"(* 0 (* (+ 0 -1) a))","rewritten_term":"0","applied_rules":["rule_3","rule_9"]}
-{"original_term":"(* a (+ 0 (- 1 a)))","rewritten_term":"(- a (* a a))","applied_rules":["rule_3"]}
-{"original_term":"(* a (+ a (/ 1 a)))","rewritten_term":"(* (+ (/ 1 a) a) a)","applied_rules":[]}
+{"original_term":"(* a (+ 0 (- 1 a)))","rewritten_term":"(- a (pow a 2))","applied_rules":["rule_3"]}
+{"original_term":"(* a (+ a (/ 1 a)))","rewritten_term":"(* a (+ a (/ 1 a)))","applied_rules":[]}
 {"original_term":"(+ 1 (* (+ 0 1) -1))","rewritten_term":"0","applied_rules":["rule_3"]}
 {"original_term":"(+ (+ 1 (+ 0 1)) -1)","rewritten_term":"1","applied_rules":["rule_3"]}
-{"original_term":"(+ 1 (pow a (/ b 1)))","rewritten_term":"(+ (pow a b) 1)","applied_rules":["rule_17"]}
+{"original_term":"(+ 1 (pow a (/ b 1)))","rewritten_term":"(+ 1 (pow a b))","applied_rules":["rule_17"]}
 {"original_term":"(* (* 0 a) b)","rewritten_term":"0","applied_rules":["rule_9","rule_9"]}
-{"original_term":"(- (- -1 1) (* -1 a))","rewritten_term":"(+ a -2)","applied_rules":["rule_58"]}
+{"original_term":"(- (- -1 1) (* -1 a))","rewritten_term":"(- -1 (+ 1 (- 0 a)))","applied_rules":[]}
 {"original_term":"(- (- a a) 1)","rewritten_term":"-1","applied_rules":["rule_10"]}
 {"original_term":"(* (- a a) a)","rewritten_term":"0","applied_rules":["rule_10","rule_9"]}
 {"original_term":"(pow (/ (pow a b) a) 1)","rewritten_term":"(/ (pow a b) a)","applied_rules":["rule_13"]}
 {"original_term":"(+ (- (+ a 0) b) 0)","rewritten_term":"(- a b)","applied_rules":["rule_2","rule_2"]}
 {"original_term":"(- -1 (* 1 -1))","rewritten_term":"0","applied_rules":["rule_8"]}
-{"original_term":"(* a (pow 0 a))","rewritten_term":"(* (pow 0 a) a)","applied_rules":[]}
-{"original_term":"(/ 1 (- (- 1 a) 1))","rewritten_term":"(/ 1 (- (- 1 a) 1))","applied_rules":[]}
+{"original_term":"(* a (pow 0 a))","rewritten_term":"(* a (pow 0 a))","applied_rules":[]}
+{"original_term":"(/ 1 (- (- 1 a) 1))","rewritten_term":"(/ 1 (- 0 a))","applied_rules":["rule_54"]}
 {"original_term":"(* (+ a 1) 0)","rewritten_term":"0","applied_rules":["rule_7"]}
-{"original_term":"(+ 1 (pow a -1))","rewritten_term":"(+ (/ 1 a) 1)","applied_rules":[]}
+{"original_term":"(+ 1 (pow a -1))","rewritten_term":"(+ 1 (/ 1 a))","applied_rules":[]}
 {"original_term":"(pow 0 (- 0 (/ a a)))","rewritten_term":"(pow 0 -1)","applied_rules":["rule_135"]}
-{"original_term":"(+ (+ a (/ 1 a)) a)","rewritten_term":"(+ (+ (/ 1 a) a) a)","applied_rules":[]}
+{"original_term":"(+ (+ a (/ 1 a)) a)","rewritten_term":"(+ a (+ a (/ 1 a)))","applied_rules":[]}
 {"original_term":"(* -1 (pow a (* -1 -1)))","rewritten_term":"(- 0 a)","applied_rules":["rule_13"]}
-{"original_term":"(/ (+ (- a 1) a) 1)","rewritten_term":"(+ (- a 1) a)","applied_rules":["rule_17"]}
+{"original_term":"(/ (+ (- a 1) a) 1)","rewritten_term":"(+ a (- a 1))","applied_rules":["rule_17"]}
 {"original_term":"(- (+ (- a -1) -1) -1)","rewritten_term":"(+ a 1)","applied_rules":["rule_65"]}
-{"original_term":"(* a (/ 1 (/ a b)))","rewritten_term":"(* (/ 1 (/ a b)) a)","applied_rules":[]}
+{"original_term":"(* a (/ 1 (/ a b)))","rewritten_term":"(* a (/ 1 (/ a b)))","applied_rules":[]}
 {"original_term":"(/ (+ -1 a) (- 1 a))","rewritten_term":"(/ (+ a -1) (- 1 a))","applied_rules":[]}
 {"original_term":"(+ (pow a (/ a -1)) 0)","rewritten_term":"(pow a (/ a -1))","applied_rules":["rule_2"]}
 {"original_term":"(pow (pow (+ a a) a) -1)","rewritten_term":"(/ 1 (pow (+ a a) a))","applied_rules":[]}
 {"original_term":"(+ -1 (* -1 (* -1 -1)))","rewritten_term":"-2","applied_rules":[]}
 {"original_term":"(/ (* 0 (/ 0 0)) a)","rewritten_term":"0","applied_rules":["rule_9","rule_136"]}
-{"original_term":"(/ a (/ a (+ 0 0)))","rewritten_term":"0","applied_rules":["rule_2","rule_152"]}
+{"original_term":"(/ a (/ a (+ 0 0)))","rewritten_term":"0","applied_rules":["rule_152"]}
 {"original_term":"(/ 0 (+ -1 (/ a 0)))","rewritten_term":"0","applied_rules":["rule_136"]}
 {"original_term":"(* 1 (+ (- 0 a) 0))","rewritten_term":"(- 0 a)","applied_rules":["rule_2","rule_8"]}
-{"original_term":"(- 0 (- -1 (pow -1 a)))","rewritten_term":"(+ (pow -1 a) 1)","applied_rules":["rule_64"]}
+{"original_term":"(- 0 (- -1 (pow -1 a)))","rewritten_term":"(+ 1 (pow -1 a))","applied_rules":["rule_64"]}
 {"original_term":"(/ 1 (- 0 -1))","rewritten_term":"1","applied_rules":[]}
 {"original_term":"(- 0 (* (+ 0 1) 1))","rewritten_term":"-1","applied_rules":["rule_3"]}
 {"original_term":"(pow (pow 0 0) -1)","rewritten_term":"(/ 1 (pow 0 0))","applied_rules":[]}
 {"original_term":"(pow (/ a (+ 1 1)) a)","rewritten_term":"(pow (/ a 2) a)","applied_rules":[]}
-{"original_term":"(pow (+ (+ 1 1) a) b)","rewritten_term":"(pow (+ 2 a) b)","applied_rules":[]}
+{"original_term":"(pow (+ (+ 1 1) a) b)","rewritten_term":"(pow (+ a 2) b)","applied_rules":[]}
 {"original_term":"(* 0 (* (* a a) b))","rewritten_term":"0","applied_rules":["rule_9"]}
 {"original_term":"(pow 0 (pow (pow a a) 0))","rewritten_term":"0","applied_rules":["rule_134","rule_13"]}
 {"original_term":"(pow -1 (+ a b))","rewritten_term":"(pow -1 (+ a b))","applied_rules":[]}
 {"original_term":"(/ (/ 1 -1) -1)","rewritten_term":"1","applied_rules":[]}
 {"original_term":"(- -1 (/ 1 1))","rewritten_term":"-2","applied_rules":["rule_17"]}
-{"original_term":"(* (/ 1 a) (* a a))","rewritten_term":"(* (* a a) (/ 1 a))","applied_rules":[]}
+{"original_term":"(* (/ 1 a) (* a a))","rewritten_term":"a","applied_rules":["rule_142","rule_6"]}
 {"original_term":"(pow -1 (- (+ a -1) a))","rewritten_term":"(pow -1 (- (+ a -1) a))","applied_rules":[]}
 {"original_term":"(/ (* -1 a) (- b b))","rewritten_term":"(/ (- 0 a) 0)","applied_rules":["rule_10"]}
-{"original_term":"(* 1 (+ (pow 1 a) 1))","rewritten_term":"(+ (pow 1 a) 1)","applied_rules":["rule_8"]}
+{"original_term":"(* 1 (+ (pow 1 a) 1))","rewritten_term":"(+ 1 (pow 1 a))","applied_rules":["rule_8"]}
 {"original_term":"(/ (/ -1 1) 1)","rewritten_term":"-1","applied_rules":["rule_17"]}
 {"original_term":"(pow (/ a a) (/ a -1))","rewritten_term":"(pow 1 (/ a -1))","applied_rules":["rule_135"]}
 {"original_term":"(* 0 (- -1 1))","rewritten_term":"0","applied_rules":["rule_9"]}
@@ -593,52 +593,52 @@
 {"original_term":"(- a (pow a (/ 0 -1)))","rewritten_term":"(- a 1)","applied_rules":["rule_136","rule_134"]}
 {"original_term":"(* a (pow (/ a a) 1))","rewritten_term":"a","applied_rules":["rule_13","rule_135","rule_6"]}
 {"original_term":"(pow (- -1 -1) a)","rewritten_term":"(pow 0 a)","applied_rules":["rule_10"]}
-{"original_term":"(+ (+ (/ a a) a) -1)","rewritten_term":"(+ (+ a 1) -1)","applied_rules":["rule_135"]}
+{"original_term":"(+ (+ (/ a a) a) -1)","rewritten_term":"a","applied_rules":["rule_135","rule_2"]}
 {"original_term":"(pow (/ 0 (+ a b)) a)","rewritten_term":"(pow 0 a)","applied_rules":["rule_136"]}
-{"original_term":"(- a (+ a (* b -1)))","rewritten_term":"b","applied_rules":["rule_54","rule_57"]}
-{"original_term":"(- 1 (* a (+ 1 a)))","rewritten_term":"(- 1 (+ (* a a) a))","applied_rules":[]}
-{"original_term":"(+ (pow 0 0) 1)","rewritten_term":"(+ (pow 0 0) 1)","applied_rules":[]}
+{"original_term":"(- a (+ a (* b -1)))","rewritten_term":"(- a (+ a (- 0 b)))","applied_rules":[]}
+{"original_term":"(- 1 (* a (+ 1 a)))","rewritten_term":"(- 1 (+ a (* a a)))","applied_rules":[]}
+{"original_term":"(+ (pow 0 0) 1)","rewritten_term":"(+ 1 (pow 0 0))","applied_rules":[]}
 {"original_term":"(/ (/ 0 (+ -1 a)) a)","rewritten_term":"0","applied_rules":["rule_136","rule_136"]}
 {"original_term":"(* (* a (/ 1 a)) a)","rewritten_term":"a","applied_rules":["rule_142","rule_8"]}
-{"original_term":"(/ a (+ a (+ 1 a)))","rewritten_term":"(/ a (+ (+ a 1) a))","applied_rules":[]}
-{"original_term":"(+ (* a a) a)","rewritten_term":"(+ (* a a) a)","applied_rules":[]}
-{"original_term":"(+ a (/ (+ 1 a) -1))","rewritten_term":"(+ (/ (+ a 1) -1) a)","applied_rules":[]}
+{"original_term":"(/ a (+ a (+ 1 a)))","rewritten_term":"(/ a (+ a (+ a 1)))","applied_rules":[]}
+{"original_term":"(+ (* a a) a)","rewritten_term":"(+ a (* a a))","applied_rules":[]}
+{"original_term":"(+ a (/ (+ 1 a) -1))","rewritten_term":"(+ a (/ (+ a 1) -1))","applied_rules":[]}
 {"original_term":"(+ 0 (* 0 1))","rewritten_term":"0","applied_rules":["rule_3"]}
 {"original_term":"(pow (pow 0 (/ a b)) 1)","rewritten_term":"(pow 0 (/ a b))","applied_rules":["rule_13"]}
-{"original_term":"(+ (* (+ a -1) a) a)","rewritten_term":"(+ (* (+ a -1) a) a)","applied_rules":[]}
+{"original_term":"(+ (* (+ a -1) a) a)","rewritten_term":"(+ a (* a (+ a -1)))","applied_rules":[]}
 {"original_term":"(pow a (- 1 (/ a -1)))","rewritten_term":"(pow a (- 1 (/ a -1)))","applied_rules":[]}
 {"original_term":"(* (pow a 1) 1)","rewritten_term":"a","applied_rules":["rule_6","rule_13"]}
-{"original_term":"(* (pow a (/ 1 0)) a)","rewritten_term":"(* (pow a (/ 1 0)) a)","applied_rules":[]}
+{"original_term":"(* (pow a (/ 1 0)) a)","rewritten_term":"(* a (pow a (/ 1 0)))","applied_rules":[]}
 {"original_term":"(* (* a (- 0 a)) -1)","rewritten_term":"(* a a)","applied_rules":["rule_57"]}
 {"original_term":"(+ a (* 0 (* a 0)))","rewritten_term":"a","applied_rules":["rule_7","rule_2"]}
 {"original_term":"(/ (/ 0 (/ a b)) a)","rewritten_term":"0","applied_rules":["rule_136","rule_136"]}
 {"original_term":"(pow (+ 1 (* a 1)) a)","rewritten_term":"(pow (+ a 1) a)","applied_rules":["rule_6"]}
 {"original_term":"(/ 0 (* a -1))","rewritten_term":"0","applied_rules":["rule_136"]}
 {"original_term":"(- (pow a (/ b a)) d)","rewritten_term":"(- (pow a (/ b a)) d)","applied_rules":[]}
-{"original_term":"(+ (+ (* a -1) 1) 1)","rewritten_term":"(+ (+ (- 0 a) 1) 1)","applied_rules":[]}
+{"original_term":"(+ (+ (* a -1) 1) 1)","rewritten_term":"(+ 1 (+ 1 (- 0 a)))","applied_rules":[]}
 {"original_term":"(/ (/ 0 -1) -1)","rewritten_term":"-0","applied_rules":["rule_136"]}
-{"original_term":"(* (+ (* a 1) b) b)","rewritten_term":"(* (+ a b) b)","applied_rules":["rule_6"]}
-{"original_term":"(+ (- (* a -1) a) 0)","rewritten_term":"(- (- 0 a) a)","applied_rules":["rule_2"]}
+{"original_term":"(* (+ (* a 1) b) b)","rewritten_term":"(* b (+ a b))","applied_rules":["rule_6"]}
+{"original_term":"(+ (- (* a -1) a) 0)","rewritten_term":"(* a -2)","applied_rules":["rule_2","rule_60"]}
 {"original_term":"(pow (/ (- 0 a) a) -1)","rewritten_term":"(/ 1 (/ (- 0 a) a))","applied_rules":[]}
 {"original_term":"(- (/ a 0) 1)","rewritten_term":"(- (/ a 0) 1)","applied_rules":[]}
 {"original_term":"(/ (* (/ a b) 0) 1)","rewritten_term":"0","applied_rules":["rule_7"]}
 {"original_term":"(+ 0 (/ a (* 1 a)))","rewritten_term":"1","applied_rules":["rule_3","rule_8","rule_135"]}
 {"original_term":"(+ (/ 1 a) (* 1 0))","rewritten_term":"(/ 1 a)","applied_rules":["rule_7","rule_2"]}
 {"original_term":"(* -1 (* (/ a a) b))","rewritten_term":"(- 0 b)","applied_rules":["rule_135","rule_8"]}
-{"original_term":"(pow (pow -1 a) (- 0 1))","rewritten_term":"(/ 1 (pow -1 a))","applied_rules":["rule_12"]}
+{"original_term":"(pow (pow -1 a) (- 0 1))","rewritten_term":"(pow (pow -1 a) -1)","applied_rules":[]}
 {"original_term":"(pow (- 0 a) -1)","rewritten_term":"(/ 1 (- 0 a))","applied_rules":[]}
 {"original_term":"(pow (- 0 (pow a -1)) a)","rewritten_term":"(pow (- 0 (/ 1 a)) a)","applied_rules":[]}
 {"original_term":"(pow (/ -1 (- a b)) 0)","rewritten_term":"1","applied_rules":["rule_134"]}
 {"original_term":"(+ (* (+ -1 a) 0) a)","rewritten_term":"a","applied_rules":["rule_7","rule_3"]}
-{"original_term":"(+ (/ a -1) (+ b b))","rewritten_term":"(+ (+ b b) (/ a -1))","applied_rules":[]}
+{"original_term":"(+ (/ a -1) (+ b b))","rewritten_term":"(+ b (+ b (/ a -1)))","applied_rules":[]}
 {"original_term":"(- a (/ (- b 0) b))","rewritten_term":"(- a 1)","applied_rules":["rule_11","rule_135"]}
 {"original_term":"(pow (* a (+ 0 0)) a)","rewritten_term":"(pow 0 a)","applied_rules":["rule_2","rule_7"]}
 {"original_term":"(/ (* (- -1 a) 1) -1)","rewritten_term":"(/ (- -1 a) -1)","applied_rules":["rule_6"]}
-{"original_term":"(/ (+ -1 (* a a)) -1)","rewritten_term":"(/ (+ (* a a) -1) -1)","applied_rules":[]}
+{"original_term":"(/ (+ -1 (* a a)) -1)","rewritten_term":"(/ (+ -1 (* a a)) -1)","applied_rules":[]}
 {"original_term":"(- (pow 1 a) 1)","rewritten_term":"(- (pow 1 a) 1)","applied_rules":[]}
-{"original_term":"(* (+ 1 a) a)","rewritten_term":"(+ (* a a) a)","applied_rules":[]}
+{"original_term":"(* (+ 1 a) a)","rewritten_term":"(+ a (* a a))","applied_rules":[]}
 {"original_term":"(/ -1 (/ a b))","rewritten_term":"(/ -1 (/ a b))","applied_rules":[]}
-{"original_term":"(+ (/ (/ 1 a) 1) a)","rewritten_term":"(+ (/ 1 a) a)","applied_rules":["rule_17"]}
+{"original_term":"(+ (/ (/ 1 a) 1) a)","rewritten_term":"(+ a (/ 1 a))","applied_rules":["rule_17"]}
 {"original_term":"(- (- 1 0) (/ -1 0))","rewritten_term":"(- 1 (/ -1 0))","applied_rules":["rule_11"]}
 {"original_term":"(pow (/ (+ 0 a) a) c)","rewritten_term":"(pow 1 c)","applied_rules":["rule_3","rule_135"]}
 {"original_term":"(* 1 (/ -1 a))","rewritten_term":"(/ -1 a)","applied_rules":["rule_8"]}
@@ -646,8 +646,8 @@
 {"original_term":"(pow -1 (pow (+ 1 a) b))","rewritten_term":"(pow -1 (pow (+ a 1) b))","applied_rules":[]}
 {"original_term":"(+ 0 (+ (+ 1 1) a))","rewritten_term":"(+ a 2)","applied_rules":["rule_3"]}
 {"original_term":"(* 1 (/ (+ a a) 0))","rewritten_term":"(/ (+ a a) 0)","applied_rules":["rule_8"]}
-{"original_term":"(* (/ -1 a) (- 0 b))","rewritten_term":"(- 0 (* (/ -1 a) b))","applied_rules":[]}
-{"original_term":"(+ (/ a 0) 1)","rewritten_term":"(+ (/ a 0) 1)","applied_rules":[]}
+{"original_term":"(* (/ -1 a) (- 0 b))","rewritten_term":"(- 0 (* b (/ -1 a)))","applied_rules":[]}
+{"original_term":"(+ (/ a 0) 1)","rewritten_term":"(+ 1 (/ a 0))","applied_rules":[]}
 {"original_term":"(* (* a (pow a b)) 0)","rewritten_term":"0","applied_rules":["rule_7"]}
 {"original_term":"(- 0 (- (- -1 a) a))","rewritten_term":"(- a (- -1 a))","applied_rules":["rule_64"]}
 {"original_term":"(+ (* 0 -1) 0)","rewritten_term":"-0","applied_rules":["rule_2"]}
@@ -655,12 +655,12 @@
 {"original_term":"(/ a (pow a 1))","rewritten_term":"1","applied_rules":["rule_13","rule_135"]}
 {"original_term":"(+ -1 (- a (- b b)))","rewritten_term":"(+ a -1)","applied_rules":["rule_10","rule_11"]}
 {"original_term":"(pow a (/ a b))","rewritten_term":"(pow a (/ a b))","applied_rules":[]}
-{"original_term":"(- (* (pow 0 a) a) -1)","rewritten_term":"(+ (* (pow 0 a) a) 1)","applied_rules":[]}
-{"original_term":"(* (+ -1 -1) (+ -1 a))","rewritten_term":"(* (+ a -1) -2)","applied_rules":[]}
+{"original_term":"(- (* (pow 0 a) a) -1)","rewritten_term":"(+ 1 (* a (pow 0 a)))","applied_rules":[]}
+{"original_term":"(* (+ -1 -1) (+ -1 a))","rewritten_term":"(- 0 (* 2 (+ a -1)))","applied_rules":[]}
 {"original_term":"(* 0 (/ (* a -1) b))","rewritten_term":"0","applied_rules":["rule_9"]}
-{"original_term":"(+ a (- (- 0 b) c))","rewritten_term":"(+ (- (- 0 b) c) a)","applied_rules":[]}
+{"original_term":"(+ a (- (- 0 b) c))","rewritten_term":"(+ a (- 0 (+ b c)))","applied_rules":[]}
 {"original_term":"(* (pow a b) (+ a 1))","rewritten_term":"(* (+ a 1) (pow a b))","applied_rules":[]}
-{"original_term":"(* (pow 0 -1) (+ 1 1))","rewritten_term":"(+ (pow 0 -1) (pow 0 -1))","applied_rules":["rule_37"]}
+{"original_term":"(* (pow 0 -1) (+ 1 1))","rewritten_term":"(* 2 (pow 0 -1))","applied_rules":["rule_8"]}
 {"original_term":"(- a (- (* -1 a) 0))","rewritten_term":"(+ a a)","applied_rules":["rule_11","rule_58"]}
 {"original_term":"(pow (+ 0 (- a a)) 0)","rewritten_term":"(pow 0 0)","applied_rules":["rule_3","rule_10"]}
 {"original_term":"(+ -1 (* 1 a))","rewritten_term":"(+ a -1)","applied_rules":["rule_8"]}
@@ -675,22 +675,22 @@
 {"original_term":"(* 0 (pow (- a 0) -1))","rewritten_term":"0","applied_rules":["rule_9"]}
 {"original_term":"(- a (/ (* 1 b) 0))","rewritten_term":"(- a (/ b 0))","applied_rules":["rule_8"]}
 {"original_term":"(/ (/ a b) 0)","rewritten_term":"(/ (/ a b) 0)","applied_rules":[]}
-{"original_term":"(+ (+ (+ a 0) a) b)","rewritten_term":"(+ (+ a a) b)","applied_rules":["rule_2"]}
+{"original_term":"(+ (+ (+ a 0) a) b)","rewritten_term":"(+ b (+ a a))","applied_rules":["rule_2"]}
 {"original_term":"(pow (* -1 a) (pow a a))","rewritten_term":"(pow (- 0 a) (pow a a))","applied_rules":[]}
 {"original_term":"(+ (+ 0 a) b)","rewritten_term":"(+ a b)","applied_rules":["rule_3"]}
-{"original_term":"(+ (pow a -1) -1)","rewritten_term":"(+ (/ 1 a) -1)","applied_rules":[]}
+{"original_term":"(+ (pow a -1) -1)","rewritten_term":"(+ -1 (/ 1 a))","applied_rules":[]}
 {"original_term":"(- 1 (/ (+ 0 a) -1))","rewritten_term":"(- 1 (/ a -1))","applied_rules":["rule_3"]}
 {"original_term":"(/ (+ 0 a) b)","rewritten_term":"(/ a b)","applied_rules":["rule_3"]}
 {"original_term":"(pow a (* (* a 0) a))","rewritten_term":"1","applied_rules":["rule_7","rule_9","rule_134"]}
-{"original_term":"(- (* -1 a) (- a c))","rewritten_term":"(- (- 0 a) (- a c))","applied_rules":[]}
-{"original_term":"(+ a (/ a (pow 0 0)))","rewritten_term":"(+ (/ a (pow 0 0)) a)","applied_rules":[]}
+{"original_term":"(- (* -1 a) (- a c))","rewritten_term":"(- 0 (+ a (- a c)))","applied_rules":[]}
+{"original_term":"(+ a (/ a (pow 0 0)))","rewritten_term":"(+ a (/ a (pow 0 0)))","applied_rules":[]}
 {"original_term":"(/ a (* a 1))","rewritten_term":"1","applied_rules":["rule_6","rule_135"]}
 {"original_term":"(- (+ 1 a) (+ a 1))","rewritten_term":"0","applied_rules":["rule_119","rule_10"]}
 {"original_term":"(+ (- -1 0) (/ a a))","rewritten_term":"0","applied_rules":["rule_11","rule_135"]}
 {"original_term":"(- a (/ b c))","rewritten_term":"(- a (/ b c))","applied_rules":[]}
-{"original_term":"(+ -1 (pow a b))","rewritten_term":"(+ (pow a b) -1)","applied_rules":[]}
-{"original_term":"(+ a (+ (+ 0 b) a))","rewritten_term":"(+ (+ b a) a)","applied_rules":["rule_3"]}
-{"original_term":"(+ (/ -1 a) (+ b 1))","rewritten_term":"(+ (+ b 1) (/ -1 a))","applied_rules":[]}
+{"original_term":"(+ -1 (pow a b))","rewritten_term":"(+ -1 (pow a b))","applied_rules":[]}
+{"original_term":"(+ a (+ (+ 0 b) a))","rewritten_term":"(+ a (+ b a))","applied_rules":["rule_3"]}
+{"original_term":"(+ (/ -1 a) (+ b 1))","rewritten_term":"(+ b (+ 1 (/ -1 a)))","applied_rules":[]}
 {"original_term":"(- 0 (/ (pow 0 a) 0))","rewritten_term":"(- 0 (/ (pow 0 a) 0))","applied_rules":[]}
 {"original_term":"(- (pow (* a 0) a) b)","rewritten_term":"(- (pow 0 a) b)","applied_rules":["rule_7"]}
 {"original_term":"(- 0 (/ a (* a -1)))","rewritten_term":"(- 0 (/ a (- 0 a)))","applied_rules":[]}
@@ -702,23 +702,23 @@
 {"original_term":"(pow -1 (* 0 -1))","rewritten_term":"1","applied_rules":["rule_9","rule_134"]}
 {"original_term":"(* 0 (+ -1 (* 0 0)))","rewritten_term":"-0","applied_rules":["rule_7"]}
 {"original_term":"(pow (+ 1 0) 0)","rewritten_term":"1","applied_rules":["rule_2","rule_14"]}
-{"original_term":"(+ a (pow 0 (- b 1)))","rewritten_term":"(+ (pow 0 (- b 1)) a)","applied_rules":[]}
+{"original_term":"(+ a (pow 0 (- b 1)))","rewritten_term":"(+ a (pow 0 (- b 1)))","applied_rules":[]}
 {"original_term":"(/ (/ 0 (/ a -1)) 1)","rewritten_term":"0","applied_rules":["rule_17","rule_136"]}
 {"original_term":"(+ 0 (* a a))","rewritten_term":"(* a a)","applied_rules":["rule_3"]}
 {"original_term":"(/ 1 (* (- -1 -1) -1))","rewritten_term":"(/ 1 -0)","applied_rules":["rule_10"]}
 {"original_term":"(- (* (/ -1 -1) 0) a)","rewritten_term":"(- 0 a)","applied_rules":["rule_7"]}
 {"original_term":"(* (- -1 a) (pow a a))","rewritten_term":"(* (- -1 a) (pow a a))","applied_rules":[]}
 {"original_term":"(* -1 (+ 1 (* a 1)))","rewritten_term":"(- -1 a)","applied_rules":["rule_6","rule_62"]}
-{"original_term":"(+ (+ -1 (* a a)) a)","rewritten_term":"(+ (+ (* a a) -1) a)","applied_rules":[]}
+{"original_term":"(+ (+ -1 (* a a)) a)","rewritten_term":"(+ a (+ -1 (* a a)))","applied_rules":[]}
 {"original_term":"(- (/ a (pow 0 -1)) 1)","rewritten_term":"(- (/ a (pow 0 -1)) 1)","applied_rules":[]}
 {"original_term":"(+ 1 (+ 0 1))","rewritten_term":"2","applied_rules":["rule_3"]}
-{"original_term":"(+ (* (- a 1) a) 1)","rewritten_term":"(+ (- (* a a) a) 1)","applied_rules":[]}
+{"original_term":"(+ (* (- a 1) a) 1)","rewritten_term":"(+ 1 (- (pow a 2) a))","applied_rules":[]}
 {"original_term":"(pow 0 (- (* a 0) -1))","rewritten_term":"0","applied_rules":["rule_7","rule_13"]}
-{"original_term":"(* -1 (- a (- -1 b)))","rewritten_term":"(- (- -1 b) a)","applied_rules":["rule_64"]}
+{"original_term":"(* -1 (- a (- -1 b)))","rewritten_term":"(- -1 (+ b a))","applied_rules":["rule_64"]}
 {"original_term":"(* (- (pow 1 a) a) 0)","rewritten_term":"0","applied_rules":["rule_7"]}
 {"original_term":"(/ a (/ (+ a -1) a))","rewritten_term":"(/ a (/ (+ a -1) a))","applied_rules":[]}
-{"original_term":"(pow a (+ -1 (+ a a)))","rewritten_term":"(pow a (+ (+ a a) -1))","applied_rules":[]}
-{"original_term":"(- (- -1 (/ 1 a)) -1)","rewritten_term":"(+ (- -1 (/ 1 a)) 1)","applied_rules":[]}
+{"original_term":"(pow a (+ -1 (+ a a)))","rewritten_term":"(pow a (+ a (+ a -1)))","applied_rules":[]}
+{"original_term":"(- (- -1 (/ 1 a)) -1)","rewritten_term":"(+ 1 (- -1 (/ 1 a)))","applied_rules":[]}
 {"original_term":"(/ (* -1 a) (pow a 1))","rewritten_term":"-1","applied_rules":["rule_13","rule_143"]}
 {"original_term":"(/ (pow -1 (* 1 -1)) 1)","rewritten_term":"-1","applied_rules":["rule_8","rule_17"]}
 {"original_term":"(- (* a a) (/ -1 -1))","rewritten_term":"(- (* a a) 1)","applied_rules":["rule_135"]}
@@ -733,13 +733,13 @@
 {"original_term":"(* (- 1 (pow 1 0)) 1)","rewritten_term":"0","applied_rules":["rule_6","rule_14"]}
 {"original_term":"(+ -1 (* 0 -1))","rewritten_term":"-1","applied_rules":["rule_9"]}
 {"original_term":"(- a (+ (* -1 a) a))","rewritten_term":"a","applied_rules":["rule_54","rule_57"]}
-{"original_term":"(+ (pow 1 -1) (- 0 1))","rewritten_term":"0","applied_rules":["rule_12","rule_23"]}
-{"original_term":"(/ (- -1 (- 0 1)) a)","rewritten_term":"0","applied_rules":["rule_12","rule_136"]}
+{"original_term":"(+ (pow 1 -1) (- 0 1))","rewritten_term":"0","applied_rules":["rule_23"]}
+{"original_term":"(/ (- -1 (- 0 1)) a)","rewritten_term":"0","applied_rules":["rule_58","rule_136"]}
 {"original_term":"(/ 1 (+ (- a a) a))","rewritten_term":"(/ 1 a)","applied_rules":["rule_10","rule_3"]}
-{"original_term":"(* (/ a 0) b)","rewritten_term":"(* (/ a 0) b)","applied_rules":[]}
-{"original_term":"(+ -1 (- a (- a 0)))","rewritten_term":"-1","applied_rules":["rule_11","rule_10"]}
+{"original_term":"(* (/ a 0) b)","rewritten_term":"(* b (/ a 0))","applied_rules":[]}
+{"original_term":"(+ -1 (- a (- a 0)))","rewritten_term":"-1","applied_rules":["rule_57"]}
 {"original_term":"(* a (/ 0 (+ -1 a)))","rewritten_term":"0","applied_rules":["rule_136","rule_7"]}
-{"original_term":"(- (pow -1 (+ a 0)) -1)","rewritten_term":"(+ (pow -1 a) 1)","applied_rules":["rule_2"]}
+{"original_term":"(- (pow -1 (+ a 0)) -1)","rewritten_term":"(+ 1 (pow -1 a))","applied_rules":["rule_2"]}
 {"original_term":"(pow (/ a (pow 1 b)) 1)","rewritten_term":"(/ a (pow 1 b))","applied_rules":["rule_13"]}
 {"original_term":"(/ (+ (pow 1 -1) 1) -1)","rewritten_term":"-2","applied_rules":["rule_23"]}
 {"original_term":"(/ 1 (/ 1 (* a -1)))","rewritten_term":"(- 0 a)","applied_rules":["rule_152"]}
@@ -752,12 +752,12 @@
 {"original_term":"(pow a (pow (pow 1 b) 1))","rewritten_term":"(pow a (pow 1 b))","applied_rules":["rule_13"]}
 {"original_term":"(+ (- a -1) (- 1 1))","rewritten_term":"(+ a 1)","applied_rules":["rule_10","rule_2"]}
 {"original_term":"(+ (pow (- 1 0) 1) a)","rewritten_term":"(+ a 1)","applied_rules":["rule_11","rule_13"]}
-{"original_term":"(+ -1 (/ (* -1 1) a))","rewritten_term":"(+ (/ -1 a) -1)","applied_rules":["rule_6"]}
-{"original_term":"(* a (+ -1 (+ -1 a)))","rewritten_term":"(* (+ (+ a -1) -1) a)","applied_rules":[]}
+{"original_term":"(+ -1 (/ (* -1 1) a))","rewritten_term":"(+ -1 (/ -1 a))","applied_rules":["rule_6"]}
+{"original_term":"(* a (+ -1 (+ -1 a)))","rewritten_term":"(* a (+ a -2))","applied_rules":[]}
 {"original_term":"(* (- a (- a 1)) -1)","rewritten_term":"-1","applied_rules":["rule_57"]}
 {"original_term":"(pow (+ (/ a a) 1) 1)","rewritten_term":"2","applied_rules":["rule_13","rule_135"]}
 {"original_term":"(pow (pow -1 -1) 0)","rewritten_term":"1","applied_rules":["rule_134"]}
-{"original_term":"(- -1 (+ 1 (+ a 1)))","rewritten_term":"(- -1 (+ (+ a 1) 1))","applied_rules":[]}
+{"original_term":"(- -1 (+ 1 (+ a 1)))","rewritten_term":"(- -1 (+ a 2))","applied_rules":[]}
 {"original_term":"(- (pow -1 (- -1 a)) 0)","rewritten_term":"(pow -1 (- -1 a))","applied_rules":["rule_11"]}
 {"original_term":"(+ (pow -1 0) 0)","rewritten_term":"1","applied_rules":["rule_2","rule_134"]}
 {"original_term":"(* 0 (pow 1 -1))","rewritten_term":"0","applied_rules":["rule_9"]}
@@ -774,26 +774,26 @@
 {"original_term":"(/ (pow (* a 1) a) a)","rewritten_term":"(/ (pow a a) a)","applied_rules":["rule_6"]}
 {"original_term":"(+ a (* (- a a) 0))","rewritten_term":"a","applied_rules":["rule_7","rule_2"]}
 {"original_term":"(pow -1 (pow a (- 0 0)))","rewritten_term":"-1","applied_rules":["rule_10","rule_134","rule_13"]}
-{"original_term":"(* a (+ (pow 0 -1) a))","rewritten_term":"(* (+ (pow 0 -1) a) a)","applied_rules":[]}
-{"original_term":"(- (+ (pow a -1) -1) 1)","rewritten_term":"(- (+ (/ 1 a) -1) 1)","applied_rules":[]}
-{"original_term":"(/ a (+ (pow a -1) a))","rewritten_term":"(/ a (+ (/ 1 a) a))","applied_rules":[]}
-{"original_term":"(+ a (* (pow a a) a))","rewritten_term":"(+ (* (pow a a) a) a)","applied_rules":[]}
-{"original_term":"(* (+ (* 1 a) a) a)","rewritten_term":"(* (+ a a) a)","applied_rules":["rule_8"]}
+{"original_term":"(* a (+ (pow 0 -1) a))","rewritten_term":"(* a (+ a (pow 0 -1)))","applied_rules":[]}
+{"original_term":"(- (+ (pow a -1) -1) 1)","rewritten_term":"(- -1 (- 1 (/ 1 a)))","applied_rules":[]}
+{"original_term":"(/ a (+ (pow a -1) a))","rewritten_term":"(/ a (+ a (/ 1 a)))","applied_rules":[]}
+{"original_term":"(+ a (* (pow a a) a))","rewritten_term":"(+ a (* a (pow a a)))","applied_rules":[]}
+{"original_term":"(* (+ (* 1 a) a) a)","rewritten_term":"(* a (+ a a))","applied_rules":["rule_8"]}
 {"original_term":"(pow 1 (* a 0))","rewritten_term":"1","applied_rules":["rule_7","rule_14"]}
 {"original_term":"(/ (- a 1) (/ 0 0))","rewritten_term":"(/ (- a 1) (/ 0 0))","applied_rules":[]}
-{"original_term":"(+ (pow (/ a 0) a) a)","rewritten_term":"(+ (pow (/ a 0) a) a)","applied_rules":[]}
+{"original_term":"(+ (pow (/ a 0) a) a)","rewritten_term":"(+ a (pow (/ a 0) a))","applied_rules":[]}
 {"original_term":"(* (- a 1) (/ 1 0))","rewritten_term":"(* (- a 1) (/ 1 0))","applied_rules":[]}
 {"original_term":"(- (+ 1 1) -1)","rewritten_term":"3","applied_rules":[]}
 {"original_term":"(/ a (/ (- a a) 0))","rewritten_term":"(/ a (/ 0 0))","applied_rules":["rule_10"]}
 {"original_term":"(/ (* a a) (- a a))","rewritten_term":"(/ (* a a) 0)","applied_rules":["rule_10"]}
 {"original_term":"(pow (+ -1 -1) 0)","rewritten_term":"1","applied_rules":["rule_134"]}
-{"original_term":"(* a (* (* b 1) a))","rewritten_term":"(* (* b a) a)","applied_rules":["rule_6"]}
+{"original_term":"(* a (* (* b 1) a))","rewritten_term":"(* a (* b a))","applied_rules":["rule_6"]}
 {"original_term":"(* (+ (+ a 0) 1) 1)","rewritten_term":"(+ a 1)","applied_rules":["rule_2","rule_6"]}
 {"original_term":"(pow a (/ 1 (/ 0 0)))","rewritten_term":"(pow a (/ 1 (/ 0 0)))","applied_rules":[]}
 {"original_term":"(pow (pow a (+ -1 -1)) 0)","rewritten_term":"1","applied_rules":["rule_134"]}
 {"original_term":"(/ 1 (/ a 1))","rewritten_term":"(/ 1 a)","applied_rules":["rule_17"]}
 {"original_term":"(+ a (- 0 (- 1 0)))","rewritten_term":"(+ a -1)","applied_rules":["rule_11"]}
-{"original_term":"(/ (- 0 1) 0)","rewritten_term":"(/ -1 0)","applied_rules":["rule_12"]}
+{"original_term":"(/ (- 0 1) 0)","rewritten_term":"(/ -1 0)","applied_rules":[]}
 {"original_term":"(/ (pow 1 (- 1 a)) a)","rewritten_term":"(/ (pow 1 (- 1 a)) a)","applied_rules":[]}
 {"original_term":"(+ (* 0 1) (+ 1 a))","rewritten_term":"(+ a 1)","applied_rules":["rule_6","rule_3"]}
 {"original_term":"(pow a (* (* 0 a) 0))","rewritten_term":"1","applied_rules":["rule_7","rule_134"]}
@@ -801,91 +801,91 @@
 {"original_term":"(- 0 (+ 0 0))","rewritten_term":"0","applied_rules":["rule_2"]}
 {"original_term":"(pow (- a (/ 0 b)) b)","rewritten_term":"(pow a b)","applied_rules":["rule_136","rule_11"]}
 {"original_term":"(+ 1 (pow 1 -1))","rewritten_term":"2","applied_rules":["rule_23"]}
-{"original_term":"(+ a (/ 1 0))","rewritten_term":"(+ (/ 1 0) a)","applied_rules":[]}
-{"original_term":"(+ (- (- a a) a) a)","rewritten_term":"(+ (- 0 a) a)","applied_rules":["rule_10"]}
+{"original_term":"(+ a (/ 1 0))","rewritten_term":"(+ a (/ 1 0))","applied_rules":[]}
+{"original_term":"(+ (- (- a a) a) a)","rewritten_term":"(+ a (- 0 a))","applied_rules":["rule_10"]}
 {"original_term":"(+ (* 0 (- a 0)) 1)","rewritten_term":"1","applied_rules":["rule_9"]}
 {"original_term":"(- (+ a 1) 1)","rewritten_term":"a","applied_rules":["rule_65"]}
 {"original_term":"(/ -1 (/ a (/ 0 -1)))","rewritten_term":"(/ -1 (/ a 0))","applied_rules":["rule_136"]}
-{"original_term":"(* (pow a (- -1 a)) a)","rewritten_term":"(* (pow a (- -1 a)) a)","applied_rules":[]}
+{"original_term":"(* (pow a (- -1 a)) a)","rewritten_term":"(* a (pow a (- -1 a)))","applied_rules":[]}
 {"original_term":"(/ (pow a 1) (pow 1 0))","rewritten_term":"a","applied_rules":["rule_13","rule_14","rule_17"]}
 {"original_term":"(pow (- a (+ -1 a)) -1)","rewritten_term":"1","applied_rules":["rule_54","rule_23"]}
 {"original_term":"(* (- a (+ b -1)) -1)","rewritten_term":"(- (+ b -1) a)","applied_rules":["rule_64"]}
-{"original_term":"(+ 0 (+ a (pow a -1)))","rewritten_term":"(+ (/ 1 a) a)","applied_rules":["rule_3"]}
+{"original_term":"(+ 0 (+ a (pow a -1)))","rewritten_term":"(+ a (/ 1 a))","applied_rules":["rule_3"]}
 {"original_term":"(pow (+ 1 a) (* a a))","rewritten_term":"(pow (+ a 1) (* a a))","applied_rules":[]}
-{"original_term":"(+ (* 1 a) (pow b b))","rewritten_term":"(+ (pow b b) a)","applied_rules":["rule_8"]}
+{"original_term":"(+ (* 1 a) (pow b b))","rewritten_term":"(+ a (pow b b))","applied_rules":["rule_8"]}
 {"original_term":"(/ 1 (+ 1 1))","rewritten_term":"0.5","applied_rules":[]}
 {"original_term":"(- (* a (+ 1 -1)) a)","rewritten_term":"(- 0 a)","applied_rules":["rule_124"]}
 {"original_term":"(/ a (+ (- -1 0) a))","rewritten_term":"(/ a (+ a -1))","applied_rules":["rule_11"]}
 {"original_term":"(- 0 (pow a (/ -1 a)))","rewritten_term":"(- 0 (pow a (/ -1 a)))","applied_rules":[]}
 {"original_term":"(* 1 (/ a (+ b 1)))","rewritten_term":"(/ a (+ b 1))","applied_rules":["rule_8"]}
-{"original_term":"(/ (+ (/ 1 a) b) 1)","rewritten_term":"(+ (/ 1 a) b)","applied_rules":["rule_17"]}
+{"original_term":"(/ (+ (/ 1 a) b) 1)","rewritten_term":"(+ b (/ 1 a))","applied_rules":["rule_17"]}
 {"original_term":"(pow 1 (pow 0 0))","rewritten_term":"(pow 1 (pow 0 0))","applied_rules":[]}
 {"original_term":"(pow a (pow (* 0 a) a))","rewritten_term":"(pow a (pow 0 a))","applied_rules":["rule_9"]}
 {"original_term":"(pow (/ 1 (- 0 0)) a)","rewritten_term":"(pow (/ 1 0) a)","applied_rules":["rule_10"]}
 {"original_term":"(pow a (* 0 (/ 0 b)))","rewritten_term":"1","applied_rules":["rule_9","rule_134"]}
-{"original_term":"(+ (/ -1 a) -1)","rewritten_term":"(+ (/ -1 a) -1)","applied_rules":[]}
+{"original_term":"(+ (/ -1 a) -1)","rewritten_term":"(+ -1 (/ -1 a))","applied_rules":[]}
 {"original_term":"(/ 0 (* -1 (- a -1)))","rewritten_term":"0","applied_rules":["rule_136"]}
 {"original_term":"(pow a (pow -1 -1))","rewritten_term":"(/ 1 a)","applied_rules":[]}
 {"original_term":"(- (pow (* 0 0) 1) a)","rewritten_term":"(- 0 a)","applied_rules":["rule_7","rule_13"]}
 {"original_term":"(/ (/ (+ 1 0) a) a)","rewritten_term":"(/ (/ 1 a) a)","applied_rules":["rule_2"]}
-{"original_term":"(+ -1 (- 0 a))","rewritten_term":"(+ (- 0 a) -1)","applied_rules":[]}
+{"original_term":"(+ -1 (- 0 a))","rewritten_term":"(+ -1 (- 0 a))","applied_rules":[]}
 {"original_term":"(pow (/ a (- b -1)) b)","rewritten_term":"(pow (/ a (+ b 1)) b)","applied_rules":[]}
 {"original_term":"(- (- a 0) 0)","rewritten_term":"a","applied_rules":["rule_11","rule_11"]}
 {"original_term":"(pow (pow a a) (pow a a))","rewritten_term":"(pow (pow a a) (pow a a))","applied_rules":[]}
 {"original_term":"(- (/ (pow a b) b) c)","rewritten_term":"(- (/ (pow a b) b) c)","applied_rules":[]}
-{"original_term":"(- a (+ (* b a) 1))","rewritten_term":"(- a (+ (* b a) 1))","applied_rules":[]}
+{"original_term":"(- a (+ (* b a) 1))","rewritten_term":"(- a (+ 1 (* b a)))","applied_rules":[]}
 {"original_term":"(- -1 (pow (/ a -1) -1))","rewritten_term":"(- -1 (/ 1 (/ a -1)))","applied_rules":[]}
 {"original_term":"(* a (/ (pow -1 1) -1))","rewritten_term":"a","applied_rules":["rule_13","rule_6"]}
 {"original_term":"(- a (pow (pow 0 b) a))","rewritten_term":"(- a (pow (pow 0 b) a))","applied_rules":[]}
 {"original_term":"(/ -1 (pow 1 0))","rewritten_term":"-1","applied_rules":["rule_14"]}
 {"original_term":"(* 1 (* 0 -1))","rewritten_term":"-0","applied_rules":["rule_8"]}
-{"original_term":"(+ (pow 1 (- a -1)) 1)","rewritten_term":"(+ (pow 1 a) 1)","applied_rules":["rule_71"]}
+{"original_term":"(+ (pow 1 (- a -1)) 1)","rewritten_term":"(+ 1 (pow 1 a))","applied_rules":["rule_71"]}
 {"original_term":"(* 1 (/ a -1))","rewritten_term":"(/ a -1)","applied_rules":["rule_8"]}
 {"original_term":"(/ a (pow -1 0))","rewritten_term":"a","applied_rules":["rule_134","rule_17"]}
 {"original_term":"(+ (* a 0) (pow a -1))","rewritten_term":"(/ 1 a)","applied_rules":["rule_7","rule_3"]}
-{"original_term":"(- (- (+ 0 0) a) a)","rewritten_term":"(- (- 0 a) a)","applied_rules":["rule_2"]}
-{"original_term":"(/ (- (+ 1 -1) a) a)","rewritten_term":"(/ (- 0 a) a)","applied_rules":[]}
+{"original_term":"(- (- (+ 0 0) a) a)","rewritten_term":"(* a -2)","applied_rules":["rule_2","rule_60"]}
+{"original_term":"(/ (- (+ 1 -1) a) a)","rewritten_term":"(/ (- 0 a) a)","applied_rules":["rule_85"]}
 {"original_term":"(pow 1 (* (pow a a) 1))","rewritten_term":"(pow 1 (pow a a))","applied_rules":["rule_6"]}
-{"original_term":"(* a (/ b c))","rewritten_term":"(* (/ b c) a)","applied_rules":[]}
+{"original_term":"(* a (/ b c))","rewritten_term":"(* a (/ b c))","applied_rules":[]}
 {"original_term":"(/ (* a a) (+ 0 0))","rewritten_term":"(/ (* a a) 0)","applied_rules":["rule_2"]}
 {"original_term":"(+ -1 (/ 0 -1))","rewritten_term":"-1","applied_rules":["rule_136"]}
 {"original_term":"(pow a (/ a (+ b 0)))","rewritten_term":"(pow a (/ a b))","applied_rules":["rule_2"]}
 {"original_term":"(- -1 (+ 0 a))","rewritten_term":"(- -1 a)","applied_rules":["rule_3"]}
 {"original_term":"(/ (pow a a) (+ a b))","rewritten_term":"(/ (pow a a) (+ a b))","applied_rules":[]}
 {"original_term":"(* -1 (pow a (/ a 1)))","rewritten_term":"(- 0 (pow a a))","applied_rules":["rule_17"]}
-{"original_term":"(/ (+ a (* -1 a)) 1)","rewritten_term":"(+ (- 0 a) a)","applied_rules":["rule_17"]}
-{"original_term":"(+ (+ (+ a 1) b) b)","rewritten_term":"(+ (+ (+ a 1) b) b)","applied_rules":[]}
+{"original_term":"(/ (+ a (* -1 a)) 1)","rewritten_term":"(+ a (- 0 a))","applied_rules":["rule_17"]}
+{"original_term":"(+ (+ (+ a 1) b) b)","rewritten_term":"(+ b (+ b (+ a 1)))","applied_rules":[]}
 {"original_term":"(* (* (/ 0 a) 1) a)","rewritten_term":"0","applied_rules":["rule_6","rule_136","rule_9"]}
-{"original_term":"(+ a (/ (pow b 0) a))","rewritten_term":"(+ (/ 1 a) a)","applied_rules":["rule_134"]}
+{"original_term":"(+ a (/ (pow b 0) a))","rewritten_term":"(+ a (/ 1 a))","applied_rules":["rule_134"]}
 {"original_term":"(/ (+ a 0) (* a a))","rewritten_term":"(/ a (* a a))","applied_rules":["rule_2"]}
 {"original_term":"(- (/ 1 0) 1)","rewritten_term":"(- (/ 1 0) 1)","applied_rules":[]}
 {"original_term":"(+ (+ -1 (- a a)) c)","rewritten_term":"(+ c -1)","applied_rules":["rule_10"]}
 {"original_term":"(pow (* 0 0) a)","rewritten_term":"(pow 0 a)","applied_rules":["rule_7"]}
-{"original_term":"(* a (/ (- 1 1) 0))","rewritten_term":"(* (/ 0 0) a)","applied_rules":["rule_10"]}
+{"original_term":"(* a (/ (- 1 1) 0))","rewritten_term":"(* a (/ 0 0))","applied_rules":["rule_10"]}
 {"original_term":"(- (* 0 0) (- a -1))","rewritten_term":"(- -1 a)","applied_rules":["rule_7","rule_64"]}
 {"original_term":"(- (* a (- a a)) a)","rewritten_term":"(- 0 a)","applied_rules":["rule_10","rule_7"]}
 {"original_term":"(* (pow 0 0) (/ a -1))","rewritten_term":"(* (/ a -1) (pow 0 0))","applied_rules":[]}
 {"original_term":"(* -1 (+ 1 a))","rewritten_term":"(- -1 a)","applied_rules":["rule_62"]}
 {"original_term":"(pow (- a (/ 1 b)) 1)","rewritten_term":"(- a (/ 1 b))","applied_rules":["rule_13"]}
-{"original_term":"(+ (pow a 0) (- b c))","rewritten_term":"(+ (- b c) 1)","applied_rules":["rule_134"]}
+{"original_term":"(+ (pow a 0) (- b c))","rewritten_term":"(+ 1 (- b c))","applied_rules":["rule_134"]}
 {"original_term":"(- (* a (pow 0 1)) 1)","rewritten_term":"-1","applied_rules":["rule_13","rule_7"]}
-{"original_term":"(+ (- (+ a a) 0) c)","rewritten_term":"(+ (+ a a) c)","applied_rules":["rule_11"]}
+{"original_term":"(+ (- (+ a a) 0) c)","rewritten_term":"(+ c (+ a a))","applied_rules":["rule_11"]}
 {"original_term":"(- a (* 1 -1))","rewritten_term":"(+ a 1)","applied_rules":["rule_8"]}
 {"original_term":"(+ (pow -1 a) 0)","rewritten_term":"(pow -1 a)","applied_rules":["rule_2"]}
 {"original_term":"(+ 1 (/ (* 0 1) a))","rewritten_term":"1","applied_rules":["rule_6","rule_136"]}
-{"original_term":"(+ 1 (/ a -1))","rewritten_term":"(+ (/ a -1) 1)","applied_rules":[]}
+{"original_term":"(+ 1 (/ a -1))","rewritten_term":"(+ 1 (/ a -1))","applied_rules":[]}
 {"original_term":"(- (- 0 a) 0)","rewritten_term":"(- 0 a)","applied_rules":["rule_11"]}
 {"original_term":"(pow (* (- 1 a) 0) 1)","rewritten_term":"0","applied_rules":["rule_7","rule_13"]}
 {"original_term":"(- -1 (- a (/ -1 a)))","rewritten_term":"(- -1 (- a (/ -1 a)))","applied_rules":[]}
-{"original_term":"(* (* (+ a a) b) -1)","rewritten_term":"(- 0 (* (+ a a) b))","applied_rules":[]}
+{"original_term":"(* (* (+ a a) b) -1)","rewritten_term":"(- 0 (* b (+ a a)))","applied_rules":[]}
 {"original_term":"(+ (+ (+ a 0) 0) -1)","rewritten_term":"(+ a -1)","applied_rules":["rule_2","rule_2"]}
-{"original_term":"(* (pow 0 -1) (* a a))","rewritten_term":"(* (* a a) (pow 0 -1))","applied_rules":[]}
-{"original_term":"(- (+ a (- a 1)) 0)","rewritten_term":"(+ (- a 1) a)","applied_rules":["rule_11"]}
+{"original_term":"(* (pow 0 -1) (* a a))","rewritten_term":"(* a (* a (pow 0 -1)))","applied_rules":[]}
+{"original_term":"(- (+ a (- a 1)) 0)","rewritten_term":"(+ a (- a 1))","applied_rules":["rule_11"]}
 {"original_term":"(* (+ 0 (- a 0)) 1)","rewritten_term":"a","applied_rules":["rule_3","rule_6","rule_11"]}
 {"original_term":"(- -1 (pow 0 (pow a 0)))","rewritten_term":"-1","applied_rules":["rule_134","rule_13"]}
 {"original_term":"(/ (pow a a) -1)","rewritten_term":"(/ (pow a a) -1)","applied_rules":[]}
 {"original_term":"(- a (* 0 (pow -1 -1)))","rewritten_term":"a","applied_rules":["rule_9","rule_11"]}
-{"original_term":"(+ a (* (/ 1 a) b))","rewritten_term":"(+ (* (/ 1 a) b) a)","applied_rules":[]}
+{"original_term":"(+ a (* (/ 1 a) b))","rewritten_term":"(+ a (* b (/ 1 a)))","applied_rules":[]}
 {"original_term":"(+ (- a a) b)","rewritten_term":"b","applied_rules":["rule_10","rule_3"]}
 {"original_term":"(pow -1 (+ (- a b) 0))","rewritten_term":"(pow -1 (- a b))","applied_rules":["rule_2"]}
 {"original_term":"(/ (+ 0 -1) -1)","rewritten_term":"1","applied_rules":["rule_3"]}
@@ -893,11 +893,11 @@
 {"original_term":"(- -1 (- 0 -1))","rewritten_term":"-2","applied_rules":["rule_58"]}
 {"original_term":"(pow (- 1 (* a -1)) 0)","rewritten_term":"1","applied_rules":["rule_134"]}
 {"original_term":"(+ (/ 0 a) (pow a a))","rewritten_term":"(pow a a)","applied_rules":["rule_136","rule_3"]}
-{"original_term":"(* (- a 1) (+ 0 a))","rewritten_term":"(- (* a a) a)","applied_rules":["rule_3"]}
+{"original_term":"(* (- a 1) (+ 0 a))","rewritten_term":"(- (pow a 2) a)","applied_rules":["rule_3"]}
 {"original_term":"(- a (/ (/ b b) a))","rewritten_term":"(- a (/ 1 a))","applied_rules":["rule_135"]}
 {"original_term":"(+ (* a b) (* 0 b))","rewritten_term":"(* a b)","applied_rules":["rule_9","rule_2"]}
 {"original_term":"(pow a (/ a 1))","rewritten_term":"(pow a a)","applied_rules":["rule_17"]}
-{"original_term":"(+ (- -1 a) (* 1 -1))","rewritten_term":"(+ (- -1 a) -1)","applied_rules":["rule_8"]}
+{"original_term":"(+ (- -1 a) (* 1 -1))","rewritten_term":"(+ -1 (- -1 a))","applied_rules":["rule_8"]}
 {"original_term":"(- (* (pow a a) 0) b)","rewritten_term":"(- 0 b)","applied_rules":["rule_7"]}
 {"original_term":"(pow a (* 1 (* a b)))","rewritten_term":"(pow a (* a b))","applied_rules":["rule_8"]}
 {"original_term":"(/ (- (pow a 1) -1) b)","rewritten_term":"(/ (+ a 1) b)","applied_rules":["rule_13"]}
@@ -905,36 +905,36 @@
 {"original_term":"(pow -1 (/ -1 a))","rewritten_term":"(pow -1 (/ -1 a))","applied_rules":[]}
 {"original_term":"(pow -1 (/ (+ 0 0) a))","rewritten_term":"1","applied_rules":["rule_2","rule_136","rule_134"]}
 {"original_term":"(/ -1 (pow (+ 1 -1) 1))","rewritten_term":"(/ -1 0)","applied_rules":["rule_13"]}
-{"original_term":"(- 0 (+ -1 (pow 0 a)))","rewritten_term":"(- 0 (+ (pow 0 a) -1))","applied_rules":[]}
+{"original_term":"(- 0 (+ -1 (pow 0 a)))","rewritten_term":"(- 0 (+ -1 (pow 0 a)))","applied_rules":[]}
 {"original_term":"(+ (* 0 (pow a -1)) a)","rewritten_term":"a","applied_rules":["rule_9","rule_3"]}
 {"original_term":"(- a (pow (+ -1 a) -1))","rewritten_term":"(- a (/ 1 (+ a -1)))","applied_rules":[]}
 {"original_term":"(/ (pow -1 1) (- a b))","rewritten_term":"(/ -1 (- a b))","applied_rules":["rule_13"]}
-{"original_term":"(* (/ (- a -1) 1) a)","rewritten_term":"(+ (* a a) a)","applied_rules":["rule_17"]}
+{"original_term":"(* (/ (- a -1) 1) a)","rewritten_term":"(+ a (* a a))","applied_rules":["rule_17"]}
 {"original_term":"(- 1 (/ (* a 1) 0))","rewritten_term":"(- 1 (/ a 0))","applied_rules":["rule_6"]}
-{"original_term":"(* (+ (- a 1) a) a)","rewritten_term":"(* (+ (- a 1) a) a)","applied_rules":[]}
+{"original_term":"(* (+ (- a 1) a) a)","rewritten_term":"(* a (+ a (- a 1)))","applied_rules":[]}
 {"original_term":"(pow a (pow -1 (- 1 0)))","rewritten_term":"(/ 1 a)","applied_rules":["rule_11","rule_13"]}
 {"original_term":"(/ (/ a 0) (pow -1 a))","rewritten_term":"(/ (/ a 0) (pow -1 a))","applied_rules":[]}
-{"original_term":"(- (+ (+ 1 0) -1) -1)","rewritten_term":"1","applied_rules":["rule_2"]}
+{"original_term":"(- (+ (+ 1 0) -1) -1)","rewritten_term":"1","applied_rules":["rule_65"]}
 {"original_term":"(* 1 (pow (+ a b) -1))","rewritten_term":"(/ 1 (+ a b))","applied_rules":["rule_8"]}
 {"original_term":"(- 0 (pow a (- a 0)))","rewritten_term":"(- 0 (pow a a))","applied_rules":["rule_11"]}
 {"original_term":"(* 1 (/ (- a a) -1))","rewritten_term":"-0","applied_rules":["rule_8","rule_10"]}
 {"original_term":"(/ 1 (/ a -1))","rewritten_term":"(/ 1 (/ a -1))","applied_rules":[]}
 {"original_term":"(/ -1 (- -1 a))","rewritten_term":"(/ -1 (- -1 a))","applied_rules":[]}
-{"original_term":"(/ (/ a (+ a 1)) b)","rewritten_term":"(/ (/ a (+ a 1)) b)","applied_rules":[]}
+{"original_term":"(/ (/ a (+ a 1)) b)","rewritten_term":"(/ (/ a b) (+ a 1))","applied_rules":[]}
 {"original_term":"(/ (pow -1 1) (/ 0 0))","rewritten_term":"(/ -1 (/ 0 0))","applied_rules":["rule_13"]}
 {"original_term":"(/ (- (pow 1 a) 0) -1)","rewritten_term":"(/ (pow 1 a) -1)","applied_rules":["rule_11"]}
 {"original_term":"(* a (* (+ 0 1) a))","rewritten_term":"(* a a)","applied_rules":["rule_3","rule_8"]}
 {"original_term":"(pow (/ a (pow a -1)) -1)","rewritten_term":"(/ 1 (/ a (/ 1 a)))","applied_rules":[]}
-{"original_term":"(+ a (- a (pow -1 1)))","rewritten_term":"(+ (+ a 1) a)","applied_rules":["rule_13"]}
+{"original_term":"(+ a (- a (pow -1 1)))","rewritten_term":"(+ a (+ a 1))","applied_rules":["rule_13"]}
 {"original_term":"(+ (* (pow a 1) 1) 0)","rewritten_term":"a","applied_rules":["rule_2","rule_6","rule_13"]}
 {"original_term":"(+ (* (/ 1 0) 0) 0)","rewritten_term":"0","applied_rules":["rule_2","rule_7"]}
 {"original_term":"(pow (- (- 1 0) a) -1)","rewritten_term":"(/ 1 (- 1 a))","applied_rules":["rule_11"]}
 {"original_term":"(+ (+ 1 0) 0)","rewritten_term":"1","applied_rules":["rule_2"]}
 {"original_term":"(- (+ (/ a a) -1) a)","rewritten_term":"(- 0 a)","applied_rules":["rule_135"]}
-{"original_term":"(+ (/ 1 0) -1)","rewritten_term":"(+ (/ 1 0) -1)","applied_rules":[]}
+{"original_term":"(+ (/ 1 0) -1)","rewritten_term":"(+ -1 (/ 1 0))","applied_rules":[]}
 {"original_term":"(pow a (/ 1 (+ a a)))","rewritten_term":"(pow a (/ 1 (+ a a)))","applied_rules":[]}
 {"original_term":"(pow 1 (* a (/ a 1)))","rewritten_term":"(pow 1 (* a a))","applied_rules":["rule_17"]}
-{"original_term":"(pow (+ (+ -1 a) a) -1)","rewritten_term":"(/ 1 (+ (+ a -1) a))","applied_rules":[]}
+{"original_term":"(pow (+ (+ -1 a) a) -1)","rewritten_term":"(/ 1 (+ a (+ a -1)))","applied_rules":[]}
 {"original_term":"(- (pow a b) 1)","rewritten_term":"(- (pow a b) 1)","applied_rules":[]}
 {"original_term":"(/ a (+ a 1))","rewritten_term":"(/ a (+ a 1))","applied_rules":[]}
 {"original_term":"(/ 1 (pow -1 (+ a a)))","rewritten_term":"(/ 1 (pow -1 (+ a a)))","applied_rules":[]}
@@ -944,26 +944,26 @@
 {"original_term":"(pow (* 0 (/ a 1)) a)","rewritten_term":"(pow 0 a)","applied_rules":["rule_9"]}
 {"original_term":"(/ (* 0 (* 1 -1)) -1)","rewritten_term":"0","applied_rules":["rule_8"]}
 {"original_term":"(/ (- a -1) (/ a 0))","rewritten_term":"(/ (+ a 1) (/ a 0))","applied_rules":[]}
-{"original_term":"(- (+ (/ a -1) a) -1)","rewritten_term":"(+ (+ (/ a -1) a) 1)","applied_rules":[]}
+{"original_term":"(- (+ (/ a -1) a) -1)","rewritten_term":"(+ a (+ 1 (/ a -1)))","applied_rules":[]}
 {"original_term":"(pow (pow (* a b) 1) -1)","rewritten_term":"(/ 1 (* a b))","applied_rules":["rule_13"]}
-{"original_term":"(pow a (/ (- 0 1) b))","rewritten_term":"(pow a (/ -1 b))","applied_rules":["rule_12"]}
+{"original_term":"(pow a (/ (- 0 1) b))","rewritten_term":"(pow a (/ -1 b))","applied_rules":[]}
 {"original_term":"(* a (+ (- a a) a))","rewritten_term":"(* a a)","applied_rules":["rule_10","rule_3"]}
 {"original_term":"(* -1 (- (/ -1 a) -1))","rewritten_term":"(- -1 (/ -1 a))","applied_rules":["rule_62"]}
 {"original_term":"(* -1 (* 0 -1))","rewritten_term":"-0","applied_rules":["rule_9"]}
 {"original_term":"(+ 0 (+ -1 -1))","rewritten_term":"-2","applied_rules":["rule_3"]}
 {"original_term":"(+ a (- -1 (- 0 0)))","rewritten_term":"(+ a -1)","applied_rules":["rule_10"]}
-{"original_term":"(+ 1 (/ (* 1 -1) a))","rewritten_term":"(+ (/ -1 a) 1)","applied_rules":["rule_8"]}
+{"original_term":"(+ 1 (/ (* 1 -1) a))","rewritten_term":"(+ 1 (/ -1 a))","applied_rules":["rule_8"]}
 {"original_term":"(/ (+ 1 1) (+ a b))","rewritten_term":"(/ 2 (+ a b))","applied_rules":[]}
 {"original_term":"(+ 0 (pow (+ 1 -1) a))","rewritten_term":"(pow 0 a)","applied_rules":["rule_3"]}
 {"original_term":"(pow (* 0 0) -1)","rewritten_term":"(pow 0 -1)","applied_rules":["rule_7"]}
 {"original_term":"(/ a (/ -1 (/ 0 1)))","rewritten_term":"(/ a (/ -1 0))","applied_rules":["rule_17"]}
 {"original_term":"(- a (pow (* 0 b) c))","rewritten_term":"(- a (pow 0 c))","applied_rules":["rule_9"]}
-{"original_term":"(- (+ 1 a) (- a 1))","rewritten_term":"2","applied_rules":["rule_118"]}
-{"original_term":"(- a (+ (/ -1 b) b))","rewritten_term":"(- a (+ (/ -1 b) b))","applied_rules":[]}
-{"original_term":"(/ 0 (* a (- 0 1)))","rewritten_term":"0","applied_rules":["rule_12","rule_136"]}
+{"original_term":"(- (+ 1 a) (- a 1))","rewritten_term":"2","applied_rules":["rule_57"]}
+{"original_term":"(- a (+ (/ -1 b) b))","rewritten_term":"(- a (+ b (/ -1 b)))","applied_rules":[]}
+{"original_term":"(/ 0 (* a (- 0 1)))","rewritten_term":"0","applied_rules":["rule_136"]}
 {"original_term":"(pow 0 (* a -1))","rewritten_term":"(pow 0 (- 0 a))","applied_rules":[]}
 {"original_term":"(/ (/ (pow a a) a) 0)","rewritten_term":"(/ (/ (pow a a) a) 0)","applied_rules":[]}
-{"original_term":"(+ (* a (pow b -1)) c)","rewritten_term":"(+ (/ a b) c)","applied_rules":["rule_146"]}
+{"original_term":"(+ (* a (pow b -1)) c)","rewritten_term":"(+ c (/ a b))","applied_rules":["rule_146"]}
 {"original_term":"(* (- a (- a 1)) c)","rewritten_term":"c","applied_rules":["rule_57","rule_8"]}
 {"original_term":"(pow (+ a (pow 0 a)) 0)","rewritten_term":"1","applied_rules":["rule_134"]}
 {"original_term":"(* (* -1 0) 1)","rewritten_term":"-0","applied_rules":["rule_6"]}
@@ -972,8 +972,8 @@
 {"original_term":"(/ (- a a) 0)","rewritten_term":"(/ 0 0)","applied_rules":["rule_10"]}
 {"original_term":"(* (+ 1 a) 0)","rewritten_term":"0","applied_rules":["rule_7"]}
 {"original_term":"(- a (pow (+ a -1) 0))","rewritten_term":"(- a 1)","applied_rules":["rule_134"]}
-{"original_term":"(* (* (- 1 -1) a) -1)","rewritten_term":"(- 0 (+ a a))","applied_rules":["rule_8"]}
-{"original_term":"(* 1 (+ (/ a 0) a))","rewritten_term":"(+ (/ a 0) a)","applied_rules":["rule_8"]}
+{"original_term":"(* (* (- 1 -1) a) -1)","rewritten_term":"(* a -2)","applied_rules":["rule_6","rule_60"]}
+{"original_term":"(* 1 (+ (/ a 0) a))","rewritten_term":"(+ a (/ a 0))","applied_rules":["rule_8"]}
 {"original_term":"(+ a (/ 1 (pow b 0)))","rewritten_term":"(+ a 1)","applied_rules":["rule_134"]}
 {"original_term":"(- (/ a a) (- -1 a))","rewritten_term":"(- 1 (- -1 a))","applied_rules":["rule_135"]}
 {"original_term":"(/ 0 (* a (- a b)))","rewritten_term":"0","applied_rules":["rule_136"]}
@@ -982,19 +982,19 @@
 {"original_term":"(* a (* 0 (/ a -1)))","rewritten_term":"0","applied_rules":["rule_9","rule_7"]}
 {"original_term":"(+ a (pow (/ 0 a) 0))","rewritten_term":"(+ a 1)","applied_rules":["rule_134"]}
 {"original_term":"(/ (/ 0 a) -1)","rewritten_term":"-0","applied_rules":["rule_136"]}
-{"original_term":"(+ a (- (pow a a) -1))","rewritten_term":"(+ (+ (pow a a) 1) a)","applied_rules":[]}
-{"original_term":"(+ (- (pow a b) 0) a)","rewritten_term":"(+ (pow a b) a)","applied_rules":["rule_11"]}
+{"original_term":"(+ a (- (pow a a) -1))","rewritten_term":"(+ a (+ 1 (pow a a)))","applied_rules":[]}
+{"original_term":"(+ (- (pow a b) 0) a)","rewritten_term":"(+ a (pow a b))","applied_rules":["rule_11"]}
 {"original_term":"(* (/ (+ -1 1) a) 0)","rewritten_term":"0","applied_rules":["rule_7"]}
 {"original_term":"(/ (- -1 0) 0)","rewritten_term":"(/ -1 0)","applied_rules":["rule_11"]}
-{"original_term":"(/ (+ a (+ 1 a)) 0)","rewritten_term":"(/ (+ (+ a 1) a) 0)","applied_rules":[]}
+{"original_term":"(/ (+ a (+ 1 a)) 0)","rewritten_term":"(/ (+ a (+ a 1)) 0)","applied_rules":[]}
 {"original_term":"(/ (* 0 -1) (* -1 a))","rewritten_term":"0","applied_rules":["rule_9","rule_136"]}
 {"original_term":"(/ (* 1 a) -1)","rewritten_term":"(/ a -1)","applied_rules":["rule_8"]}
-{"original_term":"(* (/ (+ a 0) b) b)","rewritten_term":"(* (/ a b) b)","applied_rules":["rule_2"]}
+{"original_term":"(* (/ (+ a 0) b) b)","rewritten_term":"(* b (/ a b))","applied_rules":["rule_2"]}
 {"original_term":"(+ (* a -1) 0)","rewritten_term":"(- 0 a)","applied_rules":["rule_2"]}
 {"original_term":"(* a (* 0 (* b 0)))","rewritten_term":"0","applied_rules":["rule_7","rule_7"]}
 {"original_term":"(pow (+ a 0) (/ 1 b))","rewritten_term":"(pow a (/ 1 b))","applied_rules":["rule_2"]}
-{"original_term":"(* 1 (* (/ -1 a) b))","rewritten_term":"(* (/ -1 a) b)","applied_rules":["rule_8"]}
+{"original_term":"(* 1 (* (/ -1 a) b))","rewritten_term":"(* b (/ -1 a))","applied_rules":["rule_8"]}
 {"original_term":"(- -1 (pow (- a b) a))","rewritten_term":"(- -1 (pow (- a b) a))","applied_rules":[]}
-{"original_term":"(+ a (* (pow b b) c))","rewritten_term":"(+ (* (pow b b) c) a)","applied_rules":[]}
+{"original_term":"(+ a (* (pow b b) c))","rewritten_term":"(+ a (* c (pow b b)))","applied_rules":[]}
 {"original_term":"(/ (- a (+ 0 0)) 0)","rewritten_term":"(/ a 0)","applied_rules":["rule_2","rule_11"]}
-{"original_term":"(pow -1 (* (pow -1 a) b))","rewritten_term":"(pow -1 (* (pow -1 a) b))","applied_rules":[]}
+{"original_term":"(pow -1 (* (pow -1 a) b))","rewritten_term":"(pow -1 (* b (pow -1 a)))","applied_rules":[]}

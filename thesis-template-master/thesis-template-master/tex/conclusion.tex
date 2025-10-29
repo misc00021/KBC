@@ -1,0 +1,24 @@
+\chapter{Conclusion}
+\label{chap:conclusion}
+
+This work evaluated Knuth-Bendix Completion (KBC) as a tool for program optimization by addressing the following research questions:
+\begin{enumerate}
+	\item Do KBC-generated rule sets improve equality saturation in terms of simplification effectiveness and running time, compared to handwritten rules?
+	\item Do KBC-generated rule sets enable greedy rewriting as a viable alternative to equality saturation in scenarios where minimizing running time and memory usage is essential?
+\end{enumerate}
+
+To answer these questions, we used KBC to generate different sets of rewrite rules and applied them in equality saturation (EqSat) and greedy rewriting on arithmetic expressions. We also applied EqSat on the same terms using handwritten example rules from a prominent EqSat implementation as a baseline for comparison.
+
+The results revealed that extending the handwritten rule set with KBC-generated rules improves the EqSat process in terms of both simplification speed and final simplification effectiveness. For greedy rewriting, we observed that it achieves better running times than EqSat by several orders of magnitude, but is significantly outperformed in terms of simplification effectiveness under the given conditions. 
+
+Therefore, we can confirm research question 1, given that the original rules are retained, while we cannot confirm research question 2 based on the results.
+
+Since we restricted the tests conducted in this experiment to a simple setting, allowing for good control over the validity of their results, there are several aspects future work can follow up on.
+
+First, it would be useful to perform similar experiments on different domains, such as bitvectors or Boolean algebra. This would confirm that the findings are generalizable over domains of similar complexity as arithmetic.
+
+It would also be important to perform tests on data generated from real-world applications rather than randomly generated terms. This would better emphasize how common patterns are handled by the different approaches.
+
+Lastly, future work could focus on adapting the KBC algorithm itself to the context of program optimization. When used outside of theorem proving, where formal guarantees of KBC break down by nature of the task, the concept of superposition could be explored more freely as a way to close gaps in term-rewriting systems.
+
+Overall, this work showed that KBC can be a helpful tool in program optimization and represents a first step in exploring systematic rule generation through completion.

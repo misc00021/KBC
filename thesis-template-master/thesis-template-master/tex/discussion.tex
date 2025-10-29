@@ -1,0 +1,89 @@
+\chapter{Discussion}
+\label{chap:discussion}
+This chapter builds on the previous chapters by providing an interpretation of the results. It also critically assesses the data and the methodology we used to obtain it under consideration of the theoretical background established in chapter~\ref{chap:background}. Finally, it provides answers to the research questions this paper set out to answer.
+
+These questions are:
+\begin{enumerate}
+	\item Do KBC-generated rule sets improve equality saturation in terms of simplification effectiveness and running time, compared to handwritten rules?
+	\item Do KBC-generated rule sets enable greedy rewriting as a viable alternative to equality saturation in scenarios where minimizing running time and memory usage is essential?
+\end{enumerate}
+
+\section{Equality Saturation}
+In this section, we discuss the results presented in section~\ref{sec:EqSat_results}. This includes the effect of different rule set variants and the resulting implications. We will also address the choice of \texttt{egg}'s example rules as base rules and benchmark.
+
+\subsection{Test Results}
+Section~\ref{sec:impact_postprocessing} showed the difference in simplification effectiveness between rule sets that include the original rules and those that exclude them. This result has rather strong implications for KBC-generated rule sets in general. 
+
+During the completion process, KBC reorders the input rules if necessary. In particular, rules that are strictly increasing term complexity are reordered. An example of such a rule, which can be found in the original rule set (see appendix~\ref{app:base_rules}), is $a - b \to a + (-1 * b)$. This rule is very important, because it canonicalizes subtraction into addition, enabling addition-specific rules such as commutativity and associativity.
+
+Take, for instance, the term $x + (y - x)$. The only rule we can apply is commutativity on the addition, yielding $(x - y) + x$.  If we have the rule $a - b \to a + (-1 * b)$ at our disposal, EqSat can derive the following rewrite: $x + (y - x) \to x + (y + (-1 * x)) \to x + ((-1 * x) + y) \to (x + (-1 * x)) + y \to (x - x) + y \to y$. Of course, under EqSat these rewrites don't happen sequentially, but since $a - b \to a + (-1 * b)$ exists, $(y - x)$ and $(y + (-1 * x))$ inhabit the same e-class, enabling rewrites on both terms.
+
+If this rule is removed, this equivalence cannot be established, and so the term cannot be simplified. In theory, however, KBC should be able to derive a new rule that manages to simplify $x + (y - x)$ directly. The issue here is that it is not possible to determine beforehand when, during completion, this rule is generated. While this specific example might be connected to the encoding used in \texttt{egg}'s rules, where no general negation operator exists, there most likely are many such cases.
+
+That increasing the number of rewrite rules can somewhat mitigate this problem becomes clear from section~\ref{sec:impact_set_size}. However, the effect of adding new rules already becomes minimal upon reaching 150 rules. We again cannot know whether, at some point during KBC, "breakthrough rules" would be generated that significantly increase the rule set's power and/or make other rules obsolete, reducing the total number of rules.
+
+This limitation makes purely KBC-generated rule sets less reliable.
+
+Nevertheless, the results also show that rule sets that contain both the original and KBC-generated rules outperform just the original rules consistently and across different time limits. There might be two reasons why this is the case.
+
+First, the original rule set contains some rules that increase term complexity, but not all rules are bidirectional. Keeping rules unidirectional where possible helps guide EqSat in order to keep the process technically feasible, but it also reduces the overall rewriting power. KBC can compensate for this loss in power by generating new rules. Since its input rules are technically equalities rather than directed rules, KBC can derive rules that allow those rewrites which EqSat misses due to directionality in the rules. 
+
+Second, KBC-generated rules are more strongly directed. Where the original rule set might have to increase complexity for some iterations before simplifying, KBC may generate rules that can simplify immediately. KBC may also generate rules that reduce complexity more substantially per rule application. Such rules might be derived when one side of a critical pair can be normalized using existing rules, while the other side cannot be simplified at all. 
+
+While the results indicate that KBC-generated rules in isolation are not ideal for EqSat, there are sufficient theoretical arguments to suggest that KBC can be very useful to generate additional rewrite rules, augmenting handwritten ones. The results generated in this work also support this claim.
+
+\subsection{Choice of Base Rules and Benchmark}
+\label{sec:disuccion_base_rules}
+Upon examination of simplification results on individual terms produced by EqSat using \texttt{egg}'s example rules, it is very much possible to find weaknesses in the rule set. No simplification was achieved, for example, on the input term $a \cdot \frac{1}{\frac{a}{b}}$ which is unsurprising considering that the rule set is missing rules such as $b \neq 0, b \neq 0 \implies \frac{a}{\frac{b}{c}} \to \frac{a \cdot c}{b}$ and $a \neq 0 \implies a \cdot \frac{b}{a} \to b$. Both rules are well-known, and it would be expected that they would either be included directly or be derivable if a rule set is intended for practical use.
+
+\texttt{twee} manages to derive these rules very quickly when completing division-relevant rules separately, as was done for the \emph{sep\_div} and \emph{sep\_div\_plus} rule sets, although it does not derive them when just given the original set. This indicates that the \emph{ifeq} clause that wraps conditional rules in \texttt{twee} appears to hinder rule generation.
+
+Since the \texttt{egg} example rules fail to simplify such basic terms, we should question whether it is appropriate to use them as the benchmark. 
+
+While one could argue that it would be possible to manually design a rule set that equals the performance of the KBC-generated rule sets, it is important to note that KBC-generated sets, as long as they are extending, are at least as powerful as the original rules.
+
+More importantly, however, using KBC does not require any domain knowledge. This makes it more broadly applicable. While gaps in arithmetic rule sets are easy to spot, they may be less apparent in domains with more complex axioms and lesser-known identities.
+
+In summary, using arithmetic terms and an unoptimized base rule set does not invalidate the results. However, additional tests are required to confirm that rewrite rule generation for optimization using KBC translates well into other domains. 
+
+\section{Comparison of Greedy Rewriting and Equality Saturation}
+Section~\ref{sec:result_comparison} reflects the overall findings of this work well and confirms the trade-off between simplification effectiveness and resource consumption we discussed in multiple sections. Whether the results can be considered generalizable is not clear.
+
+Methodological concerns can be raised with the reported simplification times, as well as the way rule generation with KBC was implemented with \texttt{egg}'s example rules.
+
+\subsection{Simplification Time}
+\label{sec:discussion_time}
+The difference in simplification time we observed in section~\ref{sec:result_comparison} is  substantial. This is unsurprising, given the computational cost associated with matching rules on an e-graph~\citep{Willsey_2022}, rebuilding it after applying rewrites~\citep{Willsey_2021}, and searching and extracting a candidate for the optimal term after saturation terminates~\citep{yin2025eboostboostedegraphextraction}.
+
+There are, however, some factors we need to consider when interpreting the results from this work. The first consideration is that we chose the time limit at which EqSat's simplification effectiveness reached a plateau as its simplification time. This obscures the fact that much earlier during simplification, terms may have been found that are only slightly less optimal.
+
+In particular, when comparing against the output terms, the greedy approach produces, an argument can be made that defining simplification time in this way introduces a bias against EqSat.
+
+Conversely, we should note that the time limits, with which we ran EqSat, do not include extraction time. To add to this, recall from section~\ref{sec:eqsat} that \texttt{egg} only checks time limits after iterations. Examining the outputs for individual terms reveals that in some instances, even on small terms, using the original rule set, the total simplification time may end up being multiple times larger than the time limit. We can find a small selection of such examples in appendix~\ref{app:eqsat_examples}.
+
+In section~\ref{sec:greedy}, we discussed the implementation of the custom rewriting engine we used to test the greedy approach. We already mentioned in this context that the rewriting engine is poorly optimized. This becomes particularly apparent when we consider the canonicalization function, which the program calls whenever no simplifying rule can be applied. 
+
+To canonicalize, the program tries to match every canonicalizer on every subterm. This is very inefficient and can be solved by keeping track of which parts of the term were modified since the last canonicalization run. Especially on large input terms and with rule sets containing many canonicalizers, this hurts running time performance significantly. 
+
+We can therefore conclude that, while for both methods the simplification time metric is not fully accurate, the performance benefits of the greedy approach in terms of running time can be assumed. 
+
+\subsection{KBC Implementation and Base Rules}
+In section~\ref{sec:disuccion_base_rules}, we already focused on the role of rules that increase term complexity under EqSat. In this context, we also briefly mentioned the absence of a general negation operator in the original rule set and how this is less of a problem for EqSat as long as certain rules can bridge between different representations of subtraction.
+
+Section~\ref{sec:greedy_results} explains why this is not possible for the greedy approach, which is why we would need to address this issue differently. One option for doing so might be to simply extend the base rules manually to include general negation. This way, KBC might derive more general rules such as $a - b \to a + (-b)$. 
+
+This is, however, rather speculative and would require further testing. 
+
+The last observation we discuss here is that completing division and exponentiation separately leads to significantly better simplification effectiveness, as shown in section~\ref{sec:results_by_rule_set}. This raises the question of whether varying the number of rules completed separately or the subset used could further improve the results.
+
+Alternatively, it would be interesting to examine whether a specialized implementation of KBC for program optimization would be feasible. Such an implementation would likely include a different way of handling conditional rewrites and the use of specialized weight functions for KBO. 
+
+However, further work is needed to assess the viability of such a specialized implementation for program optimization.
+
+\needspace{10\baselineskip}
+\section{Summary}
+With respect to the research questions we have formulated, the results produced in this work suggest two key findings:
+\begin{itemize}
+	\item Augmenting handwritten rule sets with the help of KBC can enhance the simplification effectiveness of EqSat significantly. Whether the results translate to other domains and whether KBC-generated rules can be effective in isolation is inconclusive.
+	\item Greedy rewriting does not reach the same level of simplification effectiveness as EqSat when using KBC-generated rule sets. The advantage in resource consumption makes it a useful approach regardless. Whether the gap in simplification effectiveness can be closed through adjustments to the initial rule sets remains to be tested.
+\end{itemize}
