@@ -1,13 +1,15 @@
 \chapter{Related Work}
 
-To accurately position this work within current research on term rewriting-based program optimization, this chapter discusses notable work in three areas: equality saturation (EqSat), automated rewrite rule generation, and rule-based optimization techniques, with respect to the contributions of this work.
+To accurately position this work within current research on rewrite-based program optimization, this chapter discusses notable work in the fields of equality saturation (EqSat) and automated rewrite rule generation, with respect to the contributions of this work. Additionally we discuss a specialized variation of EqSat which might fit KBC-generated rules in particular.
 
 \section{Equality Saturation}
 EqSat as a tool for program optimization was first introduced by~\cite{Tate_2011}. The authors propose it as a solution to the \emph{phase ordering problem}, which describes the dependence of optimization success on the order in which optimization steps are applied. 
 
 The approach has gained popularity in recent years. The \texttt{egg} framework~\citep{Willsey_2021} builds on EqSat, addressing the lack of extensibility and high computational cost. It improves extensibility by introducing domain-specific analyses on equivalence classes, and performance by introducing \emph{rebuilding}.
 
-The latter relaxes e-graph invariants such as congruence. More specifically, \emph{rebuilding} allows multiple rewriting steps before reestablishing congruence, i.e., that all equivalent expressions in the e-graph inhabit the same e-class. In addition to being the basis for EqSat implementations such as \texttt{egglog}~\citep{zhang2023bettertogetherunifyingdatalog}, which combines EqSat with database techniques, \texttt{egg} has been integrated in a number of practical applications.
+The latter relaxes e-graph invariants such as congruence. More specifically, \emph{rebuilding} allows multiple rewriting steps before reestablishing congruence, i.e., that all equivalent expressions in the e-graph inhabit the same e-class. 
+
+In addition to being the basis for EqSat implementations such as \texttt{egglog}~\citep{zhang2023bettertogetherunifyingdatalog}, which combines EqSat with database techniques, \texttt{egg} has been integrated in a number of practical applications.
 
 Examples from the domain of program optimization include \texttt{Herbie}~\citep{herbie} and \texttt{Felix}~\citep{Felix}. \texttt{Herbie} is a tool that uses EqSat to reduce rounding errors in floating-point arithmetic. \texttt{Felix} optimizes tensor-based programs by approximating performance with differentiable functions, which it simplifies using EqSat.
 
@@ -15,12 +17,12 @@ Notably, applications of EqSat tend to use manually constructed sets of rewrite 
 
 A recent survey on synthesis of rewrite rules by~\cite{Hong_2024} addresses this, summarizing the different approaches that are currently available for rule generation in the context of rewrite-based optimization techniques. The survey includes KBC~\citep{10.1093/comjnl/34.1.2} as a predecessor of other techniques, but remarks that it is difficult to evaluate its effectiveness in the domain of program optimization. 
 
-Providing first insights into the effectiveness of KBC as a tool for generating rewrite rules to be used in program optimization is the aim of this work. To ensure the validity of these insights, this work uses \texttt{egg}, which is a popular EqSat implementation, as the framework for the test setup. 
+Providing first insights into the effectiveness of KBC as a tool for generating rewrite rules to be used in program optimization is the aim of this work.
 
 \section{Rewrite Rule Generation}
 The individual subprocesses of EqSat have seen significant improvements in recent years. Notable examples include the \emph{relational e-matching} approach by~\cite{Willsey_2022}, which uses \emph{relational join}, a technique used in databases, to give guarantees for the running time of pattern matching on e-graphs, as well as \texttt{SmoothE}~\citep{SmoothE}, which aims to make term extraction based on complex cost functions feasible. 
 
-In the area of automated rewrite rule generation, \texttt{Ruler}~\citep{Ruler} explores the synthesis of rewrite rules through equality saturation itself. To achieve this, it enumerates terms with increasing size within an e-graph. It then selects candidates for rewrite rules by evaluating terms on input vectors. If two terms behave identically on all inputs, they are equivalent and their e-classes can be merged. This process happens iteratively, until ideally all terms with identical behavior can be proven to be equivalent using the existing rule set.
+In the area of automated rewrite rule generation, \texttt{Ruler}~\citep{Ruler} explores the synthesis of rewrite rules through equality saturation itself. To achieve this, it enumerates terms up to a specific size within an e-graph. It then selects candidates for rewrite rules by evaluating terms on input vectors. If two terms behave identically on all inputs, they are equivalent and their e-classes can be merged. This process happens iteratively with increasing term sizes, until ideally all terms with identical behavior can be proven to be equivalent using the established rule set.
 
 While both \texttt{Ruler} and this work, through KBC, generate rule sets for specific domains, there are some important differences.
 
@@ -32,7 +34,7 @@ Finally, generalizability might be an issue for both methods. \texttt{Ruler} der
 
 KBC-generated rule sets do not have this problem. KBC guarantees confluence in case of successful termination. If termination is not given, confluence may not be assumed. However, by increasing the number of generated rules, the coverage can be increased arbitrarily, as KBC is at least a semi-decision algorithm for equivalence proofs~\citep{10.1093/comjnl/34.1.2}, and an optimization problem can be reformulated as an equality proof of the original term and the optimal term.
 
-The generalizability challenge for KBC lies elsewhere. Firstly, for every domain on which KBC is to be applied, KBO must be defined. In particular, it must be defined in such a way that it aligns with the optimization goal at hand. This is likely not possible for every domain and optimization problem. 
+The generalizability challenge for KBC lies elsewhere. For every domain on which KBC is to be applied, KBO must be defined. In particular, it must be defined in such a way that it aligns with the optimization goal at hand. This is likely not possible for every domain and optimization problem. 
 
 \section{Acyclic E-Graphs}
 ægraphs, introduced by~\cite{Fallin2023_aEGraphs}, are a special type of e-graph used in Cranelift, the compiler backend of the Wasmtime\footnote{\url{https://wasmtime.dev/}} WebAssembly runtime. The focus of ægraphs is on keeping the e-graph acyclic to allow forward and backward conversion between ægraphs and control flow graphs directly derived from programs, with the goal of enabling the entire optimization process to be performed on ægraphs.

@@ -50,7 +50,7 @@ In figure~\ref{fig:eqsat_postprocess_no_div}, where division and exponentiation 
 \label{sec:impact_set_size}
 Figure~\ref{fig:eqsat_by_rule_num} shows the simplification effectiveness of EqSat using KBC-generated rule sets as a function of rule set size. In both subfigures, EqSat was executed on test sets containing terms with 25 binary operators.
 
-Figure~\ref{fig:eqsat_by_rule_num_base} shows the performance of rule sets that contain only rules that \texttt{twee} generated. On one hand we see a clear positive correlation between rule set size and simplification effectiveness after one second. On the other hand, we see a negative correlation between rule set size and simplification performance at shorter time limits. 
+Figure~\ref{fig:eqsat_by_rule_num_base} shows the performance of rule sets that contain only rules that \texttt{twee} generated. On one hand, we see a clear positive correlation between rule set size and simplification effectiveness after one second. On the other hand, we see a negative correlation between rule set size and simplification performance at shorter time limits. 
 
 The negative impact of increasing the number of rules on the performance at shorter time limits is also visible in figure~\ref{fig:eqsat_by_rule_num_extended}, which uses extended versions of the same rule sets. In contrast to the case of non-extending sets, however, an increase in the number of rules does not lead to significantly higher simplification effectiveness.
 
@@ -117,7 +117,7 @@ Subfigure~\ref{fig:eqsat_small_with_div} gives additional insight into the effec
 	\label{fig:eqsat_small_comparison}
 \end{figure}
 
-Figure~\ref{fig:eqsat_large_comparison}, for the most part, confirms the observations made on small terms. A notable difference seen in subfigure~\ref{fig:eqsat_large_with_div} is that the handwritten rule set outperforms two of the KBC-generated rule sets at the time limit of 0.0001 s.
+Figure~\ref{fig:eqsat_large_comparison}, for the most part, confirms the observations made on small terms. A notable difference seen in subfigure~\ref{fig:eqsat_large_with_div} is that the handwritten rule set outperforms two of the KBC-generated rule sets at the time limit of 0.0001s.
 
 \begin{figure}[h]
 	\centering
@@ -139,7 +139,7 @@ Figure~\ref{fig:eqsat_large_comparison}, for the most part, confirms the observa
 	\label{fig:eqsat_large_comparison}
 \end{figure}
 
-Figure~\ref{fig:eqsat_huge_comparison} again shows similar results. An observation we can make in both subfigures is that almost all KBC-generated rule sets show less of an improvement when going from time limit 0.0005 s to 0.001 s. When division and exponentiation are excluded, the handwritten rules show this as well. Note also that the line for \emph{sep\_div\_plus} rule set ends at time limit 0.5 s. This is due to EqSat exceeding the allocated memory limit of 16 GB for some term in the test set.
+Figure~\ref{fig:eqsat_huge_comparison} again shows similar results. An observation we can make in both subfigures is that almost all KBC-generated rule sets show less of an improvement when going from time limit 0.0005s to 0.001s. When division and exponentiation are excluded, the handwritten rules show this as well. Note also that the line for \emph{sep\_div\_plus} rule set ends at time limit 0.5s. This is due to EqSat exceeding the allocated memory limit of 16 GB for some term in the test set.
 
 \begin{figure}[h]
 	\centering
@@ -165,12 +165,12 @@ Figure~\ref{fig:eqsat_huge_comparison} again shows similar results. An observati
 \subsection{Summary}
 In summary, certain KBC-generated rule sets outperform \texttt{egg}'s handwritten rule set but generally converge to a consistent solution more slowly. This holds consistently across all sizes of input terms, independent of whether division and exponentiation are included in the rule and test sets. 
 
-We also saw that purely KBC-generated rule sets have inferior performance compared to those that keep the original handwritten rules. For these sets, increasing the number of rewrite rules slows EqSat’s convergence without providing a meaningful improvement in simplification effectiveness.
+We also saw that purely KBC-generated rule sets have inferior performance compared to those that keep the original handwritten rules. For the latter, increasing the number of rewrite rules slows EqSat’s convergence without providing a meaningful improvement in simplification effectiveness.
 
 \section{Greedy Rewriting}
 \label{sec:greedy_results}
 
-This section presents the results on simplification effectiveness when using greedy rewriting. The approach was tested as described in section~\ref{sec:test-setup}. However, extended and non-extended rule sets behave identically, because preprocessing during the parsing step described in section~\ref{sec:greedy} removes all rules that would increase term complexity, effectively aligning both variants.
+This section presents the results on simplification effectiveness when using greedy rewriting. The approach was tested as described in section~\ref{sec:test-setup}. However, extended and non-extended rule sets behave almost identically, because preprocessing during the parsing step described in section~\ref{sec:greedy} removes all rules that would increase term complexity, effectively aligning both variants.
 
 Differences in performance based on the input rule set will be covered in section~\ref{sec:result_comparison}. Consequently, this section only covers the impact of rule set size on simplification effectiveness. Figure~\ref{fig:greedy_comparison} shows this impact for terms of size 25 with and without division and exponentiation.
 

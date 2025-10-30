@@ -15,10 +15,10 @@ Section~\ref{sec:rulegen-twee} explains the rationale for choosing \texttt{twee}
 \label{sec:rulegen-twee}
 \texttt{twee} is an automated theorem prover based on unfailing KBC. It has a number of features that make it convenient to use as a tool for rule generation. 
 
-As input, \texttt{twee} takes a set of axioms in \texttt{TPTP} format. Additionally, it requires a proof goal. When providing a contradiction as the proof goal, \texttt{twee} behaves as expected with KBC. Assuming consistency of the input axioms, \texttt{twee} either generates new rules indefinitely or simply runs until termination. Termination may occur when a confluent TRS is found or when specific conditions are met.
+As input, \texttt{twee} takes a set of axioms in \texttt{TPTP} format. Additionally, it requires a proof goal. Assuming consistency of the input axioms, \texttt{twee} either generates new rules indefinitely or simply runs until termination. Termination may occur when a confluent TRS is found or when specific conditions are met. 
 
 \subsubsection{Termination Conditions}
-Termination conditions within \texttt{twee} include a limit on the number of rules generated and the size of the rules. Therefore, by providing a contradiction as the proof goal and a termination condition, generating different rule sets based on rule set or term size becomes simple. Upon terminating, \texttt{twee} outputs the final rule set, as well as a list of all rules generated in the process.
+Termination conditions within \texttt{twee} include a limit on the number of rules generated and on the size of newly generated rules. Therefore, by providing a contradiction as the proof goal and a termination condition, generating different rule sets based on rule set or term size becomes simple. Upon terminating, \texttt{twee} outputs the final rule set, as well as a list of all rules generated in the process.
 
 \subsubsection{Ordering and Critical Pair Selection}
 Another benefit of \texttt{twee} is the ordering it uses. For KBO, it utilizes a weight function, where all function symbols have weight 1 and are ordered based on the frequency with which they appear in the input axioms. While this approach might not be optimal with certain input problems, it is flexible and does not require the user to specify an ordering.
@@ -28,7 +28,11 @@ Yet another useful aspect is the way \texttt{twee} selects critical pairs. For t
 \subsubsection{Conditional Rewrite Rules}
 Possibly the biggest strength \texttt{twee} offers for the purpose of this work is its integration of conditional rewrite rules. Such rules are important when performing optimizations. Consider, for example, the division operation. It is a relatively costly operation to perform and is part of many known identities that can be used for simplification. However, division is only defined if the denominator is unequal to 0. A rule such as $\frac{x}{x} \to 1$ would not only be unsound on its own, it would also enable KBC to generate further unsound rules.
 
-Restricting rewrites during the simplification process is fairly simple, since we can check conditions before rewriting and only simplify if they are provably met. Such semantic checks are not possible with KBC. Therefore, conditions must be encoded into the terms directly. The encoding used by \texttt{twee} was defined by~\cite{ClaessenSmallbone2021}. They effectively define an \texttt{if-then-else} clause $\texttt{ifeq}(x, y , z, w)$ which reads as \texttt{if $x = y$ then $z$ else $w$}. If such a term exists in the axiom set, the special rule $\texttt{ifeq}(x, x , y, z) \to y$ is added. This special rule can be matched on another rule exactly if the condition is fulfilled. This encoding is what \texttt{twee} uses internally. The user can define restricted axioms as implications, i.e. $x=y \implies z = w$, which are then translated. Figure~\ref{fig:ifeq-twee} shows the encoding at the example of $\frac{x}{x} \to 1$. 
+Restricting rewrites during the simplification process is fairly simple, since we can check conditions before rewriting and only simplify if they are provably met. Such semantics-based checks are not possible with KBC. Therefore, conditions must be encoded into the terms directly.
+
+The encoding used by \texttt{twee} was defined by~\cite{ClaessenSmallbone2021}. They effectively define an \texttt{if-then-else} clause $\texttt{ifeq}(x, y , z, w)$ which reads as \texttt{if $x = y$ then $z$ else $w$}. If such a term exists in the axiom set, the special rule $\texttt{ifeq}(x, x , y, z) \to y$ is added. This special rule can be matched on a rule containing an \texttt{if-then-else} clause exactly if the condition is fulfilled. 
+
+This encoding is what \texttt{twee} uses internally. The user can define restricted axioms as implications, i.e. $x=y \implies z = w$, which are then translated. Figure~\ref{fig:ifeq-twee} shows the encoding at the example of $\frac{x}{x} \to 1$. 
 
 \begin{figure}[h]
 	\centering
@@ -41,10 +45,10 @@ Restricting rewrites during the simplification process is fairly simple, since w
 	\end{subfigure}
 	\hfill
 	% Right subfigure: twee encoding
-	\begin{subfigure}[t]{0.45\textwidth}
+	\begin{subfigure}[t]{0.49\textwidth}
 		\textbf{\texttt{twee} Encoding}\\[3pt]
 		$\displaystyle
-		\text{\texttt{ifeq}}(\text{\texttt{not\_zero}}(x), \text{\texttt{true}}, x / x, 1) \to 1, \quad
+		\text{\texttt{ifeq}}(\text{\texttt{not\_zero}}(x), \text{\texttt{true}}, x / x, 1) \to 1,\\
 		\text{\texttt{ifeq}}(x, x, y, z) \to y
 		$
 		\caption{\scriptsize Conditional rewrite encoded using \texttt{ifeq} as defined by~\cite{ClaessenSmallbone2021}.}
@@ -56,7 +60,9 @@ Restricting rewrites during the simplification process is fairly simple, since w
 \end{figure}
 
 
-It is important to note that the rule in figure~\ref{fig:ifeq-twee} can only become unconditional if another rule $\texttt{not\_zero}(x) \to \texttt{true}$ exists. While this may be given as an assumption in a specific proof setting, it will not be the case when trying to derive general rewrite rules. However, it is still possible to produce superpositions with this rule, since $x/x$ is simply a subterm of the entire left-hand side. Any rule resulting from such a match would also have the condition attached to it.
+It is important to note that the rule in figure~\ref{fig:ifeq-twee} can only become unconditional if another rule $\texttt{not\_zero}(x) \to \texttt{true}$ exists. While this may be given as an assumption in a specific proof setting, it will not be the case when trying to derive general rewrite rules. 
+
+However, it is still possible to produce superpositions with this rule, since $x/x$ is simply a subterm of the entire left-hand side. Any rule resulting from such a match would also have the condition attached to it.
 
 \subsection{Postprocessing of Completed Rules}
 \label{sec:rulegen-postprocess}
@@ -72,7 +78,7 @@ If no confluent TRS is found, and termination is forced in another way, we canno
 
 However, even when ensuring that all possible rewrites are considered, proper normalization is not guaranteed. This is because KBC initially reduces the power of its rewrite system when forcing a direction on initially bidirectional input axioms. If completion succeeds, this initial loss of rewriting power is compensated by the confluence property obtained through additional rules. Again, confluence cannot be assumed if completion does not succeed.
 
-To properly address the issues discussed in this section, this work introduces modified versions of each completed rule set. To address the issue of unorderable rules, in particular when using EqSat, for each rule set, we have two different variants. In the first variant, unorderable rules are removed entirely. In the second variant, such rules are replaced by two new rules, one for each of the possible directions.
+To properly address the issues discussed in this section, this work introduces modified versions of each completed rule set. To address the issue of unorderable rules, for each rule set, we create two different variants. In the first variant, unorderable rules are removed entirely. In the second variant, such rules are replaced by two new rules each, one for each of the possible directions.
 
 To examine the impact of forcing a direction for all rules, we again introduce two different variants of each rule set. The first one simply contains the rules generated by KBC and therefore only simplifying rules. The second variant additionally includes all rules that were contained in the original input set. This variant extends the original rule set rather than replacing it and is therefore guaranteed to be at least as powerful as the original when used with EqSat. 
 
@@ -96,17 +102,17 @@ The original rules also contain negation of variables only through multiplicatio
 		\item a version where partial operators were completed separately, and
 		\item a version where partial operators were completed separately, but all rules derived during KBC were used rather than only the final TRS.
 	\end{enumerate}
-\end{minipage}
+\end{minipage}\\
 
-Rule set (2), which we will refer to as \texttt{math\_no\_diff\_int\_no\_div\_no\_pow} or\\ \texttt{no\_div\_no\_pow} for short, does not contain conditional rewrites. We introduce to enable tests that don't depend on \texttt{twee}'s special encoding. Since the comparison with rule sets containing division and exponentiation is not very meaningful, there will be sets of test terms that don't contain these operations as detailed in section~\ref{sec:term-generation}.
+Rule set (2), which we will refer to as \texttt{math\_no\_diff\_int\_no\_div\_no\_pow} or\\ \texttt{no\_div\_no\_pow} for short, does not contain conditional rewrites. We introduce to enable tests that do not depend on \texttt{twee}'s special encoding. Since the comparison with rule sets containing division and exponentiation is not very meaningful, there will be sets of test terms that also do not contain these operations as detailed in section~\ref{sec:term-generation}.
 
 Rule set (3), named \texttt{math\_no\_diff\_int\_sep\_div} or \texttt{sep\_div} for short, should represent a better way of dealing with conditional rewrites. For this set, we selected a number of rules containing division, multiplication, and exponentiation completed them separately. Crucially, rules that contain $0$ or subtraction were not considered. This way, no conditions are needed during completion, since no critical pairs that contain a division by $0$ can be constructed.
 
 After completing this subset, a simple program added conditions to the rules where needed. The program simply adds a \texttt{not\_zero} check to all variables appearing inside the denominator of a division, or inside the base of an exponentiation, if the exponent is not known to be a positive constant.
 
-This way, 27 rules were added to the original set. The termination condition for the completion process was that a maximum of 35 rules may be derived. The difference in the numbers results from \texttt{twee} removing rules which are already subsumed by others, i.e. where both sides can be normalized to the same term using the remaining rules. We chose a limit of 35 based on the observation that, by this point, a sufficient number of useful rules had been generated.
+This way, 27 rules were added to the original set. The termination condition for the completion process was that a maximum of 35 rules may be derived. The difference in the numbers results from \texttt{twee} removing rules which are already subsumed by others, i.e., where both sides can be normalized to the same term using the remaining rules. We chose a limit of 35 based on the observation that, by this point, a sufficient number of useful rules had been generated.
 
-Rule set (4), which we call \texttt{math\_no\_diff\_int\_sep\_div\_plus} or \texttt{sep\_div\_plus} is identical to sep\_div, except that all 35 generated rules were added. This is based on the observation that during the completion, certain rules might be subsumed by others, but not after introducing conditions. 
+Rule set (4), which we call \texttt{math\_no\_diff\_int\_sep\_div\_plus} or \texttt{sep\_div\_plus} is identical to \texttt{sep\_div}, except that all 35 generated rules were added. This is based on the observation that during the completion, certain rules might be subsumed by others, but not after introducing conditions. 
 
 Rule sets (1) to (4) can be found in appendix~\ref{app:rule_sets}.
 
@@ -153,9 +159,10 @@ The following table~\ref{tab:rule-sets-overview} shows all generated rule sets.
 	\label{tab:rule-sets-overview}
 \end{table}
 
+\FloatBarrier
 \section{Term Generation}
 \label{sec:term-generation}
-As benchmark data, this work uses randomly generated terms from arithmetic. An important advantage of using this domain is that flaws in the approach, such as inconsistencies in the rule sets, are relatively easy to detect. Further, KBC is known to work well with equational theories from arithmetic, and KBO mostly coincides with the simplification goal in program optimization.
+As benchmark data, this work uses randomly generated terms from arithmetic. An important advantage of using this domain is that flaws in the approach, such as inconsistencies in the rule sets, are relatively easy to detect. Further, KBC is known to work well with equational theories from arithmetic, and KBO mostly coincides with the expression simplification goal often used in program optimization.
 
 There are a total of six sets of terms, which we use for both EqSat and greedy rewriting. The following sections describe the different kinds of sets as well as the method used to generate individual terms.
 
@@ -212,7 +219,7 @@ This work uses the \texttt{egg} library for equality saturation. In addition to 
 
 The experiments use the language and analysis from \texttt{egg}'s \texttt{math} example. The included analysis performs \emph{constant folding}, enabling the E-graph to directly evaluate expressions consisting only of constants. 
 
-For rule scheduling \texttt{egg}'s \texttt{SimpleScheduler}, which imposes no restrictions on rule application. To reduce the likelihood of exceeding the available memory, we capped the maximum number of E-nodes at 1,000,000. EqSat ran using the following time limits: 0.0001 s, 0.0005 s, 0.001 s, 0.005 s, 0.01 s, 0.05 s, 0.1 s, 0.5 s, and 1 s. Because the runner only checks these limits after completing an iteration, actual simplification times may exceed the nominal limits significantly if an iteration is particularly long.
+For rule scheduling \texttt{egg}'s \texttt{SimpleScheduler}, which imposes no restrictions on rule application. To reduce the likelihood of exceeding the available memory, we capped the maximum number of E-nodes at 1,000,000. We ran EqSat using the following time limits: 0.0001s, 0.0005s, 0.001s, 0.005s, 0.01s, 0.05s, 0.1s, 0.5s, and 1s. Because the runner only checks these limits after completing an iteration, actual simplification times may exceed the nominal limits significantly if an iteration is particularly long.
 
 \subsection{Greedy Rewriting}
 \label{sec:greedy}
@@ -328,17 +335,17 @@ If unification succeeds, the variables in the right-hand side of the rule whose 
 
 \paragraph{Constant Folding.} Constant folding is technically not required in this context, since rewrites happened based on the structure of the term. However, since \texttt{egg} uses constant folding during EqSat, it is required to enable a fair comparison between the methods. 
 
-The implementation of constant folding is fairly straightforward. The \textsc{FoldConstants} function iterates over the current term and, for each addition, subtraction, multiplication, and division, checks whether both operands are constants. In the case of division, the function additionally asserts that the denominator is unequal to 0. If these conditions are fulfilled, the root symbol is replaced with the result, and relevant subterm sizes are updated.
+The implementation of constant folding is fairly straightforward. The \textsc{FoldConstants} function iterates over the current term and, for each addition, subtraction, multiplication, and division, checks whether both operands are constants. In the case of division, the function additionally asserts that the denominator is not trivially equal to 0. If these conditions are fulfilled, the root symbol is replaced with the result, and relevant subterm sizes are updated.
 
 The logic behind this function is identical to the constant folding analysis used by \texttt{egg}.
 
 \paragraph{Canonicalization.} When applying rules sequentially, certain rules, such as commutativity, are challenging to deal with. When applying commutativity to transform a term \emph{t} to a term \emph{t'}, for example, it is guaranteed that the same rule can be applied again to transform \emph{t'} back to \emph{t}. This may lead to indefinitely repeating chains of rewrites. However, rules of this kind often play an important role in enabling rewrites. If, for instance, we want to simplify the term $0+x$ and we only have the rule $x+0 \to x$, commutativity is necessary to find the normal form.
 
-KBC solves this by introducing canonical representations through lexicographical ordering. Since this principle is applied during rule generation, it also has to be applied during the rewrite process. Therefore, the \textsc{Canonicalize} implements the canonicalization of terms based on KBO. 
+KBC solves this by introducing canonical representations through lexicographical ordering. Since this principle is applied during rule generation, it also has to be applied during the rewrite process. Therefore, the \textsc{Canonicalize} function implements the canonicalization of terms based on KBO. 
 
 The canonicalization process iterates over all rules and attempts to match them on a given term. Similarly to the \textsc{RewriteOneStep} function, it utilizes a unification function. However, rather than identifying a single match by searching from left to right, i.e., top-down in the expression tree, during canonicalization, matches are searched right to left, or bottom-up, and all matches are recorded. This way, the entire term is canonicalized, with respect to a given rule, in a single iteration.
 
-If a match is found and rewrite conditions are not violated, the substitution identified by the unification function is applied. Before applying the final rewrite, however, a comparison function checks whether the rewritten term is actually smaller according to an ordering implementing KBO. If for any match of any rule this condition is fulfilled and a rewrite is performed, \textsc{Canonicalize} returns \texttt{true}, otherwise it returns \texttt{false} to indicate that the term is already fully canonicalized.
+If the unification function finds a match and rewrite conditions are not violated, the substitution identified by the unification function is applied. Before applying the final rewrite, however, a comparison function checks whether the rewritten term is actually smaller according to an ordering implementing KBO. If for any match of any rule this condition is fulfilled and a rewrite is performed, \textsc{Canonicalize} returns \texttt{true}, otherwise it returns \texttt{false} to indicate that the term is already fully canonicalized.
 
 \section{Test Setup}
 \label{sec:test-setup}
@@ -348,9 +355,9 @@ This section summarizes the experimental setup used for evaluating the rule sets
 \subsection{Combinations Tested}
 We evaluated both rewriting methods on all six test sets discussed in section~\ref{sec:term-generation} and all rule set variants introduced in section~\ref{sec:rule-generation}.
 
-For EqSat, we included all rule sets with sizes 40, 100, 150, and 200. For the greedy approach, we tested all sizes (i.e., 40, 60, 80, 100, 150, 200, 1000, and 2500). We excluded set sizes 60 and 80 for EqSat because they did not add much insight. Sizes 1000 and 2500 were used exclusively for the greedy approach, because individual iterations under EqSat would take excessively long with this number of rules. This would cause the actual time spent simplifying to significantly exceed the set time limits, invalidating the tests.
+For EqSat, we included all rule sets with sizes 40, 100, 150, and 200. For the greedy approach, we tested all sizes (i.e., 40, 60, 80, 100, 150, 200, 1000, and 2500). We excluded set sizes 60 and 80 for EqSat because they did not add much insight. 
 
-This distinction is necessary due to the difference in resource consumption between the two methods. While the greedy approach produces outputs quickly even when using large rule sets, EqSat requires substantially more time and memory as the rule set size increases. Moreover, since \texttt{egg} checks its termination conditions only after each iteration, time limits might be exceeded by an unacceptable amount when individual iterations take a long time due to excessively large rule sets.
+Sizes 1000 and 2500 were used exclusively for the greedy approach, because individual iterations under EqSat would take excessively long with such large rule numbers. This would cause the actual time spent simplifying to significantly exceed the set time limits, invalidating the tests.
 
 \subsection{Evaluation}
 In the case of EqSat, we ran all combinations of rule and test sets once per time limit specified in section~\ref{sec:eqsat}. During each run, we recorded information about the run, as provided by the \texttt{egg} runner itself. This information includes simplification time (split into rule application time, search time, and rebuild time), the number of iterations, and the stop reason (typically the time limit), in addition to the original and simplified term. 

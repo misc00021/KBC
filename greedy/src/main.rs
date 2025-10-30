@@ -52,76 +52,6 @@ fn merge_subst<'a>(
     Some(s1)
 }
 
-/* Unifies two terms, e.g.LHS of a rule and the term to rewrite.
-Works recursively top-down and left-right on expression tree.
-Returns None if not unifiable, or a mapping from variables to subterms.
-Only works on binary operators, constants, and variables.*/
-// fn unify<'a>(
-//     lhs: &'a [Symbol],
-//     term: &'a [Symbol],
-//     parent_match: bool,
-// ) -> Option<(HashMap<&'a str, (usize, usize)>, usize)> {
-//     // println!(
-//     //     "Trying to match {} on {}",
-//     //     debug_print(&lhs.to_vec()),
-//     //     debug_print(&term.to_vec())
-//     // );
-
-//     if lhs[0].length == 1 {
-//         // Base cases variable or constant
-//         if lhs[0].is_var {
-//             let mut map = HashMap::with_capacity(lhs.len());
-//             map.insert(lhs[0].name.as_str(), term);
-//             return Some((map, 0));
-//         } else if lhs[0].name == term[0].name {
-//             return Some((Default::default(), 0));
-//         } else {
-//             return None;
-//         }
-//     } else if lhs[0].length > term.len() {
-//         // Pattern longer than term
-//         return None;
-//     } else {
-//         // Same root symbol, try to match children
-//         if lhs[0].name == term[0].name {
-//             let lhs_idx = lhs[1].length;
-//             let term_idx = term[1].length;
-//             let rest_lhs = &lhs[1..lhs_idx + 1];
-//             let term_lhs = &term[1..term_idx + 1];
-//             if let Some(map) = unify(&rest_lhs, &term_lhs, true) {
-//                 // LHS matched
-//                 // println!("Map1: {:?}", map);
-//                 let rest_rhs = &lhs[lhs_idx + 1..];
-//                 let term_rhs = &term[term_idx + 1..];
-//                 if let Some(rest_map) = unify(&rest_rhs, &term_rhs, true) {
-//                     // RHS matched
-//                     // println!("Map2: {:?}", rest_map);
-//                     if let Some(merged) = merge_subst(map.0, rest_map.0) {
-//                         // Merged successfully
-//                         // println!("Merged: {:?}", merged);
-//                         return Some((merged, 0));
-//                     }
-//                 }
-//             }
-//         }
-//         if !parent_match {
-//             // Descend into term to match rule on subterms.
-//             if let Some(map) = unify(lhs, &term[1..(term[1].length + 1)], parent_match) {
-//                 // println!("Map 3: {:?}", map);
-//                 return Some((map.0, 1 + map.1));
-//             } else {
-//                 if let Some(map) = unify(lhs, &term[(term[1].length + 1)..], parent_match) {
-//                     // println!("Map 4: {:?}", map);
-//                     return Some((map.0, term[1].length + 1 + map.1));
-//                 } else {
-//                     return None;
-//                 }
-//             }
-//         }
-//     }
-//     return None;
-// }
-
 fn unify<'a>(
     lhs: &'a [Symbol],
     term: &'a [Symbol],
@@ -221,19 +151,6 @@ fn check_conditions<'a>(
 
 // Inserts new_term into old_term at index idx, adjusting lengths of parent terms.
 fn insert(new_term: Vec<Symbol>, old_term: &mut Vec<Symbol>, idx: usize) -> Vec<Symbol> {
-    // println!("Old term: {:?}", debug_print(old_term));
-    // println!("New term: {:?}", debug_print(&new_term));
-    // let mut i = 0;
-    // let diff = old_term[idx].length - new_term.len();
-    // while i < idx {
-    //     if old_term[i].length != 1 {
-    //         old_term[i].length -= diff;
-    //     }
-    //     i += 1;
-    //     if old_term[i].length < idx - i + 1 {
-    //         i += old_term[i].length;
-    //     }
-    // }
     let mut result = old_term[..idx].to_vec();
     result.extend(new_term);
     // println!("Inserted at index {}: {:?}", idx, debug_print(&result));
@@ -256,42 +173,6 @@ fn insert(new_term: Vec<Symbol>, old_term: &mut Vec<Symbol>, idx: usize) -> Vec<
     // println!("Result: {:?}", debug_print(&result));
     result
 }
-
-// Applies a substitution to a term, replacing variables with their bindings.
-// fn apply_subst<'a>(term: &[Symbol], subst: &HashMap<&str, &'a [Symbol]>) -> Vec<Symbol> {
-//     fn apply_rec<'a>(
-//         term: &[Symbol],
-//         subst: &HashMap<&str, &'a [Symbol]>,
-//         out: &mut Vec<Symbol>,
-//     ) -> usize {
-//         let first = &term[0];
-
-//         if first.length == 1 {
-//             if first.is_var {
-//                 if let Some(&repl) = subst.get(first.name.as_str()) {
-//                     out.extend_from_slice(repl);
-//                     return repl.len();
-//                 }
-//             }
-//             out.push(first.clone());
-//             return 1;
-//         }
-//         let mut length = 1;
-//         let left = &term[1..1 + term[1].length];
-//         let right = &term[1 + term[1].length..];
-
-//         let start_idx = out.len();
-//         out.push(first.clone());
-//         length += apply_rec(left, subst, out);
-//         length += apply_rec(right, subst, out);
-//         out[start_idx].length = length;
-
-//         length
-//     }
-//     let mut result = Vec::with_capacity(term.len() * 2);
-//     apply_rec(term, subst, &mut result);
-//     result
-// }
 
 fn apply_subst<'a>(
     term: &[Symbol],
@@ -641,23 +522,6 @@ fn check_canonicalizer(rule: &Rule) -> bool {
         return true;
     }
     return false;
-    // if rule.lhs.len() != rule.rhs.len() {
-    //     return false;
-    // }
-    // let mut lhs_vars = HashMap::new();
-    // let mut rhs_vars = HashMap::new();
-    // for i in 0..rule.lhs.len() {
-    //     let lhs_sym = &rule.lhs[i];
-    //     let rhs_sym = &rule.rhs[i];
-
-    //     if lhs_sym.length == 1 {
-    //         *lhs_vars.entry(lhs_sym.name.as_str()).or_insert(0) += 1;
-    //     }
-    //     if rhs_sym.length == 1 {
-    //         *rhs_vars.entry(rhs_sym.name.as_str()).or_insert(0) += 1;
-    //     }
-    // }
-    // lhs_vars == rhs_vars
 }
 
 fn parse_rules(egg_rules: &Vec<String>) -> (Vec<Rule>, Vec<Rule>) {

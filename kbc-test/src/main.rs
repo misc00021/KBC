@@ -275,39 +275,3 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     }
     Ok(())
 }
-
-//     let mut file = File::create("kbc_math2.txt")?;
-//     println!("Starting simplification tests...");
-//     let exprs =
-//         load_exprs_from_file("/home/michi/Documents/thesis/KBC/term_gen/terms_max_len4.txt")?;
-//     for expr in &exprs {
-//         println!("Simplifying expression: {}", expr);
-//         let mut total: f64 = 0.0;
-//         for i in 0..1 {
-//             // Run the rewrite rules on the expression
-//             let runner = Runner::default()
-//                 .with_explanations_enabled()
-//                 .with_expr(expr)
-//                 .with_iter_limit(100)
-//                 .with_scheduler(SimpleScheduler)
-//                 .run(&rules());
-
-//             // Extract the best expression from the final e-graph
-//             let root = runner.roots[0];
-//             let extractor = egg::Extractor::new(&runner.egraph, egg::AstSize);
-//             let (_cost, best) = extractor.find_best(root);
-//             total += runner.report().total_time;
-//             if i == 0 {
-//                 writeln!(file, "\nAverage time: {}", (total / 1.0))?;
-//                 writeln!(file, "\nApply time: {}", runner.report().apply_time)?;
-//                 writeln!(file, "\nSearch time: {}", runner.report().search_time)?;
-//                 writeln!(file, "\nRebuild time: {}", runner.report().rebuild_time)?;
-//                 writeln!(file, "Stop reason: {:?}", runner.report().stop_reason)?;
-//                 writeln!(file, "Iterations: {}", runner.iterations.len())?;
-//                 writeln!(file, "Original: {}", expr)?;
-//                 writeln!(file, "Simplified: {}\n", best)?;
-//             }
-//         }
-//     }
-//     Ok(())
-// }

@@ -70,8 +70,6 @@ fn main() -> io::Result<()> {
         eprintln!("Error: <num_rules> must be a valid integer (e.g. 100 or --max-rules=100).");
         std::process::exit(1);
     }
-    // let rule_target = Some(1000);
-    // let input_file = "/home/michi/Documents/thesis/KBC/kbc/base_rules/as_egg/math_no_diff_int.txt";
     let file = File::open(input_file).map_err(|e| {
         eprintln!("Failed to open input file '{}': {}", input_file, e);
         e
